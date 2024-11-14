@@ -1,0 +1,622 @@
+рп
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Магазин</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    
+  
+    <link rel="stylesheet" href="/css/style.css">
+  <title>Slider</title>
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+/> <!--Ссылка на иконки в регистрации -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" ></script>
+
+</head>
+<body>
+    <header>
+            <div class="header-contaner">
+                <div class="catalog-icon" id="menuBurger">
+        <i class="fas fa-bars"></i>
+    </div>
+                <div class="search-bar">
+                    <input type="search" name="search" placeholder="Поиск товаров">
+                    <button type="submit">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                <div class="cart-icon" onclick="toggleCart()">
+                    <i class="fas fa-shopping-cart"></i>
+                </div>
+              <div class="header-contaner">
+            <div class="account-icon" onclick="toggleAccount()">
+                <i class="fas fa-user"></i>
+            </div>
+            </div>
+            </div>
+        </header>
+
+        <div class="cart" id="cart">
+            <h2>Корзина</h2>
+            <div id="cart-items"></div>
+            <button >перейти в корзину </button>
+             
+            <button onclick="clearCart()">Очистить корзину</button>
+
+        </div>
+
+
+
+
+        <!--Каталог-->
+
+            <div class="catalog" id="catalog">
+        <h6>Каталог</h6>
+        <button class="category-button" data-category="1">
+            <span>Обои</span> <i class="fas fa-chevron-right"></i>
+        </button>
+        <button class="category-button" data-category="2">
+            <span>Сантехника</span> <i class="fas fa-chevron-right"></i>
+        </button>
+        <button class="category-button" data-category="3">
+            <span>Ламинат</span> <i class="fas fa-chevron-right"></i>
+        </button>
+    </div>
+
+    <!-- Popup для подкатегорий -->
+    <div class="popup" id="popup">
+        <span class="clobutton" onclick="closePopup()">&times;</span>
+        <a href="vtora.html">   <h2 id="popupTitle">Обои</h2>  
+          </a> 
+
+        <ul id="popupContent"></ul>
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+    <script>
+        const catalog = document.getElementById('catalog');
+        const menuBurger = document.getElementById('menuBurger');
+        const popup = document.getElementById('popup');
+        // Функция для открытия и закрытия меню
+        menuBurger.onclick = function(event) {
+            event.stopPropagation(); // Остановить всплытие события, чтобы не закрыть каталог сразу
+            catalog.style.display = catalog.style.display === 'none' ? 'block' : 'none';
+        };
+        // Функция для открытия подкатегорий в новом окне
+        document.querySelectorAll('.category-button').forEach(button => {
+            button.onclick = function(event) {
+                event.stopPropagation(); // Остановить всплытие события при клике на категории
+                const categoryNum = this.getAttribute('data-category');
+                let content = '';
+
+                switch (categoryNum) {
+                    case '1':
+                        content = '<button class="button-style" onclick="showPopup(\'Подкатегория 1.1\')">Подкатегория 1.1</button>' +
+                                  '<button class="button-style" onclick="showPopup(\'Подкатегория 1.2\')">Подкатегория 1.2</button>' +
+                                  '<button class="button-style" onclick="showPopup(\'Подкатегория 1.3\')">Подкатегория 1.3</button>';
+                        break;
+                    case '2':
+                        content = '<button class="button-style" onclick="showPopup(\'Подкатегория 2.1\')">Подкатегория 2.1</button>' +
+                                  '<button class="button-style" onclick="showPopup(\'Подкатегория 2.2\')">Подкатегория 2.2</button>';
+                        break;
+                    case '3':
+                        content = '<button class="button-style" onclick="showPopup(\'Подкатегория 3.1\')">Подкатегория 3.1</button>' +
+                                  '<button class="button-style" onclick="showPopup(\'Подкатегория 3.2\')">Подкатегория 3.2</button>';
+                        break;
+                }
+                document.getElementById('popupContent').innerHTML = content;
+                showPopup( this.querySelector('span').textContent);
+            };
+        });
+        // Функция для отображения popup
+        function showPopup(title) {
+            document.getElementById('popupTitle').textContent = title;
+            popup.style.display = 'block'; // Показывает popup
+        }
+        // Функция для закрытия popup
+        function closePopup() {
+            popup.style.display = 'none'; // Скрывает popup
+        }
+        // Закрытие каталога при клике где-либо на странице
+        document.addEventListener('click', function() {
+            if (catalog.style.display === 'block') {
+                catalog.style.display = 'none'; // Закрывает каталог
+            }  });
+            // Закрытие каталога при клике где-либо на странице
+        document.addEventListener('click', function() {
+            if ( popup.style.display === 'block') {
+                 popup.style.display = 'none'; // Закрывает каталог
+
+            }
+        });
+
+    </script>
+
+
+
+
+    <!-- Регистрация -->
+    <div class="account" id="account" onmouseleave="hideAccount()">
+        <h2>Аккаунт</h2>
+        <button class="sign" onclick="openRegisterModal()" style = " color: black;font-size : 18px ;">Войти или Зарегистрироваться</button>
+    </div>
+
+    <!-- Модальное окно для регистрации -->
+        <div id="registerModal" class="modal">
+        <span class="close" onclick="closeRegisterModal()">&times;</span> <!-- Крестик закрытия -->
+        <div class="modal-content sign-in">
+            <form action="">
+                <h2>Войти</h2>
+                <div class="input-group">
+                    <input type="text" required>
+                    <label for="">Имя</label>
+                </div>
+                <div class="input-group">
+                    <input type="password" required>
+                    <label for="">Пароль</label>
+                </div>
+                <div class="remember">
+                    <label><input type="checkbox"> Запомнить меня</label>
+                </div>
+                <button class="registr" type="submit">Войти</button>
+                <div class="signUp-link">
+                    <p style="color: black; font-size : 18px;" >У вас нет аккаунта? <a href="#" class="signUpBtn-link">Регистрация</a></p>
+                </div>
+            </form>
+        </div>
+    <div class="modal-content sign-up">
+        <form action="">
+            <h2>Регистрация</h2><br>
+            <div class="input-group">
+                <input type="text" required>
+                <label for="">Имя</label>
+            </div>
+            <div class="input-group">
+                <input type="email" required>
+                <label for="">Почта</label>
+            </div>
+            <div class="input-group">
+                <input type="password" required>
+                <label for="">Придумайте пароль</label>
+            </div>
+            <div class="remember">
+                <label style="color: black; font-size: 16px;">
+                    <input type="checkbox"> Я соглашаюсь с чем-то
+                </label>
+            </div>
+            <button class="registr" type="submit">Зарегистрироваться</button>
+
+            <div class="signUp-link">
+                <p style="color: black; margin-top: 10px; font-size: 16px;">У Вас уже есть аккаунт?
+                    <a style="color: black; margin-top: 10px; font-size: 16px;" href="#" class="signInBtn-link">Войти</a>
+                </p>
+                  <div class="gogle" type="button" onclick="socialLogin()">Войти через <span class="social-link">соцсети</span></div>
+            </div>
+            <div class="tooltip" id="tooltip" >
+      <span class="clo" onclick="hideTooltip()">&#10006;</span>
+    <ul style="text-align:left; padding:5px; margin-top:10px;">
+    <li>
+        <a href="#" style="margin-right: 3px; color: black; display: inline-block;">
+            <i class="fab fa-facebook-f"></i>
+        </a>
+    </li>
+    <li>
+        <a href="#" style="margin-right: 3px; color: black; display: inline-block;">
+            <i class="fab fa-google"></i>
+        </a>
+    </li>
+    <li>
+        <a href="#" style="margin-right: 3px; color: black; display: inline-block;">
+            <i class="fab fa-instagram"></i>
+        </a>
+    </li>
+</ul>
+    </div>
+        </form>
+    </div>
+    </div>
+
+
+      
+
+    <!-- НАЧАЛО КАРУСЕЛИ -->
+
+    <div class="carousel">
+        <div class="itms">
+            <div class="itm active"><img src="https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/5.webp" > </div>
+            <div class="itm"><img src="https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/8.webp" > </div>
+            <div class="itm"><img src="https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/7.webp" > </div>
+            <div class="itm"><img src="https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/10.webp" > </div>
+            <div class="itm"><img src="https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/6.webp" > </div>
+        </div>
+        <div class="navig">
+            <button class="buprev">◀</button>
+            <button class="bunext">▶</button>
+        </div>
+    </div>
+
+    <script>
+        let currentIndex = 0;
+        const items = document.querySelectorAll('.itm');
+        const totalItems = items.length;
+        function showItem(index) {
+            const itemsContainer = document.querySelector('.itms');
+            itemsContainer.style.transform = `translateX(-${index * 100}%)`; // Исправлено
+        }
+        function nextItem() {
+            currentIndex = (currentIndex + 1) % totalItems;
+            showItem(currentIndex);
+        }
+        function prevItem() {
+            currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+            showItem(currentIndex);
+        }
+        let autoSlide = setInterval(nextItem, 3000); // Automatic sliding every 3 seconds
+        document.querySelector('.carousel').addEventListener('mouseenter', () => {
+            clearInterval(autoSlide); // Stop automatic sliding
+        });
+        document.querySelector('.carousel').addEventListener('mouseleave', () => {
+            autoSlide = setInterval(nextItem, 3000); // Resume automatic sliding
+        });
+        document.querySelector('.bunext').addEventListener('click', nextItem);
+        document.querySelector('.buprev').addEventListener('click', prevItem);
+    </script>
+
+ <!-- КОНЕЦ КАРУСЕЛИ-->
+
+
+
+<!--НАЧАЛО ИКНОК ССЫЛОК НА ГЛАВНОЙ СТРАНИЦЕ-->
+<section class="boxicon">
+    <div class="bcontainer">
+        <img class="icones" src="https://cdn-icons-png.flaticon.com/128/602/602287.png" alt="Иконка 1">
+        <p>Большой ассортимент материалов </p>
+    </div>
+    <div class="bcontainer">
+        <img class="icones" src="https://cdn-icons-png.flaticon.com/128/602/602287.png" alt="Иконка 2">
+        <p>Доставка, быстро и доступно</p>
+    </div>
+        <div class="bcontainer">
+        <img class="icones" src="https://cdn-icons-png.flaticon.com/128/2474/2474099.png" alt="Иконка 2">
+        <p>Гарантия качесвта </p>
+    </div>
+</section>
+ <!--КОНЕЦ ИКНОК ССЫЛОК НА ГЛАВНОЙ СТРАНИЦЕ-->
+
+
+     <!-- Слайдер-->
+<section class="swiper">
+    <div class="swiper-wrapper">
+<div class="swiper-slide"> <!-- Открыла свайпер слайд -->
+
+   <img src="https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/1.webp" alt="Обои">
+
+ <p class="product-title">Обои 2</p>
+     <figcaption class="box">
+  <p class="price">Цена за штуку</p>
+    <p class="money">
+   <span>1199 ₽</span>
+    <del style='font-size: 1.0rem;color: grey;word-spacing: 0.02rem;'>2000 ₽</del>
+ </p>
+   <div class='Buttons'>
+   <button id='addToCart1' class='btn'>В корзину</button>
+    <button class='subtract' onclick='changeNumber(-1, "number1")'>–</button>
+    <input type='text' class='js-number' id='number1' value='1' readonly>
+    <button class='add' onclick='changeNumber(1, "number1")'>+</button>
+    </div> <!-- Закрыла div для кнопок -->
+    </figcaption>
+   </div> <!-- Закрыла swiper-slide -->
+
+  <!--Открыла слайд --><div class="swiper-slide">
+    <img src="https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/2.webp" alt="Обои">
+    <p class="product-title">Обои 2</p>
+        <figcaption class="box">
+     <p class="price">Цена за штуку</p>
+       <p class="money">
+      <span>1199 ₽</span>
+       <del style='font-size: 1.0rem;color: grey;word-spacing: 0.02rem;'>2000 ₽</del>
+    </p><div class='Buttons'>
+      <button id='addToCart2' class='btn'>В корзину</button>
+       <button class='subtract' onclick='changeNumber(-1, "number2")'>–</button>
+       <input type='text' class='js-number' id='number2' value='1' readonly>
+       <button class='add' onclick='changeNumber(1, "number2")'>+</button>
+       </div> <!-- Закрыла div для кнопок -->
+       </figcaption></div> <!--Закрыла слайд -->
+
+   <!--Открыла слайд --> <div class="swiper-slide">
+    <img src="https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/3.webp" alt="Обои">
+    <p class="product-title">Обои 3</p>
+    <figcaption class="box">
+ <p class="price">Цена за штуку</p>
+   <p class="money">
+  <span>1199 ₽</span>
+   <del style='font-size: 1.0rem;color: grey;word-spacing: 0.02rem;'>2000 ₽</del>
+</p>
+  <div class='Buttons'>
+  <button id='addToCart3' class='btn'>В корзину</button>
+   <button class='subtract' onclick='changeNumber(-1, "number3")'>–</button>
+   <input type='text' class='js-number' id='number3' value='1' readonly>
+   <button class='add' onclick='changeNumber(1, "number3")'>+</button>
+   </div> <!-- Закрыла div для кнопок -->
+   </figcaption>
+</div> <!--Закрыла слайд -->
+
+
+
+     <!--Открыла слайд -->  <div class="swiper-slide">
+        <img src="https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/2.webp" alt="Обои">
+    <p class="product-title">Обои 2</p>
+        <figcaption class="box">
+     <p class="price">Цена за штуку</p>
+       <p class="money">
+      <span>1199 ₽</span>
+       <del style='font-size: 1.0rem;color: grey;word-spacing: 0.02rem;'>2000 ₽</del>
+    </p>
+      <div class='Buttons'>
+      <button id='addToCart4' class='btn'>В корзину</button>
+       <button class='subtract' onclick='changeNumber(-1, "number2")'>–</button>
+       <input type='text' class='js-number' id='number4' value='1' readonly>
+       <button class='add' onclick='changeNumber(1, "number2")'>+</button>
+       </div> <!-- Закрыла div для кнопок -->
+       </figcaption>
+    </div> <!--Закрыла слайд -->
+
+ <div class="swiper-slide">Слайд 4</div>
+     <div class="swiper-slide">Слайд 5</div> <!-- Исправил текст на "Слайд N" -->
+     <div class="swiper-slide">Слайд 5</div> <!-- Исправил текст на "Слайд N" -->
+    </div> <!-- Закрыла swiper-wrapper -->
+
+     <div class="swiper-button-prev prev"></div> <!-- Кнопка для предыдущего слайда -->
+     <div class="swiper-button-next next"></div> <!-- Кнопка для следующего слайда -->
+
+
+    </section>
+
+  
+
+
+    
+
+
+
+
+    <!-- <section></section>
+    <main></main>
+    <article></article>
+    <textarea name="" id=""></textarea>
+    <code></code>
+    <hr>
+    <iframe></iframe> -->
+
+
+
+
+  
+
+
+
+
+
+
+
+  <!--  <footer class="footer">
+    <hr>
+        <div class="containr"><div class="subscribe"></div><div class="footer_navigation">
+            <div class="footer_menu">
+        <div class="item"><div class="caption">О компании</div>
+        <ul class="menu_list">
+            <a href="/about/about-the-company/">ТК Арктика</a>
+            <a href="/about/arktika-servis/">Арктика-Сервис</a>
+            <a href="/about/bonus-program/">Бонусная программа</a>
+            <a href="/about/podarochnye-karty/">Подарочные карты</a>
+        </ul></div>
+        <div class="item"> 
+            <div class="caption">Информация</div>
+        <ul class="menu_list">
+            <a href="/information/oplata/">Как оплатить</a>
+            <a href="/information/feedback/">Обратная связь</a>
+           <a href="/information/contacts/">Контакты</a>
+            <a href="/information/jobs/">Вакансии</a>
+        
+        
+        </ul></div>   
+
+             <div class="item"><div class="caption">Наши услуги</div>
+            <ul class="menu_list"><a href="/our-services/free-shipping/">Бесплатная доставка</a>
+            </ul></div></div> <div class="contact_info"><div class="phone"><a href="tel:+7 (8672) 55-08-70">+7 (8672) 55-08-70</a> (с 10:00 до 20:00) </div><div class="address">Адрес магазина:<br>г. Владикавказ, пр-т Коста, 15,<br> лит. Г,Б, пом. 5,6  </div> <div class="copyright">© 1996—2024, ТК «Арктика»  </div></div></div></div>
+    </footer>  -->
+
+
+
+
+    </body>
+
+</html>
+
+
+
+
+
+
+
+<script>
+ const swiper = new Swiper('.swiper', {
+     loop: true,
+   navigation: {
+    nextEl: '.next', 
+     prevEl: '.prev', 
+    },
+ slidesPerView: 6,
+    spaceBetween: 15,
+   }); document.querySelectorAll(".btn").forEach(button => {
+    button.addEventListener("click", function () {const isInCart = this.classList.contains("clicked");
+        if (!isInCart) {
+            addToCart(this);
+            this.textContent = "В корзине";
+            this.classList.add("clicked");
+        } else {
+            this.textContent = "В корзину";
+            this.classList.remove("clicked");
+            removeFromCart(this); 
+        }
+    });
+});
+function addToCart(button) {
+    const productTitle = button.closest('.swiper-slide').querySelector('.product-title').textContent;
+    const productPrice = button.closest('.swiper-slide').querySelector('.money span').textContent;
+    const productQuantity = button.closest('.swiper-slide').querySelector('.js-number').value;
+    const existingItem = Array.from(document.querySelectorAll('.cart-item'))
+        .find(item => item.querySelector('p').textContent.includes(productTitle));
+    if (existingItem) {
+        const quantityInput = existingItem.querySelector('.js-number');
+        quantityInput.value = parseInt(quantityInput.value) + parseInt(productQuantity);
+    } else {
+        const cartItem = document.createElement('div');
+        cartItem.classList.add('cart-item');
+        cartItem.innerHTML = `
+         
+            <p>${productTitle}  - ${productPrice}</p>
+            <button class='subtract' style = 'margin-right:80px;'  onclick='changeCartItemNumber(-1, this)'>–</button>
+            <input type='text' class='js-number' style = '' value='${productQuantity}' readonly>
+            <button class='add' style = 'margin-right:30px;' onclick='changeCartItemNumber(1, this)'>+</button>
+        `;
+        document.getElementById('cart-items').appendChild(cartItem);
+    }
+}function removeFromCart(button) {
+}function toggleCart() {
+        const cart = document.getElementById('cart'); 
+        cart.style.display = cart.style.display === 'none' ? 'block' : 'none';
+    }function deleteSelectedItems() {
+    const checkboxes = document.querySelectorAll('.item-checkbox:checked');
+    checkboxes.forEach(checkbox => {
+        checkbox.closest('.cart-item').remove();
+    });
+}
+function clearCart() {
+    document.getElementById('cart-items').innerHTML = '';
+}function changeCartItemNumber(step, button) {const input = button.parentElement.querySelector('.js-number');
+    let value = parseInt(input.value);
+    value += step;
+    if (value < 1) {
+        value = 1;
+    }
+    input.value = value;
+}function changeNumber(step, inputId) {
+const input = document.getElementById(inputId);
+    let value = parseInt(input.value);
+    value += step;
+    if (value < 1) {
+        value = 1;
+    }input.value = value;
+}let currentIndex1 = 0; 
+const cards = document.querySelectorAll('.product-card'); 
+function showCards(startIndex) {
+    const endIndex = startIndex + 5; 
+    cards.forEach((card, i) => {
+        card.style.display = (i >= startIndex && i < endIndex) ? 'block' : 'none'; 
+    });
+}showCards(currentIndex1);
+document.getElementById('nextBtn').addEventListener('click', () => {if (currentIndex1 + 5 >= cards.length) return; currentIndex1 += 5; 
+    showCards(currentIndex1); 
+});document.getElementById('prevBtn').addEventListener('click', () => {if (currentIndex1 === 0) return; currentIndex1 -= 5; 
+    showCards(currentIndex1); 
+});
+function changeNumber(amount, inputId) {
+    const numberInput = document.getElementById(inputId); 
+    let currentValue = parseInt(numberInput.value, 10); 
+    currentValue += amount; 
+    if (currentValue >= 0) { 
+        numberInput.value = currentValue;
+    }
+}
+
+
+
+</script>
+
+<script>
+const socialLink = document.querySelector('.social-link');
+const tooltip = document.getElementById('tooltip');
+// Показать tooltip при наведении
+socialLink.addEventListener('mouseover', function() {
+  tooltip.style.display = 'block';
+  // Позиционирование tooltip
+  tooltip.style.top = `${socialLink.offsetTop + socialLink.offsetHeight}px`;
+  tooltip.style.left = `${socialLink.offsetLeft}px`;
+});
+// Скрыть tooltip при клике вне его
+document.addEventListener('click', function(event) {
+  // Проверяем, что клик был вне socialLink и tooltip
+  if (!socialLink.contains(event.target) && !tooltip.contains(event.target)) {
+    hideTooltip();
+  }
+});
+// Функция для скрытия tooltip
+function hideTooltip() {
+  tooltip.style.display = 'none';
+}
+
+     function closeRegisterModal() {
+     document.getElementById("registerModal").style.display = "none";
+}
+      let accountVisible = false;
+        function toggleAccount() {
+            const account = document.getElementById('account');
+            accountVisible = !accountVisible; // Меняем состояние видимости
+            account.style.display = accountVisible ? 'block' : 'none'; // Показываем или скрываем окно
+        }
+        function hideAccount() {
+            const account = document.getElementById('account');
+            if (accountVisible) { // Проверяем, что аккаунт отображается
+                accountVisible = false; // Скрываем его
+                account.style.display = 'none';
+            }
+        }
+        function openRegisterModal() {
+            document.getElementById('registerModal').style.display = 'block';
+        }
+        function closeRegisterModal() {
+            document.getElementById('registerModal').style.display = 'none';
+        }
+        document.getElementById('registerForm').onsubmit = function(event) {
+            event.preventDefault(); // Предотвратить стандартное поведение формы
+            alert('Регистрация завершена'); // Здесь обработайте регистрацию
+            closeRegisterModal(); // Закрыть модальное окно
+        };
+        function LogInAccount() {
+            alert('Вход'); // Замените это на реальную функцию входа
+        }
+    </script>
+
+
+      <script>
+  //кнопка прокрутки регистрации на войти
+const signInBtnLink = document.querySelector('.signInBtn-link');
+const signUpBtnLink = document.querySelector('.signUpBtn-link');
+const modal = document.querySelector('.modal');
+signUpBtnLink.addEventListener('click', () => {
+    modal.classList.toggle('active');
+});
+signInBtnLink.addEventListener('click', () => {
+    modal.classList.toggle('active');
+});
+</script>
+
+
+
+
+
+

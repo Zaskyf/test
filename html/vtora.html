@@ -1,0 +1,947 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Обои</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+  <title>Slider</title>
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+/> <!--Ссылка на иконки в регистрации -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" ></script>
+
+</head>
+<body>
+    <header>
+            <div class="header-contaner">
+                <div class="catalog-icon" id="menuBurger">
+        <i class="fas fa-bars"></i>
+    </div>
+                <div class="search-bar">
+                    <input type="search" name="search" placeholder="Поиск товаров">
+                    <button type="submit">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                <div class="cart-icon" onclick="toggleCart()">
+                    <i class="fas fa-shopping-cart"></i>
+                </div>
+              <div class="header-contaner">
+            <div class="account-icon" onclick="toggleAccount()">
+                <i class="fas fa-user"></i>
+            </div>
+            </div>
+            </div>
+        </header>
+
+        <div class="cart" id="cart">
+            <h2>Корзина</h2>
+            <div id="cart-items"></div>
+            <a href="cart.html">Перейти в корзину</a>  
+            
+            <button onclick="clearCart()">Очистить корзину</button>
+        </div>
+
+
+
+        <!--НАЧАЛО КАТАЛОГА -->
+
+            <div class="catalog" id="catalog">
+        <h6>Каталог</h6>
+        <button class="category-button" data-category="1">
+            <span>Обои</span> <i class="fas fa-chevron-right"></i>
+        </button>
+        <button class="category-button" data-category="2">
+            <span>Сантехника</span> <i class="fas fa-chevron-right"></i>
+        </button>
+        <button class="category-button" data-category="3">
+            <span>Ламинат</span> <i class="fas fa-chevron-right"></i>
+        </button>
+    </div>
+
+    <!-- Popup для подкатегорий -->
+    <div class="popup" id="popup">
+        <span class="clobutton" onclick="closePopup()">&times;</span>
+        <h2 id="popupTitle">Обои</h2>
+
+        <ul id="popupContent"></ul>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+    <script>
+        const catalog = document.getElementById('catalog');
+        const menuBurger = document.getElementById('menuBurger');
+        const popup = document.getElementById('popup');
+        // Функция для открытия и закрытия меню
+        menuBurger.onclick = function(event) {
+            event.stopPropagation(); // Остановить всплытие события, чтобы не закрыть каталог сразу
+            catalog.style.display = catalog.style.display === 'none' ? 'block' : 'none';
+        };
+        // Функция для открытия подкатегорий в новом окне
+        document.querySelectorAll('.category-button').forEach(button => {
+            button.onclick = function(event) {
+                event.stopPropagation(); // Остановить всплытие события при клике на категории
+                const categoryNum = this.getAttribute('data-category');
+                let content = '';
+
+                switch (categoryNum) {
+                    case '1':
+                        content = '<li><button class="button-style" onclick="showPopup(\'Подкатегория 1.1\')">Подкатегория 1.1</button></li>' +
+                                  '<li><button class="button-style" onclick="showPopup(\'Подкатегория 1.2\')">Подкатегория 1.2</button></li>' +
+                                  '<li><button class="button-style" onclick="showPopup(\'Подкатегория 1.3\')">Подкатегория 1.3</button></li>';
+                        break;
+                    case '2':
+                        content = '<li><button class="button-style" onclick="showPopup(\'Подкатегория 2.1\')">Подкатегория 2.1</button></li>' +
+                                  '<li><button class="button-style" onclick="showPopup(\'Подкатегория 2.2\')">Подкатегория 2.2</button></li>';
+                        break;
+                    case '3':
+                        content = '<li><button class="button-style" onclick="showPopup(\'Подкатегория 3.1\')">Подкатегория 3.1</button></li>' +
+                                  '<li><button class="button-style" onclick="showPopup(\'Подкатегория 3.2\')">Подкатегория 3.2</button></li>';
+                        break;
+                }
+                document.getElementById('popupContent').innerHTML = content;
+                showPopup( this.querySelector('span').textContent);
+            };
+        });
+        // Функция для отображения popup
+        function showPopup(title) {
+            document.getElementById('popupTitle').textContent = title;
+            popup.style.display = 'block'; // Показывает popup
+        }
+        // Функция для закрытия popup
+        function closePopup() {
+            popup.style.display = 'none'; // Скрывает popup
+        }
+        // Закрытие каталога при клике где-либо на странице
+        document.addEventListener('click', function() {
+            if (catalog.style.display === 'block') {
+                catalog.style.display = 'none'; // Закрывает каталог
+            }  });
+            // Закрытие каталога при клике где-либо на странице
+        document.addEventListener('click', function() {
+            if ( popup.style.display === 'block') {
+                 popup.style.display = 'none'; // Закрывает каталог
+
+            }
+        });
+    </script>
+
+<!--КОНЕЦ КАТАЛОГА-->
+
+
+
+
+
+
+
+ <!-- НАЧАЛО РЕГИСТРАЦИИ  -->
+
+ <div class="account" id="account" onmouseleave="hideAccount()">
+    <h2>Аккаунт</h2>
+    <button class="sign" onclick="openRegisterModal()" style = " color: black;font-size : 18px ;">Войти или Зарегистрироваться</button>
+</div>
+
+<!-- Модальное окно для регистрации -->
+    <div id="registerModal" class="modal">
+    <span class="close" onclick="closeRegisterModal()">&times;</span> <!-- Крестик закрытия -->
+    <div class="modal-content sign-in">
+        <form action="">
+            <h2>Войти</h2>
+            <div class="input-group">
+                <input type="text" required>
+                <label for="">Имя</label>
+            </div>
+            <div class="input-group">
+                <input type="password" required>
+                <label for="">Пароль</label>
+            </div>
+            <div class="remember">
+                <label><input type="checkbox"> Запомнить меня</label>
+            </div>
+            <button class="registr" type="submit">Войти</button>
+            <div class="signUp-link">
+                <p style="color: black; font-size : 18px;" >У вас нет аккаунта? <a href="#" class="signUpBtn-link">Регистрация</a></p>
+            </div>
+        </form>
+    </div>
+<div class="modal-content sign-up">
+    <form action="">
+        <h2>Регистрация</h2><br>
+        <div class="input-group">
+            <input type="text" required>
+            <label for="">Имя</label>
+        </div>
+        <div class="input-group">
+            <input type="email" required>
+            <label for="">Почта</label>
+        </div>
+        <div class="input-group">
+            <input type="password" required>
+            <label for="">Придумайте пароль</label>
+        </div>
+        <div class="remember">
+            <label style="color: black; font-size: 16px;">
+                <input type="checkbox"> Я соглашаюсь с чем-то
+            </label>
+        </div>
+        <button class="registr" type="submit">Зарегистрироваться</button>
+
+        <div class="signUp-link">
+            <p style="color: black; margin-top: 10px; font-size: 16px;">У Вас уже есть аккаунт?
+                <a style="color: black; margin-top: 10px; font-size: 16px;" href="#" class="signInBtn-link">Войти</a>
+            </p>
+              <div class="gogle" type="button" onclick="socialLogin()">Войти через <span class="social-link">соцсети</span></div>
+        </div>
+        <div class="tooltip" id="tooltip" >
+  <span class="clo" onclick="hideTooltip()">&#10006;</span>
+  <ul style="text-align:left; padding:5px; margin-top:10px;">
+    <a href="#" style="margin-right: 3px; color: black; display: inline-block; "><i class="fab fa-facebook-f"></i></a>
+    <a href="#" style="margin-right: 3px; color: black; display: inline-block;"><i class="fab fa-google"></i></a>
+    <a href="#" style="margin-right: 3px; color: black; display: inline-block; "><i class="fab fa-instagram"></i></a>
+    <a href="#" style="margin-right: 3px; color: black; display: inline-block; "><i class="fab fa-instagram"></i></a>
+
+</ul>
+</div>
+    </form>
+</div>
+</div>
+
+<script>
+    const socialLink = document.querySelector('.social-link');
+const tooltip = document.getElementById('tooltip');
+// Показать tooltip при наведении
+socialLink.addEventListener('mouseover', function() {
+  tooltip.style.display = 'block';
+  // Позиционирование tooltip
+  tooltip.style.top = `${socialLink.offsetTop + socialLink.offsetHeight}px`;
+  tooltip.style.left = `${socialLink.offsetLeft}px`;
+});
+// Скрыть tooltip при клике вне его
+document.addEventListener('click', function(event) {
+  // Проверяем, что клик был вне socialLink и tooltip
+  if (!socialLink.contains(event.target) && !tooltip.contains(event.target)) {
+    hideTooltip();
+  }
+});
+// Функция для скрытия tooltip
+function hideTooltip() {
+  tooltip.style.display = 'none';
+}
+
+     function closeRegisterModal() {
+
+  document.getElementById("registerModal").style.display = "none";
+}
+      let accountVisible = false;
+        function toggleAccount() {
+            const account = document.getElementById('account');
+            accountVisible = !accountVisible; // Меняем состояние видимости
+            account.style.display = accountVisible ? 'block' : 'none'; // Показываем или скрываем окно
+        }
+        function hideAccount() {
+            const account = document.getElementById('account');
+            if (accountVisible) { // Проверяем, что аккаунт отображается
+                accountVisible = false; // Скрываем его
+                account.style.display = 'none';
+            }
+        }
+        function openRegisterModal() {
+            document.getElementById('registerModal').style.display = 'block';
+        }
+        function closeRegisterModal() {
+            document.getElementById('registerModal').style.display = 'none';
+        }
+        document.getElementById('registerForm').onsubmit = function(event) {
+            event.preventDefault(); // Предотвратить стандартное поведение формы
+            alert('Регистрация завершена'); // Здесь обработайте регистрацию
+            closeRegisterModal(); // Закрыть модальное окно
+        };
+        function LogInAccount() {
+            alert('Вход'); // Замените это на реальную функцию входа
+        }
+    </script>
+
+
+      <script>
+  //кнопка прокрутки регистрации на войти
+const signInBtnLink = document.querySelector('.signInBtn-link');
+const signUpBtnLink = document.querySelector('.signUpBtn-link');
+const modal = document.querySelector('.modal');
+signUpBtnLink.addEventListener('click', () => {
+    modal.classList.toggle('active');
+});
+signInBtnLink.addEventListener('click', () => {
+    modal.classList.toggle('active');
+});
+</script>
+
+
+<!--КОНЕЦ РЕГСИТРАЦИИ-->
+
+
+
+
+
+
+
+<!--ФИЛЬТР НА ВТОРОЙ СТРАНИУЦЕ САЙТА --->
+<div class="filter-container">
+    <div class="mdal-content"><label for="maxPrice">Максимальная цена:</label>
+        <input type="number" id="maxPrice" placeholder="Введите цену" />
+        <div class="filter-group">
+            <label for="material-select">Материал:</label>
+            <select id="material-select">
+                <option value="">Все</option>
+                <option value="бумага">Бумага</option>
+                <option value="винил">Винил</option>
+                <option value="флизелин">Флизелин</option>
+            </select>
+        </div>
+        <div class="filter-group">
+            <label for="color-select">Цвет:</label>
+            <select id="color-select">
+                <option value="">Все</option>
+                <option value="белый">Белый</option>
+                <option value="серый">Серый</option>
+                <option value="коричневый">Коричневый</option>
+            </select>
+
+        <button id="applyFilter">Применить фильтр</button>
+
+    
+    
+    </div>
+    
+</div>
+<!--КАРТОЧКИ ТОВАРОВ -->
+<div class="wrapper">
+    <div class="container">
+    
+         <!-- Card 1 -->
+         <div class="product-card" data-price="799">
+            <figure>
+                <img src="https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/1.webp" alt="Обои">
+            </figure>
+            <p class="product-title">Обои 1</p>
+            <figcaption>
+                <p class="prce">Цена за штуку</p>
+            </figcaption>
+            <p class="money">
+                <span>799 ₽</span>
+            
+                <del style="font-size: 1.0rem;color: grey;word-spacing: 0.02rem;">1000 ₽</del>
+            </p>
+            <div class="Buttons">
+                <button id="addToCart1" class="btn">В корзину</button>
+              
+                <button class="subtract" onclick="changeNumber(-1, 'number1')">–</button>
+                <input type="text" class="js-number" id="number1" value="1" readonly>
+                <button class="add" onclick="changeNumber(1, 'number1')">+</button>
+                
+            </div>
+            <a   href="cart.html">
+                <button   class="podrobnee">Подробнее</button>
+                </a> 
+        </div>
+
+        <!-- Card 2 -->
+        <div class="product-card" data-price="899">
+            <figure>
+                <img src="https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/2.webp" alt="Обои">
+            </figure>
+            <p class="product-title">Обои 2</p>
+            <figcaption>
+                <p class="prce">Цена за штуку</p>
+            </figcaption>
+            <p class="money">
+                <span>899 ₽</span>
+                <del style="font-size: 1.0rem;color: grey;word-spacing: 0.02rem;">1200 ₽</del>
+            </p>
+            <div class="Buttons">
+            <button id="addToCart2" class="btn">В корзину</button>
+                <button class="subtract" onclick="changeNumber(-1, 'number2')">–</button>
+                <input type="text" class="js-number" id="number2" value="1" readonly>
+                <button class="add" onclick="changeNumber(1, 'number2')">+</button>
+            </div>
+
+            <a   href="cart.html">
+                <button   class="podrobnee">Подробнее</button>
+                </a> 
+        </div>
+
+        <!-- Card 3 -->
+        <div class="product-card" data-price="999">
+            <figure>
+                <img src="https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/3.webp" alt="Обои">
+            </figure>
+            <p class="product-title">Обои 3</p>
+            <figcaption>
+                <p class="prce">Цена за штуку</p>
+            </figcaption>
+            <p class="money">
+                <span>999 ₽</span>
+
+                <del style="font-size: 1.0rem;color: grey;word-spacing: 0.02rem;">1500 ₽</del>
+            </p>
+            <div class="Buttons">
+                <button id="addToCart3" class="btn">В корзину</button>
+                <button class="subtract" onclick="changeNumber(-1, 'number3')">–</button>
+                <input type="text" class="js-number" id="number3" value="1" readonly>
+                <button class="add" onclick="changeNumber(1, 'number3')">+</button>
+            </div>
+            <a   href="cart.html">
+                <button   class="podrobnee">Подробнее</button>
+                </a> 
+        </div>
+
+ <!-- Card 4 -->
+ <div class="product-card" data-price="1099">
+    <figure>
+        <img src="https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/4.webp" alt="Обои">
+    </figure>
+    <p class="product-title">Обои 4</p>
+    <figcaption>
+        <p class="prce">Цена за штуку</p>
+    </figcaption>
+    <p class="money">
+        <span>1099 ₽</span>
+        <del style='font-size: 1.0rem;color: grey;word-spacing: 0.02rem;'>1700 ₽</del></p>
+        <div class='Buttons'>
+        <button id='addToCart4'  class='btn'>В корзину</button>
+        <button class='subtract' onclick='changeNumber(-1, "number4")'>–</button>
+        <input type='text' class='js-number' id='number4' value='1'  readonly>
+        <button  class='add' onclick='changeNumber(1, "number4")'>+</button></div>
+        <a   href="cart.html">
+            <button   class="podrobnee">Подробнее</button>
+            </a> 
+    </div>
+
+<!-- Card 5 -->
+<div class="product-card" data-price="1199">
+    <figure>
+        <img src="https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/5.webp" alt="Обои">
+    </figure>
+    <p class="product-title">Обои 5</p>
+    <figcaption>
+        <p class="prce">Цена за штуку</p>
+    </figcaption>
+    <p class="money">
+        <span>1199 ₽</span>
+        <del style='font-size: 1.0rem;color: grey;word-spacing: 0.02rem;'>2000 ₽</del></p>
+        <div class='Buttons'>
+        <button id='addToCart5' class='btn'>В корзину</button>
+       <button class='add' onclick='changeNumber(-1, "number5")'>-</button>
+        <input type='text' class='js-number' id='number5' value='1' readonly>
+        <button class='add' onclick='changeNumber(1, "number5")'>+</button></div>  <a   href="cart.html">
+            <button   class="podrobnee">Подробнее</button>
+            </a> 
+        </div>
+
+<!-- Card 6 -->
+<div class="product-card" data-price="1399">
+    <figure>
+        <img src="https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/6.webp" alt="Обои">
+    </figure>
+    <p class="product-title">Обои 6</p>
+    <figcaption>
+        <p class="prce">Цена за штуку</p>
+    </figcaption>
+    <p class="money">
+        <span>1399 ₽</span>
+        <del style='font-size: 1.0rem;color: grey;word-spacing: 0.02rem;'>2100 ₽</del></p><div
+class='Buttons'><button id='addToCart6'  class='btn'>В корзину</button><button class='subtract' onclick='changeNumber(-1, "number6")'>–</button><input type='text'
+class='js-number'  id='number6'
+            value='1'
+            readonly><button
+            class='add'
+            onclick='changeNumber(1, "number6")'>+</button></div>
+            <a   href="cart.html">
+                <button   class="podrobnee">Подробнее</button>
+                </a> 
+        </div>
+
+<!-- Card 7 -->
+<div class="product-card" data-price="2099">
+    <figure>
+        <img src="https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/7.webp" alt="Обои">
+    </figure>
+    <p class="product-title">Обои 7</p>
+    <figcaption>
+        <p class="prce">Цена за штуку</p>
+    </figcaption>
+    <p class="money">
+        <span>2099 ₽</span>
+        <del style='font-size: 1.0rem;color: grey;word-spacing: 0.02rem;'>3000 ₽</del></p><div
+            class='Buttons'><button id='addToCart7'
+            class='btn'>В корзину</button><button
+            class='subtract'
+            onclick='changeNumber(-1, "number7")'>–</button><input
+            type='text'
+            class='js-number'
+            id='number7'
+            value='1'
+            readonly><button
+            class='add'
+            onclick='changeNumber(1, "number7")'>+</button></div>
+            <a   href="cart.html">
+                <button   class="podrobnee">Подробнее</button>
+                </a> 
+        </div>
+
+<!-- Card 8 -->
+<div class="product-card" data-price="999">
+    <figure>
+        <img src="https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/8.webp" alt="Обои">
+    </figure>
+    <p class="product-title">Обои 8</p>
+    <figcaption>
+        <p class="prce">Цена за штуку</p>
+    </figcaption>
+    <p class="money">
+        <span>999 ₽</span>
+        <del style='font-size: 1.0rem;color: grey;word-spacing: 0.02rem;'>1200 ₽</del></p><div
+            class='Buttons'><button id='addToCart8'
+            class='btn'>В корзину</button><button
+            class='subtract'
+            onclick='changeNumber(-1, "number8")'>–</button><input
+            type='text'
+            class='js-number'
+            id='number8'
+            value='1'
+            readonly><button
+            class='add'
+            onclick='changeNumber(1, "number8")'>+</button></div>
+            <a   href="cart.html">
+                <button   class="podrobnee">Подробнее</button>
+                </a> 
+        </div>
+
+<!-- Card 9 -->
+<div class="product-card"  data-price="1599">
+    <figure>
+        <img src="https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/9.webp" alt="Обои">
+    </figure>
+    <p class="product-title">Обои 9</p>
+    <figcaption>
+        <p class="prce">Цена за штуку</p>
+    </figcaption>
+    <p class="money">
+        <span>1599 ₽</span>
+        <del style='font-size: 1.0rem;color: grey;word-spacing: 0.02rem;'>2000 ₽</del></p><div
+            class='Buttons'><button id='addToCart9'
+            class='btn'>В корзину</button><button
+            class='subtract'
+            onclick='changeNumber(-1, "number9")'>–</button><input
+            type='text'
+            class='js-number'
+            id='number9'
+            value='1'
+            readonly><button
+            class='add'
+            onclick='changeNumber(1, "number9")'>+</button></div>
+            <a   href="cart.html">
+                <button   class="podrobnee">Подробнее</button>
+                </a> 
+        </div>
+
+<!-- Card 10 -->
+<div class="product-card" data-price="2599">
+    <figure>
+        <img src="https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/10.webp" alt="Обои">
+    </figure>
+    <p class="product-title">Обои 9</p>
+    <figcaption>
+        <p class="prce">Цена за штуку</p>
+    </figcaption>
+    <p class="money">
+        <span>2599 ₽</span>
+        <del style='font-size: 1.0rem;color: grey;word-spacing: 0.02rem;'>3000 ₽</del></p>
+        <div class='Buttons'>
+        <button id='addToCart10'
+            class='btn'>В корзину</button>
+            <button  class='subtract'  onclick='changeNumber(-1, "number10")'>–</button>
+            <input type='text'  class='js-number' id='number10' value='1'readonly>
+            <button class='add' onclick='changeNumber(1, "number10")'>+</button></div>
+            <a   href="cart.html">
+                <button   class="podrobnee">Подробнее</button>
+                </a> 
+        
+        </div>
+
+<!-- Card 11 -->
+<div class="product-card"  data-price="699">
+    <figure>
+        <img src="https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/11.webp" alt="Обои">
+    </figure>
+    <p class="product-title">Обои 11</p>
+    <figcaption>
+        <p class="prce">Цена за штуку</p>
+    </figcaption>
+    <p class="money">
+        <span>699 ₽</span>
+        <del style='font-size: 1.0rem;color: grey;word-spacing: 0.02rem;'>1000 ₽</del></p>
+        <div class='Buttons'>
+        <button id='addToCart11' class='btn'>В корзину</button>
+            <button class='subtract' onclick='changeNumber(-1, "number11")'>–</button>
+            <input type='text' class='js-number' id='number11' value='1' readonly>
+            <button class='add' onclick='changeNumber(1, "number11")'>+</button></div>
+            <a   href="cart.html">
+                <button   class="podrobnee">Подробнее</button>
+                </a> 
+        </div>
+
+<!-- Card 12 -->
+<div class="product-card" data-price="899">
+<figure>
+<img src="https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/12.webp" alt="Обои">  </figure>
+<p class="product-title">Обои 12</p>
+<figcaption>  <p class="prce">Цена за штуку</p> </figcaption>
+<p class="money"><span>899 ₽</span>
+<del style='font-size: 1.0rem;color: grey;word-spacing: 0.02rem;'>1299 ₽</del></p><div class='Buttons'>
+<button id='addToCart12'  class='btn'>В корзину</button>
+<button class='subtract' onclick='changeNumber(-1, "number12")'>–</button>
+<input type='text' class='js-number' id='number12' value='1'  readonly>
+<button  class='add' onclick='changeNumber(1, "number12")'>+</button></div>
+<a   href="cart.html">
+    <button   class="podrobnee">Подробнее</button>
+    </a> 
+</div>
+
+<!-- Card 13-->
+<div class="product-card" data-price="999">
+<figure>
+<img src="https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/13.webp" alt="Обои">  </figure>
+<p class="product-title">Обои 13</p>
+<figcaption>  <p class="prce">Цена за штуку</p> </figcaption>
+<p class="money"><span>999 ₽</span> 
+<del style='font-size: 1.0rem;color: grey;word-spacing: 0.02rem;'>1099 ₽</del></p><div class='Buttons'>
+<button id='addToCart13'  class='btn'>В корзину</button>
+<button class='subtract' onclick='changeNumber(-1, "number13")'>–</button>
+<input type='text' class='js-number' id='number13' value='1'  readonly>
+<button  class='add' onclick='changeNumber(1, "number13")'>+</button></div>
+<a   href="cart.html">
+    <button   class="podrobnee">Подробнее</button>
+    </a> 
+</div>
+
+<!-- Card 14-->
+<div class="product-card" data-price="1890">
+<figure>
+<img src="https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/14.webp" alt="Обои">  </figure>
+<p class="product-title">Обои 14</p>
+<figcaption>  <p class="prce">Цена за штуку</p> </figcaption>
+<p class="money"><span>1890 ₽</span>
+<del style='font-size: 1.0rem;color: grey;word-spacing: 0.02rem;'>2099 ₽</del></p><div class='Buttons'>
+<button id='addToCart14'  class='btn'>В корзину</button>
+<button class='subtract' onclick='changeNumber(-1, "number14")'>–</button>
+<input type='text' class='js-number' id='number14' value='1'  readonly>
+<button  class='add' onclick='changeNumber(1, "number14")'>+</button></div>
+<a   href="cart.html">
+    <button   class="podrobnee">Подробнее</button>
+    </a> 
+</div>
+
+<!-- Card 15-->
+<div class="product-card" data-price="1790">
+<figure>
+<img src="https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/15.webp" alt="Обои">  </figure>
+<p class="product-title">Обои 15</p>
+<figcaption>  <p class="prce">Цена за штуку</p> </figcaption>
+<p class="money"><span>1790 ₽</span>
+<del style='font-size: 1.0rem;color: grey;word-spacing: 0.02rem;'>2299 ₽</del></p><div class='Buttons'>
+<button id='addToCart15'  class='btn'>В корзину</button>
+<button class='subtract' onclick='changeNumber(-1, "number15")'>–</button>
+<input type='text' class='js-number' id='number15' value='1'  readonly>
+<button  class='add' onclick='changeNumber(1, "number15")'>+</button></div>
+<a   href="cart.html">
+    <button   class="podrobnee">Подробнее</button>
+    </a> 
+</div>
+
+<!-- Card 16-->
+<div class="product-card" data-price="1699">
+<figure>
+<img src="https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/16.webp" alt="Обои">  </figure>
+<p class="product-title">Обои 16</p>
+<figcaption>  <p class="prce">Цена за штуку</p> </figcaption>
+<p class="money"><span>1699 ₽</span>
+<del style='font-size: 1.0rem;color: grey;word-spacing: 0.02rem;'>2499 ₽</del></p><div class='Buttons'>
+<button id='addToCart16'  class='btn'>В корзину</button>
+<button class='subtract' onclick='changeNumber(-1, "number16")'>–</button>
+<input type='text' class='js-number' id='number16' value='1'  readonly>
+<button  class='add' onclick='changeNumber(1, "number16")'>+</button></div>
+<a   href="cart.html">
+    <button   class="podrobnee">Подробнее</button>
+    </a> 
+</div>
+
+<!-- Card 17-->
+<div class="product-card" data-price="1490">
+<figure>
+<img src="https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/17.webp" alt="Обои">  </figure>
+<p class="product-title">Обои 17</p>
+<figcaption>  <p class="prce">Цена за штуку</p> </figcaption>
+<p class="money"><span>1490 ₽</span>
+<del style='font-size: 1.0rem;color: grey;word-spacing: 0.02rem;'>2299 ₽</del></p><div class='Buttons'>
+<button id='addToCart17'  class='btn'>В корзину</button>
+<button class='subtract' onclick='changeNumber(-1, "number17")'>–</button>
+<input type='text' class='js-number' id='number17' value='1'  readonly>
+<button  class='add' onclick='changeNumber(1, "number17")'>+</button></div>
+<a   href="cart.html">
+    <button   class="podrobnee">Подробнее</button>
+    </a> 
+</div>
+
+<!-- Card 18-->
+<div class="product-card" data-price="1190">
+<figure>
+<img src="https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/18.webp" alt="Обои"> </figure>
+<p class="product-title">Обои 18</p>
+<figcaption>  <p class="prce">Цена за штуку</p> </figcaption>
+<p class="money"><span>1190 ₽</span>
+<del style='font-size: 1.0rem;color: grey;word-spacing: 0.02rem;'>1299 ₽</del></p><div class='Buttons'>
+<button id='addToCart18'  class='btn'>В корзину</button>
+<button class='subtract' onclick='changeNumber(-1, "number18")'>–</button>
+<input type='text' class='js-number' id='number18' value='1'  readonly>
+<button  class='add' onclick='changeNumber(1, "number18")'>+</button></div>
+<a   href="cart.html">
+    <button   class="podrobnee">Подробнее</button>
+    </a>  
+</div>
+
+<!-- Card 19-->
+<div class="product-card" data-price="1890">
+<figure>
+<img src="https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/19.webp" alt="Обои">  </figure>
+<p class="product-title">Обои 19</p>
+<figcaption>  <p class="prce">Цена за штуку</p> </figcaption>
+<p class="money"><span>1890 ₽</span>
+<del style='font-size: 1.0rem;color: grey;word-spacing: 0.02rem;'>3299 ₽</del></p><div class='Buttons'>
+<button id='addToCart19'  class='btn'>В корзину</button>
+<button class='subtract' onclick='changeNumber(-1, "number19")'>–</button>
+<input type='text' class='js-number' id='number19' value='1'  readonly>
+<button  class='add' onclick='changeNumber(1, "number19")'>+</button></div>
+<a   href="cart.html">
+    <button   class="podrobnee">Подробнее</button>
+    </a> 
+</div>
+
+<!-- Card 20-->
+<div class="product-card" data-price="590">
+<figure>
+<img src="https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/20.webp" alt="Обои">  </figure>
+<p class="product-title">Обои 20</p>
+<figcaption>  <p class="prce">Цена за штуку</p> </figcaption>
+<p class="money"><span>590 ₽</span>
+<del style='font-size: 1.0rem;color: grey;word-spacing: 0.02rem;'>700 ₽</del></p><div class='Buttons'>
+<button id='addToCart20'  class='btn'>В корзину</button>
+<button class='subtract' onclick='changeNumber(-1, "number20")'>–</button>
+<input type='text' class='js-number' id='number20' value='1'  readonly>
+<button  class='add' onclick='changeNumber(1, "number20")'>+</button></div>
+<a   href="cart.html">
+    <button   class="podrobnee">Подробнее</button>
+    </a> 
+</div>
+
+<!-- Card 21-->
+<div class="product-card" data-price="890">
+<figure>
+<img src="https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/19.webp" alt="Обои">  </figure>
+<p class="product-title">Обои 21</p>
+<figcaption>  <p class="prce">Цена за штуку</p> </figcaption>
+<p class="money"><span>890 ₽</span>
+<del style='font-size: 1.0rem;color: grey;word-spacing: 0.02rem;'>1000 ₽</del></p><div class='Buttons'>
+<button id='addToCart21'  class='btn'>В корзину</button>
+<button class='subtract' onclick='changeNumber(-1, "number21")'>–</button>
+<input type='text' class='js-number' id='number21' value='1'  readonly>
+<button  class='add' onclick='changeNumber(1, "number21")'>+</button></div>
+<a   href="cart.html">
+    <button   class="podrobnee">Подробнее</button>
+    </a> 
+</div>
+</div> <!-- End of container --> 
+<!-- Navigation Buttons -->
+<button id="prevBtn" class="pre-btn">Назад</button>
+<button id="nextBtn" class="nex-btn">Вперед</button> </div>
+        <!-- Другие карточки товара -->
+
+
+
+<script>
+    // Логика навигации
+    let currentIndex = 0; // Текущий индекс первой карточки для показа
+    const cards = document.querySelectorAll('.product-card'); // Получаем все карточки товаров
+    // Функция для показа 12 карточек, начиная с currentIndex
+    function showCards(startIndex) {
+        const endIndex = startIndex + 10; // Вычисляем конечный индекс для 12 карточек
+        cards.forEach((card, i) => {
+            card.style.display = (i >= startIndex && i < endIndex) ? 'block' : 'none'; // Покажем только выбранный диапазон
+        });
+    }
+    // Показываем начальный набор карточек
+    showCards(currentIndex);
+    // Обработчик событий для кнопки "Вперед"
+    document.getElementById('nextBtn').addEventListener('click', () => {
+        if (currentIndex + 12 >= cards.length) return; // Предотвращаем выход за пределы последнего набора карточек
+        currentIndex += 12; // Переходим к следующему набору из 12 карточек
+        showCards(currentIndex); // Показываем новый набор карточек
+    });
+    // Обработчик событий для кнопки "Назад"
+    document.getElementById('prevBtn').addEventListener('click', () => {
+        if (currentIndex === 0) return; // Предотвращаем переход до первого набора карточек
+        currentIndex -= 12; // Переходим к предыдущему набору из 12 карточек
+        showCards(currentIndex); // Показываем новый набор карточек
+    });
+    // Функция для управления действиями корзины
+    document.querySelectorAll(".btn").forEach(button => {
+        button.addEventListener("click", function () {
+            const isInCart = this.classList.contains("clicked");
+            // Добавление в корзину
+            if (!isInCart) {
+                addToCart(this);
+                this.textContent = "В корзине";
+                this.classList.add("clicked");
+            } else {
+                // Удаление из корзины (если это необходимо)
+                this.textContent = "В корзину";
+                this.classList.remove("clicked");
+                removeFromCart(this);
+            }
+        });
+    });
+    // Функция для изменения количества товара в корзине
+    function changeNumber(amount, inputId) {
+        const numberInput = document.getElementById(inputId); // Получаем элемент поля ввода количества
+        let currentValue = parseInt(numberInput.value, 10); // Получаем текущее значение количества
+        currentValue += amount; // Обновляем количество на основе amount
+        if (currentValue >= 0) { // Убеждаемся, что количество не становится отрицательным
+            numberInput.value = currentValue; // Обновляем значение в поле ввода
+        }
+    }
+    // Функция для добавления товара в корзину
+    function addToCart(button) {
+        const productTitle = button.closest('.product-card').querySelector('.product-title').textContent;
+        const productPrice = button.closest('.product-card').querySelector('.money span').textContent;
+        const productQuantity = button.closest('.product-card').querySelector('.js-number').value;
+        // Проверяем, есть ли уже такой товар в корзине
+        const existingItem = Array.from(document.querySelectorAll('.cart-item'))
+            .find(item => item.querySelector('p').textContent.includes(productTitle));
+        if (existingItem) {
+            // Если товар уже есть, то увеличиваем его количество
+            const quantityInput = existingItem.querySelector('.js-number');
+            quantityInput.value = parseInt(quantityInput.value) + parseInt(productQuantity);
+        } else {
+            // Если товара нет, то добавляем его в корзину
+            const cartItem = document.createElement('div');
+            cartItem.classList.add('cart-item');
+            cartItem.innerHTML = `
+                <input type="checkbox" class="item-checkbox">
+                <p class="tovar">${productTitle} - ${productPrice}</p>
+                <div class = "boxadd">
+                <button class='subtract' onclick='changeCartItemNumber(-1, this)'>–</button>
+                <input type='text' class='js-number' value='${productQuantity}' readonly>
+                <button class='add' onclick='changeCartItemNumber(1, this)'>+</button></div>
+               <span class="remove-icon" onclick="removeItem(this)">🗑️</span> 
+            `;
+            document.getElementById('cart-items').appendChild(cartItem);
+        }
+      }
+         // Добавляем элемент в контейнер корзины
+       document.getElementById('cart-items').appendChild(cartItem);
+     
+     // Функция для удаления товара из корзины
+     function removeItem(icon) {
+    icon.closest('.cart-item').remove();
+     }
+    
+    // Функция для удаления товара из корзины
+    function removeFromCart(button) {
+        // Ваш код для удаления товара, если это необходимо (по умолчанию не требуется)
+    }
+    
+    // Функция для переключения видимости корзины
+    function toggleCart() {
+        const cart = document.getElementById('cart'); // Получаем элемент корзины по ID
+        // Переключаем стиль отображения между 'none' и 'block'
+        cart.style.display = cart.style.display === 'none' ? 'block' : 'none';
+    }
+    
+    // Функция для очистки корзины
+    function clearCart() {
+        document.getElementById('cart-items').innerHTML = '';
+    }
+    
+    // Функция для изменения количества товара в корзине
+    function changeCartItemNumber(step, button) {
+        const input = button.parentElement.querySelector('.js-number');
+        let value = parseInt(input.value);
+        value += step;
+        if (value < 1) {
+            value = 1;
+        }
+        input.value = value;
+    }
+    
+    // Функция для изменения количества товара на странице товара
+    function changeNumber(step, inputId) {
+        const input = document.getElementById(inputId);
+        let value = parseInt(input.value);
+        value += step;
+        if (value < 1) {
+            value = 1;
+        }
+        input.value = value;
+    }
+    </script>
+    
+<script>
+document.getElementById('applyFilter').addEventListener('click', function() {
+    const maxPrice = parseFloat(document.getElementById('maxPrice').value);
+    const productCards = document.querySelectorAll('.product-card');
+
+    productCards.forEach(card => {
+        const price = parseFloat(card.getAttribute('data-price'));
+        if (maxPrice && price > maxPrice) {
+            card.style.display = 'none'; // Скрыть карточку товара
+        } else {
+            card.style.display = 'block'; // Показать карточку товара
+        }
+    });
+});
+
+// Функция для изменения количества товара
+function changeNumber(change, id) {
+    const input = document.getElementById(id);
+    let currentValue = parseInt(input.value);
+    currentValue += change;
+
+    // Убедимся, что количество не может быть меньше 1
+    if (currentValue < 1) {
+        currentValue = 1;
+    }
+
+    input.value = currentValue;
+}
+</script>
+
+
+   
+
+
+
+
+
+
+</body></html>
+
