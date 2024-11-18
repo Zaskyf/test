@@ -1,3 +1,4 @@
+
 /*Все тело*/
 body {
   margin: 0;
@@ -19,8 +20,6 @@ header {
   position: sticky; /* делает заголовок липким */
   top: 0; /* добавляем, чтобы указать, что это будет на верхней части страницы */
 }
-
-
 
 /* Контейнер заголовка */
 header > .header-contaner {
@@ -262,24 +261,27 @@ background-color: #e8e3e3;
 
   /*НАЧАЛО ФИЛЬТРА */
 
-  /* .modal {
-    display: none;
-    position: fixed;
-    z-index: 1; 
+  .mdal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
     left: 0;
     top: 0;
-    width: 100%;
-    height: 100%; 
-    overflow: auto; 
-    background-color: rgba(0, 0, 0, 0.7); 
+    width: 600px;
+    height: 700px;
+    overflow: auto; /* Enable scroll if needed */
+    align-items:center;
+   
 }
 
-.modal-content {
+.mdal-content {
+
+
     background-color: #ffffff;
-    margin: 10% auto; 
+    margin: 20% auto; /* 10% from the top and centered */
     padding: 20px;
     border: 1px solid #888;
-    width: 80%; 
+    width: 80%; /* Could be more or less, depending on screen size */
     border-radius: 10px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
@@ -299,12 +301,12 @@ background-color: #e8e3e3;
 }
 
 .filter-group {
-    margin-bottom: 15px; 
+    margin-bottom: 15px; /* Spacing between filter groups */
 }
 
 
        
- .conter{
+  .conter{
     background-color: white;
 
   
@@ -317,7 +319,7 @@ background-color: #e8e3e3;
              align-items:center;
        }
 
-       
+       /* Стили для фильтров */
        .filter-group {
            margin-bottom: 15px;
              align-items:center;
@@ -365,14 +367,14 @@ background-color: #e8e3e3;
            border-radius: 50%;
            background: #4CAF50;
            cursor: pointer;
-       } */
+       }
        /**КОНЕЦ ФИЛЬТРА/
 
 
 /*начало  модуля с карточками на второй странице (категории)*/
 
 .wrapper {
-
+width: 100%; /* Занимаем всю ширину экрана */
 flex-direction: column; /* Stack buttons and card vertically */
      align-items: center; /* Center align items */
  }
@@ -381,9 +383,9 @@ flex-direction: column; /* Stack buttons and card vertically */
    display: flex; /* Размещаем элементы в ряд */
    flex-wrap: wrap; /* Разрешаем перенос элементов на следующую строку */
    justify-content: space-around; /* Равномерное распределение элементов */
-   border: 6px solid black; /* Рамка вокруг контейнера */
+  /*  border: 6px solid black; Рамка вокруг контейнера */
    width: 90%;
- height:70%;
+ height:60%;
  margin-bottom: 30px;
    margin: 0 auto; /* Центрируем контейнер по ширине */
  }
@@ -402,8 +404,8 @@ flex-direction: column; /* Stack buttons and card vertically */
    border: 1px solid blue; /* Синяя рамка */
    border-radius: 9px; /* Скругленные углы */
    padding: 20px; /* Отступы внутри карточки */
-   height: 440px; /* Высота карточки */
-   width: 275px !important; /* Ширина карточки */
+   height: 400px; /* Высота карточки */
+   width: 250px !important; /* Ширина карточки */
    margin: 5px; /* Отступы от других карточек */
    text-align: center; /* Выравнивание текста по центру */
    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Тень */
@@ -415,8 +417,8 @@ flex-direction: column; /* Stack buttons and card vertically */
  }
 
  .product-card img {
-   width: 255px; /* Ширина изображения */
-   height: 260px; /* Высота изображения */
+   width: 230px; /* Ширина изображения */
+   height: 230px; /* Высота изображения */
    border-radius: 9px; /* Скругленные углы */
    margin-bottom: 5px; /* Отступ снизу */
    text-align: center; /* Выравнивание по центру */
@@ -446,6 +448,7 @@ flex-direction: column; /* Stack buttons and card vertically */
 
  .prce {
    font-size: 1.0rem; /* Размер шрифта цены */
+
    background-color: white; /* Фон цены - белый */
    font-weight: bold; /* Жирный шрифт */
    color: black; /* Цвет цены - черный */
@@ -455,52 +458,39 @@ flex-direction: column; /* Stack buttons and card vertically */
    padding-bottom: 3px; /* Отступ снизу */
    margin-bottom: -5px; /* Отступ снизу */
    opacity: 0.5; /* Прозрачность */
-   margin-top: 85px; /* Отступ сверху */
+   margin-top: 50px; /* Отступ сверху */
 
  }
 
  .money {
-   font-size: 1.5rem; /* Размер шрифта */
+   font-size: 1.3rem; /* Размер шрифта */
    font-weight: bold; /* Жирный шрифт */
    text-align: left; /* Выравнивание текста по левому краю */
-   margin-top: 20px; /* Отступ сверху */
+   margin-top: 19px; /* Отступ сверху */
    background-color: white; /* Фон - белый */
    text-align: left; /* Выравнивание текста по левому краю */
  }
  .money span {
    background-color: white; /* Фон - белый */
+   font-size:23px;
    color: red; /* Цвет - красный */
    font-weight: bold; /* Жирный шрифт */
  }
  .money del {
    text-decoration: line-through;
+   font-size:16px;
+color:grey;
  }
  .Buttons {
-  
    display: flex; /* Размещаем кнопки в ряд */
    justify-content: space-between; /* Равномерное распределение кнопок */
    margin-top: 2px; /* Отступ сверху */
-   background-color: white; /* Фон - черный */
+   background-color: white; /* Фон*/
    height: 30px; /* Высота блока кнопок */
    width: 100%; /* Ширина блока кнопок */
  }
- 
- 
- .podrobnee{
-margin-top:10px;
-  background-color: #4577b4 ; /* Фон - синий */
-  color: white; /* Цвет текста - белый */
-  border: none; /* Удаляем рамку */
-  padding: 5px 5px; /* Отступы внутри кнопки */
-  border-radius: 5px; /* Скругленные углы */
-  cursor: pointer; /* Курсор-рука при наведении */
-  transition: background-color 0.3s; /* Плавный переход цвета */
-  height: 35px; /* Высота кнопки */
-  width: 200px; /* Ширина кнопки */
-  font-size:12px;
-  font-weight: bold; /* Жирный шрифт */
- }
  .btn {
+ font-size:14px;
    background-color: #4577b4 ; /* Фон - синий */
    color: white; /* Цвет текста - белый */
    border: none; /* Удаляем рамку */
@@ -510,7 +500,7 @@ margin-top:10px;
    transition: background-color 0.3s; /* Плавный переход цвета */
    height: 30px; /* Высота кнопки */
    width: 80px; /* Ширина кнопки */
-   font-size:12px;
+   
    font-weight: bold; /* Жирный шрифт */
  }
 
@@ -546,6 +536,81 @@ margin-top:10px;
  .add:hover {
    background-color: #eee; /* Меняем цвет фона */
    box-shadow: 1px 5px 3px 1px rgba(0, 0, 100, .2); /* Тень */
+ }
+ 
+ .details-container{
+  display: flex;
+    flex-direction: column; /* Arrange items vertically */
+    align-items: center; /* Center items horizontally */
+ }
+.details-button{
+margin-top:10px;
+align-items: center; 
+  background-color: #4577b4 ; /* Фон - синий */
+  color: white; /* Цвет текста - белый */
+  border: none; /* Удаляем рамку */
+  padding: 8px 5px; /* Отступы внутри кнопки */
+  border-radius: 5px; /* Скругленные углы */
+  cursor: pointer; /* Курсор-рука при наведении */
+  transition: background-color 0.3s; /* Плавный переход цвета */
+  height: 35px; /* Высота кнопки */
+  width: 200px; /* Ширина кнопки */
+  font-size:16px;
+  font-weight: bold; /* Жирный шрифт */
+}
+
+
+.pre-btn {font-size:19px;
+ background-color: #4577b4 ; /* Фон - синий */
+   color: white; /* Цвет текста - белый */
+   border: none; /* Удаляем рамку */
+   padding: 5px 5px; /* Отступы внутри кнопки */
+   border-radius: 5px; /* Скругленные углы */
+   cursor: pointer; /* Курсор-рука при наведении */
+   transition: background-color 0.3s; /* Плавный переход цвета */
+   height: 40px; /* Высота кнопки */
+   width: 100px; /* Ширина кнопки */
+   font-weight: bold; /* Жирный шрифт */}
+   
+   
+.nex-btn{
+font-size:19px;
+    background-color: #4577b4  ; /* Фон - синий */
+   color: white; /* Цвет текста - белый */
+   border: none; /* Удаляем рамку */
+   padding: 5px 5px; /* Отступы внутри кнопки */
+   border-radius: 5px; /* Скругленные углы */
+   cursor: pointer; /* Курсор-рука при наведении */
+   transition: background-color 0.3s; /* Плавный переход цвета */
+   height: 40px; /* Высота кнопки */
+   width: 100px; /* Ширина кнопки */
+   font-weight: bold; /* Жирный шрифт */
+}
+
+
+
+.pre-btn:hover {
+   background-color: #315886 !important;
+   box-shadow: 2px 2px 2px 1px rgba(0, 0, 10, .2);
+
+ }
+ 
+ .nex-btn:hover {
+   background-color: #315886 !important;
+   box-shadow: 2px 2px 2px 1px rgba(0, 0, 10, .2);
+
+ }
+ .js-number {
+   width: 30px; /* Ширина поля */
+   text-align: center; /* Выравнивание текста по центру */
+   height: 30px; /* Высота поля */
+   margin: 0 10px; /* Отступы */
+   border-radius: 5px; /* Скругленные углы */
+   border: none; /* Удаляем рамку */
+ }
+
+ .product-card {
+     display: none;
  }
 
  /* Адаптация для мобильных устройств */
@@ -613,39 +678,421 @@ margin-top:10px;
 
  }
  }
-
- .js-number {
-   width: 30px; /* Ширина поля */
-   text-align: center; /* Выравнивание текста по центру */
-   height: 30px; /* Высота поля */
-   margin: 0 10px; /* Отступы */
-   border-radius: 5px; /* Скругленные углы */
-   border: none; /* Удаляем рамку */
- }
-
- .product-card {
-     display: none;
- }
- .pre-btn{
-background-color: #0056b3;
-
-
- }
-
- .nex-btn{
-
-  background-color: #0056b3;
- }
 /*Конец  модуля с карточками на второй странице (категории)*/
 
 
 
- .pre , .nav {
-     margin: 10px; /* Space between buttons */
- }
-/*Конец посиковой системы */
 
 
+            /*Стили для карточки  на странице отдкельного товара  товара  */
+
+            .prodct-card {
+              display: flex;
+              top:30px;
+              margin:50px;
+              background-color: white;
+              border: 1px solid #ddd;
+              border-radius: 8px;
+              box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width:90%;
+        height:90%;
+              overflow: hidden;
+              transition: transform 0.3s;
+          }
+  
+   /*Форма опсиание характеристика и  детали отзывы*/
+          .section-frame {
+          overflow: hidden ;
+     
+      border-radius: 5px; /* Закругление углов */
+      top: 5px; /* Отступ сверху */
+      
+      width:300px;
+      height:150px;
+  }
+  
+          .prodct-images {
+              display: flex;
+              justify-content: center;
+              position: relative;
+              overflow: hidden;
+              padding: 10px;
+  
+              flex-direction: column;
+              align-items: center;
+              
+          }
+  
+          .prodct-image {
+  height: 900px;
+              display: none;
+           
+            
+          }
+  
+          .prodct-image.active {
+              display: block;
+          }
+  
+          .color-options {
+              display: flex;
+              justify-content: center;
+              margin: 10px 0;
+          }
+  
+          .color-circle {
+              height: 30px;
+              width: 30px;
+              border-radius: 50%;
+              margin: 5px 5px;
+              cursor: pointer;
+              border: 2px solid  black;
+               
+          }
+            
+            
+            .color-circle:hover{
+             border: 4px solid  white;
+        
+            
+            }
+  
+          .color-circle.red {
+              background-color: red;
+          }
+  
+          .color-circle.blue {
+              background-color: blue;
+          }
+  
+          .color-circle.green {
+              background-color: green;
+          }
+  
+  
+  
+  /* Стили для боковой панели */
+  .sidebar {
+     align-items: center;
+      padding: 10px  5px  0  5px; /* Внутренние отступы для удобства */
+      width: 90%; /* Ширина боковой панели */
+      
+      margin-top: 10px  5px  0  5px;
+      margin-left: 25px; /* Отступ слева */
+      animation: slideIn 0.5s ease; /* Анимация появления боковой панели */
+  
+  }
+  
+  /* Анимация появления боковой панели */
+  @keyframes slideIn {
+      from {
+          transform: translateX(-100%); /* Начинаем снаружи экрана */
+      }
+      to {
+          transform: translateX(0); /* Позиция в конце анимации */
+      }
+  }
+  
+  
+  
+  /* Стили для кнопок внутри боковой панели */
+  .sidebar button {
+      background-color: #3f51b5; /* Темно-синий цвет фона кнопок */
+      color: white; /* Белый цвет текста для контраста */
+      
+      border: none; /* Без рамки */
+      border-radius: 25px; /* Скругленные углы кнопок */
+      padding: 10px; /* Увеличенные внутренние отступы */
+      cursor: pointer; /* Указатель при наведении на кнопку */
+      font-size: 18px; /* Размер шрифта кнопок */
+      transition: all 0.3s ease; /* Плавные переходы для всех изменений */
+      position: relative; /* Для анимации при наведении */
+  }
+  
+  /* Эффект при наведении на кнопки */
+  .sidebar button:hover {
+      background-color: #5c6bc0; /* Светлее оттенок синего при наведении */
+      box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2); /* Тень при наведении */
+  }
+  
+  /* Анимация при нажатии на кнопку */
+  .sidebar button:active {
+      transform: scale(0.95); /* Уменьшаем кнопку при нажатии */
+  }
+  
+  
+  
+  
+          .prodct-info {
+              padding: 20px;
+              width:50%;
+          }
+  
+          h1 {
+              font-size: 24px;
+              margin: 0 0 10px;
+              color: #333;
+          }
+  
+          p {
+              margin: 5px 0;
+              color: #555;
+          }
+  
+          .price {
+              font-size: 24px;
+              color: #28a745;
+              font-weight: bold;
+              margin: 10px 0;
+          }
+  
+          .quantity-container {
+              display: flex;
+              align-items: center;
+              margin: 10px 0;
+          }
+  
+          .quantity-label {
+              margin-right: 10px;
+          }
+  
+          .quantity-input {
+          height:60px;
+              width: 60px;
+              padding: 5px;
+              border: 1px solid #ddd;
+              border-radius: 5px;
+              text-align: center;
+          }
+  
+          .add-to-cart,
+          .buy-now {
+              background-color: #688ebd; /* Светло-синий */
+              color: white;
+              border: none;
+              border-radius: 5px;
+              padding: 10px 15px;
+              cursor: pointer;
+              transition: background-color 0.3s;
+              font-size: 16px;
+              display: block;
+              width: 100%;
+              text-align: center;
+              text-decoration: none;
+              margin: 5px 0;
+          }
+  
+          .add-to-cart:hover,
+          .buy-now:hover {
+              background-color: #4760a2; /* Темно-синий */
+          }
+  
+          .prod-rating {
+              text-align: center;
+              margin-top: 15px;
+          }
+  
+          .stars {
+              display: inline-block;
+              cursor: pointer;
+          }
+          
+          
+         
+  
+  
+  
+          .star {
+              color: gold;
+              font-size: 20px;
+              margin: 0 2px;
+          }
+  
+          #rating-value {
+              margin-top: 5px;
+              font-weight: bold;
+          }
+  
+          .characteristics,
+          .reviews,
+          .details {
+          
+              background-color: #f0f8ff;
+              border: 1px solid #ddd;
+              padding: 10px;
+              border-radius: 5px;
+            top: 5px;
+              display: none; /* Скрыто по умолчанию */
+          }
+  
+          .active-section {
+              display: block; /* Показать активный раздел */
+          }
+  
+  @media (max-width: 855px) {
+      .prodct-card {
+          flex-direction: column; /* Изменяем направление на колонку для маленьких экранов */
+          margin: 5px; /* Уменьшаем отступы */
+          width: 90%; /* Устанавливаем ширину в 100% */
+          height: 90%; /* Высота автоматически подстраивается под содержимое */
+      }
+  
+      .section-frame {
+          width: 100%; /* Устанавливаем ширину в 100% */
+          height: auto; /* Высота автоматически подстраивается под содержимое */
+      }
+  
+      .prodct-info {
+          width: 100%; /* Устанавливаем ширину в 100% */
+          padding: 10px; /* Уменьшаем отступы */
+      }
+  
+      h1 {
+          font-size: 20px; /* Уменьшаем размер шрифта заголовка */
+      }
+  
+      .price {
+          font-size: 20px; /* Уменьшаем размер шрифта для цены */
+      }
+  
+      .quantity-input {
+          width: 40px; /* Уменьшаем ширину поля ввода количества */
+      }
+  
+      .add-to-cart,
+      .buy-now {
+          font-size: 14px; /* Уменьшаем размер шрифта для кнопок */
+          padding: 8px; /* Уменьшаем отступы внутри кнопок */
+      }
+  
+      .color-circle {
+          height: 25px; /* Уменьшаем размер цветных кругов */
+          width: 25px; /* Уменьшаем размер цветных кругов */
+      }
+  
+      .sidebar {
+          width: 100%; /* Устанавливаем ширину сайдбара в 100% */
+          margin-left: 0; /* Убираем левый отступ */
+      }
+  
+      .characteristics,
+      .reviews,
+      .details {
+          padding: 5px; /* Уменьшаем отступы внутри секций */
+      }
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  @media (max-width: 999px) {
+      .prodct-card {
+          flex-direction: column; /* Изменяем направление на колонку для маленьких экранов */
+          margin: 20px; /* Уменьшаем отступы */
+          width: 90%; /* Устанавливаем ширину в 100% */
+          height: 90%; /* Высота автоматически подстраивается под содержимое */
+      }
+  
+      .section-frame {
+          width: 100%; /* Устанавливаем ширину в 100% */
+          height: auto; /* Высота автоматически подстраивается под содержимое */
+      }
+  
+      .prodct-info {
+          width: 100%; /* Устанавливаем ширину в 100% */
+          padding: 5px; /* Уменьшаем отступы */
+      }
+  
+      h1 {
+          font-size: 20px; /* Уменьшаем размер шрифта заголовка */
+      }
+  
+      .price {
+          font-size: 15px; /* Уменьшаем размер шрифта для цены */
+      }
+  
+      .quantity-input {
+          width: 55px; /* Уменьшаем ширину поля ввода количества */
+          height:55px;
+      }
+  
+      .add-to-cart,
+      .buy-now {
+          font-size: 14px; /* Уменьшаем размер шрифта для кнопок */
+          padding: 8px; /* Уменьшаем отступы внутри кнопок */
+      }
+  
+      .color-circle {
+          height: 15px; /* Уменьшаем размер цветных кругов */
+          width: 15px; /* Уменьшаем размер цветных кругов */
+      }
+  
+      .sidebar {
+          width: 100%; /* Устанавливаем ширину сайдбара в 100% */
+          margin-left: 0; /* Убираем левый отступ */
+      }
+  
+      .characteristics,
+      .reviews,
+      .details {
+          padding: 5px; /* Уменьшаем отступы внутри секций */
+      }
+  }
+  
+  
+  
+  
+  /* Для планшетов (от 769px до 1024px) */
+  @media (min-width: 769px) and (max-width: 1024px) {
+      .prodct-card {
+          flex-direction: row; /* Вертикальное расположение для планшетов */
+          margin: 15px; /* Увеличиваем отступы */
+          width:90%; /* Две карточки в ряд с отступами */
+          height: 90%;
+      }
+  
+      h1 {
+          font-size: 22px; /* Увеличиваем размер шрифта заголовка */
+      }
+  
+      .price {
+          font-size: 22px; /* Увеличиваем размер шрифта для цены */
+      }
+  
+      .add-to-cart,
+      .buy-now {
+          font-size: 16px; /* Увеличиваем размер шрифта для кнопок */
+          padding: 10px; /* Увеличиваем отступы внутри кнопок */
+      }
+  }
+  
+  /* Для десктопов (от 1025px и выше) */
+  @media (min-width: 1025px) {
+      .prodct-card {
+          flex-direction: row; /* Горизонтальное расположение для десктопов */
+          margin: 20px; /* Увеличиваем отступы */
+          width: 90%;
+          height: 90%;
+      }
+  
+      h1 {
+          font-size: 26px; /* Увеличиваем размер шрифта заголовка */
+      }
+  
+      .price {
+          font-size: 24px; /* Увеличиваем размер шрифта для цены */
+      }
+  
+      .add-to-cart,
+      .buy-now {
+          font-size: 18px; /* Увеличиваем размер шрифта для кнопок */
+          padding: 12px; /* Увеличиваем отступы внутри кнопок */
+      }
+  }
 
 /*НАЧАЛО КОРЗИНЫ   */
 .cart {
@@ -660,7 +1107,7 @@ background-color: #0056b3;
   border-radius: 5px;
   border: 2px solid #688EBD; /* Установлена  */
   display:  none;
-  z-index: 90;
+  z-index: 9000;
 }
 
 .cart h2
@@ -787,7 +1234,7 @@ border-radius:9px;
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   display: none;
-  z-index: 80;
+  z-index: 2001;
   width: 350px;
   height: 120px;
      }
@@ -825,7 +1272,7 @@ border-radius:9px;
   .modal {
    display: none;
    position: fixed;
-   z-index: 100;
+   z-index: 2100;
    left: 50%;
    top: 50%;
    transform: translate(-50%, -50%);
@@ -1439,405 +1886,6 @@ li img {
 
 
 
-
-
-
-/*НАЧАЛО СТРАНИЦЫ ОТДЕЛЬНОГО ТОВАРА  */
-
-.prodct-card {
-  
-  background-color: white;
-  border: 1px solid white;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  width: 80%;
-  height: 90%;
-  overflow: hidden;
-  transition: transform 0.3s;
-  margin-left: 100px !important; /* Сдвиг влево относительно родительского элемента */
-}
-
-/*Форма опсиание характеристика и  детали отзывы*/
-.section-frame {
-  
-overflow: hidden ;
-border-radius: 5px; /* Закругление углов */
-top: 5px; /* Отступ сверху */
-width:300px;
-height:150px;
-}
-
-.prodct-images {
-  display: flex;
-  justify-content: center;
-  position: relative;
-  overflow: hidden;
-  padding: 10px;
-  flex-direction: column;
-  align-items: center;
-  
-}
-
-.prodct-image {
-height: 900px;
-  display: none;
-
-
-}
-
-.prodct-image.active {
-  display: block;
-}
-
-.color-options {
-  display: flex;
-  justify-content: center;
-  margin: 10px 0;
-}
-
-.color-circle {
-  height: 30px;
-  width: 30px;
-  border-radius: 50%;
-  margin: 5px 5px;
-  cursor: pointer;
-  border: 2px solid  black;
-   
-}
-
-
-.color-circle:hover{
- border: 4px solid  white;
-
-}
-
-.color-circle.red {
-  background-color: red;
-}
-
-.color-circle.blue {
-  background-color: blue;
-}
-
-.color-circle.green {
-  background-color: green;
-}
-
-
-/* Стили для боковой панели */
-.sidebar {
-margin-top:10px !important;
-align-items: center;
-padding: 5px  5px  0  5px; /* Внутренние отступы для удобства */
-width: 90%; /* Ширина боковой панели */
-height:60px;
-background-color: #8ab5e3;
-
-margin-left: 25px; /* Отступ слева */
-animation: slideIn 0.5s ease; /* Анимация появления боковой панели */
-
-}
-
-/* Анимация появления боковой панели */
-@keyframes slideIn {
-from {
-transform: translateX(-100%); /* Начинаем снаружи экрана */
-}
-to {
-transform: translateX(0); /* Позиция в конце анимации */
-}
-}
-
-
-/* Стили для кнопок внутри боковой панели */
-.sidebar button {
-background-color: #3f51b5; /* Темно-синий цвет фона кнопок */
-color: white; /* Белый цвет текста для контраста */
-
-border: none; /* Без рамки */
-border-radius: 25px; /* Скругленные углы кнопок */
-padding: 10px; /* Увеличенные внутренние отступы */
-cursor: pointer; /* Указатель при наведении на кнопку */
-font-size: 18px; /* Размер шрифта кнопок */
-transition: all 0.3s ease; /* Плавные переходы для всех изменений */
-position: relative; /* Для анимации при наведении */
-}
-
-/* Эффект при наведении на кнопки */
-.sidebar button:hover {
-background-color: #5c6bc0; /* Светлее оттенок синего при наведении */
-box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2); /* Тень при наведении */
-}
-
-/* Анимация при нажатии на кнопку */
-.sidebar button:active {
-transform: scale(0.95); /* Уменьшаем кнопку при нажатии */
-}
-
-.prodct-info {
-  padding: 20px;
-  width:50%;
-}
-
-h1 {
-  font-size: 24px;
-  margin: 0 0 10px;
-  color: #333;
-}
-
-p {
-  margin: 5px 0;
-  color: #555;
-}
-
-.price {
-  font-size: 24px;
-  color: black;
-  font-weight: bold;
-  margin: 10px 0;
-}
-
-.quantity-container {
-  display: flex;
-  align-items: center;
-  margin: 10px 0;
-}
-
-.quantity-label {
-  margin-right: 10px;
-}
-
-.quantity-input {
-height:60px;
-  width: 60px;
-  padding: 5px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  text-align: center;
-}
-
-.add-to-cart,
-.buy-now {
-  background-color: #688ebd; /* Светло-синий */
-  color: white;
-  border: none;
-  border-radius: 5px;
-  padding: 10px 15px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-  font-size: 16px;
-  display: block;
-  width: 100%;
-  text-align: center;
-  text-decoration: none;
-  margin: 5px 0;
-}
-
-.add-to-cart:hover,
-.buy-now:hover {
-  background-color: #4760a2; /* Темно-синий */
-}
-
-.prod-rating {
-  text-align: center;
-  margin-top: 15px;
-}
-
-.stars {
-  display: inline-block;
-  cursor: pointer;
-}
-
-.star {
-  color: gold;
-  font-size: 20px;
-  margin: 0 2px;
-}
-
-#rating-value {
-  margin-top: 5px;
-  font-weight: bold;
-}
-
-.characteristics,
-.reviews,
-.details {
-
-  background-color: #f0f8ff;
-  border: 1px solid #ddd;
-  padding: 10px;
-  border-radius: 5px;
-top: 5px;
-  display: none; /* Скрыто по умолчанию */
-}
-
-.active-section {
-  display: block; /* Показать активный раздел */
-}
-
-@media (max-width: 855px) {
-.prodct-card {
-flex-direction: column; /* Изменяем направление на колонку для маленьких экранов */
-margin: 5px; /* Уменьшаем отступы */
-width: 90%; /* Устанавливаем ширину в 100% */
-height: 90%; /* Высота автоматически подстраивается под содержимое */
-}
-
-.section-frame {
-width: 100%; /* Устанавливаем ширину в 100% */
-height: auto; /* Высота автоматически подстраивается под содержимое */
-}
-
-.prodct-info {
-width: 100%; /* Устанавливаем ширину в 100% */
-padding: 10px; /* Уменьшаем отступы */
-}
-
-h1 {
-font-size: 20px; /* Уменьшаем размер шрифта заголовка */
-}
-
-.price {
-font-size: 20px; /* Уменьшаем размер шрифта для цены */
-}
-
-.quantity-input {
-width: 40px; /* Уменьшаем ширину поля ввода количества */
-}
-
-.add-to-cart,
-.buy-now {
-font-size: 14px; /* Уменьшаем размер шрифта для кнопок */
-padding: 8px; /* Уменьшаем отступы внутри кнопок */
-}
-
-.color-circle {
-height: 25px; /* Уменьшаем размер цветных кругов */
-width: 25px; /* Уменьшаем размер цветных кругов */
-}
-
-.sidebar {
-width: 100%; /* Устанавливаем ширину сайдбара в 100% */
-margin-left: 0; /* Убираем левый отступ */
-}
-
-.characteristics,
-.reviews,
-.details {
-padding: 5px; /* Уменьшаем отступы внутри секций */
-}
-}
-
-
-
-@media (max-width: 999px) {
-.prodct-card {
-flex-direction: column; /* Изменяем направление на колонку для маленьких экранов */
-margin: 20px; /* Уменьшаем отступы */
-width: 90%; /* Устанавливаем ширину в 100% */
-height: 90%; /* Высота автоматически подстраивается под содержимое */
-}
-
-.section-frame {
-width: 100%; /* Устанавливаем ширину в 100% */
-height: auto; /* Высота автоматически подстраивается под содержимое */
-}
-
-.prodct-info {
-width: 100%; /* Устанавливаем ширину в 100% */
-padding: 5px; /* Уменьшаем отступы */
-}
-
-h1 {
-font-size: 20px; /* Уменьшаем размер шрифта заголовка */
-}
-
-.price {
-font-size: 15px; /* Уменьшаем размер шрифта для цены */
-}
-
-.quantity-input {
-width: 55px; /* Уменьшаем ширину поля ввода количества */
-height:55px;
-}
-
-.add-to-cart,
-.buy-now {
-font-size: 14px; /* Уменьшаем размер шрифта для кнопок */
-padding: 8px; /* Уменьшаем отступы внутри кнопок */
-}
-
-.color-circle {
-height: 15px; /* Уменьшаем размер цветных кругов */
-width: 15px; /* Уменьшаем размер цветных кругов */
-}
-
-.sidebar {
-width: 100%; /* Устанавливаем ширину сайдбара в 100% */
-margin-left: 0; /* Убираем левый отступ */
-}
-
-.characteristics,
-.reviews,
-.details {
-padding: 5px; /* Уменьшаем отступы внутри секций */
-}
-}
-
-
-/* Для планшетов (от 769px до 1024px) */
-@media (min-width: 769px) and (max-width: 1024px) {
-.prodct-card {
-flex-direction: row; /* Вертикальное расположение для планшетов */
-margin: 15px; /* Увеличиваем отступы */
-width:90%; /* Две карточки в ряд с отступами */
-height: 90%;
-}
-
-h1 {
-font-size: 22px; /* Увеличиваем размер шрифта заголовка */
-}
-
-.price {
-font-size: 22px; /* Увеличиваем размер шрифта для цены */
-}
-
-.add-to-cart,
-.buy-now {
-font-size: 16px; /* Увеличиваем размер шрифта для кнопок */
-padding: 10px; /* Увеличиваем отступы внутри кнопок */
-}
-}
-
-/* Для десктопов (от 1025px и выше) */
-@media (min-width: 1025px) {
-.prodct-card {
-flex-direction: row; /* Горизонтальное расположение для десктопов */
-margin: 20px; /* Увеличиваем отступы */
-width: 90%;
-height: 90%;
-}
-
-h1 {
-font-size: 26px; /* Увеличиваем размер шрифта заголовка */
-}
-
-.price {
-font-size: 24px; /* Увеличиваем размер шрифта для цены */
-}
-
-.add-to-cart,
-.buy-now {
-font-size: 18px; /* Увеличиваем размер шрифта для кнопок */
-padding: 12px; /* Увеличиваем отступы внутри кнопок */
-}
-}
-
-/*КОНЕЦ СТРАНИЦЫ ОТДЕЛЬНОГ ТОВАРА*/
-
-
-
-
 /*Футер*/
 .footer {
 background-color: #688EBD;
@@ -1862,7 +1910,6 @@ margin: 20px 0; /* Отступы сверху и снизу */
 display: flex; /* Используем flexbox для выравнивания детей */
 justify-content: space-between; /* Распределение пространства между элементами */
 align-items: flex-start; /* Выравнивание элементов по верхнему краю */
-
 }
 
 .footer_navigation {
