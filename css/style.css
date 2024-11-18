@@ -821,7 +821,9 @@ font-size:19px;
   }
   
   
-  
+  .boxes{
+background-color: black;
+  }
   
           .prodct-info {
               padding: 20px;
@@ -841,7 +843,7 @@ font-size:19px;
   
           .price {
               font-size: 24px;
-              color: #28a745;
+              color: black;
               font-weight: bold;
               margin: 10px 0;
           }
@@ -898,10 +900,6 @@ font-size:19px;
           }
           
           
-         
-  
-  
-  
           .star {
               color: gold;
               font-size: 20px;

@@ -391,18 +391,20 @@ function clearCart() {
     cart = [];
     renderCart();
 }
-</script>
 
+</script>
+<div class ="boxes">
 <div class="sidebar">
         <button onclick="showSection('prodct-info')">Описание</button>
         <button onclick="showSection('characteristics')">Характеристики</button>
         <button onclick="showSection('reviews')">Отзывы</button>
         <button onclick="showSection('details')">Детали</button>
     </div>
-<div class="prodct-card">
 
 
-    <div class="prodct-images">
+<div class="prodct-card"> <!--Начало карточки товара на отдельной странице-->
+
+    <div class="prodct-images">   <!--Фото и цвета -->
         <img style = "height :500px;  width:500px;"src="https://upakovka-grad.ru/wp-content/uploads/2022/08/85fe4f0e28e811ed87fd94de80fd41b3_0640f6a12cca11eda10fe0d55e08c404.png" alt="Микрофибровая тряпка Красная" class="prodct-image active" data-price="500">
         <img style = " background-color:white;height :500px;  width:500px;" src="https://kosmetiksavto.ru/images/catalog/tovar/_thumbs/_file60ba3bdedbe7d_x536_y536.png" alt="Микрофибровая тряпка Синяя" class="prodct-image" data-price="550">
         <img style = "height :500px;  width:500px;" src="https://www.ximtex.ru/upload/iblock/1c1/67a9a3511e309b87ac1b0a5cabeec6a5.jpg" alt="Микрофибровая тряпка Зелёная" class="prodct-image" data-price="600">
@@ -412,19 +414,9 @@ function clearCart() {
         <div class="color-circle blue" onclick="changeColor('blue')"></div>
         <div class="color-circle green" onclick="changeColor('green')"></div>
     </div>
-    
-    
-           
-    
-    
-    
-    </div>
-    
-  
-    
-   
-    
-    <div class="prodct-info">
+</div>  <!--Фото и цвета -->
+ 
+    <div class="prodct-info"> <!--Начало инфы продукта -->
         <h1>Набор микрофибровых тряпок для уборки (35x35 см, 4 шт.)</h1>
         <p>Материал: Микрофибра</p>
         <p>Производитель: BrandName</p>
@@ -435,7 +427,7 @@ function clearCart() {
         </div>
         <button class="add-to-cart" onclick="addToCart()">Добавить в корзину</button>
         <button class="buy-now" onclick="buyNow()">Купить сейчас</button>
-        <div class="prod-rating">
+        <div class="prod-rating"> <!--Начало рейтинга -->
             <p>Рейтинг:</p>
             <div class="stars" id="rating">
                 <span class="star" data-value="1" onclick="rate(1)">&#9733;</span>
@@ -445,31 +437,34 @@ function clearCart() {
                 <span class="star" data-value="5" onclick="rate(5)">&#9733;</span>
             </div>
             <p id="rating-value">5 / 5</p>
-        </div>
+    </div> <!--Конец рейтинга -->
     
 
-    <div class="section-frame">
+    <div class="section-frame">  <!--Начало секций : отзывы характеристика . описание , детали -->
         <div class="prodct-info" id="prodct-info-section">
         </div>
-        <div class="characteristics" id="characteristics-section">
+        <div class="characteristics" id="characteristics-section"> <!--Начало характеристики-->
             <h4>Характеристики:</h4>
             <p>Размеры: 35x35 см</p>
             <p>Вес: 200 грамм</p>
             <p>Инструкции по стирке: Можно стирать в машине</p>
             <p>Долговечность: До 100 стирок</p>
-        </div>
-        <div class="reviews" id="reviews-section">
+        </div><!-- Конец  характеристики-->
+        <div class="reviews" id="reviews-section"> <!--Начало отзыва -->
             <h4>Отзывы:</h4>
             <p>Отзывов пока нет.</p>
-        </div>
-        <div class="details" id="details-section">
+        </div> <!--Конец отзыва -->
+        <div class="details" id="details-section"> <!--Начало деталей -->
             <h4>Детали:</h4>
             <p>Этот набор микрофибровых тряпок идеально подходит для уборки и протирания различных поверхностей. Они мягкие, прочные и можно стирать в машине.</p>
-        </div>
-    </div>
+        </div> <!--Конец  деталей -->
 
-</div>
-</div>
+    </div> <!--Начало секций : отзывы характеристика . описание , детали -->
+   
+
+</div> <!--Конец инфы продукта -->
+</div><!--конец  карточки товара на отдельной странице-->
+</div><!--конец  бокса картчки на отдельной странице-->
 
 
 
