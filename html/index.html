@@ -44,7 +44,11 @@
             <div class="account-icon" onclick="toggleAccount()">
                 <i class="fas fa-user"></i>
             </div>
+
+          
             </div>
+
+
             </div>
         </header>
 
@@ -291,9 +295,12 @@
     </div>
         <div class="bcontainer">
         <img class="icones" src="https://cdn-icons-png.flaticon.com/128/2474/2474099.png" alt="Гарантии качества">
-        <p style=" font-size: 20px ; ">Гарантия качесвта </p>
+        <p style=" font-size: 20px ; ">Гарантия качества </p>
     </div>
-    
+    <div class="bcontainer">
+        <img class="icones" src="https://img.icons8.com/?size=80&id=107730&format=png" alt="Распродажа">
+        <p style=" font-size: 20px ; ">Распродажа </p>
+    </div>
 </section>
  <!--КОНЕЦ ИКНОК ССЫЛОК НА ГЛАВНОЙ СТРАНИЦЕ-->
 
@@ -373,29 +380,22 @@
         ];
         
        const swiperWrapper = document.getElementById('swiper-wrapper');
-       
      function createSwiperSlide(product, index) {
       const slide = document.createElement('div');
        slide.className = 'swiper-slide';
-        
         const img = document.createElement('img');
         img.src = product.image;
         img.alt = product.title;
-        
         const title = document.createElement('p');
      title.className = 'product-title';
         title.textContent = product.title;
-        
       const figcaption = document.createElement('figcaption');
         figcaption.className = 'box';
-        
         const priceContainer = document.createElement('div');
         priceContainer.className = 'price-container';
-        
        const price = document.createElement('p');
        price.className = 'price';
         price.textContent = 'Цена за штуку';
-        
       const money = document.createElement('p');
        money.className = 'money';
          const span = document.createElement('span');
@@ -406,20 +406,22 @@
         money.appendChild(del);
          priceContainer.appendChild(price);
        priceContainer.appendChild(money);
-        
-        
        const buttons = document.createElement('div');
+       
        buttons.className = 'Buttons';
         buttons.innerHTML = `
         <button id='addToCart${index + 1}' class='btn'>В корзину</button>
       <button class='subtract' onclick='changeNumber(-1, "number${index + 1}")'>–</button>
       <input type='text' class='js-number' id='number${index + 1}' value='1' readonly>
      <button class='add' onclick='changeNumber(1, "number${index + 1}")'>+</button>
+
       `;
-        
+      
+
+    // Добавляем слайд в обертку
+    swiperWrapper.appendChild(slide);
        figcaption.appendChild(priceContainer);
     figcaption.appendChild(buttons);
-        
        slide.appendChild(img);
          slide.appendChild(title);
       slide.appendChild(figcaption);

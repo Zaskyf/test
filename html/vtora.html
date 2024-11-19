@@ -313,7 +313,7 @@ window.onclick = function(event) {
 
 <script>
     const container = document.querySelector('.container');
-
+    
     // Массив с данными о картоичках
     const cardsData = [
         { id: 1, title: 'Обои 1', price: 799, delprice: 1000, image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/1.webp', detailsUrl: "productcard.html" },
@@ -425,8 +425,8 @@ const subtractButton = document.createElement('button');
             currentNumber = 1;
         }
         input.value = currentNumber;
-    }</script><!-- Navigation Buttons --><button id="prevBtn" class="pre-btn">Назад</button>
-<button id="nextBtn" class="nex-btn">Вперед</button> </div>
+    }</script><!-- Navigation Buttons --><div class ="nexprev"><button id="prevBtn" class="pre-btn">Назад</button>
+<button id="nextBtn" class="nex-btn">Вперед</button></div> </div>
 
 </body></html>
 <script>
@@ -435,7 +435,7 @@ let currentIndex = 0; // Текущий индекс первой карточк
 const cards = document.querySelectorAll('.product-card'); // Получаем все карточки товаров
 // Функция для показа 12 карточек, начиная с currentIndex
 function showCards(startIndex) {
-    const endIndex = startIndex + 15; // Вычисляем конечный индекс для 12 карточек
+    const endIndex = startIndex + 14; // Вычисляем конечный индекс для 12 карточек
     cards.forEach((card, i) => {
         card.style.display = (i >= startIndex && i < endIndex) ? 'block' : 'none'; // Покажем только выбранный диапазон
     });

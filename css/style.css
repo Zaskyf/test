@@ -24,6 +24,7 @@ header {
 /* Контейнер заголовка */
 header > .header-contaner {
   width: 100%;
+  height:55px;
   display: flex;  /* перемещаем display в этот селектор для лучшего управления */
   align-items: center;
 }
@@ -117,7 +118,7 @@ header > .header-contaner {
 
     }
     .buprev,.bunext {
-        background-color: rgba(255, 255, 255, 0.7);
+        background-color : #dbdad9;
         border: none;
         cursor: pointer;
         font-size: 24px;
@@ -134,24 +135,28 @@ header > .header-contaner {
 /*НАЧАЛО БОКСА С ИКНОКАМИ ССЫЛКАМИ */
 
 .boxicon {
-display: flex;
-gap:15px;
-
-padding: 5px;
-margin-top:40px;
+  display: flex;           /* Включаем Flexbox для контейнера */
+  justify-content: center; /* Центрируем элементы по горизонтали */
+  align-items: center;     /* Центрируем элементы по вертикали */
+  gap: 15px;              /* Задаем промежуток между элементами */
+  padding: 5px;          /* Внутренние отступы контейнера */
+  margin-top: 40px;     
 
 }
 
 .bcontainer {
+  
 text-align: center;
 transition: transform 0.3s ease, box-shadow 0.3s ease;
 padding: 10px;
 border-radius: 9px;
 box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 background-color: white;
-width: 165px;
+width: 400px;
 font-size: 16px;
 line-height: 1.5;
+min-height: 130px !important; 
+
 }
 
 .bcontainer:hover {
@@ -171,13 +176,13 @@ margin-bottom: 5px;
 /*НАЧАЛО СЛАЙДЕРА НА ГЛАВНОЙ СТРАНИЦЕ  */
 .swiper {
 width: 90%;
-height: 510px;
+height: 560px ;
 margin-bottom: 10px; /* Отступ между слайдером и карточками */
 top: 60px; /* Отступ сверху от слайдера */
 overflow: hidden; /* Скрывает часть карточек, выходящих за пределы контейнера */
 left: 10px; /* Отступ слева от края */
 right: 10px; /* Отступ справа от края */
-background: white;
+background: #e5e5e5;
 margin-top:60px;
 margin:auto;
 position: relative;
@@ -191,7 +196,7 @@ background-color: white;
 border: 1px solid blue;
 border-radius: 9px;
 padding: 20px;
-height: 500px !important;
+height: 545px !important;
 margin-right: 10px; /* Смещает контейнер */
 text-align: center; /* Центрирование текста */
 z-index: 100;
@@ -231,30 +236,49 @@ position:   absolute;
 width: 50px;
 height: 50px;
 border-radius: 100%;
-color: black;
+color: grey !important;
 z-index: 103;
 background-color: rgba(0, 0, 0, 0.5); /* Цвет фона с прозрачностью */;
 
 }
 .next{
 position:   absolute;
-width: 50px;
-height: 50px;
+width: 30px;
+height: 30px;
 border-radius: 100%;
-color:black;
+color:grey !important;
 background-color:  rgba(0, 0, 0, 0.5); /* Цвет фона с прозрачностью */;
 z-index: 103;
 }
 .swiper-button-prev:hover,
 .swiper-button-next:hover {
 position:   absolute;
-width: 50px;
-height: 50px;
+width: 60px;
+height: 60px;
 border-radius: 100%;
+color :grey !important;
 background-color: #e8e3e3;
 }
 
+.swiper-button-prev{
 
+  position:   absolute;
+width: 60px !important;
+height: 60px !important;
+border-radius: 100%;
+color :grey !important;
+
+}
+
+.swiper-button-next{
+
+  position:   absolute;
+width: 60px !important;
+height: 60px !important;
+border-radius: 100%;
+color :grey !important;
+
+}
 /*КОНЕЦ СЛАЙДЕРА С ТОВАРАМИ НА ГЛАВНОЙ СТРАНИЦЕ */
 
 
@@ -559,32 +583,31 @@ align-items: center;
   font-weight: bold; /* Жирный шрифт */
 }
 
+.pre-btn, .nex-btn {
+  font-size: 19px;
+  background-color: #4577b4; /* Фон - синий */
+  color: white; /* Цвет текста - белый */
+  border: none; /* Удаляем рамку */
+  padding: 5px 5px; /* Отступы внутри кнопки */
+  border-radius: 5px; /* Скругленные углы */
+  cursor: pointer; /* Курсор-рука при наведении */
+  transition: background-color 0.3s; /* Плавный переход цвета */
+  height: 40px; /* Высота кнопки */
+  width: 100px; /* Ширина кнопки */
+  font-weight: bold; /* Жирный шрифт */
+  position: absolute; /* Устанавливаем абсолютное позиционирование для кнопок */
+}
 
-.pre-btn {font-size:19px;
- background-color: #4577b4 ; /* Фон - синий */
-   color: white; /* Цвет текста - белый */
-   border: none; /* Удаляем рамку */
-   padding: 5px 5px; /* Отступы внутри кнопки */
-   border-radius: 5px; /* Скругленные углы */
-   cursor: pointer; /* Курсор-рука при наведении */
-   transition: background-color 0.3s; /* Плавный переход цвета */
-   height: 40px; /* Высота кнопки */
-   width: 100px; /* Ширина кнопки */
-   font-weight: bold; /* Жирный шрифт */}
-   
-   
-.nex-btn{
-font-size:19px;
-    background-color: #4577b4  ; /* Фон - синий */
-   color: white; /* Цвет текста - белый */
-   border: none; /* Удаляем рамку */
-   padding: 5px 5px; /* Отступы внутри кнопки */
-   border-radius: 5px; /* Скругленные углы */
-   cursor: pointer; /* Курсор-рука при наведении */
-   transition: background-color 0.3s; /* Плавный переход цвета */
-   height: 40px; /* Высота кнопки */
-   width: 100px; /* Ширина кнопки */
-   font-weight: bold; /* Жирный шрифт */
+.pre-btn {
+  left: 10px; /* Располагаем кнопку Назад в левом углу */
+  top: 50%; /* Центрируем по вертикали */
+  transform: translateY(-50%); /* Сдвигаем на половину высоты кнопки для центрирования */
+}
+
+.nex-btn {
+  right: 10px; /* Располагаем кнопку Вперед в правом углу */
+  top: 50%; /* Центрируем по вертикали */
+  transform: translateY(-50%); /* Сдвигаем на половину высоты кнопки для центрирования */
 }
 
 
@@ -593,6 +616,13 @@ font-size:19px;
    background-color: #315886 !important;
    box-shadow: 2px 2px 2px 1px rgba(0, 0, 10, .2);
 
+ }
+ .nexprev{
+
+  background-color: red;
+  position: relative; /* Устанавливаем относительное позиционирование для контейнера */
+    width: 100%; /* Ширина контейнера */
+    height: 100%; /* Высота контейнера */
  }
  
  .nex-btn:hover {
