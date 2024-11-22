@@ -82,65 +82,7 @@
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
-    <script>
-        const catalog = document.getElementById('catalog');
-        const menuBurger = document.getElementById('menuBurger');
-        const popup = document.getElementById('popup');
-        // Функция для открытия и закрытия меню
-        menuBurger.onclick = function(event) {
-            event.stopPropagation(); // Остановить всплытие события, чтобы не закрыть каталог сразу
-            catalog.style.display = catalog.style.display === 'none' ? 'block' : 'none';
-        };
-        // Функция для открытия подкатегорий в новом окне
-        document.querySelectorAll('.category-button').forEach(button => {
-            button.onclick = function(event) {
-                event.stopPropagation(); // Остановить всплытие события при клике на категории
-                const categoryNum = this.getAttribute('data-category');
-                let content = '';
-
-                switch (categoryNum) {
-                    case '1':
-                        content = '<li><button class="button-style" onclick="showPopup(\'Подкатегория 1.1\')">Подкатегория 1.1</button></li>' +
-                                  '<li><button class="button-style" onclick="showPopup(\'Подкатегория 1.2\')">Подкатегория 1.2</button></li>' +
-                                  '<li><button class="button-style" onclick="showPopup(\'Подкатегория 1.3\')">Подкатегория 1.3</button></li>';
-                        break;
-                    case '2':
-                        content = '<li><button class="button-style" onclick="showPopup(\'Подкатегория 2.1\')">Подкатегория 2.1</button></li>' +
-                                  '<li><button class="button-style" onclick="showPopup(\'Подкатегория 2.2\')">Подкатегория 2.2</button></li>';
-                        break;
-                    case '3':
-                        content = '<li><button class="button-style" onclick="showPopup(\'Подкатегория 3.1\')">Подкатегория 3.1</button></li>' +
-                                  '<li><button class="button-style" onclick="showPopup(\'Подкатегория 3.2\')">Подкатегория 3.2</button></li>';
-                        break;
-                }
-                document.getElementById('popupContent').innerHTML = content;
-                showPopup( this.querySelector('span').textContent);
-            };
-        });
-        // Функция для отображения popup
-        function showPopup(title) {
-            document.getElementById('popupTitle').textContent = title;
-            popup.style.display = 'block'; // Показывает popup
-        }
-        // Функция для закрытия popup
-        function closePopup() {
-            popup.style.display = 'none'; // Скрывает popup
-        }
-        // Закрытие каталога при клике где-либо на странице
-        document.addEventListener('click', function() {
-            if (catalog.style.display === 'block') {
-                catalog.style.display = 'none'; // Закрывает каталог
-            }  });
-            // Закрытие каталога при клике где-либо на странице
-        document.addEventListener('click', function() {
-            if ( popup.style.display === 'block') {
-                 popup.style.display = 'none'; // Закрывает каталог
-
-            }
-        });
-
-    </script>
-
+    
     
 
 
@@ -319,229 +261,267 @@ margin-top:15px; margin-bottom:15px;">Обои</h6>
 
     </div>
 
-<script>
-    const container = document.querySelector('.container');
-    
-    // Массив с данными о картоичках
-    const cardsData = [
-        { id: 1, title: 'Обои 1', price: 799, delprice: 1000, image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/1.webp', detailsUrl: "productcard.html" },
-        { id: 2, title: 'Обои 2', price: 990,  delprice :1500, image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/2.webp', detailsUrl: '' },
-         { id: 3, title: 'Обои 1', price: 899, delprice: 1200, image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/1.webp', detailsUrl: 'details1.html' },
-         { id: 4, title: 'Обои 4', price: 799, delprice: 1000, image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/1.webp', detailsUrl: 'details1.html' },
-         { id: 5, title: 'Обои 5', price: 799, delprice: 1000, image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/1.webp', detailsUrl: 'details1.html' },
-         { id: 6, title: 'Обои 6', price: 799, delprice: 1000, image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/1.webp', detailsUrl: 'details1.html' },
-         { id: 7, title: 'Обои 7', price: 799, delprice: 1000, image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/1.webp', detailsUrl: 'details1.html' },
-         { id: 8, title: 'Обои 8', price: 799, delprice: 1000, image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/1.webp', detailsUrl: 'details1.html' },
-         { id: 9, title: 'Обои 9', price: 799, delprice: 1000, image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/1.webp', detailsUrl: 'details1.html' },
-         { id: 10, title: 'Обои 10', price: 799, delprice: 1000, image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/1.webp', detailsUrl: 'details1.html' },
-    { id: 11, title: 'Обои 11', price: 799, delprice: 1000, image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/11.webp', detailsUrl: 'details11.html' },
-    { id: 12, title: 'Обои 12', price: 1099, delprice: 1450, image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/12.webp', detailsUrl: 'details12.html' },
-    { id: 13, title: 'Обои 13', price: 1299, delprice: 1750, image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/13.webp', detailsUrl: 'details13.html' },
-    { id: 14, title: 'Обои 14', price: 749, delprice: 950, image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/14.webp', detailsUrl: 'details14.html' },
-    { id: 15, title: 'Обои 15', price: 899, delprice: 1200, image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/15.webp', detailsUrl: 'details15.html' },
-    { id: 16, title: 'Обои 16', price: 1199, delprice: 1600, image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/16.webp', detailsUrl: 'details16.html' },
-    { id: 17, title: 'Обои 17', price: 849, delprice: 1100, image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/17.webp', detailsUrl: 'details17.html' },
-    { id: 18, title: 'Обои 18', price: 999, delprice: 1300, image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/18.webp', detailsUrl: 'details18.html' },
-    { id: 19, title: 'Обои 19', price: 799, delprice: 1000, image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/19.webp', detailsUrl: 'details19.html' },
-    { id: 20, title: 'Обои 20', price: 1099, delprice: 1450, image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/20.webp', detailsUrl: 'details20.html' },
-    { id: 21, title: 'Обои 21', price: 1299, delprice: 1700, image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/21.webp', detailsUrl: 'details21.html'},
- { id: 22, title: 'Обои 22', price: 899, delprice: 1250, image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/22.webp', detailsUrl: 'details22.html' } ,
- { id: 23, title: 'Обои 23', price: 1090, delprice: 1400, image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/23.webp', detailsUrl: 'details23.html' },
-{ id: 24, title: 'Обои 24', price: 950, delprice: 1200, image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/24.webp', detailsUrl: 'details24.html' },
-{ id: 25, title: 'Обои 25', price: 750, delprice: 900, image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/25.webp', detailsUrl: 'details25.html' },
-{ id: 26, title: 'Обои 26', price: 1150, delprice: 1500, image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/26.webp', detailsUrl: 'details26.html' },
- {id: 27, title: 'Обои 27', price: 850, delprice: 1100, image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/27.webp', detailsUrl: 'details27.html'} ,
- {id: 28, title: 'Обои 28', price: 999, delprice: 1300, image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/28.webp', detailsUrl: 'details28.html' },
-{ id: 29, title: 'Обои 29', price: 920, delprice: 1150, image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/29.webp', detailsUrl: 'details29.html'} ,
-{ id: 30, title: 'Обои 30', price: 1149, delprice: 1500, image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/30.webp', detailsUrl: 'details30.html' }
-    ];
-    // Создание карточек
-    cardsData.forEach((cardData, index) => {
-    
-        const card = document.createElement('div');
-        card.classList.add('product-card');
-        const figure = document.createElement('figure');
-        const img = document.createElement('img');
-        img.src = cardData.image;
-        img.alt = cardData.title;
-        figure.appendChild(img);
-        const title = document.createElement('p');
-        title.classList.add('product-title');
-        title.textContent = cardData.title;
-        const figcaption = document.createElement('figcaption');
-        const prce = document.createElement('p');
-        prce.classList.add('prce');
-        prce.textContent = 'Цена за штуку';
-        figcaption.appendChild(prce);
-        const money = document.createElement('p');
-        money.classList.add('money');
-        const span = document.createElement('span');
-        span.textContent = cardData.price + ' ₽';
-        const del = document.createElement('del');
-        del.textContent = cardData.delprice + ' ₽';
-        money.appendChild(span);
-        money.appendChild(del);
-        const buttons = document.createElement('div');
-        buttons.classList.add('Buttons');
-        const addToCartButton = document.createElement('button');
-        addToCartButton.classList.add('btn');
-        addToCartButton.textContent = 'В корзину';
-        addToCartButton.id = `addToCart${cardData.id}`;
-const subtractButton = document.createElement('button');
-        subtractButton.classList.add('subtract');
-        subtractButton.textContent = '–';
-        subtractButton.onclick = () => changeNumber(-1, `number${cardData.id}`);
-        const numberInput = document.createElement('input');
-        numberInput.classList.add('js-number');
-        numberInput.id = `number${cardData.id}`;
-        numberInput.type = 'text';
-        numberInput.value = '1';
-        numberInput.readOnly = true;
-        const addButton = document.createElement('button');
-        addButton.classList.add('add');
-        addButton.textContent = '+';
-        addButton.onclick = () => changeNumber(1, `number${cardData.id}`);
-      
-        buttons.appendChild(addToCartButton);
-        buttons.appendChild(subtractButton);
-        buttons.appendChild(numberInput);
-        buttons.appendChild(addButton);
-        card.appendChild(figure);
-        card.appendChild(title);
-        card.appendChild(figcaption);
-        card.appendChild(money);
-        card.appendChild(buttons);
-        container.appendChild(card);
-     // Создаем отдельный div для кнопки "Подробнее"
-    const detailsDiv = document.createElement('div');
-    detailsDiv.classList.add('details-container'); // Добавляем класс для стилизации
-
-    const detailsButton = document.createElement('a');
-    detailsButton.href = cardData.detailsUrl; // Место назначения ссылки
-    detailsButton.textContent = 'Подробнее';  
-    detailsButton.classList.add('details-button'); // Добавляем класс для стилизации 
-
-    detailsDiv.appendChild(detailsButton); // Добавляем кнопку в новый div
-    card.appendChild(detailsDiv); // Добавляем div с кнопкой в карточку
-    });
-      
-    function changeNumber(step, inputId) {
-        const input = document.getElementById(inputId);
-        let currentNumber = parseInt(input.value);
-        currentNumber += step;
-        if (currentNumber < 1) {
-            currentNumber = 1;
-        }
-        input.value = currentNumber;
-    }</script><!-- Navigation Buttons --><div class ="nexprev"><button id="prevBtn" class="pre-btn">Назад</button>
+<!-- Navigation Buttons --><div class ="nexprev"><button id="prevBtn" class="pre-btn">Назад</button>
 <button id="nextBtn" class="nex-btn">Вперед</button></div> </div>
 
 </body></html>
+
+
 <script>
-// Логика навигации
-let currentIndex = 0; // Текущий индекс первой карточки для показа
-const cards = document.querySelectorAll('.product-card'); // Получаем все карточки товаров
-// Функция для показа 12 карточек, начиная с currentIndex
+const catalog = document.getElementById('catalog');
+const menuBurger = document.getElementById('menuBurger');
+const popup = document.getElementById('popup');
+
+menuBurger.onclick = function(event) {
+    event.stopPropagation();
+    catalog.style.display = catalog.style.display === 'none' ? 'block' : 'none';
+};
+
+document.querySelectorAll('.category-button').forEach(button => {
+    button.onclick = function(event) {
+        event.stopPropagation();
+        const categoryNum = this.getAttribute('data-category');
+        let content = '';
+        switch (categoryNum) {
+            case '1':
+                content = `
+                    <li><button class="button-style" onclick="showPopup('Подкатегория 1.1')">Подкатегория 1.1</button></li>
+                    <li><button class="button-style" onclick="showPopup('Подкатегория 1.2')">Подкатегория 1.2</button></li>
+                    <li><button class="button-style" onclick="showPopup('Подкатегория 1.3')">Подкатегория 1.3</button></li>`;
+                break;
+            case '2':
+                content = `
+                    <li><button class="button-style" onclick="showPopup('Подкатегория 2.1')">Подкатегория 2.1</button></li>
+                    <li><button class="button-style" onclick="showPopup('Подкатегория 2.2')">Подкатегория 2.2</button></li>`;
+                break;
+            case '3':
+                content = `
+                    <li><button class="button-style" onclick="showPopup('Подкатегория 3.1')">Подкатегория 3.1</button></li>
+                    <li><button class="button-style" onclick="showPopup('Подкатегория 3.2')">Подкатегория 3.2</button></li>`;
+                break;
+        }
+        document.getElementById('popupContent').innerHTML = content;
+        showPopup(this.querySelector('span').textContent);
+    };
+});
+
+function showPopup(title) {
+    document.getElementById('popupTitle').textContent = title;
+    popup.style.display = 'block';
+}
+
+function closePopup() {
+    popup.style.display = 'none';
+}
+
+document.addEventListener('click', function() {
+    if (catalog.style.display === 'block') {
+        catalog.style.display = 'none';
+    }
+    if (popup.style.display === 'block') {
+        popup.style.display = 'none';
+    }
+});
+
+const container = document.querySelector('.container');
+const cardsData = [
+    {
+        id: 1,
+        title: 'Обои 1',
+        price: 799,
+        delprice: 1000,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/1.webp',
+        detailsUrl: "productcard.html"
+    },
+    {
+        id: 2,
+        title: 'Обои 2',
+        price: 990,
+        delprice: 1500,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/2.webp',
+        detailsUrl: ''
+    },
+    
+     {
+        id: 3,
+        title: 'Обои 3',
+        price: 790,
+        delprice: 1000,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/2.webp',
+        detailsUrl: ''
+    }
+];
+
+cardsData.forEach((cardData) => {
+    const card = document.createElement('div');
+    card.classList.add('product-card');
+
+    const figure = document.createElement('figure');
+    const img = document.createElement('img');
+    img.src = cardData.image;
+    img.alt = cardData.title;
+    figure.appendChild(img);
+
+    const title = document.createElement('p');
+    title.classList.add('product-title');
+    title.textContent = cardData.title;
+
+    const figcaption = document.createElement('figcaption');
+    const price = document.createElement('p');
+    price.classList.add('price');
+    price.textContent = 'Цена за штуку';
+    figcaption.appendChild(price);
+
+    const money = document.createElement('p');
+    money.classList.add('money');
+
+    const span = document.createElement('span');
+    span.textContent = cardData.price + ' ₽';
+    const del = document.createElement('del');
+    del.textContent = cardData.delprice + ' ₽';
+    money.appendChild(span);
+    money.appendChild(del);
+
+    const buttons = document.createElement('div');
+    buttons.classList.add('Buttons');
+
+    const addToCartButton = document.createElement('button');
+    addToCartButton.classList.add('btn');
+    addToCartButton.textContent = 'В корзину';
+    addToCartButton.id = `addToCart${cardData.id}`;
+
+    const subtractButton = document.createElement('button');
+    subtractButton.classList.add('subtract');
+    subtractButton.textContent = '–';
+    subtractButton.onclick = () => changeNumber(-1, `number${cardData.id}`);
+
+    const numberInput = document.createElement('input');
+    numberInput.classList.add('js-number');
+    numberInput.id = `number${cardData.id}`;
+    numberInput.type = 'text';
+    numberInput.value = '1';
+    numberInput.readOnly = true;
+
+    const addButton = document.createElement('button');
+    addButton.classList.add('add');
+    addButton.textContent = '+';
+    addButton.onclick = () => changeNumber(1, `number${cardData.id}`);
+
+    buttons.appendChild(addToCartButton);
+    buttons.appendChild(subtractButton);
+    buttons.appendChild(numberInput);
+    buttons.appendChild(addButton);
+
+    card.appendChild(figure);
+    card.appendChild(title);
+    card.appendChild(figcaption);
+    card.appendChild(money);
+    card.appendChild(buttons);
+    container.appendChild(card);
+
+    const detailsDiv = document.createElement('div');
+    detailsDiv.classList.add('details-container');
+    const detailsButton = document.createElement('a');
+    detailsButton.href = cardData.detailsUrl;
+    detailsButton.textContent = 'Подробнее';
+    detailsButton.classList.add('details-button');
+    detailsDiv.appendChild(detailsButton);
+    card.appendChild(detailsDiv);
+});
+
+let currentIndex = 0;
+const cards = document.querySelectorAll('.product-card');
+
 function showCards(startIndex) {
-    const endIndex = startIndex + 14; // Вычисляем конечный индекс для 12 карточек
+    const endIndex = startIndex + 2;
     cards.forEach((card, i) => {
-        card.style.display = (i >= startIndex && i < endIndex) ? 'block' : 'none'; // Покажем только выбранный диапазон
+        card.style.display = (i >= startIndex && i < endIndex) ? 'block' : 'none';
     });
 }
-// Показываем начальный набор карточек
+
 showCards(currentIndex);
-// Обработчик событий для кнопки "Вперед"
+
 document.getElementById('nextBtn').addEventListener('click', () => {
-    if (currentIndex + 15 >= cards.length) return; // Предотвращаем выход за пределы последнего набора карточек
-    currentIndex += 15; // Переходим к следующему набору из 12 карточек
-    showCards(currentIndex); // Показываем новый набор карточек
+    if (currentIndex + 2 >= cards.length) return;
+    currentIndex += 2;
+    showCards(currentIndex);
 });
-// Обработчик событий для кнопки "Назад"
+
 document.getElementById('prevBtn').addEventListener('click', () => {
-    if (currentIndex === 0) return; // Предотвращаем переход до первого набора карточек
-    currentIndex -= 15; // Переходим к предыдущему набору из 12 карточек
-    showCards(currentIndex); // Показываем новый набор карточек
+    if (currentIndex === 0) return;
+    currentIndex -= 2;
+    showCards(currentIndex);
 });
-// Функция для управления действиями корзины
+
 document.querySelectorAll(".btn").forEach(button => {
-    button.addEventListener("click", function () {
+    button.addEventListener("click", function() {
         const isInCart = this.classList.contains("clicked");
-        // Добавление в корзину
         if (!isInCart) {
             addToCart(this);
             this.textContent = "В корзине";
             this.classList.add("clicked");
         } else {
-            // Удаление из корзины (если это необходимо)
             this.textContent = "В корзину";
             this.classList.remove("clicked");
             removeFromCart(this);
         }
     });
 });
-// Функция для изменения количества товара в корзине
+
 function changeNumber(amount, inputId) {
-    const numberInput = document.getElementById(inputId); // Получаем элемент поля ввода количества
-    let currentValue = parseInt(numberInput.value, 10); // Получаем текущее значение количества
-    currentValue += amount; // Обновляем количество на основе amount
-    if (currentValue >= 0) { // Убеждаемся, что количество не становится отрицательным
-        numberInput.value = currentValue; // Обновляем значение в поле ввода
+    const numberInput = document.getElementById(inputId);
+    let currentValue = parseInt(numberInput.value, 10);
+    currentValue += amount;
+    if (currentValue >= 1) {
+        numberInput.value = currentValue;
     }
 }
-// Функция для добавления товара в корзину
+
 function addToCart(button) {
     const productTitle = button.closest('.product-card').querySelector('.product-title').textContent;
     const productPrice = button.closest('.product-card').querySelector('.money span').textContent;
     const productQuantity = button.closest('.product-card').querySelector('.js-number').value;
-    // Проверяем, есть ли уже такой товар в корзине
-    const existingItem = Array.from(document.querySelectorAll('.cart-item'))
-        .find(item => item.querySelector('p').textContent.includes(productTitle));
+
+    const existingItem = Array.from(document.querySelectorAll('.cart-item')).find(item => 
+        item.querySelector('p').textContent.includes(productTitle)
+    );
+
     if (existingItem) {
-        // Если товар уже есть, то увеличиваем его количество
         const quantityInput = existingItem.querySelector('.js-number');
         quantityInput.value = parseInt(quantityInput.value) + parseInt(productQuantity);
     } else {
-        // Если товара нет, то добавляем его в корзину
         const cartItem = document.createElement('div');
         cartItem.classList.add('cart-item');
         cartItem.innerHTML = `
-            <input type="checkbox" class="item-checkbox">
+            <input type="checkbox" class="item-checkbox"> 
             <p class="tovar">${productTitle} - ${productPrice}</p>
-            <div class = "boxadd">
-            <button class='subtract' onclick='changeCartItemNumber(-1, this)'>–</button>
-            <input type='text' class='js-number' value='${productQuantity}' readonly>
-            <button class='add' onclick='changeCartItemNumber(1, this)'>+</button></div>
-           <span class="remove-icon" onclick="removeItem(this)">🗑️</span> 
-        `;
+            <div class="boxadd">
+                <button class='subtract' onclick='changeCartItemNumber(-1, this)'>–</button>
+                <input type='text' class='js-number' value='${productQuantity}' readonly>
+                <button class='add' onclick='changeCartItemNumber(1, this)'>+</button>
+            </div>
+            <span class="remove-icon" onclick="removeItem(this)">🗑️</span>`;
         document.getElementById('cart-items').appendChild(cartItem);
     }
-  }
-     // Добавляем элемент в контейнер корзины
-   document.getElementById('cart-items').appendChild(cartItem);
- 
- // Функция для удаления товара из корзины
- function removeItem(icon) {
-icon.closest('.cart-item').remove();
- }
-
-// Функция для удаления товара из корзины
-function removeFromCart(button) {
-    // Ваш код для удаления товара, если это необходимо (по умолчанию не требуется)
 }
 
-// Функция для переключения видимости корзины
+function removeItem(icon) {
+    icon.closest('.cart-item').remove();
+}
+
+function removeFromCart(button) {
+    // Implementation for removing from cart can be added here
+}
+
 function toggleCart() {
-    const cart = document.getElementById('cart'); // Получаем элемент корзины по ID
-    // Переключаем стиль отображения между 'none' и 'block'
+    const cart = document.getElementById('cart');
     cart.style.display = cart.style.display === 'none' ? 'block' : 'none';
 }
 
-// Функция для очистки корзины
 function clearCart() {
     document.getElementById('cart-items').innerHTML = '';
 }
 
-// Функция для изменения количества товара в корзине
 function changeCartItemNumber(step, button) {
     const input = button.parentElement.querySelector('.js-number');
     let value = parseInt(input.value);
@@ -552,75 +532,61 @@ function changeCartItemNumber(step, button) {
     input.value = value;
 }
 
-// Функция для изменения количества товара на странице товара
-function changeNumber(step, inputId) {
-    const input = document.getElementById(inputId);
-    let value = parseInt(input.value);
-    value += step;
-    if (value < 1) {
-        value = 1;
-    }
-    input.value = value;
-}
-</script>
-
-<script>
-    const socialLink = document.querySelector('.social-link');
+const socialLink = document.querySelector('.social-link');
 const tooltip = document.getElementById('tooltip');
-// Показать tooltip при наведении
+
 socialLink.addEventListener('mouseover', function() {
-  tooltip.style.display = 'block';
-  // Позиционирование tooltip
-  tooltip.style.top = `${socialLink.offsetTop + socialLink.offsetHeight}px`;
-  tooltip.style.left = `${socialLink.offsetLeft}px`;
+    tooltip.style.display = 'block';
+    tooltip.style.top = `${socialLink.offsetTop + socialLink.offsetHeight}px`;
+    tooltip.style.left = `${socialLink.offsetLeft}px`;
 });
-// Скрыть tooltip при клике вне его
+
 document.addEventListener('click', function(event) {
-  // Проверяем, что клик был вне socialLink и tooltip
-  if (!socialLink.contains(event.target) && !tooltip.contains(event.target)) {
-    hideTooltip();
-  }
+    if (!socialLink.contains(event.target) && !tooltip.contains(event.target)) {
+        hideTooltip();
+    }
 });
-// Функция для скрытия tooltip
+
 function hideTooltip() {
-  tooltip.style.display = 'none';
+    tooltip.style.display = 'none';
 }
 
+let accountVisible = false;
 
-
-
-     function closeRegisterModal() {
-
-  document.getElementById("registerModal").style.display = "none";
+function toggleAccount() {
+    const account = document.getElementById('account');
+    accountVisible = !accountVisible;
+    account.style.display = accountVisible ? 'block' : 'none';
 }
-      let accountVisible = false;
-        function toggleAccount() {
-            const account = document.getElementById('account');
-            accountVisible = !accountVisible; // Меняем состояние видимости
-            account.style.display = accountVisible ? 'block' : 'none'; // Показываем или скрываем окно
-        }
-        function hideAccount() {
-            const account = document.getElementById('account');
-            if (accountVisible) { // Проверяем, что аккаунт отображается
-                accountVisible = false; // Скрываем его
-                account.style.display = 'none';
-            }
-        }
-        function openRegisterModal() {
-            document.getElementById('registerModal').style.display = 'block';
-        }
-        function closeRegisterModal() {
+
+function hideAccount() {
+    const account = document.getElementById('account');
+    if (accountVisible) {
+        accountVisible = false;
+        account.style.display = 'none';
+    }
+}
+
+function openRegisterModal() {
+    document.getElementById('registerModal').style.display = 'block';
+}
+function closeRegisterModal() {
             document.getElementById('registerModal').style.display = 'none';
         }
-        document.getElementById('registerForm').onsubmit = function(event) {
-            event.preventDefault(); // Предотвратить стандартное поведение формы
-            alert('Регистрация завершена'); // Здесь обработайте регистрацию
-            closeRegisterModal(); // Закрыть модальное окно
-        };
-        function LogInAccount() {
-            alert('Вход'); // Замените это на реальную функцию входа
-        }
+document.getElementById('registerForm').onsubmit = function(event) {
+    event.preventDefault();
+    alert('Регистрация завершена');
+    closeRegisterModal();
+};
+
+function LogInAccount() {
+    alert('Вход');
+}
+
     </script>
+
+
+
 
 
       <script>
@@ -635,6 +601,8 @@ signInBtnLink.addEventListener('click', () => {
     modal.classList.toggle('active');
 });
 </script>
+
+
 
 
 
