@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -52,14 +51,14 @@
             </div>
         </header>
 
-        <div class="cart" id="cart">
+  <div class="cart" id="cart">
             <h2>Корзина</h2>
             <div id="cart-items"></div>
-            <button >перейти в корзину </button>
-             
-            <button onclick="clearCart()">Очистить корзину</button>
-
+            <a href="cart.html"><button class= "cartbutton">Перейти в корзину</button></a>  <!--Почему ссылка не работает -->
+            
+            <button class= "cartbutton" onclick="clearCart()">Очистить корзину</button>
         </div>
+
 
 
 
@@ -449,9 +448,9 @@ function addToCart(button) {
         cartItem.classList.add('cart-item');
         cartItem.innerHTML = `
             <p>${productTitle} - ${productPrice}</p>
-            <button class='subtract' style='margin-right:80px;' onclick='changeCartItemNumber(-1, this)'>–</button>
+            <button class='sub' style='margin-right:80px;' onclick='changeCartItemNumber(-1, this)'>–</button>
             <input type='text' class='js-number' value='${productQuantity}' readonly>
-            <button class='add' style='margin-right:30px;' onclick='changeCartItemNumber(1, this)'>+</button>
+            <button class='ad' style='margin-right:30px;' onclick='changeCartItemNumber(1, this)'>+</button>
         `;
         document.getElementById('cart-items').appendChild(cartItem);
     }
