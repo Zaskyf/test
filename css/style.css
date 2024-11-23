@@ -1,4 +1,3 @@
-
 /*Все тело*/
 body {
   margin: 0;
@@ -135,9 +134,9 @@ header > .header-contaner {
 /*НАЧАЛО БОКСА С ИКНОКАМИ ССЫЛКАМИ */
 
 .boxicon {
-  display: flex;           /* Включаем Flexbox для контейнера */
+  display: flex;          
   justify-content: center; /* Центрируем элементы по горизонтали */
-  align-items: center;     /* Центрируем элементы по вертикали */
+  align-items: center;   
   gap: 15px;              /* Задаем промежуток между элементами */
   padding: 5px;          /* Внутренние отступы контейнера */
   margin-top: 40px;     
@@ -145,13 +144,13 @@ header > .header-contaner {
 }
 
 .bcontainer {
-  
+    background-color:white; /*IMPORTANT*/
 text-align: center;
 transition: transform 0.3s ease, box-shadow 0.3s ease;
 padding: 10px;
 border-radius: 9px;
 box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-background-color: white;
+
 width: 400px;
 font-size: 16px;
 line-height: 1.5;
@@ -168,6 +167,41 @@ min-height: 130px !important;
 width: 50px; 
 height: 50px;
 margin-bottom: 5px;
+}
+
+
+
+/* Медиа-запросы для адаптации под разные устройства */
+@media (max-width: 768px) {
+  .boxicon {
+   flex-direction: column; /* Вертикальное выравнивание на мобильных устройствах */
+    gap: 10px;              /* Уменьшаем промежуток между элементами */
+  }
+
+  .bcontainer {
+  min-height: 100px !important; 
+     width: 180px ; 
+    font-size: 14px;     
+  }
+
+  .icones {
+    width: 40px;      
+    height: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .bcontainer {
+    font-size: 10px;     
+    min-height: 100px !important; 
+     width: 130px; 
+   
+  }
+
+  .icones {
+    width: 30px; 
+    height: 30px;
+  }
 }
 /*КОНЕЦ БОКСА С ИНКОКАМИ ССЫЛКАМИ */
 
@@ -215,7 +249,7 @@ margin-right: 0;
 /*картина*/
 .swiper-slide img {
 width: 100%; /* Ширина изображения занимает 100% карточки */
-height:310px; /* Автоматическая высота для сохранения пропорций */
+height:310px; 
 border-radius: 9px; /* Закругленные углы для изображения */
 margin-bottom: 5px; /* Отступ снизу для изображения */
 text-align: center;
@@ -279,7 +313,54 @@ border-radius: 100%;
 color :grey !important;
 
 }
+
+
+
+/* Адаптация для устройств с шириной экрана до 768 пикселей */
+@media (max-width: 768px) {
+    .swiper-slide {
+     width:250px !important; 
+ height: 450px !important;
+position: relative;
+
+    }
+
+    .swiper-slide img {
+        width: 100%; /* Ширина изображения занимает 100% карточки */
+height:230px; 
+    }
+
+    .box {
+    font-size:10px;
+    background-color:red;
+        width: 100%; /* Занимает всю ширину родительского контейнера */
+        height: auto; /* Автоматическая высота */
+        padding: 5px; /* Добавление отступов */
+    }
+}
+
+/* Адаптация для устройств с шириной экрана до 480 пикселей */
+@media (max-width: 480px) {
+    .swiper-slide {
+        width: 100%; /* Занимает всю ширину экрана */
+        padding: 10px; /* Уменьшение отступов */
+    }
+
+    .swiper-slide img {
+        height:;
+    }
+
+    .box {
+        font-size: 12px; /* Уменьшение размера шрифта */
+        height: auto; /* Автоматическая высота */
+        padding: 5px; /* Уменьшение отступов */
+    }
+}
+
+
 /*КОНЕЦ СЛАЙДЕРА С ТОВАРАМИ НА ГЛАВНОЙ СТРАНИЦЕ */
+
+
 
 
 
@@ -2021,4 +2102,3 @@ right:-800px;
 margin-bottom: 10px; /* Отступы между контактными элементами */
 color: white;
 }
-/*конец футера */
