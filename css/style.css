@@ -421,12 +421,13 @@ header > .header-contaner {
               z-index: 201;
               background-color : #6188b8;
            }
+          
           .catalog button {
               display: block;
-              width: 180px;
-              height: 60px;
+              width: 210px !important;
+              height: 65px;
               line-height: 40px;
-              font-size: 12px;
+              font-size: 20px;
               font-family: sans-serif;
               text-decoration: none;
               background-color:#7c9dde;  /* -синий */
@@ -437,8 +438,43 @@ header > .header-contaner {
               position: relative;
               transition: all 0.30s;
               margin: 5px auto;
+              
 
           }
+          
+          
+           .catalog-icon {
+              cursor: pointer;
+              margin-left: 25px;
+              font-size: 30px;
+              color: black;
+          }
+          
+          .catalog button:after {
+              position: absolute;
+              content: "";
+              top: 0;
+              left: 0;
+              width: 0;
+              border-radius: 8px;
+              height: 100%;
+              background:#FFFFE0 ;
+              transition: all 0.30s;
+
+          }.catalog button span {
+              position: relative;
+              z-index: 2;
+
+          }.catalog button:hover {
+              color: black;
+              font-size:19px ;
+
+          }.catalog button:hover:after {
+              width: 100%;
+
+          }
+          
+          
           /* Адаптация для экранов шириной до 768px */
 @media (max-width: 1500px) {
   .catalog button {
@@ -462,10 +498,10 @@ header > .header-contaner {
           /* Адаптация для экранов шириной до 768px */
 @media (max-width: 768px) {
   .catalog button {
-      width: 150px;
-      height: 50px;
+      width: 210px;
+      height: 65px;
       line-height: 30px;
-      font-size: 10px;
+      font-size: 18px;
   }
 }
 
@@ -478,17 +514,30 @@ header > .header-contaner {
       font-size: 20px;
 
   }
+  
+    .catalog-icon {
+              cursor: pointer;
+              margin-left: 25px;
+              font-size: 25px;
+              color: #333;
+          }
 }
 /* Адаптация для экранов шириной до 480px */
 @media (max-width: 551px) {
   .catalog button {
-      width: 160px;
-      height: 50px;
+      width: 190px;
+      height: 55px;
       line-height: 15px;
-      font-size: 20px;
+      font-size: 17px;
        align-items:center;
   }
-}
+    .catalog-icon {
+              cursor: pointer;
+              margin-left: 25px;
+              font-size: 30px;
+              color: black;
+          }
+
           .catalog button:after {
               position: absolute;
               content: "";
@@ -506,7 +555,7 @@ header > .header-contaner {
 
           }.catalog button:hover {
               color: black;
-              font-size:21px ;
+              font-size:19px ;
 
           }.catalog button:hover:after {
               width: 100%;
@@ -515,31 +564,15 @@ header > .header-contaner {
           /*Бургер меню*/
           .catalog-icon {
               cursor: pointer;
-              margin-left: 30px;
+              margin-left: 25px;
               font-size: 25px;
               color: black;
           }
-          /* Адаптация для экранов шириной до 551px */
-@media (max-width: 551px) {
-  .catalog-icon {
-              cursor: pointer;
-              margin-left: 25px;
-              font-size: 30px;
-              color: black;
-          }
-}
+  
 
- /* Адаптация для экранов шириной до 480px */
-@media (max-width: 480px) {
-  .catalog-icon {
-              cursor: pointer;
-              margin-left: 25px;
-              font-size: 28px;
-              color: #333;
-          }
-}
           .catalog h2 {
               margin-bottom: 15px;
+          }
           }
           /* Popup для подкатегорий */
           .popup {
