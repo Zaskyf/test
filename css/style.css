@@ -1,5 +1,3 @@
-
-
 /*Все тело*/
 body {
   margin: 0;
@@ -396,7 +394,7 @@ header > .header-contaner {
       margin: 0;
   }
 
-          .button-style {
+   .button-style {
               position: relative;
               border-radius: 8px;
               width: 190px;
@@ -475,28 +473,44 @@ header > .header-contaner {
               width: 100%;
 
           }
+          @media (max-width: 768px) {
+  .example {
+    font-size: 14px;
+  }
+}
           
           
           /* Адаптация для экранов шириной до 768px */
-@media (max-width: 1500px) {
+@media (min-width: 769px) and (max-width: 1024px) {
   .catalog button {
-      width: 200px;
+      width: 180px;
       height: 70px;
       line-height: 30px;
-      font-size: 20px;
+      font-size: 18px;
   }
-
+       .catalog button {
+              display: block;
+              width: 180px !important;
+              height: 65px;
+              line-height: 40px;
+              font-size: 18px;
+              font-family: sans-serif;
+              text-decoration: none;
+              background-color:#7c9dde;  /* -синий */
+              border: 2px solid #333;
+              border-radius: 8px;
+              letter-spacing: 2px;
+              text-align: center;
+              position: relative;
+              transition: all 0.30s;
+              margin: 5px auto;
+              
 }
 
-/* Адаптация для экранов шириной до 480px */
-@media (max-width: 480px) {
-  .catalog button {
-      width: 120px;
-      height: 40px;
-      line-height: 25px;
-      font-size: 9px;
-  }
+         
+       
 }
+
           /* Адаптация для экранов шириной до 768px */
 @media (max-width: 768px) {
   .catalog button {
@@ -915,23 +929,26 @@ color :grey !important;
 /* Адаптация для устройств с шириной экрана до 768 пикселей */
 @media (max-width: 768px) {
     .swiper-slide {
-     width:250px !important; 
- height: 450px !important;
+     width:210px !important; 
+ height: 400px !important;
 position: relative;
 
     }
-
     .swiper-slide img {
         width: 100%; /* Ширина изображения занимает 100% карточки */
-height:230px; 
+height:200px; 
     }
 
     .box {
-    font-size:10px;
+    font-size: 9px;
     background-color:white;
         width: 100%; /* Занимает всю ширину родительского контейнера */
         height: auto; /* Автоматическая высота */
         padding: 5px; /* Добавление отступов */
+    }
+    
+    .btn{
+    font-size:11px !important;
     }
 }
 
@@ -942,12 +959,10 @@ height:230px;
         padding: 10px; /* Уменьшение отступов */
     }
 
-    .swiper-slide img {
-        height:;
-    }
+   
 
     .box {
-        font-size: 12px; /* Уменьшение размера шрифта */
+        font-size: 8px; /* Уменьшение размера шрифта */
         height: auto; /* Автоматическая высота */
         padding: 5px; /* Уменьшение отступов */
     }
