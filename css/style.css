@@ -1,3 +1,5 @@
+
+
 /*Все тело*/
 body {
   margin: 0;
@@ -639,13 +641,28 @@ header > .header-contaner {
       .carousel {
         top: 15px;
         position: relative;
-         
+        
         width: 90%; /* Ширина каррусели */
         height: 350px; /* Высота каррусели */
         overflow: hidden;
         margin: auto;
      
     }
+    
+    
+    @media (max-width: 768px) {
+     .carousel {
+    height: 200px; /* Высота каррусели */
+    }
+    }
+    
+       @media (max-width: 560px) {
+        .carousel {
+    height: 175px; /* Высота каррусели */
+    }
+    }
+    
+    
     .itms {
         display: flex;
         transition: transform 0.5s ease;
@@ -704,7 +721,8 @@ header > .header-contaner {
   align-items: center;   
   gap: 15px;              /* Задаем промежуток между элементами */
   padding: 5px;          /* Внутренние отступы контейнера */
-  margin-top: 40px;     
+  margin-top: 40px;    
+  background-color:#e5e5e5; /*IMPORTANT*/
 
 }
 
@@ -739,36 +757,47 @@ margin-bottom: 5px;
 /* Медиа-запросы для адаптации под разные устройства */
 @media (max-width: 768px) {
   .boxicon {
-   flex-direction: column; /* Вертикальное выравнивание на мобильных устройствах */
+     display: flex;
     gap: 10px;              /* Уменьшаем промежуток между элементами */
   }
 
   .bcontainer {
   min-height: 100px !important; 
-     width: 180px ; 
-    font-size: 14px;     
+     width: 200px ; 
+    font-size: 10px;     
   }
 
   .icones {
-    width: 40px;      
-    height: 40px;
+    width: 45px;      
+    height: 45px;
   }
 }
 
 @media (max-width: 480px) {
   .bcontainer {
-    font-size: 10px;     
-    min-height: 100px !important; 
-     width: 130px; 
+    min-height: 90px !important; 
+     width: 165px; 
+       display: flex;
+       align-items:center;
    
   }
 
   .icones {
-    width: 30px; 
-    height: 30px;
+    width: 40px; 
+    height: 40px;
   }
+  
+  .boxicon {
+  display: flex;
+  align-items: flex-start; /* Вертикальное выравнивание элементов по верхней части */
+  gap: 10px; /* Задаем промежуток между элементами */
+  flex-wrap: wrap; /* Позволяет элементам переноситься на новую строку */
+  margin-top: 40px;
+  background-color: #e5e5e5; /*IMPORTANT*/
+
 }
-/*КОНЕЦ БОКСА С ИНКОКАМИ ССЫЛКАМИ */
+}
+/*КОНЕЦ БОКСА С ИНКОКАМИ ССЫЛКАМИ 	НА КАТЕГОРИИ */
 
 
 
