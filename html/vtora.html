@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -155,99 +154,6 @@
     </div>
     </div>
 
-
-       
-
- <!--   
-<button id="filterButton" class="animated-button">Фильтр</button>
-<div class="mdal" id="filterMdal" style="display: none;">
-    <div class="mdal-content">
-        <span class="close-button" id="closeMdal">&times;</span>
-        <h2>Фильтры</h2>
-        <div class="filters">
-            <div class="filter-group">
-                <label for="price-range">Цена:</label>
-                <input type="range" id="price-range" min="0" max="2000" value="0" />
-            </div>
-            <div class="filter-group">
-                <label for="material-select">Материал:</label>
-                <select id="material-select">
-                    <option value="">Все</option>
-                    <option value="бумага">Бумага</option>
-                    <option value="винил">Винил</option>
-                    <option value="флизелин">Флизелин</option>
-                </select>
-            </div>
-            <div class="filter-group">
-                <label for="color-select">Цвет:</label>
-                <select id="color-select">
-                    <option value="">Все</option>
-                    <option value="белый">Белый</option>
-                    <option value="серый">Серый</option>
-                    <option value="коричневый">Коричневый</option>
-                </select>
-            </div>
-            <div class="filter-group">
-                <label for="manufacturer-select">Производитель:</label>
-                <select id="manufacturer-select">
-                    <option value="">Все</option>
-                    <option value="Erismann">Erismann</option>
-                    <option value="Rasch">Rasch</option>
-                    <option value="Grandeco">Grandeco</option>
-                </select>
-            </div>
-               <button id="applyFilters">Применить фильтры</button>
-        </div>
-    </div>
-</div>   -->
-
-
- 
-<script>
-// Получаем элементы модального окна и кнопок
-const filterModal = document.getElementById("filterMdal");
-const filterButton = document.getElementById("filterButton");
-const closeModal = document.getElementById("closeMdal");
-// Функция для открытия модального окна
-filterButton.onclick = function() {
-    filterModal.style.display = "block";
-}
-// Функция для закрытия модального окна
-closeModal.onclick = function() {
-    filterModal.style.display = "none";
-}
-// Закрытие модального окна при клике вне его
-window.onclick = function(event) {
-    if (event.target == filterModal) {
-        filterModal.style.display = "none";
-    }
-}
- document.getElementById('applyFilters').onclick = function() {
-        const priceRange = document.getElementById('price-range').value;
-        const selectedMaterial = document.getElementById('material-select').value;
-        const selectedColor = document.getElementById('color-select').value;
-        const selectedManufacturer = document.getElementById('manufacturer-select').value;
-        const cards = document.querySelectorAll('.product-card');
-        cards.forEach(card => {
-            const cardPrice = parseInt(card.getAttribute('data-price'));
-            const cardMaterial = card.getAttribute('data-material');
-            const cardColor = card.getAttribute('data-color');
-            const cardManufacturer = card.getAttribute('data-manufacturer');
-            const priceMatch = cardPrice <= priceRange;
-            const materialMatch = selectedMaterial === "" || cardMaterial === selectedMaterial;
-            const colorMatch = selectedColor === "" || cardColor === selectedColor;
-            const manufacturerMatch = selectedManufacturer === "" || cardManufacturer === selectedManufacturer;
-            if (priceMatch && materialMatch && colorMatch && manufacturerMatch) {
-                card.classList.remove('hidden');
-            } else {
-                card.classList.add('hidden');
-            }
-        });
-        // Закрытие модального окна после применения фильтров
-        document.getElementById('filterMdal').style.display = 'none';
-    };
-</script>
-
 <h6 style= "font-size:35px; font-weight:bold;margin-left:80px;
 margin-top:15px; margin-bottom:15px;">Обои</h6>
 
@@ -255,73 +161,188 @@ margin-top:15px; margin-bottom:15px;">Обои</h6>
 
 <div class="wrapper">
 
-<div class="container">
-
-    </div>
+<div class="container">  </div>
 
 <!-- Navigation Buttons --><div class ="nexprev"><button id="prevBtn" class="pre-btn">Назад</button>
 <button id="nextBtn" class="nex-btn">Вперед</button></div> </div>
 
+
+    <!-- <section></section>
+    <main></main>
+    <article></article>
+    <textarea name="" id=""></textarea>
+    <code></code>
+    <hr>
+    <iframe></iframe> -->
+
+  <!--  <footer class="footer">
+    <hr>
+        <div class="containr"><div class="subscribe"></div><div class="footer_navigation">
+            <div class="footer_menu">
+        <div class="item"><div class="caption">О компании</div>
+        <ul class="menu_list">
+            <a href="/about/about-the-company/">ТК Арктика</a>
+            <a href="/about/arktika-servis/">Арктика-Сервис</a>
+            <a href="/about/bonus-program/">Бонусная программа</a>
+            <a href="/about/podarochnye-karty/">Подарочные карты</a>
+        </ul></div>
+        <div class="item"> 
+            <div class="caption">Информация</div>
+        <ul class="menu_list">
+            <a href="/information/oplata/">Как оплатить</a>
+            <a href="/information/feedback/">Обратная связь</a>
+           <a href="/information/contacts/">Контакты</a>
+            <a href="/information/jobs/">Вакансии</a>
+        
+        
+        </ul></div>   
+
+             <div class="item"><div class="caption">Наши услуги</div>
+            <ul class="menu_list"><a href="/our-services/free-shipping/">Бесплатная доставка</a>
+            </ul></div></div> <div class="contact_info"><div class="phone"><a href="tel:+7 (8672) 55-08-70">+7 (8672) 55-08-70</a> (с 10:00 до 20:00) </div><div class="address">Адрес магазина:<br>г. Владикавказ, пр-т Коста, 15,<br> лит. Г,Б, пом. 5,6  </div> <div class="copyright">© 1996—2024, ТК «Арктика»  </div></div></div></div>
+    </footer>  -->
 </body></html>
+        
+        <script> 
+          const catalog = document.getElementById('catalog');
+        const menuBurger = document.getElementById('menuBurger');
+        const popup = document.getElementById('popup');
+        // Функция для открытия и закрытия меню
+        menuBurger.onclick = function(event) {
+            event.stopPropagation(); // Остановить всплытие события, чтобы не закрыть каталог сразу
+            catalog.style.display = catalog.style.display === 'none' ? 'block' : 'none';
+        };
+        // Функция для открытия подкатегорий в новом окне
+        document.querySelectorAll('.category-button').forEach(button => {
+            button.onclick = function(event) {
+                event.stopPropagation(); // Остановить всплытие события при клике на категории
+                const categoryNum = this.getAttribute('data-category');
+                let content = '';
 
+                switch (categoryNum) {
+                    case '1':
+                        content = '<button class="button-style" onclick="showPopup(\'Подкатегория 1.1\')">Подкатегория 1.1</button>' +
+                                  '<button class="button-style" onclick="showPopup(\'Подкатегория 1.2\')">Подкатегория 1.2</button>' +
+                                  '<button class="button-style" onclick="showPopup(\'Подкатегория 1.3\')">Подкатегория 1.3</button>';
+                        break;
+                    case '2':
+                        content = '<button class="button-style" onclick="showPopup(\'Подкатегория 2.1\')">Подкатегория 2.1</button>' +
+                                  '<button class="button-style" onclick="showPopup(\'Подкатегория 2.2\')">Подкатегория 2.2</button>';
+                        break;
+                    case '3':
+                        content = '<button class="button-style" onclick="showPopup(\'Подкатегория 3.1\')">Подкатегория 3.1</button>' +
+                                  '<button class="button-style" onclick="showPopup(\'Подкатегория 3.2\')">Подкатегория 3.2</button>';
+                        break;
+                }
+                document.getElementById('popupContent').innerHTML = content;
+                showPopup( this.querySelector('span').textContent);
+            };
+        });
+        // Функция для отображения popup
+        function showPopup(title) {
+            document.getElementById('popupTitle').textContent = title;
+            popup.style.display = 'block'; // Показывает popup
+        }
+        // Функция для закрытия popup
+        function closePopup() {
+            popup.style.display = 'none'; // Скрывает popup
+        }
+        // Закрытие каталога при клике где-либо на странице
+        document.addEventListener('click', function() {
+            if (catalog.style.display === 'block') {
+                catalog.style.display = 'none'; // Закрывает каталог
+            }  });
+            // Закрытие каталога при клике где-либо на странице
+        document.addEventListener('click', function() {
+            if ( popup.style.display === 'block') {
+                 popup.style.display = 'none'; // Закрывает каталог
 
-<script>
-const catalog = document.getElementById('catalog');
-const menuBurger = document.getElementById('menuBurger');
-const popup = document.getElementById('popup');
+            }
+        });
 
-menuBurger.onclick = function(event) {
-    event.stopPropagation();
-    catalog.style.display = catalog.style.display === 'none' ? 'block' : 'none';
+        
+const socialLink = document.querySelector('.social-link');
+const tooltip = document.getElementById('tooltip');
+const account = document.getElementById('account');
+const registerModal = document.getElementById('registerModal');
+const registerForm = document.getElementById('registerForm');
+const signInBtnLink = document.querySelector('.signInBtn-link');
+const signUpBtnLink = document.querySelector('.signUpBtn-link');
+const modal = document.querySelector('.modal');
+
+let accountVisible = false;
+
+// Show tooltip on mouse over
+socialLink.addEventListener('mouseover', () => {
+    tooltip.style.display = 'block';
+    tooltip.style.top = `${socialLink.offsetTop + socialLink.offsetHeight}px`; // Corrected line
+    tooltip.style.left = `${socialLink.offsetLeft}px`; // Corrected line
+});
+
+// Hide tooltip on click outside
+document.addEventListener('click', (event) => {
+    if (!socialLink.contains(event.target) && !tooltip.contains(event.target)) {
+        hideTooltip();
+    }
+});
+
+// Hide tooltip function
+function hideTooltip() {
+    tooltip.style.display = 'none';
+}
+
+// Toggle account visibility
+function toggleAccount() {
+    accountVisible = !accountVisible;
+    account.style.display = accountVisible ? 'block' : 'none';
+}
+
+// Hide account if visible
+function hideAccount() {
+    if (accountVisible) {
+        accountVisible = false;
+        account.style.display = 'none';
+    }
+}
+
+// Open and close register modal
+function openRegisterModal() {
+    document.body.style.overflow = 'hidden'; // Prevent body scroll
+    registerModal.style.display = 'block';
+}
+
+function closeRegisterModal() {
+    document.body.style.overflow = 'auto'; // Re-enable body scroll
+    registerModal.style.display = 'none';
+}
+
+// Handle register form submission
+registerForm.onsubmit = (event) => {
+    event.preventDefault();
+    alert('Регистрация завершена');
+    closeRegisterModal();
 };
 
-document.querySelectorAll('.category-button').forEach(button => {
-    button.onclick = function(event) {
-        event.stopPropagation();
-        const categoryNum = this.getAttribute('data-category');
-        let content = '';
-        switch (categoryNum) {
-            case '1':
-                content = `
-                    <li><button class="button-style" onclick="showPopup('Подкатегория 1.1')">Подкатегория 1.1</button></li>
-                    <li><button class="button-style" onclick="showPopup('Подкатегория 1.2')">Подкатегория 1.2</button></li>
-                    <li><button class="button-style" onclick="showPopup('Подкатегория 1.3')">Подкатегория 1.3</button></li>`;
-                break;
-            case '2':
-                content = `
-                    <li><button class="button-style" onclick="showPopup('Подкатегория 2.1')">Подкатегория 2.1</button></li>
-                    <li><button class="button-style" onclick="showPopup('Подкатегория 2.2')">Подкатегория 2.2</button></li>`;
-                break;
-            case '3':
-                content = `
-                    <li><button class="button-style" onclick="showPopup('Подкатегория 3.1')">Подкатегория 3.1</button></li>
-                    <li><button class="button-style" onclick="showPopup('Подкатегория 3.2')">Подкатегория 3.2</button></li>`;
-                break;
-        }
-        document.getElementById('popupContent').innerHTML = content;
-        showPopup(this.querySelector('span').textContent);
-    };
+// Log in account function
+function logInAccount() {
+    alert('Вход');
+}
+</script>
+<script>
+// Toggle modal visibility on button click
+signUpBtnLink.addEventListener('click', () => {
+    modal.classList.toggle('active');
 });
 
-function showPopup(title) {
-    document.getElementById('popupTitle').textContent = title;
-    popup.style.display = 'block';
-}
-
-function closePopup() {
-    popup.style.display = 'none';
-}
-
-document.addEventListener('click', function() {
-    if (catalog.style.display === 'block') {
-        catalog.style.display = 'none';
-    }
-    if (popup.style.display === 'block') {
-        popup.style.display = 'none';
-    }
+signInBtnLink.addEventListener('click', () => {
+    modal.classList.toggle('active');
 });
 
-const container = document.querySelector('.container');
+    </script>
+    
+    
+    <script>
+    const container = document.querySelector('.container');
 const cardsData = [
    {
         id: 1,
@@ -688,70 +709,57 @@ const cardsData = [
 cardsData.forEach((cardData) => {
     const card = document.createElement('div');
     card.classList.add('product-card');
-
     const figure = document.createElement('figure');
     const img = document.createElement('img');
     img.src = cardData.image;
     img.alt = cardData.title;
     figure.appendChild(img);
-
     const title = document.createElement('p');
     title.classList.add('product-title');
     title.textContent = cardData.title;
-
     const figcaption = document.createElement('figcaption');
     const price = document.createElement('p');
     price.classList.add('prce');
     price.textContent = 'Цена за штуку';
     figcaption.appendChild(price);
-
     const money = document.createElement('p');
     money.classList.add('money');
-
     const span = document.createElement('span');
     span.textContent = cardData.price + ' ₽';
     const del = document.createElement('del');
     del.textContent = cardData.delprice + ' ₽';
     money.appendChild(span);
     money.appendChild(del);
-
     const buttons = document.createElement('div');
     buttons.classList.add('Buttons');
-
     const addToCartButton = document.createElement('button');
     addToCartButton.classList.add('btn');
     addToCartButton.textContent = 'В корзину';
     addToCartButton.id = `addToCart${cardData.id}`;
-
     const subtractButton = document.createElement('button');
     subtractButton.classList.add('subtract');
     subtractButton.textContent = '–';
     subtractButton.onclick = () => changeNumber(-1, `number${cardData.id}`);
-
     const numberInput = document.createElement('input');
     numberInput.classList.add('js-number');
     numberInput.id = `number${cardData.id}`;
     numberInput.type = 'text';
     numberInput.value = '1';
     numberInput.readOnly = true;
-
     const addButton = document.createElement('button');
     addButton.classList.add('add');
     addButton.textContent = '+';
     addButton.onclick = () => changeNumber(1, `number${cardData.id}`);
-
     buttons.appendChild(addToCartButton);
     buttons.appendChild(subtractButton);
     buttons.appendChild(numberInput);
     buttons.appendChild(addButton);
-
     card.appendChild(figure);
     card.appendChild(title);
     card.appendChild(figcaption);
     card.appendChild(money);
     card.appendChild(buttons);
     container.appendChild(card);
-
     const detailsDiv = document.createElement('div');
     detailsDiv.classList.add('details-container');
     const detailsButton = document.createElement('a');
@@ -865,72 +873,6 @@ function changeCartItemNumber(step, button) {
     input.value = value;
 }
 
-const socialLink = document.querySelector('.social-link');
-const tooltip = document.getElementById('tooltip');
 
-socialLink.addEventListener('mouseover', function() {
-    tooltip.style.display = 'block';
-    tooltip.style.top = `${socialLink.offsetTop + socialLink.offsetHeight}px`;
-    tooltip.style.left = `${socialLink.offsetLeft}px`;
-});
-
-document.addEventListener('click', function(event) {
-    if (!socialLink.contains(event.target) && !tooltip.contains(event.target)) {
-        hideTooltip();
-    }
-});
-
-function hideTooltip() {
-    tooltip.style.display = 'none';
-}
-
-let accountVisible = false;
-
-function toggleAccount() {
-    const account = document.getElementById('account');
-    accountVisible = !accountVisible;
-    account.style.display = accountVisible ? 'block' : 'none';
-}
-
-function hideAccount() {
-    const account = document.getElementById('account');
-    if (accountVisible) {
-        accountVisible = false;
-        account.style.display = 'none';
-    }
-}
-
-function openRegisterModal() {
-    document.getElementById('registerModal').style.display = 'block';
-}
-function closeRegisterModal() {
-            document.getElementById('registerModal').style.display = 'none';
-        }
-document.getElementById('registerForm').onsubmit = function(event) {
-    event.preventDefault();
-    alert('Регистрация завершена');
-    closeRegisterModal();
-};
-
-function LogInAccount() {
-    alert('Вход');
-}
 
     </script>
-
-
-
-
-
-      <script>
-  //кнопка прокрутки регистрации на войти
-const signInBtnLink = document.querySelector('.signInBtn-link');
-const signUpBtnLink = document.querySelector('.signUpBtn-link');
-const modal = document.querySelector('.modal');
-signUpBtnLink.addEventListener('click', () => {
-    modal.classList.toggle('active');
-});
-signInBtnLink.addEventListener('click', () => {
-    modal.classList.toggle('active');
-});
-</script>
