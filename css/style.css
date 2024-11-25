@@ -1,3 +1,9 @@
+
+    
+    
+<style>
+
+
 /*Все тело*/
 body {
   margin: 0;
@@ -1791,7 +1797,7 @@ background-color: black;
       }
   }
   
-  /* Для десктопов (от 1025px и выше) */
+  /*  (от 1025px и выше) */
   @media (min-width: 1025px) {
       .prodct-card {
           flex-direction: row; /* Горизонтальное расположение для десктопов */
@@ -1834,7 +1840,7 @@ background-color: black;
 .basket-container {
   max-width: 80%;
   margin: 20px auto;
-  background: #fefefe; /* Slightly off-white for a softer look */
+  background: #fefefe; 
   padding: 20px;
   border-radius: 12px;
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
@@ -1843,10 +1849,10 @@ background-color: black;
 }
 
 h1 {
-  color: #688EBD; /* Updated heading color */
+  color: #688EBD; 
   margin-bottom: 25px;
-  font-weight: 800; /* Bolder font-weight */
-  font-size: 2.2em; /* Slightly smaller for better balance */
+  font-weight: 800; 
+  font-size: 2.2em;
 }
 
 .ca {
@@ -1863,65 +1869,65 @@ li {
   border: 1px solid #e0e0e0; 
   border-radius: 10px;
   transition: background-color 0.3s, transform 0.2s; 
-  background-color: #fff; /* White background for list items */
+  background-color: #fff;
 }
 
 li:hover {
-  background-color: #f1f1f1; /* Light gray on hover */
+  background-color: #f1f1f1; 
   transform: translateY(-2px);
 }
 
 .basket-summary {
-  background-color: #e9ecef; /* Light gray for basket summary */
+  background-color: #e9ecef;
   border-radius: 10px;
   padding: 20px;
   box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
 }
 
 .basket-summary span {
-  font-size: 22px; /* Slightly larger font for emphasis */
+  font-size: 22px;
   font-weight: bold;
-  color: #343a40; /* Darker color for better visibility */
+  color: #343a40; 
 }
 
 .actions {
   display: flex;
-  justify-content: center; /* Center actions */
-  gap: 15px; /* Increased gap for better spacing */
+  justify-content: center; 
+  gap: 15px;
   margin-top: 20px;
 }
 
 button {
-  padding: 12px 24px; /* Increased padding for a better touch target */
+  padding: 12px 24px; 
   border: none;
   border-radius: 6px;
   cursor: pointer;
-  font-size: 18px; /* Larger font for buttons */
-  font-weight: 600; /* Bolder font for buttons */
+  font-size: 18px; 
+  font-weight: 600;
   transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 
 .animated-button {
-  background-color: #688EBD; /* Primary color */
+  background-color: #688EBD;
   color: white;
   box-shadow: 0 2px 5px rgba(104, 142, 189, 0.2);
 }
 .animated-button:hover {
-  background-color: #4a6f99; /* Darker shade on hover */
+  background-color: #4a6f99; 
   box-shadow: 0 4px 12px rgba(104, 142, 189, 0.4);
 }
 
-/* Delete button style */
+
 .delete-button {
-  background-color: #dc3545; /* Red color for delete */
+  background-color: #dc3545;
   color: white;
   border-radius: 6px;
-  padding: 8px 16px; /* Slightly more padding */
+  padding: 8px 16px; 
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
 .delete-button:hover {
-  background-color: #c82333; /* Darker red on hover */
+  background-color: #c82333; 
   transform: scale(1.1);
 }
 
@@ -1933,19 +1939,19 @@ button {
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.8); /* Darker overlay */
+  background-color: rgba(0, 0, 0, 0.8); 
 }
 
 .modall-content {
   background-color: #ffffff;
   margin: 10% auto;
-  padding: 40px; /* Increased padding */
+  padding: 40px; 
   border: 1px solid #888;
   width: 90%;
-  max-width: 600px; /* Slightly wider modal */
+  max-width: 600px;
   border-radius: 12px;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
-  animation: fadeIn 0.3s; /* Animation for modal appearance */
+  animation: fadeIn 0.3s;
 }
 
 @keyframes fadeIn {
@@ -1954,14 +1960,14 @@ button {
 }
 
 .modall-content h2 {
-  color: #688EBD; /* Updated modal title color */
-  margin-bottom: 25px; /* Increased margin for spacing */
-  font-size: 2em; /* Larger modal title */
+  color: #688EBD;
+  margin-bottom: 25px; 
+  font-size: 2em;
 }
 
 .modall-content label {
   display: block;
-  margin-top: 20px; /* Increased margin for better spacing */
+  margin-top: 20px; 
   color: #495057;
   font-weight: bold;
 }
@@ -1969,40 +1975,40 @@ button {
 .modall-content input,
 .modall-content select {
   width: 100%;
-  padding: 14px; /* Slightly increased padding */
+  padding: 14px;
   margin-top: 5px;
   border: 1px solid #ced4da;
   border-radius: 6px;
   font-size: 16px;
-  transition: border-color 0.3s; /* Transition for input focus */
+  transition: border-color 0.3s; 
 }
 
 .modall-content input:focus,
 .modall-content select:focus {
   outline: none;
-  border-color: #688EBD; /* Focus border color */
+  border-color: #688EBD;
   box-shadow: 0 0 5px rgba(104, 142, 189, 0.5);
 }
 
 .closebutton {
   color: #aaa;
   float: right;
-  font-size: 30px; /* Slightly larger for easier visibility */
+  font-size: 30px; 
   font-weight: bold;
 }
 
 .closebutton:hover,
 .closebutton:focus {
-  color: #688EBD; /* Change color on hover */
+  color: #688EBD; 
   text-decoration: none;
   cursor: pointer;
 }
 
 li img {
-  width: 70px; /* Set a fixed width for images */
-  height: 70px; /* Set a fixed height for images */
-  border-radius: 8px; /* Rounder corners for images */
-  margin-right: 15px; /* Space between image and text */
+  width: 70px; 
+  height: 70px; 
+  border-radius: 8px; 
+  margin-right: 15px;
 }
 
 .quantity-controls {
@@ -2012,7 +2018,7 @@ li img {
 
 .quantity-controls button {
   border: none;
-  background-color: #688EBD; /* Primary color */
+  background-color: #688EBD; 
   color: white;
   border-radius: 6px;
   padding: 7px 12px;
@@ -2022,7 +2028,7 @@ li img {
 }
 
 .quantity-controls button:hover {
-  background-color: #4a6f99; /* Darker shade on hover */
+  background-color: #4a6f99;
   transform: scale(1.05);
 }
 
@@ -2030,42 +2036,61 @@ li img {
   padding: 7px 10px;
   border: 1px solid #ced4da;
   border-radius: 6px;
-  min-width: 50px; /* Slightly larger minimum width */
+  min-width: 50px; 
   text-align: center;
 }
 /*КОНЕЦ СТРАНИЦЫ "КОРЗИНА" */
 
 
-.bocategory{
+
+/*НАЧАЛО ИКОНКИ на странице категории*/
+.category{
+  display: grid;
+  margin:5px;
+  grid-template-columns: repeat(3, 1fr); /* 4 колонки одинаковой ширины */
+  }
+.bocategory {
   text-align: center;
-  margin-top:40px;
-transition: transform 0.3s ease, box-shadow 0.3s ease;
-padding: 10px;
-border-radius: 9px;
-box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-background-color: white;
-width: 250px;
-font-size: 16px;
-line-height: 1.5;
-min-height: 200px !important; 
+  margin-top: 40px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding:15px;
+  border-radius: 9px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  width: 230px;
+  font-size: 16px;
+  line-height: 1.5;
+  min-height: 150px !important; 
 }
 
-.imges{
+.imges {
+margin-top:10px;
+border-radius: 9px;
   text-align: center;
-  width: 100px; 
-height: 100px;
-margin-bottom: 5px;
+    width: 180px ;
+    min-height: 185px !important; 
+   flex-wrap: wrap;
 }
+@media (min-width: 769px) and (max-width: 1600px) {
+.category{
+  display: grid;
+  margin:5px;
+  grid-template-columns: repeat(5, 1fr); /* 4 колонки одинаковой ширины */
+  }
+}
+/* КОНЕЦ  ИКОНКИ на странице категории*/
+
+
+
 
 /*Футер*/
 .footer {
 background-color: #688EBD;
 color: #314272;
 padding: 0;
-width: 100%; /* Занимает всю ширину экрана */
-position: absolute; /* Позволяет правильно размещать вложенные элементы */
-bottom: 0; /* Привязывает футер к низу родительского контейнера */
-margin: 0; /* Убирает отступы */
+width: 100%; 
+position: absolute;
+bottom: 0;
 height:200px;
 font-size:19px;
 font-weight: bold;
@@ -2078,25 +2103,25 @@ margin: 20px 0; /* Отступы сверху и снизу */
 }
 
 .containr {
-display: flex; /* Используем flexbox для выравнивания детей */
-justify-content: space-between; /* Распределение пространства между элементами */
+display: flex;
+justify-content: space-between; 
 align-items: flex-start; /* Выравнивание элементов по верхнему краю */
 }
 
 .footer_navigation {
-width: 100%; /* Занимает всю ширину контейнера */
+width: 100%; 
 }
 
 .footer_menu {
-display: flex; /* Используем flexbox для меню */
-width: 55%; /* Занимает всю ширину контейнера */
+display: flex;
+width: 55%; /* Занимает 55 ширины контейнера */
 margin-left:20px;
 
 
 }
 
 .caption {
-font-size: 22px; /* Размер шрифта для заголовков */
+font-size: 22px;
 font-weight: bold;
 margin-bottom: 10px;
 }
@@ -2112,13 +2137,13 @@ word-break: break-all;
 margin-right: 20px
 }
 .menu_list {
-list-style-type: none; /* Убираем стандартные маркеры списка */
-padding: 0; /* Убираем внутренние отступы для списка */
-font-size: 18px; /* Размер шрифта для ссылок в меню */
+list-style-type: none; /* Убираем стандартные маркеры */
+padding: 0;
+font-size: 18px; 
 }
 
 .menu_list li {
-margin-bottom: 0px; /* Отступ между элементами списка */
+margin-bottom: 0px; 
 }
 
 .menu_list a {
@@ -2134,7 +2159,7 @@ text-decoration: underline; /* Подчеркивание при наведен�
 
 .contact_info {
 position: relative;
-display: flex; /* Используем flexbox для контактной информации */
+display: flex; 
 flex-direction: column; /* Вертикальное расположение элементов */
 align-items: flex-end; /* Выравнивание элементов вправо */
 right:-800px;
@@ -2142,6 +2167,7 @@ right:-800px;
 }
 
 .phone, .address, .copyright {
-margin-bottom: 10px; /* Отступы между контактными элементами */
+margin-bottom: 10px; /* Отступы между  элементами */
 color: white;
 }
+</style>
