@@ -1,6 +1,3 @@
-
-
-
 /*Все тело*/
 body {
   margin: 0;
@@ -1123,7 +1120,7 @@ flex-direction: column; /* Stack buttons and card vertically */
    border: 1px solid blue; /* Синяя рамка */
    border-radius: 9px; /* Скругленные углы */
    padding: 20px; /* Отступы внутри карточки */
-   height: 400px; /* Высота карточки */
+   height: 500px; /* Высота карточки */
    width: 250px !important; /* Ширина карточки */
    margin: 5px; /* Отступы от других карточек */
    text-align: center; /* Выравнивание текста по центру */
@@ -1157,35 +1154,42 @@ flex-direction: column; /* Stack buttons and card vertically */
 
  /* Стиль для заголовка товара */
  .product-title {
+ 
    font-size: 1.2rem; /* Размер шрифта заголовка */
-   font-weight: bold; /* Жирный шрифт */
-   margin-bottom: 5px; /* Отступ снизу */
+    letter-spacing: 0,5px; /* Расстояние между буквами */
+  text-align: left  ;
    background-color: white; /* Фон заголовка - белый */
    color: black; /* Цвет заголовка - черный */
-   padding: 5px; /* Отступы внутри заголовка */
+  margin-left: -20px;
+  
  }
 
  .prce {
    font-size: 1.0rem; /* Размер шрифта цены */
-
    background-color: white; /* Фон цены - белый */
    font-weight: bold; /* Жирный шрифт */
    color: black; /* Цвет цены - черный */
    text-align: left; /* Выравнивание текста по левому краю */
-   letter-spacing: 1px; /* Расстояние между буквами */
+   letter-spacing: 0.5px; /* Расстояние между буквами */
    border-bottom: 1px solid #ccc; /* Нижняя граница */
-   padding-bottom: 3px; /* Отступ снизу */
-   margin-bottom: -5px; /* Отступ снизу */
+  
    opacity: 0.5; /* Прозрачность */
-   margin-top: 50px; /* Отступ сверху */
+   margin-top: 3px; /* Отступ сверху */
 
  }
+.title{
 
+height:80px;
+width: 220px;
+/*Если указать четыре значения ( margin: 2px 1em 0 auto; ), они применятся по часовой стрелке для каждой из сторон: сверху, справа, снизу и слева.*/
+margin:90px 8px 12px 8px ;
+
+}
  .money {
    font-size: 1.3rem; /* Размер шрифта */
    font-weight: bold; /* Жирный шрифт */
    text-align: left; /* Выравнивание текста по левому краю */
-   margin-top: 19px; /* Отступ сверху */
+   margin-top: 10px; /* Отступ сверху */
    background-color: white; /* Фон - белый */
    text-align: left; /* Выравнивание текста по левому краю */
  }
@@ -2167,4 +2171,3 @@ right:-800px;
 margin-bottom: 10px; /* Отступы между  элементами */
 color: white;
 }
-
