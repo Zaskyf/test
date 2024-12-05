@@ -322,7 +322,7 @@ margin-top:15px; margin-bottom:15px;">Обои</h6>
 <script>
 const container = document.querySelector('.container');
 const cardsData = [
-    { id: 1, image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/4.webp', title: 'Обои под покраску флизелиновые антивандальные Kreaforta Батист белые 1.06x25м 113г/м²', price: 799, delprice: 1000  },
+{ id: 1, image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/4.webp', title: 'Обои под покраску флизелиновые антивандальные Kreaforta Батист белые 1.06x25м 113г/м²', price: 799, delprice: 1000  },
  {
         id: 2,
         title: 'Обои бумажные серые 0.53 м',
@@ -674,7 +674,9 @@ const cardsData = [
         delprice: 1500,
         image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/45.webp',
         detailsUrl: ''
-    }];cardsData.forEach((cardData) => {
+    }
+
+];cardsData.forEach((cardData) => {
 const card = document.createElement('div');
     card.classList.add('product-card');
     const titleDiv = document.createElement('div');
@@ -741,48 +743,75 @@ const card = document.createElement('div');
     detailsDiv.appendChild(detailsButton);
     card.appendChild(detailsDiv);
     const quickViewButton = document.createElement('button');
-    quickViewButton.classList.add('quick-view-button');
-    quickViewButton.textContent = 'Быстрый просмотр';
-    figure.appendChild(quickViewButton);
-    card.addEventListener('mouseenter', () => {
-        quickViewButton.style.display = 'block';
-    }); card.addEventListener('mouseleave', () => {quickViewButton.style.display = 'none';});
-    const quickViewWindow = document.createElement('div');
-    quickViewWindow.classList.add('quick-view-window');
-    quickViewWindow.style.display = 'none';
-    const windowContent = document.createElement('div');
-    windowContent.classList.add('window-content');
-    const closeButton = document.createElement('button');
-    closeButton.classList.add('close-button');
-    closeButton.textContent = 'X';
-    closeButton.onclick = function () {
-        quickViewWindow.style.display = 'none';
-    };
-    quickViewButton.onclick = function () {
-        quickViewWindow.style.display = 'flex';
-    };
-    const description = document.createElement('div');
-    description.innerHTML = `
-    <div class="cartpodrobno">
+quickViewButton.classList.add('quick-view-button');
+quickViewButton.textContent = 'Быстрый просмотр';
+figure.appendChild(quickViewButton);
 
-            <div class="procard">
-                <img src="https://via.placeholder.com/400" alt="Изображение товара" class="proimage">
-                <div class="tpd">
-                    <h2 class="protitle">Обои</h2>
-                    <p class="prodescription">Это краткое описание товара. Здесь можно указать его особенности и преимущества.</p>
-                    <p class="proprice">2999 Р.</p>
-                    <p class="delprice">2999 Р.</p>
-                    <button class="probutton">В корзину</button>
-                  <a href = "/test/html/productcard.html">  <button class="procardbutton"> Больше информации о товаре </button> </a>
-                </div>
+card.addEventListener('mouseenter', () => {
+    quickViewButton.style.display = 'block';
+});
+
+card.addEventListener('mouseleave', () => {
+    quickViewButton.style.display = 'none';
+});
+
+const quickViewWindow = document.createElement('div');
+quickViewWindow.classList.add('quick-view-window');
+quickViewWindow.style.display = 'none';
+const windowContent = document.createElement('div');
+windowContent.classList.add('window-content');
+const closeButton = document.createElement('button');
+closeButton.classList.add('close-button');
+closeButton.textContent = 'X';
+closeButton.onclick = function () {
+    quickViewWindow.style.display = 'none';
+};
+
+quickViewButton.onclick = function () {
+    quickViewWindow.style.display = 'flex';
+};
+
+const description = document.createElement('div');
+description.innerHTML = `
+    <div class="cartpodrobno">
+        <div class="procard">
+            <img src="https://via.placeholder.com/400" alt="Изображение товара" class="proimage">   
+            <div class="tpd">
+                <h2 class="protitle">Обои</h2>
+                <p class="prodescription">Это краткое описание товара. Здесь можно указать его особенности и преимущества.</p>
+                <p class="proprice">2999 Р.</p>
+                <p class="delprice">2999 Р.</p>
+                <button class="probutton">В корзину</button>
+                <a href="/test/html/productcard.html">
+                    <button class="procardbutton">Больше информации о товаре</button>
+                </a>
             </div>
         </div>
-    `;
-    windowContent.appendChild(closeButton);
-    windowContent.appendChild(description);
-    quickViewWindow.appendChild(windowContent);
-    document.body.appendChild(quickViewWindow);
+    </div>
+`;
+
+windowContent.appendChild(closeButton);
+windowContent.appendChild(description);
+quickViewWindow.appendChild(windowContent);
+document.body.appendChild(quickViewWindow);
+
+// Добавим обработчик события для увеличения изображения
+const zoomableImages = document.querySelectorAll('.proimage'); // получаем все изображения с классом proimage
+zoomableImages.forEach(image => {
+    let zoomed = false; // для каждого изображения будет свой статус увеличения
+    image.addEventListener('click', function () {
+        zoomed = !zoomed;
+        if (zoomed) {
+            image.style.transform = 'scale(2)';
+            image.style.cursor = 'zoom-out';
+        } else {
+            image.style.transform = 'scale(1)';
+            image.style.cursor = 'zoom-in';
+        }
+    });
 });
+});
+
 
 
 let currentIndex = 0;
@@ -796,19 +825,16 @@ function showCards(startIndex) {
 }
 
 showCards(currentIndex);
-
 document.getElementById('nextBtn').addEventListener('click', () => {
     if (currentIndex + 20 >= cards.length) return;
     currentIndex += 20;
     showCards(currentIndex);
 });
-
 document.getElementById('prevBtn').addEventListener('click', () => {
     if (currentIndex === 0) return;
     currentIndex -= 20;
     showCards(currentIndex);
 });
-
 document.querySelectorAll(".btn").forEach(button => {
     button.addEventListener("click", function() {
         const isInCart = this.classList.contains("clicked");
@@ -823,7 +849,6 @@ document.querySelectorAll(".btn").forEach(button => {
         }
     });
 });
-
 function changeNumber(amount, inputId) {
     const numberInput = document.getElementById(inputId);
     let currentValue = parseInt(numberInput.value, 10);
@@ -832,7 +857,6 @@ function changeNumber(amount, inputId) {
         numberInput.value = currentValue;
     }
 }
-
 function addToCart(button) {
     const productTitle = button.closest('.product-card').querySelector('.product-title').textContent;
     const productPrice = button.closest('.product-card').querySelector('.money span').textContent;
@@ -903,7 +927,9 @@ function changeCartItemNumber(step, button) {
     window.onload = openWindow;
 </script>
 
-
+<script>
+   
+</script>
     <!-- <section></section>
     <main></main>
     <article></article>
