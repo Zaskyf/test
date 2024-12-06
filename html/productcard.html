@@ -334,14 +334,12 @@ function changeColor(color) {
         slide.classList.remove('active'); // Убираем активный класс у всех слайдов
     });
 
-    const colorIndex = { 'red': 0, 'blue': 1, 'green': 2 }[color];
+    const colorIndex = { 'grey0': 0, 'grey1': 1, 'grey2': 2 , 'grey3': 3}[color];
     slides[colorIndex].classList.add('active'); // Устанавливаем активный слайд
-    updatePrice(slides[colorIndex].dataset.price); // Обновляем цену для выбранного цвета
+    
 }
 
-function updatePrice(price) {
-    document.getElementById('prodct-price').innerText = `Цена: ${price} ₽`; // Обновляем отображаемую цену
-}
+
 
 //Меняет секцию (детали характеристика , отзывы ,опсиание)
 function showSection(section) {
@@ -403,15 +401,17 @@ function clearCart() {
 
 
     <div class="prodct-images">
-        <img style = "height :500px;   border-radius :9px; width:500px;"src="https://upakovka-grad.ru/wp-content/uploads/2022/08/85fe4f0e28e811ed87fd94de80fd41b3_0640f6a12cca11eda10fe0d55e08c404.png" alt="Микрофибровая тряпка Красная" class="prodct-image active" data-price="500">
-        <img style = " background-color:white;height :500px;   border-radius :9px; width:500px;" src="https://kosmetiksavto.ru/images/catalog/tovar/_thumbs/_file60ba3bdedbe7d_x536_y536.png" alt="Микрофибровая тряпка Синяя" class="prodct-image" data-price="550">
-        <img style = "height :500px;  border-radius :9px; width:500px;" src="https://www.ximtex.ru/upload/iblock/1c1/67a9a3511e309b87ac1b0a5cabeec6a5.jpg" alt="Микрофибровая тряпка Зелёная" class="prodct-image" data-price="600">
+        <img style = "height :500px;  border-radius :9px; width:500px;"src="https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/1.webp" alt="Обои" class="prodct-image active" >
+        <img style = " background-color:white;height :500px;   border-radius :9px; width:500px;" src="https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/5.webp" alt="Обои" class="prodct-image" >
+        <img style = "height :500px;  border-radius :9px; width:500px;" src="https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/2.webp" alt="Обои" class="prodct-image" >
+        <img style = "height :500px;  border-radius :9px; width:500px;" src="https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/6.webp" alt="Обои" class="prodct-image" >
         
-         <div class="color-options">
-        <div class="color-circle red" onclick="changeColor('red')"></div>
-        <div class="color-circle blue" onclick="changeColor('blue')"></div>
-        <div class="color-circle green" onclick="changeColor('green')"></div>
-    </div>
+        <div class="color-options">
+            <div class="color-square grey0" onclick="changeColor('grey0')"></div>
+            <div class="color-square grey1" onclick="changeColor('grey1')"></div>
+            <div class="color-square grey2" onclick="changeColor('grey2')"></div>
+            <div class="color-square grey3" onclick="changeColor('grey3')"></div>
+          </div>
     
     
           
@@ -423,10 +423,10 @@ function clearCart() {
    
     
     <div class="prodct-info">
-        <h1>Набор микрофибровых тряпок для уборки (35x35 см, 4 шт.)</h1>
-        <p>Материал: Микрофибра</p>
+        <h1>Обои под покраску флизелиновые антивандальные Kreaforta Батист белые 1.06x25м 113г/м²</h1>
+        <p>Материал: Флизелин</p>
         <p>Производитель: BrandName</p>
-        <p class="price" id="prodct-price">Цена: 500 ₽</p>
+        <p class="price" id="prodct-price">Цена: 799 ₽</p>
         <div class="quantity-container">
             <span class="quantity-label">Количество:</span>
             <input type="number" class="quantity-input" value="1" min="1">
@@ -451,10 +451,10 @@ function clearCart() {
         </div>
         <div class="characteristics" id="characteristics-section">
             <h4>Характеристики:</h4>
-            <p>Размеры: 35x35 см</p>
-            <p>Вес: 200 грамм</p>
-            <p>Инструкции по стирке: Можно стирать в машине</p>
-            <p>Долговечность: До 100 стирок</p>
+            <p>Размеры: 1.06x25м</p>
+            <p>Вес: 113г/м²</p>
+            <p>Инструкции по поклейке: Какая-то инструкция</p>
+            <p>Долговечность: До 10 лет</p>
         </div>
         <div class="reviews" id="reviews-section">
             <h4>Отзывы:</h4>
@@ -462,7 +462,7 @@ function clearCart() {
         </div>
         <div class="details" id="details-section">
             <h4>Детали:</h4>
-            <p>Этот набор микрофибровых тряпок идеально подходит для уборки и протирания различных поверхностей. Они мягкие, прочные и можно стирать в машине.</p>
+            <p>Обои под покраску флизелиновые антивандальные Kreaforta Батист белые 1.06x25м 113г/м².Сделано в Беларуси.</p>
         </div>
     </div>
 
