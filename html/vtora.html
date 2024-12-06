@@ -742,71 +742,104 @@ const card = document.createElement('div');
     detailsButton.classList.add('details-button');
     detailsDiv.appendChild(detailsButton);
     card.appendChild(detailsDiv);
-    const quickViewButton = document.createElement('button');
-quickViewButton.classList.add('quick-view-button');
-quickViewButton.textContent = 'Быстрый просмотр';
-figure.appendChild(quickViewButton);
 
-card.addEventListener('mouseenter', () => {
-    quickViewButton.style.display = 'block';
+// "Быстрый просмотр"
+const quickViewButton = document.createElement('button'); 
+quickViewButton.classList.add('quick-view-button'); //класс для стилей
+quickViewButton.textContent = 'Быстрый просмотр'; // контент
+figure.appendChild(quickViewButton); 
+
+// Показываем кнопку при наведении курсора  на карточку товара и скрываем при уходе курсора
+card.addEventListener('mouseenter', () => { 
+    quickViewButton.style.display = 'block'; 
+});
+card.addEventListener('mouseleave', () => { 
+    quickViewButton.style.display = 'none'; 
 });
 
-card.addEventListener('mouseleave', () => {
-    quickViewButton.style.display = 'none';
-});
+// Создаем окно  быстрый просмотр 
+const quickViewWindow = document.createElement('div'); 
+quickViewWindow.classList.add('quick-view-window'); 
+quickViewWindow.style.display = 'none'; // Окно скрыто по умолчанию
 
-const quickViewWindow = document.createElement('div');
-quickViewWindow.classList.add('quick-view-window');
-quickViewWindow.style.display = 'none';
-const windowContent = document.createElement('div');
-windowContent.classList.add('window-content');
-const closeButton = document.createElement('button');
-closeButton.classList.add('close-button');
+// Создаем контейнер для содержимого окна
+const windowContent = document.createElement('div'); 
+windowContent.classList.add('window-content'); 
+
+// Создаем крестик
+const closeButton = document.createElement('button'); 
+closeButton.classList.add('close-button'); 
 closeButton.textContent = 'X';
-closeButton.onclick = function () {
-    quickViewWindow.style.display = 'none';
+closeButton.onclick = function() { 
+    quickViewWindow.style.display = 'none'; // Скрываем окно при нажатии на кнопку закрытия
 };
 
-quickViewButton.onclick = function () {
-    quickViewWindow.style.display = 'flex';
+// При нажатии на кнопку "Быстрый просмотр" показываем окно
+quickViewButton.onclick = function() { 
+    quickViewWindow.style.display = 'flex'; //Показываем окно с помощью flex 
 };
 
-const description = document.createElement('div');
-description.innerHTML = `
+//Элемент для описания товара
+const description = document.createElement('div'); 
+// Вставляем HTML
+description.innerHTML = ` 
     <div class="cartpodrobno">
         <div class="procard">
-            <img src="https://via.placeholder.com/400" alt="Изображение товара" class="proimage">   
+            <img src="https://via.placeholder.com/400" alt="Изображение товара" class="proimage"> 
             <div class="tpd">
-                <h2 class="protitle">Обои</h2>
+                <h2 class="protitle">Обои</h2> 
                 <p class="prodescription">Это краткое описание товара. Здесь можно указать его особенности и преимущества.</p>
-                <p class="proprice">2999 Р.</p>
-                <p class="delprice">2999 Р.</p>
-                <button class="probutton">В корзину</button>
-                <a href="/test/html/productcard.html">
-                    <button class="procardbutton">Больше информации о товаре</button>
-                </a>
+                <p class="proprice">2999 Р.</p> 
+                <p class="delprice">2999 Р.</p> 
+                <button class="probutton">В корзину</button>   
+                <a href="/test/html/productcard.html">          
+                    <button class="procardbutton">Больше информации о товаре</button>     
+                </a> 
             </div>
         </div>
-    </div>
-`;
+    </div>`;
 
-windowContent.appendChild(closeButton);
-windowContent.appendChild(description);
-quickViewWindow.appendChild(windowContent);
-document.body.appendChild(quickViewWindow);
+// Добавляем крестик и описание в контейнер содержимого окна
+windowContent.appendChild(closeButton); 
+windowContent.appendChild(description); 
 
-// Добавим обработчик события для увеличения изображения
-const zoomableImages = document.querySelectorAll('.proimage'); // получаем все изображения с классом proimage
+// Добавляем содержимое в окно быстрого просмотра
+quickViewWindow.appendChild(windowContent); 
+
+// Добавляем окно быстрого просмотра на страницу
+document.body.appendChild(quickViewWindow); 
+
+// Выбираем все картинки  с классом  !!!!proimage!!!!
+const zoomableImages = document.querySelectorAll('.proimage'); 
+
+// Добавляем обработчики событий для каждой картинки
 zoomableImages.forEach(image => {
-    let zoomed = false; // для каждого изображения будет свой статус увеличения
-    image.addEventListener('click', function () {
-        zoomed = !zoomed;
+    let zoomed = false;
+    let zoomLevel = 2; // Уровень увеличения 2 раза
+
+    // Обработчик события mousemove для плавного зума под курсором
+    image.addEventListener('mousemove', function(event) {
         if (zoomed) {
-            image.style.transform = 'scale(2)';
-            image.style.cursor = 'zoom-out';
+            const rect = this.getBoundingClientRect(); // Получаем размеры элемента
+            const x = event.clientX - rect.left; // X координата курсора относительно элемента
+            const y = event.clientY - rect.top; // Y координата курсора относительно элемента
+            const xPercent = x / rect.width; // Процентное соотношение X координаты
+            const yPercent = y / rect.height; // Процентное соотношение Y координаты
+
+            // Устанавливаем точку трансформации для плавного зума
+            this.style.transformOrigin = `${xPercent * 100}% ${yPercent * 100}%`;
+            this.style.transform = `scale(${zoomLevel})`; // Применяем масштабирование
+        }
+    });
+    // Обработчик события click для включения/выключения зума
+    image.addEventListener('click', function() {
+        zoomed = !zoomed; // Инвертируем значение zoomed
+        if (zoomed) {
+            this.style.cursor = 'zoom-out'; // Меняем курсор на zoom-out
         } else {
-            image.style.transform = 'scale(1)';
-            image.style.cursor = 'zoom-in';
+            this.style.transform = 'scale(1)'; // Возвращаем исходный размер
+            this.style.cursor = 'zoom-in'; // Меняем курсор на zoom-in
+            this.style.transformOrigin = 'center center'; // Сбрасываем transform-origin
         }
     });
 });
@@ -921,15 +954,10 @@ function changeCartItemNumber(step, button) {
         document.getElementById('quickViewWindow').style.display = 'none';
     }
 
-    
-
-    // Open the window when the page loads for demonstration
     window.onload = openWindow;
 </script>
 
-<script>
-   
-</script>
+
     <!-- <section></section>
     <main></main>
     <article></article>
