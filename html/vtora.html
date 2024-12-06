@@ -810,36 +810,37 @@ quickViewWindow.appendChild(windowContent);
 document.body.appendChild(quickViewWindow); 
 
 // Выбираем все картинки  с классом  !!!!proimage!!!!
-const zoomableImages = document.querySelectorAll('.proimage'); 
-
-// Добавляем обработчики событий для каждой картинки
+const zoomableImages = document.querySelectorAll('.proimage');
 zoomableImages.forEach(image => {
     let zoomed = false;
-    let zoomLevel = 2; // Уровень увеличения 2 раза
+    let zoomLevel = 2;
 
-    // Обработчик события mousemove для плавного зума под курсором
+    // Добавим обертку для изображения
+    const imageWrapper = document.createElement('div');
+    imageWrapper.style.overflow = 'hidden'; // Ключевое изменение
+    image.parentNode.insertBefore(imageWrapper, image); // Вставляем обертку перед изображением
+    imageWrapper.appendChild(image);
+
     image.addEventListener('mousemove', function(event) {
         if (zoomed) {
-            const rect = this.getBoundingClientRect(); // Получаем размеры элемента
-            const x = event.clientX - rect.left; // X координата курсора относительно элемента
-            const y = event.clientY - rect.top; // Y координата курсора относительно элемента
-            const xPercent = x / rect.width; // Процентное соотношение X координаты
-            const yPercent = y / rect.height; // Процентное соотношение Y координаты
-
-            // Устанавливаем точку трансформации для плавного зума
+            const rect = this.getBoundingClientRect();
+            const x = event.clientX - rect.left;
+            const y = event.clientY - rect.top;
+            const xPercent = x / rect.width;
+            const yPercent = y / rect.height;
             this.style.transformOrigin = `${xPercent * 100}% ${yPercent * 100}%`;
-            this.style.transform = `scale(${zoomLevel})`; // Применяем масштабирование
+            this.style.transform = `scale(${zoomLevel})`;
         }
     });
-    // Обработчик события click для включения/выключения зума
+
     image.addEventListener('click', function() {
-        zoomed = !zoomed; // Инвертируем значение zoomed
+        zoomed = !zoomed;
         if (zoomed) {
-            this.style.cursor = 'zoom-out'; // Меняем курсор на zoom-out
+            this.style.cursor = 'zoom-out';
         } else {
-            this.style.transform = 'scale(1)'; // Возвращаем исходный размер
-            this.style.cursor = 'zoom-in'; // Меняем курсор на zoom-in
-            this.style.transformOrigin = 'center center'; // Сбрасываем transform-origin
+            this.style.transform = 'scale(1)';
+            this.style.cursor = 'zoom-in';
+            this.style.transformOrigin = 'center center';
         }
     });
 });
