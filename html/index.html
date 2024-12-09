@@ -11,7 +11,7 @@
     
   
     <link rel="stylesheet" href="/test/css/style.css">
-  <title>Slider</title>
+
   <link
   rel="stylesheet"
   href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
@@ -61,34 +61,6 @@
 
 
 
-        <script>  
-            // Функция для создания хлебных крошек  
-            function createBreadcrumbs() {  
-                const breadcrumbsContainer = document.getElementById('breadcrumbs');  
-                  
-                // Пример структуры страниц  
-                const pages = [  
-                    { name: 'Главная', url: '/' },  
-                    { name: 'Категория', url: '/category' },  
-                    { name: 'Подкатегория', url: '/category/subcategory' },  
-                    { name: 'Текущая страница', url: '/category/subcategory/current' }  
-                ];  
-              
-                // Генерация HTML для хлебных крошек  
-                const breadcrumbsHtml = pages.map((page, index) => {  
-                    return index < pages.length - 1  
-                        ? `<a href="${page.url}">${page.name}</a><span>&gt;</span>`  
-                        : `<span>${page.name}</span>`;  
-                }).join('');  
-              
-                // Вставка сгенерированных крошек в контейнер  
-                breadcrumbsContainer.innerHTML = breadcrumbsHtml;  
-            }  
-              
-            // Вызов функции для создания хлебных крошек  
-            createBreadcrumbs();  
-            </script>
-<div class="breadcrumbs" id="breadcrumbs"></div>
 
         <!--Каталог-->
 
