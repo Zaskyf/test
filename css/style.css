@@ -2352,95 +2352,243 @@ height: 230px !important;
 /* КОНЕЦ  ИКОНКИ на странице категории*/
 
 
+/* НАЧАЛО СТРАНИЦЫ ЛИЧНОЙ КАБИНЕТ  */
+
+.navbar {
+ 
+  padding: 10px 0;
+border-radius: 9px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+
+.nav-links li {
+  margin: 0 15px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  transition: color 0.3s; /* Плавный переход цвета */
+}
+
+.nav-links a:hover {
+  color: #5a7cb3; /* Цвет при наведении */
+}
+
+/* Стили для секций */
+.content-section {
+  padding: 20px;
+  margin: 20px auto;
+  background-color: #ffffff; /* Белый фон для секций */
+  border-radius: 5px; /* Закругленные углы */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s; /* Плавный переход для анимации */
+}
+
+.content-section:hover {
+  transform: scale(1.02); /* Увеличение при наведении */
+}
+
+
+
+
+/* Стили для секции олпаты */
+.content-section-oplata {
+  padding: 20px;
+  margin: 10px;
+  background-color: #ffffff; /* Белый фон для секций */
+  width: 300px;
+  height: 150px;
+  left: 0;
+  border-radius: 5px; /* Закругленные углы */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s; /* Плавный переход для анимации */
+}
+
+.content-section-oplata:hover {
+  transform: scale(1.02); /* Увеличение при наведении */
+}
+
+.content-section-user {
+  padding: 20px;
+  margin: 10px;
+  background-color: #ffffff; /* Белый фон для секций */
+  width: 300px;
+  height: 350px;
+  left: 0;
+  border-radius: 5px; /* Закругленные углы */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s; /* Плавный переход для анимации */
+}
+
+.content-section-user:hover {
+  transform: scale(1.02); /* Увеличение при наведении */
+}
+/* Стили для кнопок */
+button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s, transform 0.3s; /* Плавные переходы */
+}
+
+.profile-icon {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+  background-color: #fff;
+}
+
+.profile-icon input {
+  display: none; /* Скрыть элемент input */
+}
+
+.profile-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.oplata {
+  background-color: #5a7cb3; /* Цвет для кнопок оплаты */
+  color: white;
+  margin-top: 10px;
+margin-bottom: 5px;
+}
+
+.oplata:hover {
+  background-color: #688EBD; /* Темнее синий при наведении */
+  transform: translateY(-2px); /* Поднимаем кнопку при наведении */
+}
+
+.primary-btn {
+  background-color: #688EBD; /* Цвет для кнопки поддержки */
+  color: white;
+}
+
+.primary-btn:hover {
+  background-color: #5a7cb3; /* Темнее синий при наведении */
+  transform: translateY(-2px); /* Поднимаем кнопку при наведении */
+}
+
+/* Анимация для страницы */
+@keyframes fadeIn {
+  from {
+      opacity: 0; /* Начальное состояние - прозрачность 0 */
+  }
+  to {
+      opacity: 1; /* Конечное состояние - полная непрозрачность */
+  }
+}
+
+
+/* КОНЕЦ  СТРАНИЦЫ ЛИЧНОЙ КАБИНЕТ  */
+
+
+
 
 
 /*Футер*/
-.footer {
-background-color: #688EBD;
-color: #314272;
-padding: 0;
-width: 100%; 
-position: absolute;
-bottom: 0;
-height:200px;
-font-size:19px;
-font-weight: bold;
-
+footer {
+  background-color: #688EBD; /* Темный фон для футера */
+  color: white;
+  padding: 20px;
+  margin-top: 20px;
+  text-align: center;
 }
 
-.footer hr {
-border-top: 4px solid #314272;
-margin: 20px 0; /* Отступы сверху и снизу */
+footer h3 {
+  margin-bottom: 10px;
 }
 
-.containr {
-display: flex;
-justify-content: space-between; 
-align-items: flex-start; /* Выравнивание элементов по верхнему краю */
+footer ul {
+  list-style: none;
+  padding: 0;
 }
 
-.footer_navigation {
-width: 100%; 
+footer ul li {
+  margin: 5px 0;
+}
+
+footer a {
+  color: #FFFFE0; /* Цвет ссылок в футере */
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+footer a:hover {
+  color: #5a7cb3; /* Цвет ссылок при наведении */
 }
 
 .footer_menu {
-display: flex;
-width: 55%; /* Занимает 55 ширины контейнера */
-margin-left:20px;
-
-
+  display: flex;
+  width: 55%; /* Занимает 55% ширины контейнера */
+  margin-left: 20px;
 }
 
 .caption {
-font-size: 22px;
-font-weight: bold;
-margin-bottom: 10px;
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
 .item {
-flex: 1;
-margin-right: 20px;
-text-align: left;
-word-break: break-all;
+  flex: 1;
+  margin-right: 20px;
+  text-align: left;
+  word-break: break-all;
 }
 
 .item:last-child {
-margin-right: 20px
+  margin-right: 0; /* Убираем отступ для последнего элемента */
 }
+
 .menu_list {
-list-style-type: none; /* Убираем стандартные маркеры */
-padding: 0;
-font-size: 18px; 
+  list-style-type: none; /* Убираем стандартные маркеры */
+  padding: 0;
+  font-size: 18px; 
 }
 
 .menu_list li {
-margin-bottom: 0px; 
+  margin-bottom: 0; /* Убираем отступы между элементами */
 }
 
 .menu_list a {
-color: white; /* Цвет ссылок */
-text-decoration: none; /* Убираем подчеркивание */
-display: block; /* Делаем ссылки блочными элементами */
+  color: white; /* Цвет ссылок */
+  text-decoration: none; /* Убираем подчеркивание */
+  display: block; 
 }
 
 .menu_list a:hover {
-color: rgb(207, 227, 245); /* Цвет ссылок при наведении */
-text-decoration: underline; /* Подчеркивание при наведении */
+  color: rgb(207, 227, 245); /* Цвет ссылок при наведении */
+  text-decoration: underline; /* Подчеркивание при наведении */
 }
 
 .contact_info {
-position: relative;
-display: flex; 
-flex-direction: column; /* Вертикальное расположение элементов */
-align-items: flex-end; /* Выравнивание элементов вправо */
-right:-800px;
-
+  position: relative;
+  display: flex; 
+  flex-direction: column; /* Вертикальное расположение элементов */
+  align-items: flex-end; /* Выравнивание элементов вправо */
+  /* right: -800px; Убедитесь, что это свойство необходимо; оно может смещать элементы за пределы видимости */
 }
 
 .phone, .address, .copyright {
-margin-bottom: 10px; /* Отступы между  элементами */
-color: white;
+  margin-bottom: 10px; /* Отступы между элементами */
+  color: white;
 }
 
-.p{
-  font-size:20px;}
+.p {
+  font-size: 20px; /* Код класса p должен начинаться с точки, если это класс */
+}
