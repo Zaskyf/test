@@ -150,8 +150,8 @@
         <h1>Корзина</h1>
         <ul id="basket-items"></ul>
         <div class="basket-summary">
-            <span>Количесвто : <span id="total-items">0</span></span>
-            <span>Итого: ₽<span id="total-price">0.00</span></span>
+            <span>Количесвто : <span id="total-items">0</span></span> <br>
+            <span>Итого:<span id="total-price">0.00</span> ₽</span>
             <div class="actions">
                 <button id="clear-basket" class="animated-button">Очистить корзину</button>
                 <button id="place-order" class="animated-button">Оформить заказ</button>
@@ -182,24 +182,38 @@
     
 
 
-    <!-- <footer class="footer">
+    <footer>
         <hr>
-            <div class="containr"><div class="subscribe"></div><div class="footer_navigation">
-                <div class="footer_menu">
-            <div class="item"><div class="caption">О компании</div>
-            <ul class="menu_list"><a href="/about/about-the-company/">ТК Арктика</a>
-                <a href="/about/arktika-servis/">Арктика-Сервис</a><a href="/about/bonus-program/">Бонусная программа</a>
-                <a href="/about/podarochnye-karty/">Подарочные карты</a>
-                </ul></div><div class="item"> <div class="caption">Информация</div><ul class="menu_list">
-                    
-                    <a href="/information/oplata/">Как оплатить</a><a href="/information/feedback/">Обратная связь</a>
-                        <a href="/information/contacts/">Контакты</a><a href="/information/jobs/">Вакансии</a></ul></div>    
-                        <div class="item"><div class="caption">Наши услуги</div><ul class="menu_list">
-                            <a href="/our-services/free-shipping/">Бесплатная доставка</a></ul></div></div> <div class="contact_info"><div class="phone">
-                                <a href="tel:+7 (8672) 55-08-70">+7 (8672) 55-08-70</a> (с 10:00 до 20:00) </div>
-                                <div class="address">Адрес магазина:<br>г. Владикавказ, пр-т Коста, 15,<br> лит. Г,Б, пом. 5,6   </div>
-                             <div class="copyright">© 1996—2024, ТК «Арктика»  </div></div></div></div>
-        </footer> -->
+        <div class="containr"><div class="subscribe"></div><div class="footer_navigation">
+            <div class="footer_menu">
+        <div class="item"><div class="caption">О компании</div>
+        <ul class="menu_list">
+            <a href="/about/about-the-company/">ТК Арктика</a>
+            <a href="/about/arktika-servis/">Арктика-Сервис</a>
+            <a href="/about/bonus-program/">Бонусная программа</a>
+            <a href="/about/podarochnye-karty/">Подарочные карты</a>
+        </ul></div>
+        <div class="item"> 
+            <div class="caption">Информация</div>
+        <ul class="menu_list">
+            <a href="/information/oplata/">Как оплатить</a>
+            <a href="/information/feedback/">Обратная связь</a>
+           <a href="/information/contacts/">Контакты</a>
+            <a href="/information/jobs/">Вакансии</a>
+        
+        </ul></div>   
+
+             <div class="item"><div class="caption">Наши услуги</div>
+            <ul class="menu_list"><a href="/our-services/free-shipping/">Бесплатная доставка</a>
+            </ul>
+        </div>
+        </div>
+             <div class="contact_info"><div class="phone"><a href="tel:+7 (8672) 55-08-70">+7 (8672) 55-08-70</a> (с 10:00 до 20:00) </div>
+            <div class="address">Адрес магазина:<br>г. Владикавказ, пр-т Коста, 15,<br> лит. Г,Б, пом. 5,6  </div> 
+            <div class="copyright">© 1996—2024, ТК «Арктика»  </div>
+        </div></div></div>
+       
+    </footer>
 </body>
 </html>
 
@@ -210,9 +224,9 @@
 <script>
 
 const basketItems = [
-    { id: 1, name: 'Product 1', price: 10.00, quantity: 1, deliveryTime: '2-3 days', image: 'https://via.placeholder.com/60' },
-    { id: 2, name: 'Product 2', price: 20.00, quantity: 1, deliveryTime: '5-7 days', image: 'https://via.placeholder.com/60' },
-    { id: 3, name: 'Product 3', price: 15.00, quantity: 1, deliveryTime: '1-2 days', image: 'https://via.placeholder.com/60' }
+    { id: 1, name: 'Продукт 1', price: 990, quantity: 1, deliveryTime: '2-3 дней', image: 'https://via.placeholder.com/60' },
+    { id: 2, name: 'Продукт 2', price: 999, quantity: 1, deliveryTime: '5-7 дней', image: 'https://via.placeholder.com/60' },
+    { id: 3, name: 'Продукт 3', price: 899, quantity: 1, deliveryTime: '1-2 дней', image: 'https://via.placeholder.com/60' }
 ];
 
 const basketList = document.getElementById("basket-items");
@@ -237,12 +251,12 @@ function renderBasket() {
 
         li.innerHTML = `
             <img src="${item.image}" alt="${item.name}">
-            <span>${item.name} - $${item.price.toFixed(2)} (Qty: ${item.quantity})</span>
+            <span>${item.name} - ${item.price.toFixed(2)} ₽ (Количество: ${item.quantity})</span>
             <div class="quantity-controls">
                 <button onclick="changeQuantity(${item.id}, -1)">-</button>
                 <span class="quantity-display">${item.quantity}</span>
                 <button onclick="changeQuantity(${item.id}, 1)">+</button>
-                <button onclick="removeItem(${item.id})" class="delete-button">Remove</button>
+                <button onclick="removeItem(${item.id})" class="delete-button">Удалить</button>
             </div>
         `;
         basketList.appendChild(li);
@@ -256,7 +270,7 @@ function changeQuantity(id, delta) {
     const item = basketItems.find(item => item.id === id);
     if (item) {
         item.quantity += delta;
-        if (item.quantity < 1) item.quantity = 1; // Prevent quantity going below 1
+        if (item.quantity < 1) item.quantity = 1; 
         renderBasket();
     }
 }
@@ -270,31 +284,30 @@ function removeItem(id) {
 }
 
 clearBasketButton.addEventListener("click", () => {
-    basketItems.length = 0; // Clear the basket
+    basketItems.length = 0; 
     renderBasket();
 });
 
 placeOrderButton.addEventListener("click", () => {
-    orderModal.style.display = "block"; // Show the modal
+    orderModal.style.display = "block"; 
 });
 
 closeModalButton.addEventListener("click", () => {
-    orderModal.style.display = "none"; // Hide the modal
+    orderModal.style.display = "none";
 });
 
 orderForm.addEventListener("submit", (e) => {
     e.preventDefault();
     alert("Order placed successfully!");
-    orderModal.style.display = "none"; // Hide the modal
+    orderModal.style.display = "none";
 });
 
 window.onclick = function(event) {
     if (event.target === orderModal) {
-        orderModal.style.display = "none"; // Hide the modal if clicked outside
+        orderModal.style.display = "none"; 
     }
 };
 
-// Initial render of the basket
 renderBasket();
 </script>
 
