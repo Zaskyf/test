@@ -226,35 +226,273 @@
 </section>
 
 <script>
-    // Создаем модальное окно (если его еще нет)
+    // Создаем модальное окно для способов оплаты
     const payment = document.createElement('div');
     payment.classList.add('payment');
     payment.style.display = 'none'; // Скрываем модальное окно по умолчанию
     payment.innerHTML = `
         <div class="payment-content">
             <h2>Способы оплаты</h2>
-             <button class="card">Привязать карту</button>
- 
+            <button class="card">Привязать карту</button>
             <button class="close-discount-info">Понятно</button>
         </div>
     `;
     document.body.appendChild(payment);
-    // Обработчик события для кнопки "Способы оплаты"
+
+    // Создаем модальное окно для привязки карты
+    const cardBinding = document.createElement('div');
+    cardBinding.classList.add('card-binding');
+    cardBinding.style.display = 'none'; // Скрываем модальное окно по умолчанию
+    cardBinding.innerHTML = `
+        <div class="card-content">
+            <h2>Привязка карты</h2>
+            <label for="card-number">Номер карты:</label>
+            <input type="text" id="card-number" placeholder="Введите номер карты">
+            <button class="submit-card">Привязать</button>
+            <button class="close-card-binding">Закрыть</button>
+        </div>
+    `;
+    document.body.appendChild(cardBinding);
+
     document.getElementById('payment-methods').addEventListener('click', () => {
         payment.style.display = 'flex'; 
     });
-
+    payment.querySelector('.card').addEventListener('click', () => {
+        payment.style.display = 'none'; 
+        cardBinding.style.display = 'flex'; 
+    });
     payment.querySelector('.close-discount-info').addEventListener('click', () => {
         payment.style.display = 'none';
     });
-
+    cardBinding.querySelector('.close-card-binding').addEventListener('click', () => {
+        cardBinding.style.display = 'none';
+    });
     document.addEventListener('click', (event) => {
         if (event.target === payment) {
             payment.style.display = 'none';
+        } else if (event.target === cardBinding) {
+            cardBinding.style.display = 'none';
         }
     });
 </script>
 
+<style>
+
+.card-content{
+background-color: #688EBD; 
+
+}
+
+.navbar {
+ 
+  padding: 10px 0;
+border-radius: 9px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+
+.nav-links li {
+  margin: 0 15px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  transition: color 0.3s; /* Плавный переход цвета */
+}
+
+.nav-links a:hover {
+  color: #5a7cb3; /* Цвет при наведении */
+}
+
+/* Стили для секций */
+.content-section {
+  padding: 20px;
+  margin: 20px;
+  background-color:  white ;
+  width:250px;
+  height:150px;
+  border-radius: 9px; 
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s; /* Плавный переход для анимации */
+}
+
+.content-section:hover {
+  transform: scale(1.02); /* Увеличение при наведении */
+}
+
+
+
+
+/* Стили для секции олпаты */
+.content-section-oplata {
+  padding: 20px;
+  margin: 10px;
+  background-color: white; 
+  width: 300px;
+  height: 170px;
+  left: 0;
+  border-radius: 9px; 
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s; /* Плавный переход для анимации */
+}
+
+.content-section-oplata:hover {
+  transform: scale(1.02); /* Увеличение при наведении */
+}
+
+.content-section-user {
+  padding: 20px;
+  margin: 10px;
+  background-color: white; 
+  width: 300px;
+  height: 350px;
+  left: 0;
+  border-radius: 9px; 
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.content-section-user:hover {
+  transform: scale(1.02); /* Увеличение при наведении */
+}
+
+        .discount-item {
+        margin-top:10px;
+            width: 100px;
+            display: block;
+            font-size: 16px;
+            padding: 10px;
+            cursor: pointer;
+            background-color: #e5e5e5;
+            border-radius: 9px;
+            text-align: center;
+            transition: background-color 0.3s;
+        }
+
+        .discount-item:hover {
+            background-color: #e0e0e0;
+        }
+
+        .discount-info {
+            display: none; 
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный фон */
+            justify-content: center;
+            align-items: center;
+            z-index: 1000; 
+            animation: fadeIn 0.5s; 
+        }
+
+        .discount-info-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+      .close-discount-info {
+    display: block;
+    width: 150px;
+    margin: 15px auto 0; 
+    padding: 10px 15px;
+    border: none;
+    background-color: #688EBD;
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+        .close-discount-info:hover {
+            background-color: #5a7cb3; 
+        }
+        
+.profile-icon {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+  background-color: #fff;
+}
+
+.profile-icon input {
+  display: none; 
+}
+
+.profile-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.oplata {
+  background-color: #e5e5e5; 
+    color: black;
+  margin-top: 10px;
+margin-bottom: 5px;
+}
+
+.oplata:hover {
+  background-color:#e0e0e0; 
+  transform: translateY(-2px); /* Поднимаем кнопку при наведении */
+  
+}
+
+.primary-btn {
+margin-top:10px;
+  background-color: #e5e5e5; 
+  color: black;
+}
+
+.primary-btn:hover {
+  background-color: #e0e0e0; 
+  transform: translateY(-2px); 
+}
+.submit-card {
+
+}
+.payment, .card-binding {
+            display: none; 
+              background: #FFFFE0; 
+            position: fixed; 
+            top: 0;
+            left: 0;
+            width: 100%; 
+            height: 100%; 
+            background-color: rgba(0, 0, 0, 0.5); 
+            justify-content: center; 
+            align-items: center; 
+            z-index: 1000; 
+            animation: fadeIn 0.3s;
+        }
+        .payment-content  {
+            background: white; 
+            padding: 20px; 
+            border-radius: 5px; 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1); 
+            width: 300px; 
+            
+        }
+        
+         .card {  background-color: #688EBD; 
+            color: white; }
+        
+        
+</style>
 
     <section id="support" class="content-section">
             <div class="support-content">
@@ -2814,254 +3052,10 @@ height: 230px !important;
 /* НАЧАЛО СТРАНИЦЫ ЛИЧНОЙ КАБИНЕТ  */
 
 
-.payment {
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background-color: white;
-        border: 1px solid grey;
-        padding: 20px;
-        z-index: 1000;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .payment-content {
-        text-align: center;
-    }
-
-    /* Добавьте стиль для фона модального окна */
-    .payment::before {
-        content: "";
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.5);
-        z-index: -1; /* Позади модального окна */
-        display: none; /* Скрыт по умолчанию */
-    }
-
-
-
-.navbar {
- 
-  padding: 10px 0;
-border-radius: 9px;
-}
-
-.nav-links {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-}
-
-.nav-links li {
-  margin: 0 15px;
-}
-
-.nav-links a {
-  text-decoration: none;
-  color: white;
-  font-weight: 500;
-  transition: color 0.3s; /* Плавный переход цвета */
-}
-
-.nav-links a:hover {
-  color: #5a7cb3; /* Цвет при наведении */
-}
-
-/* Стили для секций */
-.content-section {
-  padding: 20px;
-  margin: 20px;
-  background-color:  white ;
-  width:250px;
-  height:150px;
-  border-radius: 5px; /* Закругленные углы */
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s; /* Плавный переход для анимации */
-}
-
-.content-section:hover {
-  transform: scale(1.02); /* Увеличение при наведении */
-}
 
 
 
 
-/* Стили для секции олпаты */
-.content-section-oplata {
-  padding: 20px;
-  margin: 10px;
-  background-color: #ffffff; /* Белый фон для секций */
-  width: 300px;
-  height: 150px;
-  left: 0;
-  border-radius: 5px; /* Закругленные углы */
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s; /* Плавный переход для анимации */
-}
-
-.content-section-oplata:hover {
-  transform: scale(1.02); /* Увеличение при наведении */
-}
-
-.content-section-user {
-  padding: 20px;
-  margin: 10px;
-  background-color: #ffffff; /* Белый фон для секций */
-  width: 300px;
-  height: 350px;
-  left: 0;
-  border-radius: 5px; /* Закругленные углы */
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s; /* Плавный переход для анимации */
-}
-
-.content-section-user:hover {
-  transform: scale(1.02); /* Увеличение при наведении */
-}
-/* Стили для кнопок */
-button {
-  padding: 10px 15px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-  transition: background-color 0.3s, transform 0.3s; /* Плавные переходы */
-}
-
-
-
-   /* Основные стили для списка скидок */
-        .discount-item {
-        margin-top:10px;
-            width: 100px;
-            display: block;
-            font-size: 16px;
-            padding: 10px;
-            cursor: pointer;
-            background-color: #e5e5e5;
-            border-radius: 9px;
-            text-align: center;
-            transition: background-color 0.3s;
-        }
-
-        .discount-item:hover {
-            background-color: #e0e0e0;
-        }
-
-        /* Стили для модального окна */
-        .discount-info {
-            display: none; /* Изначально скрыто */
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный фон */
-            justify-content: center;
-            align-items: center;
-            z-index: 1000; /* Поверх других элементов */
-            animation: fadeIn 0.5s; /* Анимация появления */
-        }
-
-        /* Стили для содержимого модального окна */
-        .discount-info-content {
-            background-color: white;
-            padding: 20px;
-            border-radius: 8px;
-            text-align: center;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-        }
-
-        /* Анимация появления */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-
-        /* Кнопки */
-        .close-discount-info {
-            margin-top: 15px;
-            padding: 10px 15px;
-            border: none;
-            background-color: #688EBD ;
-            color: white;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        .close-discount-info:hover {
-            background-color: #5a7cb3; /* Более темный цвет при наведении */
-        }
-
-
-
-.profile-icon {
-  position: relative;
-  width: 150px;
-  height: 150px;
-  overflow: hidden;
-  border-radius: 50%;
-  border: 2px solid #ccc;
-  background-color: #fff;
-}
-
-.profile-icon input {
-  display: none; /* Скрыть элемент input */
-}
-
-.profile-icon img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 50%;
-  cursor: pointer;
-}
-.oplata {
-  background-color: #e5e5e5; /* Цвет для кнопок оплаты */
-    color: black;
-  margin-top: 10px;
-margin-bottom: 5px;
-}
-
-.oplata:hover {
-  background-color:#e0e0e0; 
-  transform: translateY(-2px); 
-  
-}
-
-.primary-btn {
-margin-top:10px;
-  background-color: #e5e5e5; /* Цвет для кнопки поддержки */
-  
-  color: black;
-}
-
-.primary-btn:hover {
-  background-color: #e0e0e0; 
-  transform: translateY(-2px); /* Поднимаем кнопку при наведении */
-}
-
-/* Анимация для страницы */
-@keyframes fadeIn {
-  from {
-      opacity: 0; 
-  }
-  to {
-      opacity: 1; 
-  }
-}
 
 
 /* КОНЕЦ  СТРАНИЦЫ ЛИЧНОЙ КАБИНЕТ  */
