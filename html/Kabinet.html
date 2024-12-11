@@ -181,9 +181,7 @@
                     <img id="output" src="default-avatar.png" />
                 </div>   <input type="file" id="fileInput" accept="image/*" onchange="loadFile(event)" />
            
-              <style>
-     
-    </style>
+
                <li class="discount-item">
             Скидка
             <p style="font-size: 17px; font-weight: bold; color: black;">До 30%</p>
@@ -214,23 +212,49 @@
                 discountInfo.style.display = 'none';
             }
         });
-    </script>
+    </script> </div> </section>
+<section id="support" class="content-section-oplata">
+    <div class="finans">
+        <h6 style="font-size: 14px; color: grey;">Финансы</h6>
+        <div class="button-oplata">
+            <button class="oplata" id="payment-methods">Способы оплаты</button>
+        </div>
+        <div class="button-oplata">
+            <button class="oplata" id="account-details">Реквизиты</button>
+        </div>
+    </div>
+</section>
 
+<script>
+    // Создаем модальное окно (если его еще нет)
+    const payment = document.createElement('div');
+    payment.classList.add('payment');
+    payment.style.display = 'none'; // Скрываем модальное окно по умолчанию
+    payment.innerHTML = `
+        <div class="payment-content">
+            <h2>Способы оплаты</h2>
+             <button class="card">Привязать карту</button>
+ 
+            <button class="close-discount-info">Понятно</button>
+        </div>
+    `;
+    document.body.appendChild(payment);
+    // Обработчик события для кнопки "Способы оплаты"
+    document.getElementById('payment-methods').addEventListener('click', () => {
+        payment.style.display = 'flex'; 
+    });
 
-            </div>
-        </section>
-   
-        <section id="support" class="content-section-oplata">
-            <div class="finans">
-                <h6 style="font-size: 14px; color: grey;">Финансы</h6>
-                <div class="button-oplata">
-                    <button class="oplata">Способы оплаты</button>
-                </div>
-                <div class="button-oplata">
-                    <button class="oplata">Реквизиты</button>
-                </div>
-            </div>
-        </section>
+    payment.querySelector('.close-discount-info').addEventListener('click', () => {
+        payment.style.display = 'none';
+    });
+
+    document.addEventListener('click', (event) => {
+        if (event.target === payment) {
+            payment.style.display = 'none';
+        }
+    });
+</script>
+
 
     <section id="support" class="content-section">
             <div class="support-content">
@@ -346,10 +370,10 @@ function loadFile(event) {
     // Функция для закрытия popup
     function closePopup() {
         popup.style.display = 'none'; 
-        isPopupOpen = false; // Указывает что popup закрыт
+        isPopupOpen = false;
     }
     
-    // Закрытие каталога при клике где-либо на странице
+
     document.addEventListener('click', function() {
         if (catalog.style.display === 'block') {
             catalog.style.display = 'none'; 
@@ -372,32 +396,32 @@ function loadFile(event) {
     
     let accountVisible = false;
     
-    // Show tooltip on mouse over
+
     socialLink.addEventListener('mouseover', () => {
         tooltip.style.display = 'block';
-        tooltip.style.top = `${socialLink.offsetTop + socialLink.offsetHeight}px`; // Corrected line
-        tooltip.style.left = `${socialLink.offsetLeft}px`; // Corrected line
+        tooltip.style.top = `${socialLink.offsetTop + socialLink.offsetHeight}px`;
+        tooltip.style.left = `${socialLink.offsetLeft}px`; 
     });
     
-    // Hide tooltip on click outside
+
     document.addEventListener('click', (event) => {
         if (!socialLink.contains(event.target) && !tooltip.contains(event.target)) {
             hideTooltip();
         }
     });
     
-    // Hide tooltip function
+
     function hideTooltip() {
         tooltip.style.display = 'none';
     }
     
-    // Toggle account visibility
+
     function toggleAccount() {
         accountVisible = !accountVisible;
         account.style.display = accountVisible ? 'block' : 'none';
     }
     
-    // Hide account if visible
+
     function hideAccount() {
         if (accountVisible) {
             accountVisible = false;
@@ -405,31 +429,30 @@ function loadFile(event) {
         }
     }
     
-    // Open and close register modal
+
     function openRegisterModal() {
-        document.body.style.overflow = 'hidden'; // Prevent body scroll
+        document.body.style.overflow = 'hidden'; 
         registerModal.style.display = 'block';
     }
     
     function closeRegisterModal() {
-        document.body.style.overflow = 'auto'; // Re-enable body scroll
+        document.body.style.overflow = 'auto'; 
         registerModal.style.display = 'none';
     }
     
-    // Handle register form submission
     registerForm.onsubmit = (event) => {
         event.preventDefault();
         alert('Регистрация завершена');
         closeRegisterModal();
     };
     
-    // Log in account function
+
     function logInAccount() {
         alert('Вход');
     }
     </script>
     <script>
-    // Toggle modal visibility on button click
+
     signUpBtnLink.addEventListener('click', () => {
         modal.classList.toggle('active');
     });
@@ -2789,6 +2812,40 @@ height: 230px !important;
 
 
 /* НАЧАЛО СТРАНИЦЫ ЛИЧНОЙ КАБИНЕТ  */
+
+
+.payment {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: white;
+        border: 1px solid grey;
+        padding: 20px;
+        z-index: 1000;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .payment-content {
+        text-align: center;
+    }
+
+    /* Добавьте стиль для фона модального окна */
+    .payment::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: -1; /* Позади модального окна */
+        display: none; /* Скрыт по умолчанию */
+    }
+
+
 
 .navbar {
  
