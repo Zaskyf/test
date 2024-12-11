@@ -1,15 +1,5 @@
 
-.breadcrumbs {
-  font-family: Arial, sans-serif;
-  margin: 10px 0;
-}
-.breadcrumbs a {
-  text-decoration: none;
-  color: blue;
-}
-.breadcrumbs span {
-  margin: 0 5px;
-}
+
 
 
 
@@ -2354,144 +2344,11 @@ height: 230px !important;
 
 /* НАЧАЛО СТРАНИЦЫ ЛИЧНОЙ КАБИНЕТ  */
 
-.navbar {
- 
-  padding: 10px 0;
-border-radius: 9px;
-}
-
-.nav-links {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-}
-
-.nav-links li {
-  margin: 0 15px;
-}
-
-.nav-links a {
-  text-decoration: none;
-  color: white;
-  font-weight: 500;
-  transition: color 0.3s; /* Плавный переход цвета */
-}
-
-.nav-links a:hover {
-  color: #5a7cb3; /* Цвет при наведении */
-}
-
-/* Стили для секций */
-.content-section {
-  padding: 20px;
-  margin: 20px auto;
-  background-color: #ffffff; /* Белый фон для секций */
-  border-radius: 5px; /* Закругленные углы */
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s; /* Плавный переход для анимации */
-}
-
-.content-section:hover {
-  transform: scale(1.02); /* Увеличение при наведении */
-}
 
 
 
 
-/* Стили для секции олпаты */
-.content-section-oplata {
-  padding: 20px;
-  margin: 10px;
-  background-color: #ffffff; /* Белый фон для секций */
-  width: 300px;
-  height: 150px;
-  left: 0;
-  border-radius: 5px; /* Закругленные углы */
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s; /* Плавный переход для анимации */
-}
 
-.content-section-oplata:hover {
-  transform: scale(1.02); /* Увеличение при наведении */
-}
-
-.content-section-user {
-  padding: 20px;
-  margin: 10px;
-  background-color: #ffffff; /* Белый фон для секций */
-  width: 300px;
-  height: 350px;
-  left: 0;
-  border-radius: 5px; /* Закругленные углы */
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s; /* Плавный переход для анимации */
-}
-
-.content-section-user:hover {
-  transform: scale(1.02); /* Увеличение при наведении */
-}
-/* Стили для кнопок */
-button {
-  padding: 10px 15px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-  transition: background-color 0.3s, transform 0.3s; /* Плавные переходы */
-}
-
-.profile-icon {
-  position: relative;
-  width: 150px;
-  height: 150px;
-  overflow: hidden;
-  border-radius: 50%;
-  border: 2px solid #ccc;
-  background-color: #fff;
-}
-
-.profile-icon input {
-  display: none; /* Скрыть элемент input */
-}
-
-.profile-icon img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 50%;
-  cursor: pointer;
-}
-.oplata {
-  background-color: #5a7cb3; /* Цвет для кнопок оплаты */
-  color: white;
-  margin-top: 10px;
-margin-bottom: 5px;
-}
-
-.oplata:hover {
-  background-color: #688EBD; /* Темнее синий при наведении */
-  transform: translateY(-2px); /* Поднимаем кнопку при наведении */
-}
-
-.primary-btn {
-  background-color: #688EBD; /* Цвет для кнопки поддержки */
-  color: white;
-}
-
-.primary-btn:hover {
-  background-color: #5a7cb3; /* Темнее синий при наведении */
-  transform: translateY(-2px); /* Поднимаем кнопку при наведении */
-}
-
-/* Анимация для страницы */
-@keyframes fadeIn {
-  from {
-      opacity: 0; /* Начальное состояние - прозрачность 0 */
-  }
-  to {
-      opacity: 1; /* Конечное состояние - полная непрозрачность */
-  }
-}
 
 
 /* КОНЕЦ  СТРАНИЦЫ ЛИЧНОЙ КАБИНЕТ  */
