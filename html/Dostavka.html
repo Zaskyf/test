@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Личный кабинет </title>
+    <title>Доставка</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/html/style.css">
@@ -84,14 +84,23 @@
 
     <div class="navbar" >
         <ul class="nav-links" >
-            <li  style=" background-color: #e5e5e5; "><a  style=" color: black; " href="/test/html/Kabinet.html">Главная</a></li>
-            <li style=" background-color: #e5e5e5; "><a style=" color: black; " href="/test/html/Dostavka.html">Доставка</a></li>
-            <li  style=" background-color: #e5e5e5; "><a  style=" color: black; " href="#grades">Покупки</a></li>
-            <li style=" background-color: #e5e5e5; " ><a style=" color: black; "  href="#communication">Избранное</a></li>
-            <li style=" background-color: #e5e5e5; " ><a style=" color: black; "  href="#communication">Отзывы </a></li>
-            <li  style=" background-color: #e5e5e5; " ><a style=" color: black; "  href="#support">Поддержка</a></li>
+          <li style=" background-color: #e5e5e5; "> <a  style=" color: black;  font-size: 12px;" href="/test/html/Kabinet.html">Главная </a></li>
+            <li style=" background-color: #e5e5e5; "><a style=" color: black;  font-size: 12px;" href="/test/html/Dostavka.html">Доставки</a></li>
+            <li  style=" background-color: #e5e5e5; "><a  style=" color: black; font-size: 12px; " href="#grades">Покупки</a></li>
+            <li style=" background-color: #e5e5e5; " ><a style=" color: black; font-size: 12px; "  href="#communication">Избранное</a></li>
+            <li style=" background-color: #e5e5e5; " ><a style=" color: black; font-size: 12px;"  href="#communication">Отзывы </a></li>
+            <li  style=" background-color: #e5e5e5; " ><a style=" color: black; font-size: 12px; "  href="#support">Поддержка</a></li>
         </ul>
     </div>
+
+    <div class="navbardostavka" >
+     <ul style="align-items:center;">
+        <a style=" color: black;  font-size: 20px;  text-decoration: none;" href="/test/html/Dostavka.html">Доставки</a>
+         <a  style=" color: black;  font-size: 20px; text-decoration: none;" href="/test/html/purchases.html">Покупки</a>
+         <a  style=" color: black; font-size: 20px;   text-decoration: none;" href="#grades">Чеки</a>
+
+      </ul>
+  </div>
     <main>
         <section id="user" class="content-section-user">
             <h2>Пользователь</h2>
@@ -142,15 +151,18 @@ background-color: #688EBD;
 
 }
 .navbar {
-
+  
+  text-decoration: none;
   padding: 10px 0;
 border-radius: 9px;
 }
 
+
+
 .nav-links {
   list-style: none;
   display: flex;
-  justify-content: center;
+  justify-content: left;
 }
 
 .nav-links li {
