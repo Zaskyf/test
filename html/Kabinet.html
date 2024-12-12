@@ -173,19 +173,20 @@
         </ul>
     </div>
     <main>
-        <section id="user" class="content-section-user">
-            <h2>Пользователь</h2>
-            <div class="User-profil">
-                <div class="profile-icon">
-                
-                    <img id="output" src="default-avatar.png" />
-                </div>   <input type="file" id="fileInput" accept="image/*" onchange="loadFile(event)" />
-           
-
-               <li class="discount-item">
+<section id="user" class="content-section-user">
+    <h2>Пользователь</h2>
+    <div class="User-profil">
+        <div class="profile-icon">
+            <img id="output" src="default-avatar.png" />
+        </div>
+        <input type="file" id="fileInput" accept="image/*" onchange="loadFile(event)" />
+        <li class="discount-item">
             Скидка
             <p style="font-size: 17px; font-weight: bold; color: black;">До 30%</p>
-        </li></div> </section>
+        </li>
+    </div>
+</section>
+
  
 <section id="support" class="content-section-oplata">
     <div class="finans">
@@ -207,96 +208,7 @@
         <button class="oplata" id="devices">Ваши устройства</button>
     </div>
 </section>
-<div class="overlay"></div>
-<script>
-const discountInfo = document.createElement('div');
-            discountInfo.classList.add('discount-info');
-            discountInfo.innerHTML = `
-                <div class="discount-info-content">
-                    <h2>Информация о скидках</h2>
-                    <p>Здесь будет подробная информация о скидках, например, какие товары участвуют в акции, условия получения скидки, срок действия скидки и т.д.</p>
-                    <button class="close-discount-info">Понятно</button>
-                </div>
-            `;
-            document.body.appendChild(discountInfo);
-
-            document.querySelector('.discount-item').addEventListener('click', () => {
-                discountInfo.style.display = 'flex'; 
-            });
-
-            discountInfo.querySelector('.close-discount-info').addEventListener('click', () => {
-                discountInfo.style.display = 'none';
-            });
-            document.addEventListener('click', (event) => {
-                if (event.target === discountInfo) {
-                    discountInfo.style.display = 'none';
-                }
-            });
-    const payment = document.createElement('div');
-    payment.classList.add('payment');
-    payment.innerHTML = `
-        <h2>Способы оплаты</h2>
-        <button class="card">Привязать карту</button>
-        <button class="close-discount-info">Понятно</button>
-    `;
-    document.body.appendChild(payment);
-    const cardBinding = document.createElement('div');
-    cardBinding.classList.add('card-binding');
-    cardBinding.innerHTML = `
-        <h2>Привязка карты</h2>
-        <label for="card-number">Номер карты:</label>
-        <input type="text" id="card-number" placeholder="Введите номер карты">
-        <button class="submit-card">Привязать</button>
-        <button class="close-card-binding">Закрыть</button>
-    `;
-    document.body.appendChild(cardBinding);
-
-    const details = document.createElement('div');
-    details.classList.add('details');
-    details.innerHTML = `
-        <h2>Реквизиты</h2>
-        <button class="detail">Привязать реквизиты</button>
-        <button class="close-details">Понятно</button>
-    `;
-    document.body.appendChild(details);
-
-    document.getElementById('payment-methods').addEventListener('click', () => {
-        payment.style.display = 'block';
-        document.querySelector('.overlay').style.display = 'block';
-    });
-
-    payment.querySelector('.card').addEventListener('click', () => {
-        payment.style.display = 'none';
-        cardBinding.style.display = 'block';
-    });
-
-    payment.querySelector('.close-discount-info').addEventListener('click', () => {
-        payment.style.display = 'none';
-        document.querySelector('.overlay').style.display = 'none';
-    });
-
-    cardBinding.querySelector('.close-card-binding').addEventListener('click', () => {
-        cardBinding.style.display = 'none';
-        document.querySelector('.overlay').style.display = 'none';
-    });
-
-    details.querySelector('.close-details').addEventListener('click', () => {
-        details.style.display = 'none';
-        document.querySelector('.overlay').style.display = 'none';
-    });
-
-    document.getElementById('account-details').addEventListener('click', () => {
-        details.style.display = 'block';
-        document.querySelector('.overlay').style.display = 'block';
-    });
-
-    document.querySelector('.overlay').addEventListener('click', () => {
-        payment.style.display = 'none';
-        cardBinding.style.display = 'none';
-        details.style.display = 'none';
-        document.querySelector('.overlay').style.display = 'none';
-    });
-</script><section id="support" class="content-section">
+<div class="overlay"></div><section id="support" class="content-section">
                 <div class="support-content-zakaz">
                     <h6 style="font-size: 14px; color: grey;">Доставка</h6>
                     <button class="zakaz">Все</button>
@@ -342,13 +254,126 @@ const discountInfo = document.createElement('div');
 
 
 <script>
+function loadFile(event) {
+    const image = document.getElementById('output');
+    image.src = URL.createObjectURL(event.target.files[0]);
+    // Сохранение в localStorage
+    localStorage.setItem('uploadedImage', image.src);
+}
+document.addEventListener('DOMContentLoaded', function() {
+    const savedImage = localStorage.getItem('uploadedImage');
+    if (savedImage) {
+        document.getElementById('output').src = savedImage;
+    }
+});
 
+//Окна
+const discountInfo = document.createElement('div');
+            discountInfo.classList.add('discount-info');
+            discountInfo.innerHTML = `
+                <div class="discount-info-content">
+                    <h2>Информация о скидках</h2>
+                    <p>Здесь будет подробная информация о скидках, например, какие товары участвуют в акции, условия получения скидки, срок действия скидки и т.д.</p>
+                    <button class="close-discount-info">Понятно</button>
+                </div>
+            `;
+            document.body.appendChild(discountInfo);
+            document.querySelector('.discount-item').addEventListener('click', () => {
+                discountInfo.style.display = 'flex'; 
+            });
+            discountInfo.querySelector('.close-discount-info').addEventListener('click', () => {
+                discountInfo.style.display = 'none';
+            });
+            document.addEventListener('click', (event) => {
+                if (event.target === discountInfo) {
+                    discountInfo.style.display = 'none';
+                }
+            });
+    const payment = document.createElement('div');
+    payment.classList.add('payment');
+    payment.innerHTML = `
+        <h2>Способы оплаты</h2>
+        <button class="card">Привязать карту</button>
+        <button class="close-discount-info">Понятно</button>
+    `;
+    document.body.appendChild(payment);
+    const cardBinding = document.createElement('div');
+    cardBinding.classList.add('card-binding');
+    cardBinding.innerHTML = `
+        <h2>Привязка карты</h2>
+        <label for="card-number">Номер карты:</label>
+        <input type="text" id="card-number" placeholder="Введите номер карты">
+        <button class="submit-card">Привязать</button>
+        <button class="close-card-binding">Закрыть</button>
+    `;
+    document.body.appendChild(cardBinding);
+    const details = document.createElement('div');
+    details.classList.add('details');
+    details.innerHTML = `
+        <h2>Реквизиты</h2>
+        <button class="detail">Привязать реквизиты</button>
+        <button class="close-details">Понятно</button>
+    `;
+    document.body.appendChild(details);
+    document.getElementById('payment-methods').addEventListener('click', () => {
+        payment.style.display = 'block';
+        document.querySelector('.overlay').style.display = 'block';
+    });
+    payment.querySelector('.card').addEventListener('click', () => {
+        payment.style.display = 'none';
+        cardBinding.style.display = 'block';
+    });
+    payment.querySelector('.close-discount-info').addEventListener('click', () => {
+        payment.style.display = 'none';
+        document.querySelector('.overlay').style.display = 'none';
+    });
+
+    cardBinding.querySelector('.close-card-binding').addEventListener('click', () => {
+        cardBinding.style.display = 'none';
+        document.querySelector('.overlay').style.display = 'none';
+    });
+    details.querySelector('.close-details').addEventListener('click', () => {
+        details.style.display = 'none';
+        document.querySelector('.overlay').style.display = 'none';
+    });
+    document.getElementById('account-details').addEventListener('click', () => {
+        details.style.display = 'block';
+        document.querySelector('.overlay').style.display = 'block';
+    });  document.querySelector('.overlay').addEventListener('click', () => {
+        payment.style.display = 'none';
+        cardBinding.style.display = 'none';
+        details.style.display = 'none';
+        document.querySelector('.overlay').style.display = 'none';
+    });
 function loadFile(event) {
     const output = document.getElementById('output');
     output.src = URL.createObjectURL(event.target.files[0]);
 }
- 
-    const catalog = document.getElementById('catalog');
+
+const setting = document.createElement('div');
+            setting.classList.add('settings');
+            setting.innerHTML = `
+                <div class="settings-content">
+                    <h2>Информация о скидках</h2>
+                    <p>Здесь будет подробная информация о настройках профиля </p>
+                    <button class="close-settings">Сохранить </button>
+                </div>
+            `;
+            document.body.appendChild(setting);
+            document.querySelector('.settings').addEventListener('click', () => {
+                setting.style.display = 'flex'; 
+            });
+            setting.querySelector('.close-settings').addEventListener('click', () => {
+               setting.style.display = 'none';
+            });
+            document.addEventListener('click', (event) => {
+                if (event.target === setting {
+                    setting.style.display = 'none';
+                }
+            });
+
+//Каталог
+const catalog = document.getElementById('catalog');
     const menuBurger = document.getElementById('menuBurger');
     const popup = document.getElementById('popup');
     
@@ -2873,26 +2898,22 @@ border-radius: 9px;
 }
 
 .profile-icon {
-  position: relative;
-  width: 150px;
-  height: 150px;
-  overflow: hidden;
-  border-radius: 50%;
-  border: 2px solid #ccc;
-  background-color: #fff;
+    position: relative;
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 2px solid #ccc;
+    background-color: #fff;
 }
-
-.profile-icon input {
-  display: none; /* Скрыть элемент input */
-}
-
 .profile-icon img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 50%;
-  cursor: pointer;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    cursor: pointer;
 }
+
 
 .primary-btn {
 margin-top:10px;
@@ -2915,8 +2936,6 @@ margin-top:10px;
       opacity: 1; 
   }
 }
-
-
 .oplata {
         background-color: #e5e5e5;
         color: black;
@@ -3055,9 +3074,6 @@ margin-top:10px;
     .close-discount-info:hover {
         background-color: #5a7cb3;
     }
-    
-  
-    
     .payment, .card-binding, .details {
         display: none;
         position: fixed;
