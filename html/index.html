@@ -69,11 +69,11 @@
        <a href="/test/html/vtora.html" style = " text-decoration :none;  color:black;">    <button class="category-button" data-category="1">      
             <span>Обои</span> <i class="fas fa-chevron-right"></i>
       </button>  </a>
-        <a href=".html" style = " text-decoration :none;  color:black;"> <button class="category-button" data-category="2">
+        <a href="/test/html/three.html" style = " text-decoration :none;  color:black;"> <button class="category-button" data-category="2">
             <span>Сантехника</span> <i class="fas fa-chevron-right"></i>
         </button>  </a>
         <button class="category-button" data-category="3">
-            <a href=".html" style = " text-decoration :none;  color:black;"> <span>Ламинат</span> <i class="fas fa-chevron-right"></i>
+            <a href="/test/html/laminat.html" style = " text-decoration :none;  color:black;"> <span>Ламинат</span> <i class="fas fa-chevron-right"></i>
         </button>  </a>
     </div>
 
@@ -196,12 +196,12 @@
 <!--НАЧАЛО ИКНОК ССЫЛОК НА ГЛАВНОЙ СТРАНИЦЕ-->
 <section class="boxicon">
     <div class="bcontainer">
-      <a href="/test/html/category.html">  <img class="icones" src="https://cdn-icons-png.flaticon.com/128/602/602287.png" alt="Ассортимент">  </a>
-        <p style=" font-size: 20px ; ">Материалы </p> 
+      <a style=" text-decoration: none;" href="/test/html/category.html">  <img class="icones" src="https://cdn-icons-png.flaticon.com/128/602/602287.png" alt="Ассортимент"> <p style=" font-size: 20px ; ">Материалы </p>  </a>
+        
     </div>
     <div class="bcontainer">
-        <img class="icones" src="https://cdn-icons-png.flaticon.com/128/602/602287.png" alt="Доставка">
-        <p style=" font-size: 20px ; ">Доставка</p>
+        <a  style="text-decoration: none;" href="/test/html/Dostavka.html"><img class="icones" src="https://cdn-icons-png.flaticon.com/128/602/602287.png" alt="Доставка">  <p style=" font-size: 20px ; ">Доставка</p> </a> 
+       
     </div>
         <div class="bcontainer">
         <img class="icones" src="https://cdn-icons-png.flaticon.com/128/2474/2474099.png" alt="Гарантии качества">
@@ -592,32 +592,29 @@ const modal = document.querySelector('.modal');
 
 let accountVisible = false;
 
-// Show tooltip on mouse over
 socialLink.addEventListener('mouseover', () => {
     tooltip.style.display = 'block';
-    tooltip.style.top = `${socialLink.offsetTop + socialLink.offsetHeight}px`; // Corrected line
-    tooltip.style.left = `${socialLink.offsetLeft}px`; // Corrected line
+    tooltip.style.top = `${socialLink.offsetTop + socialLink.offsetHeight}px`; 
+    tooltip.style.left = `${socialLink.offsetLeft}px`;
 });
 
-// Hide tooltip on click outside
+
 document.addEventListener('click', (event) => {
     if (!socialLink.contains(event.target) && !tooltip.contains(event.target)) {
         hideTooltip();
     }
 });
 
-// Hide tooltip function
 function hideTooltip() {
     tooltip.style.display = 'none';
 }
 
-// Toggle account visibility
 function toggleAccount() {
     accountVisible = !accountVisible;
     account.style.display = accountVisible ? 'block' : 'none';
 }
 
-// Hide account if visible
+
 function hideAccount() {
     if (accountVisible) {
         accountVisible = false;
@@ -625,31 +622,31 @@ function hideAccount() {
     }
 }
 
-// Open and close register modal
+
 function openRegisterModal() {
-    document.body.style.overflow = 'hidden'; // Prevent body scroll
+    document.body.style.overflow = 'hidden';
     registerModal.style.display = 'block';
 }
 
 function closeRegisterModal() {
-    document.body.style.overflow = 'auto'; // Re-enable body scroll
+    document.body.style.overflow = 'auto';
     registerModal.style.display = 'none';
 }
 
-// Handle register form submission
+
 registerForm.onsubmit = (event) => {
     event.preventDefault();
     alert('Регистрация завершена');
     closeRegisterModal();
 };
 
-// Log in account function
+
 function logInAccount() {
     alert('Вход');
 }
 </script>
 <script>
-// Toggle modal visibility on button click
+
 signUpBtnLink.addEventListener('click', () => {
     modal.classList.toggle('active');
 });
