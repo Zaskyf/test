@@ -9,7 +9,7 @@
    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="/test/css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
   <title>Сантехника</title>
   <link
   rel="stylesheet"
@@ -18,7 +18,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
         integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <link rel="stylesheet" href="/css/style.css">
+
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
         <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" ></script>
 
@@ -59,14 +59,14 @@
 
 <div class="catalog" id="catalog">
     <h6>Каталог</h6>
-   <a href="/test/html/vtora.html" style = " text-decoration :none;  color:black;">    <button class="category-button" data-category="1">      
+   <a href="vtora.html" style = " text-decoration :none;  color:black;">    <button class="category-button" data-category="1">      
         <span>Обои</span> <i class="fas fa-chevron-right"></i>
   </button>  </a>
-    <a href="/test/html/three.html" style = " text-decoration :none;  color:black;"> <button class="category-button" data-category="2">
+    <a href="three.html" style = " text-decoration :none;  color:black;"> <button class="category-button" data-category="2">
         <span>Сантехника</span> <i class="fas fa-chevron-right"></i>
     </button>  </a>
     <button class="category-button" data-category="3">
-        <a href="/test/html/laminat.html" style = " text-decoration :none;  color:black;"> <span>Ламинат</span> <i class="fas fa-chevron-right"></i>
+        <a href="laminat.html" style = " text-decoration :none;  color:black;"> <span>Ламинат</span> <i class="fas fa-chevron-right"></i>
     </button>  </a>
 </div>
 
@@ -166,112 +166,7 @@
        
 
 
-<script>
-let cart = [];
 
-function addToCart() {
-    const productName = document.querySelector('h1').innerText; // Название продукта
-    const productPrice = parseInt(document.querySelector('.prodct-image.active').dataset.price); // Цена товара из выбранного изображения
-    const quantity = parseInt(document.querySelector('.quantity-input').value); // Количество товара
-
-    const cartItem = {
-        name: productName,
-        price: productPrice,
-        quantity: quantity,
-        total: productPrice * quantity // Общая стоимость товара
-    };
-
-    cart.push(cartItem); // Добавляем товар в корзину
-    alert(`${productName} добавлен в корзину!`); // Уведомление пользователя
-    renderCart(); // Обновляем отображение корзины
-}
-
-function renderCart() {
-    const cartItemsContainer = document.getElementById('cart-items');
-    cartItemsContainer.innerHTML = ''; // Очищаем контейнер корзины
-    let totalAmount = 0; // Переменная для подсчета итоговой суммы
-
-    cart.forEach((item, index) => {
-        totalAmount += item.total; // Считаем общую сумму
-        const itemDiv = document.createElement('div');
-        itemDiv.innerHTML = `<p>${item.name} - ${item.price} ₽ x ${item.quantity} = ${item.total} ₽</p>
-            <button onclick="removeCartItem(${index})">Удалить</button>`; // Кнопка для удаления товара
-        cartItemsContainer.appendChild(itemDiv); // Добавляем товар в контейнер
-    });
-
-    // Отображаем итоговую сумму
-    cartItemsContainer.innerHTML += `<h3>Итоговая сумма: ${totalAmount} ₽</h3>`;
-}
-
-function removeCartItem(index) {
-    cart.splice(index, 1); // Удаляем товар по индексу
-    renderCart(); // Обновляем отображение корзины
-}
-//Меняет цвет кружочка 
-function changeColor(color) {
-    const slides = document.querySelectorAll('.prodct-image'); // Получаем все изображения продукта
-    slides.forEach(slide => {
-        slide.classList.remove('active'); // Убираем активный класс у всех слайдов
-    });
-
-    const colorIndex = { 'red': 0, 'blue': 1, 'green': 2 }[color];
-    slides[colorIndex].classList.add('active'); // Устанавливаем активный слайд
-    updatePrice(slides[colorIndex].dataset.price); // Обновляем цену для выбранного цвета
-}
-
-function updatePrice(price) {
-    document.getElementById('prodct-price').innerText = `Цена: ${price} ₽`; // Обновляем отображаемую цену
-}
-
-//Меняет секцию (детали характеристика , отзывы ,опсиание)
-function showSection(section) {
-            // Hide all sections first
-            const sections = ['prodct-info', 'characteristics', 'reviews', 'details'];
-            sections.forEach(sec => {
-                document.getElementById(sec + '-section').style.display = 'none';
-            });
-
-            // Show the selected section
-            document.getElementById(section + '-section').style.display = 'block';
-        }
-
-
-function rate(value) {
-    const stars = document.querySelectorAll('.star'); // Получаем все звезды для рейтинга
-    stars.forEach(star => {
-        star.style.color = star.dataset.value <= value ? 'gold' : 'gray'; // Устанавливаем цвет звезд в зависимости от рейтинга
-    });
-    document.getElementById('rating-value').innerText = `${value} / 5`; // Обновляем значение рейтинга
-}
-
-// Функция для отображения корзины
-function toggleCart(event) {
-    const cart = document.getElementById('cart');
-    cart.style.display = cart.style.display === 'block' ? 'none' : 'block'; 
-    event.stopPropagation(); // Останавливаем всплытие события
-}
-
-// Закрытие корзины при клике вне неё
-document.addEventListener('click', function(event) {
-    const cart = document.getElementById('cart');
-    const cartIcon = document.querySelector('.cart-icon');
-    if (!cart.contains(event.target) && !cartIcon.contains(event.target)) {
-        cart.style.display = 'none'; // Закрываем корзину
-    }
-});
-
-// Оформление заказа
-function checkout() {
-    alert("Оформление заказа...");
-    // Добавьте свою логику оформления заказа здесь
-}
-
-// Очистка корзины
-function clearCart() {
-    cart = [];
-    renderCart();
-}
-</script>
 
 <div class="sidebar">
         <button onclick="showSection('prodct-info')">Описание</button>
@@ -395,6 +290,111 @@ function clearCart() {
 
 
 <script>
+    let cart = [];
+    
+    function addToCart() {
+        const productName = document.querySelector('h1').innerText; // Название продукта
+        const productPrice = parseInt(document.querySelector('.prodct-image.active').dataset.price); // Цена товара из выбранного изображения
+        const quantity = parseInt(document.querySelector('.quantity-input').value); // Количество товара
+    
+        const cartItem = {
+            name: productName,
+            price: productPrice,
+            quantity: quantity,
+            total: productPrice * quantity // Общая стоимость товара
+        };
+    
+        cart.push(cartItem); // Добавляем товар в корзину
+        alert(`${productName} добавлен в корзину!`); // Уведомление пользователя
+        renderCart(); // Обновляем отображение корзины
+    }
+    
+    function renderCart() {
+        const cartItemsContainer = document.getElementById('cart-items');
+        cartItemsContainer.innerHTML = ''; // Очищаем контейнер корзины
+        let totalAmount = 0; // Переменная для подсчета итоговой суммы
+    
+        cart.forEach((item, index) => {
+            totalAmount += item.total; // Считаем общую сумму
+            const itemDiv = document.createElement('div');
+            itemDiv.innerHTML = `<p>${item.name} - ${item.price} ₽ x ${item.quantity} = ${item.total} ₽</p>
+                <button onclick="removeCartItem(${index})">Удалить</button>`; // Кнопка для удаления товара
+            cartItemsContainer.appendChild(itemDiv); // Добавляем товар в контейнер
+        });
+    
+        // Отображаем итоговую сумму
+        cartItemsContainer.innerHTML += `<h3>Итоговая сумма: ${totalAmount} ₽</h3>`;
+    }
+    
+    function removeCartItem(index) {
+        cart.splice(index, 1); // Удаляем товар по индексу
+        renderCart(); // Обновляем отображение корзины
+    }
+    //Меняет цвет кружочка 
+    function changeColor(color) {
+        const slides = document.querySelectorAll('.prodct-image'); // Получаем все изображения продукта
+        slides.forEach(slide => {
+            slide.classList.remove('active'); // Убираем активный класс у всех слайдов
+        });
+    
+        const colorIndex = { 'red': 0, 'blue': 1, 'green': 2 }[color];
+        slides[colorIndex].classList.add('active'); // Устанавливаем активный слайд
+        updatePrice(slides[colorIndex].dataset.price); // Обновляем цену для выбранного цвета
+    }
+    
+    function updatePrice(price) {
+        document.getElementById('prodct-price').innerText = `Цена: ${price} ₽`; // Обновляем отображаемую цену
+    }
+    
+    //Меняет секцию (детали характеристика , отзывы ,опсиание)
+    function showSection(section) {
+                // Hide all sections first
+                const sections = ['prodct-info', 'characteristics', 'reviews', 'details'];
+                sections.forEach(sec => {
+                    document.getElementById(sec + '-section').style.display = 'none';
+                });
+    
+                // Show the selected section
+                document.getElementById(section + '-section').style.display = 'block';
+            }
+    
+    
+    function rate(value) {
+        const stars = document.querySelectorAll('.star'); // Получаем все звезды для рейтинга
+        stars.forEach(star => {
+            star.style.color = star.dataset.value <= value ? 'gold' : 'gray'; // Устанавливаем цвет звезд в зависимости от рейтинга
+        });
+        document.getElementById('rating-value').innerText = `${value} / 5`; // Обновляем значение рейтинга
+    }
+    
+    // Функция для отображения корзины
+    function toggleCart(event) {
+        const cart = document.getElementById('cart');
+        cart.style.display = cart.style.display === 'block' ? 'none' : 'block'; 
+        event.stopPropagation(); // Останавливаем всплытие события
+    }
+    
+    // Закрытие корзины при клике вне неё
+    document.addEventListener('click', function(event) {
+        const cart = document.getElementById('cart');
+        const cartIcon = document.querySelector('.cart-icon');
+        if (!cart.contains(event.target) && !cartIcon.contains(event.target)) {
+            cart.style.display = 'none'; // Закрываем корзину
+        }
+    });
+    
+    // Оформление заказа
+    function checkout() {
+        alert("Оформление заказа...");
+        // Добавьте свою логику оформления заказа здесь
+    }
+    
+    // Очистка корзины
+    function clearCart() {
+        cart = [];
+        renderCart();
+    }
+  
  
     const catalog = document.getElementById('catalog');
     const menuBurger = document.getElementById('menuBurger');
