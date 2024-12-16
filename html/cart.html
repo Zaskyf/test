@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Корзина</title>
-    <link rel="stylesheet" href="/test/css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
 
 </head>
 <body>
@@ -37,109 +37,113 @@
     <button onclick="clearCart()">Очистить корзину</button>
 </div>
 
- <!--Каталог-->
+  <!--Каталог-->
 
-            <div class="catalog" id="catalog">
-        <h6>Каталог</h6>
-        <button class="category-button" data-category="1">
-            <span>Обои</span> <i class="fas fa-chevron-right"></i>
-        </button>
-        <button class="category-button" data-category="2">
-            <span>Сантехника</span> <i class="fas fa-chevron-right"></i>
-        </button>
-        <button class="category-button" data-category="3">
-            <span>Ламинат</span> <i class="fas fa-chevron-right"></i>
-        </button>
-    </div>
+  <div class="catalog" id="catalog">
+    <h6>Каталог</h6>
+   <a href="vtora.html" style = " text-decoration :none;  color:black;">    <button class="category-button" data-category="1">      
+        <span>Обои</span> <i class="fas fa-chevron-right"></i>
+  </button>  </a>
+    <a href="three.html" style = " text-decoration :none;  color:black;"> <button class="category-button" data-category="2">
+        <span>Сантехника</span> <i class="fas fa-chevron-right"></i>
+    </button>  </a>
+    <button class="category-button" data-category="3">
+        <a href="laminat.html" style = " text-decoration :none;  color:black;"> <span>Ламинат</span> <i class="fas fa-chevron-right"></i>
+    </button>  </a>
+</div>
 
-    <!-- Popup для подкатегорий -->
-    <div class="popup" id="popup">
-        <span class="clobutton" onclick="closePopup()">&times;</span>
-        <a href="vtora.html">   <h2 id="popupTitle">Обои</h2>
-     </a>
+<!-- Popup для подкатегорий -->
+<div class="popup" id="popup">
+    <span class="clobutton" onclick="closePopup()">&times;</span>
+  <h2 id="popupTitle"></h2>  
+   
 
-        <ul id="popupContent"></ul>
-    </div>
+    <ul id="popupContent"></ul>
+</div>
 
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
-    <script>
-    
-    </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
 
 
-
-
-    <!-- Регистрация -->
-    <div class="account" id="account" onmouseleave="hideAccount()">
-        <h2>Аккаунт</h2>
-        <button class="sign" onclick="openRegisterModal()" style = " color: black;font-size : 18px ;">Войти или Зарегистрироваться</button>
-    </div>
-
-    <!-- Модальное окно для регистрации -->
-        <div id="registerModal" class="modal">
-        <span class="close" onclick="closeRegisterModal()">&times;</span> <!-- Крестик закрытия -->
-        <div class="modal-content sign-in">
-            <form action="">
-                <h2>Войти</h2>
-                <div class="input-group">
-                    <input type="text" required>
-                    <label for="">Имя</label>
-                </div>
-                <div class="input-group">
-                    <input type="password" required>
-                    <label for="">Пароль</label>
-                </div>
-                <div class="remember">
-                    <label><input type="checkbox"> Запомнить меня</label>
-                </div>
-                <button class="registr" type="submit">Войти</button>
-                <div class="signUp-link">
-                    <p style="color: black; font-size : 18px;" >У вас нет аккаунта? <a href="#" class="signUpBtn-link">Регистрация</a></p>
-                </div>
-            </form>
-        </div>
-    <div class="modal-content sign-up">
+<!-- НАЧАЛО РЕГИСТРАЦИИ  -->
+<div class="account" id="account" onmouseleave="hideAccount()">
+    <h2>Аккаунт</h2>
+    <button class="sign" onclick="openRegisterModal()" style = " color: black;font-size : 18px ;">Войти или Зарегистрироваться</button>
+</div>
+<!-- Модальное окно для регистрации -->
+    <div id="registerModal" class="modal">
+    <span class="close" onclick="closeRegisterModal()">&times;</span> <!-- Крестик закрытия -->
+    <div class="modal-content sign-in">
         <form action="">
-            <h2>Регистрация</h2><br>
+            <h2>Войти</h2>
             <div class="input-group">
                 <input type="text" required>
                 <label for="">Имя</label>
             </div>
             <div class="input-group">
-                <input type="email" required>
-                <label for="">Почта</label>
-            </div>
-            <div class="input-group">
                 <input type="password" required>
-                <label for="">Придумайте пароль</label>
+                <label for="">Пароль</label>
             </div>
             <div class="remember">
-                <label style="color: black; font-size: 16px;">
-                    <input type="checkbox"> Я соглашаюсь с чем-то
-                </label>
+                <label><input type="checkbox"> Запомнить меня</label>
             </div>
-            <button class="registr" type="submit">Зарегистрироваться</button>
-
+            <button class="registr" type="submit">Войти</button>
             <div class="signUp-link">
-                <p style="color: black; margin-top: 10px; font-size: 16px;">У Вас уже есть аккаунт?
-                    <a style="color: black; margin-top: 10px; font-size: 16px;" href="#" class="signInBtn-link">Войти</a>
-                </p>
-                  <div class="gogle" type="button" onclick="socialLogin()">Войти через <span class="social-link">соцсети</span></div>
+                <p style="color: black; font-size : 18px;" >У вас нет аккаунта? <a href="#" class="signUpBtn-link">Регистрация</a></p>
             </div>
-            <div class="tooltip" id="tooltip" >
-      <span class="clo" onclick="hideTooltip()">&#10006;</span>
-      <ul  class="ca" style="text-align:left; padding:5px; margin-top:10px;">
-        <a href="#" style="margin-right: 3px; color: black; display: inline-block; "><i class="fab fa-facebook-f"></i></a>
-        <a href="#" style="margin-right: 3px; color: black; display: inline-block;"><i class="fab fa-google"></i></a>
-        <a href="#" style="margin-right: 3px; color: black; display: inline-block; "><i class="fab fa-instagram"></i></a>
-        <a href="#" style="margin-right: 3px; color: black; display: inline-block; "><i class="fab fa-instagram"></i></a>
-
-    </ul>
-    </div>
         </form>
     </div>
-    </div>
+<div class="modal-content sign-up">
+    <form action="">
+        <h2>Регистрация</h2><br>
+        <div class="input-group">
+            <input type="text" required>
+            <label for="">Имя</label>
+        </div>
+        <div class="input-group">
+            <input type="email" required>
+            <label for="">Почта</label>
+        </div>
+        <div class="input-group">
+            <input type="password" required>
+            <label for="">Придумайте пароль</label>
+        </div>
+        <div class="remember">
+            <label style="color: black; font-size: 16px;">
+                <input type="checkbox"> Я соглашаюсь с чем-то
+            </label>
+        </div>
+        <button class="registr" type="submit">Зарегистрироваться</button>
+
+        <div class="signUp-link">
+            <p style="color: black; margin-top: 10px; font-size: 16px;">У Вас уже есть аккаунт?
+                <a style="color: black; margin-top: 10px; font-size: 16px;" href="#" class="signInBtn-link">Войти</a>
+            </p>
+              <div class="gogle" type="button" onclick="socialLogin()">Войти через <span class="social-link">соцсети</span></div>
+        </div>
+        <div class="tooltip" id="tooltip" >
+  <span class="clo" onclick="hideTooltip()">&#10006;</span>
+<ul style="text-align:left; padding:5px; margin-top:10px;">
+<li>
+    <a href="#" style="margin-right: 3px; color: black; display: inline-block;">
+        <i class="fab fa-facebook-f"></i>
+    </a>
+</li>
+<li>
+    <a href="#" style="margin-right: 3px; color: black; display: inline-block;">
+        <i class="fab fa-google"></i>
+    </a>
+</li>
+<li>
+    <a href="#" style="margin-right: 3px; color: black; display: inline-block;">
+        <i class="fab fa-instagram"></i>
+    </a>
+</li>
+</ul>
+</div>
+    </form>
+</div>
+</div>
+<!--КОНЕЦ РЕГИСТРАЦИИ-->
 
 
       
@@ -309,77 +313,96 @@ window.onclick = function(event) {
 };
 
 renderBasket();
-</script>
 
-
-<script>
-
+ 
     const catalog = document.getElementById('catalog');
-            const menuBurger = document.getElementById('menuBurger');
-            const popup = document.getElementById('popup');
-            // Функция для открытия и закрытия меню
-            menuBurger.onclick = function(event) {
-                event.stopPropagation(); // Остановить всплытие события, чтобы не закрыть каталог сразу
-                catalog.style.display = catalog.style.display === 'none' ? 'block' : 'none';
-            };
-            // Функция для открытия подкатегорий в новом окне
-            document.querySelectorAll('.category-button').forEach(button => {
-                button.onclick = function(event) {
-                    event.stopPropagation(); // Остановить всплытие события при клике на категории
-                    const categoryNum = this.getAttribute('data-category');
-                    let content = '';
+    const menuBurger = document.getElementById('menuBurger');
+    const popup = document.getElementById('popup');
     
-                    switch (categoryNum) {
-                        case '1':
-                            content = '<button class="button-style" onclick="showPopup(\'Подкатегория 1.1\')">Подкатегория 1.1</button>' +
-                                      '<button class="button-style" onclick="showPopup(\'Подкатегория 1.2\')">Подкатегория 1.2</button>' +
-                                      '<button class="button-style" onclick="showPopup(\'Подкатегория 1.3\')">Подкатегория 1.3</button>';
-                            break;
-                        case '2':
-                            content = '<button class="button-style" onclick="showPopup(\'Подкатегория 2.1\')">Подкатегория 2.1</button>' +
-                                      '<button class="button-style" onclick="showPopup(\'Подкатегория 2.2\')">Подкатегория 2.2</button>';
-                            break;
-                        case '3':
-                            content = '<button class="button-style" onclick="showPopup(\'Подкатегория 3.1\')">Подкатегория 3.1</button>' +
-                                      '<button class="button-style" onclick="showPopup(\'Подкатегория 3.2\')">Подкатегория 3.2</button>';
-                            break;
-                    }
-                    document.getElementById('popupContent').innerHTML = content;
-                    showPopup( this.querySelector('span').textContent);
-                };
-            });
-            // Функция для отображения popup
-            function showPopup(title) {
-                document.getElementById('popupTitle').textContent = title;
-                popup.style.display = 'block'; // Показывает popup
+    // Функция для открытия и закрытия меню
+    menuBurger.onclick = function(event) {
+        event.stopPropagation(); // Остановить всплытие события, чтобы не закрыть каталог сразу
+        catalog.style.display = catalog.style.display === 'none' ? 'block' : 'none';
+    };
+    
+    // Переменная для отслеживания состояния popup
+    let isPopupOpen = false;
+    
+    // Функция для открытия подкатегорий при наведении
+    document.querySelectorAll('.category-button').forEach(button => {
+        button.addEventListener('mouseenter', function(event) {
+            event.stopPropagation(); // Остановить всплытие события при наведении
+            const categoryNum = this.getAttribute('data-category');
+            let content = '';
+    
+            switch (categoryNum) {
+                case '1':
+                    content = 
+                        '<button class="button-style" onclick="showPopup(\'Подкатегория 1.1\')">Обои 1.1</button>' +
+                        '<button class="button-style" onclick="showPopup(\'Подкатегория 1.2\')">Обои 1.2</button>' +
+                        '<button class="button-style" onclick="showPopup(\'Подкатегория 1.3\')">Обои 1.3</button>';
+                    break;
+                case '2':
+                    content = 
+                        '<button class="button-style" onclick="showPopup(\'Подкатегория 2.1\')">Сантехника 1.1</button>' +
+                        '<button class="button-style" onclick="showPopup(\'Подкатегория 2.2\')">Сантехника 1.2</button>' +
+                        '<button class="button-style" onclick="showPopup(\'Подкатегория 2.3\')">Сантехника 1.3</button>';
+                    break; 
+                case '3':
+                    content = 
+                        '<button class="button-style" onclick="showPopup(\'Подкатегория 3.1\')">Ламинат 1.1</button>' +
+                        '<button class="button-style" onclick="showPopup(\'Подкатегория 3.2\')">Ламинат 1.2</button>';
+                    break;
             }
-            // Функция для закрытия popup
-            function closePopup() {
-                popup.style.display = 'none'; // Скрывает popup
-            }
-            // Закрытие каталога при клике где-либо на странице
-            document.addEventListener('click', function() {
-                if (catalog.style.display === 'block') {
-                    catalog.style.display = 'none'; // Закрывает каталог
-                }  });
-                // Закрытие каталога при клике где-либо на странице
-            document.addEventListener('click', function() {
-                if ( popup.style.display === 'block') {
-                     popup.style.display = 'none'; // Закрывает каталог
+            document.getElementById('popupContent').innerHTML = content;
+            showPopup(this.querySelector('span').textContent);  
+        });
+    });
     
-                }
-            });
+    // Функция для отображения popup
+    function showPopup(title) {
+        document.getElementById('popupTitle').textContent = title;
+        popup.style.display = 'block'; // Показывает popup
+        isPopupOpen = true; // Указывает что popup открыт
+    }
     
+    // Функция для закрытия popup
+    function closePopup() {
+        popup.style.display = 'none'; 
+        isPopupOpen = false; // Указывает что popup закрыт
+    }
+    
+    // Закрытие каталога при клике где-либо на странице
+    document.addEventListener('click', function() {
+        if (catalog.style.display === 'block') {
+            catalog.style.display = 'none'; 
+        }
+        if (isPopupOpen) {
+            closePopup();
+        }
+    });
+    
+    
+            //Регистрация
     const socialLink = document.querySelector('.social-link');
     const tooltip = document.getElementById('tooltip');
+    const account = document.getElementById('account');
+    const registerModal = document.getElementById('registerModal');
+    const registerForm = document.getElementById('registerForm');
+    const signInBtnLink = document.querySelector('.signInBtn-link');
+    const signUpBtnLink = document.querySelector('.signUpBtn-link');
+    const modal = document.querySelector('.modal');
     
-    socialLink.addEventListener('mouseover', function() {
+    let accountVisible = false;
+    
+    socialLink.addEventListener('mouseover', () => {
         tooltip.style.display = 'block';
-        tooltip.style.top = `${socialLink.offsetTop + socialLink.offsetHeight}px`;
+        tooltip.style.top = `${socialLink.offsetTop + socialLink.offsetHeight}px`; 
         tooltip.style.left = `${socialLink.offsetLeft}px`;
     });
     
-    document.addEventListener('click', function(event) {
+    
+    document.addEventListener('click', (event) => {
         if (!socialLink.contains(event.target) && !tooltip.contains(event.target)) {
             hideTooltip();
         }
@@ -389,48 +412,43 @@ renderBasket();
         tooltip.style.display = 'none';
     }
     
-    let accountVisible = false;
-    
     function toggleAccount() {
-        const account = document.getElementById('account');
-        accountVisible = !accountVisible; // Меняем состояние видимости
-        account.style.display = accountVisible ? 'block' : 'none'; // Показываем или скрываем окно
+        accountVisible = !accountVisible;
+        account.style.display = accountVisible ? 'block' : 'none';
     }
     
+    
     function hideAccount() {
-        const account = document.getElementById('account');
-        if (accountVisible) { // Проверяем, что аккаунт отображается
-            accountVisible = false; // Скрываем его
+        if (accountVisible) {
+            accountVisible = false;
             account.style.display = 'none';
         }
     }
     
+    
     function openRegisterModal() {
-        document.getElementById('registerModal').style.display = 'block';
+        document.body.style.overflow = 'hidden';
+        registerModal.style.display = 'block';
     }
     
     function closeRegisterModal() {
-        document.getElementById('registerModal').style.display = 'none';
+        document.body.style.overflow = 'auto';
+        registerModal.style.display = 'none';
     }
     
-    // Убедитесь, что элемент с id 'registerForm' существует в HTML
-    const registerForm = document.getElementById('registerForm');
-    if (registerForm) {
-        registerForm.onsubmit = function(event) {
-            event.preventDefault(); // Предотвратить стандартное поведение формы
-            alert('Регистрация завершена'); // Здесь обработайте регистрацию
-            closeRegisterModal(); // Закрыть модальное окно
-        };
-    }
+    
+    registerForm.onsubmit = (event) => {
+        event.preventDefault();
+        alert('Регистрация завершена');
+        closeRegisterModal();
+    };
+    
     
     function logInAccount() {
-        alert('Вход'); // Замените это на реальную функцию входа
+        alert('Вход');
     }
-    
-    // Кнопка прокрутки регистрации на вход
-    const signInBtnLink = document.querySelector('.signInBtn-link');
-    const signUpBtnLink = document.querySelector('.signUpBtn-link');
-    const modal = document.querySelector('.modal');
+    </script>
+    <script>
     
     signUpBtnLink.addEventListener('click', () => {
         modal.classList.toggle('active');
@@ -439,110 +457,6 @@ renderBasket();
     signInBtnLink.addEventListener('click', () => {
         modal.classList.toggle('active');
     });
-       
-    let cart = [];
     
-    function addToCart() {
-        const productName = document.querySelector('h1').innerText; // Название продукта
-        const productPrice = parseInt(document.querySelector('.prodct-image.active').dataset.price); // Цена товара из выбранного изображения
-        const quantity = parseInt(document.querySelector('.quantity-input').value); // Количество товара
-    
-        const cartItem = {
-            name: productName,
-            price: productPrice,
-            quantity: quantity,
-            total: productPrice * quantity // Общая стоимость товара
-        };
-    
-        cart.push(cartItem); // Добавляем товар в корзину
-        alert(`${productName} добавлен в корзину!`); // Уведомление пользователя
-        renderCart(); // Обновляем отображение корзины
-    }
-    
-    function renderCart() {
-        const cartItemsContainer = document.getElementById('cart-items');
-        cartItemsContainer.innerHTML = ''; // Очищаем контейнер корзины
-        let totalAmount = 0; // Переменная для подсчета итоговой суммы
-    
-        cart.forEach((item, index) => {
-            totalAmount += item.total; // Считаем общую сумму
-            const itemDiv = document.createElement('div');
-            itemDiv.innerHTML = `<p>${item.name} - ${item.price} ₽ x ${item.quantity} = ${item.total} ₽</p>
-                <button onclick="removeCartItem(${index})">Удалить</button>`; // Кнопка для удаления товара
-            cartItemsContainer.appendChild(itemDiv); // Добавляем товар в контейнер
-        });
-    
-        // Отображаем итоговую сумму
-        cartItemsContainer.innerHTML += `<h3>Итоговая сумма: ${totalAmount} ₽</h3>`;
-    }
-    
-    function removeCartItem(index) {
-        cart.splice(index, 1); // Удаляем товар по индексу
-        renderCart(); // Обновляем отображение корзины
-    }
-    //Меняет цвет кружочка
-    function changeColor(color) {
-        const slides = document.querySelectorAll('.prodct-image'); // Получаем все изображения продукта
-        slides.forEach(slide => {
-            slide.classList.remove('active'); // Убираем активный класс у всех слайдов
-        });
-    
-        const colorIndex = { 'red': 0, 'blue': 1, 'green': 2 }[color];
-        slides[colorIndex].classList.add('active'); // Устанавливаем активный слайд
-        updatePrice(slides[colorIndex].dataset.price); // Обновляем цену для выбранного цвета
-    }
-    
-    function updatePrice(price) {
-        document.getElementById('prodct-price').innerText = `Цена: ${price} ₽`; // Обновляем отображаемую цену
-    }
-    
-    //Меняет секцию (детали характеристика , отзывы ,опсиание)
-    function showSection(section) {
-                // Hide all sections first
-                const sections = ['prodct-info', 'characteristics', 'reviews', 'details'];
-                sections.forEach(sec => {
-                    document.getElementById(sec + '-section').style.display = 'none';
-                });
-    
-                // Show the selected section
-                document.getElementById(section + '-section').style.display = 'block';
-            }
-    
-    
-    function rate(value) {
-        const stars = document.querySelectorAll('.star'); // Получаем все звезды для рейтинга
-        stars.forEach(star => {
-            star.style.color = star.dataset.value <= value ? 'gold' : 'gray'; // Устанавливаем цвет звезд в зависимости от рейтинга
-        });
-        document.getElementById('rating-value').innerText = `${value} / 5`; // Обновляем значение рейтинга
-    }
-    
-    // Функция для отображения корзины
-    function toggleCart(event) {
-        const cart = document.getElementById('cart');
-        cart.style.display = cart.style.display === 'block' ? 'none' : 'block';
-        event.stopPropagation(); // Останавливаем всплытие события
-    }
-    
-    // Закрытие корзины при клике вне неё
-    document.addEventListener('click', function(event) {
-        const cart = document.getElementById('cart');
-        const cartIcon = document.querySelector('.cart-icon');
-        if (!cart.contains(event.target) && !cartIcon.contains(event.target)) {
-            cart.style.display = 'none'; // Закрываем корзину
-        }
-    });
-    
-    // Оформление заказа
-    function checkout() {
-        alert("Оформление заказа...");
-        // Добавьте свою логику оформления заказа здесь
-    }
-    
-    // Очистка корзины
-    function clearCart() {
-        cart = [];
-        renderCart();
-    }
     </script>
     
