@@ -1818,7 +1818,7 @@ object-fit: Scale-down;
   .sidebar button {
       background-color: #688EBD; /* Темно-синий цвет фона кнопок */
       color: white; /* Белый цвет текста для контраста */
-      
+      text-stroke: 1px #FFFFFF;
       border: none; /* Без рамки */
       border-radius: 25px; /* Скругленные углы кнопок */
       padding: 10px; /* Увеличенные внутренние отступы */
