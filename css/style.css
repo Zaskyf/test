@@ -820,15 +820,15 @@ margin-bottom: 5px;
 /*НАЧАЛО СЛАЙДЕРА  С КАРТОЧКАМИ НА ГЛАВНОЙ СТРАНИЦЕ  */
 .swiper {
 width: 90%;
-height: 600px ;
-margin-bottom: 10px; /* Отступ между слайдером и карточками */
-top: 60px; /* Отступ сверху от слайдера */
+height: 615px ;
+margin-bottom: 20px; /* Отступ между слайдером и карточками */
+
 overflow: hidden; /* Скрывает часть карточек, выходящих за пределы контейнера */
 left: 10px; /* Отступ слева от края */
 right: 10px; /* Отступ справа от края */
 background: #e5e5e5;
 margin-top:60px;
-margin:auto;
+
 position: relative;
 display: inline-block;
 }
