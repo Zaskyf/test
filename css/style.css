@@ -1825,6 +1825,7 @@ object-fit: Scale-down;
       font-size: 18px; /* Размер шрифта кнопок */
       transition: all 0.3s ease; /* Плавные переходы для всех изменений */
       position: relative; /* Для анимации при наведении */
+      margin-bottom: 10px;
   }
   
   /* Эффект при наведении на кнопки */
