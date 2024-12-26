@@ -1751,6 +1751,44 @@ margin: 20px auto;
   
 
 
+.white0 {
+  background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZbFuatFsRoi8VlC00xDh1tFkBD4gR7Ik1BA&s'); /* Укажите путь к вашему изображению */
+  background-size: cover; /* Заставляет изображение покрывать весь элемент */
+  background-position: center; /* Центрирует изображение */
+  width: 100px; /* Укажите нужную ширину */
+  height: 100px; /* Укажите нужную высоту */
+  border-radius: 9px;
+}
+
+.white1 {
+  background-image: url('https://www.dlyavann.ru/dbpics/0/1/505310_small.webp'); /* Укажите путь к вашему изображению */
+  background-size: cover; /* Заставляет изображение покрывать весь элемент */
+  background-position: center; /* Центрирует изображение */
+  width: 100px; /* Укажите нужную ширину */
+  height: 100px; /* Укажите нужную высоту */
+  border-radius: 9px;
+}
+
+.white2 {
+  background-image: url('https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/2.webp'); /* Укажите путь к вашему изображению */
+  background-size: cover; /* Заставляет изображение покрывать весь элемент */
+  background-position: center; /* Центрирует изображение */
+  width: 100px; /* Укажите нужную ширину */
+  height: 100px; /* Укажите нужную высоту */
+  border-radius: 9px;
+  object-fit: Scale-down;
+}
+
+.white3{
+background-image: url('https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/6.webp'); /* Укажите путь к вашему изображению */
+background-size: cover; /* Заставляет изображение покрывать весь элемент */
+background-position: center; /* Центрирует изображение */
+width: 100px; /* Укажите нужную ширину */
+height: 100px; /* Укажите нужную высоту */
+border-radius: 9px;
+object-fit: Scale-down;
+}
+
 .brown0 {
   background-image: url('https://polvamvdom.ru/f/prods/7/b/8/69-001-00085_1.jpg'); /* Укажите путь к вашему изображению */
   background-size: cover; /* Заставляет изображение покрывать весь элемент */
