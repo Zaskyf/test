@@ -1,4 +1,7 @@
 
+<style>
+
+
 
 
 
@@ -776,14 +779,14 @@ margin-bottom: 5px;
   }
 
   .bcontainer {
-  min-height: 100px !important; 
-     width: 200px ; 
-    font-size: 10px;     
+  min-height: 95px !important; 
+     width: 130px ; 
+    font-size: 8px;     
   }
 
   .icones {
-    width: 45px;      
-    height: 45px;
+    width: 43px;      
+    height: 43px;
   }
 }
 
@@ -2496,87 +2499,97 @@ footer {
   margin-top: 20px;
   text-align: center;
 }
-
 footer h3 {
   margin-bottom: 10px;
 }
-
 footer ul {
   list-style: none;
   padding: 0;
 }
-
 footer ul li {
   margin: 5px 0;
 }
-
 footer a {
   color: #FFFFE0; /* Цвет ссылок в футере */
   text-decoration: none;
   transition: color 0.3s;
 }
-
 footer a:hover {
   color: #5a7cb3; /* Цвет ссылок при наведении */
 }
-
 .footer_menu {
   display: flex;
-  width: 55%; /* Занимает 55% ширины контейнера */
+  width: 90%; /* Занимает 55% ширины контейнера */
   margin-left: 20px;
 }
-
 .caption {
   font-size: 22px;
   font-weight: bold;
   margin-bottom: 10px;
 }
-
 .item {
   flex: 1;
   margin-right: 20px;
   text-align: left;
   word-break: break-all;
 }
-
 .item:last-child {
   margin-right: 0; /* Убираем отступ для последнего элемента */
 }
-
 .menu_list {
   list-style-type: none; /* Убираем стандартные маркеры */
   padding: 0;
   font-size: 18px; 
 }
-
 .menu_list li {
   margin-bottom: 0; /* Убираем отступы между элементами */
 }
-
 .menu_list a {
   color: white; /* Цвет ссылок */
   text-decoration: none; /* Убираем подчеркивание */
   display: block; 
 }
-
 .menu_list a:hover {
   color: rgb(207, 227, 245); /* Цвет ссылок при наведении */
   text-decoration: underline; /* Подчеркивание при наведении */
 }
-
 .contact_info {
   position: relative;
   display: flex; 
+
   flex-direction: column; /* Вертикальное расположение элементов */
   align-items: flex-end; /* Выравнивание элементов вправо */
-  /* right: -800px; Убедитесь, что это свойство необходимо; оно может смещать элементы за пределы видимости */
-}
 
+}
 .phone, .address, .copyright {
   margin-bottom: 10px; /* Отступы между элементами */
   color: white;
 }
-
 .p {
-  font-size: 20px; /* Код класса p должен начинаться с точки, если это класс */
+  font-size: 20px; 
 }
+
+
+
+@media (max-width: 768px) {
+
+ .caption {
+        font-size: 15px; 
+    }
+
+    .menu_list {
+        font-size: 16px; 
+    }
+
+    .p {
+        font-size: 18px; 
+    }
+    
+    .phone, .address, .copyright {
+  margin-bottom: 5px; /* Отступы между элементами */
+  color: white;
+  font-size:12px;
+}
+}
+
+</style>
