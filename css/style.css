@@ -1,4 +1,3 @@
-
 <style>
 
 
@@ -857,9 +856,9 @@ height: 455px;
 }
 
 
-/* Убираем вертикальное расстояние между последней карточкой и краем слайдера */
+
 .swiper-slide:last-child {
-margin-right: 0;
+margin-right: 20px;
 }
 /*картина*/
 .swiper-slide img {
@@ -871,7 +870,7 @@ text-align: center;
 }
 /*Коробка цены */
 .box{
-background-color:white;
+background-color:red;
 top: 20px;
 margin: 0 auto;
 font-size:14px;
