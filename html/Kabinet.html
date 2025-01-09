@@ -151,8 +151,7 @@
 
  <!-- Хлебные крошки -->
  <nav class="breadcrumb">
-    <a href=" /html/Kabinet.html"  style= "font-size :20px; margin-top:10px;">Личный кабинет</a> <a href="/html/dostavka.html">Доставка</a>   <a href="/html/Kabinet.html">Покупки</a> <a href="/html/Kabinet.html">Отзывы</a>  
-    <a href="/html/Kabinet.html">Избранное</a><a href="/html/Kabinet.html">Поддержка</a>
+    <a href=" /html/Kabinet.html"  style= "font-size :20px; margin-top:10px;">Личный кабинет</a> 
 </nav>
  
     <main>
@@ -269,112 +268,171 @@ const discountInfo = document.createElement('div');
                     discountInfo.style.display = 'none';
                 }
             });
-    const payment = document.createElement('div');
-    payment.classList.add('payment');
-    payment.innerHTML = `
-        <h2>Способы оплаты</h2>
-        <button class="card">Привязать карту</button>
-        <button class="close-discount-info">Понятно</button>
-    `;
-    document.body.appendChild(payment);
-    const cardBinding = document.createElement('div');
-    cardBinding.classList.add('card-binding');
-    cardBinding.innerHTML = `
-        <h2>Привязка карты</h2>
-        <label for="card-number">Номер карты:</label>
-        <input type="text" id="card-number" placeholder="Введите номер карты">
-        <button class="submit-card">Привязать</button>
-        <button class="close-card-binding">Закрыть</button>
-    `;
-    document.body.appendChild(cardBinding);
-    const details = document.createElement('div');
-    details.classList.add('details');
-    details.innerHTML = `
-    <div class = "windowrekvisit">
+
+// Создаем элемент модального окна для способов оплаты
+const payment = document.createElement('div');
+payment.classList.add('payment');
+payment.innerHTML = `
+    <h2>Способы оплаты</h2>
+    <button class="card">Привязать карту</button>
+    <button class="close-discount-info">Понятно</button>
+`;
+document.body.appendChild(payment);
+
+// Обработчик события для кнопки "Понятно"
+payment.querySelector('.close-discount-info').addEventListener('click', () => {
+    payment.style.display = 'none'; // Закрываем модальное окно
+    document.querySelector('.overlay').style.display = 'none'; // Закрываем оверлей, если он есть
+});
+
+// Пример создания оверлея, если его еще нет
+const overlay = document.createElement('div');
+overlay.classList.add('overlay');
+overlay.style.display = 'none'; // Скрываем по умолчанию
+document.body.appendChild(overlay);
+
+// Пример обработки нажатия на кнопку, открывающую модальное окно
+document.getElementById('payment-methods').addEventListener('click', () => {
+    payment.style.display = 'block'; // Открываем модальное окно
+
+});
+
+
+const cardBinding = document.createElement('div');
+cardBinding.classList.add('card-binding');
+cardBinding.innerHTML = `
+    <h2>Привязка карты</h2>
+    <label for="card-number">Номер карты:</label>
+    <input type="text" id="card-number" placeholder="Введите номер карты">
+    <button class="submit-card">Привязать</button>
+    <button class="close-card-binding">Закрыть</button>
+`;
+document.body.appendChild(cardBinding);
+
+
+const details = document.createElement('div');
+details.classList.add('details');
+details.innerHTML = `
+    <div class="windowrekvisit">
         <h2>Реквизиты</h2>
         <button class="detail">Привязать реквизиты</button>
         <button class="close-details">Понятно</button>
     </div>
-    `;
-    document.body.appendChild(details);
-  // Новый модальный элемент для привязки реквизитов
-  const detailsBinding = document.createElement('div');
-  detailsBinding.classList.add('details-binding');
-  detailsBinding.innerHTML = `
-      <h2>Привязка реквизитов</h2>
-      <label for="account-number">Номер реквизита:</label>
-      <input type="text" id="account-number" placeholder="Введите номер реквизита">
-      <button class="submit-details">Привязать</button>
-      <button class="close-details-binding">Закрыть</button>
-  `;
-  document.body.appendChild(detailsBinding);
+`;
+document.body.appendChild(details);
 
-  document.querySelector('.discount-item').addEventListener('click', () => {
-      discountInfo.style.display = 'flex'; 
-      document.querySelector('.overlay').style.display = 'block';
-  });
 
-  discountInfo.querySelector('.close-discount-info').addEventListener('click', () => {
-      discountInfo.style.display = 'none';
-      document.querySelector('.overlay').style.display = 'none';
-  });
+const detailsBinding = document.createElement('div');
+detailsBinding.classList.add('details-binding');
+detailsBinding.innerHTML = `
+    <h2>Привязка реквизитов</h2>
+    <label for="account-number">Номер реквизита:</label>
+    <input type="text" id="account-number" placeholder="Введите номер реквизита">
+    <button class="submit-details">Привязать</button>
+    <button class="close-details-binding">Закрыть</button>
+`;
+document.body.appendChild(detailsBinding);
 
-  document.getElementById('payment-methods').addEventListener('click', () => {
-      payment.style.display = 'block';
-      document.querySelector('.overlay').style.display = 'block';
-  });
+// Создаем элемент модального окна для настроек
+const settingsModal = document.createElement('div');
+settingsModal.classList.add('settings-modal');
+settingsModal.innerHTML = `
+    <h2>Настройки</h2>
+    <label for="settings-option">Выберите опцию:</label>
+    <select id="settings-option">
+        <option value="change-password">Изменить пароль</option>
+        <option value="manage-subscriptions">Управление подписками</option>
+        <option value="account-info">Информация об аккаунте</option>
+    </select>
+    <button class="save-settings">Сохранить</button>
+    <button class="close-settings">Закрыть</button>
+`;
+document.body.appendChild(settingsModal);
 
-  payment.querySelector('.card').addEventListener('click', () => {
-      payment.style.display = 'none';
-      cardBinding.style.display = 'block';
-  });
+// Обработчик событий для кнопки "Настройки"
+document.getElementById('settings').addEventListener('click', () => {
+    settingsModal.style.display = 'block';
+    document.querySelector('.overlay').style.display = 'block';
+});
 
-  cardBinding.querySelector('.close-card-binding').addEventListener('click', () => {
-      cardBinding.style.display = 'none';
-      document.querySelector('.overlay').style.display = 'none';
-  });
+// Закрытие окна настроек
+settingsModal.querySelector('.close-settings').addEventListener('click', () => {
+    settingsModal.style.display = 'none';
+    document.querySelector('.overlay').style.display = 'none';
+});
 
-  details.querySelector('.close-details').addEventListener('click', () => {
-      details.style.display = 'none';
-      document.querySelector('.overlay').style.display = 'none';
-  });
-
-  document.getElementById('account-details').addEventListener('click', () => {
-      details.style.display = 'block';
-      document.querySelector('.overlay').style.display = 'block';
-  });  
-
-  details.querySelector('.detail').addEventListener('click', () => {
-      detailsBinding.style.display = 'block';
-      document.querySelector('.overlay').style.display = 'block';
-  });
-
-  detailsBinding.querySelector('.close-details-binding').addEventListener('click', () => {
-      detailsBinding.style.display = 'none';
-      document.querySelector('.overlay').style.display = 'none';
-  });
-  // Новый обработчик для кнопки "Привязать" в окне привязки реквизитов
-  detailsBinding.querySelector('.submit-details').addEventListener('click', () => {
-    // Закрываем окно привязки реквизитов
+// Обработчик для закрытия всех модальных окон при нажатии на оверлей
+document.querySelector('.overlay').addEventListener('click', () => {
+    payment.style.display = 'none';
+    cardBinding.style.display = 'none';
+    details.style.display = 'none';
     detailsBinding.style.display = 'none';
-    // Закрываем окно реквизитов
+    discountInfo.style.display = 'none'; // Закрываем и discountInfo
+    settingsModal.style.display = 'none'; // Закрываем и настройки
+    document.querySelector('.overlay').style.display = 'none';
+});
+document.querySelector('.discount-item').addEventListener('click', () => {
+    discountInfo.style.display = 'flex';
+    document.querySelector('.overlay').style.display = 'block';
+});
+
+
+discountInfo.querySelector('.close-discount-info').addEventListener('click', () => {
+    discountInfo.style.display = 'none';
+    document.querySelector('.overlay').style.display = 'none';
+});
+
+// Open payment methods
+document.getElementById('payment-methods').addEventListener('click', () => {
+    payment.style.display = 'block';
+    document.querySelector('.overlay').style.display = 'block';
+});
+
+// Bind card button functionality
+payment.querySelector('.card').addEventListener('click', () => {
+    payment.style.display = 'none';
+    cardBinding.style.display = 'block';
+});
+
+// Close card binding
+cardBinding.querySelector('.close-card-binding').addEventListener('click', () => {
+    cardBinding.style.display = 'none';
+    document.querySelector('.overlay').style.display = 'none';
+});
+
+// Close details window
+details.querySelector('.close-details').addEventListener('click', () => {
     details.style.display = 'none';
     document.querySelector('.overlay').style.display = 'none';
 });
 
-details.querySelector('.details').addEventListener('click', () => {
-    details.style.display = 'none';
-    detailsBinding.style.display = 'block';
+// Open account details window
+document.getElementById('account-details').addEventListener('click', () => {
+    details.style.display = 'block';
+    document.querySelector('.overlay').style.display = 'block';
 });
 
+// Bind details button functionality
+details.querySelector('.detail').addEventListener('click', () => {
+    details.style.display = 'none'; // Close the details window
+    detailsBinding.style.display = 'block'; // Open the details binding window
+    document.querySelector('.overlay').style.display = 'block'; // Show overlay
+});
 
-  document.querySelector('.overlay').addEventListener('click', () => {
-      payment.style.display = 'none';
-      cardBinding.style.display = 'none';
-      details.style.display = 'none';
-      detailsBinding.style.display = 'none';
-      document.querySelector('.overlay').style.display = 'none';
-  });
+// Close details binding window
+detailsBinding.querySelector('.close-details-binding').addEventListener('click', () => {
+    detailsBinding.style.display = 'none';
+    document.querySelector('.overlay').style.display = 'none';
+});
+
+// Close all windows when clicking the overlay
+document.querySelector('.overlay').addEventListener('click', () => {
+    payment.style.display = 'none';
+    cardBinding.style.display = 'none';
+    details.style.display = 'none';
+    detailsBinding.style.display = 'none';
+    document.querySelector('.overlay').style.display = 'none';
+});
 function loadFile(event) {
     const output = document.getElementById('output');
     output.src = URL.createObjectURL(event.target.files[0]);
@@ -382,454 +440,12 @@ function loadFile(event) {
 
 
 
-//Каталог
-const catalog = document.getElementById('catalog');
-    const menuBurger = document.getElementById('menuBurger');
-    const popup = document.getElementById('popup');
-    
-    // Функция для открытия и закрытия меню
-    menuBurger.onclick = function(event) {
-        event.stopPropagation(); // Остановить всплытие события, чтобы не закрыть каталог сразу
-        catalog.style.display = catalog.style.display === 'none' ? 'block' : 'none';
-    };
-    
-    // Переменная для отслеживания состояния popup
-    let isPopupOpen = false;
-    
-    // Функция для открытия подкатегорий при наведении
-    document.querySelectorAll('.category-button').forEach(button => {
-        button.addEventListener('mouseenter', function(event) {
-            event.stopPropagation(); // Остановить всплытие события при наведении
-            const categoryNum = this.getAttribute('data-category');
-            let content = '';
-    
-            switch (categoryNum) {
-                case '1':
-                    content = 
-                        '<button class="button-style" onclick="showPopup(\'Подкатегория 1.1\')">Обои 1.1</button>' +
-                        '<button class="button-style" onclick="showPopup(\'Подкатегория 1.2\')">Обои 1.2</button>' +
-                        '<button class="button-style" onclick="showPopup(\'Подкатегория 1.3\')">Обои 1.3</button>';
-                    break;
-                case '2':
-                    content = 
-                        '<button class="button-style" onclick="showPopup(\'Подкатегория 2.1\')">Сантехника 1.1</button>' +
-                        '<button class="button-style" onclick="showPopup(\'Подкатегория 2.2\')">Сантехника 1.2</button>' +
-                        '<button class="button-style" onclick="showPopup(\'Подкатегория 2.3\')">Сантехника 1.3</button>';
-                    break; 
-                case '3':
-                    content = 
-                        '<button class="button-style" onclick="showPopup(\'Подкатегория 3.1\')">Ламинат 1.1</button>' +
-                        '<button class="button-style" onclick="showPopup(\'Подкатегория 3.2\')">Ламинат 1.2</button>';
-                    break;
-            }
-            document.getElementById('popupContent').innerHTML = content;
-            showPopup(this.querySelector('span').textContent);  
-        });
-    });
-    
-    // Функция для отображения popup
-    function showPopup(title) {
-        document.getElementById('popupTitle').textContent = title;
-        popup.style.display = 'block'; // Показывает popup
-        isPopupOpen = true; // Указывает что popup открыт
-    }
-    
-    // Функция для закрытия popup
-    function closePopup() {
-        popup.style.display = 'none'; 
-        isPopupOpen = false;
-    }
-    
 
-    document.addEventListener('click', function() {
-        if (catalog.style.display === 'block') {
-            catalog.style.display = 'none'; 
-        }
-        if (isPopupOpen) {
-            closePopup();
-        }
-    });
     
     
-            //Регистрация
-    const socialLink = document.querySelector('.social-link');
-    const tooltip = document.getElementById('tooltip');
-    const account = document.getElementById('account');
-    const registerModal = document.getElementById('registerModal');
-    const registerForm = document.getElementById('registerForm');
-    const signInBtnLink = document.querySelector('.signInBtn-link');
-    const signUpBtnLink = document.querySelector('.signUpBtn-link');
-    const modal = document.querySelector('.modal');
-    
-    let accountVisible = false;
-    
-
-    socialLink.addEventListener('mouseover', () => {
-        tooltip.style.display = 'block';
-        tooltip.style.top = `${socialLink.offsetTop + socialLink.offsetHeight}px`;
-        tooltip.style.left = `${socialLink.offsetLeft}px`; 
-    });
-    
-
-    document.addEventListener('click', (event) => {
-        if (!socialLink.contains(event.target) && !tooltip.contains(event.target)) {
-            hideTooltip();
-        }
-    });
-    
-
-    function hideTooltip() {
-        tooltip.style.display = 'none';
-    }
-    
-
-    function toggleAccount() {
-        accountVisible = !accountVisible;
-        account.style.display = accountVisible ? 'block' : 'none';
-    }
-    
-
-    function hideAccount() {
-        if (accountVisible) {
-            accountVisible = false;
-            account.style.display = 'none';
-        }
-    }
-    
-
-    function openRegisterModal() {
-        document.body.style.overflow = 'hidden'; 
-        registerModal.style.display = 'block';
-    }
-    
-    function closeRegisterModal() {
-        document.body.style.overflow = 'auto'; 
-        registerModal.style.display = 'none';
-    }
-    
-    registerForm.onsubmit = (event) => {
-        event.preventDefault();
-        alert('Регистрация завершена');
-        closeRegisterModal();
-    };
-    
-
-    function logInAccount() {
-        alert('Вход');
-    }
-    </script>
-    <script>
-
-    signUpBtnLink.addEventListener('click', () => {
-        modal.classList.toggle('active');
-    });
-    
-    signInBtnLink.addEventListener('click', () => {
-        modal.classList.toggle('active');
-    });
-    
-    </script>
-
-
-
-
-<style>
-
-
-/* НАЧАЛО СТРАНИЦЫ ЛИЧНОЙ КАБИНЕТ  */
-
-
-
-
-.breadcrumb { 
-    display: flex;           /* Используем Flexbox для равномерного распределения элементов */
-    justify-content: space-around; /* Равномерное распределение элементов */
-    padding: 18px; 
-    text-align: center; 
-    background-color: #e5e5e5; 
-    width: 70%;            /* Занимаем всю ширину экрана */
-} 
-
-.breadcrumb a { 
-    color: black; 
-    text-decoration: none; 
-} 
-
-
-
-.profile-icon {
-    position: relative;
-    width: 150px;
-    height: 150px;
-    overflow: hidden;
-    border-radius: 50%;
-    border: 2px solid #ccc;
-    background-color: #fff;
-}
-.profile-icon img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 50%;
-    cursor: pointer;
-}
-
-
-.full-width-button {
-    display: block; /* делает элемент блочным */
-    width: 100%; /* ширина 100% */
-    padding: 10px; /* отступы для удобства */
-    font-size: 16px; /* размер шрифта */
-    cursor: pointer; /* курсор в виде указателя при наведении */
-    border: 1px solid #ccc; /* рамка */
-    border-radius: 5px; /* скругление углов */
-    background-color: #f0f0f0; /* фоновый цвет */
-    outline: none; /* убираем обводку при фокусе */
-}
-
-.full-width-button:hover {
-    background-color: #e0e0e0; /* изменение фона при наведении */
-}
-
-.primary-btn {
-margin-top:10px;
-  background-color: #e5e5e5; /* Цвет для кнопки поддержки */
-  
-  color: black;
-}
-
-.primary-btn:hover {
-  background-color: #e0e0e0; 
-  transform: translateY(-2px); /* Поднимаем кнопку при наведении */
-}
-
-/* Анимация для страницы */
-@keyframes fadeIn {
-  from {
-      opacity: 0; 
-  }
-  to {
-      opacity: 1; 
-  }
-}
-.oplata {
-        background-color: #e5e5e5;
-        color: black;
-        width: 260px;
-        margin-top: 10px;
-        margin-bottom: 5px;
-        padding: 12px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        transition: all 0.3s;
-        font-size: 16px;
-        font-weight: 600;
-        text-align: center;
-    }
-    .oplata:hover {
-        background-color: #e0e0e0;
-        transform: translateY(-2px);
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    }
-    .payment-icon {
-        cursor: pointer;
-        width: 30px;
-        height: 25px;
-        margin-top: 10px;
-        margin-right: 10px;
-        vertical-align: middle;
-    }
-    .card-content {
-        background-color: #688EBD;
-        padding: 15px;
-        border-radius: 8px;
-        text-align: center;
-        font-size: 18px;
-        color: white;
-    }
-    .content-section {
-        padding: 25px;
-        margin: 15px;
-        background-color: white;
-        width: 250px;
-        height: 150px;
-        border-radius: 12px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-    }
-    .content-section:hover {
-        transform: scale(1.05);
-    }
-    .content-section-oplata {
-        padding: 20px;
-        margin: 10px;
-        background-color: white;
-        width: 300px;
-        height: 330px;
-        border-radius: 12px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-    }
-    .content-section-oplata:hover {
-        transform: scale(1.05);
-    }
-    .content-section-user {
-        padding: 20px;
-        margin: 10px;
-        background-color: white;
-        width: 300px;
-        height: 350px;
-        border-radius: 12px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-    }
-    .content-section-user:hover {
-        transform: scale(1.05);
-    }
-    .discount-item {
-        margin-top: 10px;
-        width: 100px;
-        display: block;
-        font-size: 16px;
-        padding: 12px;
-        cursor: pointer;
-        background-color: #e5e5e5;
-        border-radius: 9px;
-        text-align: center;
-        transition: background-color 0.3s;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        font-weight: bold;
-    }
-    .discount-item:hover {
-        background-color: #e0e0e0;
-    }
-    .discount-info {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.5);
-        justify-content: center;
-        align-items: center;
-        z-index: 1000;
-        animation: fadeIn 0.5s;
-    }
-    .discount-info-content {
-        background-color: white;
-        padding: 25px;
-        border-radius: 10px;
-        text-align: center;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-        width: 400px;
-    }
-    .close-discount-info {
-        display: block;
-        width: 150px;
-        margin: 15px auto 0;
-        padding: 12px 15px;
-        border: none;
-        background-color: #688EBD;
-        color: white;
-        border-radius: 5px;
-        text-align: center;
-        cursor: pointer;
-        transition: background-color 0.3s;
-        font-weight: bold;
-    }
-    .close-discount-info:hover {
-        background-color: #5a7cb3;
-    }
-    .payment, .card-binding, .details {
-        display: none;
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background-color: white;
-        border: 1px solid grey;
-        padding: 20px;
-        z-index: 1000;
-        border-radius: 10px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    }
-    .overlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.5);
-        display: none;
-    }
-    .detail {
-        display: block;
-        width: 150px;
-        margin: 15px auto 0;
-        padding: 10px 15px;
-        border: none;
-        background-color: #688EBD;
-        color: white;
-        border-radius: 5px;
-        text-align: center;
-        cursor: pointer;
-        transition: background-color 0.3s;
-    }
-
-    .windowrekvisit{
-
-        width: 300px;
-        height: 250px;
-    }
-
-    .details-binding {
-        display: none; /* Скрыть по умолчанию */
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background: white;
-        padding: 20px;
-        border-radius: 5px;
-        z-index: 1001;
-    }
-    .payment-content {
-        background: white;
-        padding: 20px;
-        border-radius: 5px;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        width: 300px;
-    }
-    .card {
-        background-color: #688EBD;
-        color: white;
-    }
-    
-    .close-details{
-
-        display: block;
-        width: 150px;
-        margin: 75px auto 0;
+            
+        </script>
         
-        border: none;
-        background-color: #688EBD;
-        color: white;
-        border-radius: 5px;
-        text-align: center;
-        cursor: pointer;
-        transition: background-color 0.3s;
-        font-weight: bold;
-    }
-/* КОНЕЦ  СТРАНИЦЫ ЛИЧНОЙ КАБИНЕТ  */
 
-</style>
+
+
