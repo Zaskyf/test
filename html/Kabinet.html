@@ -21,7 +21,6 @@
       
 </head>
 <body>
-
     <header>
         <div class="header-contaner">
             <div class="catalog-icon" id="menuBurger">
@@ -39,18 +38,7 @@
           <div class="header-contaner">
         <div class="account-icon" onclick="toggleAccount()">
             <i class="fas fa-user"></i>
-        </div>
-
-      
-        </div>
-
-
-        </div>
-    </header>
-
-
-   
-
+        </div></div></div> </header>
 
 
     <!--Каталог-->
@@ -161,33 +149,26 @@
 </div>
 <!--КОНЕЦ РЕГИСТРАЦИИ-->
 
-
-    <div class="navbar" >
-        <ul class="nav-links" >
-            <li  style=" background-color: #e5e5e5; "><a  style=" color: black; font-size: 28px; font-weight: 650; " href="#home">Главная</a></li>
-            <li style=" background-color: #e5e5e5; "><a style=" color: black; font-size: 18px;" href="/html/Dostavka.html">Доставка</a></li>
-            <li  style=" background-color: #e5e5e5; "><a  style=" color: black; font-size: 18px;" href="#grades">Покупки</a></li>
-            <li style=" background-color: #e5e5e5; " ><a style=" color: black; font-size: 18px; "  href="#communication">Избранное</a></li>
-            <li style=" background-color: #e5e5e5; " ><a style=" color: black; font-size: 18px; "  href="#communication">Отзывы </a></li>
-            <li  style=" background-color: #e5e5e5; " ><a style=" color: black; font-size: 18px; "  href="#support">Поддержка</a></li>
-        </ul>
-    </div>
-    <main>
-<section id="user" class="content-section-user">
-    <h2>Пользователь</h2>
-    <div class="User-profil">
-        <div class="profile-icon">
-            <img id="output" src="default-avatar.png" />
-        </div>
-        <input type="file" id="fileInput" accept="image/*" onchange="loadFile(event)" />
-        <li class="discount-item">
-            Скидка
-            <p style="font-size: 17px; font-weight: bold; color: black;">До 30%</p>
-        </li>
-    </div>
-</section>
-
+ <!-- Хлебные крошки -->
+ <nav class="breadcrumb">
+    <a href=" /html/Kabinet.html"  style= "font-size :20px; margin-top:10px;">Личный кабинет</a> <a href="/html/dostavka.html">Доставка</a>   <a href="/html/Kabinet.html">Покупки</a> <a href="/html/Kabinet.html">Отзывы</a>  
+    <a href="/html/Kabinet.html">Избранное</a><a href="/html/Kabinet.html">Поддержка</a>
+</nav>
  
+    <main>
+        <section id="user" class="content-section-user">
+            <h2>Пользователь</h2>
+            <div class="User-profil">
+                <div class="profile-icon">
+                    <img id="output" src="default-avatar.png" />
+                </div>
+                <input type="file" id="fileInput" class="full-width-button" accept="image/*" onchange="loadFile(event)" />
+                <li class="discount-item">
+                    Скидка
+                    <p style="font-size: 17px; font-weight: bold; color: black;">До 30%</p>
+                </li>
+            </div>
+        </section>
 <section id="support" class="content-section-oplata">
     <div class="finans">
         <h6 style="font-size: 14px; color: grey;">Финансы</h6>
@@ -216,7 +197,6 @@
                 </div>
             </section>
     </main>
-    
     <footer>
       <hr>
       <div class="containr"><div class="subscribe"></div><div class="footer_navigation">
@@ -248,8 +228,6 @@
       </div></div></div>
 </body>
 </html>
-
-
 
 <script>
 
@@ -560,32 +538,24 @@ const catalog = document.getElementById('catalog');
 
 /* НАЧАЛО СТРАНИЦЫ ЛИЧНОЙ КАБИНЕТ  */
 
-.navbar {
- 
-  padding: 10px 0;
-border-radius: 9px;
-}
 
-.nav-links {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-}
 
-.nav-links li {
-  margin: 0 15px;
-}
 
-.nav-links a {
-  text-decoration: none;
-  color: white;
-  font-weight: 500;
-  transition: color 0.3s; /* Плавный переход цвета */
-}
+.breadcrumb { 
+    display: flex;           /* Используем Flexbox для равномерного распределения элементов */
+    justify-content: space-around; /* Равномерное распределение элементов */
+    padding: 18px; 
+    text-align: center; 
+    background-color: #e5e5e5; 
+    width: 70%;            /* Занимаем всю ширину экрана */
+} 
 
-.nav-links a:hover {
-  color: #5a7cb3; /* Цвет при наведении */
-}
+.breadcrumb a { 
+    color: black; 
+    text-decoration: none; 
+} 
+
+
 
 .profile-icon {
     position: relative;
@@ -604,6 +574,22 @@ border-radius: 9px;
     cursor: pointer;
 }
 
+
+.full-width-button {
+    display: block; /* делает элемент блочным */
+    width: 100%; /* ширина 100% */
+    padding: 10px; /* отступы для удобства */
+    font-size: 16px; /* размер шрифта */
+    cursor: pointer; /* курсор в виде указателя при наведении */
+    border: 1px solid #ccc; /* рамка */
+    border-radius: 5px; /* скругление углов */
+    background-color: #f0f0f0; /* фоновый цвет */
+    outline: none; /* убираем обводку при фокусе */
+}
+
+.full-width-button:hover {
+    background-color: #e0e0e0; /* изменение фона при наведении */
+}
 
 .primary-btn {
 margin-top:10px;
