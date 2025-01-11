@@ -1935,7 +1935,7 @@ background-color: white;
   
           .characteristics,
           .reviews,
-          .details {
+          .detal {
           
               background-color: #f0f8ff;
               border: 1px solid #ddd;
@@ -1997,7 +1997,7 @@ background-color: white;
   
       .characteristics,
       .reviews,
-      .details {
+      .detal {
           padding: 5px; /* Уменьшаем отступы внутри секций */
       }
   }
@@ -2058,7 +2058,7 @@ background-color: white;
   
       .characteristics,
       .reviews,
-      .details {
+      .detal {
           padding: 5px; /* Уменьшаем отступы внутри секций */
       }
   }
