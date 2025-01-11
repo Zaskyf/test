@@ -81,7 +81,7 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
     
-    
+     
 
 
     <!-- Регистрация -->
@@ -155,8 +155,15 @@
     </div>
     </div>
 
+
+    <!-- Хлебные крошки -->
+ <nav class="breadcrumb">
+    <a href="/html/index.html"  >Главная</a>  &gt; <a href= "/html/category.html" >Каталог</a>  &gt; <a href= "/html/vtora.html" >Обои</a> 
+</nav>
+
+
 <h6 style= "font-size:35px; font-weight:bold;margin-left:80px;
-margin-top:15px; margin-bottom:15px;">Обои</h6>
+margin-top:20px; margin-bottom:15px;">Обои</h6>
 
 <!--КАРТОЧКИ ТОВАРОВ -->
 
@@ -631,31 +638,24 @@ quickViewButton.onclick = function() {
 //Элемент для описания товара
 const description = document.createElement('div'); 
 // Вставляем HTML
-description.innerHTML = ` 
+description.innerHTML = `
     <div class="cartpodrobno">
         <div class="procard">
-             <div class="fast-options">
-                <div class="fast-square fast0" onclick="changeColor('fast0')"></div>
-                <div class="fast-square fast1" onclick="changeColor('fast1')"></div>
-                <div class="fast-square fast2" onclick="changeColor('fast2')"></div>
-                <div class="fast-square fast3" onclick="changeColor('fast3')"></div>
-              </div>
             <img 
   style="width: 400px; height: 400px; border: 1.2px solid grey;" 
   src="https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/5.webp" 
-  alt="Изображение товара"  class="proimage">
-  
+  alt="Изображение товара" 
+  class="proimage">
             <div class="tpd">
                 <h2 class="protitle">Обои</h2> 
                 <p class="prodescription">Это краткое описание товара. Здесь можно указать его особенности и преимущества.</p>
                 <p class="proprice">2999 Р.</p> 
                 <p class="delprice">2999 Р.</p> 
                 <button class="probutton">В корзину</button>   
-                <a href="/test/html/productcard.html">          
-                    <button class="procardbutton">Больше информации о товаре</button>   
-                       
+                 <a href="/html/productcard.html">        
+                    <button class="procardbutton">Больше информации о товаре</button>     
                 </a> 
-          
+            </div>
         </div>
     </div>`;
 
