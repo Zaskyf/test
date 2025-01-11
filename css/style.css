@@ -1750,6 +1750,44 @@ margin: 20px auto;
 }
   
 
+.white0 {
+  background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZbFuatFsRoi8VlC00xDh1tFkBD4gR7Ik1BA&s'); /* Укажите путь к вашему изображению */
+  background-size: cover; /* Заставляет изображение покрывать весь элемент */
+  background-position: center; /* Центрирует изображение */
+  width: 100px; /* Укажите нужную ширину */
+  height: 100px; /* Укажите нужную высоту */
+  border-radius: 9px;
+}
+
+.white1 {
+  background-image: url('https://www.dlyavann.ru/dbpics/9/0/505309.webp'); /* Укажите путь к вашему изображению */
+  background-size: cover; /* Заставляет изображение покрывать весь элемент */
+  background-position: center; /* Центрирует изображение */
+  width: 100px; /* Укажите нужную ширину */
+  height: 100px; /* Укажите нужную высоту */
+  border-radius: 9px;
+}
+
+.white2 {
+  background-image: url('https://www.dlyavann.ru/dbpics/7/0/505307_small.webp'); /* Укажите путь к вашему изображению */ 
+  background-size: cover; /* Заставляет изображение покрывать весь элемент */ 
+  background-position: center; /* Центрирует изображение */ 
+  width: 100px; /* Укажите нужную ширину */
+  height: 100px; /* Укажите нужную высоту */
+  border-radius: 9px;
+  object-fit: Scale-down;
+}
+
+.white3{
+background-image: url('https://www.dlyavann.ru/dbpics/0/1/505310.webp'); /* Укажите путь к вашему изображению */
+background-size: cover; /* Заставляет изображение покрывать весь элемент */
+background-position: center; /* Центрирует изображение */
+width: 100px; /* Укажите нужную ширину */
+height: 100px; /* Укажите нужную высоту */
+border-radius: 9px;
+object-fit: Scale-down;
+}
+
 
 .brown0 {
   background-image: url('https://polvamvdom.ru/f/prods/7/b/8/69-001-00085_1.jpg'); /* Укажите путь к вашему изображению */
@@ -2389,19 +2427,18 @@ height: 230px !important;
 
 
 
-.breadcrumb { 
-  display: flex;           /* Используем Flexbox для равномерного распределения элементов */
-  justify-content: space-around; /* Равномерное распределение элементов */
-  padding: 18px; 
-  text-align: center; 
-  background-color: #e5e5e5; 
-  width: 70%;            /* Занимаем всю ширину экрана */
-} 
-
-.breadcrumb a { 
-  color: black; 
-  text-decoration: none; 
-} 
+.breadcrumb {
+  font-size: 20px;
+  margin-top: 10px;
+}
+.breadcrumb a {
+  text-decoration: none;
+  color: black;
+}
+.breadcrumb a:hover {
+  text-decoration: underline;
+  color: #688EBD;
+}
 
 
 
@@ -2720,309 +2757,7 @@ h2 {
 }
 
 
-
-
 /* КОНЕЦ  СТРАНИЦЫ ЛИЧНОЙ КАБИНЕТ  */
-
-
-
-
-
-/* НАЧАЛО СТРАНИЦЫ ЛИЧНОЙ КАБИНЕТ  */
-
-
-.breadcrumb { 
-  display: flex;           /* Используем Flexbox для равномерного распределения элементов */
-  justify-content: space-around; /* Равномерное распределение элементов */
-  padding: 18px; 
-  text-align: center; 
-  background-color: #e5e5e5; 
-  width: 70%;            /* Занимаем всю ширину экрана */
-} 
-
-.breadcrumb a { 
-  color: black; 
-  text-decoration: none; 
-} 
-
-
-
-.profile-icon {
-  position: relative;
-  width: 150px;
-  height: 150px;
-  overflow: hidden;
-  border-radius: 50%;
-  border: 2px solid #ccc;
-  background-color: #fff;
-}
-.profile-icon img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 50%;
-  cursor: pointer;
-}
-
-
-.full-width-button {
-  display: block; /* делает элемент блочным */
-  width: 100%; /* ширина 100% */
-  padding: 10px; /* отступы для удобства */
-  font-size: 16px; /* размер шрифта */
-  cursor: pointer; /* курсор в виде указателя при наведении */
-  border: 1px solid #ccc; /* рамка */
-  border-radius: 5px; /* скругление углов */
-  background-color: #f0f0f0; /* фоновый цвет */
-  outline: none; /* убираем обводку при фокусе */
-}
-
-.full-width-button:hover {
-  background-color: #e0e0e0; /* изменение фона при наведении */
-}
-
-.primary-btn {
-margin-top:10px;
-background-color: #e5e5e5; /* Цвет для кнопки поддержки */
-
-color: black;
-}
-
-.primary-btn:hover {
-background-color: #e0e0e0; 
-transform: translateY(-2px); /* Поднимаем кнопку при наведении */
-}
-
-/* Анимация для страницы */
-@keyframes fadeIn {
-from {
-    opacity: 0; 
-}
-to {
-    opacity: 1; 
-}
-}
-.oplata {
-      background-color: #e5e5e5;
-      color: black;
-      width: 260px;
-      margin-top: 10px;
-      margin-bottom: 5px;
-      padding: 12px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      transition: all 0.3s;
-      font-size: 16px;
-      font-weight: 600;
-      text-align: center;
-  }
-  .oplata:hover {
-      background-color: #e0e0e0;
-      transform: translateY(-2px);
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  }
-  .payment-icon {
-      cursor: pointer;
-      width: 30px;
-      height: 25px;
-      margin-top: 10px;
-      margin-right: 10px;
-      vertical-align: middle;
-  }
-  .card-content {
-      background-color: #688EBD;
-      padding: 15px;
-      border-radius: 8px;
-      text-align: center;
-      font-size: 18px;
-      color: white;
-  }
-  .content-section {
-      padding: 25px;
-      margin: 15px;
-      background-color: white;
-      width: 250px;
-      height: 150px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-  }
-  .content-section:hover {
-      transform: scale(1.05);
-  }
-  .content-section-oplata {
-      padding: 20px;
-      margin: 10px;
-      background-color: white;
-      width: 300px;
-      height: 330px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-  }
-  .content-section-oplata:hover {
-      transform: scale(1.05);
-  }
-  .content-section-user {
-      padding: 20px;
-      margin: 10px;
-      background-color: white;
-      width: 300px;
-      height: 350px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-  }
-  .content-section-user:hover {
-      transform: scale(1.05);
-  }
-  .discount-item {
-      margin-top: 10px;
-      width: 100px;
-      display: block;
-      font-size: 16px;
-      padding: 12px;
-      cursor: pointer;
-      background-color: #e5e5e5;
-      border-radius: 9px;
-      text-align: center;
-      transition: background-color 0.3s;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      font-weight: bold;
-  }
-  .discount-item:hover {
-      background-color: #e0e0e0;
-  }
-  .discount-info {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.5);
-      justify-content: center;
-      align-items: center;
-      z-index: 1000;
-      animation: fadeIn 0.5s;
-  }
-  .discount-info-content {
-      background-color: white;
-      padding: 25px;
-      border-radius: 10px;
-      text-align: center;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-      width: 400px;
-  }
-  .close-discount-info {
-      display: block;
-      width: 150px;
-      margin: 15px auto 0;
-      padding: 12px 15px;
-      border: none;
-      background-color: #688EBD;
-      color: white;
-      border-radius: 5px;
-      text-align: center;
-      cursor: pointer;
-      transition: background-color 0.3s;
-      font-weight: bold;
-  }
-  .close-discount-info:hover {
-      background-color: #5a7cb3;
-  }
-  .payment, .card-binding, .details {
-      display: none;
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      background-color: white;
-      border: 1px solid grey;
-      padding: 20px;
-      z-index: 1000;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  }
-  .overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.5);
-      display: none;
-  }
-  .detail {
-      display: block;
-      width: 150px;
-      margin: 15px auto 0;
-      padding: 10px 15px;
-      border: none;
-      background-color: #688EBD;
-      color: white;
-      border-radius: 5px;
-      text-align: center;
-      cursor: pointer;
-      transition: background-color 0.3s;
-  }
-
-  .windowrekvisit{
-
-      width: 300px;
-      height: 250px;
-  }
-
-  .details-binding {
-      display: none; /* Скрыть по умолчанию */
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      background: white;
-      padding: 20px;
-      border-radius: 5px;
-      z-index: 1001;
-  }
-  .payment-content {
-      background: white;
-      padding: 20px;
-      border-radius: 5px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-      width: 300px;
-  }
-  .card {
-      background-color: #688EBD;
-      color: white;
-  }
-  
-  .close-details{
-
-      display: block;
-      width: 150px;
-      margin: 75px auto 0;
-      
-      border: none;
-      background-color: #688EBD;
-      color: white;
-      border-radius: 5px;
-      text-align: center;
-      cursor: pointer;
-      transition: background-color 0.3s;
-      font-weight: bold;
-  }
-/* КОНЕЦ  СТРАНИЦЫ ЛИЧНОЙ КАБИНЕТ  */
-
-
 
 
 
