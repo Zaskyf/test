@@ -177,15 +177,22 @@
 
     <div class="prodct-card">
 
-
-        <div class="prodct-images">
-            <img style = "height :500px;  width:500px; border-radius :9px;"
-            src="https://belbagno.ru/upload/iblock/e46/e460ace5053cca596b9ef71b25f5f431.jpg" 
-            alt="Ванна пристенная BelBagno" class="prodct-image active" data-price="500">
-            
-            
-             
+            <div class="prodct-images">
+                <img style = "height :500px;  border-radius :9px; width:500px;"src="https://www.dlyavann.ru/dbpics/6/0/505306.webp" alt="Ванна акриловая Vincea " class="prodct-image active" >
+                <img style = " background-color:white;height :500px;   border-radius :9px; width:500px;" src="https://www.dlyavann.ru/dbpics/9/0/505309.webp" alt="Ванна акриловая Vincea " class="prodct-image" >
+                <img style = "height :500px;  border-radius :9px; width:500px;" src="https://www.dlyavann.ru/dbpics/7/0/505307_small.webp" alt="Ванна пристенная BelBagno" class="prodct-image" >
+                <img style = "height :500px;  border-radius :9px; width:500px;" src="https://www.dlyavann.ru/dbpics/0/1/505310.webp" alt="Ванна пристенная BelBagno" class="prodct-image" >
+                
+                <div class="color-options">
+                    <div class="color-square white0" onclick="changeColor('white0')"></div>
+                    <div class="color-square white1" onclick="changeColor('white1')"></div>
+                    <div class="color-square white2" onclick="changeColor('white2')"></div>
+                    <div class="color-square white3" onclick="changeColor('white3')"></div>
+                  </div>
+                
         </div>
+
+
         
         <div class="prodct-info">
 
@@ -357,7 +364,17 @@
                 // Show the selected section
                 document.getElementById(section + '-section').style.display = 'block';
             }
+     //Меняет цвет кружочка 
+     function changeColor(color) {
+        const slides = document.querySelectorAll('.prodct-image'); // Получаем все изображения продукта
+        slides.forEach(slide => {
+            slide.classList.remove('active'); // Убираем активный класс у всех слайдов
+        });
     
+        const colorIndex = { 'white0': 0, 'white1': 1, 'white2': 2 , 'white3': 3}[color];
+        slides[colorIndex].classList.add('active'); // Устанавливаем активный слайд
+        
+    }
     
     function rate(value) {
         const stars = document.querySelectorAll('.star'); // Получаем все звезды для рейтинга
