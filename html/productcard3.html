@@ -169,7 +169,7 @@
         <button onclick="showSection('prodct-info')">Описание</button>
         <button onclick="showSection('characteristics')">Характеристики</button>
         <button onclick="showSection('reviews')">Отзывы</button>
-        <button onclick="showSection('details')">Детали</button>
+        <button onclick="showSection('detal')">Детали</button>
     </div>
 
     <div class="prodct-card">
@@ -233,7 +233,7 @@
                     <h4>Отзывы:</h4>
                     <p>Отзывов пока нет.</p>
                 </div>
-                <div class="details" id="details-section">
+                <div class="detal" id="detal-section">
                     <h4>Детали:</h4>
                     <p>Этот набор микрофибровых тряпок идеально подходит для уборки и протирания различных поверхностей. Они мягкие, прочные и можно стирать в машине.</p>
                 </div>
@@ -355,7 +355,7 @@
     //Меняет секцию (детали характеристика , отзывы ,опсиание)
     function showSection(section) {
                 // Hide all sections first
-                const sections = ['prodct-info', 'characteristics', 'reviews', 'details'];
+                const sections = ['prodct-info', 'characteristics', 'reviews', 'detal'];
                 sections.forEach(sec => {
                     document.getElementById(sec + '-section').style.display = 'none';
                 });
