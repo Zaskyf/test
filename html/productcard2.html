@@ -172,24 +172,19 @@
         <button onclick="showSection('prodct-info')">Описание</button>
         <button onclick="showSection('characteristics')">Характеристики</button>
         <button onclick="showSection('reviews')">Отзывы</button>
-        <button onclick="showSection('details')">Детали</button>
+        <button onclick="showSection('detal')">Детали</button>
     </div>
 
     <div class="prodct-card">
 
+
         <div class="prodct-images">
-            <img style = "height :500px;  border-radius :9px; width:500px;"src="https://www.dlyavann.ru/dbpics/6/0/505306.webp" alt="Ванна акриловая Vincea " class="prodct-image active" >
-            <img style = " background-color:white;height :500px;   border-radius :9px; width:500px;" src="https://www.dlyavann.ru/dbpics/9/0/505309.webp" alt="Ванна акриловая Vincea " class="prodct-image" >
-            <img style = "height :500px;  border-radius :9px; width:500px;" src="https://www.dlyavann.ru/dbpics/7/0/505307_small.webp" alt="Ванна пристенная BelBagno" class="prodct-image" >
-            <img style = "height :500px;  border-radius :9px; width:500px;" src="https://www.dlyavann.ru/dbpics/0/1/505310.webp" alt="Ванна пристенная BelBagno" class="prodct-image" >
+            <img style = "height :500px;  width:500px; border-radius :9px;"
+            src="https://belbagno.ru/upload/iblock/e46/e460ace5053cca596b9ef71b25f5f431.jpg" 
+            alt="Ванна пристенная BelBagno" class="prodct-image active" data-price="500">
             
-            <div class="color-options">
-                <div class="color-square white0" onclick="changeColor('white0')"></div>
-                <div class="color-square white1" onclick="changeColor('white1')"></div>
-                <div class="color-square white2" onclick="changeColor('white2')"></div>
-                <div class="color-square white3" onclick="changeColor('white3')"></div>
-              </div>
-         
+            
+             
         </div>
         
         <div class="prodct-info">
@@ -231,7 +226,7 @@
                     <h4>Отзывы:</h4>
                     <p>Отзывов пока нет.</p>
                 </div>
-                <div class="details" id="details-section">
+                <div class="detal" id="detal-section">
                     <h4>Детали:</h4>
                     <p>Этот набор микрофибровых тряпок идеально подходит для уборки и протирания различных поверхностей. Они мягкие, прочные и можно стирать в машине.</p>
                 </div>
@@ -335,16 +330,16 @@
         cart.splice(index, 1); // Удаляем товар по индексу
         renderCart(); // Обновляем отображение корзины
     }
-     //Меняет цвет кружочка 
-     function changeColor(color) {
+    //Меняет цвет кружочка 
+    function changeColor(color) {
         const slides = document.querySelectorAll('.prodct-image'); // Получаем все изображения продукта
         slides.forEach(slide => {
             slide.classList.remove('active'); // Убираем активный класс у всех слайдов
         });
     
-        const colorIndex = { 'white0': 0, 'white1': 1, 'white2': 2 , 'white3': 3}[color];
+        const colorIndex = { 'red': 0, 'blue': 1, 'green': 2 }[color];
         slides[colorIndex].classList.add('active'); // Устанавливаем активный слайд
-        
+        updatePrice(slides[colorIndex].dataset.price); // Обновляем цену для выбранного цвета
     }
     
     function updatePrice(price) {
@@ -354,7 +349,7 @@
     //Меняет секцию (детали характеристика , отзывы ,опсиание)
     function showSection(section) {
                 // Hide all sections first
-                const sections = ['prodct-info', 'characteristics', 'reviews', 'details'];
+                const sections = ['prodct-info', 'characteristics', 'reviews', 'detal'];
                 sections.forEach(sec => {
                     document.getElementById(sec + '-section').style.display = 'none';
                 });
