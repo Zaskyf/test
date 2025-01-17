@@ -598,6 +598,7 @@ const card = document.createElement('div');
     detailsButton.classList.add('details-button');
     detailsDiv.appendChild(detailsButton);
     card.appendChild(detailsDiv);
+
 // "Быстрый просмотр"
 const quickViewButton = document.createElement('button'); 
 quickViewButton.classList.add('quick-view-button'); //класс для стилей
@@ -611,13 +612,16 @@ card.addEventListener('mouseenter', () => {
 card.addEventListener('mouseleave', () => { 
     quickViewButton.style.display = 'none'; 
 });
+
 // Создаем окно  быстрый просмотр 
 const quickViewWindow = document.createElement('div'); 
 quickViewWindow.classList.add('quick-view-window'); 
 quickViewWindow.style.display = 'none'; // Окно скрыто по умолчанию
+
 // Создаем контейнер для содержимого окна
 const windowContent = document.createElement('div'); 
 windowContent.classList.add('window-content'); 
+
 // Создаем крестик
 const closeButton = document.createElement('button'); 
 closeButton.classList.add('close-button'); 
@@ -625,10 +629,12 @@ closeButton.textContent = 'X';
 closeButton.onclick = function() { 
     quickViewWindow.style.display = 'none'; // Скрываем окно при нажатии на кнопку закрытия
 };
+
 // При нажатии на кнопку "Быстрый просмотр" показываем окно
 quickViewButton.onclick = function() { 
     quickViewWindow.style.display = 'flex'; //Показываем окно с помощью flex 
 };
+
 //Элемент для описания товара
 const description = document.createElement('div'); 
 // Вставляем HTML
