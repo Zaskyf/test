@@ -818,6 +818,7 @@ margin-bottom: 5px;
 
 
 /*НАЧАЛО СЛАЙДЕРА  С КАРТОЧКАМИ НА ГЛАВНОЙ СТРАНИЦЕ  */
+
 .swiper {
 width: 90%;
 height: 615px ;
@@ -840,7 +841,7 @@ background-color: white;
 border: 1px solid blue;
 border-radius: 9px;
 padding: 20px;
-height: 545px !important;
+height: 525px !important;
 margin-right: 10px; /* Смещает контейнер */
 text-align: center; /* Центрирование текста */
 z-index: 100;
@@ -861,7 +862,7 @@ margin-right: 0;
 /*картина*/
 .swiper-slide img {
 width: 100%; /* Ширина изображения занимает 100% карточки */
-height:310px; 
+height:330px; 
 border-radius: 9px; /* Закругленные углы для изображения */
 margin-bottom: 5px; /* Отступ снизу для изображения */
 text-align: center;
