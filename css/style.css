@@ -745,7 +745,7 @@ border-radius: 9px;
 box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 
 width: 400px;
-font-size: 16px;
+font-size: 20px;
 line-height: 1.5;
 min-height: 130px !important; 
 
@@ -774,7 +774,8 @@ margin-bottom: 5px;
   .bcontainer {
   min-height: 100px !important; 
      width: 200px ; 
-    font-size: 10px;     
+    font-size: 16px;    
+     
   }
 
   .icones {
@@ -785,16 +786,17 @@ margin-bottom: 5px;
 
 @media (max-width: 480px) {
   .bcontainer {
-    min-height: 90px !important; 
-     width: 165px; 
+    min-height: 50px !important; 
+     width: 100px; 
        display: flex;
        align-items:center;
+       font-size: 11px; 
    
   }
 
   .icones {
-    width: 40px; 
-    height: 40px;
+    width: 15px; 
+    height: 15px;
   }
   
   .boxicon {
@@ -1275,7 +1277,7 @@ color:grey;
    height: 30px; 
    width: 100%; 
  }
- 
+
  .btn {
  font-size:14px;
    background-color: #4577b4 ; /* Фон - синий */
@@ -1668,7 +1670,7 @@ margin: 20px auto;
               border-radius: 8px;
               box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             width:90%;
-        height:90%;
+        height:100%;
               overflow: hidden;
               transition: transform 0.3s;
           }
