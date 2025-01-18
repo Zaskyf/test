@@ -875,6 +875,21 @@ height:110px;
 margin-top:10px;
 
 }
+
+ .price {
+   font-size: 1.0rem; /* Размер шрифта цены */
+   background-color: white; /* Фон цены - белый */
+   font-weight: bold; /* Жирный шрифт */
+   color: black; /* Цвет цены - черный */
+   text-align: left; /* Выравнивание текста по левому краю */
+   letter-spacing: 0.5px; /* Расстояние между буквами */
+   border-bottom: 1px solid #ccc; /* Нижняя граница */
+  
+   opacity: 0.5; /* Прозрачность */
+
+
+ }
+
 .prev{
 position:   absolute;
 width: 50px;
@@ -936,20 +951,20 @@ color :grey !important;
     }
     .swiper-slide img {
         width: 90%; /* Ширина изображения занимает 100% карточки */
-height:220px; 
+height:240px; 
 margin-bottom: 1px; /* Отступ снизу для изображения */
     }
 
     .box {
-    font-size: 9px;
+   
     background-color:white;
-        width: 100%; /* Занимает всю ширину родительского контейнера */
+        width: 100%; 
         height: auto; /* Автоматическая высота */
         padding: 5px; /* Добавление отступов */
     }
     
     .btn{
-    font-size:9px !important;
+    font-size:11px !important;
     }
 }
 
@@ -1228,17 +1243,25 @@ color:grey;
  /* Адаптация под мобильные устройства */
 @media (max-width: 768px) {
     .money {
+   
         font-size: 1rem; 
-        margin-top: 5px; 
+        
     }
 
     .money span {
-        font-size: 16px; 
+        font-size: 22px; 
     }
 
     .money del {
-        font-size: 12px; 
+        font-size: 18px; 
     }
+    
+    .price {
+   font-size: 0.8rem; /* Размер шрифта цены */
+   
+
+
+ }
 }
 
 
@@ -3148,3 +3171,4 @@ footer a:hover {
 .p {
   font-size: 20px; /* Код класса p должен начинаться с точки, если это класс */
 }
+
