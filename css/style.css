@@ -944,14 +944,14 @@ color :grey !important;
 /* Адаптация для устройств с шириной экрана до 768 пикселей */
 @media (max-width: 768px) {
     .swiper-slide {
-     width:300px !important; 
- height: 400px !important;
+     width:260px !important; 
+ height: 430px !important;
 
 
     }
     .swiper-slide img {
-        width: 90%; /* Ширина изображения занимает 100% карточки */
-height:240px; 
+        width: 100%; /* Ширина изображения занимает 100% карточки */
+      height:280px; 
 margin-bottom: 1px; /* Отступ снизу для изображения */
     }
 
@@ -960,7 +960,7 @@ margin-bottom: 1px; /* Отступ снизу для изображения */
     background-color:white;
         width: 100%; 
         height: auto; /* Автоматическая высота */
-        padding: 5px; /* Добавление отступов */
+        
     }
     
     .btn{
@@ -1253,7 +1253,7 @@ color:grey;
     }
 
     .money del {
-        font-size: 18px; 
+        font-size: 16px; 
     }
     
     .price {
@@ -1275,6 +1275,7 @@ color:grey;
    height: 30px; 
    width: 100%; 
  }
+ 
  .btn {
  font-size:14px;
    background-color: #4577b4 ; /* Фон - синий */
@@ -3171,4 +3172,3 @@ footer a:hover {
 .p {
   font-size: 20px; /* Код класса p должен начинаться с точки, если это класс */
 }
-
