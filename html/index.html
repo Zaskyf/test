@@ -237,7 +237,6 @@
         document.querySelector('.bunext').addEventListener('click', nextItem);
         document.querySelector('.buprev').addEventListener('click', prevItem);
 const products = [
-    { image: "https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/1.webp", title: "Обои 1  ", price: 1099, oldPrice: 2000 },
     { image: "https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/2.webp", title: "Обои 2", price: 999, oldPrice: 1900 },
         { image: "https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/1.webp", title: "Обои 1", price: 1099, oldPrice: 2000 },
     { image: "https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/2.webp", title: "Обои 2", price: 999, oldPrice: 1900 },
@@ -308,14 +307,22 @@ function createSwiperSlide(product, index) {
         <button class='subtract' onclick='changeNumber(-1, "number${index + 1}")'>–</button>
         <input type='text' class='js-number' id='number${index + 1}' value='1' readonly>
         <button class='add' onclick='changeNumber(1, "number${index + 1}")'>+</button>
+      
     `;
-
+   // <a href='productcard.html?id=${product.id}' class='more-details'>Подробнее</a>  New Button  
+   
     figcaption.appendChild(priceContainer);
     figcaption.appendChild(buttons);
     slide.appendChild(img);
     slide.appendChild(title);
     slide.appendChild(figcaption);
     swiperWrapper.appendChild(slide);
+
+            // клик для того чтобы нас перебросило на страницу  описние товара (product-card)
+    
+            slide.addEventListener('click', () => {
+                window.location.href = `productcard.html?id=${product.id}`;
+            });
 
     return slide;
 }
