@@ -200,286 +200,251 @@
  <!--КОНЕЦ ИКНОК ССЫЛОК НА ГЛАВНОЙ СТРАНИЦЕ-->
 
 
+ <!-- Слайдер с товарами-->
+     <section class="swiper">
+        <h6 style =" font-size:40px; color:black; margin-bottom: 20px;"> Распродажа</h6>
+   <div class="swiper-wrapper" id="swiper-wrapper">
+       </div>
+      <div class="swiper-button-prev prev"></div>
+       <div class="swiper-button-next next"></div>
+        </section>
+        
+        <script>
 
- <div class="swiper">
-    <h6 style =" font-size:40px; color:black; margin-bottom: 20px;"> Распродажа</h6>
-    <div class="swiper-wrapper" id="swiper-wrapper">  </div>
-    <!-- Navigation Buttons --><div class="swiper-button-prev prev"></div>
-       <div class="swiper-button-next next"></div> </div>
- <script>
-    const container = document.querySelector('.container');
-    const cardsData = [
-    { id: 1, image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/4.webp', title: 'Обои под покраску флизелиновые антивандальные Kreaforta Батист белые 1.06x25м 113г/м²', price: 799, delprice: 1000 , detailsUrl: 'productcard.html'  },
-     {
-            id: 2,
-            title: 'Обои бумажные серые 0.53 м',
-            price: 990,
-            delprice: 1500,
-            image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/2.webp',
-            detailsUrl: 'productcard.html'
+        
+        let currentIndex = 0;
+        const items = document.querySelectorAll('.itm');
+        const totalItems = items.length;
+        function showItem(index) {
+            const itemsContainer = document.querySelector('.itms');
+            itemsContainer.style.transform = `translateX(-${index * 100}%)`; 
         }
-    ];cardsData.forEach((cardData) => {
-    const card = document.createElement('div');
-        card.classList.add('product-card');
-        const titleDiv = document.createElement('div');
-        titleDiv.classList.add('title');
-        const title = document.createElement('p');
-        title.classList.add('product-title');
-        title.textContent = cardData.title;
-        titleDiv.appendChild(title);
-        card.appendChild(titleDiv);
-        const figure = document.createElement('figure');
-        const img = document.createElement('img');
-        img.src = cardData.image;
-        img.alt = cardData.title;
-        figure.appendChild(img);
-        const figcaption = document.createElement('figcaption');
-        const price = document.createElement('p');
-        price.classList.add('prce');
-        price.textContent = 'Цена за штуку';
-        figcaption.appendChild(price);
-        const money = document.createElement('p');
-        money.classList.add('money');
-        const span = document.createElement('span');
-        span.textContent = cardData.price + ' ₽';
-        const del = document.createElement('del');
-        del.textContent = cardData.delprice + ' ₽';
-        money.appendChild(span);
-        money.appendChild(del);
-        const buttons = document.createElement('div');
-        buttons.classList.add('Buttons');
-        const addToCartButton = document.createElement('button');
-        addToCartButton.classList.add('btn');
-        addToCartButton.textContent = 'В корзину';
-        addToCartButton.id = `addToCart${cardData.id}`; 
-        const subtractButton = document.createElement('button');
-        subtractButton.classList.add('subtract');
-        subtractButton.textContent = '–';
-        subtractButton.onclick = () => changeNumber(-1, `number${cardData.id}`); 
-        const numberInput = document.createElement('input');
-        numberInput.classList.add('js-number');
-        numberInput.id = `number${cardData.id}`; // 
-        numberInput.type = 'text';
-        numberInput.value = '1';
-        numberInput.readOnly = true;
-        const addButton = document.createElement('button');
-        addButton.classList.add('add');
-        addButton.textContent = '+';
-        addButton.onclick = () => changeNumber(1, `number${cardData.id}`); 
-        buttons.appendChild(addToCartButton);
-        buttons.appendChild(subtractButton);
-        buttons.appendChild(numberInput);
-        buttons.appendChild(addButton);
-        card.appendChild(figure);
-        card.appendChild(titleDiv); 
-        card.appendChild(figcaption);
-        card.appendChild(money);
-        card.appendChild(buttons);
-        container.appendChild(card);
-        const detailsDiv = document.createElement('div');
-        detailsDiv.classList.add('details-container');
-        const detailsButton = document.createElement('a');
-        detailsButton.href = cardData.detailsUrl;
-        detailsButton.textContent = 'Подробнее';
-        detailsButton.classList.add('details-button');
-        detailsDiv.appendChild(detailsButton);
-        card.appendChild(detailsDiv);
-    // "Быстрый просмотр"
-    const quickViewButton = document.createElement('button'); 
-    quickViewButton.classList.add('quick-view-button'); //класс для стилей
-    quickViewButton.textContent = 'Быстрый просмотр'; // контент
-    figure.appendChild(quickViewButton); 
-    
-    // Показываем кнопку при наведении курсора  на карточку товара и скрываем при уходе курсора
-    card.addEventListener('mouseenter', () => { 
-        quickViewButton.style.display = 'block'; 
-    });
-    card.addEventListener('mouseleave', () => { 
-        quickViewButton.style.display = 'none'; 
-    });
-    // Создаем окно  быстрый просмотр 
-    const quickViewWindow = document.createElement('div'); 
-    quickViewWindow.classList.add('quick-view-window'); 
-    quickViewWindow.style.display = 'none'; // Окно скрыто по умолчанию
-    // Создаем контейнер для содержимого окна
-    const windowContent = document.createElement('div'); 
-    windowContent.classList.add('window-content'); 
-    // Создаем крестик
-    const closeButton = document.createElement('button'); 
-    closeButton.classList.add('close-button'); 
-    closeButton.textContent = 'X';
-    closeButton.onclick = function() { 
-        quickViewWindow.style.display = 'none'; // Скрываем окно при нажатии на кнопку закрытия
-    };
-    // При нажатии на кнопку "Быстрый просмотр" показываем окно
-    quickViewButton.onclick = function() { 
-        quickViewWindow.style.display = 'flex'; //Показываем окно с помощью flex 
-    };
-    //Элемент для описания товара
-    const description = document.createElement('div'); 
-    // Вставляем HTML
-    description.innerHTML = `
-        <div class="cartpodrobno">
-            <div class="procard">
-                <img 
-      style="width: 400px; height: 400px; border: 1.2px solid grey;" 
-      src="https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/5.webp" 
-      alt="Изображение товара" 
-      class="proimage">
-                <div class="tpd">
-                    <h2 class="protitle">Обои</h2> 
-                    <p class="prodescription">Это краткое описание товара. Здесь можно указать его особенности и преимущества.</p>
-                    <p class="proprice">2999 Р.</p> 
-                    <p class="delprice">2999 Р.</p> 
-                    <button class="probutton">В корзину</button>   
-                     <a href="/html/productcard.html">        
-                        <button class="procardbutton">Больше информации о товаре</button>     
-                    </a> 
-                </div>
-            </div>
-        </div>`;
-    // Добавляем крестик и описание в контейнер содержимого окна
-    windowContent.appendChild(closeButton); 
-    windowContent.appendChild(description); 
-    // Добавляем содержимое в окно быстрого просмотра
-    quickViewWindow.appendChild(windowContent); 
-    // Добавляем окно быстрого просмотра на страницу
-    document.body.appendChild(quickViewWindow); 
-    // Выбираем все картинки  с классом  !!!!proimage!!!!
-    const zoomableImages = document.querySelectorAll('.proimage');
-    zoomableImages.forEach(image => {
-        let zoomed = false;
-        let zoomLevel = 2;
-        // Добавим обертку для изображения
-        const imageWrapper = document.createElement('div');
-        imageWrapper.style.overflow = 'hidden'; // Ключевое изменение
-        image.parentNode.insertBefore(imageWrapper, image); // Вставляем обертку перед изображением
-        imageWrapper.appendChild(image);
-    
-        image.addEventListener('mousemove', function(event) {
-            if (zoomed) {
-                const rect = this.getBoundingClientRect();
-                const x = event.clientX - rect.left;
-                const y = event.clientY - rect.top;
-                const xPercent = x / rect.width;
-                const yPercent = y / rect.height;
-                this.style.transformOrigin = `${xPercent * 100}% ${yPercent * 100}%`;
-                this.style.transform = `scale(${zoomLevel})`;
-            }
-        });
-        image.addEventListener('click', function() {
-            zoomed = !zoomed;
-            if (zoomed) {
-                this.style.cursor = 'zoom-out';
-            } else {
-                this.style.transform = 'scale(1)';
-                this.style.cursor = 'zoom-in';
-                this.style.transformOrigin = 'center center';
-            }
-        });
-    });
-    });
-    let currentIndex = 0;
-    const cards = document.querySelectorAll('.product-card');
-    
-    function showCards(startIndex) {
-        const endIndex = startIndex + 20;
-        cards.forEach((card, i) => {
-            card.style.display = (i >= startIndex && i < endIndex) ? 'block' : 'none';
-        });
-    }
-    showCards(currentIndex);
-    document.getElementById('nextBtn').addEventListener('click', () => {
-        if (currentIndex + 20 >= cards.length) return;
-        currentIndex += 20;
-        showCards(currentIndex);
-    });
-    document.getElementById('prevBtn').addEventListener('click', () => {
-        if (currentIndex === 0) return;
-        currentIndex -= 20;
-        showCards(currentIndex);
-    });
-    document.querySelectorAll(".btn").forEach(button => {
-        button.addEventListener("click", function() {
-            const isInCart = this.classList.contains("clicked");
-            if (!isInCart) {
-                addToCart(this);
-                this.textContent = "В корзине";
-                this.classList.add("clicked");
-            } else {
-                this.textContent = "В корзину";
-                this.classList.remove("clicked");
-                removeFromCart(this);
-            }
-        });
-    });
-    function changeNumber(amount, inputId) {
-        const numberInput = document.getElementById(inputId);
-        let currentValue = parseInt(numberInput.value, 10);
-        currentValue += amount;
-        if (currentValue >= 1) {
-            numberInput.value = currentValue;
+        function nextItem() {
+            currentIndex = (currentIndex + 1) % totalItems;
+            showItem(currentIndex);
         }
+        function prevItem() {
+            currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+            showItem(currentIndex);
+        }
+        let autoSlide = setInterval(nextItem, 3000); // every 3 seconds
+        document.querySelector('.carousel').addEventListener('mouseenter', () => {
+            clearInterval(autoSlide); // Stop 
+        });
+        document.querySelector('.carousel').addEventListener('mouseleave', () => {
+            autoSlide = setInterval(nextItem, 3000);
+        });
+        document.querySelector('.bunext').addEventListener('click', nextItem);
+        document.querySelector('.buprev').addEventListener('click', prevItem);
+const products = [
+    { image: "https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/1.webp", title: "Обои 1  ", price: 1099, oldPrice: 2000 },
+    { image: "https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/2.webp", title: "Обои 2", price: 999, oldPrice: 1900 },
+        { image: "https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/1.webp", title: "Обои 1", price: 1099, oldPrice: 2000 },
+    { image: "https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/2.webp", title: "Обои 2", price: 999, oldPrice: 1900 },
+        { image: "https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/1.webp", title: "Обои 1", price: 1099, oldPrice: 2000 },
+    { image: "https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/2.webp", title: "Обои 2", price: 999, oldPrice: 1900 },
+        { image: "https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/1.webp", title: "Обои 1", price: 1099, oldPrice: 2000 },
+    { image: "https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/2.webp", title: "Обои 2", price: 999, oldPrice: 1900 },
+        { image: "https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/1.webp", title: "Обои 1", price: 1099, oldPrice: 2000 },
+    { image: "https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/2.webp", title: "Обои 2", price: 999, oldPrice: 1900 },
+        { image: "https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/1.webp", title: "Обои 1", price: 1099, oldPrice: 2000 },
+    { image: "https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/2.webp", title: "Обои 2", price: 999, oldPrice: 1900 },
+        { image: "https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/1.webp", title: "Обои 1", price: 1099, oldPrice: 2000 },
+    { image: "https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/2.webp", title: "Обои 2", price: 999, oldPrice: 1900 },
+        { image: "https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/1.webp", title: "Обои 1", price: 1099, oldPrice: 2000 },
+    { image: "https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/2.webp", title: "Обои 2", price: 999, oldPrice: 1900 },
+        { image: "https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/1.webp", title: "Обои 1", price: 1099, oldPrice: 2000 },
+    { image: "https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/2.webp", title: "Обои 2", price: 999, oldPrice: 1900 },
+        { image: "https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/1.webp", title: "Обои 1", price: 1099, oldPrice: 2000 },
+    { image: "https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/2.webp", title: "Обои 2", price: 999, oldPrice: 1900 },
+        { image: "https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/1.webp", title: "Обои 1", price: 1099, oldPrice: 2000 },
+    { image: "https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/2.webp", title: "Обои 2", price: 999, oldPrice: 1900 },
+    
+];
+
+
+const swiperWrapper = document.getElementById('swiper-wrapper');
+
+function createSwiperSlide(product, index) {
+    const slide = document.createElement('div');
+    slide.className = 'swiper-slide';
+
+    const img = document.createElement('img');
+    img.src = product.image;
+    img.alt = product.title;
+
+    const title = document.createElement('p');
+    title.className = 'product-title';
+    title.textContent = product.title;
+
+    const figcaption = document.createElement('figcaption');
+    figcaption.className = 'box';
+
+    const priceContainer = document.createElement('div');
+    priceContainer.className = 'price-container';
+
+    const price = document.createElement('p');
+    price.className = 'price';
+    price.textContent = 'Цена за штуку';
+
+    const money = document.createElement('p');
+    money.className = 'money';
+
+    const span = document.createElement('span');
+    span.textContent = product.price + ' ₽';
+
+    const del = document.createElement('del');
+    del.textContent = product.oldPrice + ' ₽';
+
+    money.appendChild(span);
+    money.appendChild(del);
+    priceContainer.appendChild(price);
+    priceContainer.appendChild(money);
+
+    const buttons = document.createElement('div');
+    buttons.className = 'Buttons';
+    buttons.innerHTML = `
+        <button id='addToCart${index + 1}' class='btn'>В корзину</button>
+        <button class='subtract' onclick='changeNumber(-1, "number${index + 1}")'>–</button>
+        <input type='text' class='js-number' id='number${index + 1}' value='1' readonly>
+        <button class='add' onclick='changeNumber(1, "number${index + 1}")'>+</button>
+    `;
+
+    figcaption.appendChild(priceContainer);
+    figcaption.appendChild(buttons);
+    slide.appendChild(img);
+    slide.appendChild(title);
+    slide.appendChild(figcaption);
+    swiperWrapper.appendChild(slide);
+
+    return slide;
+}
+
+function changeNumber(step, inputId) {
+    const input = document.getElementById(inputId);
+    let currentNumber = parseInt(input.value);
+    currentNumber += step;
+
+    if (currentNumber < 1) {
+        currentNumber = 1;
     }
-    function addToCart(button) {
-        const productTitle = button.closest('.product-card').querySelector('.product-title').textContent;
-        const productPrice = button.closest('.product-card').querySelector('.money span').textContent;
-        const productQuantity = button.closest('.product-card').querySelector('.js-number').value;
+    input.value = currentNumber;
+}
+
+products.forEach((product, index) => {
+    createSwiperSlide(product, index);
+
+
+
     
-        const existingItem = Array.from(document.querySelectorAll('.cart-item')).find(item => 
-            item.querySelector('p').textContent.includes(productTitle)
-        );
-    
-        if (existingItem) {
-            const quantityInput = existingItem.querySelector('.js-number');
-            quantityInput.value = parseInt(quantityInput.value) + parseInt(productQuantity);
+});
+
+const swiper = new Swiper(".swiper", {
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+    },
+    slidesPerView: 6,
+    spaceBetween: 15,
+});
+
+document.querySelectorAll(".btn").forEach(button => {
+    button.addEventListener("click", function () {
+        const isInCart = this.classList.contains("clicked");
+        if (!isInCart) {
+            addToCart(this);
+            this.textContent = "В корзине";
+            this.classList.add("clicked");
         } else {
-            const cartItem = document.createElement('div');
-            cartItem.classList.add('cart-item');
-            cartItem.innerHTML = `
-                <input type="checkbox" class="item-checkbox"> 
-                <p class="tovar">${productTitle} - ${productPrice}</p>
-                <div class="boxadd">
-                    <button class='subtract' onclick='changeCartItemNumber(-1, this)'>–</button>
-                    <input type='text' class='js-number' value='${productQuantity}' readonly>
-                    <button class='add' onclick='changeCartItemNumber(1, this)'>+</button>
-                </div>
-                <span class="remove-icon" onclick="removeItem(this)">🗑️</span>`;
-            document.getElementById('cart-items').appendChild(cartItem);
+            this.textContent = "В корзину";
+            this.classList.remove("clicked");
+            removeFromCart(this);
         }
-    }
-    function removeItem(icon) {
-        icon.closest('.cart-item').remove();
-    }
-    function removeFromCart(button) {
-    }
-    function toggleCart() {
-        const cart = document.getElementById('cart');
-        cart.style.display = cart.style.display === 'none' ? 'block' : 'none';
-    }
-    
-    function clearCart() {
-        document.getElementById('cart-items').innerHTML = '';
-    }
-    function changeCartItemNumber(step, button) {
-        const input = button.parentElement.querySelector('.js-number');
-        let value = parseInt(input.value);
-        value += step;
-        if (value < 1) {
-            value = 1;
-        }
-        input.value = value;
-    }
-        function openWindow() {
-            document.getElementById('quickViewWindow').style.display = 'flex';
-        }
-    
-        function closeWindow() {
-            document.getElementById('quickViewWindow').style.display = 'none';
-        }
-        window.onload = openWindow;
-    </script>
+    });
 
+
+    
+});
+
+function addToCart(button) {
+    const productTitle = button.closest('.swiper-slide').querySelector('.product-title').textContent;
+    const productPrice = button.closest('.swiper-slide').querySelector('.money span').textContent;
+    const productQuantity = button.closest('.swiper-slide').querySelector('.js-number').value;
+
+    const existingItem = Array.from(document.querySelectorAll('.cart-item'))
+        .find(item => item.querySelector('p').textContent.includes(productTitle));
+
+    if (existingItem) {
+        const quantityInput = existingItem.querySelector('.js-number');
+        quantityInput.value = parseInt(quantityInput.value) + parseInt(productQuantity);
+    } else {
+        const cartItem = document.createElement('div');
+        cartItem.classList.add('cart-item');
+        cartItem.innerHTML = `
+            <p>${productTitle} - ${productPrice}</p>
+            <button class='sub' style='margin-right:80px;' onclick='changeCartItemNumber(-1, this)'>–</button>
+            <input type='text' class='js-number' value='${productQuantity}' readonly>
+            <button class='ad' style='margin-right:30px;' onclick='changeCartItemNumber(1, this)'>+</button>
+        `;
+        document.getElementById('cart-items').appendChild(cartItem);
+    }
+}
+
+function removeFromCart(button) {
+ 
+}
+
+function toggleCart() {
+    const cart = document.getElementById('cart');
+    cart.style.display = cart.style.display === 'none' ? 'block' : 'none';
+}
+
+function deleteSelectedItems() {
+    const checkboxes = document.querySelectorAll('.item-checkbox:checked');
+    checkboxes.forEach(checkbox => {
+        checkbox.closest('.cart-item').remove();
+    });
+}
+
+function clearCart() {
+    document.getElementById('cart-items').innerHTML = '';
+}
+
+function changeCartItemNumber(step, button) {
+    const input = button.parentElement.querySelector('.js-number');
+    let value = parseInt(input.value);
+    value += step;
+
+    if (value < 1) {
+        value = 1;
+    }
+    input.value = value;
+}
+
+let currentIndex1 = 0;
+const cards = document.querySelectorAll('.product-card');
+
+function showCards(startIndex) {
+    const endIndex = startIndex + 5;
+    cards.forEach((card, i) => {
+        card.style.display = (i >= startIndex && i < endIndex) ? 'block' : 'none';
+    });
+}
+
+showCards(currentIndex1);
+
+document.getElementById('nextBtn').addEventListener('click', () => {
+    if (currentIndex1 + 5 >= cards.length) return;
+    currentIndex1 += 5;
+    showCards(currentIndex1);
+});
+
+document.getElementById('prevBtn').addEventListener('click', () => {
+    if (currentIndex1 === 0) return;
+    currentIndex1 -= 5;
+    showCards(currentIndex1);
+});
+    </script>
 
 
     <!-- <section></section>
