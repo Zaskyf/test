@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Сантехника</title>
+    <title>Ванны и комплектующие </title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="/css/style.css">
 
@@ -165,13 +165,20 @@
         
 
 <h6 style= "font-size:35px; font-weight:bold;margin-left:80px;
-margin-top:15px; margin-bottom:15px;">Сантехника</h6>
+margin-top:15px; margin-bottom:15px;">Ванны и комплектующие</h6>
 
 <!--КАРТОЧКИ ТОВАРОВ -->
 
 <div class="wrapper">
 
-<div class="container">  </div>
+<div class="container">  
+    <div class="sidebar">
+        <button > <a href = "/html/bath.html" style="text-decoration-line: none; color:white;">Ванны </a></button>
+        <button > <a href = "" style="text-decoration-line: none; color:white;">Ширмы для ванн</a></button>
+        <button ><a href = "" style="text-decoration-line: none; color:white;">Экраны под ванну</a></button>
+        <button ><a href = "" style="text-decoration-line: none; color:white;">Комплектующие для ванн</a></button>
+    </div></div>
+
 
 <!-- Navigation Buttons --><div class ="nexprev"><button id="prevBtn" class="pre-btn">Назад</button>
 <button id="nextBtn" class="nex-btn">Вперед</button></div> </div>
@@ -181,8 +188,8 @@ margin-top:15px; margin-bottom:15px;">Сантехника</h6>
 <script>
 const container = document.querySelector('.container');
 const cardsData = [
-    { id: 1, image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZbFuatFsRoi8VlC00xDh1tFkBD4gR7Ik1BA&s', 
-    title: 'Ванна акриловая Vincea VBT-405-1600, цвет белый, щелевой перелив', price: 799, delprice: 1000 ,  detailsUrl: 'productcard2.html'  },
+    { id: 1, image: 'https://cdn.lemanapro.ru/lmru/image/upload/f_auto/q_auto/dpr_1.0/c_pad/w_1000/h_1000/v1538984628/lmcode/OmjHYr5UhEC3AGkSG5GUpw/82045328.jpg', 
+    title: 'Набор бордюров для ванны ПВХ 15 мм 1.87 м 2 шт.', price: 899, delprice: 1000 ,  detailsUrl: 'productcard2.html'  },
     {
         id: 2,
         title: 'Ванна пристенная BelBagno BB711-1700-750, купить в интернет-магазине BelBagno.ru',
@@ -193,46 +200,6 @@ const cardsData = [
     },
     {
         id: 3,
-        title: 'Хромированный смеситель для раковины',
-        price: 790,
-        delprice: 1000,
-        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9a1GutKmiKQ_KbviB3nEWA2D75jf1QOIDjw&s',
-        detailsUrl: ''
-    },
-    {
-        id: 4,
-        title: 'Раковина для ванной комнаты Uperwood Classic 70 см, прямоугольная',
-        price: 1290,
-        delprice: 1800,
-        image: 'https://ae04.alicdn.com/kf/S57028dd5a1a445728813de9dbbf81dd8y.jpg',
-        detailsUrl: ''
-    },
-    {
-        id: 5,
-        title: 'Раковина для ванной Uperwood Family 80х45х17,9 см, белая глянцевая',
-        price: 1150,
-        delprice: 1600,
-        image: 'https://ir.ozone.ru/s3/multimedia-o/c1000/6539521836.jpg',
-        detailsUrl: ''
-    },
-    {
-        id: 6,
-        title: 'Установка раковины в ванной комнате своими руками - правила установки поэтапно',
-        price: 890,
-        delprice: 1300,
-        image: 'https://laparet.ru/upload/resize_cache/iblock/c9a/1250_740_240cd750bba9870f18aada2478b24840a/ustanovka_rakoviny_v_vannoj_svoimi_rukami_1_resize.jpg',
-        detailsUrl: ''
-    },
-    {
-        id: 7,
-        title: 'Мебель для ванной комнаты STWORKI Берген 100 серая со светлой столешницей',
-        price: 1490,
-        delprice: 2000,
-        image: 'https://www.msant.ru/upload/medialibrary/412/ysdby%20d%20dypipww%20q11m.jpg',
-        detailsUrl: ''
-    },
-    {
-        id: 8,
         title: 'Ванна пристенная BelBagno BB711-1700-750, купить в интернет-магазине BelBagno.ru',
         price: 990,
         delprice: 1400,
@@ -240,7 +207,7 @@ const cardsData = [
         detailsUrl: ''
     },
     {
-        id: 9,
+        id: 4,
         title: 'Акриловая ванна Easy 180х80 см 248618000 Roca купить в Москве со скидкой',
         price: 690,
         delprice: 900,
@@ -248,7 +215,7 @@ const cardsData = [
         detailsUrl: ''
     },
     {
-        id: 10,
+        id: 5,
         title: 'Ванна угловая Aquanet 150x150 см, купить в интернет-магазине Aquanet.ru',
         price: 1200,
         delprice: 1600,
@@ -256,7 +223,7 @@ const cardsData = [
         detailsUrl: ''
     },
     {
-        id: 11,
+        id: 6,
         title: 'Ванна прямоугольная Roca 170x70 см, купить в интернет-магазине Roca.ru',
         price: 850,
         delprice: 1100,
@@ -264,7 +231,7 @@ const cardsData = [
         detailsUrl: ''
     },
     {
-        id: 12,
+        id: 7,
         title: 'Ванна акриловая Villeroy & Boch 180x80 см, купить в интернет-магазине Villeroy.ru',
         price: 1450,
         delprice: 1900,
@@ -272,7 +239,7 @@ const cardsData = [
         detailsUrl: ''
     },
     {
-        id: 13,
+        id: 8,
         title: 'Ванна с гидромассажем Albatros 170x75 см, купить в интернет-магазине Albatros.ru',
         price: 2200,
         delprice: 2800,
@@ -280,7 +247,7 @@ const cardsData = [
         detailsUrl:''
     },
     {
-        id: 14,
+        id: 9,
         title:'Ванна акриловая Triton 160x70 см, купить в интернет-магазине Triton.ru',
         price: 780,
         delprice: 950,
@@ -288,15 +255,7 @@ const cardsData = [
         detailsUrl: ''
     },
     {
-        id: 15,
-        title: 'F3234 Смеситель для ванны, белый - латунь/хром - FRAP ',
-        price: 1300,
-        delprice: 1700,
-        image: 'https://gappo-frap.ru/images/watermarked/1/detailed/3/Frap_6ssm-er.jpg',
-        detailsUrl: ''
-    },
-    {
-        id: 16,
+        id: 10,
         title: 'Ванна акриловая Laguraty 180x80 см, купить в интернет-магазине Laguraty.ru',
         price: 950,
         delprice: 1250,
@@ -304,7 +263,7 @@ image:'https://laguraty.ru/upload/iblock/789/7890123456.jpg',
         detailsUrl: ''
     },
     {
-        id: 17,
+        id: 11,
         title: 'Ванна угловая Am.Pm 150x150 см, купить в интернет-магазине AmPm.ru',
         price: 1600,
         delprice: 2100,
@@ -312,7 +271,7 @@ image:'https://laguraty.ru/upload/iblock/789/7890123456.jpg',
         detailsUrl: ''
     },
     {
-        id: 18,
+        id: 12,
         title: 'Ванна акриловая ODEON стандарт 170x70 см, купить в интернет-магазине ODEON.ru',
         price: 700,
         delprice: 900,
@@ -320,15 +279,15 @@ image:'https://laguraty.ru/upload/iblock/789/7890123456.jpg',
         detailsUrl: ''
     },
     {
-        id: 19,
-        title: 'Ванна прямоугольная Kolo Nova Pro 170x75 см, купить в интернет-магазине Kolo.ru',
-        price: 1100,
-        delprice: 1400,
-        image: 'https://kolo.ru/upload/iblock/a12/a1234567890.jpg',
+        id: 13,
+        title: 'Герметик силиконовый Kudo Praktik санитарный уксусный белый 260 мл',
+        price: 307,
+        delprice: 500,
+        image: 'https://cdn.lemanapro.ru/lmru/image/upload/f_auto/q_auto/dpr_1.0/c_pad/w_1000/h_1000/v1660030612/lmcode/nEfvn3C6402K8drrTClDuA/84579986.png',
         detailsUrl: ''
     },
     {
-        id: 20,
+        id: 14,
         title: 'Ванна акриловая Sanplast A-1000-80, купить в интернет-магазине Sanplast.ru',
         price: 800,
         delprice: 1000,
@@ -336,7 +295,7 @@ image:'https://laguraty.ru/upload/iblock/789/7890123456.jpg',
          detailsUrl: ''
     },
     {
-         id: 21,
+         id: 15,
          title: 'Ванна с гидромассажем Gemy G-908, купить в интернет-магазине Gemy.ru',
          price: 2500,
          delprice: 3000,
@@ -344,7 +303,7 @@ image:'https://laguraty.ru/upload/iblock/789/7890123456.jpg',
          detailsUrl: ''
      },
      {
-         id: 22,
+         id: 16,
          title: 'Ванна акриловая Radaway LUXE, купить в интернет-магазине Radaway.ru',
          price: 950,
          delprice: 1200,
@@ -352,7 +311,7 @@ image:'https://laguraty.ru/upload/iblock/789/7890123456.jpg',
          detailsUrl: ''
      },
      {
-         id: 23,
+         id: 17,
          title: 'Ванна угловая Bas Модерн, купить в интернет-магазине Bas.ru',
          price: 1350,
          delprice: 1750,
@@ -360,7 +319,7 @@ image:'https://laguraty.ru/upload/iblock/789/7890123456.jpg',
          detailsUrl: ''
      },
     {
-        id: 24,
+        id: 18,
         title: 'Ванна угловая Bas Модерн, купить в интернет-магазине Bas.ru',
         price: 1050,
         delprice: 1350,
@@ -368,173 +327,23 @@ image:'https://laguraty.ru/upload/iblock/789/7890123456.jpg',
         detailsUrl: ''
     },
     {
-        id: 25,
-        title: 'Обои 25',
+        id: 19,
+        title: 'Акриловая ванна Relisan Polina 120x120 с каркасом',
         price: 950,
         delprice: 1250,
-        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/25.webp',
+        image: 'https://www.cleangoods.ru/upload/iblock/12d/jx0i48lolnyaxc7xcq35tj6q92linlxw.jpg',
         detailsUrl: ''
     },
     {
-        id: 26,
-        title: 'Обои 26',
-        price: 1200,
-        delprice: 1600,
-        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/26.webp',
-        detailsUrl: ''
-    },
-    {
-        id: 27,
-        title: 'Обои 27',
-        price: 930,
-        delprice: 1280,
-        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/27.webp',
-        detailsUrl: ''
-    },
-    {
-        id: 28,
-        title: 'Обои 28',
-        price: 1095,
-        delprice: 1450,
-        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/28.webp',
-        detailsUrl: ''
-    },
-    {
-        id: 29,
-        title: 'Обои 29',
-        price: 1155,
-        delprice: 1500,
-        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/29.webp',
-        detailsUrl: ''
-    },
-    {
-        id: 30,
-        title: 'Обои 30',
-        price: 790,
-        delprice: 1000,
-        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/30.webp',
-        detailsUrl: ''
-    },
-     {
-        id: 31,
-        title: 'Обои 31',
-        price: 900,
-        delprice: 1200,
-        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/31.webp',
-        detailsUrl: ''
-    },
-    {
-        id: 32,
-        title: 'Обои 32',
-        price: 1150,
-        delprice: 1550,
-        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/32.webp',
-        detailsUrl: ''
-    },
-    {
-        id: 33,
-        title: 'Обои 33',
-        price: 850,
-        delprice: 1100,
-        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/33.webp',
-        detailsUrl: ''
-    },
-    {
-        id: 34,
-        title: 'Обои 34',
-        price: 1199,
-        delprice: 1550,
-        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/34.webp',
-        detailsUrl: ''
-    },
-    {
-        id: 35,
-        title: 'Обои 35',
-        price: 1020,
-        delprice: 1350,
-        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/35.webp',
-        detailsUrl: ''
-    },
-    {
-        id: 36,
-        title: 'Обои 36',
+        id: 20,
+        title: 'Акриловая ванна Creto Modalia 170х75 9-17075 без гидромассажа',
         price: 950,
         delprice: 1250,
-        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/36.webp',
+        image: '  https://santehnika-tut.ru/img/catphotos/3/2/1/4/8/0/321480_1527275_bg.jpg',
         detailsUrl: ''
     },
-    {
-        id: 37,
-        title: 'Обои 37',
-        price: 770,
-        delprice: 950,
-        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/37.webp',
-        detailsUrl: ''
-    },
-    {
-        id: 38,
-        title: 'Обои 38',
-        price: 1340,
-        delprice: 1750,
-        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/38.webp',
-        detailsUrl: ''
-    },
-    {
-        id: 39,
-        title: 'Обои 39',
-        price: 1180,
-        delprice: 1490,
-        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/39.webp',
-        detailsUrl: ''
-    },
-    {
-        id: 40,
-        title: 'Обои 40',
-        price: 890,
-        delprice: 1200,
-        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/40.webp',
-        detailsUrl: ''
-    },
-    {
-        id: 41,
-        title: 'Обои 41',
-        price: 1290,
-        delprice: 1700,
-        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/41.webp',
-        detailsUrl: ''
-    },
-    {
-        id: 42,
-        title: 'Обои 42',
-        price: 950,
-        delprice: 1250,
-        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/42.webp',
-        detailsUrl: ''
-    },
-    {
-        id: 43,
-        title: 'Обои 43',
-        price: 1150,
-        delprice: 1450,
-        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/43.webp',
-        detailsUrl: ''
-    },
-    {
-        id: 44,
-        title: 'Обои 44',
-        price: 980,
-        delprice: 1280,
-        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/44.webp',
-        detailsUrl: ''
-    },
-    {
-        id: 45,
-        title: 'Обои 45',
-        price: 1130,
-        delprice: 1500,
-        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/45.webp',
-        detailsUrl: ''
-    }
+  
+    
     ];cardsData.forEach((cardData) => {
 const card = document.createElement('div');
     card.classList.add('product-card');
@@ -831,10 +640,10 @@ function changeCartItemNumber(step, button) {
         <hr>
         <div class="containr"><div class="subscribe"></div><div class="footer_navigation">
             <div class="footer_menu">
-        <div class="item"><div class="caption">О компании</div>
+        <div class="item"><div class="caption">Покупателям</div>
         <ul class="menu_list">
-            <a href="/about/about-the-company/">ТК Арктика</a>
-            <a href="/about/arktika-servis/">Арктика-Сервис</a>
+            <a href="/html/category.html">Каталог</a>
+            <a href="/about/arktika-servis/">Расрочка/Кредиты</a>
             <a href="/about/bonus-program/">Бонусная программа</a>
             <a href="/about/podarochnye-karty/">Подарочные карты</a>
         </ul></div>
@@ -843,8 +652,9 @@ function changeCartItemNumber(step, button) {
         <ul class="menu_list">
             <a href="/information/oplata/">Как оплатить</a>
             <a href="/information/feedback/">Обратная связь</a>
+            <a href="/information/jobs/">Гарантия качества </a>
            <a href="/information/contacts/">Контакты</a>
-            <a href="/information/jobs/">Вакансии</a>
+            
         
         </ul></div>   
 
@@ -853,12 +663,13 @@ function changeCartItemNumber(step, button) {
             </ul>
         </div>
         </div>
-             <div class="contact_info"><div class="phone"><a href="tel:+7 (8672) 55-08-70">+7 (8672) 55-08-70</a> (с 10:00 до 20:00) </div>
-            <div class="address">Адрес магазина:<br>г. Владикавказ, пр-т Коста, 15,<br> лит. Г,Б, пом. 5,6  </div> 
-            <div class="copyright">© 1996—2024, ТК «Арктика»  </div>
+             <div class="contact_info"><div class="phone"><a href="tel:8 (918) 827-20-12">8 (918) 827-20-12</a> (с 09:30 до 19:00) </div>
+            <div class="address">Адрес магазина:<br>ул. Астана Кесаева, 33"а, Владикавказ <br> Респ. Северная Осетия — Алания</div> 
+            <div class="copyright">© 1996—2024, ТК «Декор центр»  </div>
         </div></div></div>
        
     </footer>
+
 </body></html>
 
 <script>
