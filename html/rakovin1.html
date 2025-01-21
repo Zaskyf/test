@@ -164,9 +164,12 @@
 </div>
 <!--КОНЕЦ РЕГИСТРАЦИИ-->
         
+<nav class="breadcrumb">
+    <a href="/html/index.html"  >Главная</a>  &gt; <a href= "/html/category.html" >Каталог</a>  &gt; <a href= "  /html/categorysantexnica.html" >Сантехника</a> &gt; <a href= "/html/three.html " >Ванны и коплектующие </a> 
+</nav>
 
 <h6 style= "font-size:35px; font-weight:bold;margin-left:80px;
-margin-top:15px; margin-bottom:15px;">Сантехника</h6>
+margin-top:15px; margin-bottom:15px;">Встраиваемые (врезные) раковины</h6>
 
 <!--КАРТОЧКИ ТОВАРОВ -->
 
@@ -174,10 +177,10 @@ margin-top:15px; margin-bottom:15px;">Сантехника</h6>
 
 <div class="container">  
     <div class="sidebar">
-        <button onclick="showSection('prodct-info')" style=" width:200px; font-size:19px;"> <a href = "" style="text-decoration-line: none; color:white; ">Встраиваемые (врезные) раковины</a></button>
-        <button onclick="showSection('characteristics')"> <a href = "" style="text-decoration-line: none; color:white; ">Накладные раковины</a></button>
-        <button onclick="showSection('reviews')"><a href = "" style="text-decoration-line: none; color:white;">Настенные раковины</a></button>
-        <button onclick="showSection('details')"><a href = "" style="text-decoration-line: none; color:white;">Угловые раковины</a></button>
+        <button style=" background-color: #315886;" > <a href = "/html/rakovin1.html" style="text-decoration-line: none; color:white; font-size: 25px;">Встраиваемые (врезные) раковины</a></button>
+        <button > <a href = "" style="text-decoration-line: none; color:white;">Накладные раковины</a></button>
+        <button ><a href = "" style="text-decoration-line: none; color:white;">Настенные раковины</a></button>
+        <button ><a href = "" style="text-decoration-line: none; color:white;">Угловые раковины</a></button>
     </div></div>
 
 <!-- Navigation Buttons --><div class ="nexprev"><button id="prevBtn" class="pre-btn">Назад</button>
@@ -188,14 +191,14 @@ margin-top:15px; margin-bottom:15px;">Сантехника</h6>
 <script>
 const container = document.querySelector('.container');
 const cardsData = [
-    { id: 1, image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZbFuatFsRoi8VlC00xDh1tFkBD4gR7Ik1BA&s', 
-    title: 'Ванна акриловая Vincea VBT-405-1600, цвет белый, щелевой перелив', price: 799, delprice: 1000 ,  detailsUrl: '/test/html/productcard2.html'  },
+    { id: 1, image: 'https://ir.ozone.ru/s3/multimedia-o/c1000/6539521836.jpg', 
+    title: 'Раковина для ванной Uperwood Family 80х45х17,9 см, белая глянцевая', price: 799, delprice: 1000 ,  detailsUrl: '/test/html/productcard2.html'  },
     {
         id: 2,
-        title: 'Ванна пристенная BelBagno BB711-1700-750, купить в интернет-магазине BelBagno.ru',
+        title: 'Раковина для ванной Uperwood Family 80х45х17,9 см, белая глянцевая',
         price: 990,
         delprice: 1500,
-        image: 'https://belbagno.ru/upload/iblock/e46/e460ace5053cca596b9ef71b25f5f431.jpg',
+        image: 'https://ae04.alicdn.com/kf/S57028dd5a1a445728813de9dbbf81dd8y.jpg',
         detailsUrl: '/test/html/productcard2.html'
     },
     {
@@ -203,7 +206,7 @@ const cardsData = [
         title: 'Хромированный смеситель для раковины',
         price: 790,
         delprice: 1000,
-        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9a1GutKmiKQ_KbviB3nEWA2D75jf1QOIDjw&s',
+        image: 'https://ae04.alicdn.com/kf/S57028dd5a1a445728813de9dbbf81dd8y.jpg',
         detailsUrl: ''
     },
     {
@@ -827,45 +830,40 @@ function changeCartItemNumber(step, button) {
 </script>
 
 
-    <!-- <section></section>
-    <main></main>
-    <article></article>
-    <textarea name="" id=""></textarea>
-    <code></code>
+<footer>
     <hr>
-    <iframe></iframe> -->
-    <footer>
-        <hr>
-        <div class="containr"><div class="subscribe"></div><div class="footer_navigation">
-            <div class="footer_menu">
-        <div class="item"><div class="caption">О компании</div>
-        <ul class="menu_list">
-            <a href="/about/about-the-company/">ТК Арктика</a>
-            <a href="/about/arktika-servis/">Арктика-Сервис</a>
-            <a href="/about/bonus-program/">Бонусная программа</a>
-            <a href="/about/podarochnye-karty/">Подарочные карты</a>
-        </ul></div>
-        <div class="item"> 
-            <div class="caption">Информация</div>
-        <ul class="menu_list">
-            <a href="/information/oplata/">Как оплатить</a>
-            <a href="/information/feedback/">Обратная связь</a>
-           <a href="/information/contacts/">Контакты</a>
-            <a href="/information/jobs/">Вакансии</a>
+    <div class="containr"><div class="subscribe"></div><div class="footer_navigation">
+        <div class="footer_menu">
+    <div class="item"><div class="caption">Покупателям</div>
+    <ul class="menu_list">
+        <a href="/html/category.html">Каталог</a>
+        <a href="/about/arktika-servis/">Расрочка/Кредиты</a>
+        <a href="/about/bonus-program/">Бонусная программа</a>
+        <a href="/about/podarochnye-karty/">Подарочные карты</a>
+    </ul></div>
+    <div class="item"> 
+        <div class="caption">Информация</div>
+    <ul class="menu_list">
+        <a href="/information/oplata/">Как оплатить</a>
+        <a href="/information/feedback/">Обратная связь</a>
+        <a href="/information/jobs/">Гарантия качества </a>
+       <a href="/information/contacts/">Контакты</a>
         
-        </ul></div>   
+    
+    </ul></div>   
 
-             <div class="item"><div class="caption">Наши услуги</div>
-            <ul class="menu_list"><a href="/our-services/free-shipping/">Бесплатная доставка</a>
-            </ul>
-        </div>
-        </div>
-             <div class="contact_info"><div class="phone"><a href="tel:+7 (8672) 55-08-70">+7 (8672) 55-08-70</a> (с 10:00 до 20:00) </div>
-            <div class="address">Адрес магазина:<br>г. Владикавказ, пр-т Коста, 15,<br> лит. Г,Б, пом. 5,6  </div> 
-            <div class="copyright">© 1996—2024, ТК «Арктика»  </div>
-        </div></div></div>
-       
-    </footer>
+         <div class="item"><div class="caption">Наши услуги</div>
+        <ul class="menu_list"><a href="/our-services/free-shipping/">Бесплатная доставка</a>
+        </ul>
+    </div>
+    </div>
+         <div class="contact_info"><div class="phone"><a href="tel:8 (918) 827-20-12">8 (918) 827-20-12</a> (с 09:30 до 19:00) </div>
+        <div class="address">Адрес магазина:<br>ул. Астана Кесаева, 33"а, Владикавказ <br> Респ. Северная Осетия — Алания</div> 
+        <div class="copyright">© 1996—2024, ТК «Декор центр»  </div>
+    </div></div></div>
+   
+</footer>
+
 </body></html>
 
 <script>
