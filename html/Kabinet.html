@@ -155,18 +155,37 @@
 </nav>
  
     <main>
-        <section id="user" class="content-section-user">
-            <h2>Пользователь</h2>
-            <div class="User-profil">
-                <div class="profile-icon">
-                    <img id="output" src="default-avatar.png" />
+      
+            
+            <section id="user" class="content-section-user">
+                <h2>Пользователь</h2>
+                <div class="User-profil">
+                    <div class="profile-icon">
+                        <img id="output" src="default-avatar.png" alt="Аватар" />
+                    </div>
+                    <input type="file" id="fileInput" class="full-width-button" accept="image/*" onchange="loadFile(event)" />
+                    <li class="discount-item">
+                        Скидка
+                        <p style="font-size: 17px; font-weight: bold; color: black;">До 30%</p>
+                    </li>
+            
+                    <!-- Поля для ввода данных пользователя -->
+                    <div class="user-data">
+                        <label class = "lname" for="firstName">Имя:</label>
+                        <input  type="text" id="firstName" placeholder="Введите ваше имя">
+            
+                        <label class = "lfname" for="lastName">Фамилия:</label>
+                        <input type="text" id="lastName" placeholder="Введите вашу фамилию">
+            
+                        <label  class = "laddress"for="address">Адрес:</label>
+                        <input type="text" id="address" placeholder="Введите ваш адрес">
+            
+                        <label class = "lemail" for="email">Email:</label>
+                        <input type="email" id="email" placeholder="Введите ваш email">
+                    </div>
+            
+                    <button class="lsaveButton" id="saveButton">Сохранить данные</button>
                 </div>
-                <input type="file" id="fileInput" class="full-width-button" accept="image/*" onchange="loadFile(event)" />
-                <li class="discount-item">
-                    Скидка
-                    <p style="font-size: 17px; font-weight: bold; color: black;">До 30%</p>
-                </li>
-            </div>
         </section>
 <section id="support" class="content-section-oplata">
     <div class="finans">
@@ -224,14 +243,22 @@
            <div class="contact_info"><div class="phone"><a href="tel:8 (918) 827-20-12">8 (918) 827-20-12</a> (с 09:30 до 19:00) </div>
           <div class="address">Адрес магазина:<br>ул. Астана Кесаева, 33"а, Владикавказ <br> Респ. Северная Осетия — Алания</div> 
           <div class="copyright">© 1996—2024, ТК «Декор центр»  </div>
-      </div></div></div>
+      </div></div></div></footer>
 </body>
 </html>
 
 <script>
 
 
+document.getElementById('saveButton').addEventListener('click', function() {
+    const firstName = document.getElementById('firstName').value;
+    const lastName = document.getElementById('lastName').value;
+    const address = document.getElementById('address').value;
+    const email = document.getElementById('email').value;
 
+    // Здесь вы можете добавить логику для сохранения данных пользователя в базу данных
+    alert(`Данные сохранены:\nИмя: ${firstName}\nФамилия: ${lastName}\nАдрес: ${address}\nEmail: ${email}`);
+});
 
 function loadFile(event) {
     const image = document.getElementById('output');
@@ -438,14 +465,6 @@ function loadFile(event) {
     output.src = URL.createObjectURL(event.target.files[0]);
 }
 
-
-
-
-    
-    
-            
+  
         </script>
         
-
-
-
