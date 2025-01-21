@@ -24,7 +24,11 @@ class User(AbstractUser):
 
 
 class Category(models.Model):
-    name = models.CharField(verbose_name='Название', max_length=150, unique=True)
+
+    name = models.CharField(max_length=250, verbose_name='Категория', unique=True)
+    description = models.TextField(verbose_name='Описание', blank=True, null=True)
+    main_category = models.BooleanField(default=False, verbose_name='Основная категория')
+    nested_categories = SortedManyToManyField('Category', blank=True, verbose_name='Дочерние категории')
 
     class Meta:
         verbose_name = 'Категория'
@@ -50,6 +54,7 @@ class Good(models.Model):
     discount = models.DecimalField(verbose_name='Скидка', max_digits=5, decimal_places=2,
                                    blank=True, null=True, default=0)
     price = models.PositiveIntegerField(verbose_name='Цена', blank=True, null=True)
+    description = models.TextField(verbose_name='Описание', blank=True, null=True)
 
     class Meta:
         verbose_name = 'Продукт'
@@ -61,6 +66,9 @@ class Good(models.Model):
     def save(self, *args, **kwargs):
         self.price = int(self.start_price - (self.start_price * (self.discount / 100)))
         super(Good, self).save(*args, **kwargs)
+
+    def get_first_img(self):
+        return self.images.all().first()
 
 
 class Review(models.Model):
@@ -133,3 +141,11 @@ class Order(models.Model):
 
     def __str__(self):
         return str(self.pk)
+
+
+class AboutUS(models.Model):
+    content = models.TextField(verbose_name="Контент", blank=True, null=True)
+
+    class Meta:
+        verbose_name = 'О компании'
+        verbose_name_plural = 'О компании'
