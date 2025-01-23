@@ -210,8 +210,6 @@
         </section>
         
         <script>
-
-        
         let currentIndex = 0;
         const items = document.querySelectorAll('.itm');
         const totalItems = items.length;
@@ -239,31 +237,9 @@
 const products = [
     { image: "https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/2.webp", title: "Обои 2", price: 999, oldPrice: 1900 },
         { image: "https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/1.webp", title: "Обои 1", price: 1099, oldPrice: 2000 },
-    { image: "https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/2.webp", title: "Обои 2", price: 999, oldPrice: 1900 },
-        { image: "https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/1.webp", title: "Обои 1", price: 1099, oldPrice: 2000 },
-    { image: "https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/2.webp", title: "Обои 2", price: 999, oldPrice: 1900 },
-        { image: "https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/1.webp", title: "Обои 1", price: 1099, oldPrice: 2000 },
-    { image: "https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/2.webp", title: "Обои 2", price: 999, oldPrice: 1900 },
-        { image: "https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/1.webp", title: "Обои 1", price: 1099, oldPrice: 2000 },
-    { image: "https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/2.webp", title: "Обои 2", price: 999, oldPrice: 1900 },
-        { image: "https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/1.webp", title: "Обои 1", price: 1099, oldPrice: 2000 },
-    { image: "https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/2.webp", title: "Обои 2", price: 999, oldPrice: 1900 },
-        { image: "https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/1.webp", title: "Обои 1", price: 1099, oldPrice: 2000 },
-    { image: "https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/2.webp", title: "Обои 2", price: 999, oldPrice: 1900 },
-        { image: "https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/1.webp", title: "Обои 1", price: 1099, oldPrice: 2000 },
-    { image: "https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/2.webp", title: "Обои 2", price: 999, oldPrice: 1900 },
-        { image: "https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/1.webp", title: "Обои 1", price: 1099, oldPrice: 2000 },
-    { image: "https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/2.webp", title: "Обои 2", price: 999, oldPrice: 1900 },
-        { image: "https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/1.webp", title: "Обои 1", price: 1099, oldPrice: 2000 },
-    { image: "https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/2.webp", title: "Обои 2", price: 999, oldPrice: 1900 },
-        { image: "https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/1.webp", title: "Обои 1", price: 1099, oldPrice: 2000 },
-    { image: "https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/2.webp", title: "Обои 2", price: 999, oldPrice: 1900 },
-    
+
 ];
-
-
 const swiperWrapper = document.getElementById('swiper-wrapper');
-
 function createSwiperSlide(product, index) {
     const slide = document.createElement('div');
     slide.className = 'swiper-slide';
@@ -309,7 +285,7 @@ function createSwiperSlide(product, index) {
         <button class='add' onclick='changeNumber(1, "number${index + 1}")'>+</button>
       
     `;
-   // <a href='productcard.html?id=${product.id}' class='more-details'>Подробнее</a>  New Button  
+
 
     figcaption.appendChild(priceContainer);
     figcaption.appendChild(buttons);
@@ -339,7 +315,7 @@ products.forEach((product, index) => {
 
     
 });
-
+   // <a href='productcard.html?id=${product.id}' class='more-details'>Подробнее</a>  New Button  
 const swiper = new Swiper(".swiper", {
     navigation: {
         nextEl: ".swiper-button-next",
