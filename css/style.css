@@ -2439,6 +2439,15 @@ height: 230px !important;
 /* КОНЕЦ  ИКОНКИ на странице категории*/
 
 
+
+
+
+
+
+
+
+
+
 /* НАЧАЛО СТРАНИЦЫ ЛИЧНОЙ КАБИНЕТ  */
 
 .user-data {
@@ -2458,15 +2467,7 @@ label {
   color: #333; /* Цвет текста меток */
 }
 
-input[type="text"],
-input[type="email"] {
-  width: 100%; /* Ширина инпутов */
-  padding: 8px; /* Внутренние отступы для инпутов */
-  margin-bottom: 15px; /* Отступ между инпутами */
-  border: 1px solid #ccc; /* Поле для инпутов */
-  border-radius: 4px; /* Скругление углов у инпутов */
-  font-size: 14px; /* Размер шрифта */
-}
+
 
 .lsaveButton {
   background-color: #28a745; /* Цвет кнопки */
