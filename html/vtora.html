@@ -189,8 +189,6 @@ margin-top:20px; margin-bottom:15px;">Обои</h6>
 </div>
 
 <script>
-
-// Function to filter products based on the selected price range
 function filterProducts() {
     const selectedPrice = document.getElementById('price').value;
     let filteredData = cardsData;
@@ -202,18 +200,13 @@ function filterProducts() {
     } else if (selectedPrice === 'high') {
         filteredData = cardsData.filter(card => card.price >= 1500);
     }
-
     renderCards(filteredData);
 }
-
-// Function to reset all filters
 function resetFilters() {
     document.getElementById('price').selectedIndex = 0;
     renderCards(cardsData);
 }
 
-// Initial rendering of all cards
-renderCards(cardsData);
 
 const container = document.querySelector('.container');
 const cardsData = [
