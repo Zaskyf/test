@@ -179,27 +179,9 @@ margin-top:20px; margin-bottom:15px;">Обои</h6>
         <label for="price">Цена:</label>
         <select id="price">
             <option value="">Выберите цену</option>
-            <option value="low">Низкая</option>
-            <option value="medium">Средняя</option>
-            <option value="high">Высокая</option>
-        </select>
-    </div>
-    <div class="filter">
-        <label for="material">Материал:</label>
-        <select id="material">
-            <option value="">Выберите материал</option>
-            <option value="wood">Дерево</option>
-            <option value="metal">Металл</option>
-            <option value="plastic">Пластик</option>
-        </select> 
-    </div>
-    <div class="filter">
-        <label for="color">Цвет:</label>
-        <select id="color">
-            <option value="">Выберите цвет</option>
-            <option value="red">Красный</option>
-            <option value="green">Зеленый</option>
-            <option value="blue">Синий</option>
+            <option value="low"> от 600</option>
+            <option value="medium">от 1000</option>
+            <option value="high">1500</option>
         </select>
     </div>
     <button id="apply-filters" onclick="filterProducts()">Применить фильтры</button>
@@ -207,47 +189,19 @@ margin-top:20px; margin-bottom:15px;">Обои</h6>
 </div>
 
 <script>
-// Функция для определения категории цены
-function getPriceCategory(price) {
-    if (price < 799) return 'low';
-    if (price < 1200) return 'medium';
-    return 'high';
-}
+  
 
-// Функция для фильтрации товаров
-function filterProducts() {
-    const priceFilter = document.getElementById('price').value;
-    const materialFilter = document.getElementById('material').value;
-    const colorFilter = document.getElementById('color').value;
+        // Функция для сброса фильтров
+        function resetFilters() {
+            document.getElementById('price').value = '';
+            document.getElementById('material').value = '';
+            document.getElementById('color').value = '';
 
-    const products = document.querySelectorAll('.product-card');
-
-    products.forEach(product => {
-        const matchesPrice = priceFilter === '' || product.getAttribute('data-price') === priceFilter;
-        const matchesMaterial = materialFilter === '' || product.getAttribute('data-material') === materialFilter;
-        const matchesColor = colorFilter === '' || product.getAttribute('data-color') === colorFilter;
-
-        if (matchesPrice && matchesMaterial && matchesColor) {
-            product.style.display = 'block'; // Показываем товар
-        } else {
-            product.style.display = 'none'; // Скрываем товар
+            const products = document.querySelectorAll('.product-card');
+            products.forEach(product => {
+                product.style.display = 'block';
+            });
         }
-    });
-}
-// Функция для сброса фильтров
-function resetFilters() {
-    // Сбрасываем значения выпадающих списков
-    document.getElementById('price').value = '';
-    document.getElementById('material').value = '';
-    document.getElementById('color').value = '';
-
-    // Показываем все карточки товаров
-    const products = document.querySelectorAll('.product-card');
-    products.forEach(product => {
-        product.style.display = 'block';
-    });
-}
-
 const container = document.querySelector('.container');
 const cardsData = [
 { id: 1, image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/4.webp', title: 'Обои под покраску флизелиновые антивандальные Kreaforta Батист белые 1.06x25м 113г/м²', price: 799, delprice: 1000 , detailsUrl: 'productcard.html'  },
