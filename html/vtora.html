@@ -189,6 +189,32 @@ margin-top:20px; margin-bottom:15px;">Обои</h6>
 </div>
 
 <script>
+
+// Function to filter products based on the selected price range
+function filterProducts() {
+    const selectedPrice = document.getElementById('price').value;
+    let filteredData = cardsData;
+
+    if (selectedPrice === 'low') {
+        filteredData = cardsData.filter(card => card.price >= 600);
+    } else if (selectedPrice === 'medium') {
+        filteredData = cardsData.filter(card => card.price >= 1000 && card.price < 1500);
+    } else if (selectedPrice === 'high') {
+        filteredData = cardsData.filter(card => card.price >= 1500);
+    }
+
+    renderCards(filteredData);
+}
+
+// Function to reset all filters
+function resetFilters() {
+    document.getElementById('price').selectedIndex = 0;
+    renderCards(cardsData);
+}
+
+// Initial rendering of all cards
+renderCards(cardsData);
+
 const container = document.querySelector('.container');
 const cardsData = [
 { id: 1, image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/4.webp', title: 'Обои под покраску флизелиновые антивандальные Kreaforta Батист белые 1.06x25м 113г/м²', price: 799, delprice: 1000 , detailsUrl: 'productcard.html'  },
