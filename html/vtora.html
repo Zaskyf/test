@@ -187,37 +187,13 @@ margin-top:20px; margin-bottom:15px;">Обои</h6>
     <button id="apply-filters" onclick="filterProducts()">Применить фильтры</button>
     <button id="reset-filters" onclick="resetFilters()">Снять фильтры</button>
 </div>
-
 <script>
-
-// Функция фильтрации карточек
-function filterProducts() {
-    const priceFilter = document.getElementById('price').value;
-    let filteredCards = cardsData;
-    
-    if (priceFilter === 'low') {
-        filteredCards = cardsData.filter(card => card.price >= 600);
-    } else if (priceFilter === 'medium') {
-        filteredCards = cardsData.filter(card => card.price >= 1000);
-    } else if (priceFilter === 'high') {
-        filteredCards = cardsData.filter(card => card.price >= 1500);
-    }
-    
-    displayCards(filteredCards);
-}
-
-// Функция сброса фильтров
-function resetFilters() {
-    document.getElementById('price').selectedIndex = 0;
-    displayCards(cardsData);
-}
 const container = document.querySelector('.container');
 const cardsData = [
 { id: 1, image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/4.webp', title: 'Обои под покраску флизелиновые антивандальные Kreaforta Батист белые 1.06x25м 113г/м²', price: 799, delprice: 1000, detailsUrl: 'productcard.html' }, 
-    { id: 2, title: 'Обои бумажные серые 0.53 м', price: 990, delprice: 1500, image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/2.webp', detailsUrl: 'productcard.html' }, 
-    { id: 3, title: 'Обои флизелиновые Ateliero Kora бежевые 1.06 м AT1016-02ОАВ', price: 790, delprice: 1000, image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/3.webp', detailsUrl: '' }, 
-    { id: 4, title: 'Обои 4', price: 1290, delprice: 1800, image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/4.webp', detailsUrl: '' }
-
+{ id: 2, title: 'Обои бумажные серые 0.53 м', price: 990, delprice: 1500, image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/2.webp', detailsUrl: 'productcard.html' }, 
+{ id: 3, title: 'Обои флизелиновые Ateliero Kora бежевые 1.06 м AT1016-02ОАВ', price: 790, delprice: 1000, image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/3.webp', detailsUrl: '' }, 
+{ id: 4, title: 'Обои 4', price: 1290, delprice: 1800, image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/4.webp', detailsUrl: '' }
 ];cardsData.forEach((cardData) => {
 const card = document.createElement('div');
     card.classList.add('product-card');
@@ -284,13 +260,11 @@ const card = document.createElement('div');
     detailsButton.classList.add('details-button');
     detailsDiv.appendChild(detailsButton);
     card.appendChild(detailsDiv);
-
 // "Быстрый просмотр"
 const quickViewButton = document.createElement('button'); 
 quickViewButton.classList.add('quick-view-button'); //класс для стилей
 quickViewButton.textContent = 'Быстрый просмотр'; // контент
 figure.appendChild(quickViewButton); 
-
 // Показываем кнопку при наведении курсора  на карточку товара и скрываем при уходе курсора
 card.addEventListener('mouseenter', () => { 
     quickViewButton.style.display = 'block'; 
@@ -298,16 +272,13 @@ card.addEventListener('mouseenter', () => {
 card.addEventListener('mouseleave', () => { 
     quickViewButton.style.display = 'none'; 
 });
-
 // Создаем окно  быстрый просмотр 
 const quickViewWindow = document.createElement('div'); 
 quickViewWindow.classList.add('quick-view-window'); 
 quickViewWindow.style.display = 'none'; // Окно скрыто по умолчанию
-
 // Создаем контейнер для содержимого окна
 const windowContent = document.createElement('div'); 
 windowContent.classList.add('window-content'); 
-
 // Создаем крестик
 const closeButton = document.createElement('button'); 
 closeButton.classList.add('close-button'); 
@@ -315,12 +286,10 @@ closeButton.textContent = 'X';
 closeButton.onclick = function() { 
     quickViewWindow.style.display = 'none'; // Скрываем окно при нажатии на кнопку закрытия
 };
-
 // При нажатии на кнопку "Быстрый просмотр" показываем окно
 quickViewButton.onclick = function() { 
     quickViewWindow.style.display = 'flex'; //Показываем окно с помощью flex 
 };
-
 //Элемент для описания товара
 const description = document.createElement('div'); 
 // Вставляем HTML
