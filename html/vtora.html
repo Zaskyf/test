@@ -173,12 +173,11 @@ margin-top:20px; margin-bottom:15px;">Обои</h6>
 
 <!-- Navigation Buttons --><div class ="nexprev"><button id="prevBtn" class="pre-btn">Назад</button>
 <button id="nextBtn" class="nex-btn">Вперед</button></div> </div>
-
 <div class="filter-container">
     <h1>Фильтр товаров</h1>
     <div class="filter">
         <label for="price">Цена:</label>
-        <select id="price" onchange="filterProducts()">
+        <select id="price">
             <option value="">Выберите цену</option>
             <option value="low">Низкая</option>
             <option value="medium">Средняя</option>
@@ -187,7 +186,7 @@ margin-top:20px; margin-bottom:15px;">Обои</h6>
     </div>
     <div class="filter">
         <label for="material">Материал:</label>
-        <select id="material" onchange="filterProducts()">
+        <select id="material">
             <option value="">Выберите материал</option>
             <option value="wood">Дерево</option>
             <option value="metal">Металл</option>
@@ -196,23 +195,25 @@ margin-top:20px; margin-bottom:15px;">Обои</h6>
     </div>
     <div class="filter">
         <label for="color">Цвет:</label>
-        <select id="color" onchange="filterProducts()">
+        <select id="color">
             <option value="">Выберите цвет</option>
             <option value="red">Красный</option>
             <option value="green">Зеленый</option>
             <option value="blue">Синий</option>
         </select>
     </div>
+    <button id="apply-filters" onclick="filterProducts()">Применить фильтры</button>
+    <button id="reset-filters" onclick="resetFilters()">Снять фильтры</button>
 </div>
 
 <script>
-
 // Функция для определения категории цены
 function getPriceCategory(price) {
-    if (price < 800) return 'low';
+    if (price < 799) return 'low';
     if (price < 1200) return 'medium';
     return 'high';
 }
+
 // Функция для фильтрации товаров
 function filterProducts() {
     const priceFilter = document.getElementById('price').value;
@@ -231,6 +232,19 @@ function filterProducts() {
         } else {
             product.style.display = 'none'; // Скрываем товар
         }
+    });
+}
+// Функция для сброса фильтров
+function resetFilters() {
+    // Сбрасываем значения выпадающих списков
+    document.getElementById('price').value = '';
+    document.getElementById('material').value = '';
+    document.getElementById('color').value = '';
+
+    // Показываем все карточки товаров
+    const products = document.querySelectorAll('.product-card');
+    products.forEach(product => {
+        product.style.display = 'block';
     });
 }
 
