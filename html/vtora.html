@@ -189,52 +189,34 @@ margin-top:20px; margin-bottom:15px;">Обои</h6>
 </div>
 
 <script>
-function filterProducts() {
-    const selectedPrice = document.getElementById('price').value;
-    let filteredData = cardsData;
 
-    if (selectedPrice === 'low') {
-        filteredData = cardsData.filter(card => card.price >= 600);
-    } else if (selectedPrice === 'medium') {
-        filteredData = cardsData.filter(card => card.price >= 1000 && card.price < 1500);
-    } else if (selectedPrice === 'high') {
-        filteredData = cardsData.filter(card => card.price >= 1500);
+// Функция фильтрации карточек
+function filterProducts() {
+    const priceFilter = document.getElementById('price').value;
+    let filteredCards = cardsData;
+    
+    if (priceFilter === 'low') {
+        filteredCards = cardsData.filter(card => card.price >= 600);
+    } else if (priceFilter === 'medium') {
+        filteredCards = cardsData.filter(card => card.price >= 1000);
+    } else if (priceFilter === 'high') {
+        filteredCards = cardsData.filter(card => card.price >= 1500);
     }
-    renderCards(filteredData);
+    
+    displayCards(filteredCards);
 }
+
+// Функция сброса фильтров
 function resetFilters() {
     document.getElementById('price').selectedIndex = 0;
-    renderCards(cardsData);
+    displayCards(cardsData);
 }
-
-
 const container = document.querySelector('.container');
 const cardsData = [
-{ id: 1, image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/4.webp', title: 'Обои под покраску флизелиновые антивандальные Kreaforta Батист белые 1.06x25м 113г/м²', price: 799, delprice: 1000 , detailsUrl: 'productcard.html'  },
- {
-        id: 2,
-        title: 'Обои бумажные серые 0.53 м',
-        price: 990,
-        delprice: 1500,
-        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/2.webp',
-        detailsUrl: 'productcard.html'
-    },
-    {
-        id: 3,
-        title: 'Обои флизелиновые Ateliero Kora бежевые 1.06 м AT1016-02ОАВ',
-        price: 790,
-        delprice: 1000,
-        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/3.webp',
-        detailsUrl: ''
-    },
-    {
-        id: 4,
-        title: 'Обои 4',
-        price: 1290,
-        delprice: 1800,
-        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/4.webp',
-        detailsUrl: ''
-    }
+{ id: 1, image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/4.webp', title: 'Обои под покраску флизелиновые антивандальные Kreaforta Батист белые 1.06x25м 113г/м²', price: 799, delprice: 1000, detailsUrl: 'productcard.html' }, 
+    { id: 2, title: 'Обои бумажные серые 0.53 м', price: 990, delprice: 1500, image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/2.webp', detailsUrl: 'productcard.html' }, 
+    { id: 3, title: 'Обои флизелиновые Ateliero Kora бежевые 1.06 м AT1016-02ОАВ', price: 790, delprice: 1000, image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/3.webp', detailsUrl: '' }, 
+    { id: 4, title: 'Обои 4', price: 1290, delprice: 1800, image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/4.webp', detailsUrl: '' }
 
 ];cardsData.forEach((cardData) => {
 const card = document.createElement('div');
@@ -409,7 +391,6 @@ zoomableImages.forEach(image => {
     });
 });
 });
-
 
 
 let currentIndex = 0;
