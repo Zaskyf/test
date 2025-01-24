@@ -181,7 +181,7 @@ margin-top:20px; margin-bottom:15px;">Обои</h6>
             <option value="">Выберите цену</option>
             <option value="low"> от 600</option>
             <option value="medium">от 1000</option>
-            <option value="high">1500</option>
+            <option value="high"> от 1500</option>
         </select>
     </div>
     <button id="apply-filters" onclick="filterProducts()">Применить фильтры</button>
@@ -189,19 +189,43 @@ margin-top:20px; margin-bottom:15px;">Обои</h6>
 </div>
 
 <script>
-  
+    // Функция для отображения карточек
+function displayCards(cards) {
+    container.innerHTML = ''; // Очистка контейнера
+    cards.forEach(card => {
+        const cardElement = document.createElement('div');
+        cardElement.classList.add('card');
+        cardElement.innerHTML = `
+            <img src="${card.image}" alt="${card.title}">
+            <h2>${card.title}</h2>
+            <p>Цена: ${card.price} руб.</p>
+            <a href="${card.detailsUrl}">Подробнее</a>
+        `;
+        container.appendChild(cardElement);
+    });
+}
 
-        // Функция для сброса фильтров
-        function resetFilters() {
-            document.getElementById('price').value = '';
-            document.getElementById('material').value = '';
-            document.getElementById('color').value = '';
+// Функция для фильтрации карточек по цене
+function filterProducts() {
+    const priceFilter = document.getElementById('price').value;
+    let filteredCards = cardsData;
 
-            const products = document.querySelectorAll('.product-card');
-            products.forEach(product => {
-                product.style.display = 'block';
-            });
-        }
+    if (priceFilter === 'low') {
+        filteredCards = cardsData.filter(card => card.price >= 600);
+    } else if (priceFilter === 'medium') {
+        filteredCards = cardsData.filter(card => card.price >= 1000);
+    } else if (priceFilter === 'high') {
+        filteredCards = cardsData.filter(card => card.price >= 1500);
+    }
+
+    displayCards(filteredCards); // Отображение отфильтрованных карточек
+}
+
+// Функция для сброса фильтров
+function resetFilters() {
+    document.getElementById('price').selectedIndex = 0; // Сброс выбора в селекте
+    displayCards(cardsData); // Отображение всех карточек
+}
 const container = document.querySelector('.container');
 const cardsData = [
 { id: 1, image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/4.webp', title: 'Обои под покраску флизелиновые антивандальные Kreaforta Батист белые 1.06x25м 113г/м²', price: 799, delprice: 1000 , detailsUrl: 'productcard.html'  },
