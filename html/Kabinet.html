@@ -174,23 +174,40 @@
                     <!-- Поля для ввода данных пользователя -->
              
 
-                     <div class="ldata">
-                    <div class="user-data">
-                        <label class = "lname" for="firstName">Имя:</label>
-                        <input  type="text" id="firstName" placeholder="Введите ваше имя">
-            
-                        <label class = "lfname" for="lastName">Фамилия:</label>
-                        <input type="text" id="lastName" placeholder="Введите вашу фамилию">
-            
-                        <label  class = "laddress"for="address">Адрес:</label>
-                        <input type="text" id="address" placeholder="Введите ваш адрес">
-            
-                        <label class = "lemail" for="email">Email:</label>
-                        <input type="email" id="email" placeholder="Введите ваш email">
-                        
+                    <button class="toggle-button" id="toggleButton">Личные данные</button>
+
+                    <div class="ldata" id="userData">
+                        <div class="user-data">
+                            <label class="lname" for="firstName">Имя:</label>
+                            <input type="text" id="firstName" placeholder="Введите ваше имя">
+                
+                            <label class="lfname" for="lastName">Фамилия:</label>
+                            <input type="text" id="lastName" placeholder="Введите вашу фамилию">
+                
+                            <label class="laddress" for="address">Адрес:</label>
+                            <input type="text" id="address" placeholder="Введите ваш адрес">
+                
+                            <label class="lemail" for="email">Email:</label>
+                            <input type="email" id="email" placeholder="Введите ваш email">
+                        </div>
+                        <button class="lsaveButton" id="saveButton">Сохранить данные</button>
                     </div>
-                    <button class="lsaveButton" id="saveButton">Сохранить данные</button>
-                    </div>
+                
+                    <script>
+                      
+                        const toggleButton = document.getElementById('toggleButton');
+                        const userData = document.getElementById('userData');
+                
+                     
+                        toggleButton.addEventListener('click', () => {
+                         
+                            if (userData.style.display === 'none' || userData.style.display === '') {
+                                userData.style.display = 'block'; 
+                            } else {
+                                userData.style.display = 'none';
+                            }
+                        });
+                    </script>
 
 
                    
