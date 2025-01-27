@@ -2451,47 +2451,51 @@ height: 230px !important;
 /* НАЧАЛО СТРАНИЦЫ ЛИЧНОЙ КАБИНЕТ  */
 
 .user-data {
-  max-width: 400px; /* Максимальная ширина блока */
-  margin: 20px auto; /* Центрирование блока */
-  padding: 20px; /* Внутренние отступы */
-  border: 1px solid #ccc; /* Поле вокруг блока */
-  border-radius: 8px; /* Скругление углов */
-  background-color: #f9f9f9; /* Цвет фона блока */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Тень под блоком */
+  max-width: 300px; 
+
+  margin: 20px auto; 
+  padding: 20px; 
+  border: 1px solid #ccc;
+  border-radius: 8px; 
+  background-color: #f9f9f9; 
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /
 }
 
 label {
-  display: block; /* Стили для меток: каждый элемент на новой строке */
-  margin-bottom: 5px; /* Отступ снизу */
-  font-weight: bold; /* Полужирный текст для меток */
-  color: #333; /* Цвет текста меток */
+  display: block; 
+  margin-bottom: 7px;
+  margin-top: 10px; 
+  font-weight: bold;
+  color: #333; 
 }
 
 
 
 .lsaveButton {
-  background-color: #28a745; /* Цвет кнопки */
-  color: white; /* Цвет текста кнопки */
-  padding: 10px 15px; /* Внутренние отступы кнопки */
-  border: none; /* Убрать стандартные границы */
-  border-radius: 4px; /* Скругление углов кнопки */
-  cursor: pointer; /* Указатель при наведении */
-  font-size: 16px; /* Размер шрифта кнопки */
-  transition: background-color 0.3s; /* Анимация изменения цвета фона */
+  background-color: #28a745; 
+  color: white; 
+  padding: 10px 15px; 
+  border: none; 
+  border-radius: 4px; 
+  cursor: pointer; 
+  font-size: 16px; 
+  transition: background-color 0.3s; 
 }
 
 .lsaveButton:hover {
-  background-color: #218838; /* Цвет кнопки при наведении */
+  background-color: #218838; 
+
+ 
 }
 
 
 .breadcrumb { 
-  display: flex;           /* Используем Flexbox для равномерного распределения элементов */
-  justify-content: space-around; /* Равномерное распределение элементов */
+  display: flex;         
+  justify-content: space-around; 
   padding: 18px; 
   text-align: center; 
   background-color: #e5e5e5; 
-  width: 70%;            /* Занимаем всю ширину экрана */
+  width: 70%;          
 } 
 
 .breadcrumb a { 
@@ -2596,7 +2600,7 @@ to {
       margin: 15px;
       background-color: white;
       width: 250px;
-      height: 150px;
+      height: 200px;
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
       transition: transform 0.3s;
