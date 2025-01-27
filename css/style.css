@@ -2649,6 +2649,28 @@ to {
   .content-section-oplata:hover {
       transform: scale(1.05);
   }
+
+
+     /* Basic styling for the container */
+     .ldata {
+      display: none; /* Initially hide the user data section */
+      margin-top: 20px;
+      border: 1px solid #ccc;
+      padding: 20px;
+      border-radius: 5px;
+      background-color: #f9f9f9;
+  }
+
+  /* Styling for the button */
+  .toggle-button {
+      padding: 10px 15px;
+      font-size: 16px;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+      background-color: #007BFF;
+      color: white;
+  }
   .content-section-user {
       padding: 20px;
       margin: 10px;
