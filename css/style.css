@@ -2450,17 +2450,14 @@ height: 230px !important;
 
 /* НАЧАЛО СТРАНИЦЫ ЛИЧНОЙ КАБИНЕТ  */
 
+/*окно добавления данных об пользователе */
 .user-data {
   max-width: 300px; 
-
   margin: 20px auto; 
   padding: 20px; 
-  border: 1px solid #ccc;
-  border-radius: 8px; 
-  background-color: #f9f9f9; 
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /
 }
 
+/*метса куда добавляются данные о пользователе */
 label {
   display: block; 
   margin-bottom: 7px;
@@ -2469,17 +2466,18 @@ label {
   color: #333; 
 }
 
-
+/*кнопка сохранить данные */
 
 .lsaveButton {
   background-color: #28a745; 
   color: white; 
-  padding: 10px 15px; 
+padding: 20px; 
   border: none; 
   border-radius: 4px; 
   cursor: pointer; 
   font-size: 16px; 
   transition: background-color 0.3s; 
+  margin: 20px auto; 
 }
 
 .lsaveButton:hover {
@@ -2488,7 +2486,7 @@ label {
  
 }
 
-
+/*хлебные крошки*/
 .breadcrumb { 
   display: flex;         
   justify-content: space-around; 
@@ -2525,8 +2523,8 @@ label {
 
 .full-width-button {
   display: block; /* делает элемент блочным */
-  width: 100%; /* ширина 100% */
-  padding: 10px; /* отступы для удобства */
+  width: 28%; /* ширина 100% */
+  padding: 5px; /* отступы для удобства */
   font-size: 16px; /* размер шрифта */
   cursor: pointer; /* курсор в виде указателя при наведении */
   border: 1px solid #ccc; /* рамка */
@@ -2595,12 +2593,36 @@ to {
       font-size: 18px;
       color: white;
   }
+
+  .ldata{
+
+    max-width: 300px; 
+
+ 
+    padding: 20px; 
+    border: 1px solid #ccc;
+    border-radius: 8px; 
+    background-color: #f9f9f9; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+
+
+
+      margin: 15px;
+    
+      
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      
+  }
   .content-section {
       padding: 25px;
       margin: 15px;
       background-color: white;
       width: 250px;
-      height: 200px;
+      height: 15
+      0px;
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
       transition: transform 0.3s;
