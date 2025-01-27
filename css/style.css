@@ -2621,8 +2621,8 @@ to {
       margin: 15px;
       background-color: white;
       width: 250px;
-      height: 15
-      0px;
+      height: 150px;
+  
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
       transition: transform 0.3s;
@@ -2654,7 +2654,7 @@ to {
       margin: 10px;
       background-color: white;
       width: 550px;
-      height: 750px;
+      height: 800px;
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
       transition: transform 0.3s;
