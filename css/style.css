@@ -2456,7 +2456,6 @@ height: 230px !important;
   margin: 20px auto; 
   padding: 20px; 
 }
-
 /*метса куда добавляются данные о пользователе */
 label {
   display: block; 
@@ -2465,9 +2464,7 @@ label {
   font-weight: bold;
   color: #333; 
 }
-
 /*кнопка сохранить данные */
-
 .lsaveButton {
   background-color: #28a745; 
   color: white; 
@@ -2479,13 +2476,9 @@ padding: 20px;
   transition: background-color 0.3s; 
   margin: 20px auto; 
 }
-
 .lsaveButton:hover {
   background-color: #218838; 
-
- 
 }
-
 /*хлебные крошки*/
 .breadcrumb { 
   display: flex;         
@@ -2495,14 +2488,10 @@ padding: 20px;
   background-color: #e5e5e5; 
   width: 70%;          
 } 
-
 .breadcrumb a { 
   color: black; 
   text-decoration: none; 
 } 
-
-
-
 .profile-icon {
   position: relative;
   width: 150px;
@@ -2519,8 +2508,6 @@ padding: 20px;
   border-radius: 50%;
   cursor: pointer;
 }
-
-
 .full-width-button {
   display: block; /* делает элемент блочным */
   width: 28%; /* ширина 100% */
@@ -2595,21 +2582,13 @@ to {
   }
 
   .ldata{
-
     max-width: 300px; 
-
- 
     padding: 20px; 
     border: 1px solid #ccc;
     border-radius: 8px; 
     background-color: #f9f9f9; 
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
-
-
-
       margin: 15px;
-    
-      
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
       display: flex;
@@ -2621,7 +2600,7 @@ to {
       margin: 15px;
       background-color: white;
       width: 250px;
-      height: 150px;
+      height: 10px;
   
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -2637,18 +2616,14 @@ to {
       padding: 20px;
       margin: 10px;
       background-color: white;
-      width: 300px;
+      width: 600px;
       height: 330px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s;
+      
       display: flex;
       flex-direction: column;
       justify-content: space-between;
   }
-  .content-section-oplata:hover {
-      transform: scale(1.05);
-  }
+
 
 
      /* Basic styling for the container */
@@ -2675,8 +2650,8 @@ to {
       padding: 20px;
       margin: 10px;
       background-color: white;
-      width: 550px;
-      height: 800px;
+      width: 90%;
+      height: auto;
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
       transition: transform 0.3s;
@@ -2684,9 +2659,7 @@ to {
       flex-direction: column;
       justify-content: space-between;
   }
-  .content-section-user:hover {
-      transform: scale(1.05);
-  }
+ 
   .discount-item {
       margin-top: 10px;
       width: 100px;
@@ -2865,8 +2838,53 @@ h2 {
 
 
 
+/* Media Queries for Mobile Devices */
+@media (max-width: 768px) {
+
+  .user-data {
+    max-width: 80%; /* Увеличиваем ширину для мобильных */
+  }
+
+  .full-width-button {
+    width: 100%; /* Кнопка занимает всю ширину */
+  }
+
+  .breadcrumb {
+    flex-direction: column; /* Перестраиваем хлебные крошки вертикально */
+  }
+
+  .profile-icon {
+    width: 120px;
+    height: 120px; /* Уменьшаем размер иконки профиля */
+  }
+
+  .content-section, .content-section-user, .content-section-oplata {
+    width: auto; /* Ширина секций становится 100% */
+    height: auto; /* Высота автоматическая для адаптации */
+  }
+
+  .discount-item {
+    width: 70%; /* Увеличиваем ширину для мобильных */
+  }
+
+  .settings-modal, .details-binding, .payment-content {
+    width: 80%; /* Ширина модальных окон для мобильных устройств */
+  }
+
+  .close-details, .close-discount-info {
+    width: 90%; /* Кнопки занимают всю ширину */
+  }
+
+  .primary-btn, .lsaveButton, .toggle-button {
+    width: 100%; /* Кнопки занимают всю ширину */
+    padding: 15px; /* Увеличиваем отступы для удобства на мобильных */
+  }
+}
+
 
 /* КОНЕЦ  СТРАНИЦЫ ЛИЧНОЙ КАБИНЕТ  */
+
+
 
 
 
