@@ -1691,12 +1691,11 @@ margin: 20px auto;
               transition: transform 0.3s;
           }
   
-   /*Форма опсиание характеристика и  детали отзывы*/
           .section-frame {
           overflow: hidden ;
      
-      border-radius: 5px; /* Закругление углов */
-      top: 5px; /* Отступ сверху */
+      border-radius: 5px; 
+      top: 5px;
       
       width:300px;
       height:150px;
@@ -1768,39 +1767,39 @@ margin: 20px auto;
           }
           
           .grey0 {
-            background-image: url('https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/1.webp'); /* Укажите путь к вашему изображению */
-            background-size: cover; /* Заставляет изображение покрывать весь элемент */
-            background-position: center; /* Центрирует изображение */
-            width: 100px; /* Укажите нужную ширину */
-            height: 100px; /* Укажите нужную высоту */
+            background-image: url('https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/1.webp'); 
+            background-size: cover; 
+            background-position: center; 
+            width: 100px; 
+            height: 100px; 
             border-radius: 9px;
           }
           
           .grey1 {
-            background-image: url('https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/5.webp'); /* Укажите путь к вашему изображению */
-            background-size: cover; /* Заставляет изображение покрывать весь элемент */
-            background-position: center; /* Центрирует изображение */
-            width: 100px; /* Укажите нужную ширину */
-            height: 100px; /* Укажите нужную высоту */
+            background-image: url('https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/5.webp'); 
+            background-size: cover; 
+            background-position: center; 
+            width: 100px;
+            height: 100px; 
             border-radius: 9px;
         }
           
           .grey2 {
-            background-image: url('https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/2.webp'); /* Укажите путь к вашему изображению */
-            background-size: cover; /* Заставляет изображение покрывать весь элемент */
-            background-position: center; /* Центрирует изображение */
-            width: 100px; /* Укажите нужную ширину */
-            height: 100px; /* Укажите нужную высоту */
+            background-image: url('https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/2.webp');
+            background-size: cover; 
+            background-position: center; 
+            width: 100px; 
+            height: 100px; 
             border-radius: 9px;
             object-fit: Scale-down;
 }
  
 .grey3{
-  background-image: url('https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/6.webp'); /* Укажите путь к вашему изображению */
-  background-size: cover; /* Заставляет изображение покрывать весь элемент */
-  background-position: center; /* Центрирует изображение */
-  width: 100px; /* Укажите нужную ширину */
-  height: 100px; /* Укажите нужную высоту */
+  background-image: url('https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/6.webp');
+  background-size: cover; 
+  background-position: center; 
+  width: 100px; 
+  height: 100px; 
   border-radius: 9px;
   object-fit: Scale-down;
 }
@@ -2807,8 +2806,8 @@ to {
     border-radius: 8px;
     padding: 20px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    z-index: 1000; /* Обеспечивает, что модальное окно выше других элементов */
-    display: none; /* Скрыто по умолчанию */
+    z-index: 1000; 
+    display: none; 
 }
 
 .overlay {
@@ -2818,8 +2817,8 @@ to {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
-    z-index: 999; /* Под модальным окном */
-    display: none; /* Скрыто по умолчанию */
+    z-index: 999;
+    display: none;
 }
 
 h2 {
