@@ -1350,29 +1350,29 @@ align-items: center;
 
 .pre-btn, .nex-btn {
   font-size: 19px;
-  background-color: #4577b4; /* Фон - синий */
-  color: white; /* Цвет текста - белый */
-  border: none; /* Удаляем рамку */
-  padding: 5px 5px; /* Отступы внутри кнопки */
-  border-radius: 5px; /* Скругленные углы */
-  cursor: pointer; /* Курсор-рука при наведении */
-  transition: background-color 0.3s; /* Плавный переход цвета */
-  height: 40px; /* Высота кнопки */
-  width: 100px; /* Ширина кнопки */
-  font-weight: bold; /* Жирный шрифт */
-  position: absolute; /* Устанавливаем абсолютное позиционирование для кнопок */
+  background-color: #4577b4;
+  color: white; 
+  border: none; 
+  padding: 5px 5px; 
+  border-radius: 5px; 
+  cursor: pointer; 
+  transition: background-color 0.3s; 
+  height: 40px; 
+  width: 100px; 
+  font-weight: bold;
+  position: absolute; 
 }
 
 .pre-btn {
-  left: 10px; /* Располагаем кнопку Назад в левом углу */
-  top: 50%; /* Центрируем по вертикали */
-  transform: translateY(-50%); /* Сдвигаем на половину высоты кнопки для центрирования */
+  left: 10px; 
+  top: 50%; 
+  transform: translateY(-50%);
 }
 
 .nex-btn {
-  right: 10px; /* Располагаем кнопку Вперед в правом углу */
-  top: 50%; /* Центрируем по вертикали */
-  transform: translateY(-50%); /* Сдвигаем на половину высоты кнопки для центрирования */
+  right: 10px; 
+  top: 50%; 
+  transform: translateY(-50%);
 }
 
 
@@ -1385,9 +1385,9 @@ align-items: center;
  .nexprev{
 
   background-color: red;
-  position: relative; /* Устанавливаем относительное позиционирование для контейнера */
-    width: 100%; /* Ширина контейнера */
-    height: 100%; /* Высота контейнера */
+  position: relative; 
+    width: 100%; 
+    height: 100%; 
  }
  
  .nex-btn:hover {
@@ -1397,11 +1397,11 @@ align-items: center;
  }
  .js-number {
    width: 30px; /* Ширина поля */
-   text-align: center; /* Выравнивание текста по центру */
-   height: 30px; /* Высота поля */
-   margin: 0 10px; /* Отступы */
-   border-radius: 5px; /* Скругленные углы */
-   border: none; /* Удаляем рамку */
+   text-align: center; 
+   height: 30px; 
+   margin: 0 10px; 
+   border-radius: 5px;
+   border: none; 
  }
 
  .product-card {
@@ -1411,24 +1411,24 @@ align-items: center;
  /* Адаптация для мобильных устройств */
  @media (max-width: 768px) {
    .product-card {
-     width: 48%; /* Ширина карточки на экранах меньше 768px */
-     margin: 10px; /* Отступы */
+     width: 48%; 
+     margin: 10px;
    }
  }
 
  /* Адаптация для мобильных устройств */
  @media (max-width: 743px) {
    .product-card {
-     width: 25%; /* Ширина карточки на экранах меньше 768px */
-     margin: 10px; /* Отступы */
+     width: 25%; 
+     margin: 10px; 
    }
 
    .product-card img {
-   width: 230px; /* Ширина изображения */
-   height: 230px; /* Высота изображения */
-   border-radius: 9px; /* Скругленные углы */
-   margin-bottom: 5px; /* Отступ снизу */
-   text-align: center; /* Выравнивание по центру */
+   width: 230px; 
+   height: 230px; 
+   border-radius: 9px; 
+   margin-bottom: 5px; 
+   text-align: center; 
    margin-left: -35px;
  }
  }
@@ -1436,22 +1436,22 @@ align-items: center;
  /* Адаптация для мобильных устройств */
  @media (max-width: 606px) {
    .product-card {
-     width: 40%; /* Ширина карточки на экранах меньше 768px */
-     margin: 10px; /* Отступы */
+     width: 40%; 
+     margin: 10px; 
    }
  }
  /* Адаптация для мобильных устройств */
  @media (max-width: 690px) {
    .product-card {
-     width: 40%; /* Ширина карточки на экранах меньше 768px */
-     margin: 10px; /* Отступы */
+     width: 40%; 
+     margin: 10px; 
    }
    .product-card img {
-   width: 230px; /* Ширина изображения */
-   height: 230px; /* Высота изображения */
-   border-radius: 9px; /* Скругленные углы */
-   margin-bottom: 5px; /* Отступ снизу */
-   text-align: center; /* Выравнивание по центру */
+   width: 230px; 
+   height: 230px; 
+   border-radius: 9px; 
+   margin-bottom: 5px; 
+   text-align: center; 
    margin-left: -25px;
  }
 
@@ -1459,15 +1459,15 @@ align-items: center;
  /* Адаптация для очень узких экранов */
  @media (max-width: 480px) {
    .product-card {
-     width: 55%; /* Занимаем всю ширину экрана */
-     margin: 10px 10px; /* Отступы */
+     width: 55%;
+     margin: 10px 10px; 
    }
    .product-card img {
-   width: 190px; /* Ширина изображения */
-   height: 190px; /* Высота изображения */
-   border-radius: 9px; /* Скругленные углы */
-   margin-bottom: 5px; /* Отступ снизу */
-   text-align: center; /* Выравнивание по центру */
+   width: 190px; 
+   height: 190px; 
+   border-radius: 9px; 
+   margin-bottom: 5px; 
+   text-align: center; 
 
    margin-left: -25px;
 
