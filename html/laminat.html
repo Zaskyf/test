@@ -167,7 +167,7 @@ margin-top:15px; margin-bottom:15px;">Ламинат</h6>
 
 <div class="container">  </div>
 
-<!-- Navigation Buttons --><div class ="nexprev"><button id="prevBtn" class="pre-btn">Назад</button>
+<div class ="nexprev"><button id="prevBtn" class="pre-btn">Назад</button>
 <button id="nextBtn" class="nex-btn">Вперед</button></div> </div>
 
 
@@ -799,51 +799,45 @@ function changeCartItemNumber(step, button) {
 
     
 
-    // Open the window when the page loads for demonstration
+   
     window.onload = openWindow;
 </script>
 
 
-    <!-- <section></section>
-    <main></main>
-    <article></article>
-    <textarea name="" id=""></textarea>
-    <code></code>
-    <hr>
-    <iframe></iframe> -->
-
-    <footer>
-        <hr>
-        <div class="containr"><div class="subscribe"></div><div class="footer_navigation">
-            <div class="footer_menu">
-        <div class="item"><div class="caption">О компании</div>
-        <ul class="menu_list">
-            <a href="/about/about-the-company/">ТК Арктика</a>
-            <a href="/about/arktika-servis/">Арктика-Сервис</a>
-            <a href="/about/bonus-program/">Бонусная программа</a>
-            <a href="/about/podarochnye-karty/">Подарочные карты</a>
-        </ul></div>
-        <div class="item"> 
-            <div class="caption">Информация</div>
-        <ul class="menu_list">
-            <a href="/information/oplata/">Как оплатить</a>
-            <a href="/information/feedback/">Обратная связь</a>
-           <a href="/information/contacts/">Контакты</a>
-            <a href="/information/jobs/">Вакансии</a>
-        
-        </ul></div>   
-
-             <div class="item"><div class="caption">Наши услуги</div>
-            <ul class="menu_list"><a href="/our-services/free-shipping/">Бесплатная доставка</a>
-            </ul>
-        </div>
-        </div>
-             <div class="contact_info"><div class="phone"><a href="tel:+7 (8672) 55-08-70">+7 (8672) 55-08-70</a> (с 10:00 до 20:00) </div>
-            <div class="address">Адрес магазина:<br>г. Владикавказ, пр-т Коста, 15,<br> лит. Г,Б, пом. 5,6  </div> 
-            <div class="copyright">© 1996—2024, ТК «Арктика»  </div>
-        </div></div></div>
        
-    </footer>
+<footer>
+    <hr>
+    <div class="containr"><div class="subscribe"></div><div class="footer_navigation">
+        <div class="footer_menu">
+    <div class="item"><div class="caption">Покупателям</div>
+    <ul class="menu_list">
+        <a href="/html/category.html">Каталог</a>
+        <a href="/about/arktika-servis/">Расрочка/Кредиты</a>
+        <a href="/about/bonus-program/">Бонусная программа</a>
+        <a href="/about/podarochnye-karty/">Подарочные карты</a>
+    </ul></div>
+    <div class="item"> 
+        <div class="caption">Информация</div>
+    <ul class="menu_list">
+        <a href="/information/oplata/">Как оплатить</a>
+        <a href="/information/feedback/">Обратная связь</a>
+        <a href="/information/jobs/">Гарантия качества </a>
+       <a href="/information/contacts/">Контакты</a>
+        
+    
+    </ul></div>   
+
+         <div class="item"><div class="caption">Наши услуги</div>
+        <ul class="menu_list"><a href="/our-services/free-shipping/">Бесплатная доставка</a>
+        </ul>
+    </div>
+    </div>
+         <div class="contact_info"><div class="phone"><a href="tel:8 (918) 827-20-12">8 (918) 827-20-12</a> (с 09:30 до 19:00) </div>
+        <div class="address">Адрес магазина:<br>ул. Астана Кесаева, 33"а, Владикавказ <br> Респ. Северная Осетия — Алания</div> 
+        <div class="copyright">© 1996—2024, ТК «Декор центр»  </div>
+    </div></div></div>
+   
+</footer>
 </body></html>
 
 
@@ -852,20 +846,17 @@ function changeCartItemNumber(step, button) {
     const catalog = document.getElementById('catalog');
     const menuBurger = document.getElementById('menuBurger');
     const popup = document.getElementById('popup');
-    
-    // Функция для открытия и закрытия меню
+  
     menuBurger.onclick = function(event) {
-        event.stopPropagation(); // Остановить всплытие события, чтобы не закрыть каталог сразу
+        event.stopPropagation(); 
         catalog.style.display = catalog.style.display === 'none' ? 'block' : 'none';
     };
     
-    // Переменная для отслеживания состояния popup
     let isPopupOpen = false;
     
-    // Функция для открытия подкатегорий при наведении
     document.querySelectorAll('.category-button').forEach(button => {
         button.addEventListener('mouseenter', function(event) {
-            event.stopPropagation(); // Остановить всплытие события при наведении
+            event.stopPropagation();
             const categoryNum = this.getAttribute('data-category');
             let content = '';
     
@@ -893,20 +884,17 @@ function changeCartItemNumber(step, button) {
         });
     });
     
-    // Функция для отображения popup
     function showPopup(title) {
         document.getElementById('popupTitle').textContent = title;
-        popup.style.display = 'block'; // Показывает popup
-        isPopupOpen = true; // Указывает что popup открыт
+        popup.style.display = 'block';
+        isPopupOpen = true; 
     }
     
-    // Функция для закрытия popup
     function closePopup() {
         popup.style.display = 'none'; 
-        isPopupOpen = false; // Указывает что popup закрыт
+        isPopupOpen = false;
     }
     
-    // Закрытие каталога при клике где-либо на странице
     document.addEventListener('click', function() {
         if (catalog.style.display === 'block') {
             catalog.style.display = 'none'; 
@@ -928,32 +916,27 @@ function changeCartItemNumber(step, button) {
     
     let accountVisible = false;
     
-    // Show tooltip on mouse over
     socialLink.addEventListener('mouseover', () => {
         tooltip.style.display = 'block';
-        tooltip.style.top = `${socialLink.offsetTop + socialLink.offsetHeight}px`; // Corrected line
-        tooltip.style.left = `${socialLink.offsetLeft}px`; // Corrected line
+        tooltip.style.top = `${socialLink.offsetTop + socialLink.offsetHeight}px`; 
+        tooltip.style.left = `${socialLink.offsetLeft}px`;
     });
     
-    // Hide tooltip on click outside
     document.addEventListener('click', (event) => {
         if (!socialLink.contains(event.target) && !tooltip.contains(event.target)) {
             hideTooltip();
         }
     });
     
-    // Hide tooltip function
     function hideTooltip() {
         tooltip.style.display = 'none';
     }
     
-    // Toggle account visibility
     function toggleAccount() {
         accountVisible = !accountVisible;
         account.style.display = accountVisible ? 'block' : 'none';
     }
     
-    // Hide account if visible
     function hideAccount() {
         if (accountVisible) {
             accountVisible = false;
@@ -961,32 +944,28 @@ function changeCartItemNumber(step, button) {
         }
     }
     
-    // Open and close register modal
     function openRegisterModal() {
-        document.body.style.overflow = 'hidden'; // Prevent body scroll
+        document.body.style.overflow = 'hidden'; 
         registerModal.style.display = 'block';
     }
     
     function closeRegisterModal() {
-        document.body.style.overflow = 'auto'; // Re-enable body scroll
+        document.body.style.overflow = 'auto'; 
         registerModal.style.display = 'none';
     }
     
-    // Handle register form submission
     registerForm.onsubmit = (event) => {
         event.preventDefault();
         alert('Регистрация завершена');
         closeRegisterModal();
     };
     
-    // Log in account function
     function logInAccount() {
         alert('Вход');
     }
     </script>
 
 <script>
-    // Toggle modal visibility on button click
     signUpBtnLink.addEventListener('click', () => {
         modal.classList.toggle('active');
     });

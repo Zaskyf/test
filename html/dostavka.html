@@ -258,186 +258,15 @@ border-radius: 9px;
   text-decoration: none;
   color: white;
   font-weight: 500;
-  transition: color 0.3s; /* Плавный переход цвета */
+  transition: color 0.3s;
 }
 
 .nav-links a:hover {
-  color: #5a7cb3; /* Цвет при наведении */
+  color: #5a7cb3; 
 }
 
-/* Стили для секций */
-.content-section {
-  padding: 20px;
-  margin: 20px;
-  background-color:  white ;
-  width:250px;
-  height:150px;
-  border-radius: 9px; 
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s; /* Плавный переход для анимации */
-}
 
-.content-section:hover {
-  transform: scale(1.02); /* Увеличение при наведении */
-}
 
-/* Стили для секции олпаты */
-.content-section-oplata {
-  padding: 20px;
-  margin: 10px;
-  background-color: white; 
-  width: 300px;
-  height: 170px;
-  left: 0;
-  border-radius: 9px; 
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s; /* Плавный переход для анимации */
-}
-
-.content-section-oplata:hover {
-  transform: scale(1.02); /* Увеличение при наведении */
-}
-.content-section-user {
-  padding: 20px;
-  margin: 10px;
-  background-color: white; 
-  width: 300px;
-  height: 350px;
-  left: 0;
-  border-radius: 9px; 
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s;
-}
-.content-section-user:hover {
-  transform: scale(1.02); /* Увеличение при наведении */
-}
-
-        .discount-item {
-        margin-top:10px;
-            width: 100px;
-            display: block;
-            font-size: 16px;
-            padding: 10px;
-            cursor: pointer;
-            background-color: #e5e5e5;
-            border-radius: 9px;
-            text-align: center;
-            transition: background-color 0.3s;
-        }
-
-        .discount-item:hover {
-            background-color: #e0e0e0;
-        }
-
-        .discount-info {
-            display: none; 
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный фон */
-            justify-content: center;
-            align-items: center;
-            z-index: 1000; 
-            animation: fadeIn 0.5s; 
-        }
-
-        .discount-info-content {
-            background-color: white;
-            padding: 20px;
-            border-radius: 8px;
-            text-align: center;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-        }
-
-      .close-discount-info {
-    display: block;
-    width: 150px;
-    margin: 15px auto 0; 
-    padding: 10px 15px;
-    border: none;
-    background-color: #688EBD;
-    color: white;
-    border-radius: 5px;
-    text-align: center;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-        .close-discount-info:hover {
-            background-color: #5a7cb3; 
-        }
-        
-.profile-icon {
-  position: relative;
-  width: 150px;
-  height: 150px;
-  overflow: hidden;
-  border-radius: 50%;
-  border: 2px solid #ccc;
-  background-color: #fff;
-}
-
-.profile-icon input {
-  display: none; 
-}
-
-.profile-icon img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 50%;
-  cursor: pointer;
-}
-.oplata {
-  background-color: #e5e5e5; 
-    color: black;
-  margin-top: 10px;
-margin-bottom: 5px;
-}
-
-.oplata:hover {
-  background-color:#e0e0e0; 
-  transform: translateY(-2px); /* Поднимаем кнопку при наведении */
-  
-}
-
-.primary-btn {
-margin-top:10px;
-  background-color: #e5e5e5; 
-  color: black;
-}
-
-.primary-btn:hover {
-  background-color: #e0e0e0; 
-  transform: translateY(-2px); 
-}
-
-.payment, .card-binding {
-            display: none; 
-              background: #FFFFE0; 
-            position: fixed; 
-            top: 0;
-            left: 0;
-            width: 100%; 
-            height: 100%; 
-            background-color: rgba(0, 0, 0, 0.5); 
-            justify-content: center; 
-            align-items: center; 
-            z-index: 1000; 
-            animation: fadeIn 0.3s;
-        }
-        .payment-content  {
-            background: white; 
-            padding: 20px; 
-            border-radius: 5px; 
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1); 
-            width: 300px; 
-            
-        }
-        
-         .card {  background-color: #688EBD; 
-            color: white; }
             
 </style>
 
@@ -489,19 +318,18 @@ margin-top:10px;
   const menuBurger = document.getElementById('menuBurger');
   const popup = document.getElementById('popup');
   
-  // Функция для открытия и закрытия меню
+
   menuBurger.onclick = function(event) {
-      event.stopPropagation(); // Остановить всплытие события, чтобы не закрыть каталог сразу
+      event.stopPropagation(); 
       catalog.style.display = catalog.style.display === 'none' ? 'block' : 'none';
   };
-  
-  // Переменная для отслеживания состояния popup
+ 
   let isPopupOpen = false;
   
-  // Функция для открытия подкатегорий при наведении
+
   document.querySelectorAll('.category-button').forEach(button => {
       button.addEventListener('mouseenter', function(event) {
-          event.stopPropagation(); // Остановить всплытие события при наведении
+          event.stopPropagation();
           const categoryNum = this.getAttribute('data-category');
           let content = '';
   
@@ -529,20 +357,18 @@ margin-top:10px;
       });
   });
   
-  // Функция для отображения popup
+ 
   function showPopup(title) {
       document.getElementById('popupTitle').textContent = title;
-      popup.style.display = 'block'; // Показывает popup
-      isPopupOpen = true; // Указывает что popup открыт
+      popup.style.display = 'block';
+      isPopupOpen = true; 
   }
   
-  // Функция для закрытия popup
   function closePopup() {
       popup.style.display = 'none'; 
-      isPopupOpen = false; // Указывает что popup закрыт
+      isPopupOpen = false; 
   }
   
-  // Закрытие каталога при клике где-либо на странице
   document.addEventListener('click', function() {
       if (catalog.style.display === 'block') {
           catalog.style.display = 'none'; 

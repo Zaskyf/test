@@ -824,8 +824,6 @@ function changeCartItemNumber(step, button) {
     }
 
     
-
-    // Open the window when the page loads for demonstration
     window.onload = openWindow;
 </script>
 
@@ -873,19 +871,17 @@ function changeCartItemNumber(step, button) {
     const menuBurger = document.getElementById('menuBurger');
     const popup = document.getElementById('popup');
     
-    // Функция для открытия и закрытия меню
+  
     menuBurger.onclick = function(event) {
-        event.stopPropagation(); // Остановить всплытие события, чтобы не закрыть каталог сразу
+        event.stopPropagation();
         catalog.style.display = catalog.style.display === 'none' ? 'block' : 'none';
     };
     
-    // Переменная для отслеживания состояния popup
     let isPopupOpen = false;
     
-    // Функция для открытия подкатегорий при наведении
     document.querySelectorAll('.category-button').forEach(button => {
         button.addEventListener('mouseenter', function(event) {
-            event.stopPropagation(); // Остановить всплытие события при наведении
+            event.stopPropagation(); 
             const categoryNum = this.getAttribute('data-category');
             let content = '';
     
@@ -913,20 +909,17 @@ function changeCartItemNumber(step, button) {
         });
     });
     
-    // Функция для отображения popup
     function showPopup(title) {
         document.getElementById('popupTitle').textContent = title;
-        popup.style.display = 'block'; // Показывает popup
-        isPopupOpen = true; // Указывает что popup открыт
+        popup.style.display = 'block';
+        isPopupOpen = true; 
     }
     
-    // Функция для закрытия popup
     function closePopup() {
         popup.style.display = 'none'; 
-        isPopupOpen = false; // Указывает что popup закрыт
+        isPopupOpen = false; 
     }
     
-    // Закрытие каталога при клике где-либо на странице
     document.addEventListener('click', function() {
         if (catalog.style.display === 'block') {
             catalog.style.display = 'none'; 

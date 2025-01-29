@@ -197,38 +197,40 @@
     При получении товара обязательно проверьте комплектацию товара и наличие гарантийного талона, чек будет выслан Вам на email.
             </pre> 
 
-    <footer>
-        <hr>
-        <div class="containr"><div class="subscribe"></div><div class="footer_navigation">
-            <div class="footer_menu">
-        <div class="item"><div class="caption">О компании</div>
-        <ul class="menu_list">
-            <a href="/about/about-the-company/">ТК Арктика</a>
-            <a href="/about/arktika-servis/">Арктика-Сервис</a>
-            <a href="/about/bonus-program/">Бонусная программа</a>
-            <a href="/about/podarochnye-karty/">Подарочные карты</a>
-        </ul></div>
-        <div class="item"> 
-            <div class="caption">Информация</div>
-        <ul class="menu_list">
-            <a href="/information/oplata/">Как оплатить</a>
-            <a href="/information/feedback/">Обратная связь</a>
-           <a href="/information/contacts/">Контакты</a>
-            <a href="/information/jobs/">Вакансии</a>
+     
+            <footer>
+                <hr>
+                <div class="containr"><div class="subscribe"></div><div class="footer_navigation">
+                    <div class="footer_menu">
+                <div class="item"><div class="caption">Покупателям</div>
+                <ul class="menu_list">
+                    <a href="/html/category.html">Каталог</a>
+                    <a href="/about/arktika-servis/">Расрочка/Кредиты</a>
+                    <a href="/about/bonus-program/">Бонусная программа</a>
+                    <a href="/about/podarochnye-karty/">Подарочные карты</a>
+                </ul></div>
+                <div class="item"> 
+                    <div class="caption">Информация</div>
+                <ul class="menu_list">
+                    <a href="/information/oplata/">Как оплатить</a>
+                    <a href="/information/feedback/">Обратная связь</a>
+                    <a href="/information/jobs/">Гарантия качества </a>
+                   <a href="/information/contacts/">Контакты</a>
+                    
+                
+                </ul></div>   
         
-        </ul></div>   
-
-             <div class="item"><div class="caption">Наши услуги</div>
-            <ul class="menu_list"><a href="/our-services/free-shipping/">Бесплатная доставка</a>
-            </ul>
-        </div>
-        </div>
-             <div class="contact_info"><div class="phone"><a href="tel:+7 (8672) 55-08-70">+7 (8672) 55-08-70</a> (с 10:00 до 20:00) </div>
-            <div class="address">Адрес магазина:<br>г. Владикавказ, пр-т Коста, 15,<br> лит. Г,Б, пом. 5,6  </div> 
-            <div class="copyright">© 1996—2024, ТК «Арктика»  </div>
-        </div></div></div>
-       
-    </footer>
+                     <div class="item"><div class="caption">Наши услуги</div>
+                    <ul class="menu_list"><a href="/our-services/free-shipping/">Бесплатная доставка</a>
+                    </ul>
+                </div>
+                </div>
+                     <div class="contact_info"><div class="phone"><a href="tel:8 (918) 827-20-12">8 (918) 827-20-12</a> (с 09:30 до 19:00) </div>
+                    <div class="address">Адрес магазина:<br>ул. Астана Кесаева, 33"а, Владикавказ <br> Респ. Северная Осетия — Алания</div> 
+                    <div class="copyright">© 1996—2024, ТК «Декор центр»  </div>
+                </div></div></div>
+               
+            </footer>
 
 
   
@@ -245,19 +247,16 @@ const catalog = document.getElementById('catalog');
 const menuBurger = document.getElementById('menuBurger');
 const popup = document.getElementById('popup');
 
-// Функция для открытия и закрытия меню
 menuBurger.onclick = function(event) {
-    event.stopPropagation(); // Остановить всплытие события, чтобы не закрыть каталог сразу
+    event.stopPropagation(); 
     catalog.style.display = catalog.style.display === 'none' ? 'block' : 'none';
 };
 
-// Переменная для отслеживания состояния popup
 let isPopupOpen = false;
 
-// Функция для открытия подкатегорий при наведении
 document.querySelectorAll('.category-button').forEach(button => {
     button.addEventListener('mouseenter', function(event) {
-        event.stopPropagation(); // Остановить всплытие события при наведении
+        event.stopPropagation();
         const categoryNum = this.getAttribute('data-category');
         let content = '';
 
@@ -285,20 +284,17 @@ document.querySelectorAll('.category-button').forEach(button => {
     });
 });
 
-// Функция для отображения popup
 function showPopup(title) {
     document.getElementById('popupTitle').textContent = title;
-    popup.style.display = 'block'; // Показывает popup
-    isPopupOpen = true; // Указывает что popup открыт
+    popup.style.display = 'block'; 
+    isPopupOpen = true; 
 }
 
-// Функция для закрытия popup
 function closePopup() {
     popup.style.display = 'none'; 
-    isPopupOpen = false; // Указывает что popup закрыт
+    isPopupOpen = false; 
 }
 
-// Закрытие каталога при клике где-либо на странице
 document.addEventListener('click', function() {
     if (catalog.style.display === 'block') {
         catalog.style.display = 'none'; 
