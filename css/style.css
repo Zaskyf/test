@@ -2835,53 +2835,124 @@ h2 {
     cursor: pointer;
 }
 
-
-
-/* Media Queries for Mobile Devices */
 @media (max-width: 768px) {
 
   .user-data {
-    max-width: 80%; /* Увеличиваем ширину для мобильных */
+    max-width: 80%; 
   }
 
   .full-width-button {
-    width: 100%; /* Кнопка занимает всю ширину */
+    width: 100%; 
   }
 
   .breadcrumb {
-    flex-direction: column; /* Перестраиваем хлебные крошки вертикально */
+    flex-direction: column; 
   }
 
   .profile-icon {
     width: 120px;
-    height: 120px; /* Уменьшаем размер иконки профиля */
+    height: 120px; 
   }
 
   .content-section, .content-section-user, .content-section-oplata {
-    width: auto; /* Ширина секций становится 100% */
-    height: auto; /* Высота автоматическая для адаптации */
+    width: auto; 
+    height: auto;
   }
 
   .discount-item {
-    width: 70%; /* Увеличиваем ширину для мобильных */
+    width: 70%; 
   }
 
   .settings-modal, .details-binding, .payment-content {
-    width: 80%; /* Ширина модальных окон для мобильных устройств */
+    width: 80%; 
   }
 
   .close-details, .close-discount-info {
-    width: 90%; /* Кнопки занимают всю ширину */
+    width: 90%; 
   }
 
   .primary-btn, .lsaveButton, .toggle-button {
-    width: 100%; /* Кнопки занимают всю ширину */
-    padding: 15px; /* Увеличиваем отступы для удобства на мобильных */
+    width: 100%; 
+    padding: 15px; 
   }
 }
 
 
 /* КОНЕЦ  СТРАНИЦЫ ЛИЧНОЙ КАБИНЕТ  */
+
+
+
+
+
+
+
+/*Страница описание доставки*/
+
+.delivery-info {
+  background-color: #f9f9f9; /* Светлый фон для блока */
+  border: 1px solid #ddd; /* Обводка вокруг блока */
+  border-radius: 8px; /* Скругление углов */
+  padding: 20px; /* Внутренние отступы */
+  width: 95%; /* Максимальная ширина блока */
+  height: auto;
+  margin: 20px auto; /* Центрирование блока на странице */
+  font-family: Arial, sans-serif; /* Шрифт для текста */
+}
+
+.delivery-info__title {
+  font-size: 1.5em; /* Размер шрифта заголовка */
+  color: #333; /* Цвет текста заголовка */
+  margin-bottom: 10px; /* Отступ снизу заголовка */
+}
+
+.delivery-info__text {
+  font-size: 1em; /* Размер шрифта для текста */
+  color: #555; /* Цвет текста */
+  line-height: 1.6; /* Интерлиньяж для улучшения читаемости */
+  margin-bottom: 15px; /* Отступ снизу текста */
+}
+
+.delivery-info__list {
+  list-style: disc; /* Стиль маркеров для списка */
+  padding-left: 20px; /* Отступ слева для списка */
+}
+
+
+.tab {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-right: 10px;
+  background-color: #007bff;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.tab:hover {
+  background-color: #0056b3;
+}
+
+.content {
+  display: none; /* Скрываем все содержимое по умолчанию */
+  margin-top: 20px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.content p {
+  margin: 5px 0;
+}
+
+/*Страница описание доставки*/
+
+
+
+
+
+
 
 
 
