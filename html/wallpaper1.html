@@ -173,13 +173,13 @@ margin-top:20px; margin-bottom:15px;">Бумажные обои </h6>
     
     <div class="container">  
         <div class="sidebar">
-            <button  style=" background-color: #315886;"  > <a href = "/html/wallpaper1.html" style=" text-decoration: none; color:white;  font-size: 25px;">Бумажные обои </a></button>
+            <button  style=" background-color: #315886;" > <a href = "/html/wallpaper1.html" style=" text-decoration: none; color:white; font-size: 25px;">Бумажные обои </a></button>
             <button > <a href = "/html/wallpaper2.html" style="text-decoration-line: none; color:white;">Виниловые обои</a></button>
             <button ><a href = "/html/wallpaper3.html" style="text-decoration-line: none; color:white;">Флизелиновые обои</a></button>
             <button ><a href = "/html/wallpaper4.html" style="text-decoration-line: none; color:white;">Текстильные обои</a></button>
-            <button ><a href = "" style="text-decoration-line: none; color:white;">Металлизированные обои</a></button>
-            <button ><a href = "" style="text-decoration-line: none; color:white;">Жидкие обои</a></button>
-            <button ><a href = "" style="text-decoration-line: none; color:white;">Фотообои</a></button>
+            <button  ><a href = "/html/wallpaper5.html" style="text-decoration-line: none; color:white; ">Металлизированные обои</a></button>
+            <button ><a href = "/html/wallpaper6.html" style="text-decoration-line: none; color:white;">Жидкие обои</a></button>
+            <button ><a href = "/html/wallpaper7.html" style="text-decoration-line: none; color:white;">Фотообои</a></button>
         </div></div>
 
 
@@ -592,6 +592,7 @@ const card = document.createElement('div');
     const img = document.createElement('img');
     img.src = cardData.image;
     img.alt = cardData.title;
+<<<<<<< HEAD
     figure.appendChild(img); const discountLabel = document.createElement('div');
     
     if (cardData.hasDiscount) {
@@ -604,6 +605,11 @@ const card = document.createElement('div');
 
 
         figure.appendChild(discountLabel);
+=======
+    figure.appendChild(img);
+    const discount = document.createElement('discount');
+    discount.classList.add('discount');
+>>>>>>> e170764bf09597d2440abd937dde18a9d389d2df
     const figcaption = document.createElement('figcaption');
     const price = document.createElement('p');
     price.classList.add('prce');
