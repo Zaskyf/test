@@ -8,7 +8,6 @@ body {
 /*Конец тела*/
 
 
-
 /* НАЧАЛО ГОЛОВЫ */
 header {
   width: 100%;
@@ -1265,7 +1264,16 @@ color:grey;
 
  }
 }
-
+/*СКИДКА НА ТОВАРЕ*/
+.discount {
+  background-color: red; 
+  color: white;
+  padding: 5px;
+  position: absolute; 
+  top: 50px; 
+  
+  left: 5px; 
+}
 
 
 
@@ -1474,9 +1482,9 @@ align-items: center;
  }
  }
 
-
  
-/* КОНЕЦ МОДУЛЯ КАРТОЧЕК НА ВТРОЙ СТРАНИЦЕ (категории)*/
+ 
+/* КОНЕЦ МОДУЛЯ КАРТОЧЕК НА ВТОРОЙ СТРАНИЦЕ (категории)*/
 
 
 
