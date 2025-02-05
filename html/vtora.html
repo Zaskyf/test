@@ -654,16 +654,20 @@ description.innerHTML = `
             <div class="tpd">
                 <h2 class="protitle">Обои</h2> 
                 <p class="prodescription">Это краткое описание товара. Здесь можно указать его особенности и преимущества.</p>
+                
                 <p class="proprice">2999 Р.</p> 
                 <p class="delprice">2999 Р.</p> 
+              
                 <button class="probutton">В корзину</button>   
                  <a href="/html/productcard.html">        
                     <button class="procardbutton">Больше информации о товаре</button>     
                 </a> 
             </div>
         </div>
+  
     </div>`;
-
+   
+    
 // Добавляем крестик и описание в контейнер содержимого окна
 windowContent.appendChild(closeButton); 
 windowContent.appendChild(description); 
@@ -697,6 +701,8 @@ zoomableImages.forEach(image => {
             this.style.transform = `scale(${zoomLevel})`;
         }
     });
+
+    
 
     image.addEventListener('click', function() {
         zoomed = !zoomed;
