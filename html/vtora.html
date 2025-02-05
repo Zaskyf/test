@@ -666,8 +666,6 @@ description.innerHTML = `
         </div>
   
     </div>`;
-   
-    
 // Добавляем крестик и описание в контейнер содержимого окна
 windowContent.appendChild(closeButton); 
 windowContent.appendChild(description); 
@@ -716,8 +714,6 @@ zoomableImages.forEach(image => {
     });
 });
 });
-
-
 let currentIndex = 0;
 const cards = document.querySelectorAll('.product-card');
 
@@ -727,7 +723,6 @@ function showCards(startIndex) {
         card.style.display = (i >= startIndex && i < endIndex) ? 'block' : 'none';
     });
 }
-
 showCards(currentIndex);
 document.getElementById('nextBtn').addEventListener('click', () => {
     if (currentIndex + 20 >= cards.length) return;
@@ -792,11 +787,8 @@ function addToCart(button) {
 function removeItem(icon) {
     icon.closest('.cart-item').remove();
 }
-
 function removeFromCart(button) {
-
 }
-
 function toggleCart() {
     const cart = document.getElementById('cart');
     cart.style.display = cart.style.display === 'none' ? 'block' : 'none';
@@ -815,8 +807,6 @@ function changeCartItemNumber(step, button) {
     }
     input.value = value;
 }
-
-
     function openWindow() {
         document.getElementById('quickViewWindow').style.display = 'flex';
     }
@@ -828,8 +818,6 @@ function changeCartItemNumber(step, button) {
     window.onload = openWindow;
 </script>
 
-
-   
 
     <footer>
         <hr>

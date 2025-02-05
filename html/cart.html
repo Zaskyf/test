@@ -371,7 +371,6 @@ renderBasket();
         popup.style.display = 'none'; 
         isPopupOpen = false; // Указывает что popup закрыт
     }
-    
     // Закрытие каталога при клике где-либо на странице
     document.addEventListener('click', function() {
         if (catalog.style.display === 'block') {
@@ -380,10 +379,7 @@ renderBasket();
         if (isPopupOpen) {
             closePopup();
         }
-    });
-    
-    
-            //Регистрация
+    });//Регистрация
     const socialLink = document.querySelector('.social-link');
     const tooltip = document.getElementById('tooltip');
     const account = document.getElementById('account');
@@ -424,26 +420,20 @@ renderBasket();
             account.style.display = 'none';
         }
     }
-    
-    
     function openRegisterModal() {
         document.body.style.overflow = 'hidden';
         registerModal.style.display = 'block';
     }
-    
     function closeRegisterModal() {
         document.body.style.overflow = 'auto';
         registerModal.style.display = 'none';
     }
-    
-    
     registerForm.onsubmit = (event) => {
         event.preventDefault();
         alert('Регистрация завершена');
         closeRegisterModal();
     };
-    
-    
+
     function logInAccount() {
         alert('Вход');
     }

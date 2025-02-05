@@ -708,7 +708,6 @@ zoomableImages.forEach(image => {
 });
 });
 
-
 let currentIndex = 0;
 const cards = document.querySelectorAll('.product-card');
 
@@ -758,7 +757,6 @@ function changeNumber(amount, inputId) {
         numberInput.value = currentValue;
     }
 }
-
 function addToCart(button) {
     const productTitle = button.closest('.product-card').querySelector('.product-title').textContent;
     const productPrice = button.closest('.product-card').querySelector('.money span').textContent;
@@ -786,15 +784,12 @@ function addToCart(button) {
         document.getElementById('cart-items').appendChild(cartItem);
     }
 }
-
 function removeItem(icon) {
     icon.closest('.cart-item').remove();
 }
-
 function removeFromCart(button) {
 
 }
-
 function toggleCart() {
     const cart = document.getElementById('cart');
     cart.style.display = cart.style.display === 'none' ? 'block' : 'none';
@@ -826,8 +821,6 @@ function changeCartItemNumber(step, button) {
     
     window.onload = openWindow;
 </script>
-
-
 
     <footer>
         <hr>
@@ -928,7 +921,6 @@ function changeCartItemNumber(step, button) {
             closePopup();
         }
     });
-    
     
             //Регистрация
     const socialLink = document.querySelector('.social-link');

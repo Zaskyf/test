@@ -606,7 +606,7 @@ header > .header-contaner {
           background-color:#91ade5;  /* Светло-синий */
            width: 230px;
            margin:5px;
-           height: 55px;
+           height: auto;
 
           }
           .popup h2 {
@@ -719,6 +719,42 @@ header > .header-contaner {
 /*КОНЕЦ КАРУСЕЛИ НА ГЛАВНОЙ СТРАНИЦЕ*/
 
 
+/*НАЧАЛО КНОПКИ ИНСТРУМЕНТЫ */
+
+.tools-button {
+  display: flex;
+  align-items: center;
+  background-color: #4676d7; /* Цвет фона кнопки */
+  color: white; /* Цвет текста */
+  border: none; /* Убираем рамку */
+  height: 40px;
+  width: 45px;
+  border-radius: 5px; /* Закругленные углы */
+  padding: 10px; /* Внутренние отступы */
+  font-size: 16px; /* Размер шрифта */
+  cursor: pointer; /* Курсор в виде руки */
+  transition: transform 0.3s ease, opacity 0.3s ease; /* Переход для анимации */
+}
+.tools-button .text {
+  opacity: 0; /* Скрываем текст изначально */
+  transition: opacity 0.2s ease; /* Плавный переход для текста */
+}
+.tools-button:hover {
+  height: 30px;
+  width: 180px;
+  transform: scale(1.2); /* Увеличение размера кнопки при наведении */
+}
+.tools-button:hover .text {
+  opacity: 1; /* Появление текста при наведении */
+}
+
+/*КОНЕЦ КНОПКИ ИНСТРУМЕНТЫ */
+
+
+
+
+
+
 
 
 
@@ -809,7 +845,6 @@ margin-bottom: 5px;
 }
 }
 /*КОНЕЦ БОКСА С ИНКОКАМИ ССЫЛКАМИ 	НА КАТЕГОРИИ */
-
 
 
 

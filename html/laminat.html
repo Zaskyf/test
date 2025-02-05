@@ -823,7 +823,6 @@ function changeCartItemNumber(step, button) {
         <a href="/information/feedback/">Обратная связь</a>
         <a href="/information/jobs/">Гарантия качества </a>
        <a href="/information/contacts/">Контакты</a>
-        
     
     </ul></div>   
 
@@ -840,8 +839,6 @@ function changeCartItemNumber(step, button) {
 </footer>
 </body></html>
 
-
-
 <script>
     const catalog = document.getElementById('catalog');
     const menuBurger = document.getElementById('menuBurger');
@@ -853,7 +850,6 @@ function changeCartItemNumber(step, button) {
     };
     
     let isPopupOpen = false;
-    
     document.querySelectorAll('.category-button').forEach(button => {
         button.addEventListener('mouseenter', function(event) {
             event.stopPropagation();
@@ -883,7 +879,6 @@ function changeCartItemNumber(step, button) {
             showPopup(this.querySelector('span').textContent);  
         });
     });
-    
     function showPopup(title) {
         document.getElementById('popupTitle').textContent = title;
         popup.style.display = 'block';
@@ -903,7 +898,6 @@ function changeCartItemNumber(step, button) {
             closePopup();
         }
     });
-
             //Регистрация
     const socialLink = document.querySelector('.social-link');
     const tooltip = document.getElementById('tooltip');
@@ -943,7 +937,6 @@ function changeCartItemNumber(step, button) {
             account.style.display = 'none';
         }
     }
-    
     function openRegisterModal() {
         document.body.style.overflow = 'hidden'; 
         registerModal.style.display = 'block';

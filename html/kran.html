@@ -626,7 +626,6 @@ const card = document.createElement('div');
     description.innerHTML = `
   
  <div class="cartpodrobno">
-
             <div class="procard">
                     <img 
   style="width: 400px; height: 400px; border: 1.2px solid grey;" 
@@ -645,7 +644,6 @@ const card = document.createElement('div');
                 </div>
             </div>
         </div>
-  
     `;
     windowContent.appendChild(closeButton);
     windowContent.appendChild(description);
@@ -697,8 +695,6 @@ zoomableImages.forEach(image => {
     });
 });
 });
-
-
 let currentIndex = 0;
 const cards = document.querySelectorAll('.product-card');
 
@@ -708,21 +704,17 @@ function showCards(startIndex) {
         card.style.display = (i >= startIndex && i < endIndex) ? 'block' : 'none';
     });
 }
-
 showCards(currentIndex);
-
 document.getElementById('nextBtn').addEventListener('click', () => {
     if (currentIndex + 20 >= cards.length) return;
     currentIndex += 20;
     showCards(currentIndex);
 });
-
 document.getElementById('prevBtn').addEventListener('click', () => {
     if (currentIndex === 0) return;
     currentIndex -= 20;
     showCards(currentIndex);
 });
-
 document.querySelectorAll(".btn").forEach(button => {
     button.addEventListener("click", function() {
         const isInCart = this.classList.contains("clicked");
@@ -735,11 +727,8 @@ document.querySelectorAll(".btn").forEach(button => {
             this.classList.remove("clicked");
             removeFromCart(this);
         }
-
-        
     });
 });
-
 function changeNumber(amount, inputId) {
     const numberInput = document.getElementById(inputId);
     let currentValue = parseInt(numberInput.value, 10);
@@ -748,7 +737,6 @@ function changeNumber(amount, inputId) {
         numberInput.value = currentValue;
     }
 }
-
 function addToCart(button) {
     const productTitle = button.closest('.product-card').querySelector('.product-title').textContent;
     const productPrice = button.closest('.product-card').querySelector('.money span').textContent;
@@ -757,7 +745,6 @@ function addToCart(button) {
     const existingItem = Array.from(document.querySelectorAll('.cart-item')).find(item => 
         item.querySelector('p').textContent.includes(productTitle)
     );
-
     if (existingItem) {
         const quantityInput = existingItem.querySelector('.js-number');
         quantityInput.value = parseInt(quantityInput.value) + parseInt(productQuantity);
@@ -776,24 +763,19 @@ function addToCart(button) {
         document.getElementById('cart-items').appendChild(cartItem);
     }
 }
-
 function removeItem(icon) {
     icon.closest('.cart-item').remove();
 }
-
 function removeFromCart(button) {
 
 }
-
 function toggleCart() {
     const cart = document.getElementById('cart');
     cart.style.display = cart.style.display === 'none' ? 'block' : 'none';
 }
-
 function clearCart() {
     document.getElementById('cart-items').innerHTML = '';
 }
-
 function changeCartItemNumber(step, button) {
     const input = button.parentElement.querySelector('.js-number');
     let value = parseInt(input.value);
@@ -803,8 +785,6 @@ function changeCartItemNumber(step, button) {
     }
     input.value = value;
 }
-
-
     function openWindow() {
         document.getElementById('quickViewWindow').style.display = 'flex';
     }

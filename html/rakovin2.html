@@ -909,20 +909,17 @@ function changeCartItemNumber(step, button) {
             showPopup(this.querySelector('span').textContent);  
         });
     });
-    
     // Функция для отображения popup
     function showPopup(title) {
         document.getElementById('popupTitle').textContent = title;
         popup.style.display = 'block'; // Показывает popup
         isPopupOpen = true; // Указывает что popup открыт
     }
-    
     // Функция для закрытия popup
     function closePopup() {
         popup.style.display = 'none'; 
         isPopupOpen = false; // Указывает что popup закрыт
     }
-    
     // Закрытие каталога при клике где-либо на странице
     document.addEventListener('click', function() {
         if (catalog.style.display === 'block') {
@@ -933,7 +930,6 @@ function changeCartItemNumber(step, button) {
         }
     });
     
-    
             //Регистрация
     const socialLink = document.querySelector('.social-link');
     const tooltip = document.getElementById('tooltip');
@@ -943,15 +939,12 @@ function changeCartItemNumber(step, button) {
     const signInBtnLink = document.querySelector('.signInBtn-link');
     const signUpBtnLink = document.querySelector('.signUpBtn-link');
     const modal = document.querySelector('.modal');
-    
     let accountVisible = false;
-    
     socialLink.addEventListener('mouseover', () => {
         tooltip.style.display = 'block';
         tooltip.style.top = `${socialLink.offsetTop + socialLink.offsetHeight}px`; 
         tooltip.style.left = `${socialLink.offsetLeft}px`;
     });
-    
     
     document.addEventListener('click', (event) => {
         if (!socialLink.contains(event.target) && !tooltip.contains(event.target)) {
