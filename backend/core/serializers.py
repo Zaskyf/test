@@ -29,14 +29,14 @@ class CreateUserSerializer(serializers.ModelSerializer):
 class NestedCategorySerializer(serializers.ModelSerializer):
     class Meta:
         model = Category
-        fields = ('id', 'name')
+        fields = ('id', 'name', 'image')
 
 
 class CategorySerializer(serializers.ModelSerializer):
     nested_categories = NestedCategorySerializer(many=True, read_only=True)
     class Meta:
         model = Category
-        fields = ('id', 'name', 'main_category', 'nested_categories')
+        fields = ('id', 'name', 'image', 'main_category', 'nested_categories')
 
 class ImageSerializer(serializers.ModelSerializer):
     class Meta:
