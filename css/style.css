@@ -8,7 +8,6 @@ body {
 /*Конец тела*/
 
 
-
 /* НАЧАЛО ГОЛОВЫ */
 header {
   width: 100%;
@@ -1265,7 +1264,16 @@ color:grey;
 
  }
 }
-
+/*СКИДКА НА ТОВАРЕ*/
+.discount {
+  background-color: red; 
+  color: white;
+  padding: 5px;
+  position: absolute; 
+  top: 50px; 
+  
+  left: 5px; 
+}
 
 
 
@@ -1473,7 +1481,10 @@ align-items: center;
 
  }
  }
-/* КОНЕЦ МОДУЛЯ КАРТОЧЕК НА ВТРОЙ СТРАНИЦЕ (категории)*/
+
+ 
+ 
+/* КОНЕЦ МОДУЛЯ КАРТОЧЕК НА ВТОРОЙ СТРАНИЦЕ (категории)*/
 
 
 
@@ -1573,8 +1584,8 @@ align-items: center;
       padding: 20px;
       border-radius: 8px;
       position: relative;
-      height: 70%;
-      width: 70%;
+      height: 55%;
+      width: 65%;
       border: 1px solid #ccc;
 
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);

@@ -173,13 +173,13 @@ margin-top:20px; margin-bottom:15px;">Бумажные обои </h6>
     
     <div class="container">  
         <div class="sidebar">
-            <button  style=" background-color: #315886;"  > <a href = "/html/wallpaper1.html" style=" text-decoration: none; color:white;  font-size: 25px;">Бумажные обои </a></button>
+            <button  style=" background-color: #315886;" > <a href = "/html/wallpaper1.html" style=" text-decoration: none; color:white; font-size: 25px;">Бумажные обои </a></button>
             <button > <a href = "/html/wallpaper2.html" style="text-decoration-line: none; color:white;">Виниловые обои</a></button>
             <button ><a href = "/html/wallpaper3.html" style="text-decoration-line: none; color:white;">Флизелиновые обои</a></button>
             <button ><a href = "/html/wallpaper4.html" style="text-decoration-line: none; color:white;">Текстильные обои</a></button>
-            <button ><a href = "" style="text-decoration-line: none; color:white;">Металлизированные обои</a></button>
-            <button ><a href = "" style="text-decoration-line: none; color:white;">Жидкие обои</a></button>
-            <button ><a href = "" style="text-decoration-line: none; color:white;">Фотообои</a></button>
+            <button  ><a href = "/html/wallpaper5.html" style="text-decoration-line: none; color:white; ">Металлизированные обои</a></button>
+            <button ><a href = "/html/wallpaper6.html" style="text-decoration-line: none; color:white;">Жидкие обои</a></button>
+            <button ><a href = "/html/wallpaper7.html" style="text-decoration-line: none; color:white;">Фотообои</a></button>
         </div></div>
 
 
@@ -187,26 +187,18 @@ margin-top:20px; margin-bottom:15px;">Бумажные обои </h6>
 <button id="nextBtn" class="nex-btn">Вперед</button></div> </div>
 
 <script>
-
-
 const container = document.querySelector('.container');
 const cardsData = [
-{ id: 1, image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/4.webp', title: 'Обои под покраску флизелиновые антивандальные Kreaforta Батист белые 1.06x25м 113г/м²', price: 799, delprice: 1000 , detailsUrl: 'productcard.html'  },
- {
-        id: 2,
-        title: 'Обои бумажные серые 0.53 м',
-        price: 990,
-        delprice: 1500,
-        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/2.webp',
-        detailsUrl: 'productcard.html'
-    },
-    {
+{ id: 1, image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/4.webp', title: 'Обои под покраску флизелиновые антивандальные Kreaforta Батист белые 1.06x25м 113г/м²', price: 799, delprice: 1000 , detailsUrl: 'productcard.html' , hasDiscount: true  },
+{ id: 2, image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/4.webp', title: 'Обои под покраску флизелиновые антивандальные Kreaforta Батист белые 1.06x25м 113г/м²', price: 799, delprice: 1000 , detailsUrl: 'productcard.html' , hasDiscount: false  },
+{
         id: 3,
         title: 'Обои флизелиновые Ateliero Kora бежевые 1.06 м AT1016-02ОАВ',
         price: 790,
         delprice: 1000,
         image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/3.webp',
-        detailsUrl: ''
+        detailsUrl: '',
+        hasDiscount: false
     },
     {
         id: 4,
@@ -214,7 +206,8 @@ const cardsData = [
         price: 1290,
         delprice: 1800,
         image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/4.webp',
-        detailsUrl: ''
+        detailsUrl: '',
+        hasDiscount: false
     },
     {
         id: 5,
@@ -222,7 +215,8 @@ const cardsData = [
         price: 1150,
         delprice: 1600,
         image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/5.webp',
-        detailsUrl: ''
+        detailsUrl: '',
+        hasDiscount: false
     },
     {
         id: 6,
@@ -230,7 +224,8 @@ const cardsData = [
         price: 890,
         delprice: 1300,
         image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/6.webp',
-        detailsUrl: ''
+        detailsUrl: '',
+        hasDiscount: true
     },
     {
         id: 7,
@@ -238,7 +233,8 @@ const cardsData = [
         price: 1490,
         delprice: 2000,
         image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/7.webp',
-        detailsUrl: ''
+        detailsUrl: '',
+        hasDiscount: false
     },
     {
         id: 8,
@@ -246,7 +242,8 @@ const cardsData = [
         price: 990,
         delprice: 1400,
         image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/8.webp',
-        detailsUrl: ''
+        detailsUrl: '',
+        hasDiscount: false
     },
     {
         id: 9,
@@ -254,7 +251,8 @@ const cardsData = [
         price: 690,
         delprice: 900,
         image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/9.webp',
-        detailsUrl: ''
+        detailsUrl: '',
+        hasDiscount: true
     },
     {
         id: 10,
@@ -262,7 +260,8 @@ const cardsData = [
         price: 1090,
         delprice: 1500,
         image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/10.webp',
-        detailsUrl: ''
+        detailsUrl: '',
+        hasDiscount: true
     },
     {
         id: 11,
@@ -270,7 +269,8 @@ const cardsData = [
         price: 1390,
         delprice: 1900,
         image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/11.webp',
-        detailsUrl: ''
+        detailsUrl: '',
+        hasDiscount: false
     },
     {
         id: 12,
@@ -278,7 +278,8 @@ const cardsData = [
         price: 790,
         delprice: 1100,
         image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/12.webp',
-        detailsUrl: ''
+        detailsUrl: '',
+        hasDiscount: false
     },
     {
         id: 13,
@@ -286,7 +287,8 @@ const cardsData = [
         price: 950,
         delprice: 1350,
         image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/13.webp',
-        detailsUrl: ''
+        detailsUrl: '',
+        hasDiscount: true
     },
     {
         id: 14,
@@ -294,7 +296,8 @@ const cardsData = [
         price: 1190,
         delprice: 1600,
         image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/14.webp',
-        detailsUrl: ''
+        detailsUrl: '',
+        hasDiscount: false
     },
     {
         id: 15,
@@ -302,7 +305,8 @@ const cardsData = [
         price: 1299,
         delprice: 1700,
         image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/15.webp',
-        detailsUrl: ''
+        detailsUrl: '',
+        hasDiscount: false
     },
      {
         id: 16,
@@ -310,7 +314,8 @@ const cardsData = [
         price: 799,
         delprice: 1100,
         image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/16.webp',
-        detailsUrl: ''
+        detailsUrl: '',
+        hasDiscount: true
     },
     {
         id: 17,
@@ -318,7 +323,8 @@ const cardsData = [
         price: 1090,
         delprice: 1450,
         image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/17.webp',
-        detailsUrl: ''
+        detailsUrl: '',
+        hasDiscount: false
     },
     {
         id: 18,
@@ -326,7 +332,8 @@ const cardsData = [
         price: 980,
         delprice: 1250,
         image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/18.webp',
-        detailsUrl: ''
+        detailsUrl: '',
+        hasDiscount: false
     },
     {
         id: 19,
@@ -334,7 +341,8 @@ const cardsData = [
         price: 1370,
         delprice: 1800,
         image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/19.webp',
-        detailsUrl: ''
+        detailsUrl: '',
+        hasDiscount: true
     },
     {
         id: 20,
@@ -342,7 +350,8 @@ const cardsData = [
         price: 1150,
         delprice: 1500,
         image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/20.webp',
-        detailsUrl: ''
+        detailsUrl: '',
+        hasDiscount: true
     },
     {
         id: 21,
@@ -350,7 +359,8 @@ const cardsData = [
         price: 850,
         delprice: 1100,
         image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/21.webp',
-        detailsUrl: ''
+        detailsUrl: '',
+        hasDiscount: false
     },
     {
         id: 22,
@@ -358,7 +368,8 @@ const cardsData = [
         price: 1250,
         delprice: 1600,
         image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/22.webp',
-        detailsUrl: ''
+        detailsUrl: '',
+        hasDiscount: false
     },
     {
         id: 23,
@@ -366,7 +377,8 @@ const cardsData = [
         price: 720,
         delprice: 950,
         image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/23.webp',
-        detailsUrl: ''
+        detailsUrl: '',
+        hasDiscount: false
     },
     {
         id: 24,
@@ -374,7 +386,8 @@ const cardsData = [
         price: 1050,
         delprice: 1350,
         image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/24.webp',
-        detailsUrl: ''
+        detailsUrl: '',
+        hasDiscount: false
     },
     {
         id: 25,
@@ -382,7 +395,8 @@ const cardsData = [
         price: 950,
         delprice: 1250,
         image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/25.webp',
-        detailsUrl: ''
+        detailsUrl: '',
+        hasDiscount: true
     },
     {
         id: 26,
@@ -390,7 +404,8 @@ const cardsData = [
         price: 1200,
         delprice: 1600,
         image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/26.webp',
-        detailsUrl: ''
+        detailsUrl: '',
+        hasDiscount: false
     },
     {
         id: 27,
@@ -398,7 +413,8 @@ const cardsData = [
         price: 930,
         delprice: 1280,
         image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/27.webp',
-        detailsUrl: ''
+        detailsUrl: '',
+        hasDiscount: false
     },
     {
         id: 28,
@@ -406,7 +422,8 @@ const cardsData = [
         price: 1095,
         delprice: 1450,
         image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/28.webp',
-        detailsUrl: ''
+        detailsUrl: '',
+        hasDiscount: false
     },
     {
         id: 29,
@@ -414,7 +431,8 @@ const cardsData = [
         price: 1155,
         delprice: 1500,
         image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/29.webp',
-        detailsUrl: ''
+        detailsUrl: '',
+        hasDiscount: false
     },
     {
         id: 30,
@@ -422,7 +440,8 @@ const cardsData = [
         price: 790,
         delprice: 1000,
         image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/30.webp',
-        detailsUrl: ''
+        detailsUrl: '',
+        hasDiscount: true
     },
      {
         id: 31,
@@ -430,7 +449,8 @@ const cardsData = [
         price: 900,
         delprice: 1200,
         image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/31.webp',
-        detailsUrl: ''
+        detailsUrl: '',
+        hasDiscount: true
     },
     {
         id: 32,
@@ -438,7 +458,8 @@ const cardsData = [
         price: 1150,
         delprice: 1550,
         image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/32.webp',
-        detailsUrl: ''
+        detailsUrl: '',
+        hasDiscount: false
     },
     {
         id: 33,
@@ -446,7 +467,8 @@ const cardsData = [
         price: 850,
         delprice: 1100,
         image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/33.webp',
-        detailsUrl: ''
+        detailsUrl: '',
+        hasDiscount: false
     },
     {
         id: 34,
@@ -454,7 +476,8 @@ const cardsData = [
         price: 1199,
         delprice: 1550,
         image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/34.webp',
-        detailsUrl: ''
+        detailsUrl: '',
+        hasDiscount: false
     },
     {
         id: 35,
@@ -462,7 +485,8 @@ const cardsData = [
         price: 1020,
         delprice: 1350,
         image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/35.webp',
-        detailsUrl: ''
+        detailsUrl: '',
+        hasDiscount: false
     },
     {
         id: 36,
@@ -470,7 +494,8 @@ const cardsData = [
         price: 950,
         delprice: 1250,
         image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/36.webp',
-        detailsUrl: ''
+        detailsUrl: '',
+        hasDiscount: false
     },
     {
         id: 37,
@@ -478,7 +503,8 @@ const cardsData = [
         price: 770,
         delprice: 950,
         image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/37.webp',
-        detailsUrl: ''
+        detailsUrl: '',
+        hasDiscount: false
     },
     {
         id: 38,
@@ -486,7 +512,8 @@ const cardsData = [
         price: 1340,
         delprice: 1750,
         image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/38.webp',
-        detailsUrl: ''
+        detailsUrl: '',
+        hasDiscount: false
     },
     {
         id: 39,
@@ -494,7 +521,8 @@ const cardsData = [
         price: 1180,
         delprice: 1490,
         image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/39.webp',
-        detailsUrl: ''
+        detailsUrl: '',
+        hasDiscount: true
     },
     {
         id: 40,
@@ -502,7 +530,8 @@ const cardsData = [
         price: 890,
         delprice: 1200,
         image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/40.webp',
-        detailsUrl: ''
+        detailsUrl: '',
+        hasDiscount: false
     },
     {
         id: 41,
@@ -510,7 +539,8 @@ const cardsData = [
         price: 1290,
         delprice: 1700,
         image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/41.webp',
-        detailsUrl: ''
+        detailsUrl: '',
+        hasDiscount: false
     },     
     {
         id: 42,
@@ -518,7 +548,8 @@ const cardsData = [
         price: 950,
         delprice: 1250,
         image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/42.webp',
-        detailsUrl: ''
+        detailsUrl: '',
+        hasDiscount: false
     },
     {
         id: 43,
@@ -526,7 +557,8 @@ const cardsData = [
         price: 1150,
         delprice: 1450,
         image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/43.webp',
-        detailsUrl: ''
+        detailsUrl: '',
+        hasDiscount: false
     },
     {
         id: 44,
@@ -534,7 +566,8 @@ const cardsData = [
         price: 980,
         delprice: 1280,
         image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/44.webp',
-        detailsUrl: ''
+        detailsUrl: '',
+        hasDiscount: true
     },
     {
         id: 45,
@@ -542,7 +575,8 @@ const cardsData = [
         price: 1130,
         delprice: 1500,
         image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/45.webp',
-        detailsUrl: ''
+        detailsUrl: '',
+        hasDiscount: false
     }
 ];cardsData.forEach((cardData) => {
 const card = document.createElement('div');
@@ -558,7 +592,23 @@ const card = document.createElement('div');
     const img = document.createElement('img');
     img.src = cardData.image;
     img.alt = cardData.title;
+    figure.appendChild(img); const discountLabel = document.createElement('div');
+    
+    if (cardData.hasDiscount) {
+        const discountLabel = document.createElement('div');
+        discountLabel.classList.add('discount'); 
+        discountLabel.textContent = `Скидка: 10%`; // Скидка для карточки
+        figure.appendChild(discountLabel);
+    }
+
+
+
+        figure.appendChild(discountLabel);
+
     figure.appendChild(img);
+    const discount = document.createElement('discount');
+    discount.classList.add('discount');
+
     const figcaption = document.createElement('figcaption');
     const price = document.createElement('p');
     price.classList.add('prce');
@@ -610,6 +660,7 @@ const card = document.createElement('div');
     detailsButton.classList.add('details-button');
     detailsDiv.appendChild(detailsButton);
     card.appendChild(detailsDiv);
+    
 // "Быстрый просмотр"
 const quickViewButton = document.createElement('button'); 
 quickViewButton.classList.add('quick-view-button'); //класс для стилей
