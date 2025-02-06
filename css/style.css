@@ -412,7 +412,7 @@ header > .header-contaner {
               position: fixed;
               top: 0;
               left: 0;
-              width: 270px;
+              width: 405px;
               height: 100%;
               padding: 2px;
              border-top-right-radius : 9px;
@@ -424,8 +424,8 @@ header > .header-contaner {
           
           .catalog button {
               display: block;
-              width: 210px !important;
-              height: 65px;
+              width: 300px !important;
+              height: auto;
               line-height: 40px;
               font-size: 20px;
               font-family: sans-serif;
@@ -590,8 +590,8 @@ header > .header-contaner {
               display: none;
               position: fixed;
               top: 0;
-              left: 265px; /* Расположение рядом с каталогом */
-              width: 270px;
+              left: 365px; /* Расположение рядом с каталогом */
+              width: 300px;
               height: 100%;
            border: 2px solid #688EBD; /* Установлена  */
               background-color:#688EBD;  /* Темно-синий */
@@ -604,7 +604,7 @@ header > .header-contaner {
           .popup button{
 
           background-color:#91ade5;  /* Светло-синий */
-           width: 230px;
+           width: 245px;
            margin:5px;
            height: auto;
 
