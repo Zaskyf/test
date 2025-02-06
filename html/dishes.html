@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ванны и комплектующие </title>
+    <title>Посуда</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="/css/style.css">
 
@@ -55,218 +54,548 @@
         </div>
 
 
-<!--Каталог-->
 
-<div class="catalog" id="catalog">
-    <h6>Каталог</h6>
-   <a href="vtora.html" style = " text-decoration :none;  color:black;">    <button class="category-button" data-category="1">      
-        <span>Обои</span> <i class="fas fa-chevron-right"></i>
-  </button>  </a>
-    <a href="three.html" style = " text-decoration :none;  color:black;"> <button class="category-button" data-category="2">
-        <span>Сантехника</span> <i class="fas fa-chevron-right"></i>
-    </button>  </a>
-    <button class="category-button" data-category="3">
-        <a href="laminat.html" style = " text-decoration :none;  color:black;"> <span>Напольные покрытия</span> <i class="fas fa-chevron-right"></i>
-        </a></button>
-            <button class="category-button" data-category="4">
-                <a href="furniture.html" style = " text-decoration :none;  color:black;"> <span>Мебель</span> <i class="fas fa-chevron-right"></i>
+        <!--Каталог-->
+
+        <div class="catalog" id="catalog">
+            <h6>Каталог</h6>
+           <a href="vtora.html" style = " text-decoration :none;  color:black;">    <button class="category-button" data-category="1">      
+                <span>Обои</span> <i class="fas fa-chevron-right"></i>
+          </button>  </a>
+            <a href="three.html" style = " text-decoration :none;  color:black;"> <button class="category-button" data-category="2">
+                <span>Сантехника</span> <i class="fas fa-chevron-right"></i>
+            </button>  </a>
+            <button class="category-button" data-category="3">
+                <a href="laminat.html" style = " text-decoration :none;  color:black;"> <span>Напольные покрытия</span> <i class="fas fa-chevron-right"></i>
                 </a></button>
-                <button class="category-button" data-category="5">
-                    <a href=".html" style = " text-decoration :none;  color:black;"> <span>Посуда</span> <i class="fas fa-chevron-right"></i>
-                    </a></button>
-                    <button class="category-button" data-category="6">
-                        <a href=".html" style = " text-decoration :none;  color:black;"> <span>Текстиль</span> <i class="fas fa-chevron-right"></i>
+                    <button class="category-button" data-category="4">
+                        <a href="furniture.html" style = " text-decoration :none;  color:black;"> <span>Мебель</span> <i class="fas fa-chevron-right"></i>
                         </a></button>
-                        <button class="category-button" data-category="7">
-                            <a href=".html" style = " text-decoration :none;  color:black;"> <span>Бытовая техника</span> <i class="fas fa-chevron-right"></i>
+                        <button class="category-button" data-category="5">
+                            <a href=".html" style = " text-decoration :none;  color:black;"> <span>Посуда</span> <i class="fas fa-chevron-right"></i>
                             </a></button>
-                                <button class="category-button" data-category="8">
-                                    <a href=".html" style = " text-decoration :none;  color:black;"> <span>Декор</span> <i class="fas fa-chevron-right"></i>
-                                    </a></button> 
-                                    <button class="category-button" data-category="9">
-                                        <a href=".html" style = " text-decoration :none;  color:black;"> <span>Инструменты</span> <i class="fas fa-chevron-right"></i>
-                                        </a></button> 
-                                      
-</div>
+                            <button class="category-button" data-category="6">
+                                <a href=".html" style = " text-decoration :none;  color:black;"> <span>Текстиль</span> <i class="fas fa-chevron-right"></i>
+                                </a></button>
+                                <button class="category-button" data-category="7">
+                                    <a href=".html" style = " text-decoration :none;  color:black;"> <span>Бытовая техника</span> <i class="fas fa-chevron-right"></i>
+                                    </a></button>
+                                        <button class="category-button" data-category="8">
+                                            <a href=".html" style = " text-decoration :none;  color:black;"> <span>Декор</span> <i class="fas fa-chevron-right"></i>
+                                            </a></button> 
+                                            <button class="category-button" data-category="9">
+                                                <a href=".html" style = " text-decoration :none;  color:black;"> <span>Инструменты</span> <i class="fas fa-chevron-right"></i>
+                                                </a></button> 
+                                              
+        </div>
 
-<!-- Popup для подкатегорий -->
-<div class="popup" id="popup">
-    <span class="clobutton" onclick="closePopup()">&times;</span>
-  <h2 id="popupTitle"></h2>  
-   
+    <!-- Popup для подкатегорий -->
+    <div class="popup" id="popup">
+        <span class="clobutton" onclick="closePopup()">&times;</span>
+        <h2 id="popupTitle"></h2>
 
-    <ul id="popupContent"></ul>
-</div>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+        <ul id="popupContent"></ul>
+    </div>
 
 
-<!-- НАЧАЛО РЕГИСТРАЦИИ  -->
-<div class="account" id="account" onmouseleave="hideAccount()">
-    <h2>Аккаунт</h2>
-    <button class="sign" onclick="openRegisterModal()" style = " color: black;font-size : 18px ;">Войти или Зарегистрироваться</button>
-</div>
-<!-- Модальное окно для регистрации -->
-    <div id="registerModal" class="modal">
-    <span class="close" onclick="closeRegisterModal()">&times;</span> <!-- Крестик закрытия -->
-    <div class="modal-content sign-in">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+    
+     
+
+
+    <!-- Регистрация -->
+    <div class="account" id="account" onmouseleave="hideAccount()">
+        <h2>Аккаунт</h2>
+        <button class="sign" onclick="openRegisterModal()" style = " color: black;font-size : 18px ;">Войти или Зарегистрироваться</button>
+    </div>
+
+    <!-- Модальное окно для регистрации -->
+        <div id="registerModal" class="modal">
+        <span class="close" onclick="closeRegisterModal()">&times;</span> <!-- Крестик закрытия -->
+        <div class="modal-content sign-in">
+            <form action="">
+                <h2>Войти</h2>
+                <div class="input-group">
+                    <input type="text" required>
+                    <label for="">Имя</label>
+                </div>
+                <div class="input-group">
+                    <input type="password" required>
+                    <label for="">Пароль</label>
+                </div>
+                <div class="remember">
+                    <label><input type="checkbox"> Запомнить меня</label>
+                </div>
+                <button class="registr" type="submit">Войти</button>
+                <div class="signUp-link">
+                    <p style="color: black; font-size : 18px;" >У вас нет аккаунта? <a href="#" class="signUpBtn-link">Регистрация</a></p>
+                </div>
+            </form>
+        </div>
+    <div class="modal-content sign-up">
         <form action="">
-            <h2>Войти</h2>
+            <h2>Регистрация</h2><br>
             <div class="input-group">
                 <input type="text" required>
                 <label for="">Имя</label>
             </div>
             <div class="input-group">
+                <input type="email" required>
+                <label for="">Почта</label>
+            </div>
+            <div class="input-group">
                 <input type="password" required>
-                <label for="">Пароль</label>
+                <label for="">Придумайте пароль</label>
             </div>
             <div class="remember">
-                <label><input type="checkbox"> Запомнить меня</label>
+                <label style="color: black; font-size: 16px;">
+                    <input type="checkbox"> Я соглашаюсь с чем-то
+                </label>
             </div>
-            <button class="registr" type="submit">Войти</button>
+            <button class="registr" type="submit">Зарегистрироваться</button>
+
             <div class="signUp-link">
-                <p style="color: black; font-size : 18px;" >У вас нет аккаунта? <a href="#" class="signUpBtn-link">Регистрация</a></p>
+                <p style="color: black; margin-top: 10px; font-size: 16px;">У Вас уже есть аккаунт?
+                    <a style="color: black; margin-top: 10px; font-size: 16px;" href="#" class="signInBtn-link">Войти</a>
+                </p>
+                  <div class="gogle" type="button" onclick="socialLogin()">Войти через <span class="social-link">соцсети</span></div>
             </div>
+            <div class="tooltip" id="tooltip" >
+      <span class="clo" onclick="hideTooltip()">&#10006;</span>
+      <ul style="text-align:left; padding:5px; margin-top:10px;">
+        <a href="#" style="margin-right: 3px; color: black; display: inline-block; "><i class="fab fa-facebook-f"></i></a>
+        <a href="#" style="margin-right: 3px; color: black; display: inline-block;"><i class="fab fa-google"></i></a>
+        <a href="#" style="margin-right: 3px; color: black; display: inline-block; "><i class="fab fa-instagram"></i></a>
+        <a href="#" style="margin-right: 3px; color: black; display: inline-block; "><i class="fab fa-instagram"></i></a>
+
+    </ul>
+    </div>
         </form>
     </div>
-<div class="modal-content sign-up">
-    <form action="">
-        <h2>Регистрация</h2><br>
-        <div class="input-group">
-            <input type="text" required>
-            <label for="">Имя</label>
-        </div>
-        <div class="input-group">
-            <input type="email" required>
-            <label for="">Почта</label>
-        </div>
-        <div class="input-group">
-            <input type="password" required>
-            <label for="">Придумайте пароль</label>
-        </div>
-        <div class="remember">
-            <label style="color: black; font-size: 16px;">
-                <input type="checkbox"> Я соглашаюсь с чем-то
-            </label>
-        </div>
-        <button class="registr" type="submit">Зарегистрироваться</button>
+    </div>
 
-        <div class="signUp-link">
-            <p style="color: black; margin-top: 10px; font-size: 16px;">У Вас уже есть аккаунт?
-                <a style="color: black; margin-top: 10px; font-size: 16px;" href="#" class="signInBtn-link">Войти</a>
-            </p>
-              <div class="gogle" type="button" onclick="socialLogin()">Войти через <span class="social-link">соцсети</span></div>
-        </div>
-        <div class="tooltip" id="tooltip" >
-  <span class="clo" onclick="hideTooltip()">&#10006;</span>
-<ul style="text-align:left; padding:5px; margin-top:10px;">
-<li>
-    <a href="#" style="margin-right: 3px; color: black; display: inline-block;">
-        <i class="fab fa-facebook-f"></i>
-    </a>
-</li>
-<li>
-    <a href="#" style="margin-right: 3px; color: black; display: inline-block;">
-        <i class="fab fa-google"></i>
-    </a>
-</li>
-<li>
-    <a href="#" style="margin-right: 3px; color: black; display: inline-block;">
-        <i class="fab fa-instagram"></i>
-    </a>
-</li>
-</ul>
-</div>
-    </form>
-</div>
-</div>
-<!--КОНЕЦ РЕГИСТРАЦИИ-->
 
-                 <!-- Хлебные крошки -->
+    <!-- Хлебные крошки -->
  <nav class="breadcrumb">
-    <a href="/html/index.html"  >Главная</a>  &gt; <a href= "/html/category.html" >Каталог</a>  &gt; <a href= "/html/categorysantexnica.html " >Сантехника</a> &gt; <a href= "   /html/three.html" >Ванны и коплектующие </a> &gt; <a href= "/html/bath.html " >Ванны </a>
+    <a href="/html/index.html"  >Главная</a>  &gt; <a href= "/html/category.html" >Каталог</a>  &gt; <a href= "/html/vtora.html" >Обои</a> 
 </nav>
 
 
 <h6 style= "font-size:35px; font-weight:bold;margin-left:80px;
-margin-top:15px; margin-bottom:15px;">Ванны </h6>
+margin-top:20px; margin-bottom:15px;">Посуда </h6>
 
 <!--КАРТОЧКИ ТОВАРОВ -->
-<div class="wrapper">
-<div class="container">  
-    <div class="sidebar">
-        <button  > <a href = "/html/bath1.html" style=" text-decoration: none; color:white; ">Акриловые </a></button>
-        <button  > <a href = "/html/bath2.html" style=" text-decoration: none; color:white; ">Чугунные</a></button>
-        <button  style=" background-color: #315886;" ><a href = "/html/bath3.html" style="text-decoration-line: none; color:white; font-size: 25px;">Прямоугольные</a></button>
-        <button ><a href = "/html/bath4.html" style="text-decoration-line: none; color:white;">Угловые</a></button>
-    </div></div>
 
-<div class ="nexprev"><button id="prevBtn" class="pre-btn">Назад</button>
+<div class="wrapper">
+
+    <div class="container">  
+        <div class="sidebar">
+            <button  style=" background-color: #315886;" > <a href = "/html/wallpaper1.html" style=" text-decoration: none; color:white; font-size: 25px;">Бумажные обои </a></button>
+            <button > <a href = "/html/wallpaper2.html" style="text-decoration-line: none; color:white;">Виниловые обои</a></button>
+            <button ><a href = "/html/wallpaper3.html" style="text-decoration-line: none; color:white;">Флизелиновые обои</a></button>
+            <button ><a href = "/html/wallpaper4.html" style="text-decoration-line: none; color:white;">Текстильные обои</a></button>
+            <button  ><a href = "/html/wallpaper5.html" style="text-decoration-line: none; color:white; ">Металлизированные обои</a></button>
+            <button ><a href = "/html/wallpaper6.html" style="text-decoration-line: none; color:white;">Жидкие обои</a></button>
+            <button ><a href = "/html/wallpaper7.html" style="text-decoration-line: none; color:white;">Фотообои</a></button>
+        </div></div>
+
+
+<!-- Navigation Buttons --><div class ="nexprev"><button id="prevBtn" class="pre-btn">Назад</button>
 <button id="nextBtn" class="nex-btn">Вперед</button></div> </div>
 
 <script>
 const container = document.querySelector('.container');
 const cardsData = [
-    { id: 1, image: 'https://vashavanna.ru/upload/iblock/760/760ee6ffe730319c45f27acfab4ea827.png', 
-    title: 'Прямоугольная ванна Roca Carmen 160х80 с антискольжением', price: 1599, delprice: 3000 ,  detailsUrl: 'productcard2.html'  },
-    {
-        id: 2,
-        title: 'Прямоугольная ванна Roca Belice 175x85 ручки и подголовник',
-        price: 990,
-        delprice: 1500,
-        image: 'https://santehmaster.ru/upload/iblock/e71/ofbxxhlc8rg2di6o8ynlb9uqi8oamezr.webp',
-        detailsUrl: 'productcard2.html'
-    },
-    {
+{ id: 1, image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/4.webp', title: 'Обои под покраску флизелиновые антивандальные Kreaforta Батист белые 1.06x25м 113г/м²', price: 799, delprice: 1000 , detailsUrl: 'productcard.html' , hasDiscount: true  },
+{ id: 2, image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/4.webp', title: 'Обои под покраску флизелиновые антивандальные Kreaforta Батист белые 1.06x25м 113г/м²', price: 799, delprice: 1000 , detailsUrl: 'productcard.html' , hasDiscount: false  },
+{
         id: 3,
-        title: 'Прямоугольная ванна Roca Haiti 170x80 с отверстиями под ручки',
-        price: 990,
-        delprice: 1400,
-        image: 'https://www.mega-santehnika.ru/wp-content/uploads/2010/10/riho-castello-01.jpg',
-        detailsUrl: ''
+        title: 'Обои флизелиновые Ateliero Kora бежевые 1.06 м AT1016-02ОАВ',
+        price: 790,
+        delprice: 1000,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/3.webp',
+        detailsUrl: '',
+        hasDiscount: false
     },
     {
         id: 4,
-        title: 'Прямоугольная ванна Jacob Delafon SOISSONS 160x70 E2931-00',
-        price: 690,
-        delprice: 900,
-        image: 'https://kmline.ru/3635-medium_2chugunnajavannajacobdelafonsoissons160x70e293100jpg/chugunnaja-vanna-jacob-delafon-soissons-160x70-e2931-00.jpg',
-        detailsUrl: ''
+        title: 'Обои 4',
+        price: 1290,
+        delprice: 1800,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/4.webp',
+        detailsUrl: '',
+        hasDiscount: false
     },
     {
         id: 5,
-        title: 'Ванна прямоугольная Roca Haiti 160x80x40 см (арт. 2330G000R)',
-        price: 1200,
+        title: 'Обои 5',
+        price: 1150,
         delprice: 1600,
-        image: 'https://laksant.ru/upload/iblock/87d/87dc8ab127da6834a22f4100b15acd52.jpg',
-        detailsUrl: ''
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/5.webp',
+        detailsUrl: '',
+        hasDiscount: false
     },
     {
         id: 6,
-        title: 'Прямоугольная ванна Roca Newcast Grey 170x85',
-        price: 850,
-        delprice: 1100,
-        image: 'https://san-one.ru/wa-data/public/shop/products/69/35/33569/images/79660/79660.970.jpg',
-        detailsUrl: ''
+        title: 'Обои 6',
+        price: 890,
+        delprice: 1300,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/6.webp',
+        detailsUrl: '',
+        hasDiscount: true
     },
     {
         id: 7,
-        title: 'Прямоугольная ванна Wotte Start 1 UR 170x75 см, с ножками',
-        price: 1450,
-        delprice: 1900,
-        image: 'https://mebelny95.ru/userfiles/product_img/photos/tataev/1/fc1320b7535130051316af868d9cde9a.jpg',
-        detailsUrl: ''
+        title: 'Обои 7',
+        price: 1490,
+        delprice: 2000,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/7.webp',
+        detailsUrl: '',
+        hasDiscount: false
     },
     {
         id: 8,
-        title: 'Ванна Прямоугольная Roca Haiti 160x80x40 см (арт. 2330G000R)',
+        title: 'Обои 8',
+        price: 990,
+        delprice: 1400,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/8.webp',
+        detailsUrl: '',
+        hasDiscount: false
+    },
+    {
+        id: 9,
+        title: 'Обои 9',
+        price: 690,
+        delprice: 900,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/9.webp',
+        detailsUrl: '',
+        hasDiscount: true
+    },
+    {
+        id: 10,
+        title: 'Обои 10',
+        price: 1090,
+        delprice: 1500,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/10.webp',
+        detailsUrl: '',
+        hasDiscount: true
+    },
+    {
+        id: 11,
+        title: 'Обои 11',
+        price: 1390,
+        delprice: 1900,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/11.webp',
+        detailsUrl: '',
+        hasDiscount: false
+    },
+    {
+        id: 12,
+        title: 'Обои 12',
+        price: 790,
+        delprice: 1100,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/12.webp',
+        detailsUrl: '',
+        hasDiscount: false
+    },
+    {
+        id: 13,
+        title: 'Обои 13',
+        price: 950,
+        delprice: 1350,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/13.webp',
+        detailsUrl: '',
+        hasDiscount: true
+    },
+    {
+        id: 14,
+        title: 'Обои 14',
+        price: 1190,
+        delprice: 1600,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/14.webp',
+        detailsUrl: '',
+        hasDiscount: false
+    },
+    {
+        id: 15,
+        title: 'Обои 15',
+        price: 1299,
+        delprice: 1700,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/15.webp',
+        detailsUrl: '',
+        hasDiscount: false
+    },
+     {
+        id: 16,
+        title: 'Обои 16',
+        price: 799,
+        delprice: 1100,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/16.webp',
+        detailsUrl: '',
+        hasDiscount: true
+    },
+    {
+        id: 17,
+        title: 'Обои 17',
+        price: 1090,
+        delprice: 1450,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/17.webp',
+        detailsUrl: '',
+        hasDiscount: false
+    },
+    {
+        id: 18,
+        title: 'Обои 18',
+        price: 980,
+        delprice: 1250,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/18.webp',
+        detailsUrl: '',
+        hasDiscount: false
+    },
+    {
+        id: 19,
+        title: 'Обои 19',
+        price: 1370,
+        delprice: 1800,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/19.webp',
+        detailsUrl: '',
+        hasDiscount: true
+    },
+    {
+        id: 20,
+        title: 'Обои 20',
+        price: 1150,
+        delprice: 1500,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/20.webp',
+        detailsUrl: '',
+        hasDiscount: true
+    },
+    {
+        id: 21,
+        title: 'Обои 21',
+        price: 850,
+        delprice: 1100,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/21.webp',
+        detailsUrl: '',
+        hasDiscount: false
+    },
+    {
+        id: 22,
+        title: 'Обои 22',
+        price: 1250,
+        delprice: 1600,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/22.webp',
+        detailsUrl: '',
+        hasDiscount: false
+    },
+    {
+        id: 23,
+        title: 'Обои 23',
+        price: 720,
+        delprice: 950,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/23.webp',
+        detailsUrl: '',
+        hasDiscount: false
+    },
+    {
+        id: 24,
+        title: 'Обои 24',
+        price: 1050,
+        delprice: 1350,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/24.webp',
+        detailsUrl: '',
+        hasDiscount: false
+    },
+    {
+        id: 25,
+        title: 'Обои 25',
+        price: 950,
+        delprice: 1250,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/25.webp',
+        detailsUrl: '',
+        hasDiscount: true
+    },
+    {
+        id: 26,
+        title: 'Обои 26',
         price: 1200,
         delprice: 1600,
-        image: 'https://laksant.ru/upload/iblock/87d/87dc8ab127da6834a22f4100b15acd52.jpg',
-        detailsUrl: ''
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/26.webp',
+        detailsUrl: '',
+        hasDiscount: false
     },
-    
-    ];cardsData.forEach((cardData) => {
+    {
+        id: 27,
+        title: 'Обои 27',
+        price: 930,
+        delprice: 1280,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/27.webp',
+        detailsUrl: '',
+        hasDiscount: false
+    },
+    {
+        id: 28,
+        title: 'Обои 28',
+        price: 1095,
+        delprice: 1450,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/28.webp',
+        detailsUrl: '',
+        hasDiscount: false
+    },
+    {
+        id: 29,
+        title: 'Обои 29',
+        price: 1155,
+        delprice: 1500,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/29.webp',
+        detailsUrl: '',
+        hasDiscount: false
+    },
+    {
+        id: 30,
+        title: 'Обои 30',
+        price: 790,
+        delprice: 1000,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/30.webp',
+        detailsUrl: '',
+        hasDiscount: true
+    },
+     {
+        id: 31,
+        title: 'Обои 31',
+        price: 900,
+        delprice: 1200,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/31.webp',
+        detailsUrl: '',
+        hasDiscount: true
+    },
+    {
+        id: 32,
+        title: 'Обои 32',
+        price: 1150,
+        delprice: 1550,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/32.webp',
+        detailsUrl: '',
+        hasDiscount: false
+    },
+    {
+        id: 33,
+        title: 'Обои 33',
+        price: 850,
+        delprice: 1100,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/33.webp',
+        detailsUrl: '',
+        hasDiscount: false
+    },
+    {
+        id: 34,
+        title: 'Обои 34',
+        price: 1199,
+        delprice: 1550,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/34.webp',
+        detailsUrl: '',
+        hasDiscount: false
+    },
+    {
+        id: 35,
+        title: 'Обои 35',
+        price: 1020,
+        delprice: 1350,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/35.webp',
+        detailsUrl: '',
+        hasDiscount: false
+    },
+    {
+        id: 36,
+        title: 'Обои 36',
+        price: 950,
+        delprice: 1250,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/36.webp',
+        detailsUrl: '',
+        hasDiscount: false
+    },
+    {
+        id: 37,
+        title: 'Обои 37',
+        price: 770,
+        delprice: 950,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/37.webp',
+        detailsUrl: '',
+        hasDiscount: false
+    },
+    {
+        id: 38,
+        title: 'Обои 38',
+        price: 1340,
+        delprice: 1750,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/38.webp',
+        detailsUrl: '',
+        hasDiscount: false
+    },
+    {
+        id: 39,
+        title: 'Обои 39',
+        price: 1180,
+        delprice: 1490,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/39.webp',
+        detailsUrl: '',
+        hasDiscount: true
+    },
+    {
+        id: 40,
+        title: 'Обои 40',
+        price: 890,
+        delprice: 1200,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/40.webp',
+        detailsUrl: '',
+        hasDiscount: false
+    },
+    {
+        id: 41,
+        title: 'Обои 41',
+        price: 1290,
+        delprice: 1700,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/41.webp',
+        detailsUrl: '',
+        hasDiscount: false
+    },     
+    {
+        id: 42,
+        title: 'Обои 42',
+        price: 950,
+        delprice: 1250,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/42.webp',
+        detailsUrl: '',
+        hasDiscount: false
+    },
+    {
+        id: 43,
+        title: 'Обои 43',
+        price: 1150,
+        delprice: 1450,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/43.webp',
+        detailsUrl: '',
+        hasDiscount: false
+    },
+    {
+        id: 44,
+        title: 'Обои 44',
+        price: 980,
+        delprice: 1280,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/44.webp',
+        detailsUrl: '',
+        hasDiscount: true
+    },
+    {
+        id: 45,
+        title: 'Обои 45',
+        price: 1130,
+        delprice: 1500,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/45.webp',
+        detailsUrl: '',
+        hasDiscount: false
+    }
+];cardsData.forEach((cardData) => {
 const card = document.createElement('div');
     card.classList.add('product-card');
     const titleDiv = document.createElement('div');
@@ -280,7 +609,23 @@ const card = document.createElement('div');
     const img = document.createElement('img');
     img.src = cardData.image;
     img.alt = cardData.title;
+    figure.appendChild(img); const discountLabel = document.createElement('div');
+    
+    if (cardData.hasDiscount) {
+        const discountLabel = document.createElement('div');
+        discountLabel.classList.add('discount'); 
+        discountLabel.textContent = `Скидка: 10%`; // Скидка для карточки
+        figure.appendChild(discountLabel);
+    }
+
+
+
+        figure.appendChild(discountLabel);
+
     figure.appendChild(img);
+    const discount = document.createElement('discount');
+    discount.classList.add('discount');
+
     const figcaption = document.createElement('figcaption');
     const price = document.createElement('p');
     price.classList.add('prce');
@@ -306,7 +651,7 @@ const card = document.createElement('div');
     subtractButton.onclick = () => changeNumber(-1, `number${cardData.id}`); 
     const numberInput = document.createElement('input');
     numberInput.classList.add('js-number');
-    numberInput.id = `number${cardData.id}`; 
+    numberInput.id = `number${cardData.id}`; // 
     numberInput.type = 'text';
     numberInput.value = '1';
     numberInput.readOnly = true;
@@ -327,62 +672,67 @@ const card = document.createElement('div');
     const detailsDiv = document.createElement('div');
     detailsDiv.classList.add('details-container');
     const detailsButton = document.createElement('a');
-    detailsButton.href = cardData.detailsUrl;;
+    detailsButton.href = cardData.detailsUrl;
     detailsButton.textContent = 'Подробнее';
     detailsButton.classList.add('details-button');
     detailsDiv.appendChild(detailsButton);
     card.appendChild(detailsDiv);
-    const quickViewButton = document.createElement('button');
-    quickViewButton.classList.add('quick-view-button');
-    quickViewButton.textContent = 'Быстрый просмотр';
-    figure.appendChild(quickViewButton);
-    card.addEventListener('mouseenter', () => {
-        quickViewButton.style.display = 'block';
-    }); card.addEventListener('mouseleave', () => {quickViewButton.style.display = 'none';});
-    const quickViewWindow = document.createElement('div');
-    quickViewWindow.classList.add('quick-view-window');
-    quickViewWindow.style.display = 'none';
-    const windowContent = document.createElement('div');
-    windowContent.classList.add('window-content');
-    const closeButton = document.createElement('button');
-    closeButton.classList.add('close-button');
-    closeButton.textContent = 'X';
-    closeButton.onclick = function () {
-        quickViewWindow.style.display = 'none';
-    };
-    quickViewButton.onclick = function () {
-        quickViewWindow.style.display = 'flex';
-    };
-    const description = document.createElement('div');
-    description.innerHTML = `
-  
- <div class="cartpodrobno">
-
-            <div class="procard">
-                    <img 
+    
+// "Быстрый просмотр"
+const quickViewButton = document.createElement('button'); 
+quickViewButton.classList.add('quick-view-button'); //класс для стилей
+quickViewButton.textContent = 'Быстрый просмотр'; // контент
+figure.appendChild(quickViewButton); 
+// Показываем кнопку при наведении курсора  на карточку товара и скрываем при уходе курсора
+card.addEventListener('mouseenter', () => { 
+    quickViewButton.style.display = 'block'; 
+});
+card.addEventListener('mouseleave', () => { 
+    quickViewButton.style.display = 'none'; 
+});
+// Создаем окно  быстрый просмотр 
+const quickViewWindow = document.createElement('div'); 
+quickViewWindow.classList.add('quick-view-window'); 
+quickViewWindow.style.display = 'none'; // Окно скрыто по умолчанию
+// Создаем контейнер для содержимого окна
+const windowContent = document.createElement('div'); 
+windowContent.classList.add('window-content'); 
+// Создаем крестик
+const closeButton = document.createElement('button'); 
+closeButton.classList.add('close-button'); 
+closeButton.textContent = 'X';
+closeButton.onclick = function() { 
+    quickViewWindow.style.display = 'none'; // Скрываем окно при нажатии на кнопку закрытия
+};
+// При нажатии на кнопку "Быстрый просмотр" показываем окно
+quickViewButton.onclick = function() { 
+    quickViewWindow.style.display = 'flex'; //Показываем окно с помощью flex 
+};
+//Элемент для описания товара
+const description = document.createElement('div'); 
+// Вставляем HTML
+description.innerHTML = `
+    <div class="cartpodrobno">
+        <div class="procard">
+            <img 
   style="width: 400px; height: 400px; border: 1.2px solid grey;" 
-  src="https://belbagno.ru/upload/iblock/e46/e460ace5053cca596b9ef71b25f5f431.jpg" 
+  src="https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/5.webp" 
   alt="Изображение товара" 
   class="proimage">
-                <div class="tpd">
-                    <h2 class="protitle">Ванна</h2>
-                    <p class="prodescription">Это краткое описание товара. Здесь можно указать его особенности и преимущества.</p>
-                    <p class="proprice">2999 Р.</p>
-                    <p class="delprice">2999 Р.</p>
-                    <button class="probutton">В корзину</button>
-                    <a href="/test/html/productcard2.html">          
+            <div class="tpd">
+                <h2 class="protitle">Обои</h2> 
+                <p class="prodescription">Это краткое описание товара. Здесь можно указать его особенности и преимущества.</p>
+                <p class="proprice">2999 Р.</p> 
+                <p class="delprice">2999 Р.</p> 
+                <button class="probutton">В корзину</button>   
+                 <a href="/html/productcard.html">        
                     <button class="procardbutton">Больше информации о товаре</button>     
                 </a> 
-                </div>
             </div>
         </div>
-  
-    `;
-    windowContent.appendChild(closeButton);
-    windowContent.appendChild(description);
-    quickViewWindow.appendChild(windowContent);
-    document.body.appendChild(quickViewWindow);
-    // Добавляем крестик и описание в контейнер содержимого окна
+    </div>`;
+
+// Добавляем крестик и описание в контейнер содержимого окна
 windowContent.appendChild(closeButton); 
 windowContent.appendChild(description); 
 
@@ -441,19 +791,16 @@ function showCards(startIndex) {
 }
 
 showCards(currentIndex);
-
 document.getElementById('nextBtn').addEventListener('click', () => {
     if (currentIndex + 20 >= cards.length) return;
     currentIndex += 20;
     showCards(currentIndex);
 });
-
 document.getElementById('prevBtn').addEventListener('click', () => {
     if (currentIndex === 0) return;
     currentIndex -= 20;
     showCards(currentIndex);
 });
-
 document.querySelectorAll(".btn").forEach(button => {
     button.addEventListener("click", function() {
         const isInCart = this.classList.contains("clicked");
@@ -466,11 +813,8 @@ document.querySelectorAll(".btn").forEach(button => {
             this.classList.remove("clicked");
             removeFromCart(this);
         }
-
-        
     });
 });
-
 function changeNumber(amount, inputId) {
     const numberInput = document.getElementById(inputId);
     let currentValue = parseInt(numberInput.value, 10);
@@ -479,7 +823,6 @@ function changeNumber(amount, inputId) {
         numberInput.value = currentValue;
     }
 }
-
 function addToCart(button) {
     const productTitle = button.closest('.product-card').querySelector('.product-title').textContent;
     const productPrice = button.closest('.product-card').querySelector('.money span').textContent;
@@ -544,12 +887,11 @@ function changeCartItemNumber(step, button) {
         document.getElementById('quickViewWindow').style.display = 'none';
     }
 
-    
-
-    // Open the window when the page loads for demonstration
     window.onload = openWindow;
 </script>
 
+
+   
 
     <footer>
         <hr>
@@ -587,8 +929,9 @@ function changeCartItemNumber(step, button) {
 
 </body></html>
 
+
+
 <script>
- 
     const catalog = document.getElementById('catalog');
     const menuBurger = document.getElementById('menuBurger');
     const popup = document.getElementById('popup');
@@ -732,7 +1075,10 @@ function changeCartItemNumber(step, button) {
             closePopup();
         }
     });
+    </script>
     
+    
+    <script>
     
             //Регистрация
     const socialLink = document.querySelector('.social-link');
@@ -746,29 +1092,32 @@ function changeCartItemNumber(step, button) {
     
     let accountVisible = false;
     
+    // Show tooltip on mouse over
     socialLink.addEventListener('mouseover', () => {
         tooltip.style.display = 'block';
-        tooltip.style.top = `${socialLink.offsetTop + socialLink.offsetHeight}px`; 
-        tooltip.style.left = `${socialLink.offsetLeft}px`;
+        tooltip.style.top = `${socialLink.offsetTop + socialLink.offsetHeight}px`; // Corrected line
+        tooltip.style.left = `${socialLink.offsetLeft}px`; // Corrected line
     });
     
-    
+    // Hide tooltip on click outside
     document.addEventListener('click', (event) => {
         if (!socialLink.contains(event.target) && !tooltip.contains(event.target)) {
             hideTooltip();
         }
     });
     
+    // Hide tooltip function
     function hideTooltip() {
         tooltip.style.display = 'none';
     }
     
+    // Toggle account visibility
     function toggleAccount() {
         accountVisible = !accountVisible;
         account.style.display = accountVisible ? 'block' : 'none';
     }
     
-    
+    // Hide account if visible
     function hideAccount() {
         if (accountVisible) {
             accountVisible = false;
@@ -776,31 +1125,32 @@ function changeCartItemNumber(step, button) {
         }
     }
     
-    
+    // Open and close register modal
     function openRegisterModal() {
-        document.body.style.overflow = 'hidden';
+        document.body.style.overflow = 'hidden'; // Prevent body scroll
         registerModal.style.display = 'block';
     }
     
     function closeRegisterModal() {
-        document.body.style.overflow = 'auto';
+        document.body.style.overflow = 'auto'; // Re-enable body scroll
         registerModal.style.display = 'none';
     }
     
-    
+    // Handle register form submission
     registerForm.onsubmit = (event) => {
         event.preventDefault();
         alert('Регистрация завершена');
         closeRegisterModal();
     };
     
-    
+    // Log in account function
     function logInAccount() {
         alert('Вход');
     }
     </script>
-    <script>
-    
+
+<script>
+    // Toggle modal visibility on button click
     signUpBtnLink.addEventListener('click', () => {
         modal.classList.toggle('active');
     });
@@ -809,5 +1159,4 @@ function changeCartItemNumber(step, button) {
         modal.classList.toggle('active');
     });
     
-    </script>
-    
+        </script>
