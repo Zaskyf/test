@@ -231,14 +231,9 @@
                 </div></div></div>
                
             </footer>
-
-
-  
-
     </body>
 
 </html>
-
 
 
 <script>
@@ -283,7 +278,6 @@ document.querySelectorAll('.category-button').forEach(button => {
         showPopup(this.querySelector('span').textContent);  
     });
 });
-
 function showPopup(title) {
     document.getElementById('popupTitle').textContent = title;
     popup.style.display = 'block'; 
@@ -303,8 +297,6 @@ document.addEventListener('click', function() {
         closePopup();
     }
 });
-
-
         //Регистрация
 const socialLink = document.querySelector('.social-link');
 const tooltip = document.getElementById('tooltip');
@@ -323,7 +315,6 @@ socialLink.addEventListener('mouseover', () => {
     tooltip.style.left = `${socialLink.offsetLeft}px`;
 });
 
-
 document.addEventListener('click', (event) => {
     if (!socialLink.contains(event.target) && !tooltip.contains(event.target)) {
         hideTooltip();
@@ -339,7 +330,6 @@ function toggleAccount() {
     account.style.display = accountVisible ? 'block' : 'none';
 }
 
-
 function hideAccount() {
     if (accountVisible) {
         accountVisible = false;
@@ -347,17 +337,14 @@ function hideAccount() {
     }
 }
 
-
 function openRegisterModal() {
     document.body.style.overflow = 'hidden';
     registerModal.style.display = 'block';
 }
-
 function closeRegisterModal() {
     document.body.style.overflow = 'auto';
     registerModal.style.display = 'none';
 }
-
 
 registerForm.onsubmit = (event) => {
     event.preventDefault();

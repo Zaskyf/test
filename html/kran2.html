@@ -929,8 +929,6 @@ function changeCartItemNumber(step, button) {
             closePopup();
         }
     });
-    
-    
             //Регистрация
     const socialLink = document.querySelector('.social-link');
     const tooltip = document.getElementById('tooltip');
@@ -948,8 +946,6 @@ function changeCartItemNumber(step, button) {
         tooltip.style.top = `${socialLink.offsetTop + socialLink.offsetHeight}px`; 
         tooltip.style.left = `${socialLink.offsetLeft}px`;
     });
-    
-    
     document.addEventListener('click', (event) => {
         if (!socialLink.contains(event.target) && !tooltip.contains(event.target)) {
             hideTooltip();
@@ -964,8 +960,7 @@ function changeCartItemNumber(step, button) {
         accountVisible = !accountVisible;
         account.style.display = accountVisible ? 'block' : 'none';
     }
-    
-    
+
     function hideAccount() {
         if (accountVisible) {
             accountVisible = false;
@@ -973,25 +968,20 @@ function changeCartItemNumber(step, button) {
         }
     }
     
-    
     function openRegisterModal() {
         document.body.style.overflow = 'hidden';
         registerModal.style.display = 'block';
     }
-    
     function closeRegisterModal() {
         document.body.style.overflow = 'auto';
         registerModal.style.display = 'none';
     }
-    
-    
     registerForm.onsubmit = (event) => {
         event.preventDefault();
         alert('Регистрация завершена');
         closeRegisterModal();
     };
-    
-    
+
     function logInAccount() {
         alert('Вход');
     }

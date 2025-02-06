@@ -531,9 +531,6 @@ function changeCartItemNumber(step, button) {
 
     window.onload = openWindow;
 </script>
-
-
-   
     <footer>
         <hr>
         <div class="containr"><div class="subscribe"></div><div class="footer_navigation">
@@ -569,19 +566,15 @@ function changeCartItemNumber(step, button) {
     </footer>
 
 </body></html>
-
 <script>
- 
     const catalog = document.getElementById('catalog');
     const menuBurger = document.getElementById('menuBurger');
     const popup = document.getElementById('popup');
-    
     // Функция для открытия и закрытия меню
     menuBurger.onclick = function(event) {
         event.stopPropagation(); // Остановить всплытие события, чтобы не закрыть каталог сразу
         catalog.style.display = catalog.style.display === 'none' ? 'block' : 'none';
     };
-    
     // Переменная для отслеживания состояния popup
     let isPopupOpen = false;
     

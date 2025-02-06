@@ -875,8 +875,6 @@ function changeCartItemNumber(step, button) {
         event.stopPropagation(); 
         catalog.style.display = catalog.style.display === 'none' ? 'block' : 'none';
     };
-    
-  
     let isPopupOpen = false;
     
     document.querySelectorAll('.category-button').forEach(button => {
@@ -928,8 +926,7 @@ function changeCartItemNumber(step, button) {
             closePopup();
         }
     });
-    
-    
+
             //Регистрация
     const socialLink = document.querySelector('.social-link');
     const tooltip = document.getElementById('tooltip');
@@ -971,8 +968,6 @@ function changeCartItemNumber(step, button) {
             account.style.display = 'none';
         }
     }
-    
-    
     function openRegisterModal() {
         document.body.style.overflow = 'hidden';
         registerModal.style.display = 'block';
@@ -989,7 +984,6 @@ function changeCartItemNumber(step, button) {
         alert('Регистрация завершена');
         closeRegisterModal();
     };
-    
     
     function logInAccount() {
         alert('Вход');

@@ -180,13 +180,8 @@ margin-top:15px; margin-bottom:15px;">Ванны</h6>
         <button ><a href = "/html/bath3.html" style="text-decoration-line: none; color:white;">Прямоугольные</a></button>
         <button ><a href = "/html/bath4.html" style="text-decoration-line: none; color:white;">Угловые</a></button>
     </div></div>
-
-
 <div class ="nexprev"><button id="prevBtn" class="pre-btn">Назад</button>
 <button id="nextBtn" class="nex-btn">Вперед</button></div> </div>
-
- 
-
 <script>
 const container = document.querySelector('.container');
 const cardsData = [
@@ -456,13 +451,10 @@ const card = document.createElement('div');
     // Добавляем крестик и описание в контейнер содержимого окна
 windowContent.appendChild(closeButton); 
 windowContent.appendChild(description); 
-
 // Добавляем содержимое в окно быстрого просмотра
 quickViewWindow.appendChild(windowContent); 
-
 // Добавляем окно быстрого просмотра на страницу
 document.body.appendChild(quickViewWindow); 
-
 // Выбираем все картинки  с классом  !!!!proimage!!!!
 const zoomableImages = document.querySelectorAll('.proimage');
 zoomableImages.forEach(image => {
