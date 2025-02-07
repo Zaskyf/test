@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Магазин</title>
-    <link rel="stylesheet" type="scss" href="style.scss">
+    
     <link rel="stylesheet" href="/css/style.css">
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
 /> <!--Ссылка на иконки в регистрации -->
@@ -55,20 +55,20 @@
 
             <div class="catalog" id="catalog">
         <h6>Каталог</h6>
-       <a href="vtora.html" style = " text-decoration :none;  color:black;">    <button class="category-button" data-category="1">      
+       <a href="wallpaper.html" style = " text-decoration :none;  color:black;">    <button class="category-button" data-category="1">      
             <span>Обои</span> <i class="fas fa-chevron-right"></i>
       </button>  </a>
-        <a href="three.html" style = " text-decoration :none;  color:black;"> <button class="category-button" data-category="2">
+        <a href="bathroom.html" style = " text-decoration :none;  color:black;"> <button class="category-button" data-category="2">
             <span>Сантехника</span> <i class="fas fa-chevron-right"></i>
         </button>  </a>
         <button class="category-button" data-category="3">
             <a href="laminat.html" style = " text-decoration :none;  color:black;"> <span>Напольные покрытия</span> <i class="fas fa-chevron-right"></i>
             </a></button>
                 <button class="category-button" data-category="4">
-                    <a href="furniture.html" style = " text-decoration :none;  color:black;"> <span>Мебель</span> <i class="fas fa-chevron-right"></i>
+             <a href="furniture.html" style = " text-decoration :none;  color:black;"> <span>Мебель</span> <i class="fas fa-chevron-right"></i>
                     </a></button>
                     <button class="category-button" data-category="5">
-                        <a href=".html" style = " text-decoration :none;  color:black;"> <span>Посуда</span> <i class="fas fa-chevron-right"></i>
+                        <a href="dishes.html" style = " text-decoration :none;  color:black;"> <span>Посуда</span> <i class="fas fa-chevron-right"></i>
                         </a></button>
                         <button class="category-button" data-category="6">
                             <a href=".html" style = " text-decoration :none;  color:black;"> <span>Текстиль</span> <i class="fas fa-chevron-right"></i>
@@ -532,12 +532,11 @@ document.querySelectorAll('.category-button').forEach(button => {
                 break;
             case '2':
                 content = 
-                    '<a href="three.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.1\')">Ванны и комплектующие</button></a>' +
+                    '<a href="bathroom.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.1\')">Ванны и комплектующие</button></a>' +
                     '<a href="rakovin.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.2\')">Раковины</button></a>' +
                     '<a href="categorysantexnicakran.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.3\')">Смесители</button></a>' +
-                    '<a href=".html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.4\')"> Душевые кабины и поддоны</button></a>' +
-                    '<a href="wallpaper5.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.5\')">Сантехника для отопления</button></a>' +
-                    '<a href="wallpaper6.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.6\')">Унитазы</button></a>' +
+                    '<a href="showercabin.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.4\')"> Душевые кабины и поддоны</button></a>' +
+                    '<a href="toliet.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.6\')">Унитазы</button></a>' +
                     '<a href="wallpaper7.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.7\')">Аксессуары и дополнительные элементы</button></a>';
                     '<a href="wallpaper1.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.1\')">Ванны и комплектующие</button></a>' +
                     '<a href="wallpaper2.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.2\')">Раковины</button></a>' +
