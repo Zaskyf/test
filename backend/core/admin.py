@@ -43,6 +43,7 @@ class OrderPointAdmin(admin.ModelAdmin):
     list_filter = ('quantity', )
     search_fields = ('good__name',)
 
+
 class OrderAdmin(admin.ModelAdmin):
     list_display = ('id', 'user',  'get_order_points',  'status', 'price', 'created' )
     list_display_links = ('id', )
