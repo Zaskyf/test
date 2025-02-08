@@ -1,4 +1,11 @@
 
+
+    
+
+    <style>
+ 
+ 
+ 
 /*Все тело*/
 body {
   margin: 0;
@@ -124,7 +131,10 @@ header > .header-contaner {
             cursor: pointer;
             color: #ff0000;
         }
-   
+
+      
+
+        
 
 /*КОНЕЦ  КОРЗИНЫ  */
 
@@ -395,6 +405,7 @@ header > .header-contaner {
               position: relative;
               border-radius: 8px;
               width: 190px;
+
               left: 5px;
               right: 10px;
               font-size:20px;
@@ -434,6 +445,8 @@ header > .header-contaner {
               position: relative;
               transition: all 0.30s;
               margin: 5px auto;
+              
+
           }
           
           
@@ -462,16 +475,19 @@ header > .header-contaner {
           }.catalog button:hover {
               color: black;
               font-size:19px ;
- }
-.catalog button:hover:after {
+
+          }.catalog button:hover:after {
               width: 100%;
-}
+
+          }
           @media (max-width: 768px) {
   .example {
     font-size: 14px;
   }
 }
-        /* Адаптация для экранов шириной до 768px */
+          
+          
+          /* Адаптация для экранов шириной до 768px */
 @media  (max-width: 1024px) {
   
        .catalog button {
@@ -491,7 +507,11 @@ header > .header-contaner {
               transition: all 0.30s;
               margin: 5px auto;
               
-}}
+}
+
+         
+       
+}
 
           /* Адаптация для экранов шириной до 768px */
 @media (max-width: 768px) {
@@ -510,14 +530,16 @@ header > .header-contaner {
       height: 50px;
       line-height: 15px;
       font-size: 20px;
-}
+
+  }
   
     .catalog-icon {
               cursor: pointer;
               margin-left: 25px;
               font-size: 25px;
               color: #333;
-          }}
+          }
+}
 /* Адаптация для экранов шириной до 480px */
 @media (max-width: 551px) {
   .catalog button {
@@ -527,7 +549,6 @@ header > .header-contaner {
       font-size: 17px;
        align-items:center;
   }
-  
     .catalog-icon {
               cursor: pointer;
               margin-left: 25px;
@@ -566,9 +587,11 @@ header > .header-contaner {
               color: black;
           }
   
+
           .catalog h2 {
               margin-bottom: 15px;
-          }}
+          }
+          }
           /* Popup для подкатегорий */
           .popup {
               display: none;
@@ -583,18 +606,22 @@ header > .header-contaner {
               box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
               padding: 20px;
              border-top-right-radius : 9px;
- }
+
+          }
           .popup button{
 
           background-color:#91ade5;  /* Светло-синий */
            width: 245px;
            margin:5px;
            height: auto;
-}
+
+          }
           .popup h2 {
 
               margin-top: 50px;
-}
+
+
+          }
 
           .clobutton {
               cursor: pointer;
@@ -606,14 +633,18 @@ header > .header-contaner {
               list-style: none;
               padding: 0;
               margin-bottom :25px;
-}
+
+          }
 
           .popup li{
- margin-bottom :15px;
+
+
+             margin-bottom :15px;
              border-radius : 9px;
               width: 350px;
               height: 100%;
-}
+
+          }
           /*КОНЕЦ КАТАЛОГА */
 
 
@@ -626,6 +657,7 @@ header > .header-contaner {
       .carousel {
         top: 15px;
         position: relative;
+        
         width: 90%; /* Ширина каррусели */
         height: 350px; /* Высота каррусели */
         overflow: hidden;
@@ -643,7 +675,8 @@ header > .header-contaner {
        @media (max-width: 560px) {
         .carousel {
     height: 175px; /* Высота каррусели */
-    }}
+    }
+    }
     
     
     .itms {
@@ -687,7 +720,8 @@ header > .header-contaner {
         font-size: 24px;
         padding: 10px;
         border-radius: 5px;
-  }
+    
+    }
     
 /*КОНЕЦ КАРУСЕЛИ НА ГЛАВНОЙ СТРАНИЦЕ*/
 
@@ -740,7 +774,9 @@ header > .header-contaner {
   gap: 15px;              /* Задаем промежуток между элементами */
   padding: 5px;          /* Внутренние отступы контейнера */
   margin-top: 40px;    
-  background-color:#e5e5e5; /*IMPORTANT*/ }
+  background-color:#e5e5e5; /*IMPORTANT*/
+
+}
 
 .bcontainer {
     background-color:white; /*IMPORTANT*/
@@ -774,18 +810,21 @@ margin-bottom: 5px;
 @media (max-width: 768px) {
   .boxicon {
      display: flex;
-    gap: 10px; /* Уменьшаем промежуток между элементами */
+    gap: 10px;              /* Уменьшаем промежуток между элементами */
   }
 
   .bcontainer {
   min-height: 100px !important; 
      width: 200px ; 
-    font-size: 16px;   }
+    font-size: 16px;    
+     
+  }
 
   .icones {
     width: 45px;      
     height: 45px;
-  }}
+  }
+}
 
 @media (max-width: 480px) {
   .bcontainer {
@@ -793,7 +832,8 @@ margin-bottom: 5px;
      width: 100px; 
        display: flex;
        align-items:center;
-       font-size: 11px;  
+       font-size: 11px; 
+   
   }
 
   .icones {
@@ -933,11 +973,13 @@ color :grey !important;
 }
 
 .swiper-button-next{
+
   position:   absolute;
 width: 60px !important;
 height: 60px !important;
 border-radius: 100%;
 color :grey !important;
+
 }
 
 
@@ -947,7 +989,9 @@ color :grey !important;
     .swiper-slide {
      width:260px !important; 
  height: 430px !important;
- }
+
+
+    }
     .swiper-slide img {
         width: 100%; /* Ширина изображения занимает 100% карточки */
       height:280px; 
@@ -958,7 +1002,8 @@ margin-bottom: 1px; /* Отступ снизу для изображения */
    
     background-color:white;
         width: 100%; 
-        height: auto; /* Автоматическая высота */   
+        height: auto; /* Автоматическая высота */
+        
     }
     
     .btn{
@@ -1000,11 +1045,14 @@ margin-bottom: 1px; /* Отступ снизу для изображения */
     width: 600px;
     height: 700px;
     overflow: auto; /* Enable scroll if needed */
-    align-items:center;   
+    align-items:center;
+   
 }
 
 .mdal-content {
-background-color: #ffffff;
+
+
+    background-color: #ffffff;
     margin: 20% auto; /* 10% from the top and centered */
     padding: 20px;
     border: 1px solid #888;
@@ -1030,7 +1078,9 @@ background-color: #ffffff;
 .filter-group {
     margin-bottom: 15px; /* Spacing between filter groups */
 }
-     
+
+
+       
   .conter{
     background-color: white;
 
@@ -1152,6 +1202,12 @@ flex-direction: column; /* Stack buttons and card vertically */
 
  }
 
+
+
+      
+      
+      
+
  .product-card figure {
    width: 30px; /* Ширина фигуры */
    height: 140px; /* Высота фигуры */
@@ -1203,9 +1259,9 @@ margin:90px 8px 12px 8px ;
 }
 
 
-
-
 /*ЦЕНА НА ВТРОЙ И ПЕРВОЙ  СТРАНИЦЕ !!!*/
+
+
 
  .money {
    font-size: 1.3rem; /* Размер шрифта */
@@ -1246,6 +1302,8 @@ color:grey;
     .price {
    font-size: 0.8rem; /* Размер шрифта цены */
    
+
+
  }
 }
 /*СКИДКА НА ТОВАРЕ*/
@@ -1466,6 +1524,8 @@ align-items: center;
  }
  }
 
+ 
+ 
 /* КОНЕЦ МОДУЛЯ КАРТОЧЕК НА ВТОРОЙ СТРАНИЦЕ (категории)*/
 
 
@@ -1651,8 +1711,6 @@ margin: 20px auto;
 
 
 
-
-
 /* НАЧАЛО ОТДЕЛЬНАЯ СТРАНИЦА  ТОВАРА  */
 
             .prodct-card {
@@ -1699,7 +1757,10 @@ margin: 20px auto;
           .prodct-images {
           background-color: white;
   padding: 10px;
-        
+  
+            
+             
+              
           }
   
           .prodct-image {
@@ -1728,6 +1789,7 @@ margin: 20px auto;
               border: 2px solid  black;
                
           }
+            
             
             .color-circle:hover{
              border: 4px solid  white;
@@ -1795,40 +1857,42 @@ margin: 20px auto;
   object-fit: Scale-down;
 }
   
+
+
 .brown0 {
-  background-image: url('https://polvamvdom.ru/f/prods/7/b/8/69-001-00085_1.jpg'); /* Укажите путь к вашему изображению */
+  background-image: url('https://polvamvdom.ru/f/prods/7/b/8/69-001-00085_1.jpg'); /* путь к изображению */
   background-size: cover; /* Заставляет изображение покрывать весь элемент */
-  background-position: center; /* Центрирует изображение */
-  width: 100px; /* Укажите нужную ширину */
-  height: 100px; /* Укажите нужную высоту */
+  background-position: center; /* Центрирует*/
+  width: 100px;
+  height: 100px; 
   border-radius: 9px;
 }
 
 .brown1 {
-  background-image: url('https://boss-floors.ru/upload/iblock/ecb/tfbn3sftl3w8guifreali8ra9v8blc9l.jpg'); /* Укажите путь к вашему изображению */
-  background-size: cover; /* Заставляет изображение покрывать весь элемент */
-  background-position: center; /* Центрирует изображение */
-  width: 100px; /* Укажите нужную ширину */
-  height: 100px; /* Укажите нужную высоту */
+  background-image: url('https://boss-floors.ru/upload/iblock/ecb/tfbn3sftl3w8guifreali8ra9v8blc9l.jpg'); 
+  background-size: cover; 
+  background-position: center; 
+  width: 100px; 
+  height: 100px; 
   border-radius: 9px;
 }
 
 .brown2 {
-  background-image: url('https://boss-floors.ru/upload/iblock/005/vsyo4kpm5gydrshee9qtouq77baat38a.jpg'); /* Укажите путь к вашему изображению */
-  background-size: cover; /* Заставляет изображение покрывать весь элемент */
-  background-position: center; /* Центрирует изображение */
-  width: 100px; /* Укажите нужную ширину */
-  height: 100px; /* Укажите нужную высоту */
+  background-image: url('https://boss-floors.ru/upload/iblock/005/vsyo4kpm5gydrshee9qtouq77baat38a.jpg'); 
+  background-size: cover; 
+  background-position: center; 
+  width: 100px; 
+  height: 100px; 
   border-radius: 9px;
   object-fit: Scale-down;
 }
 
 .brown3{
-background-image: url('https://boss-floors.ru/upload/iblock/41b/9ruyh82kja20jtf3liau7gzwa27muc3m.png'); /* Укажите путь к вашему изображению */
-background-size: cover; /* Заставляет изображение покрывать весь элемент */
-background-position: center; /* Центрирует изображение */
-width: 100px; /* Укажите нужную ширину */
-height: 100px; /* Укажите нужную высоту */
+background-image: url('https://boss-floors.ru/upload/iblock/41b/9ruyh82kja20jtf3liau7gzwa27muc3m.png'); 
+background-size: cover;
+background-position: center; 
+width: 100px; 
+height: 100px; 
 border-radius: 9px;
 object-fit: Scale-down;
 }
@@ -1837,11 +1901,11 @@ object-fit: Scale-down;
   /* боковой панели */
   .sidebar {
      align-items: center;
-      padding: 10px  5px  0  5px; /* Внутренние отступы для удобства */
-      width: 90%; /* Ширина боковой панели */
+      padding: 10px  5px  0  5px; /* Внутренние отступы */
+      width: 90%; 
       
       margin-top: 10px  5px  0  5px;
-      margin-left: 25px; /* Отступ слева */
+      margin-left: 25px; 
       animation: slideIn 0.5s ease; /* Анимация появления боковой панели */
   
   }
@@ -1849,10 +1913,10 @@ object-fit: Scale-down;
   /* Анимация появления боковой панели */
   @keyframes slideIn {
       from {
-          transform: translateX(-100%); /* Начинаем снаружи экрана */
+          transform: translateX(-100%); 
       }
       to {
-          transform: translateX(0); /* Позиция в конце анимации */
+          transform: translateX(0); 
       }
   }
   
@@ -1860,21 +1924,21 @@ object-fit: Scale-down;
   
   /* Стили для кнопок внутри боковой панели */
   .sidebar button {
-      background-color: #688EBD; /* Темно-синий цвет фона кнопок */
-      color: white; /* Белый цвет текста для контраста */
+      background-color: #688EBD; 
+      color: white; 
      
       border: none; /* Без рамки */
-      border-radius: 25px; /* Скругленные углы кнопок */
-      padding: 10px; /* Увеличенные внутренние отступы */
+      border-radius: 25px; 
+      padding: 10px; 
       cursor: pointer; /* Указатель при наведении на кнопку */
-      font-size: 18px; /* Размер шрифта кнопок */
+      font-size: 18px; 
       transition: all 0.3s ease; /* Плавные переходы для всех изменений */
       position: relative; /* Для анимации при наведении */
   }
   
   /* Эффект при наведении на кнопки */
   .sidebar button:hover {
-      background-color: #2a5992; /* Светлее оттенок синего при наведении */
+      background-color: #2a5992; /* Светлее оттенок при наведении */
       box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2); /* Тень при наведении */
   }
   
@@ -1886,9 +1950,7 @@ object-fit: Scale-down;
   
   .boxes{
 background-color: white;
-
-
-  }
+ }
   
           .prodct-info {
               padding: 20px;
@@ -1994,56 +2056,60 @@ background-color: white;
   
   @media (max-width: 855px) {
       .prodct-card {
-          flex-direction: column; 
-          margin: 5px; 
-          width: 90%; 
-          height: 90%; 
+          flex-direction: column; /* Изменяем направление на колонку для маленьких экранов */
+          margin: 5px; /* Уменьшаем отступы */
+          width: 90%; /* Устанавливаем ширину в 100% */
+          height: 90%; /* Высота автоматически подстраивается под содержимое */
       }
   
       .section-frame {
-          width: 100%;
-          height: auto; 
+          width: 100%; /* Устанавливаем ширину в 100% */
+          height: auto; /* Высота автоматически подстраивается под содержимое */
       }
   
       .prodct-info {
-          width: 100%; 
-          padding: 10px; 
+          width: 100%; /* Устанавливаем ширину в 100% */
+          padding: 10px; /* Уменьшаем отступы */
       }
   
       h1 {
-          font-size: 20px;
+          font-size: 20px; /* Уменьшаем размер шрифта заголовка */
       }
   
       .price {
-          font-size: 20px; 
+          font-size: 20px; /* Уменьшаем размер шрифта для цены */
       }
   
       .quantity-input {
-          width: 40px; 
+          width: 40px; /* Уменьшаем ширину поля ввода количества */
       }
   
       .add-to-cart,
       .buy-now {
-          font-size: 14px; 
-          padding: 8px; 
+          font-size: 14px; /* Уменьшаем размер шрифта для кнопок */
+          padding: 8px; /* Уменьшаем отступы внутри кнопок */
       }
   
       .color-circle {
-          height: 25px; 
-          width: 25px; 
+          height: 25px; /* Уменьшаем размер цветных кругов */
+          width: 25px; /* Уменьшаем размер цветных кругов */
       }
   
       .sidebar {
-          width: 100%; 
-          margin-left: 0; 
+          width: 100%; /* Устанавливаем ширину сайдбара в 100% */
+          margin-left: 0; /* Убираем левый отступ */
       }
   
       .characteristics,
       .reviews,
       .details {
-          padding: 5px; 
+          padding: 5px; /* Уменьшаем отступы внутри секций */
       }
   }
+  
+  
+  
+  
   
   
   
@@ -2871,7 +2937,7 @@ h2 {
 
 
 
-/*Страница описание доставки*/
+/*СТРАНИЦА ОПИСАНИЕ ДОСТАВКИ ДЛЯНЕ АВТОРИЗОВАННЫХ*/
 
 .delivery-info {
   background-color: #f9f9f9; /* Светлый фон для блока */
@@ -2903,35 +2969,40 @@ h2 {
 }
 
 
-.tab {
-  display: inline-block;
-  padding: 10px 20px;
-  margin-right: 10px;
-  background-color: #007bff;
-  color: white;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
+ .tab {
+        display: inline-block;
+        padding: 10px 20px;
+        margin-right: 10px;
+        background-color:  #b4cae6;
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
 
-.tab:hover {
-  background-color: #0056b3;
-}
+    .tab:hover {
+        background-color: #315886 ;
+    }
 
-.content {
-  display: none; /* Скрываем все содержимое по умолчанию */
-  margin-top: 20px;
-  padding: 15px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  background-color: #fff;
-}
+    .active-tab {
+        background-color: #4577b4;
+    }
 
-.content p {
-  margin: 5px 0;
-}
+    .content {
+        display: none;
+        margin-top: 20px;
+        padding: 15px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        background-color: #fff;
+    }
 
-/*Страница описание доставки*/
+    .content p {
+        margin: 5px 0;
+    }
+
+
+/*СТРАНИЦА ОПИСАНИЕ ДОСТАВКИ ДЛЯНЕ АВТОРИЗОВАННЫХ*/
 
 
 
@@ -3042,3 +3113,4 @@ footer a:hover {
 .p {
   font-size: 20px; /* Код класса p должен начинаться с точки, если это класс */
 }
+ </style>
