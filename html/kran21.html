@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Смесители для душа</title>
+    <title>Смесители для раковин / Однорычажные смесители</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="/css/style.css">
 
@@ -183,26 +183,23 @@
 <!--КОНЕЦ РЕГИСТРАЦИИ-->
         
 
-                 <!-- Хлебные крошки -->
-                 <nav class="breadcrumb">
-                    <a href="index.html"  >Главная</a>  &gt; <a href= "category.html" >Каталог</a>  &gt; <a href= " categorysantexnica.html" >Сантехника</a> &gt; <a href= "kran.html " >Смесители </a>  &gt; <a href= "kran2.html" >Смесители для душа</a> 
-                </nav>
+<nav class="breadcrumb">
+    <a href="index.html"  >Главная</a>  &gt; <a href= "category.html" >Каталог</a>  &gt; <a href= "categorysantexnica.html" >Сантехника</a> &gt; <a href= "kran.html" >Смесители </a> &gt; <a href= "kran1.html" > Смесители для раковин </a>    &gt; <a href= "kran11.html" > Однорычажные смесители</a>  
+</nav>
+
 <h6 style= "font-size:35px; font-weight:bold;margin-left:80px;
 margin-top:15px; margin-bottom:15px;">Смесители для душа </h6>
 
 <!--КАРТОЧКИ ТОВАРОВ -->
 
 <div class="wrapper">
-
     <div class="container">  
         <div class="sidebar">
-            <button > <a href = "" style=" text-decoration: none; color:white; ">Однорычажные смесители </a></button>
-            <button > <a href = "" style="text-decoration-line: none; color:white;"> Двухвентильные смесители</a></button>
-            <button ><a href = "" style="text-decoration-line: none; color:white;">Термостатические смесители:</a></button>
-            <button ><a href = "" style="text-decoration-line: none; color:white;">Смесители сенсорные</a></button>
-             
+            <button style=" background-color: #315886;"> <a href = "kran11.html" style=" text-decoration: none; color:white; font-size: 25px;">Однорычажные смесители </a></button>
+            <button  ><a href = "kran12.html" style="text-decoration-line: none; color:white; ">Центральные смесители</a></button>
+            <button ><a href = "kran13.html" style="text-decoration-line: none; color:white;">Вентильные смесители</a></button>
+            <button ><a href = "kran14.html" style="text-decoration-line: none; color:white;">Сенсорные смесители</a></button> 
         </div></div>
-
 <div class ="nexprev"><button id="prevBtn" class="pre-btn">Назад</button>
 <button id="nextBtn" class="nex-btn">Вперед</button></div> </div>
 
@@ -656,7 +653,6 @@ const card = document.createElement('div');
     description.innerHTML = `
   
  <div class="cartpodrobno">
-
             <div class="procard">
                     <img 
   style="width: 400px; height: 400px; border: 1.2px solid grey;" 
@@ -675,7 +671,6 @@ const card = document.createElement('div');
                 </div>
             </div>
         </div>
-  
     `;
     windowContent.appendChild(closeButton);
     windowContent.appendChild(description);
@@ -727,8 +722,6 @@ zoomableImages.forEach(image => {
     });
 });
 });
-
-
 let currentIndex = 0;
 const cards = document.querySelectorAll('.product-card');
 
@@ -738,21 +731,17 @@ function showCards(startIndex) {
         card.style.display = (i >= startIndex && i < endIndex) ? 'block' : 'none';
     });
 }
-
 showCards(currentIndex);
-
 document.getElementById('nextBtn').addEventListener('click', () => {
     if (currentIndex + 20 >= cards.length) return;
     currentIndex += 20;
     showCards(currentIndex);
 });
-
 document.getElementById('prevBtn').addEventListener('click', () => {
     if (currentIndex === 0) return;
     currentIndex -= 20;
     showCards(currentIndex);
 });
-
 document.querySelectorAll(".btn").forEach(button => {
     button.addEventListener("click", function() {
         const isInCart = this.classList.contains("clicked");
@@ -765,11 +754,8 @@ document.querySelectorAll(".btn").forEach(button => {
             this.classList.remove("clicked");
             removeFromCart(this);
         }
-
-        
     });
 });
-
 function changeNumber(amount, inputId) {
     const numberInput = document.getElementById(inputId);
     let currentValue = parseInt(numberInput.value, 10);
@@ -778,7 +764,6 @@ function changeNumber(amount, inputId) {
         numberInput.value = currentValue;
     }
 }
-
 function addToCart(button) {
     const productTitle = button.closest('.product-card').querySelector('.product-title').textContent;
     const productPrice = button.closest('.product-card').querySelector('.money span').textContent;
@@ -787,7 +772,6 @@ function addToCart(button) {
     const existingItem = Array.from(document.querySelectorAll('.cart-item')).find(item => 
         item.querySelector('p').textContent.includes(productTitle)
     );
-
     if (existingItem) {
         const quantityInput = existingItem.querySelector('.js-number');
         quantityInput.value = parseInt(quantityInput.value) + parseInt(productQuantity);
@@ -806,24 +790,19 @@ function addToCart(button) {
         document.getElementById('cart-items').appendChild(cartItem);
     }
 }
-
 function removeItem(icon) {
     icon.closest('.cart-item').remove();
 }
-
 function removeFromCart(button) {
 
 }
-
 function toggleCart() {
     const cart = document.getElementById('cart');
     cart.style.display = cart.style.display === 'none' ? 'block' : 'none';
 }
-
 function clearCart() {
     document.getElementById('cart-items').innerHTML = '';
 }
-
 function changeCartItemNumber(step, button) {
     const input = button.parentElement.querySelector('.js-number');
     let value = parseInt(input.value);
@@ -833,8 +812,6 @@ function changeCartItemNumber(step, button) {
     }
     input.value = value;
 }
-
-
     function openWindow() {
         document.getElementById('quickViewWindow').style.display = 'flex';
     }
@@ -844,13 +821,12 @@ function changeCartItemNumber(step, button) {
     }
 
     
-
-    // Open the window when the page loads for demonstration
     window.onload = openWindow;
 </script>
 
 
-      
+  
+       
 <footer>
     <hr>
     <div class="containr"><div class="subscribe"></div><div class="footer_navigation">
@@ -892,17 +868,19 @@ function changeCartItemNumber(step, button) {
     const menuBurger = document.getElementById('menuBurger');
     const popup = document.getElementById('popup');
     
-   
+    // Функция для открытия и закрытия меню
     menuBurger.onclick = function(event) {
-        event.stopPropagation();
+        event.stopPropagation(); // Остановить всплытие события, чтобы не закрыть каталог сразу
         catalog.style.display = catalog.style.display === 'none' ? 'block' : 'none';
     };
     
+    // Переменная для отслеживания состояния popup
     let isPopupOpen = false;
     
+    // Функция для открытия подкатегорий при наведении
     document.querySelectorAll('.category-button').forEach(button => {
         button.addEventListener('mouseenter', function(event) {
-            event.stopPropagation();
+            event.stopPropagation(); // Остановить всплытие события при наведении
             const categoryNum = this.getAttribute('data-category');
             let content = '';
     
@@ -1007,18 +985,22 @@ function changeCartItemNumber(step, button) {
             document.getElementById('popupContent').innerHTML = content;
             showPopup(this.querySelector('span').textContent);  
         });
-    });p
+    });
+    
+    // Функция для отображения popup
     function showPopup(title) {
         document.getElementById('popupTitle').textContent = title;
-        popup.style.display = 'block'; 
-        isPopupOpen = true;
+        popup.style.display = 'block'; // Показывает popup
+        isPopupOpen = true; // Указывает что popup открыт
     }
     
+    // Функция для закрытия popup
     function closePopup() {
         popup.style.display = 'none'; 
-        isPopupOpen = false;
+        isPopupOpen = false; // Указывает что popup закрыт
     }
     
+    // Закрытие каталога при клике где-либо на странице
     document.addEventListener('click', function() {
         if (catalog.style.display === 'block') {
             catalog.style.display = 'none'; 
@@ -1027,6 +1009,8 @@ function changeCartItemNumber(step, button) {
             closePopup();
         }
     });
+    
+    
             //Регистрация
     const socialLink = document.querySelector('.social-link');
     const tooltip = document.getElementById('tooltip');
@@ -1044,6 +1028,8 @@ function changeCartItemNumber(step, button) {
         tooltip.style.top = `${socialLink.offsetTop + socialLink.offsetHeight}px`; 
         tooltip.style.left = `${socialLink.offsetLeft}px`;
     });
+    
+    
     document.addEventListener('click', (event) => {
         if (!socialLink.contains(event.target) && !tooltip.contains(event.target)) {
             hideTooltip();
@@ -1058,7 +1044,8 @@ function changeCartItemNumber(step, button) {
         accountVisible = !accountVisible;
         account.style.display = accountVisible ? 'block' : 'none';
     }
-
+    
+    
     function hideAccount() {
         if (accountVisible) {
             accountVisible = false;
@@ -1066,20 +1053,25 @@ function changeCartItemNumber(step, button) {
         }
     }
     
+    
     function openRegisterModal() {
         document.body.style.overflow = 'hidden';
         registerModal.style.display = 'block';
     }
+    
     function closeRegisterModal() {
         document.body.style.overflow = 'auto';
         registerModal.style.display = 'none';
     }
+    
+    
     registerForm.onsubmit = (event) => {
         event.preventDefault();
         alert('Регистрация завершена');
         closeRegisterModal();
     };
-
+    
+    
     function logInAccount() {
         alert('Вход');
     }
