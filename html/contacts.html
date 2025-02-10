@@ -3,21 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css"> <!-- Подключаем CSS файл -->
+ 
     <title>Контактная информация</title>
     <style>
-        /* Общие стили */
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
-            margin: 0;
-            padding: 0;
-            color: #333;
-        }
+    
 
-        .container {
+        .kontainer {
             width: 90%;
-            max-width: 1200px;
+            max-width: auto;
             margin: 50px auto;
             background-color: #fff;
             padding: 40px;
@@ -26,7 +19,7 @@
             animation: fadeIn 1s ease-in-out;
         }
 
-        h1 {
+        .kontacth1 {
             text-align: center;
             font-size: 2.5em;
             color: #2c3e50;
@@ -34,7 +27,7 @@
             position: relative;
         }
 
-        h1::after {
+        .kontacth1::after {
             content: '';
             display: block;
             width: 60px;
@@ -45,7 +38,7 @@
         }
 
         /* Стили для контактной информации */
-        .contact-info {
+        .kontact-info {
             margin-bottom: 30px;
             padding: 25px;
             border-radius: 12px;
@@ -58,19 +51,19 @@
             animation-delay: var(--animation-delay);
         }
 
-        .contact-info:nth-child(1) { --animation-delay: 0.2s; }
-        .contact-info:nth-child(2) { --animation-delay: 0.4s; }
-        .contact-info:nth-child(3) { --animation-delay: 0.6s; }
-        .contact-info:nth-child(4) { --animation-delay: 0.8s; }
-        .contact-info:nth-child(5) { --animation-delay: 1s; }
+        .kontact-info:nth-child(1) { --animation-delay: 0.2s; }
+        .kontact-info:nth-child(2) { --animation-delay: 0.4s; }
+        .kontact-info:nth-child(3) { --animation-delay: 0.6s; }
+        .kontact-info:nth-child(4) { --animation-delay: 0.8s; }
+        .kontact-info:nth-child(5) { --animation-delay: 1s; }
 
-        .contact-info:hover {
+        .kontact-info:hover {
             background-color: #fff;
             transform: translateY(-10px);
             box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
         }
 
-        .contact-info h2 {
+        .kontact-info h2 {
             font-size: 1.8em;
             color: #2c3e50;
             margin-bottom: 15px;
@@ -79,18 +72,18 @@
             display: inline-block;
         }
 
-        .contact-info p {
+        .kontact-info p {
             margin: 12px 0;
             color: #555;
             line-height: 1.6;
         }
 
-        .contact-info strong {
+        .kontact-info strong {
             font-weight: bold;
             color: #333;
         }
 
-        .contact-info a {
+        .kontact-info a {
             display: inline-block;
             padding: 12px 24px;
             background-color: #3498db;
@@ -101,7 +94,7 @@
             font-weight: 600;
         }
 
-        .contact-info a:hover {
+        .kontact-info a:hover {
             background-color: #2980b9;
             transform: scale(1.05);
         }
@@ -125,7 +118,7 @@
 
         /* Адаптивность */
         @media (max-width: 768px) {
-            .container {
+            .kontainer {
                 padding: 20px;
             }
 
@@ -133,15 +126,15 @@
                 font-size: 2em;
             }
 
-            .contact-info {
+            .kontact-info {
                 padding: 20px;
             }
 
-            .contact-info h2 {
+            .kontact-info h2 {
                 font-size: 1.5em;
             }
 
-            .contact-info a {
+            .kontact-info a {
                 width: 100%;
                 text-align: center;
             }
@@ -149,30 +142,30 @@
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Контактная информация</h1>
-        <div class="contact-info">
+    <div class="kontainer">
+        <h1 class="kontacth1">Контактная информация</h1>
+        <div class="kontact-info">
             <h2>Обратная связь</h2>
             <p>Задайте вопрос, направьте пожелание или оставьте отзыв о нашей работе. Ответим в течение 24 часов.</p>
             <a href="#">Написать сообщение</a>
         </div>
-        <div class="contact-info">
+        <div class="kontact-info">
             <h2>Клиентская поддержка</h2>
             <p>Мы принимаем звонки круглосуточно без выходных. Звонок бесплатный.</p>
             <p><strong>8 800 700-00-99</strong></p>
         </div>
-        <div class="contact-info">
+        <div class="kontact-info">
             <h2>Адреса магазинов</h2>
             <p>Перед поездкой в магазин уточните его адрес, время работы и схему проезда.</p>
             <a href="#">Смотреть адреса</a>
         </div>
-        <div class="contact-info">
+        <div class="kontact-info">
             <h2>Центральный офис</h2>
             <p>Москва, проспект Лихачева, 15</p>
             <p>Для получения пропуска в офис необходимо заранее договориться о встрече с сотрудником Лемана ПРО.</p>
             <p>8 495 961-01-60</p>
         </div>
-        <div class="contact-info">
+        <div class="kontact-info">
             <h2>Общество с ограниченной ответственностью «ЛЕ МОНЛИД»</h2>
             <p>ОГРН 1035005516105</p>
             <p>141031, Московская область, г. Мытищи, Осташковское шоссе, 1</p>
