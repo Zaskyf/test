@@ -1,71 +1,61 @@
-
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Доставка</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <title>Магазин</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="/test/css/style.css">
-    
-    <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
-  /> <!--Ссылка на иконки в регистрации -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+/> <!--Ссылка на иконки в регистрации -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
         integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
         <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" ></script>
-        
+
 </head>
 <body>
-
     <header>
-        <div class="header-contaner">
-            <div class="catalog-icon" id="menuBurger">
-    <i class="fas fa-bars"></i>
-</div>
-            <div class="search-bar">
-                <input type="search" name="search" placeholder="Поиск товаров">
-                <button type="submit">
-                    <i class="fas fa-search"></i>
-                </button>
+            <div class="header-contaner">
+                <div class="catalog-icon" id="menuBurger">
+        <i class="fas fa-bars"></i>
+    </div>
+                <div class="search-bar">
+                    <input type="search" name="search" placeholder="Поиск товаров">
+                    <button type="submit">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                <div class="cart-icon" onclick="toggleCart()">
+                    <i class="fas fa-shopping-cart"></i>
+                </div>
+              <div class="header-contaner">
+            <div class="account-icon" onclick="toggleAccount()">
+                <i class="fas fa-user"></i>
             </div>
-            <div class="cart-icon" onclick="window.location.href='cart.html'">
-                <i class="fas fa-shopping-cart"></i>
-            </div>
-          <div class="header-contaner">
-        <div class="account-icon" onclick="toggleAccount()">
-            <i class="fas fa-user"></i>
+ </div>
+ </div>
+        </header>
+
+  <div class="cart" id="cart">
+            <h2>Корзина</h2>
+            <div id="cart-items"></div>
+            <a href="cart.html"><button class= "cartbutton">Перейти в корзину</button></a>  <!--Почему ссылка не работает -->
+            
+            <button class= "cartbutton" onclick="clearCart()">Очистить корзину</button>
         </div>
 
-      
-        </div>
-
-
-        </div>
-    </header>
-
-
-   
 
 
 
-    <div class="cart" id="cart">
-      <h2>Корзина</h2>
-      <div id="cart-items"></div>
-      <a href="cart.html"><button class= "cartbutton">Перейти в корзину</button></a>  <!--Почему ссылка не работает -->
-      
-      <button class= "cartbutton" onclick="clearCart()">Очистить корзину</button>
-  </div>
-
-
-
-
-  <!--Каталог-->
+        <!--Каталог-->
 
        <div class="catalog" id="catalog">
         <h6>Каталог</h6>
@@ -99,223 +89,166 @@
                                           
     </div>
 
-<!-- Popup для подкатегорий -->
-<div class="popup" id="popup">
-  <span class="clobutton" onclick="closePopup()">&times;</span>
-<h2 id="popupTitle"></h2>  
- 
-
-  <ul id="popupContent"></ul>
-</div>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
-
-
-<!-- НАЧАЛО РЕГИСТРАЦИИ  -->
-<div class="account" id="account" onmouseleave="hideAccount()">
-  <h2>Аккаунт</h2>
-  <button class="sign" onclick="openRegisterModal()" style = " color: black;font-size : 18px ;">Войти или Зарегистрироваться</button>
-</div>
-<!-- Модальное окно для регистрации -->
-  <div id="registerModal" class="modal">
-  <span class="close" onclick="closeRegisterModal()">&times;</span> <!-- Крестик закрытия -->
-  <div class="modal-content sign-in">
-      <form action="">
-          <h2>Войти</h2>
-          <div class="input-group">
-              <input type="text" required>
-              <label for="">Имя</label>
-          </div>
-          <div class="input-group">
-              <input type="password" required>
-              <label for="">Пароль</label>
-          </div>
-          <div class="remember">
-              <label><input type="checkbox"> Запомнить меня</label>
-          </div>
-          <button class="registr" type="submit">Войти</button>
-          <div class="signUp-link">
-              <p style="color: black; font-size : 18px;" >У вас нет аккаунта? <a href="#" class="signUpBtn-link">Регистрация</a></p>
-          </div>
-      </form>
-  </div>
-<div class="modal-content sign-up">
-  <form action="">
-      <h2>Регистрация</h2><br>
-      <div class="input-group">
-          <input type="text" required>
-          <label for="">Имя</label>
-      </div>
-      <div class="input-group">
-          <input type="email" required>
-          <label for="">Почта</label>
-      </div>
-      <div class="input-group">
-          <input type="password" required>
-          <label for="">Придумайте пароль</label>
-      </div>
-      <div class="remember">
-          <label style="color: black; font-size: 16px;">
-              <input type="checkbox"> Я соглашаюсь с чем-то
-          </label>
-      </div>
-      <button class="registr" type="submit">Зарегистрироваться</button>
-
-      <div class="signUp-link">
-          <p style="color: black; margin-top: 10px; font-size: 16px;">У Вас уже есть аккаунт?
-              <a style="color: black; margin-top: 10px; font-size: 16px;" href="#" class="signInBtn-link">Войти</a>
-          </p>
-            <div class="gogle" type="button" onclick="socialLogin()">Войти через <span class="social-link">соцсети</span></div>
-      </div>
-      <div class="tooltip" id="tooltip" >
-<span class="clo" onclick="hideTooltip()">&#10006;</span>
-<ul style="text-align:left; padding:5px; margin-top:10px;">
-<li>
-  <a href="#" style="margin-right: 3px; color: black; display: inline-block;">
-      <i class="fab fa-facebook-f"></i>
-  </a>
-</li>
-<li>
-  <a href="#" style="margin-right: 3px; color: black; display: inline-block;">
-      <i class="fab fa-google"></i>
-  </a>
-</li>
-<li>
-  <a href="#" style="margin-right: 3px; color: black; display: inline-block;">
-      <i class="fab fa-instagram"></i>
-  </a>
-</li>
-</ul>
-</div>
-  </form>
-</div>
-</div>
-<!--КОНЕЦ РЕГИСТРАЦИИ-->
-
-
-
-
-    <div class="navbar" >
-        <ul class="nav-links" >
-          <li style=" background-color: #e5e5e5; "> <a  style=" color: black;  font-size: 12px;" href="/html/Kabinet.html">Личный кабинет </a></li>
-            <li style=" background-color: #e5e5e5; "><a style=" color: black;  font-size: 12px;" href="/html/Dostavka.html">Доставки</a></li>
-            <li  style=" background-color: #e5e5e5; "><a  style=" color: black; font-size: 12px; " href="#grades">Покупки</a></li>
-            <li style=" background-color: #e5e5e5; " ><a style=" color: black; font-size: 12px; "  href="#communication">Избранное</a></li>
-            <li style=" background-color: #e5e5e5; " ><a style=" color: black; font-size: 12px;"  href="#communication">Отзывы </a></li>
-            <li  style=" background-color: #e5e5e5; " ><a style=" color: black; font-size: 12px; "  href="#support">Поддержка</a></li>
-        </ul>
+    <!-- Popup для подкатегорий -->
+    <div class="popup" id="popup">
+        <span class="clobutton" onclick="closePopup()">&times;</span>
+      <h2 id="popupTitle"></h2>  
+        <ul id="popupContent"></ul>
     </div>
 
-    <main>
-        <section id="user" class="content-section-user">
-            <h2>Пользователь</h2>
-            <div class="User-profil">
-                <div class="profile-icon">
-                
-                    <img id="output" src="default-avatar.png" />
-                </div>   <input type="file" id="fileInput" accept="image/*" onchange="loadFile(event)" />
-           
-
-               <li class="discount-item">
-            Скидка
-            <p style="font-size: 17px; font-weight: bold; color: black;">До 30%</p>
-        </li>
- <script>
-        // Создаем модальное окно (если его еще нет)
-        const discountInfo = document.createElement('div');
-        discountInfo.classList.add('discount-info');
-        discountInfo.innerHTML = `
-            <div class="discount-info-content">
-                <h2>Информация о скидках</h2>
-                <p>Здесь будет подробная информация о скидках, например, какие товары участвуют в акции, условия получения скидки, срок действия скидки и т.д.</p>
-                <button class="close-discount-info">Понятно</button>
-            </div>
-        `;
-        document.body.appendChild(discountInfo);
-
-        document.querySelector('.discount-item').addEventListener('click', () => {
-            discountInfo.style.display = 'flex'; 
-        });
-
-        discountInfo.querySelector('.close-discount-info').addEventListener('click', () => {
-            discountInfo.style.display = 'none';
-        });
-
-        document.addEventListener('click', (event) => {
-            if (event.target === discountInfo) {
-                discountInfo.style.display = 'none';
-            }
-        });
-    </script> </div> </section>
-
-
-<style>
-
-.card-content{
-background-color: #688EBD; 
-
-}
-.navbar {
-  
-  text-decoration: none;
-  padding: 10px 0;
-border-radius: 9px;
-}
-
-
-
-.nav-links {
-  list-style: none;
-  display: flex;
-  justify-content: left;
-}
-
-.nav-links li {
-  margin: 0 15px;
-}
-
-.nav-links a {
-  text-decoration: none;
-  color: white;
-  font-weight: 500;
-  transition: color 0.3s;
-}
-
-.nav-links a:hover {
-  color: #5a7cb3; 
-}
-
-
-
-            
-</style>
-
-    <section id="support" class="content-section">
-            <div class="support-content">
-    <h6 style="font-size: 14px; color: grey;">Техническая поддержка</h6>
-                  
-                    <button class="primary-btn">Связаться с поддержкой</button>
-            </div>
-        </section>
-
-
-    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
     
-    <footer>
+
+
+    <!-- НАЧАЛО РЕГИСТРАЦИИ  -->
+    <div class="account" id="account" onmouseleave="hideAccount()">
+        <h2>Аккаунт</h2>
+        <button class="sign" onclick="openRegisterModal()" style = " color: black;font-size : 18px ;">Войти или Зарегистрироваться</button>
+    </div>
+    <!-- Модальное окно для регистрации -->
+        <div id="registerModal" class="modal">
+        <span class="close" onclick="closeRegisterModal()">&times;</span> <!-- Крестик закрытия -->
+        <div class="modal-content sign-in">
+            <form action="">
+                <h2>Войти</h2>
+                <div class="input-group">
+                    <input type="text" required>
+                    <label for="">Имя</label>
+                </div>
+                <div class="input-group">
+                    <input type="password" required>
+                    <label for="">Пароль</label>
+                </div>
+                <div class="remember">
+                    <label><input type="checkbox"> Запомнить меня</label>
+                </div>
+                <button class="registr" type="submit">Войти</button>
+                <div class="signUp-link">
+                    <p style="color: black; font-size : 18px;" >У вас нет аккаунта? <a href="#" class="signUpBtn-link">Регистрация</a></p>
+                </div>
+            </form>
+        </div>
+    <div class="modal-content sign-up">
+        <form action="">
+            <h2>Регистрация</h2><br>
+            <div class="input-group">
+                <input type="text" required>
+                <label for="">Имя</label>
+            </div>
+            <div class="input-group">
+                <input type="email" required>
+                <label for="">Почта</label>
+            </div>
+            <div class="input-group">
+                <input type="password" required>
+                <label for="">Придумайте пароль</label>
+            </div>
+            <div class="remember">
+                <label style="color: black; font-size: 16px;">
+                    <input type="checkbox"> Я соглашаюсь с чем-то
+                </label>
+            </div>
+            <button class="registr" type="submit">Зарегистрироваться</button>
+
+            <div class="signUp-link">
+                <p style="color: black; margin-top: 10px; font-size: 16px;">У Вас уже есть аккаунт?
+                    <a style="color: black; margin-top: 10px; font-size: 16px;" href="#" class="signInBtn-link">Войти</a>
+                </p>
+                  <div class="gogle" type="button" onclick="socialLogin()">Войти через <span class="social-link">соцсети</span></div>
+            </div>
+            <div class="tooltip" id="tooltip" >
+      <span class="clo" onclick="hideTooltip()">&#10006;</span>
+    <ul style="text-align:left; padding:5px; margin-top:10px;">
+    <li>
+        <a href="#" style="margin-right: 3px; color: black; display: inline-block;">
+            <i class="fab fa-facebook-f"></i>
+        </a>
+    </li>
+    <li>
+        <a href="#" style="margin-right: 3px; color: black; display: inline-block;">
+            <i class="fab fa-google"></i>
+        </a>
+    </li>
+    <li>
+        <a href="#" style="margin-right: 3px; color: black; display: inline-block;">
+            <i class="fab fa-instagram"></i>
+        </a>
+    </li>
+</ul>
+    </div>
+        </form>
+    </div>
+    </div>
+<!--КОНЕЦ РЕГИСТРАЦИИ-->
+<div class="delivery-info">
+    <h6 class="delivery-info__title">Условия доставки</h6>
+    <p class="delivery-info__text">Стоимость доставки рассчитывается автоматически при оформлении заказа на сайте или сотрудником Лемана ПРО на стойке оформления доставки при покупке в магазине. Итоговая стоимость зависит от:</p>
+    <p class="delivery-info__list">
+      <p class="delivery-info__item"> • Зоны доставки.</p>
+      <p class="delivery-info__item"> • Выбранного тарифа.</p>
+      <p class="delivery-info__item"> • Дополнительных услуг.</p>
+      <p class="delivery-info__item"> • Веса товаров в заказе (для крупногабаритного маловесного товара используется условная единица веса).</p>
+
+
+
+<h6 class="delivery-info__title">Виды доставки</h6>
+<span class="tab active-tab" onclick="showContent('description')">Без выгрузки</span>
+<span class="tab" onclick="showContent('details')">До лифта или на дачу</span>
+
+<div id="description" class="content" style="display: block;">
+    <p>Вы выгружаете заказ из машины самостоятельно. Время на выгрузку ограничено и зависит от веса заказа:</p>
+    <p class="delivery-info__item">• Заказ от 1 до 1500 кг — 30 минут.</p>
+    <p class="delivery-info__item">• Заказ от 1501 до 5000 кг — 60 минут.</p>
+    <p class="delivery-info__item">• Заказ больше 5000 кг — 120 минут.</p>
+    <br>
+    <p>*Доставка доступна не для любой весовой категории. <br>
+    <a href="path/to/document.doc" id="download-link" download   style>Ознакомтесь с подробными правилами дотсавки</a>  <!--файл не скачивается  --> </p></div>
+
+
+<div id="details" class="content">
+    <p>Сотрудник службы доставки выгрузит заказ на площадку первого этажа у лифта или занесёт его за дверь частного дома.</p>
+   
+</div>
+    <h6 class="delivery-info__title">Дополнительные услуги</h6>
+    <p class="delivery-info__text">Подъем на этаж по лестнице - подъём товаров вручную, если в доме нет лифта или в нём не хватает места для выбранных товаров. Если вы не заказали услугу заранее, и товар не поместился в лифт, то услуга оплачивается отдельно по установленным расценкам подъема на этаж за каждый 100 кг. Сотрудник Декор центр свяжется с вами для уточнения способа оплаты.</p>
+  
+    <h6 class="delivery-info__title">Получение заказа</h6>
+    <p class="delivery-info__text">
+Перед приездом на адрес мы заранее предупредим вас.
+Сотрудник службы доставки свяжется с вами, когда будет на месте. После приезда он ждёт 15 минут и уезжает. Если вы не смогли получить заказ, повторную доставку нужно оплатить отдельно.
+Если служба доставки не успеет приехать в назначенный интервал времени, то мы вернём вам стоимость доставки. Стоимость доставки возвращается из расчёта по тарифу «Без выгрузки» (если его нет, то «На улицу»). <br>Дополнительные услуги проноса, подъёма товара на этаж не компенсируются.
+Доставка не компенсируется, если:
+<br>
+- она была перенесена покупателем;<br>
+- были заказаны товары, помеченные на сайте ярлыком «Только онлайн-заказ»;<br>
+- покупатель предоставил неполный или неверный адрес или контакты;<br>
+- на пути были препятствия, мешающие подъезду или выгрузке;<br>
+- произошёл форс-мажор;<br>
+Для возврата стоимости доставки зафиксируйте время прибытия в акте приёма-передачи и обратитесь с ним в магазин, где вы оформляли доставку. Если вы заказывали на сайте, напишите в нашу службу клиентской поддержки или позвоните по телефону 8 800 700-00-99<br>
+При получении товаров рекомендуется их распаковать и сверить с заказом, а также убедиться, что товары и упаковка не повреждены. На проверку товаров у вас есть 30 минут. Сотрудник транспортной компании вскроет упаковку при вас.<br>
+После передачи товара сотрудник транспортной компании вывезет мусор — верхнюю транспортную упаковку, скотч и другую не заводскую упаковку, снятую при проверке товаров.
+После получения и проверки заказа внимательно ознакомьтесь с документами и подпишите их. После подписания акта приёма-передачи претензии по количеству и качеству полученного товара не принимаются.</p>
+    <p class="delivery-info__text">Если к месту разгрузки невозможно подъехать, мы остановимся как можно ближе, без нарушений ПДД и повреждений транспорта. Водитель паркуется так, чтобы выгрузить товары безопасно, не мешая пешеходам и другим машинам.</p></div> 
+  
+   <footer>
         <hr>
         <div class="containr"><div class="subscribe"></div><div class="footer_navigation">
             <div class="footer_menu">
-        <div class="item"><div class="caption">О компании</div>
+        <div class="item"><div class="caption">Покупателям</div>
         <ul class="menu_list">
-            <a href="/about/about-the-company/">Декор центр</a>
+            <a href="/about/about-the-company/">Каталог</a>
+            <a href="/about/arktika-servis/">Расрочка/Кредиты</a>
+            <a href="/about/bonus-program/">Бонусная программа</a>
+            <a href="/about/podarochnye-karty/">Подарочные карты</a>
         </ul></div>
         <div class="item"> 
             <div class="caption">Информация</div>
         <ul class="menu_list">
             <a href="/information/oplata/">Как оплатить</a>
             <a href="/information/feedback/">Обратная связь</a>
+            <a href="/information/jobs/">Гарантия</a>
            <a href="/information/contacts/">Контакты</a>
-            <a href="/information/jobs/">Вакансии</a>
+            
         
         </ul></div>   
 
@@ -324,36 +257,56 @@ border-radius: 9px;
             </ul>
         </div>
         </div>
-             <div class="contact_info"><div class="phone"><a href="tel:+7 (8672) 55-08-70">+7 (8672) 55-08-70</a> (с 10:00 до 20:00) </div>
-            <div class="address">Адрес магазина:<br>г. Владикавказ, пр-т Коста, 15,<br> лит. Г,Б, пом. 5,6  </div> 
-            <div class="copyright">© 1996—2024, ТК «Арктика»  </div>
+             <div class="contact_info"><div class="phone"><a href="tel:8 (918) 827-20-12">8 (918) 827-20-12</a> (с 09:30 до 19:00) </div>
+            <div class="address">Адрес магазина:<br>ул. Астана Кесаева, 33"а, Владикавказ <br> Респ. Северная Осетия — Алания</div> 
+            <div class="copyright">© 1996—2024, ТК «Декор центр»  </div>
         </div></div></div>
-       
     </footer>
-</body>
+    </body>
+
 </html>
 <script>
- 
-  const catalog = document.getElementById('catalog');
-  const menuBurger = document.getElementById('menuBurger');
-  const popup = document.getElementById('popup');
-  
+   function showContent(section) {
+        // Скрыть все 
+        var contents = document.querySelectorAll('.content');
+        contents.forEach(content => {
+            content.style.display = 'none';
+        });
 
-  menuBurger.onclick = function(event) {
-      event.stopPropagation(); 
-      catalog.style.display = catalog.style.display === 'none' ? 'block' : 'none';
-  };
- 
-  let isPopupOpen = false;
-  
+        // Показать выбранную сек
+        document.getElementById(section).style.display = 'block';
 
-  document.querySelectorAll('.category-button').forEach(button => {
-      button.addEventListener('mouseenter', function(event) {
-          event.stopPropagation();
-          const categoryNum = this.getAttribute('data-category');
-          let content = '';
-  
-          switch (categoryNum) {
+        // Удалить active-tab со всех вкладок
+        var tabs = document.querySelectorAll('.tab');
+        tabs.forEach(tab => {
+            tab.classList.remove('active-tab');
+        });
+
+        // Добавить  active-tab к активной сек
+        const tab = document.querySelector(`.tab[onclick="showContent('${section}')"]`);
+        tab.classList.add('active-tab');
+    }
+
+
+ 
+const catalog = document.getElementById('catalog');
+const menuBurger = document.getElementById('menuBurger');
+const popup = document.getElementById('popup');
+
+menuBurger.onclick = function(event) {
+    event.stopPropagation(); 
+    catalog.style.display = catalog.style.display === 'none' ? 'block' : 'none';
+};
+
+let isPopupOpen = false;
+
+document.querySelectorAll('.category-button').forEach(button => {
+    button.addEventListener('mouseenter', function(event) {
+        event.stopPropagation();
+        const categoryNum = this.getAttribute('data-category');
+        let content = '';
+
+        switch (categoryNum) {
             case '1':
                 content = 
                 '<a href="wallpaper1.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.1\')">Бумажные обои</button></a>' +
@@ -450,101 +403,106 @@ border-radius: 9px;
                     '<a href="wallpaper7.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.7\')">Концелярские ножи</button></a>';
                 break;
                
-          }
-          document.getElementById('popupContent').innerHTML = content;
-          showPopup(this.querySelector('span').textContent);  
-      });
-  });
-  
- 
-  function showPopup(title) {
-      document.getElementById('popupTitle').textContent = title;
-      popup.style.display = 'block';
-      isPopupOpen = true; 
-  }
-  
-  function closePopup() {
-      popup.style.display = 'none'; 
-      isPopupOpen = false; 
-  }
-  
-  document.addEventListener('click', function() {
-      if (catalog.style.display === 'block') {
-          catalog.style.display = 'none'; 
-      }
-      if (isPopupOpen) {
-          closePopup();
-      }
-  });
-          //Регистрация
-  const socialLink = document.querySelector('.social-link');
-  const tooltip = document.getElementById('tooltip');
-  const account = document.getElementById('account');
-  const registerModal = document.getElementById('registerModal');
-  const registerForm = document.getElementById('registerForm');
-  const signInBtnLink = document.querySelector('.signInBtn-link');
-  const signUpBtnLink = document.querySelector('.signUpBtn-link');
-  const modal = document.querySelector('.modal');
-  
-  let accountVisible = false;
-  
-  socialLink.addEventListener('mouseover', () => {
-      tooltip.style.display = 'block';
-      tooltip.style.top = `${socialLink.offsetTop + socialLink.offsetHeight}px`; 
-      tooltip.style.left = `${socialLink.offsetLeft}px`;
-  });
-  document.addEventListener('click', (event) => {
-      if (!socialLink.contains(event.target) && !tooltip.contains(event.target)) {
-          hideTooltip();
-      }
-  });
-  function hideTooltip() {
-      tooltip.style.display = 'none';
-  }
-  function toggleAccount() {
-      accountVisible = !accountVisible;
-      account.style.display = accountVisible ? 'block' : 'none';
-  }
-  function hideAccount() {
-      if (accountVisible) {
-          accountVisible = false;
-          account.style.display = 'none';
-      }
-  }
-  function openRegisterModal() {
-      document.body.style.overflow = 'hidden';
-      registerModal.style.display = 'block';
-  }
-  
-  function closeRegisterModal() {
-      document.body.style.overflow = 'auto';
-      registerModal.style.display = 'none';
-  }
-  
-  
-  registerForm.onsubmit = (event) => {
-      event.preventDefault();
-      alert('Регистрация завершена');
-      closeRegisterModal();
-  };
-  
-  
-  function logInAccount() {
-      alert('Вход');
-  }
-  </script>
-  <script>
-  
-  signUpBtnLink.addEventListener('click', () => {
-      modal.classList.toggle('active');
-  });
-  
-  signInBtnLink.addEventListener('click', () => {
-      modal.classList.toggle('active');
-  });
-  
-  </script>
-  
+        }
+        document.getElementById('popupContent').innerHTML = content;
+        showPopup(this.querySelector('span').textContent);  
+    });
+});
+
+function showPopup(title) {
+    document.getElementById('popupTitle').textContent = title;
+    popup.style.display = 'block'; 
+    isPopupOpen = true; 
+}
+
+function closePopup() {
+    popup.style.display = 'none'; 
+    isPopupOpen = false; 
+}
+
+document.addEventListener('click', function() {
+    if (catalog.style.display === 'block') {
+        catalog.style.display = 'none'; 
+    }
+    if (isPopupOpen) {
+        closePopup();
+    }
+});
 
 
+        //Регистрация
+const socialLink = document.querySelector('.social-link');
+const tooltip = document.getElementById('tooltip');
+const account = document.getElementById('account');
+const registerModal = document.getElementById('registerModal');
+const registerForm = document.getElementById('registerForm');
+const signInBtnLink = document.querySelector('.signInBtn-link');
+const signUpBtnLink = document.querySelector('.signUpBtn-link');
+const modal = document.querySelector('.modal');
 
+let accountVisible = false;
+
+socialLink.addEventListener('mouseover', () => {
+    tooltip.style.display = 'block';
+    tooltip.style.top = `${socialLink.offsetTop + socialLink.offsetHeight}px`; 
+    tooltip.style.left = `${socialLink.offsetLeft}px`;
+});
+
+
+document.addEventListener('click', (event) => {
+    if (!socialLink.contains(event.target) && !tooltip.contains(event.target)) {
+        hideTooltip();
+    }
+});
+
+function hideTooltip() {
+    tooltip.style.display = 'none';
+}
+
+function toggleAccount() {
+    accountVisible = !accountVisible;
+    account.style.display = accountVisible ? 'block' : 'none';
+}
+
+
+function hideAccount() {
+    if (accountVisible) {
+        accountVisible = false;
+        account.style.display = 'none';
+    }
+}
+
+
+function openRegisterModal() {
+    document.body.style.overflow = 'hidden';
+    registerModal.style.display = 'block';
+}
+
+function closeRegisterModal() {
+    document.body.style.overflow = 'auto';
+    registerModal.style.display = 'none';
+}
+
+
+registerForm.onsubmit = (event) => {
+    event.preventDefault();
+    alert('Регистрация завершена');
+    closeRegisterModal();
+};
+
+
+function logInAccount() {
+    alert('Вход');
+}
+</script>
+<script>
+
+signUpBtnLink.addEventListener('click', () => {
+    modal.classList.toggle('active');
+});
+
+signInBtnLink.addEventListener('click', () => {
+    modal.classList.toggle('active');
+});
+
+</script>
