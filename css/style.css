@@ -2827,35 +2827,35 @@ h2 {
 
 
 
-/*СТРАНИЦА ОПИСАНИЕ ДОСТАВКИ ДЛЯНЕ АВТОРИЗОВАННЫХ*/
+/*СТРАНИЦА ОПИСАНИЕ ДОСТАВКИ ДЛЯ НЕ АВТОРИЗОВАННЫХ*/
 
 .delivery-info {
-  background-color: #f9f9f9; /* Светлый фон для блока */
-  border: 1px solid #ddd; /* Обводка вокруг блока */
-  border-radius: 8px; /* Скругление углов */
-  padding: 20px; /* Внутренние отступы */
-  width: 95%; /* Максимальная ширина блока */
+  background-color: #f9f9f9; 
+  border: 1px solid #ddd; 
+  border-radius: 8px; 
+  padding: 20px; 
+  width: 95%; 
   height: auto;
-  margin: 20px auto; /* Центрирование блока на странице */
-  font-family: Arial, sans-serif; /* Шрифт для текста */
+  margin: 20px auto; 
+  font-family: Arial, sans-serif; 
 }
 
 .delivery-info__title {
-  font-size: 1.5em; /* Размер шрифта заголовка */
-  color: #333; /* Цвет текста заголовка */
-  margin-bottom: 10px; /* Отступ снизу заголовка */
+  font-size: 1.5em;
+  color: #333; 
+  margin-bottom: 10px; 
 }
 
 .delivery-info__text {
-  font-size: 1em; /* Размер шрифта для текста */
-  color: #555; /* Цвет текста */
-  line-height: 1.6; /* Интерлиньяж для улучшения читаемости */
-  margin-bottom: 15px; /* Отступ снизу текста */
+  font-size: 1em; 
+  color: #555; 
+  line-height: 1.6; 
+  margin-bottom: 15px; 
 }
 
 .delivery-info__list {
-  list-style: disc; /* Стиль маркеров для списка */
-  padding-left: 20px; /* Отступ слева для списка */
+  list-style: disc; 
+  padding-left: 20px; /
 }
 
 
