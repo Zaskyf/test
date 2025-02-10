@@ -120,8 +120,8 @@ SIMPLE_JWT = {
     'ISSUER': None,
 
     'AUTH_HEADER_TYPES': ('Bearer', 'JWT',),
-    'USER_ID_FIELD': 'slug',
-    'USER_ID_CLAIM': 'user_slug',
+    'USER_ID_FIELD': 'id',
+    'USER_ID_CLAIM': 'user_id',
 
     'AUTH_TOKEN_CLASSES': (
         'rest_framework_simplejwt.tokens.AccessToken',

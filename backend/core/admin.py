@@ -6,7 +6,7 @@ from .models import *
 
 
 class UserAdmin(admin.ModelAdmin):
-    list_display = ('id', 'first_name', 'last_name',  'email', )
+    list_display = ('cdcdid', 'first_name', 'last_name',  'email', )
     search_fields = ('username', 'email')
 
 class CategoryAdmin(admin.ModelAdmin):
@@ -42,6 +42,7 @@ class OrderPointAdmin(admin.ModelAdmin):
     list_display_links = ('id', 'quantity', )
     list_filter = ('quantity', )
     search_fields = ('good__name',)
+
 
 class OrderAdmin(admin.ModelAdmin):
     list_display = ('id', 'user',  'get_order_points',  'status', 'price', 'created' )

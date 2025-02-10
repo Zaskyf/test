@@ -8,8 +8,6 @@
     <title>Магазин</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-    
-  
     <link rel="stylesheet" href="/test/css/style.css">
 
   <link
@@ -19,7 +17,6 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
         integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
         <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" ></script>
 
@@ -60,25 +57,42 @@
 
         <!--Каталог-->
 
-            <div class="catalog" id="catalog">
+       <div class="catalog" id="catalog">
         <h6>Каталог</h6>
-       <a href="vtora.html" style = " text-decoration :none;  color:black;">    <button class="category-button" data-category="1">      
+       <a href="wallpaper.html" style = " text-decoration :none;  color:black;">    <button class="category-button" data-category="1">      
             <span>Обои</span> <i class="fas fa-chevron-right"></i>
       </button>  </a>
-        <a href="three.html" style = " text-decoration :none;  color:black;"> <button class="category-button" data-category="2">
+        <a href="bathroom.html" style = " text-decoration :none;  color:black;"> <button class="category-button" data-category="2">
             <span>Сантехника</span> <i class="fas fa-chevron-right"></i>
         </button>  </a>
         <button class="category-button" data-category="3">
-            <a href="laminat.html" style = " text-decoration :none;  color:black;"> <span>Ламинат</span> <i class="fas fa-chevron-right"></i>
-        </button>  </a>
+            <a href="laminat.html" style = " text-decoration :none;  color:black;"> <span>Напольные покрытия</span> <i class="fas fa-chevron-right"></i>
+            </a></button>
+                <button class="category-button" data-category="4">
+             <a href="furniture.html" style = " text-decoration :none;  color:black;"> <span>Мебель</span> <i class="fas fa-chevron-right"></i>
+                    </a></button>
+                    <button class="category-button" data-category="5">
+                        <a href="dishes.html" style = " text-decoration :none;  color:black;"> <span>Посуда</span> <i class="fas fa-chevron-right"></i>
+                        </a></button>
+                        <button class="category-button" data-category="6">
+                            <a href="textile.html" style = " text-decoration :none;  color:black;"> <span>Текстиль</span> <i class="fas fa-chevron-right"></i>
+                            </a></button>
+                            <button class="category-button" data-category="7">
+                                <a href="householdappliances.html" style = " text-decoration :none;  color:black;"> <span>Бытовая техника</span> <i class="fas fa-chevron-right"></i>
+                                </a></button>
+                                    <button class="category-button" data-category="8">
+                                        <a href="decor.html" style = " text-decoration :none;  color:black;"> <span>Декор</span> <i class="fas fa-chevron-right"></i>
+                                        </a></button> 
+                                        <button class="category-button" data-category="9">
+                                            <a href="tools.html" style = " text-decoration :none;  color:black;"> <span>Инструменты</span> <i class="fas fa-chevron-right"></i>
+                                            </a></button> 
+                                          
     </div>
 
     <!-- Popup для подкатегорий -->
     <div class="popup" id="popup">
         <span class="clobutton" onclick="closePopup()">&times;</span>
       <h2 id="popupTitle"></h2>  
-       
-
         <ul id="popupContent"></ul>
     </div>
 
@@ -166,24 +180,57 @@
     </div>
     </div>
 <!--КОНЕЦ РЕГИСТРАЦИИ-->
-      
-<pre><h6 style = " font-size:30px; font-height:;">Условия доставки</h6>
-    Стоимость доставки
-    Стоимость доставки рассчитывается автоматически при оформлении заказа на сайте или сотрудником Лемана ПРО на стойке оформления доставки при покупке в магазине.Итоговая стоимость зависит от:
-    •	Зоны доставки.
-    •	Выбранного тарифа.
-    •	Дополнительных услуг.
-    •	Веса товаров в заказе (для крупногабаритного маловесного товара используется условная единица веса).
-    Дополнительные услуги
-    Подъем на этаж по лестнице - подъём товаров вручную, если в доме нет лифта или в нём не хватает места для выбранных товаров. Если вы не заказали услугу заранее, и товар не поместился в лифт, то услуга оплачивается отдельно по установленным расценкам подъема на этаж за каждый 100 кг. Сотрудник Лемана ПРО свяжется с вами для уточнения способа оплаты.
-    Правила доставки
-    Мы доставляем товары только по общественным дорогам, где может проехать грузовой транспорт. Дорога должна быть покрыта асфальтом или грунтом, а покрытие указано на карте. Мы не сможем доставить заказ, если проезд недоступен из-за сложных погодных условий. Если к месту разгрузки невозможно подъехать, мы остановимся как можно ближе, без нарушений ПДД и повреждений транспорта. Водитель паркуется так, чтобы выгрузить товары безопасно, не мешая пешеходам и другим машинам.
-    </pre>
-      
+<div class="delivery-info">
+    <h6 class="delivery-info__title">Условия доставки</h6>
+    <p class="delivery-info__text">Стоимость доставки рассчитывается автоматически при оформлении заказа на сайте или сотрудником Лемана ПРО на стойке оформления доставки при покупке в магазине. Итоговая стоимость зависит от:</p>
+    <p class="delivery-info__list">
+      <p class="delivery-info__item"> • Зоны доставки.</p>
+      <p class="delivery-info__item"> • Выбранного тарифа.</p>
+      <p class="delivery-info__item"> • Дополнительных услуг.</p>
+      <p class="delivery-info__item"> • Веса товаров в заказе (для крупногабаритного маловесного товара используется условная единица веса).</p>
 
 
 
-    <footer>
+<h6 class="delivery-info__title">Виды доставки</h6>
+<span class="tab active-tab" onclick="showContent('description')">Без выгрузки</span>
+<span class="tab" onclick="showContent('details')">До лифта или на дачу</span>
+
+<div id="description" class="content" style="display: block;">
+    <p>Вы выгружаете заказ из машины самостоятельно. Время на выгрузку ограничено и зависит от веса заказа:</p>
+    <p class="delivery-info__item">• Заказ от 1 до 1500 кг — 30 минут.</p>
+    <p class="delivery-info__item">• Заказ от 1501 до 5000 кг — 60 минут.</p>
+    <p class="delivery-info__item">• Заказ больше 5000 кг — 120 минут.</p>
+    <br>
+    <p>*Доставка доступна не для любой весовой категории. <br>
+    <a href="path/to/document.doc" id="download-link" download   style>Ознакомтесь с подробными правилами дотсавки</a>  <!--файл не скачивается  --> </p></div>
+
+
+<div id="details" class="content">
+    <p>Сотрудник службы доставки выгрузит заказ на площадку первого этажа у лифта или занесёт его за дверь частного дома.</p>
+   
+</div>
+    <h6 class="delivery-info__title">Дополнительные услуги</h6>
+    <p class="delivery-info__text">Подъем на этаж по лестнице - подъём товаров вручную, если в доме нет лифта или в нём не хватает места для выбранных товаров. Если вы не заказали услугу заранее, и товар не поместился в лифт, то услуга оплачивается отдельно по установленным расценкам подъема на этаж за каждый 100 кг. Сотрудник Декор центр свяжется с вами для уточнения способа оплаты.</p>
+  
+    <h6 class="delivery-info__title">Получение заказа</h6>
+    <p class="delivery-info__text">
+Перед приездом на адрес мы заранее предупредим вас.
+Сотрудник службы доставки свяжется с вами, когда будет на месте. После приезда он ждёт 15 минут и уезжает. Если вы не смогли получить заказ, повторную доставку нужно оплатить отдельно.
+Если служба доставки не успеет приехать в назначенный интервал времени, то мы вернём вам стоимость доставки. Стоимость доставки возвращается из расчёта по тарифу «Без выгрузки» (если его нет, то «На улицу»). <br>Дополнительные услуги проноса, подъёма товара на этаж не компенсируются.
+Доставка не компенсируется, если:
+<br>
+- она была перенесена покупателем;<br>
+- были заказаны товары, помеченные на сайте ярлыком «Только онлайн-заказ»;<br>
+- покупатель предоставил неполный или неверный адрес или контакты;<br>
+- на пути были препятствия, мешающие подъезду или выгрузке;<br>
+- произошёл форс-мажор;<br>
+Для возврата стоимости доставки зафиксируйте время прибытия в акте приёма-передачи и обратитесь с ним в магазин, где вы оформляли доставку. Если вы заказывали на сайте, напишите в нашу службу клиентской поддержки или позвоните по телефону 8 800 700-00-99<br>
+При получении товаров рекомендуется их распаковать и сверить с заказом, а также убедиться, что товары и упаковка не повреждены. На проверку товаров у вас есть 30 минут. Сотрудник транспортной компании вскроет упаковку при вас.<br>
+После передачи товара сотрудник транспортной компании вывезет мусор — верхнюю транспортную упаковку, скотч и другую не заводскую упаковку, снятую при проверке товаров.
+После получения и проверки заказа внимательно ознакомьтесь с документами и подпишите их. После подписания акта приёма-передачи претензии по количеству и качеству полученного товара не принимаются.</p>
+    <p class="delivery-info__text">Если к месту разгрузки невозможно подъехать, мы остановимся как можно ближе, без нарушений ПДД и повреждений транспорта. Водитель паркуется так, чтобы выгрузить товары безопасно, не мешая пешеходам и другим машинам.</p></div> 
+  
+   <footer>
         <hr>
         <div class="containr"><div class="subscribe"></div><div class="footer_navigation">
             <div class="footer_menu">
@@ -214,72 +261,165 @@
             <div class="address">Адрес магазина:<br>ул. Астана Кесаева, 33"а, Владикавказ <br> Респ. Северная Осетия — Алания</div> 
             <div class="copyright">© 1996—2024, ТК «Декор центр»  </div>
         </div></div></div>
-       
     </footer>
-
     </body>
 
 </html>
 <script>
+   function showContent(section) {
+        // Скрыть все 
+        var contents = document.querySelectorAll('.content');
+        contents.forEach(content => {
+            content.style.display = 'none';
+        });
+
+        // Показать выбранную сек
+        document.getElementById(section).style.display = 'block';
+
+        // Удалить active-tab со всех вкладок
+        var tabs = document.querySelectorAll('.tab');
+        tabs.forEach(tab => {
+            tab.classList.remove('active-tab');
+        });
+
+        // Добавить  active-tab к активной сек
+        const tab = document.querySelector(`.tab[onclick="showContent('${section}')"]`);
+        tab.classList.add('active-tab');
+    }
+
+
  
 const catalog = document.getElementById('catalog');
 const menuBurger = document.getElementById('menuBurger');
 const popup = document.getElementById('popup');
 
-// Функция для открытия и закрытия меню
 menuBurger.onclick = function(event) {
-    event.stopPropagation(); // Остановить всплытие события, чтобы не закрыть каталог сразу
+    event.stopPropagation(); 
     catalog.style.display = catalog.style.display === 'none' ? 'block' : 'none';
 };
 
-// Переменная для отслеживания состояния popup
 let isPopupOpen = false;
 
-// Функция для открытия подкатегорий при наведении
 document.querySelectorAll('.category-button').forEach(button => {
     button.addEventListener('mouseenter', function(event) {
-        event.stopPropagation(); // Остановить всплытие события при наведении
+        event.stopPropagation();
         const categoryNum = this.getAttribute('data-category');
         let content = '';
 
         switch (categoryNum) {
             case '1':
                 content = 
-                    '<button class="button-style" onclick="showPopup(\'Подкатегория 1.1\')">Обои 1.1</button>' +
-                    '<button class="button-style" onclick="showPopup(\'Подкатегория 1.2\')">Обои 1.2</button>' +
-                    '<button class="button-style" onclick="showPopup(\'Подкатегория 1.3\')">Обои 1.3</button>';
+                '<a href="wallpaper1.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.1\')">Бумажные обои</button></a>' +
+                    '<a href="wallpaper2.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.2\')">Виниловые обои</button></a>' +
+                    '<a href="wallpaper3.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.3\')">Флизелиновые обои</button></a>' +
+                    '<a href="wallpaper4.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.4\')">Текстильные обои</button></a>' +
+                    '<a href="wallpaper5.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.5\')">Метализированные обои</button></a>' +
+                    '<a href="wallpaper6.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.6\')">Жидкие обои</button></a>' +
+                    '<a href="wallpaper7.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.7\')">Фотообои</button></a>';
                 break;
             case '2':
                 content = 
-                    '<button class="button-style" onclick="showPopup(\'Подкатегория 2.1\')">Сантехника 1.1</button>' +
-                    '<button class="button-style" onclick="showPopup(\'Подкатегория 2.2\')">Сантехника 1.2</button>' +
-                    '<button class="button-style" onclick="showPopup(\'Подкатегория 2.3\')">Сантехника 1.3</button>';
+                    '<a href="wallpaper1.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.1\')">Ванны и комплектующие</button></a>' +
+                    '<a href="wallpaper2.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.2\')">Раковины</button></a>' +
+                    '<a href="wallpaper3.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.3\')">Смесители</button></a>' +
+                    '<a href="wallpaper4.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.4\')"> Душевые кабины и поддоны</button></a>' +
+                    '<a href="wallpaper5.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.5\')">Сантехника для отопления</button></a>' +
+                    '<a href="wallpaper6.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.6\')">Унитазы</button></a>' +
+                    '<a href="wallpaper7.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.7\')">Аксессуары и дополнительные элементы</button></a>';
+                    '<a href="wallpaper1.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.1\')">Ванны и комплектующие</button></a>' +
+                    '<a href="wallpaper2.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.2\')">Раковины</button></a>' +
+                    '<a href="wallpaper3.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.3\')">Смесители</button></a>' +
+                    '<a href="wallpaper4.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.4\')"> Душевые кабины и поддоны</button></a>' +
+                    '<a href="wallpaper5.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.5\')">Сантехника для отопления</button></a>' +
+                    '<a href="wallpaper6.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.6\')">Унитазы</button></a>' +
+                    '<a href="wallpaper7.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.7\')">Аксессуары и дополнительные элементы</button></a>';
                 break; 
             case '3':
                 content = 
-                    '<button class="button-style" onclick="showPopup(\'Подкатегория 3.1\')">Ламинат 1.1</button>' +
-                    '<button class="button-style" onclick="showPopup(\'Подкатегория 3.2\')">Ламинат 1.2</button>';
+              
+                    '<a href="wallpaper2.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.2\')">Деревянные покрытия</button></a>' +
+                    '<a href="wallpaper3.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.3\')">Плитка</button></a>' +
+                    '<a href="wallpaper4.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.4\')">Камень</button></a>' +
+                    '<a href="wallpaper5.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.5\')">Покрытия из ПВХ</button></a>' +
+                    '<a href="wallpaper6.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.6\')">Ковровые покрытия</button></a>';
+
                 break;
+
+                case '4':
+                content = 
+                '<a href="wallpaper1.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.1\')">Столы</button></a>' +
+                    '<a href="wallpaper2.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.2\')">Диваны</button></a>' +
+                    '<a href="wallpaper3.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.3\')">Кресла</button></a>' +
+                    '<a href="wallpaper4.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.4\')">Стулья</button></a>' +
+                    '<a href="wallpaper5.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.5\')">Шкафы</button></a>' +
+                    '<a href="wallpaper6.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.6\')">Кровати</button></a>' +
+                    '<a href="wallpaper7.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.7\')">Пуфы</button></a>' +
+                    '<a href="wallpaper7.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.7\')">Кушетки</button></a>';
+                break;
+
+                case '5':
+                content = 
+                '<a href="wallpaper1.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.1\')">Кухонная посуда</button></a>' +
+                    '<a href="wallpaper2.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.2\')">Столовая посуда</button></a>' +
+                    '<a href="wallpaper3.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.3\')">Питьевая посуда</button></a>' +
+                    '<a href="wallpaper4.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.4\')">Столовые приборы</button></a>' +
+                    '<a href="wallpaper5.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.5\')">Посуда для храниения</button></a>';
+                break;
+                case '6':
+                content = 
+                '<a href="wallpaper1.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.1\')">Шторы</button></a>' +
+                    '<a href="wallpaper2.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.2\')">Домашний текстиль</button></a>' +
+                    '<a href="wallpaper3.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.3\')">Постельное белье </button></a>' +
+                    '<a href="wallpaper4.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.4\')">Ткани</button></a>' +
+                    '<a href="wallpaper5.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.5\')">Постельные принадлежности</button></a>' ;
+                break;
+                case '7':
+                content = 
+                '<a href="wallpaper1.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.1\')">Бытовая техника для кухни</button></a>' +
+                    '<a href="wallpaper2.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.2\')">Мелкая бытовая техника для кухни</button></a>' +
+                    '<a href="wallpaper3.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.3\')">Бытовая техника для</button></a>' +
+                    '<a href="wallpaper4.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.4\')">Техника для дома</button></a>' +
+                    '<a href="wallpaper5.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.5\')">Техника для красты</button></a>' ;
+                break;
+                case '8':
+                content = 
+                '<a href="wallpaper1.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.1\')">Декро для стен </button></a>' +
+                    '<a href="wallpaper2.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.2\')">Декро для потолка и лепнина</button></a>' +
+                    '<a href="wallpaper3.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.3\')">Часы</button></a>' +
+                    '<a href="wallpaper4.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.4\')">Лампы</button></a>' +
+                    '<a href="wallpaper5.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.5\')">Люстры</button></a>' +
+                    '<a href="wallpaper6.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.6\')">Корнизы для штор</button></a>' +
+                    '<a href="wallpaper7.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.7\')">Вазы</button></a>';
+                break;
+                case '9':
+                content = 
+                '<a href="wallpaper1.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.1\')">Электроиснтрументы</button></a>' +
+                    '<a href="wallpaper2.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.2\')">Отвертки</button></a>' +
+                    '<a href="wallpaper3.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.3\')">Клей</button></a>' +
+                    '<a href="wallpaper5.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.5\')">Краски</button></a>' +
+                    '<a href="wallpaper6.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.6\')">Розетки</button></a>' +
+                    '<a href="wallpaper7.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.7\')">Гвозди,шурупы, болты ,гайки,ключи </button></a>'+
+                    '<a href="wallpaper7.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.7\')">Шпатели</button></a>'+
+                    '<a href="wallpaper7.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.7\')">Концелярские ножи</button></a>';
+                break;
+               
         }
         document.getElementById('popupContent').innerHTML = content;
         showPopup(this.querySelector('span').textContent);  
     });
 });
 
-// Функция для отображения popup
 function showPopup(title) {
     document.getElementById('popupTitle').textContent = title;
-    popup.style.display = 'block'; // Показывает popup
-    isPopupOpen = true; // Указывает что popup открыт
+    popup.style.display = 'block'; 
+    isPopupOpen = true; 
 }
 
-// Функция для закрытия popup
 function closePopup() {
     popup.style.display = 'none'; 
-    isPopupOpen = false; // Указывает что popup закрыт
+    isPopupOpen = false; 
 }
 
-// Закрытие каталога при клике где-либо на странице
 document.addEventListener('click', function() {
     if (catalog.style.display === 'block') {
         catalog.style.display = 'none'; 

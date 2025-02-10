@@ -27,6 +27,7 @@ class Category(models.Model):
 
     name = models.CharField(max_length=250, verbose_name='Категория', unique=True)
     description = models.TextField(verbose_name='Описание', blank=True, null=True)
+    image = models.ImageField(verbose_name='Картинка', upload_to='images/%Y/%m/%d/', blank=True, null=True)
     main_category = models.BooleanField(default=False, verbose_name='Основная категория')
     nested_categories = SortedManyToManyField('Category', blank=True, verbose_name='Дочерние категории')
 
