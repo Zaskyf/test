@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,10 +6,13 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
  
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Магазин</title>
+    <title>Напольные покрытия</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    
+  
     <link rel="stylesheet" href="/css/style.css">
-<link
+    <link
   rel="stylesheet"
   href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
 /> <!--Ссылка на иконки в регистрации -->
@@ -32,73 +36,71 @@
                         <i class="fas fa-search"></i>
                     </button>
                 </div>
-                <div class="cart-icon" onclick="toggleCart()">
+                <div class="cart-icon" onclick="window.location.href='/test/html/cart.html'">
                     <i class="fas fa-shopping-cart"></i>
                 </div>
               <div class="header-contaner">
             <div class="account-icon" onclick="toggleAccount()">
                 <i class="fas fa-user"></i>
             </div>
- </div>
- </div>
+
+          
+            </div>
+
+
+            </div>
         </header>
 
-  <div class="cart" id="cart">
-            <h2>Корзина</h2>
-            <div id="cart-items"></div>
-            <a href="cart.html"><button class= "cartbutton">Перейти в корзину</button></a>  <!--Почему ссылка не работает -->
-            
-            <button class= "cartbutton" onclick="clearCart()">Очистить корзину</button>
-        </div>
 
 
 
 
         <!--Каталог-->
 
-       <div class="catalog" id="catalog">
-        <h6>Каталог</h6>
-       <a href="wallpaper.html" style = " text-decoration :none;  color:black;">    <button class="category-button" data-category="1">      
-            <span>Обои</span> <i class="fas fa-chevron-right"></i>
-      </button>  </a>
-        <a href="bathroom.html" style = " text-decoration :none;  color:black;"> <button class="category-button" data-category="2">
-            <span>Сантехника</span> <i class="fas fa-chevron-right"></i>
-        </button>  </a>
-        <button class="category-button" data-category="3">
-            <a href="laminat.html" style = " text-decoration :none;  color:black;"> <span>Напольные покрытия</span> <i class="fas fa-chevron-right"></i>
-            </a></button>
-                <button class="category-button" data-category="4">
-             <a href="furniture.html" style = " text-decoration :none;  color:black;"> <span>Мебель</span> <i class="fas fa-chevron-right"></i>
-                    </a></button>
-                    <button class="category-button" data-category="5">
-                        <a href="dishes.html" style = " text-decoration :none;  color:black;"> <span>Посуда</span> <i class="fas fa-chevron-right"></i>
+        <div class="catalog" id="catalog">
+            <h6>Каталог</h6>
+           <a href="wallpaper.html" style = " text-decoration :none;  color:black;">    <button class="category-button" data-category="1">      
+                <span>Обои</span> <i class="fas fa-chevron-right"></i>
+          </button>  </a>
+            <a href="bathroom.html" style = " text-decoration :none;  color:black;"> <button class="category-button" data-category="2">
+                <span>Сантехника</span> <i class="fas fa-chevron-right"></i>
+            </button>  </a>
+            <button class="category-button" data-category="3">
+                <a href="laminat.html" style = " text-decoration :none;  color:black;"> <span>Напольные покрытия</span> <i class="fas fa-chevron-right"></i>
+                </a></button>
+                    <button class="category-button" data-category="4">
+                 <a href="furniture.html" style = " text-decoration :none;  color:black;"> <span>Мебель</span> <i class="fas fa-chevron-right"></i>
                         </a></button>
-                        <button class="category-button" data-category="6">
-                            <a href="textile.html" style = " text-decoration :none;  color:black;"> <span>Текстиль</span> <i class="fas fa-chevron-right"></i>
+                        <button class="category-button" data-category="5">
+                            <a href="dishes.html" style = " text-decoration :none;  color:black;"> <span>Посуда</span> <i class="fas fa-chevron-right"></i>
                             </a></button>
-                            <button class="category-button" data-category="7">
-                                <a href="householdappliances.html" style = " text-decoration :none;  color:black;"> <span>Бытовая техника</span> <i class="fas fa-chevron-right"></i>
+                            <button class="category-button" data-category="6">
+                                <a href="textile.html" style = " text-decoration :none;  color:black;"> <span>Текстиль</span> <i class="fas fa-chevron-right"></i>
                                 </a></button>
-                                    <button class="category-button" data-category="8">
-                                        <a href="decor.html" style = " text-decoration :none;  color:black;"> <span>Декор</span> <i class="fas fa-chevron-right"></i>
-                                        </a></button> 
-                                        <button class="category-button" data-category="9">
-                                            <a href="tools.html" style = " text-decoration :none;  color:black;"> <span>Инструменты</span> <i class="fas fa-chevron-right"></i>
+                                <button class="category-button" data-category="7">
+                                    <a href="householdappliances.html" style = " text-decoration :none;  color:black;"> <span>Бытовая техника</span> <i class="fas fa-chevron-right"></i>
+                                    </a></button>
+                                        <button class="category-button" data-category="8">
+                                            <a href="decor.html" style = " text-decoration :none;  color:black;"> <span>Декор</span> <i class="fas fa-chevron-right"></i>
                                             </a></button> 
-                                          
-    </div>
+                                            <button class="category-button" data-category="9">
+                                                <a href="tools.html" style = " text-decoration :none;  color:black;"> <span>Инструменты</span> <i class="fas fa-chevron-right"></i>
+                                                </a></button> 
+                                              
+        </div>
+                                              
+        </div>
 
     <!-- Popup для подкатегорий -->
     <div class="popup" id="popup">
         <span class="clobutton" onclick="closePopup()">&times;</span>
       <h2 id="popupTitle"></h2>  
+       
+
         <ul id="popupContent"></ul>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
-    
-
-
     <!-- НАЧАЛО РЕГИСТРАЦИИ  -->
     <div class="account" id="account" onmouseleave="hideAccount()">
         <h2>Аккаунт</h2>
@@ -179,141 +181,129 @@
     </div>
     </div>
 <!--КОНЕЦ РЕГИСТРАЦИИ-->
-
-<!-- Хлебные крошки -->
 <nav class="breadcrumb">
-    <a href="index.html"  >Главная</a>  &gt; <a href= "dostavkatext.html" >Доставка</a> 
+    <a href="index.html"  >Главная</a>  &gt; <a href= "category.html" >Каталог</a>  
 </nav>
+<h6 style=" font-size:35px; font-weight:bold;margin-left:80px;
+margin-top:15px; margin-bottom:15px;">Напольные покрытия </h6>
+<div  class ="category" id="categorycontainer"> </div>
+<div id="categorycontainer" ></div>
 
-
-<div class="delivery-info">
-    <h6 class="delivery-info__title">Условия доставки</h6>
-    <p class="delivery-info__text">Стоимость доставки рассчитывается автоматически при оформлении заказа на сайте или сотрудником Лемана ПРО на стойке оформления доставки при покупке в магазине. Итоговая стоимость зависит от:</p>
-    <p class="delivery-info__list">
-      <p class="delivery-info__item"> • Зоны доставки.</p>
-      <p class="delivery-info__item"> • Выбранного тарифа.</p>
-      <p class="delivery-info__item"> • Дополнительных услуг.</p>
-      <p class="delivery-info__item"> • Веса товаров в заказе (для крупногабаритного маловесного товара используется условная единица веса).</p>
-
-
-
-      <h6 class="delivery-info__title">Виды доставки</h6>
-      <span class="tab active-tab" onclick="showContent('description')">Без выгрузки</span>
-      <span class="tab" onclick="showContent('details')">До лифта или на дачу</span>
-      
-      <div id="description" class="content" style="display: block;">
-          <p>Вы выгружаете заказ из машины самостоятельно. Время на выгрузку ограничено и зависит от веса заказа:</p>
-          <p class="delivery-info__item">• Заказ от 1 до 1500 кг — 30 минут.</p>
-          <p class="delivery-info__item">• Заказ от 1501 до 5000 кг — 60 минут.</p>
-          <p class="delivery-info__item">• Заказ больше 5000 кг — 120 минут.</p>
-          <br>
-          <p>*Доставка доступна не для любой весовой категории. <br>
-              <a href="/test/word/сайТ ДИПЛОМ.docx" download="Руководство  по правилам доставки.docx">Ознакомтесь с подробными правилами дотсавки</a>
-          </p>
-      </div>
-      
-      <div id="details" class="content">
-          <p>Сотрудник службы доставки выгрузит заказ на площадку первого этажа у лифта или занесёт его за дверь частного дома.</p>
-      </div>
-    <h6 class="delivery-info__title">Дополнительные услуги</h6>
-    <p class="delivery-info__text">Подъем на этаж по лестнице - подъём товаров вручную, если в доме нет лифта или в нём не хватает места для выбранных товаров. Если вы не заказали услугу заранее, и товар не поместился в лифт, то услуга оплачивается отдельно по установленным расценкам подъема на этаж за каждый 100 кг. Сотрудник Декор центр свяжется с вами для уточнения способа оплаты.</p>
-  
-    <h6 class="delivery-info__title">Получение заказа</h6>
-    <p class="delivery-info__text">
-Перед приездом на адрес мы заранее предупредим вас.
-Сотрудник службы доставки свяжется с вами, когда будет на месте. После приезда он ждёт 15 минут и уезжает. Если вы не смогли получить заказ, повторную доставку нужно оплатить отдельно.
-Если служба доставки не успеет приехать в назначенный интервал времени, то мы вернём вам стоимость доставки. Стоимость доставки возвращается из расчёта по тарифу «Без выгрузки» (если его нет, то «На улицу»). <br>Дополнительные услуги проноса, подъёма товара на этаж не компенсируются.
-Доставка не компенсируется, если:
-<br>
-- она была перенесена покупателем;<br>
-- были заказаны товары, помеченные на сайте ярлыком «Только онлайн-заказ»;<br>
-- покупатель предоставил неполный или неверный адрес или контакты;<br>
-- на пути были препятствия, мешающие подъезду или выгрузке;<br>
-- произошёл форс-мажор;<br>
-Для возврата стоимости доставки зафиксируйте время прибытия в акте приёма-передачи и обратитесь с ним в магазин, где вы оформляли доставку. Если вы заказывали на сайте, напишите в нашу службу клиентской поддержки или позвоните по телефону 8 800 700-00-99<br>
-При получении товаров рекомендуется их распаковать и сверить с заказом, а также убедиться, что товары и упаковка не повреждены. На проверку товаров у вас есть 30 минут. Сотрудник транспортной компании вскроет упаковку при вас.<br>
-После передачи товара сотрудник транспортной компании вывезет мусор — верхнюю транспортную упаковку, скотч и другую не заводскую упаковку, снятую при проверке товаров.
-После получения и проверки заказа внимательно ознакомьтесь с документами и подпишите их. После подписания акта приёма-передачи претензии по количеству и качеству полученного товара не принимаются.</p>
-    <p class="delivery-info__text">Если к месту разгрузки невозможно подъехать, мы остановимся как можно ближе, без нарушений ПДД и повреждений транспорта. Водитель паркуется так, чтобы выгрузить товары безопасно, не мешая пешеходам и другим машинам.</p></div> 
-  
-   <footer>
-        <hr>
-        <div class="containr"><div class="subscribe"></div><div class="footer_navigation">
-            <div class="footer_menu">
-        <div class="item"><div class="caption">Покупателям</div>
-        <ul class="menu_list">
-            <a href="/about/about-the-company/">Каталог</a>
-            <a href="/about/arktika-servis/">Расрочка/Кредиты</a>
-            <a href="/about/bonus-program/">Бонусная программа</a>
-            <a href="/about/podarochnye-karty/">Подарочные карты</a>
-        </ul></div>
-        <div class="item"> 
-            <div class="caption">Информация</div>
-        <ul class="menu_list">
-            <a href="/information/oplata/">Как оплатить</a>
-            <a href="/information/feedback/">Обратная связь</a>
-            <a href="/information/jobs/">Гарантия</a>
-           <a href="/information/contacts/">Контакты</a>
-            
+<footer>
+    <hr>
+    <div class="containr"><div class="subscribe"></div><div class="footer_navigation">
+        <div class="footer_menu">
+    <div class="item"><div class="caption">Покупателям</div>
+    <ul class="menu_list">
+        <a href="/html/category.html">Каталог</a>
+        <a href="/about/arktika-servis/">Расрочка/Кредиты</a>
+        <a href="/about/bonus-program/">Бонусная программа</a>
+        <a href="/about/podarochnye-karty/">Подарочные карты</a>
+    </ul></div>
+    <div class="item"> 
+        <div class="caption">Информация</div>
+    <ul class="menu_list">
+        <a href="/information/oplata/">Как оплатить</a>
+        <a href="/information/feedback/">Обратная связь</a>
+        <a href="/information/jobs/">Гарантия качества </a>
+       <a href="/information/contacts/">Контакты</a>
         
-        </ul></div>   
+    
+    </ul></div>   
 
-             <div class="item"><div class="caption">Наши услуги</div>
-            <ul class="menu_list"><a href="/our-services/free-shipping/">Бесплатная доставка</a>
-            </ul>
-        </div>
-        </div>
-             <div class="contact_info"><div class="phone"><a href="tel:8 (918) 827-20-12">8 (918) 827-20-12</a> (с 09:30 до 19:00) </div>
-            <div class="address">Адрес магазина:<br>ул. Астана Кесаева, 33"а, Владикавказ <br> Респ. Северная Осетия — Алания</div> 
-            <div class="copyright">© 1996—2024, ТК «Декор центр»  </div>
-        </div></div></div>
-    </footer>
+         <div class="item"><div class="caption">Наши услуги</div>
+        <ul class="menu_list"><a href="/our-services/free-shipping/">Бесплатная доставка</a>
+        </ul>
+    </div>
+    </div>
+         <div class="contact_info"><div class="phone"><a href="tel:8 (918) 827-20-12">8 (918) 827-20-12</a> (с 09:30 до 19:00) </div>
+        <div class="address">Адрес магазина:<br>ул. Астана Кесаева, 33"а, Владикавказ <br> Респ. Северная Осетия — Алания</div> 
+        <div class="copyright">© 1996—2024, ТК «Декор центр»  </div>
+    </div></div></div>
+   
+</footer>
+
     </body>
 
 </html>
-<script>
-   function showContent(section) {
-        // Скрыть все 
-        var contents = document.querySelectorAll('.content');
-        contents.forEach(content => {
-            content.style.display = 'none';
-        });
 
-        // Показать выбранную сек
-        document.getElementById(section).style.display = 'block';
-
-        // Удалить active-tab со всех вкладок
-        var tabs = document.querySelectorAll('.tab');
-        tabs.forEach(tab => {
-            tab.classList.remove('active-tab');
-        });
-
-        // Добавить  active-tab к активной сек
-        const tab = document.querySelector(`.tab[onclick="showContent('${section}')"]`);
-        tab.classList.add('active-tab');
+        <script> 
+        
+        const categories = [
+    {
+        name: "Деревянные покрытия",
+        imageSrc: "",
+        href: "wood.html",
+        alt: "Деревянные покрытия"
+    },
+    {
+        name: "Плитка",
+        imageSrc: "", 
+        href: ".html",
+        alt: "Плитка"
+    },
+     {
+        name: "Камень",
+        imageSrc: "",
+        href: "laminat.html",
+        alt: "Ламинат"
+    },
+    {
+        name: "Покрытия из ПВХ",
+        imageSrc: "", 
+        href: "kran4.html",
+        alt: "покрытия из ПВХ"
+    },
+    {
+        name: "Ковровые покрытия",
+        imageSrc: "", 
+        href: "kran4.html",
+        alt: "Ковровые покртыия"
     }
+];
+const categoryContainer = document.getElementById("categorycontainer");
+categories.forEach(category => {
+    const categoryDiv = document.createElement("div");
+    categoryDiv.className = "category";
+    const innerDiv = document.createElement("div");
+    innerDiv.className = "bocategory";
+    const paragraph = document.createElement("p");
+    paragraph.textContent = category.name;
+    innerDiv.appendChild(paragraph);
+    const link = document.createElement("a");
+    link.href = category.href;
+    const image = document.createElement("img");
+    image.src = category.imageSrc;
+    image.alt = category.alt;
+    image.className = "imges";
+    image.style = "align-items: center;"; 
+    link.appendChild(image);
+    innerDiv.appendChild(link);
+    categoryDiv.appendChild(innerDiv);
+    categoryContainer.appendChild(categoryDiv);
+});
 
 
  
-const catalog = document.getElementById('catalog');
-const menuBurger = document.getElementById('menuBurger');
-const popup = document.getElementById('popup');
-
-menuBurger.onclick = function(event) {
-    event.stopPropagation(); 
-    catalog.style.display = catalog.style.display === 'none' ? 'block' : 'none';
-};
-
-let isPopupOpen = false;
-
-document.querySelectorAll('.category-button').forEach(button => {
-    button.addEventListener('mouseenter', function(event) {
-        event.stopPropagation();
-        const categoryNum = this.getAttribute('data-category');
-        let content = '';
-
-        switch (categoryNum) {
-            case '1':
+    const catalog = document.getElementById('catalog');
+    const menuBurger = document.getElementById('menuBurger');
+    const popup = document.getElementById('popup');
+    
+    menuBurger.onclick = function(event) {
+        event.stopPropagation(); 
+        catalog.style.display = catalog.style.display === 'none' ? 'block' : 'none';
+    };
+    
+    let isPopupOpen = false;
+  
+    document.querySelectorAll('.category-button').forEach(button => {
+        button.addEventListener('mouseenter', function(event) {
+            event.stopPropagation(); 
+            const categoryNum = this.getAttribute('data-category');
+            let content = '';
+    
+            switch (categoryNum) {
+                case '1':
                 content = 
                 '<a href="wallpaper1.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.1\')">Бумажные обои</button></a>' +
                     '<a href="wallpaper2.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.2\')">Виниловые обои</button></a>' +
@@ -402,113 +392,114 @@ document.querySelectorAll('.category-button').forEach(button => {
                 '<a href="wallpaper1.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.1\')">Электроиснтрументы</button></a>' +
                     '<a href="wallpaper2.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.2\')">Отвертки</button></a>' +
                     '<a href="wallpaper3.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.3\')">Клей</button></a>' +
-                    '<a href="wallpaper5.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.5\')">Краски</button></a>' +
-                    '<a href="wallpaper6.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.6\')">Розетки</button></a>' +
-                    '<a href="wallpaper7.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.7\')">Гвозди,шурупы, болты ,гайки,ключи </button></a>'+
-                    '<a href="wallpaper7.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.7\')">Шпатели</button></a>'+
-                    '<a href="wallpaper7.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.7\')">Концелярские ножи</button></a>';
+                    '<a href="wallpaper5.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.5\')">Шкафы</button></a>' +
+                    '<a href="wallpaper6.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.6\')">Кровати</button></a>' +
+                    '<a href="wallpaper7.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.7\')">Фотообои</button></a>';
                 break;
                
-        }
-        document.getElementById('popupContent').innerHTML = content;
-        showPopup(this.querySelector('span').textContent);  
+            }
+            document.getElementById('popupContent').innerHTML = content;
+            showPopup(this.querySelector('span').textContent);  
+        });
     });
-});
-
-function showPopup(title) {
-    document.getElementById('popupTitle').textContent = title;
-    popup.style.display = 'block'; 
-    isPopupOpen = true; 
-}
-
-function closePopup() {
-    popup.style.display = 'none'; 
-    isPopupOpen = false; 
-}
-
-document.addEventListener('click', function() {
-    if (catalog.style.display === 'block') {
-        catalog.style.display = 'none'; 
+    
+    function showPopup(title) {
+        document.getElementById('popupTitle').textContent = title;
+        popup.style.display = 'block';
+        isPopupOpen = true; 
     }
-    if (isPopupOpen) {
-        closePopup();
+    
+    function closePopup() {
+        popup.style.display = 'none'; 
+        isPopupOpen = false; 
     }
-});
-
-
-        //Регистрация
-const socialLink = document.querySelector('.social-link');
-const tooltip = document.getElementById('tooltip');
-const account = document.getElementById('account');
-const registerModal = document.getElementById('registerModal');
-const registerForm = document.getElementById('registerForm');
-const signInBtnLink = document.querySelector('.signInBtn-link');
-const signUpBtnLink = document.querySelector('.signUpBtn-link');
-const modal = document.querySelector('.modal');
-
-let accountVisible = false;
-
-socialLink.addEventListener('mouseover', () => {
-    tooltip.style.display = 'block';
-    tooltip.style.top = `${socialLink.offsetTop + socialLink.offsetHeight}px`; 
-    tooltip.style.left = `${socialLink.offsetLeft}px`;
-});
-
-
-document.addEventListener('click', (event) => {
-    if (!socialLink.contains(event.target) && !tooltip.contains(event.target)) {
-        hideTooltip();
+    
+    document.addEventListener('click', function() {
+        if (catalog.style.display === 'block') {
+            catalog.style.display = 'none'; 
+        }
+        if (isPopupOpen) {
+            closePopup();
+        }
+    });
+    
+    
+            //Регистрация
+    const socialLink = document.querySelector('.social-link');
+    const tooltip = document.getElementById('tooltip');
+    const account = document.getElementById('account');
+    const registerModal = document.getElementById('registerModal');
+    const registerForm = document.getElementById('registerForm');
+    const signInBtnLink = document.querySelector('.signInBtn-link');
+    const signUpBtnLink = document.querySelector('.signUpBtn-link');
+    const modal = document.querySelector('.modal');
+    
+    let accountVisible = false;
+    
+    socialLink.addEventListener('mouseover', () => {
+        tooltip.style.display = 'block';
+        tooltip.style.top = `${socialLink.offsetTop + socialLink.offsetHeight}px`; 
+        tooltip.style.left = `${socialLink.offsetLeft}px`;
+    });
+    
+    
+    document.addEventListener('click', (event) => {
+        if (!socialLink.contains(event.target) && !tooltip.contains(event.target)) {
+            hideTooltip();
+        }
+    });
+    
+    function hideTooltip() {
+        tooltip.style.display = 'none';
     }
-});
-
-function hideTooltip() {
-    tooltip.style.display = 'none';
-}
-
-function toggleAccount() {
-    accountVisible = !accountVisible;
-    account.style.display = accountVisible ? 'block' : 'none';
-}
-
-
-function hideAccount() {
-    if (accountVisible) {
-        accountVisible = false;
-        account.style.display = 'none';
+    
+    function toggleAccount() {
+        accountVisible = !accountVisible;
+        account.style.display = accountVisible ? 'block' : 'none';
     }
-}
+    
+    
+    function hideAccount() {
+        if (accountVisible) {
+            accountVisible = false;
+            account.style.display = 'none';
+        }
+    }
+    
+    
+    function openRegisterModal() {
+        document.body.style.overflow = 'hidden';
+        registerModal.style.display = 'block';
+    }
+    
+    function closeRegisterModal() {
+        document.body.style.overflow = 'auto';
+        registerModal.style.display = 'none';
+    }
+    
+    
+    registerForm.onsubmit = (event) => {
+        event.preventDefault();
+        alert('Регистрация завершена');
+        closeRegisterModal();
+    };
+    
+    
+    function logInAccount() {
+        alert('Вход');
+    }
+    </script>
+    <script>
+    
+    signUpBtnLink.addEventListener('click', () => {
+        modal.classList.toggle('active');
+    });
+    
+    signInBtnLink.addEventListener('click', () => {
+        modal.classList.toggle('active');
+    });
+    
+    </script>
+    
 
-
-function openRegisterModal() {
-    document.body.style.overflow = 'hidden';
-    registerModal.style.display = 'block';
-}
-
-function closeRegisterModal() {
-    document.body.style.overflow = 'auto';
-    registerModal.style.display = 'none';
-}
-
-
-registerForm.onsubmit = (event) => {
-    event.preventDefault();
-    alert('Регистрация завершена');
-    closeRegisterModal();
-};
-
-
-function logInAccount() {
-    alert('Вход');
-}
-</script>
-<script>
-
-signUpBtnLink.addEventListener('click', () => {
-    modal.classList.toggle('active');
-});
-
-signInBtnLink.addEventListener('click', () => {
-    modal.classList.toggle('active');
-});
-
-</script>
+    
