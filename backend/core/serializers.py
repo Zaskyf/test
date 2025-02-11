@@ -6,7 +6,6 @@ from .models import *
 class CreateUserSerializer(serializers.ModelSerializer):
     repeat_password = serializers.CharField(max_length=100, write_only=True, )
 
-
     class Meta:
         model = User
         fields = ('id',  'first_name', 'last_name', 'email', 'password', 'repeat_password' )
@@ -38,6 +37,13 @@ class CategorySerializer(serializers.ModelSerializer):
         model = Category
         fields = ('id', 'name', 'image', 'main_category', 'nested_categories')
 
+class CategoryDetailSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Category
+        fields = ('id', 'name', 'image', )
+
+
 class ImageSerializer(serializers.ModelSerializer):
     class Meta:
         model = Image
@@ -49,6 +55,12 @@ class GoodCardSerializer(serializers.ModelSerializer):
         model = Good
         fields = ('id', 'name','get_first_img', 'start_price', 'discount', 'price', )
 
+class GoodSerializer(serializers.ModelSerializer):
+    images = ImageSerializer(many=True, read_only=True)
+
+    class Meta:
+        model = Good
+        fields = ('id', 'name','images', 'start_price', 'discount', 'price', 'description')
 
 class GoodCartSerializer(serializers.ModelSerializer):
     get_first_img = ImageSerializer(read_only=True)
@@ -63,3 +75,23 @@ class CartSerializer(serializers.ModelSerializer):
     class Meta:
         model = Cart
         fields = ('id', 'good', 'quantity', 'price')
+
+
+class CreateCartSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Cart
+        fields = ('id', 'good', 'quantity',)
+
+    def create(self, validated_data):
+        return Cart.objects.create(**validated_data, user=self.context['request'].user)
+
+
+class UpdateDeleteCartSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Cart
+        fields = ('id', 'quantity',)
+
+class ReviewSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Review
+        fields = ('id', 'user', 'rating', 'good', 'text', 'created')

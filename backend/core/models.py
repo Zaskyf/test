@@ -24,7 +24,6 @@ class User(AbstractUser):
 
 
 class Category(models.Model):
-
     name = models.CharField(max_length=250, verbose_name='Категория', unique=True)
     description = models.TextField(verbose_name='Описание', blank=True, null=True)
     image = models.ImageField(verbose_name='Картинка', upload_to='images/%Y/%m/%d/', blank=True, null=True)
@@ -82,6 +81,7 @@ class Review(models.Model):
     class Meta:
         verbose_name = 'Комментарий'
         verbose_name_plural = 'Комментарии'
+        ordering = ('-created',)
 
 
 class Cart(models.Model):
