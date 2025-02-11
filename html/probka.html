@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Смесители для биде</title>
+    <title>Ламинат </title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="/css/style.css">
 
@@ -55,346 +54,335 @@
         </div>
 
 
-<!--Каталог-->
 
-<div class="catalog" id="catalog">
-    <h6>Каталог</h6>
-   <a href="wallpaper.html" style = " text-decoration :none;  color:black;">    <button class="category-button" data-category="1">      
-        <span>Обои</span> <i class="fas fa-chevron-right"></i>
-  </button>  </a>
-    <a href="bathroom.html" style = " text-decoration :none;  color:black;"> <button class="category-button" data-category="2">
-        <span>Сантехника</span> <i class="fas fa-chevron-right"></i>
-    </button>  </a>
-    <button class="category-button" data-category="3">
-        <a href="laminat.html" style = " text-decoration :none;  color:black;"> <span>Напольные покрытия</span> <i class="fas fa-chevron-right"></i>
-        </a></button>
-            <button class="category-button" data-category="4">
-         <a href="furniture.html" style = " text-decoration :none;  color:black;"> <span>Мебель</span> <i class="fas fa-chevron-right"></i>
+        <!--Каталог-->
+
+        <div class="catalog" id="catalog">
+            <h6>Каталог</h6>
+           <a href="wallpaper.html" style = " text-decoration :none;  color:black;">    <button class="category-button" data-category="1">      
+                <span>Обои</span> <i class="fas fa-chevron-right"></i>
+          </button>  </a>
+            <a href="bathroom.html" style = " text-decoration :none;  color:black;"> <button class="category-button" data-category="2">
+                <span>Сантехника</span> <i class="fas fa-chevron-right"></i>
+            </button>  </a>
+            <button class="category-button" data-category="3">
+                <a href="laminat.html" style = " text-decoration :none;  color:black;"> <span>Напольные покрытия</span> <i class="fas fa-chevron-right"></i>
                 </a></button>
-                <button class="category-button" data-category="5">
-                    <a href="dishes.html" style = " text-decoration :none;  color:black;"> <span>Посуда</span> <i class="fas fa-chevron-right"></i>
-                    </a></button>
-                    <button class="category-button" data-category="6">
-                        <a href="textile.html" style = " text-decoration :none;  color:black;"> <span>Текстиль</span> <i class="fas fa-chevron-right"></i>
+                    <button class="category-button" data-category="4">
+                 <a href="furniture.html" style = " text-decoration :none;  color:black;"> <span>Мебель</span> <i class="fas fa-chevron-right"></i>
                         </a></button>
-                        <button class="category-button" data-category="7">
-                            <a href="householdappliances.html" style = " text-decoration :none;  color:black;"> <span>Бытовая техника</span> <i class="fas fa-chevron-right"></i>
+                        <button class="category-button" data-category="5">
+                            <a href="dishes.html" style = " text-decoration :none;  color:black;"> <span>Посуда</span> <i class="fas fa-chevron-right"></i>
                             </a></button>
-                                <button class="category-button" data-category="8">
-                                    <a href="decor.html" style = " text-decoration :none;  color:black;"> <span>Декор</span> <i class="fas fa-chevron-right"></i>
-                                    </a></button> 
-                                    <button class="category-button" data-category="9">
-                                        <a href="tools.html" style = " text-decoration :none;  color:black;"> <span>Инструменты</span> <i class="fas fa-chevron-right"></i>
-                                        </a></button> 
-                                      
-</div>
+                            <button class="category-button" data-category="6">
+                                <a href="textile.html" style = " text-decoration :none;  color:black;"> <span>Текстиль</span> <i class="fas fa-chevron-right"></i>
+                                </a></button>
+                                <button class="category-button" data-category="7">
+                                    <a href="householdappliances.html" style = " text-decoration :none;  color:black;"> <span>Бытовая техника</span> <i class="fas fa-chevron-right"></i>
+                                    </a></button>
+                                        <button class="category-button" data-category="8">
+                                            <a href="decor.html" style = " text-decoration :none;  color:black;"> <span>Декор</span> <i class="fas fa-chevron-right"></i>
+                                            </a></button> 
+                                            <button class="category-button" data-category="9">
+                                                <a href="tools.html" style = " text-decoration :none;  color:black;"> <span>Инструменты</span> <i class="fas fa-chevron-right"></i>
+                                                </a></button> 
+                                              
+        </div>
 
-<!-- Popup для подкатегорий -->
-<div class="popup" id="popup">
-    <span class="clobutton" onclick="closePopup()">&times;</span>
-  <h2 id="popupTitle"></h2>  
-   
+    <!-- Popup для подкатегорий -->
+    <div class="popup" id="popup">
+        <span class="clobutton" onclick="closePopup()">&times;</span>
+        <h2 id="popupTitle"></h2>
 
-    <ul id="popupContent"></ul>
-</div>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+        <ul id="popupContent"></ul>
+    </div>
 
 
-<!-- НАЧАЛО РЕГИСТРАЦИИ  -->
-<div class="account" id="account" onmouseleave="hideAccount()">
-    <h2>Аккаунт</h2>
-    <button class="sign" onclick="openRegisterModal()" style = " color: black;font-size : 18px ;">Войти или Зарегистрироваться</button>
-</div>
-<!-- Модальное окно для регистрации -->
-    <div id="registerModal" class="modal">
-    <span class="close" onclick="closeRegisterModal()">&times;</span> <!-- Крестик закрытия -->
-    <div class="modal-content sign-in">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+    
+    
+
+
+    <!-- Регистрация -->
+    <div class="account" id="account" onmouseleave="hideAccount()">
+        <h2>Аккаунт</h2>
+        <button class="sign" onclick="openRegisterModal()" style = " color: black;font-size : 18px ;">Войти или Зарегистрироваться</button>
+    </div>
+
+    <!-- Модальное окно для регистрации -->
+        <div id="registerModal" class="modal">
+        <span class="close" onclick="closeRegisterModal()">&times;</span> <!-- Крестик закрытия -->
+        <div class="modal-content sign-in">
+            <form action="">
+                <h2>Войти</h2>
+                <div class="input-group">
+                    <input type="text" required>
+                    <label for="">Имя</label>
+                </div>
+                <div class="input-group">
+                    <input type="password" required>
+                    <label for="">Пароль</label>
+                </div>
+                <div class="remember">
+                    <label><input type="checkbox"> Запомнить меня</label>
+                </div>
+                <button class="registr" type="submit">Войти</button>
+                <div class="signUp-link">
+                    <p style="color: black; font-size : 18px;" >У вас нет аккаунта? <a href="#" class="signUpBtn-link">Регистрация</a></p>
+                </div>
+            </form>
+        </div>
+    <div class="modal-content sign-up">
         <form action="">
-            <h2>Войти</h2>
+            <h2>Регистрация</h2><br>
             <div class="input-group">
                 <input type="text" required>
                 <label for="">Имя</label>
             </div>
             <div class="input-group">
+                <input type="email" required>
+                <label for="">Почта</label>
+            </div>
+            <div class="input-group">
                 <input type="password" required>
-                <label for="">Пароль</label>
+                <label for="">Придумайте пароль</label>
             </div>
             <div class="remember">
-                <label><input type="checkbox"> Запомнить меня</label>
+                <label style="color: black; font-size: 16px;">
+                    <input type="checkbox"> Я соглашаюсь с чем-то
+                </label>
             </div>
-            <button class="registr" type="submit">Войти</button>
+            <button class="registr" type="submit">Зарегистрироваться</button>
+
             <div class="signUp-link">
-                <p style="color: black; font-size : 18px;" >У вас нет аккаунта? <a href="#" class="signUpBtn-link">Регистрация</a></p>
+                <p style="color: black; margin-top: 10px; font-size: 16px;">У Вас уже есть аккаунт?
+                    <a style="color: black; margin-top: 10px; font-size: 16px;" href="#" class="signInBtn-link">Войти</a>
+                </p>
+                  <div class="gogle" type="button" onclick="socialLogin()">Войти через <span class="social-link">соцсети</span></div>
             </div>
+            <div class="tooltip" id="tooltip" >
+      <span class="clo" onclick="hideTooltip()">&#10006;</span>
+      <ul style="text-align:left; padding:5px; margin-top:10px;">
+        <a href="#" style="margin-right: 3px; color: black; display: inline-block; "><i class="fab fa-facebook-f"></i></a>
+        <a href="#" style="margin-right: 3px; color: black; display: inline-block;"><i class="fab fa-google"></i></a>
+        <a href="#" style="margin-right: 3px; color: black; display: inline-block; "><i class="fab fa-instagram"></i></a>
+        <a href="#" style="margin-right: 3px; color: black; display: inline-block; "><i class="fab fa-instagram"></i></a>
+
+    </ul>
+    </div>
         </form>
     </div>
-<div class="modal-content sign-up">
-    <form action="">
-        <h2>Регистрация</h2><br>
-        <div class="input-group">
-            <input type="text" required>
-            <label for="">Имя</label>
-        </div>
-        <div class="input-group">
-            <input type="email" required>
-            <label for="">Почта</label>
-        </div>
-        <div class="input-group">
-            <input type="password" required>
-            <label for="">Придумайте пароль</label>
-        </div>
-        <div class="remember">
-            <label style="color: black; font-size: 16px;">
-                <input type="checkbox"> Я соглашаюсь с чем-то
-            </label>
-        </div>
-        <button class="registr" type="submit">Зарегистрироваться</button>
-
-        <div class="signUp-link">
-            <p style="color: black; margin-top: 10px; font-size: 16px;">У Вас уже есть аккаунт?
-                <a style="color: black; margin-top: 10px; font-size: 16px;" href="#" class="signInBtn-link">Войти</a>
-            </p>
-              <div class="gogle" type="button" onclick="socialLogin()">Войти через <span class="social-link">соцсети</span></div>
-        </div>
-        <div class="tooltip" id="tooltip" >
-  <span class="clo" onclick="hideTooltip()">&#10006;</span>
-<ul style="text-align:left; padding:5px; margin-top:10px;">
-<li>
-    <a href="#" style="margin-right: 3px; color: black; display: inline-block;">
-        <i class="fab fa-facebook-f"></i>
-    </a>
-</li>
-<li>
-    <a href="#" style="margin-right: 3px; color: black; display: inline-block;">
-        <i class="fab fa-google"></i>
-    </a>
-</li>
-<li>
-    <a href="#" style="margin-right: 3px; color: black; display: inline-block;">
-        <i class="fab fa-instagram"></i>
-    </a>
-</li>
-</ul>
-</div>
-    </form>
-</div>
-</div>
-<!--КОНЕЦ РЕГИСТРАЦИИ-->
-        
-
+    </div>
                  <!-- Хлебные крошки -->
                  <nav class="breadcrumb">
-                    <a href="index.html"  >Главная</a>  &gt; <a href= "category.html" >Каталог</a>  &gt; <a href= "floor.html" >Напольные покрытия</a> &gt; <a href= "wood.html" >Деревянные покрытия</a> 
+                    <a href="index.html"  >Главная</a>  &gt; <a href= "category.html" >Каталог</a>  &gt; <a href= "floor.html" >Напольные покрытия</a> &gt; <a href= "wood.html" >Деревянные покрытия</a> &gt; <a href= "probka.html" >Пробковые покрытия</a>
                 </nav>
 <h6 style= "font-size:35px; font-weight:bold;margin-left:80px;
-margin-top:15px; margin-bottom:15px;">Деревянные покрытия</h6>
+margin-top:15px; margin-bottom:15px;">Пробковые покрытия</h6>
 
 <!--КАРТОЧКИ ТОВАРОВ -->
 
 <div class="wrapper">
 
-    <div class="container">  
-        <div class="sidebar">
-            <button> <a href = "laminat.html" style=" text-decoration: none; color:white; ">Ламинат </a></button>
-            <button > <a href = "parket.html" style="text-decoration-line: none; color:white;"> Паркет</a></button>
-            <button ><a href = "mozaika.html" style="text-decoration-line: none; color:white;">Мозаичный пол</a></button>
-            <button ><a href = "probka.html" style="text-decoration-line: none; color:white;">Пробковые покрытия</a></button> 
-        </div></div>
+<div class="container"> <div class="sidebar">
+    <button  > <a href = ".html" style=" text-decoration: none; color:white; ">Виниловый ламинат </a></button>
+    <button > <a href = ".html" style="text-decoration-line: none; color:white;"> SPC-ламинат</a></button>
+    <button ><a href = ".html" style="text-decoration-line: none; color:white;">Шпонированный ламинат</a></button>
+    <button ><a href = ".html" style="text-decoration-line: none; color:white;">Пробковый ламинат</a></button>
+    <button ><a href = ".html" style="text-decoration-line: none; color:white;">ПВХ-ламинат</a></button>
+</div> </div>
 
-
-<!-- Navigation Buttons --><div class ="nexprev"><button id="prevBtn" class="pre-btn">Назад</button>
+<div class ="nexprev"><button id="prevBtn" class="pre-btn">Назад</button>
 <button id="nextBtn" class="nex-btn">Вперед</button></div> </div>
 
- 
 
 <script>
 const container = document.querySelector('.container');
 const cardsData = [
-    { id: 1, image: '', 
-    title: '', price: 799, delprice: 1000 ,  detailsUrl: '/test/html/productcard2.html'  },
-    {
+    { id: 1, image: 'https://parket.guru/image/cache/data-krono-original-vintage-classic-dub-burbon-k052-2-600x600.jpg', title: 'Ламинат Classen Vogue 4V WR Дуб Аликанте Арагон ', 
+    price: 799, delprice: 1000 , detailsUrl: '/test/html/productcard3.html' },
+ {
         id: 2,
-        title: '',
+        title: 'Ламинат - цвета: как правильно вписать ламинированное покрытие пола в интерьер',
         price: 990,
         delprice: 1500,
-        image: '',
-        detailsUrl: '/test/html/productcard2.html'
+        image: 'https://altay-pol.ru/wp-content/uploads/7/7/d/77da7ae6cd5646a957447ab322f861b7.jpeg',
+        detailsUrl: '/test/html/productcard3.html'
     },
     {
         id: 3,
-        title: '',
+        title: 'ОD 4797 Дуб горный серебристый Ламинат Kronotex Mammut Plus',
         price: 790,
         delprice: 1000,
-        image: '',
+        image: 'https://n-novgorod.polstrany.ru/upload/iblock/e99/PFX014.SHA160.09A0DB1486D9886B2A0C673BE558992AC644E75F.jpg',
         detailsUrl: ''
     },
     {
         id: 4,
-        title: '',
+        title: '  Ламинат Kronopol 3185 Дуб Парижский 32 класс, толщина 8 мм',
         price: 1290,
         delprice: 1800,
-        image: '',
+        image: 'https://slonparket.ru/media/148/148271.jpg',
         detailsUrl: ''
     },
     {
         id: 5,
-        title: 'Раковина для ванной Uperwood Family 80х45х17,9 см, белая глянцевая',
+        title: 'Ламинат Alloc Original 04572 Natural Oak (Дуб Натур) - Ярмарка ламината',
         price: 1150,
         delprice: 1600,
-        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9a1GutKmiKQ_KbviB3nEWA2D75jf1QOIDjw&s',
+        image: 'https://premium-laminat.ru/wp-content/uploads/2019/05/04572%D0%94%D0%A3%D0%91-%D0%9D%D0%90%D0%A2%D0%A3%D0%A0-2S-.jpg',
         detailsUrl: ''
     },
     {
         id: 6,
-        title: 'Установка раковины в ванной комнате своими руками - правила установки поэтапно',
+        title: ' Ламинат Kronostar Galaxy 32 класс D1815 Дуб Лунный ',
         price: 890,
         delprice: 1300,
-        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9a1GutKmiKQ_KbviB3nEWA2D75jf1QOIDjw&s',
+        image: 'https://udarnik.com.ru/uploads/images/large/product_photos/0I5MUBdh.jpg',
         detailsUrl: ''
     },
     {
         id: 7,
-        title: 'Мебель для ванной комнаты STWORKI Берген 100 серая со светлой столешницей',
+        title: 'Виниловый ламинат КМ2 толщиной 5 мм',
         price: 1490,
         delprice: 2000,
-        image: 'https://www.msant.ru/upload/medialibrary/412/ysdby%20d%20dypipww%20q11m.jpg',
+        image: 'https://static.tildacdn.com/tild6233-3136-4864-b030-653963313932/999.jpg',
         detailsUrl: ''
     },
     {
         id: 8,
-        title: 'Ванна пристенная BelBagno BB711-1700-750, купить в интернет-магазине BelBagno.ru',
+        title: 'TerHurne Дуб Альпийский Серо-Коричневый R10 Паркетная доска TerHurne Moods ',
         price: 990,
         delprice: 1400,
-        image: 'https://belbagno.ru/upload/iblock/e46/e460ace5053cca596b9ef71b25f5f431.jpg',
+        image: 'https://polvamvdom.ru/f/prods/1/e/a/r10_3.jpg',
         detailsUrl: ''
     },
     {
         id: 9,
-        title: 'Акриловая ванна Easy 180х80 см 248618000 Roca купить в Москве со скидкой',
+        title: 'Бытовой ламинат Eventum 832D1853 Дуб Фиеста',
         price: 690,
         delprice: 900,
-        image: 'https://roca.su/upload/iblock/885/k4x9syiqbmf0e6jbep0vx5lz7trrxhom/cf1f8efc-c1d7-11eb-ad7f-00155d32830e_aca701d9-04ab-11ec-ad85-00155d32830e.resize1.jpeg',
+        image: 'https://cork-shop.ru/d/1853_2.jpg',
         detailsUrl: ''
     },
     {
         id: 10,
-        title: 'Ванна угловая Aquanet 150x150 см, купить в интернет-магазине Aquanet.ru',
-        price: 1200,
-        delprice: 1600,
-        image: 'https://i.pinimg.com/736x/23/64/3f/23643f9303d631fd5694772510185c05.jpg',
+        title: 'Обои 10',
+        price: 1090,
+        delprice: 1500,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/10.webp',
         detailsUrl: ''
     },
     {
         id: 11,
-        title: 'Ванна прямоугольная Roca 170x70 см, купить в интернет-магазине Roca.ru',
-        price: 850,
-        delprice: 1100,
-        image: 'https://meduzza.ru/upload/iblock/c7c/c7cfa3b7a3e9bc2e5a659f16f5633ebf.jpg',
+        title: 'Обои 11',
+        price: 1390,
+        delprice: 1900,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/11.webp',
         detailsUrl: ''
     },
     {
         id: 12,
-        title: 'Ванна акриловая Villeroy & Boch 180x80 см, купить в интернет-магазине Villeroy.ru',
-        price: 1450,
-        delprice: 1900,
-        image: 'https://main-cdn.sbermegamarket.ru/big2/hlr-system/14/41/03/80/66/51/9/100026647116b4.jpg',
+        title: 'Обои 12',
+        price: 790,
+        delprice: 1100,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/12.webp',
         detailsUrl: ''
     },
     {
         id: 13,
-        title: 'Ванна с гидромассажем Albatros 170x75 см, купить в интернет-магазине Albatros.ru',
-        price: 2200,
-        delprice: 2800,
-        image: 'https://sancomfort.ru/wa-data/public/shop/products/85/85/48585/images/133871/132054387043bg.jpg.970.jpg',
-        detailsUrl:''
+        title: 'Обои 13',
+        price: 950,
+        delprice: 1350,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/13.webp',
+        detailsUrl: ''
     },
     {
         id: 14,
-        title:'Ванна акриловая Triton 160x70 см, купить в интернет-магазине Triton.ru',
-        price: 780,
-        delprice: 950,
-        image: 'https://santehnika1.ru/upload/resize_cache/iblock/f3c/720_720_1/acc69f8f2bc39d71c99b86083735d609.png',
+        title: 'Обои 14',
+        price: 1190,
+        delprice: 1600,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/14.webp',
         detailsUrl: ''
     },
     {
         id: 15,
-        title: 'F3234 Смеситель для ванны, белый - латунь/хром - FRAP ',
-        price: 1300,
+        title: 'Обои 15',
+        price: 1299,
         delprice: 1700,
-        image: 'https://gappo-frap.ru/images/watermarked/1/detailed/3/Frap_6ssm-er.jpg',
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/15.webp',
         detailsUrl: ''
     },
-    {
+     {
         id: 16,
-        title: 'Ванна акриловая Laguraty 180x80 см, купить в интернет-магазине Laguraty.ru',
-        price: 950,
-        delprice: 1250,
-image:'https://laguraty.ru/upload/iblock/789/7890123456.jpg',
+        title: 'Обои 16',
+        price: 799,
+        delprice: 1100,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/16.webp',
         detailsUrl: ''
     },
     {
         id: 17,
-        title: 'Ванна угловая Am.Pm 150x150 см, купить в интернет-магазине AmPm.ru',
-        price: 1600,
-        delprice: 2100,
-        image: 'https://ampm.ru/upload/iblock/890/8901234567.jpg',
+        title: 'Обои 17',
+        price: 1090,
+        delprice: 1450,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/17.webp',
         detailsUrl: ''
     },
     {
         id: 18,
-        title: 'Ванна акриловая ODEON стандарт 170x70 см, купить в интернет-магазине ODEON.ru',
-        price: 700,
-        delprice: 900,
-        image: 'https://odeon.ru/upload/iblock/901/9012345678.jpg',
+        title: 'Обои 18',
+        price: 980,
+        delprice: 1250,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/18.webp',
         detailsUrl: ''
     },
     {
         id: 19,
-        title: 'Ванна прямоугольная Kolo Nova Pro 170x75 см, купить в интернет-магазине Kolo.ru',
-        price: 1100,
-        delprice: 1400,
-        image: 'https://kolo.ru/upload/iblock/a12/a1234567890.jpg',
+        title: 'Обои 19',
+        price: 1370,
+        delprice: 1800,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/19.webp',
         detailsUrl: ''
     },
     {
         id: 20,
-        title: 'Ванна акриловая Sanplast A-1000-80, купить в интернет-магазине Sanplast.ru',
-        price: 800,
-        delprice: 1000,
-        image: 'https://sanplast.ru/upload/iblock/b23/b2345678901.jpg',
-         detailsUrl: ''
+        title: 'Обои 20',
+        price: 1150,
+        delprice: 1500,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/20.webp',
+        detailsUrl: ''
     },
     {
-         id: 21,
-         title: 'Ванна с гидромассажем Gemy G-908, купить в интернет-магазине Gemy.ru',
-         price: 2500,
-         delprice: 3000,
-         image: 'https://gemy.ru/upload/iblock/c34/c3456789012.jpg',
-         detailsUrl: ''
-     },
-     {
-         id: 22,
-         title: 'Ванна акриловая Radaway LUXE, купить в интернет-магазине Radaway.ru',
-         price: 950,
-         delprice: 1200,
-         image: 'https://radaway.ru/upload/iblock/d45/d4567890123.jpg',
-         detailsUrl: ''
-     },
-     {
-         id: 23,
-         title: 'Ванна угловая Bas Модерн, купить в интернет-магазине Bas.ru',
-         price: 1350,
-         delprice: 1750,
-         image: 'https://www.ravak.ru/img/_/avocado.foto/vana-avocado.jpg?1719767422',
-         detailsUrl: ''
-     },
+        id: 21,
+        title: 'Обои 21',
+        price: 850,
+        delprice: 1100,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/21.webp',
+        detailsUrl: ''
+    },
+    {
+        id: 22,
+        title: 'Обои 22',
+        price: 1250,
+        delprice: 1600,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/22.webp',
+        detailsUrl: ''
+    },
+    {
+        id: 23,
+        title: 'Обои 23',
+        price: 720,
+        delprice: 950,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/23.webp',
+        detailsUrl: ''
+    },
     {
         id: 24,
-        title: 'Ванна угловая Bas Модерн, купить в интернет-магазине Bas.ru',
+        title: 'Обои 24',
         price: 1050,
         delprice: 1350,
-        image: 'https://www.ravak.ru/img/_/avocado.foto/vana-avocado.jpg?1719767422',
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/24.webp',
         detailsUrl: ''
     },
     {
@@ -564,8 +552,7 @@ image:'https://laguraty.ru/upload/iblock/789/7890123456.jpg',
         delprice: 1500,
         image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/45.webp',
         detailsUrl: ''
-    }
-    ];cardsData.forEach((cardData) => {
+    }];cardsData.forEach((cardData) => {
 const card = document.createElement('div');
     card.classList.add('product-card');
     const titleDiv = document.createElement('div');
@@ -605,7 +592,7 @@ const card = document.createElement('div');
     subtractButton.onclick = () => changeNumber(-1, `number${cardData.id}`); 
     const numberInput = document.createElement('input');
     numberInput.classList.add('js-number');
-    numberInput.id = `number${cardData.id}`; 
+    numberInput.id = `number${cardData.id}`; // 
     numberInput.type = 'text';
     numberInput.value = '1';
     numberInput.readOnly = true;
@@ -626,7 +613,7 @@ const card = document.createElement('div');
     const detailsDiv = document.createElement('div');
     detailsDiv.classList.add('details-container');
     const detailsButton = document.createElement('a');
-    detailsButton.href = cardData.detailsUrl;;
+    detailsButton.href = cardData.detailsUrl;
     detailsButton.textContent = 'Подробнее';
     detailsButton.classList.add('details-button');
     detailsDiv.appendChild(detailsButton);
@@ -654,33 +641,27 @@ const card = document.createElement('div');
     };
     const description = document.createElement('div');
     description.innerHTML = `
-  
- <div class="cartpodrobno">
+    <div class="cartpodrobno">
 
             <div class="procard">
-                    <img 
-  style="width: 400px; height: 400px; border: 1.2px solid grey;" 
-  src="https://belbagno.ru/upload/iblock/e46/e460ace5053cca596b9ef71b25f5f431.jpg" 
-  alt="Изображение товара" 
-  class="proimage">
+                <img src="https://via.placeholder.com/400" alt="Изображение товара" class="proimage">
                 <div class="tpd">
-                    <h2 class="protitle">Ванна</h2>
+                    <h2 class="protitle">Ламинат</h2>
                     <p class="prodescription">Это краткое описание товара. Здесь можно указать его особенности и преимущества.</p>
                     <p class="proprice">2999 Р.</p>
                     <p class="delprice">2999 Р.</p>
                     <button class="probutton">В корзину</button>
-                    <a href="/test/html/productcard2.html">          
-                    <button class="procardbutton">Больше информации о товаре</button>     
-                </a> 
+                  <a href = "/test/html/productcard3.html">  <button class="procardbutton"> Больше информации о товаре </button> </a>
                 </div>
             </div>
         </div>
-  
     `;
     windowContent.appendChild(closeButton);
     windowContent.appendChild(description);
     quickViewWindow.appendChild(windowContent);
     document.body.appendChild(quickViewWindow);
+
+
     // Добавляем крестик и описание в контейнер содержимого окна
 windowContent.appendChild(closeButton); 
 windowContent.appendChild(description); 
@@ -765,8 +746,6 @@ document.querySelectorAll(".btn").forEach(button => {
             this.classList.remove("clicked");
             removeFromCart(this);
         }
-
-        
     });
 });
 
@@ -844,9 +823,13 @@ function changeCartItemNumber(step, button) {
     }
 
     
+
+   
     window.onload = openWindow;
 </script>
 
+
+       
 <footer>
     <hr>
     <div class="containr"><div class="subscribe"></div><div class="footer_navigation">
@@ -865,7 +848,9 @@ function changeCartItemNumber(step, button) {
         <a href="/information/feedback/">Обратная связь</a>
         <a href="/information/jobs/">Гарантия качества </a>
        <a href="/information/contacts/">Контакты</a>
-    </ul></div>  
+    
+    </ul></div>   
+
          <div class="item"><div class="caption">Наши услуги</div>
         <ul class="menu_list"><a href="/our-services/free-shipping/">Бесплатная доставка</a>
         </ul>
@@ -878,19 +863,21 @@ function changeCartItemNumber(step, button) {
    
 </footer>
 </body></html>
+
 <script>
     const catalog = document.getElementById('catalog');
     const menuBurger = document.getElementById('menuBurger');
     const popup = document.getElementById('popup');
-    
+  
     menuBurger.onclick = function(event) {
         event.stopPropagation(); 
         catalog.style.display = catalog.style.display === 'none' ? 'block' : 'none';
     };
+    
     let isPopupOpen = false;
     document.querySelectorAll('.category-button').forEach(button => {
         button.addEventListener('mouseenter', function(event) {
-            event.stopPropagation(); 
+            event.stopPropagation();
             const categoryNum = this.getAttribute('data-category');
             let content = '';
     
@@ -996,17 +983,17 @@ function changeCartItemNumber(step, button) {
             showPopup(this.querySelector('span').textContent);  
         });
     });
-    
     function showPopup(title) {
         document.getElementById('popupTitle').textContent = title;
-        popup.style.display = 'block'; 
+        popup.style.display = 'block';
         isPopupOpen = true; 
     }
     
     function closePopup() {
         popup.style.display = 'none'; 
-        isPopupOpen = false; 
+        isPopupOpen = false;
     }
+    
     document.addEventListener('click', function() {
         if (catalog.style.display === 'block') {
             catalog.style.display = 'none'; 
@@ -1015,8 +1002,6 @@ function changeCartItemNumber(step, button) {
             closePopup();
         }
     });
-    
-    
             //Регистрация
     const socialLink = document.querySelector('.social-link');
     const tooltip = document.getElementById('tooltip');
@@ -1035,7 +1020,6 @@ function changeCartItemNumber(step, button) {
         tooltip.style.left = `${socialLink.offsetLeft}px`;
     });
     
-    
     document.addEventListener('click', (event) => {
         if (!socialLink.contains(event.target) && !tooltip.contains(event.target)) {
             hideTooltip();
@@ -1051,25 +1035,21 @@ function changeCartItemNumber(step, button) {
         account.style.display = accountVisible ? 'block' : 'none';
     }
     
-    
     function hideAccount() {
         if (accountVisible) {
             accountVisible = false;
             account.style.display = 'none';
         }
     }
-    
-    
     function openRegisterModal() {
-        document.body.style.overflow = 'hidden';
+        document.body.style.overflow = 'hidden'; 
         registerModal.style.display = 'block';
     }
     
     function closeRegisterModal() {
-        document.body.style.overflow = 'auto';
+        document.body.style.overflow = 'auto'; 
         registerModal.style.display = 'none';
     }
-    
     
     registerForm.onsubmit = (event) => {
         event.preventDefault();
@@ -1077,13 +1057,12 @@ function changeCartItemNumber(step, button) {
         closeRegisterModal();
     };
     
-    
     function logInAccount() {
         alert('Вход');
     }
     </script>
-    <script>
-    
+
+<script>
     signUpBtnLink.addEventListener('click', () => {
         modal.classList.toggle('active');
     });
@@ -1092,5 +1071,5 @@ function changeCartItemNumber(step, button) {
         modal.classList.toggle('active');
     });
     
-    </script>
-    
+        </script>
+        
