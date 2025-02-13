@@ -206,451 +206,545 @@ margin-top:15px; margin-bottom:15px;">Смесители для раковины
 <div class ="nexprev"><button id="prevBtn" class="pre-btn">Назад</button>
 <button id="nextBtn" class="nex-btn">Вперед</button></div> </div>
 
- 
+<footer>
+    <hr>
+    <div class="containr"><div class="subscribe"></div><div class="footer_navigation">
+        <div class="footer_menu">
+    <div class="item"><div class="caption">Покупателям</div>
+    <ul class="menu_list">
+        <a href="/html/category.html">Каталог</a>
+        <a href="/about/arktika-servis/">Расрочка/Кредиты</a>
+        <a href="/about/bonus-program/">Бонусная программа</a>
+        <a href="/about/podarochnye-karty/">Подарочные карты</a>
+    </ul></div>
+    <div class="item"> 
+        <div class="caption">Информация</div>
+    <ul class="menu_list">
+        <a href="/information/oplata/">Как оплатить</a>
+        <a href="/information/feedback/">Обратная связь</a>
+        <a href="/information/jobs/">Гарантия качества </a>
+       <a href="contacts.html">Контакты</a>
+    </ul></div>   
+
+         <div class="item"><div class="caption">Наши услуги</div>
+        <ul class="menu_list"><a href="dostavkatext.html">Доставка</a>
+        </ul>
+    </div>
+    </div>
+         <div class="contact_info"><div class="phone"><a href="tel:8 (918) 827-20-12">8 (918) 827-20-12</a> (с 09:30 до 19:00) </div>
+        <div class="address">Адрес магазина:<br>ул. Астана Кесаева, 33"а, Владикавказ <br> Респ. Северная Осетия — Алания</div> 
+        <div class="copyright">© 1996—2024, ТК «Декор центр»  </div>
+    </div></div></div>
+   
+</footer>
+
+
+</body></html>
 
 <script>
-const container = document.querySelector('.container');
-const cardsData = [
-    { id: 1, image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9a1GutKmiKQ_KbviB3nEWA2D75jf1QOIDjw&s', 
-    title: 'Хромированный смеситель для раковины', price: 799, delprice: 1000 ,  detailsUrl: '/test/html/productcard2.html'  },
+    const container = document.querySelector('.container');
+    const cardsData = [
+    { id: 1, image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/4.webp', title: 'Обои под покраску флизелиновые антивандальные Kreaforta Батист белые 1.06x25м 113г/м²', price: 799, delprice: 1000 , detailsUrl: 'productcard.html' , hasDiscount: true  },
+    { id: 2, image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/4.webp', title: 'Обои под покраску флизелиновые антивандальные Kreaforta Батист белые 1.06x25м 113г/м²', price: 799, delprice: 1000 , detailsUrl: 'productcard.html' , hasDiscount: false  },
     {
-        id: 2,
-        title: 'Хромированный смеситель для раковины',
-        price: 990,
-        delprice: 1500,
-        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9a1GutKmiKQ_KbviB3nEWA2D75jf1QOIDjw&s',
-        detailsUrl: '/test/html/productcard2.html'
-    },
-    {
-        id: 3,
-        title: 'Хромированный смеситель для раковины',
-        price: 790,
-        delprice: 1000,
-        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9a1GutKmiKQ_KbviB3nEWA2D75jf1QOIDjw&s',
-        detailsUrl: ''
-    },
-    {
-        id: 4,
-        title: 'Хромированный смеситель для раковины',
-        price: 1290,
-        delprice: 1800,
-        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9a1GutKmiKQ_KbviB3nEWA2D75jf1QOIDjw&s',
-        detailsUrl: ''
-    },
-    {
-        id: 5,
-        title: 'Раковина для ванной Uperwood Family 80х45х17,9 см, белая глянцевая',
-        price: 1150,
-        delprice: 1600,
-        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9a1GutKmiKQ_KbviB3nEWA2D75jf1QOIDjw&s',
-        detailsUrl: ''
-    },
-    {
-        id: 6,
-        title: 'Установка раковины в ванной комнате своими руками - правила установки поэтапно',
-        price: 890,
-        delprice: 1300,
-        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9a1GutKmiKQ_KbviB3nEWA2D75jf1QOIDjw&s',
-        detailsUrl: ''
-    },
-    {
-        id: 7,
-        title: 'Мебель для ванной комнаты STWORKI Берген 100 серая со светлой столешницей',
-        price: 1490,
-        delprice: 2000,
-        image: 'https://www.msant.ru/upload/medialibrary/412/ysdby%20d%20dypipww%20q11m.jpg',
-        detailsUrl: ''
-    },
-    {
-        id: 8,
-        title: 'Ванна пристенная BelBagno BB711-1700-750, купить в интернет-магазине BelBagno.ru',
-        price: 990,
-        delprice: 1400,
-        image: 'https://belbagno.ru/upload/iblock/e46/e460ace5053cca596b9ef71b25f5f431.jpg',
-        detailsUrl: ''
-    },
-    {
-        id: 9,
-        title: 'Акриловая ванна Easy 180х80 см 248618000 Roca купить в Москве со скидкой',
-        price: 690,
-        delprice: 900,
-        image: 'https://roca.su/upload/iblock/885/k4x9syiqbmf0e6jbep0vx5lz7trrxhom/cf1f8efc-c1d7-11eb-ad7f-00155d32830e_aca701d9-04ab-11ec-ad85-00155d32830e.resize1.jpeg',
-        detailsUrl: ''
-    },
-    {
-        id: 10,
-        title: 'Ванна угловая Aquanet 150x150 см, купить в интернет-магазине Aquanet.ru',
-        price: 1200,
-        delprice: 1600,
-        image: 'https://i.pinimg.com/736x/23/64/3f/23643f9303d631fd5694772510185c05.jpg',
-        detailsUrl: ''
-    },
-    {
-        id: 11,
-        title: 'Ванна прямоугольная Roca 170x70 см, купить в интернет-магазине Roca.ru',
-        price: 850,
-        delprice: 1100,
-        image: 'https://meduzza.ru/upload/iblock/c7c/c7cfa3b7a3e9bc2e5a659f16f5633ebf.jpg',
-        detailsUrl: ''
-    },
-    {
-        id: 12,
-        title: 'Ванна акриловая Villeroy & Boch 180x80 см, купить в интернет-магазине Villeroy.ru',
-        price: 1450,
-        delprice: 1900,
-        image: 'https://main-cdn.sbermegamarket.ru/big2/hlr-system/14/41/03/80/66/51/9/100026647116b4.jpg',
-        detailsUrl: ''
-    },
-    {
-        id: 13,
-        title: 'Ванна с гидромассажем Albatros 170x75 см, купить в интернет-магазине Albatros.ru',
-        price: 2200,
-        delprice: 2800,
-        image: 'https://sancomfort.ru/wa-data/public/shop/products/85/85/48585/images/133871/132054387043bg.jpg.970.jpg',
-        detailsUrl:''
-    },
-    {
-        id: 14,
-        title:'Ванна акриловая Triton 160x70 см, купить в интернет-магазине Triton.ru',
-        price: 780,
-        delprice: 950,
-        image: 'https://santehnika1.ru/upload/resize_cache/iblock/f3c/720_720_1/acc69f8f2bc39d71c99b86083735d609.png',
-        detailsUrl: ''
-    },
-    {
-        id: 15,
-        title: 'F3234 Смеситель для ванны, белый - латунь/хром - FRAP ',
-        price: 1300,
-        delprice: 1700,
-        image: 'https://gappo-frap.ru/images/watermarked/1/detailed/3/Frap_6ssm-er.jpg',
-        detailsUrl: ''
-    },
-    {
-        id: 16,
-        title: 'Ванна акриловая Laguraty 180x80 см, купить в интернет-магазине Laguraty.ru',
-        price: 950,
-        delprice: 1250,
-image:'https://laguraty.ru/upload/iblock/789/7890123456.jpg',
-        detailsUrl: ''
-    },
-    {
-        id: 17,
-        title: 'Ванна угловая Am.Pm 150x150 см, купить в интернет-магазине AmPm.ru',
-        price: 1600,
-        delprice: 2100,
-        image: 'https://ampm.ru/upload/iblock/890/8901234567.jpg',
-        detailsUrl: ''
-    },
-    {
-        id: 18,
-        title: 'Ванна акриловая ODEON стандарт 170x70 см, купить в интернет-магазине ODEON.ru',
-        price: 700,
-        delprice: 900,
-        image: 'https://odeon.ru/upload/iblock/901/9012345678.jpg',
-        detailsUrl: ''
-    },
-    {
-        id: 19,
-        title: 'Ванна прямоугольная Kolo Nova Pro 170x75 см, купить в интернет-магазине Kolo.ru',
-        price: 1100,
-        delprice: 1400,
-        image: 'https://kolo.ru/upload/iblock/a12/a1234567890.jpg',
-        detailsUrl: ''
-    },
-    {
-        id: 20,
-        title: 'Ванна акриловая Sanplast A-1000-80, купить в интернет-магазине Sanplast.ru',
-        price: 800,
-        delprice: 1000,
-        image: 'https://sanplast.ru/upload/iblock/b23/b2345678901.jpg',
-         detailsUrl: ''
-    },
-    {
-         id: 21,
-         title: 'Ванна с гидромассажем Gemy G-908, купить в интернет-магазине Gemy.ru',
-         price: 2500,
-         delprice: 3000,
-         image: 'https://gemy.ru/upload/iblock/c34/c3456789012.jpg',
-         detailsUrl: ''
-     },
-     {
-         id: 22,
-         title: 'Ванна акриловая Radaway LUXE, купить в интернет-магазине Radaway.ru',
-         price: 950,
-         delprice: 1200,
-         image: 'https://radaway.ru/upload/iblock/d45/d4567890123.jpg',
-         detailsUrl: ''
-     },
-     {
-         id: 23,
-         title: 'Ванна угловая Bas Модерн, купить в интернет-магазине Bas.ru',
-         price: 1350,
-         delprice: 1750,
-         image: 'https://www.ravak.ru/img/_/avocado.foto/vana-avocado.jpg?1719767422',
-         detailsUrl: ''
-     },
-    {
-        id: 24,
-        title: 'Ванна угловая Bas Модерн, купить в интернет-магазине Bas.ru',
-        price: 1050,
-        delprice: 1350,
-        image: 'https://www.ravak.ru/img/_/avocado.foto/vana-avocado.jpg?1719767422',
-        detailsUrl: ''
-    },
-    {
-        id: 25,
-        title: 'Обои 25',
-        price: 950,
-        delprice: 1250,
-        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/25.webp',
-        detailsUrl: ''
-    },
-    {
-        id: 26,
-        title: 'Обои 26',
-        price: 1200,
-        delprice: 1600,
-        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/26.webp',
-        detailsUrl: ''
-    },
-    {
-        id: 27,
-        title: 'Обои 27',
-        price: 930,
-        delprice: 1280,
-        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/27.webp',
-        detailsUrl: ''
-    },
-    {
-        id: 28,
-        title: 'Обои 28',
-        price: 1095,
-        delprice: 1450,
-        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/28.webp',
-        detailsUrl: ''
-    },
-    {
-        id: 29,
-        title: 'Обои 29',
-        price: 1155,
-        delprice: 1500,
-        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/29.webp',
-        detailsUrl: ''
-    },
-    {
-        id: 30,
-        title: 'Обои 30',
-        price: 790,
-        delprice: 1000,
-        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/30.webp',
-        detailsUrl: ''
-    },
-     {
-        id: 31,
-        title: 'Обои 31',
-        price: 900,
-        delprice: 1200,
-        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/31.webp',
-        detailsUrl: ''
-    },
-    {
-        id: 32,
-        title: 'Обои 32',
-        price: 1150,
-        delprice: 1550,
-        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/32.webp',
-        detailsUrl: ''
-    },
-    {
-        id: 33,
-        title: 'Обои 33',
-        price: 850,
-        delprice: 1100,
-        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/33.webp',
-        detailsUrl: ''
-    },
-    {
-        id: 34,
-        title: 'Обои 34',
-        price: 1199,
-        delprice: 1550,
-        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/34.webp',
-        detailsUrl: ''
-    },
-    {
-        id: 35,
-        title: 'Обои 35',
-        price: 1020,
-        delprice: 1350,
-        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/35.webp',
-        detailsUrl: ''
-    },
-    {
-        id: 36,
-        title: 'Обои 36',
-        price: 950,
-        delprice: 1250,
-        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/36.webp',
-        detailsUrl: ''
-    },
-    {
-        id: 37,
-        title: 'Обои 37',
-        price: 770,
-        delprice: 950,
-        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/37.webp',
-        detailsUrl: ''
-    },
-    {
-        id: 38,
-        title: 'Обои 38',
-        price: 1340,
-        delprice: 1750,
-        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/38.webp',
-        detailsUrl: ''
-    },
-    {
-        id: 39,
-        title: 'Обои 39',
-        price: 1180,
-        delprice: 1490,
-        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/39.webp',
-        detailsUrl: ''
-    },
-    {
-        id: 40,
-        title: 'Обои 40',
-        price: 890,
-        delprice: 1200,
-        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/40.webp',
-        detailsUrl: ''
-    },
-    {
-        id: 41,
-        title: 'Обои 41',
-        price: 1290,
-        delprice: 1700,
-        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/41.webp',
-        detailsUrl: ''
-    },
-    {
-        id: 42,
-        title: 'Обои 42',
-        price: 950,
-        delprice: 1250,
-        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/42.webp',
-        detailsUrl: ''
-    },
-    {
-        id: 43,
-        title: 'Обои 43',
-        price: 1150,
-        delprice: 1450,
-        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/43.webp',
-        detailsUrl: ''
-    },
-    {
-        id: 44,
-        title: 'Обои 44',
-        price: 980,
-        delprice: 1280,
-        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/44.webp',
-        detailsUrl: ''
-    },
-    {
-        id: 45,
-        title: 'Обои 45',
-        price: 1130,
-        delprice: 1500,
-        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/45.webp',
-        detailsUrl: ''
-    }
+            id: 3,
+            title: 'Обои флизелиновые Ateliero Kora бежевые 1.06 м AT1016-02ОАВ',
+            price: 790,
+            delprice: 1000,
+            image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/3.webp',
+            detailsUrl: '',
+            hasDiscount: false
+        },
+        {
+            id: 4,
+            title: 'Обои 4',
+            price: 1290,
+            delprice: 1800,
+            image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/4.webp',
+            detailsUrl: '',
+            hasDiscount: false
+        },
+        {
+            id: 5,
+            title: 'Обои 5',
+            price: 1150,
+            delprice: 1600,
+            image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/5.webp',
+            detailsUrl: '',
+            hasDiscount: false
+        },
+        {
+            id: 6,
+            title: 'Обои 6',
+            price: 890,
+            delprice: 1300,
+            image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/6.webp',
+            detailsUrl: '',
+            hasDiscount: true
+        },
+        {
+            id: 7,
+            title: 'Обои 7',
+            price: 1490,
+            delprice: 2000,
+            image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/7.webp',
+            detailsUrl: '',
+            hasDiscount: false
+        },
+        {
+            id: 8,
+            title: 'Обои 8',
+            price: 990,
+            delprice: 1400,
+            image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/8.webp',
+            detailsUrl: '',
+            hasDiscount: false
+        },
+        {
+            id: 9,
+            title: 'Обои 9',
+            price: 690,
+            delprice: 900,
+            image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/9.webp',
+            detailsUrl: '',
+            hasDiscount: true
+        },
+        {
+            id: 10,
+            title: 'Обои 10',
+            price: 1090,
+            delprice: 1500,
+            image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/10.webp',
+            detailsUrl: '',
+            hasDiscount: true
+        },
+        {
+            id: 11,
+            title: 'Обои 11',
+            price: 1390,
+            delprice: 1900,
+            image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/11.webp',
+            detailsUrl: '',
+            hasDiscount: false
+        },
+        {
+            id: 12,
+            title: 'Обои 12',
+            price: 790,
+            delprice: 1100,
+            image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/12.webp',
+            detailsUrl: '',
+            hasDiscount: false
+        },
+        {
+            id: 13,
+            title: 'Обои 13',
+            price: 950,
+            delprice: 1350,
+            image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/13.webp',
+            detailsUrl: '',
+            hasDiscount: true
+        },
+        {
+            id: 14,
+            title: 'Обои 14',
+            price: 1190,
+            delprice: 1600,
+            image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/14.webp',
+            detailsUrl: '',
+            hasDiscount: false
+        },
+        {
+            id: 15,
+            title: 'Обои 15',
+            price: 1299,
+            delprice: 1700,
+            image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/15.webp',
+            detailsUrl: '',
+            hasDiscount: false
+        },
+         {
+            id: 16,
+            title: 'Обои 16',
+            price: 799,
+            delprice: 1100,
+            image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/16.webp',
+            detailsUrl: '',
+            hasDiscount: true
+        },
+        {
+            id: 17,
+            title: 'Обои 17',
+            price: 1090,
+            delprice: 1450,
+            image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/17.webp',
+            detailsUrl: '',
+            hasDiscount: false
+        },
+        {
+            id: 18,
+            title: 'Обои 18',
+            price: 980,
+            delprice: 1250,
+            image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/18.webp',
+            detailsUrl: '',
+            hasDiscount: false
+        },
+        {
+            id: 19,
+            title: 'Обои 19',
+            price: 1370,
+            delprice: 1800,
+            image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/19.webp',
+            detailsUrl: '',
+            hasDiscount: true
+        },
+        {
+            id: 20,
+            title: 'Обои 20',
+            price: 1150,
+            delprice: 1500,
+            image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/20.webp',
+            detailsUrl: '',
+            hasDiscount: true
+        },
+        {
+            id: 21,
+            title: 'Обои 21',
+            price: 850,
+            delprice: 1100,
+            image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/21.webp',
+            detailsUrl: '',
+            hasDiscount: false
+        },
+        {
+            id: 22,
+            title: 'Обои 22',
+            price: 1250,
+            delprice: 1600,
+            image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/22.webp',
+            detailsUrl: '',
+            hasDiscount: false
+        },
+        {
+            id: 23,
+            title: 'Обои 23',
+            price: 720,
+            delprice: 950,
+            image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/23.webp',
+            detailsUrl: '',
+            hasDiscount: false
+        },
+        {
+            id: 24,
+            title: 'Обои 24',
+            price: 1050,
+            delprice: 1350,
+            image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/24.webp',
+            detailsUrl: '',
+            hasDiscount: false
+        },
+        {
+            id: 25,
+            title: 'Обои 25',
+            price: 950,
+            delprice: 1250,
+            image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/25.webp',
+            detailsUrl: '',
+            hasDiscount: true
+        },
+        {
+            id: 26,
+            title: 'Обои 26',
+            price: 1200,
+            delprice: 1600,
+            image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/26.webp',
+            detailsUrl: '',
+            hasDiscount: false
+        },
+        {
+            id: 27,
+            title: 'Обои 27',
+            price: 930,
+            delprice: 1280,
+            image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/27.webp',
+            detailsUrl: '',
+            hasDiscount: false
+        },
+        {
+            id: 28,
+            title: 'Обои 28',
+            price: 1095,
+            delprice: 1450,
+            image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/28.webp',
+            detailsUrl: '',
+            hasDiscount: false
+        },
+        {
+            id: 29,
+            title: 'Обои 29',
+            price: 1155,
+            delprice: 1500,
+            image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/29.webp',
+            detailsUrl: '',
+            hasDiscount: false
+        },
+        {
+            id: 30,
+            title: 'Обои 30',
+            price: 790,
+            delprice: 1000,
+            image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/30.webp',
+            detailsUrl: '',
+            hasDiscount: true
+        },
+         {
+            id: 31,
+            title: 'Обои 31',
+            price: 900,
+            delprice: 1200,
+            image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/31.webp',
+            detailsUrl: '',
+            hasDiscount: true
+        },
+        {
+            id: 32,
+            title: 'Обои 32',
+            price: 1150,
+            delprice: 1550,
+            image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/32.webp',
+            detailsUrl: '',
+            hasDiscount: false
+        },
+        {
+            id: 33,
+            title: 'Обои 33',
+            price: 850,
+            delprice: 1100,
+            image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/33.webp',
+            detailsUrl: '',
+            hasDiscount: false
+        },
+        {
+            id: 34,
+            title: 'Обои 34',
+            price: 1199,
+            delprice: 1550,
+            image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/34.webp',
+            detailsUrl: '',
+            hasDiscount: false
+        },
+        {
+            id: 35,
+            title: 'Обои 35',
+            price: 1020,
+            delprice: 1350,
+            image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/35.webp',
+            detailsUrl: '',
+            hasDiscount: false
+        },
+        {
+            id: 36,
+            title: 'Обои 36',
+            price: 950,
+            delprice: 1250,
+            image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/36.webp',
+            detailsUrl: '',
+            hasDiscount: false
+        },
+        {
+            id: 37,
+            title: 'Обои 37',
+            price: 770,
+            delprice: 950,
+            image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/37.webp',
+            detailsUrl: '',
+            hasDiscount: false
+        },
+        {
+            id: 38,
+            title: 'Обои 38',
+            price: 1340,
+            delprice: 1750,
+            image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/38.webp',
+            detailsUrl: '',
+            hasDiscount: false
+        },
+        {
+            id: 39,
+            title: 'Обои 39',
+            price: 1180,
+            delprice: 1490,
+            image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/39.webp',
+            detailsUrl: '',
+            hasDiscount: true
+        },
+        {
+            id: 40,
+            title: 'Обои 40',
+            price: 890,
+            delprice: 1200,
+            image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/40.webp',
+            detailsUrl: '',
+            hasDiscount: false
+        },
+        {
+            id: 41,
+            title: 'Обои 41',
+            price: 1290,
+            delprice: 1700,
+            image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/41.webp',
+            detailsUrl: '',
+            hasDiscount: false
+        },     
+        {
+            id: 42,
+            title: 'Обои 42',
+            price: 950,
+            delprice: 1250,
+            image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/42.webp',
+            detailsUrl: '',
+            hasDiscount: false
+        },
+        {
+            id: 43,
+            title: 'Обои 43',
+            price: 1150,
+            delprice: 1450,
+            image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/43.webp',
+            detailsUrl: '',
+            hasDiscount: false
+        },
+        {
+            id: 44,
+            title: 'Обои 44',
+            price: 980,
+            delprice: 1280,
+            image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/44.webp',
+            detailsUrl: '',
+            hasDiscount: true
+        },
+        {
+            id: 45,
+            title: 'Обои 45',
+            price: 1130,
+            delprice: 1500,
+            image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/45.webp',
+            detailsUrl: '',
+            hasDiscount: false
+        }
     ];cardsData.forEach((cardData) => {
-const card = document.createElement('div');
-    card.classList.add('product-card');
-    const titleDiv = document.createElement('div');
-    titleDiv.classList.add('title');
-    const title = document.createElement('p');
-    title.classList.add('product-title');
-    title.textContent = cardData.title;
-    titleDiv.appendChild(title);
-    card.appendChild(titleDiv);
-    const figure = document.createElement('figure');
-    const img = document.createElement('img');
-    img.src = cardData.image;
-    img.alt = cardData.title;
-    figure.appendChild(img);
-    const figcaption = document.createElement('figcaption');
-    const price = document.createElement('p');
-    price.classList.add('prce');
-    price.textContent = 'Цена за штуку';
-    figcaption.appendChild(price);
-    const money = document.createElement('p');
-    money.classList.add('money');
-    const span = document.createElement('span');
-    span.textContent = cardData.price + ' ₽';
-    const del = document.createElement('del');
-    del.textContent = cardData.delprice + ' ₽';
-    money.appendChild(span);
-    money.appendChild(del);
-    const buttons = document.createElement('div');
-    buttons.classList.add('Buttons');
-    const addToCartButton = document.createElement('button');
-    addToCartButton.classList.add('btn');
-    addToCartButton.textContent = 'В корзину';
-    addToCartButton.id = `addToCart${cardData.id}`; 
-    const subtractButton = document.createElement('button');
-    subtractButton.classList.add('subtract');
-    subtractButton.textContent = '–';
-    subtractButton.onclick = () => changeNumber(-1, `number${cardData.id}`); 
-    const numberInput = document.createElement('input');
-    numberInput.classList.add('js-number');
-    numberInput.id = `number${cardData.id}`; 
-    numberInput.type = 'text';
-    numberInput.value = '1';
-    numberInput.readOnly = true;
-    const addButton = document.createElement('button');
-    addButton.classList.add('add');
-    addButton.textContent = '+';
-    addButton.onclick = () => changeNumber(1, `number${cardData.id}`); 
-    buttons.appendChild(addToCartButton);
-    buttons.appendChild(subtractButton);
-    buttons.appendChild(numberInput);
-    buttons.appendChild(addButton);
-    card.appendChild(figure);
-    card.appendChild(titleDiv); 
-    card.appendChild(figcaption);
-    card.appendChild(money);
-    card.appendChild(buttons);
-    container.appendChild(card);
-    const detailsDiv = document.createElement('div');
-    detailsDiv.classList.add('details-container');
-    const detailsButton = document.createElement('a');
-    detailsButton.href = cardData.detailsUrl;;
-    detailsButton.textContent = 'Подробнее';
-    detailsButton.classList.add('details-button');
-    detailsDiv.appendChild(detailsButton);
-    card.appendChild(detailsDiv);
-    const quickViewButton = document.createElement('button');
-    quickViewButton.classList.add('quick-view-button');
-    quickViewButton.textContent = 'Быстрый просмотр';
-    figure.appendChild(quickViewButton);
-    card.addEventListener('mouseenter', () => {
-        quickViewButton.style.display = 'block';
-    }); card.addEventListener('mouseleave', () => {quickViewButton.style.display = 'none';});
-    const quickViewWindow = document.createElement('div');
-    quickViewWindow.classList.add('quick-view-window');
-    quickViewWindow.style.display = 'none';
-    const windowContent = document.createElement('div');
-    windowContent.classList.add('window-content');
-    const closeButton = document.createElement('button');
-    closeButton.classList.add('close-button');
+    const card = document.createElement('div');
+        card.classList.add('product-card');
+        const titleDiv = document.createElement('div');
+        titleDiv.classList.add('title');
+        const title = document.createElement('p');
+        title.classList.add('product-title');
+        title.textContent = cardData.title;
+        titleDiv.appendChild(title);
+        card.appendChild(titleDiv);
+        const figure = document.createElement('figure');
+        const img = document.createElement('img');
+        img.src = cardData.image;
+        img.alt = cardData.title;
+        figure.appendChild(img); const discountLabel = document.createElement('div');
+        
+        if (cardData.hasDiscount) {
+            const discountLabel = document.createElement('div');
+            discountLabel.classList.add('discount'); 
+            discountLabel.textContent = `Скидка: 10%`; // Скидка для карточки
+            figure.appendChild(discountLabel);
+        }
+    
+    
+    
+            figure.appendChild(discountLabel);
+    
+        figure.appendChild(img);
+        const discount = document.createElement('discount');
+        discount.classList.add('discount');
+    
+        const figcaption = document.createElement('figcaption');
+        const price = document.createElement('p');
+        price.classList.add('prce');
+        price.textContent = 'Цена за штуку';
+        figcaption.appendChild(price);
+        const money = document.createElement('p');
+        money.classList.add('money');
+        const span = document.createElement('span');
+        span.textContent = cardData.price + ' ₽';
+        const del = document.createElement('del');
+        del.textContent = cardData.delprice + ' ₽';
+        money.appendChild(span);
+        money.appendChild(del);
+        const buttons = document.createElement('div');
+        buttons.classList.add('Buttons');
+        const addToCartButton = document.createElement('button');
+        addToCartButton.classList.add('btn');
+        addToCartButton.textContent = 'В корзину';
+        addToCartButton.id = `addToCart${cardData.id}`; 
+        const subtractButton = document.createElement('button');
+        subtractButton.classList.add('subtract');
+        subtractButton.textContent = '–';
+        subtractButton.onclick = () => changeNumber(-1, `number${cardData.id}`); 
+        const numberInput = document.createElement('input');
+        numberInput.classList.add('js-number');
+        numberInput.id = `number${cardData.id}`; // 
+        numberInput.type = 'text';
+        numberInput.value = '1';
+        numberInput.readOnly = true;
+        const addButton = document.createElement('button');
+        addButton.classList.add('add');
+        addButton.textContent = '+';
+        addButton.onclick = () => changeNumber(1, `number${cardData.id}`); 
+        buttons.appendChild(addToCartButton);
+        buttons.appendChild(subtractButton);
+        buttons.appendChild(numberInput);
+        buttons.appendChild(addButton);
+        card.appendChild(figure);
+        card.appendChild(titleDiv); 
+        card.appendChild(figcaption);
+        card.appendChild(money);
+        card.appendChild(buttons);
+        container.appendChild(card);
+        const detailsDiv = document.createElement('div');
+        detailsDiv.classList.add('details-container');
+        const detailsButton = document.createElement('a');
+        detailsButton.href = cardData.detailsUrl;
+        detailsButton.textContent = 'Подробнее';
+        detailsButton.classList.add('details-button');
+        detailsDiv.appendChild(detailsButton);
+        card.appendChild(detailsDiv);
+        
+    // "Быстрый просмотр"
+    const quickViewButton = document.createElement('button'); 
+    quickViewButton.classList.add('quick-view-button'); //класс для стилей
+    quickViewButton.textContent = 'Быстрый просмотр'; // контент
+    figure.appendChild(quickViewButton); 
+    // Показываем кнопку при наведении курсора  на карточку товара и скрываем при уходе курсора
+    card.addEventListener('mouseenter', () => { 
+        quickViewButton.style.display = 'block'; 
+    });
+    card.addEventListener('mouseleave', () => { 
+        quickViewButton.style.display = 'none'; 
+    });
+    // Создаем окно  быстрый просмотр 
+    const quickViewWindow = document.createElement('div'); 
+    quickViewWindow.classList.add('quick-view-window'); 
+    quickViewWindow.style.display = 'none'; // Окно скрыто по умолчанию
+    // Создаем контейнер для содержимого окна
+    const windowContent = document.createElement('div'); 
+    windowContent.classList.add('window-content'); 
+    // Создаем крестик
+    const closeButton = document.createElement('button'); 
+    closeButton.classList.add('close-button'); 
     closeButton.textContent = 'X';
-    closeButton.onclick = function () {
-        quickViewWindow.style.display = 'none';
+    closeButton.onclick = function() { 
+        quickViewWindow.style.display = 'none'; // Скрываем окно при нажатии на кнопку закрытия
     };
-    quickViewButton.onclick = function () {
-        quickViewWindow.style.display = 'flex';
+    // При нажатии на кнопку "Быстрый просмотр" показываем окно
+    quickViewButton.onclick = function() { 
+        quickViewWindow.style.display = 'flex'; //Показываем окно с помощью flex 
     };
     const description = document.createElement('div');
     description.innerHTML = `
@@ -847,46 +941,7 @@ function changeCartItemNumber(step, button) {
 
     // Open the window when the page loads for demonstration
     window.onload = openWindow;
-</script>
 
-
-      
-<footer>
-    <hr>
-    <div class="containr"><div class="subscribe"></div><div class="footer_navigation">
-        <div class="footer_menu">
-    <div class="item"><div class="caption">Покупателям</div>
-    <ul class="menu_list">
-        <a href="/html/category.html">Каталог</a>
-        <a href="/about/arktika-servis/">Расрочка/Кредиты</a>
-        <a href="/about/bonus-program/">Бонусная программа</a>
-        <a href="/about/podarochnye-karty/">Подарочные карты</a>
-    </ul></div>
-    <div class="item"> 
-        <div class="caption">Информация</div>
-    <ul class="menu_list">
-        <a href="/information/oplata/">Как оплатить</a>
-        <a href="/information/feedback/">Обратная связь</a>
-        <a href="/information/jobs/">Гарантия качества </a>
-       <a href="contacts.html">Контакты</a>
-    </ul></div>   
-
-         <div class="item"><div class="caption">Наши услуги</div>
-        <ul class="menu_list"><a href="dostavkatext.html">Доставка</a>
-        </ul>
-    </div>
-    </div>
-         <div class="contact_info"><div class="phone"><a href="tel:8 (918) 827-20-12">8 (918) 827-20-12</a> (с 09:30 до 19:00) </div>
-        <div class="address">Адрес магазина:<br>ул. Астана Кесаева, 33"а, Владикавказ <br> Респ. Северная Осетия — Алания</div> 
-        <div class="copyright">© 1996—2024, ТК «Декор центр»  </div>
-    </div></div></div>
-   
-</footer>
-
-
-</body></html>
-
-<script>
  
     const catalog = document.getElementById('catalog');
     const menuBurger = document.getElementById('menuBurger');
