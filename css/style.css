@@ -15,16 +15,16 @@ header {
   align-items: center;
   background-color: #688EBD;
   padding: 20px 8px;
-  z-index: 200; /* обеспечьте, что заголовок будет сверху других элементов */
+  z-index: 200;
   position: sticky; /* делает заголовок липким */
-  top: 0; /* добавляем, чтобы указать, что это будет на верхней части страницы */
+  top: 0; 
 }
 
 /* Контейнер заголовка */
 header > .header-contaner {
   width: 100%;
   height:55px;
-  display: flex;  /* перемещаем display в этот селектор для лучшего управления */
+  display: flex; 
   align-items: center;
 }
 /* КОНЕЦ ГОЛОВЫ*/
@@ -56,7 +56,7 @@ header > .header-contaner {
 .search-bar button i {
   font-size: 10px;
 }
-/*делает растояние между иконками */
+
 .cart-icon,.search-bar  {
   cursor: pointer;
   margin-left: 30px;
@@ -80,7 +80,7 @@ header > .header-contaner {
    width: 450px;
    display: inline-flex;
   border-radius: 5px;
-  border: 2px solid #688EBD; /* Установлена  */
+  border: 2px solid #688EBD; 
   display:  none;
   z-index: 9000;
 }
@@ -181,7 +181,7 @@ header > .header-contaner {
 /*задняя сторона кнопки войти или зарегистрироваться*/
   .sign:hover{
   background: #cad0db;
-    border: 2px solid #688EBD; /* Установлена  */
+    border: 2px solid #688EBD;
    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2) ;
 
   }
