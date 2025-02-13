@@ -1240,7 +1240,11 @@ color:grey;
   }
 }
 
+
+
+
 /*СКИДКА НА ТОВАРЕ*/
+
 .discount {
   background-color: red; 
   color: white;
@@ -1261,15 +1265,15 @@ color:grey;
 
  .btn {
  font-size:14px;
-   background-color: #4577b4 ; /* Фон - синий */
-   color: white; /* Цвет текста - белый */
-   border: none; /* Удаляем рамку */
-   padding: 5px 5px; /* Отступы внутри кнопки */
-   border-radius: 5px; /* Скругленные углы */
-   cursor: pointer; /* Курсор-рука при наведении */
+   background-color: #4577b4 ; 
+   color: white;
+   border: none; 
+   padding: 5px 5px; 
+   border-radius: 5px; 
+   cursor: pointer; 
    transition: background-color 0.3s; /* Плавный переход цвета */
-   height: 30px; /* Высота кнопки */
-   width: 80px; /* Ширина кнопки */
+   height: 30px; 
+   width: 80px; 
    
    font-weight: bold; /* Жирный шрифт */
  }
@@ -1287,17 +1291,17 @@ color:grey;
 
  .subtract,
  .add {
-   background-color: white; /* Фон - белый */
-   border: none; /* Удаляем рамку */
-   padding: 10px; /* Отступы внутри кнопки */
-   border-radius: 5px; /* Скругленные углы */
-   cursor: pointer; /* Курсор-рука при наведении */
-   height: 30px; /* Высота кнопки */
-   width: 30px; /* Ширина кнопки */
-   font-size: 18px; /* Размер шрифта */
-   display: flex; /* Размещаем содержимое flexbox */
-   align-items: center; /* Выравниваем по вертикали */
-   justify-content: center; /* Выравниваем по горизонтали */
+   background-color: white; 
+   border: none; 
+   padding: 10px; 
+   border-radius: 5px; 
+   cursor: pointer; 
+   height: 30px; 
+   width: 30px; 
+   font-size: 18px; 
+   display: flex; 
+   align-items: center; 
+   justify-content: center; 
  }
 
  .subtract:hover,
@@ -1308,13 +1312,13 @@ color:grey;
  
  .details-container{
   display: flex;
-    flex-direction: column; /* Arrange items vertically */
-    align-items: center; /* Center items horizontally */
+    flex-direction: column; 
+    align-items: center;
  }
 .details-button{
 margin-top:10px;
 align-items: center; 
-  background-color: #4577b4 ; /* Фон - синий */
+  background-color: #4577b4 ; 
   color: white; /* Цвет текста - белый */
   border: none; /* Удаляем рамку */
   padding: 8px 5px; /* Отступы внутри кнопки */
