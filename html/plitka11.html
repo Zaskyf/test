@@ -1,0 +1,1075 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Напольная плитка/Керамика </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+/> <!--Ссылка на иконки в регистрации -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" ></script>
+
+</head>
+<body>
+    <header>
+            <div class="header-contaner">
+                <div class="catalog-icon" id="menuBurger">
+        <i class="fas fa-bars"></i>
+    </div>
+                <div class="search-bar">
+                    <input type="search" name="search" placeholder="Поиск товаров">
+                    <button type="submit">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                <div class="cart-icon" onclick="toggleCart()">
+                    <i class="fas fa-shopping-cart"></i>
+                </div>
+              <div class="header-contaner">
+            <div class="account-icon" onclick="toggleAccount()">
+                <i class="fas fa-user"></i>
+            </div>
+            </div>
+            </div>
+        </header>
+
+        <div class="cart" id="cart">
+            <h2>Корзина</h2>
+            <div id="cart-items"></div>
+            <a href="cart.html">Перейти в корзину</a>  <!--Почему ссылка не работает -->
+            
+            <button onclick="clearCart()">Очистить корзину</button>
+        </div>
+
+
+
+        <!--Каталог-->
+
+        <div class="catalog" id="catalog">
+            <h6>Каталог</h6>
+           <a href="wallpaper.html" style = " text-decoration :none;  color:black;">    <button class="category-button" data-category="1">      
+                <span>Обои</span> <i class="fas fa-chevron-right"></i>
+          </button>  </a>
+            <a href="bathroom.html" style = " text-decoration :none;  color:black;"> <button class="category-button" data-category="2">
+                <span>Сантехника</span> <i class="fas fa-chevron-right"></i>
+            </button>  </a>
+            <button class="category-button" data-category="3">
+                <a href="laminat.html" style = " text-decoration :none;  color:black;"> <span>Напольные покрытия</span> <i class="fas fa-chevron-right"></i>
+                </a></button>
+                    <button class="category-button" data-category="4">
+                 <a href="furniture.html" style = " text-decoration :none;  color:black;"> <span>Мебель</span> <i class="fas fa-chevron-right"></i>
+                        </a></button>
+                        <button class="category-button" data-category="5">
+                            <a href="dishes.html" style = " text-decoration :none;  color:black;"> <span>Посуда</span> <i class="fas fa-chevron-right"></i>
+                            </a></button>
+                            <button class="category-button" data-category="6">
+                                <a href="textile.html" style = " text-decoration :none;  color:black;"> <span>Текстиль</span> <i class="fas fa-chevron-right"></i>
+                                </a></button>
+                                <button class="category-button" data-category="7">
+                                    <a href="householdappliances.html" style = " text-decoration :none;  color:black;"> <span>Бытовая техника</span> <i class="fas fa-chevron-right"></i>
+                                    </a></button>
+                                        <button class="category-button" data-category="8">
+                                            <a href="decor.html" style = " text-decoration :none;  color:black;"> <span>Декор</span> <i class="fas fa-chevron-right"></i>
+                                            </a></button> 
+                                            <button class="category-button" data-category="9">
+                                                <a href="tools.html" style = " text-decoration :none;  color:black;"> <span>Инструменты</span> <i class="fas fa-chevron-right"></i>
+                                                </a></button> 
+                                              
+        </div>
+
+    <!-- Popup для подкатегорий -->
+    <div class="popup" id="popup">
+        <span class="clobutton" onclick="closePopup()">&times;</span>
+        <h2 id="popupTitle"></h2>
+
+        <ul id="popupContent"></ul>
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+    
+    
+
+
+    <!-- Регистрация -->
+    <div class="account" id="account" onmouseleave="hideAccount()">
+        <h2>Аккаунт</h2>
+        <button class="sign" onclick="openRegisterModal()" style = " color: black;font-size : 18px ;">Войти или Зарегистрироваться</button>
+    </div>
+
+    <!-- Модальное окно для регистрации -->
+        <div id="registerModal" class="modal">
+        <span class="close" onclick="closeRegisterModal()">&times;</span> <!-- Крестик закрытия -->
+        <div class="modal-content sign-in">
+            <form action="">
+                <h2>Войти</h2>
+                <div class="input-group">
+                    <input type="text" required>
+                    <label for="">Имя</label>
+                </div>
+                <div class="input-group">
+                    <input type="password" required>
+                    <label for="">Пароль</label>
+                </div>
+                <div class="remember">
+                    <label><input type="checkbox"> Запомнить меня</label>
+                </div>
+                <button class="registr" type="submit">Войти</button>
+                <div class="signUp-link">
+                    <p style="color: black; font-size : 18px;" >У вас нет аккаунта? <a href="#" class="signUpBtn-link">Регистрация</a></p>
+                </div>
+            </form>
+        </div>
+    <div class="modal-content sign-up">
+        <form action="">
+            <h2>Регистрация</h2><br>
+            <div class="input-group">
+                <input type="text" required>
+                <label for="">Имя</label>
+            </div>
+            <div class="input-group">
+                <input type="email" required>
+                <label for="">Почта</label>
+            </div>
+            <div class="input-group">
+                <input type="password" required>
+                <label for="">Придумайте пароль</label>
+            </div>
+            <div class="remember">
+                <label style="color: black; font-size: 16px;">
+                    <input type="checkbox"> Я соглашаюсь с чем-то
+                </label>
+            </div>
+            <button class="registr" type="submit">Зарегистрироваться</button>
+
+            <div class="signUp-link">
+                <p style="color: black; margin-top: 10px; font-size: 16px;">У Вас уже есть аккаунт?
+                    <a style="color: black; margin-top: 10px; font-size: 16px;" href="#" class="signInBtn-link">Войти</a>
+                </p>
+                  <div class="gogle" type="button" onclick="socialLogin()">Войти через <span class="social-link">соцсети</span></div>
+            </div>
+            <div class="tooltip" id="tooltip" >
+      <span class="clo" onclick="hideTooltip()">&#10006;</span>
+      <ul style="text-align:left; padding:5px; margin-top:10px;">
+        <a href="#" style="margin-right: 3px; color: black; display: inline-block; "><i class="fab fa-facebook-f"></i></a>
+        <a href="#" style="margin-right: 3px; color: black; display: inline-block;"><i class="fab fa-google"></i></a>
+        <a href="#" style="margin-right: 3px; color: black; display: inline-block; "><i class="fab fa-instagram"></i></a>
+        <a href="#" style="margin-right: 3px; color: black; display: inline-block; "><i class="fab fa-instagram"></i></a>
+
+    </ul>
+    </div>
+        </form>
+    </div>
+    </div>
+                 <!-- Хлебные крошки -->
+                 <nav class="breadcrumb">
+                    <a href="index.html"  >Главная</a>  &gt; <a href= "category.html" >Каталог</a>  &gt; <a href= "plitka.html" >Плитка</a> &gt; <a href= "plitka1.html" >Напольная плитка</a>
+                    &gt; <a href= "plitka11.html" >Керамика </a>  
+                </nav>
+<h6 style= "font-size:35px; font-weight:bold;margin-left:80px;
+margin-top:15px; margin-bottom:15px;">Керамика</h6>
+
+<!--КАРТОЧКИ ТОВАРОВ -->
+
+<div class="wrapper">
+
+<div class="container"> <div class="sidebar">
+    <button style=" background-color: #315886;" > <a href = "plitka11.html" style=" text-decoration: none; color:white; font-size: 25px;">Керамика</a></button>
+    <button > <a href = "plitka21.html" style="text-decoration-line: none; color:white;"> Керамогранит</a></button>
+    <button ><a href = "plitka31.html" style="text-decoration-line: none; color:white;">Натуральный камень</a></button>
+    <button  ><a href = "plitka41.html" style="text-decoration-line: none; color:white; ">Клинкер</a></button>
+</div> </div>
+
+<div class ="nexprev"><button id="prevBtn" class="pre-btn">Назад</button>
+<button id="nextBtn" class="nex-btn">Вперед</button></div> </div>
+
+
+<script>
+const container = document.querySelector('.container');
+const cardsData = [
+    { id: 1, image: 'https://parket.guru/image/cache/data-krono-original-vintage-classic-dub-burbon-k052-2-600x600.jpg', title: 'Ламинат Classen Vogue 4V WR Дуб Аликанте Арагон ', 
+    price: 799, delprice: 1000 , detailsUrl: '/test/html/productcard3.html' },
+ {
+        id: 2,
+        title: 'Ламинат - цвета: как правильно вписать ламинированное покрытие пола в интерьер',
+        price: 990,
+        delprice: 1500,
+        image: 'https://altay-pol.ru/wp-content/uploads/7/7/d/77da7ae6cd5646a957447ab322f861b7.jpeg',
+        detailsUrl: '/test/html/productcard3.html'
+    },
+    {
+        id: 3,
+        title: 'ОD 4797 Дуб горный серебристый Ламинат Kronotex Mammut Plus',
+        price: 790,
+        delprice: 1000,
+        image: 'https://n-novgorod.polstrany.ru/upload/iblock/e99/PFX014.SHA160.09A0DB1486D9886B2A0C673BE558992AC644E75F.jpg',
+        detailsUrl: ''
+    },
+    {
+        id: 4,
+        title: '  Ламинат Kronopol 3185 Дуб Парижский 32 класс, толщина 8 мм',
+        price: 1290,
+        delprice: 1800,
+        image: 'https://slonparket.ru/media/148/148271.jpg',
+        detailsUrl: ''
+    },
+    {
+        id: 5,
+        title: 'Ламинат Alloc Original 04572 Natural Oak (Дуб Натур) - Ярмарка ламината',
+        price: 1150,
+        delprice: 1600,
+        image: 'https://premium-laminat.ru/wp-content/uploads/2019/05/04572%D0%94%D0%A3%D0%91-%D0%9D%D0%90%D0%A2%D0%A3%D0%A0-2S-.jpg',
+        detailsUrl: ''
+    },
+    {
+        id: 6,
+        title: ' Ламинат Kronostar Galaxy 32 класс D1815 Дуб Лунный ',
+        price: 890,
+        delprice: 1300,
+        image: 'https://udarnik.com.ru/uploads/images/large/product_photos/0I5MUBdh.jpg',
+        detailsUrl: ''
+    },
+    {
+        id: 7,
+        title: 'Виниловый ламинат КМ2 толщиной 5 мм',
+        price: 1490,
+        delprice: 2000,
+        image: 'https://static.tildacdn.com/tild6233-3136-4864-b030-653963313932/999.jpg',
+        detailsUrl: ''
+    },
+    {
+        id: 8,
+        title: 'TerHurne Дуб Альпийский Серо-Коричневый R10 Паркетная доска TerHurne Moods ',
+        price: 990,
+        delprice: 1400,
+        image: 'https://polvamvdom.ru/f/prods/1/e/a/r10_3.jpg',
+        detailsUrl: ''
+    },
+    {
+        id: 9,
+        title: 'Бытовой ламинат Eventum 832D1853 Дуб Фиеста',
+        price: 690,
+        delprice: 900,
+        image: 'https://cork-shop.ru/d/1853_2.jpg',
+        detailsUrl: ''
+    },
+    {
+        id: 10,
+        title: 'Обои 10',
+        price: 1090,
+        delprice: 1500,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/10.webp',
+        detailsUrl: ''
+    },
+    {
+        id: 11,
+        title: 'Обои 11',
+        price: 1390,
+        delprice: 1900,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/11.webp',
+        detailsUrl: ''
+    },
+    {
+        id: 12,
+        title: 'Обои 12',
+        price: 790,
+        delprice: 1100,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/12.webp',
+        detailsUrl: ''
+    },
+    {
+        id: 13,
+        title: 'Обои 13',
+        price: 950,
+        delprice: 1350,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/13.webp',
+        detailsUrl: ''
+    },
+    {
+        id: 14,
+        title: 'Обои 14',
+        price: 1190,
+        delprice: 1600,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/14.webp',
+        detailsUrl: ''
+    },
+    {
+        id: 15,
+        title: 'Обои 15',
+        price: 1299,
+        delprice: 1700,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/15.webp',
+        detailsUrl: ''
+    },
+     {
+        id: 16,
+        title: 'Обои 16',
+        price: 799,
+        delprice: 1100,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/16.webp',
+        detailsUrl: ''
+    },
+    {
+        id: 17,
+        title: 'Обои 17',
+        price: 1090,
+        delprice: 1450,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/17.webp',
+        detailsUrl: ''
+    },
+    {
+        id: 18,
+        title: 'Обои 18',
+        price: 980,
+        delprice: 1250,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/18.webp',
+        detailsUrl: ''
+    },
+    {
+        id: 19,
+        title: 'Обои 19',
+        price: 1370,
+        delprice: 1800,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/19.webp',
+        detailsUrl: ''
+    },
+    {
+        id: 20,
+        title: 'Обои 20',
+        price: 1150,
+        delprice: 1500,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/20.webp',
+        detailsUrl: ''
+    },
+    {
+        id: 21,
+        title: 'Обои 21',
+        price: 850,
+        delprice: 1100,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/21.webp',
+        detailsUrl: ''
+    },
+    {
+        id: 22,
+        title: 'Обои 22',
+        price: 1250,
+        delprice: 1600,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/22.webp',
+        detailsUrl: ''
+    },
+    {
+        id: 23,
+        title: 'Обои 23',
+        price: 720,
+        delprice: 950,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/23.webp',
+        detailsUrl: ''
+    },
+    {
+        id: 24,
+        title: 'Обои 24',
+        price: 1050,
+        delprice: 1350,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/24.webp',
+        detailsUrl: ''
+    },
+    {
+        id: 25,
+        title: 'Обои 25',
+        price: 950,
+        delprice: 1250,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/25.webp',
+        detailsUrl: ''
+    },
+    {
+        id: 26,
+        title: 'Обои 26',
+        price: 1200,
+        delprice: 1600,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/26.webp',
+        detailsUrl: ''
+    },
+    {
+        id: 27,
+        title: 'Обои 27',
+        price: 930,
+        delprice: 1280,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/27.webp',
+        detailsUrl: ''
+    },
+    {
+        id: 28,
+        title: 'Обои 28',
+        price: 1095,
+        delprice: 1450,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/28.webp',
+        detailsUrl: ''
+    },
+    {
+        id: 29,
+        title: 'Обои 29',
+        price: 1155,
+        delprice: 1500,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/29.webp',
+        detailsUrl: ''
+    },
+    {
+        id: 30,
+        title: 'Обои 30',
+        price: 790,
+        delprice: 1000,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/30.webp',
+        detailsUrl: ''
+    },
+     {
+        id: 31,
+        title: 'Обои 31',
+        price: 900,
+        delprice: 1200,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/31.webp',
+        detailsUrl: ''
+    },
+    {
+        id: 32,
+        title: 'Обои 32',
+        price: 1150,
+        delprice: 1550,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/32.webp',
+        detailsUrl: ''
+    },
+    {
+        id: 33,
+        title: 'Обои 33',
+        price: 850,
+        delprice: 1100,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/33.webp',
+        detailsUrl: ''
+    },
+    {
+        id: 34,
+        title: 'Обои 34',
+        price: 1199,
+        delprice: 1550,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/34.webp',
+        detailsUrl: ''
+    },
+    {
+        id: 35,
+        title: 'Обои 35',
+        price: 1020,
+        delprice: 1350,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/35.webp',
+        detailsUrl: ''
+    },
+    {
+        id: 36,
+        title: 'Обои 36',
+        price: 950,
+        delprice: 1250,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/36.webp',
+        detailsUrl: ''
+    },
+    {
+        id: 37,
+        title: 'Обои 37',
+        price: 770,
+        delprice: 950,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/37.webp',
+        detailsUrl: ''
+    },
+    {
+        id: 38,
+        title: 'Обои 38',
+        price: 1340,
+        delprice: 1750,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/38.webp',
+        detailsUrl: ''
+    },
+    {
+        id: 39,
+        title: 'Обои 39',
+        price: 1180,
+        delprice: 1490,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/39.webp',
+        detailsUrl: ''
+    },
+    {
+        id: 40,
+        title: 'Обои 40',
+        price: 890,
+        delprice: 1200,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/40.webp',
+        detailsUrl: ''
+    },
+    {
+        id: 41,
+        title: 'Обои 41',
+        price: 1290,
+        delprice: 1700,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/41.webp',
+        detailsUrl: ''
+    },
+    {
+        id: 42,
+        title: 'Обои 42',
+        price: 950,
+        delprice: 1250,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/42.webp',
+        detailsUrl: ''
+    },
+    {
+        id: 43,
+        title: 'Обои 43',
+        price: 1150,
+        delprice: 1450,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/43.webp',
+        detailsUrl: ''
+    },
+    {
+        id: 44,
+        title: 'Обои 44',
+        price: 980,
+        delprice: 1280,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/44.webp',
+        detailsUrl: ''
+    },
+    {
+        id: 45,
+        title: 'Обои 45',
+        price: 1130,
+        delprice: 1500,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/45.webp',
+        detailsUrl: ''
+    }];cardsData.forEach((cardData) => {
+const card = document.createElement('div');
+    card.classList.add('product-card');
+    const titleDiv = document.createElement('div');
+    titleDiv.classList.add('title');
+    const title = document.createElement('p');
+    title.classList.add('product-title');
+    title.textContent = cardData.title;
+    titleDiv.appendChild(title);
+    card.appendChild(titleDiv);
+    const figure = document.createElement('figure');
+    const img = document.createElement('img');
+    img.src = cardData.image;
+    img.alt = cardData.title;
+    figure.appendChild(img);
+    const figcaption = document.createElement('figcaption');
+    const price = document.createElement('p');
+    price.classList.add('prce');
+    price.textContent = 'Цена за штуку';
+    figcaption.appendChild(price);
+    const money = document.createElement('p');
+    money.classList.add('money');
+    const span = document.createElement('span');
+    span.textContent = cardData.price + ' ₽';
+    const del = document.createElement('del');
+    del.textContent = cardData.delprice + ' ₽';
+    money.appendChild(span);
+    money.appendChild(del);
+    const buttons = document.createElement('div');
+    buttons.classList.add('Buttons');
+    const addToCartButton = document.createElement('button');
+    addToCartButton.classList.add('btn');
+    addToCartButton.textContent = 'В корзину';
+    addToCartButton.id = `addToCart${cardData.id}`; 
+    const subtractButton = document.createElement('button');
+    subtractButton.classList.add('subtract');
+    subtractButton.textContent = '–';
+    subtractButton.onclick = () => changeNumber(-1, `number${cardData.id}`); 
+    const numberInput = document.createElement('input');
+    numberInput.classList.add('js-number');
+    numberInput.id = `number${cardData.id}`; // 
+    numberInput.type = 'text';
+    numberInput.value = '1';
+    numberInput.readOnly = true;
+    const addButton = document.createElement('button');
+    addButton.classList.add('add');
+    addButton.textContent = '+';
+    addButton.onclick = () => changeNumber(1, `number${cardData.id}`); 
+    buttons.appendChild(addToCartButton);
+    buttons.appendChild(subtractButton);
+    buttons.appendChild(numberInput);
+    buttons.appendChild(addButton);
+    card.appendChild(figure);
+    card.appendChild(titleDiv); 
+    card.appendChild(figcaption);
+    card.appendChild(money);
+    card.appendChild(buttons);
+    container.appendChild(card);
+    const detailsDiv = document.createElement('div');
+    detailsDiv.classList.add('details-container');
+    const detailsButton = document.createElement('a');
+    detailsButton.href = cardData.detailsUrl;
+    detailsButton.textContent = 'Подробнее';
+    detailsButton.classList.add('details-button');
+    detailsDiv.appendChild(detailsButton);
+    card.appendChild(detailsDiv);
+    const quickViewButton = document.createElement('button');
+    quickViewButton.classList.add('quick-view-button');
+    quickViewButton.textContent = 'Быстрый просмотр';
+    figure.appendChild(quickViewButton);
+    card.addEventListener('mouseenter', () => {
+        quickViewButton.style.display = 'block';
+    }); card.addEventListener('mouseleave', () => {quickViewButton.style.display = 'none';});
+    const quickViewWindow = document.createElement('div');
+    quickViewWindow.classList.add('quick-view-window');
+    quickViewWindow.style.display = 'none';
+    const windowContent = document.createElement('div');
+    windowContent.classList.add('window-content');
+    const closeButton = document.createElement('button');
+    closeButton.classList.add('close-button');
+    closeButton.textContent = 'X';
+    closeButton.onclick = function () {
+        quickViewWindow.style.display = 'none';
+    };
+    quickViewButton.onclick = function () {
+        quickViewWindow.style.display = 'flex';
+    };
+    const description = document.createElement('div');
+    description.innerHTML = `
+    <div class="cartpodrobno">
+
+            <div class="procard">
+                <img src="https://via.placeholder.com/400" alt="Изображение товара" class="proimage">
+                <div class="tpd">
+                    <h2 class="protitle">Ламинат</h2>
+                    <p class="prodescription">Это краткое описание товара. Здесь можно указать его особенности и преимущества.</p>
+                    <p class="proprice">2999 Р.</p>
+                    <p class="delprice">2999 Р.</p>
+                    <button class="probutton">В корзину</button>
+                  <a href = "/test/html/productcard3.html">  <button class="procardbutton"> Больше информации о товаре </button> </a>
+                </div>
+            </div>
+        </div>
+    `;
+    windowContent.appendChild(closeButton);
+    windowContent.appendChild(description);
+    quickViewWindow.appendChild(windowContent);
+    document.body.appendChild(quickViewWindow);
+
+
+    // Добавляем крестик и описание в контейнер содержимого окна
+windowContent.appendChild(closeButton); 
+windowContent.appendChild(description); 
+
+// Добавляем содержимое в окно быстрого просмотра
+quickViewWindow.appendChild(windowContent); 
+
+// Добавляем окно быстрого просмотра на страницу
+document.body.appendChild(quickViewWindow); 
+
+// Выбираем все картинки  с классом  !!!!proimage!!!!
+const zoomableImages = document.querySelectorAll('.proimage');
+zoomableImages.forEach(image => {
+    let zoomed = false;
+    let zoomLevel = 2;
+
+    // Добавим обертку для изображения
+    const imageWrapper = document.createElement('div');
+    imageWrapper.style.overflow = 'hidden'; // Ключевое изменение
+    image.parentNode.insertBefore(imageWrapper, image); // Вставляем обертку перед изображением
+    imageWrapper.appendChild(image);
+
+    image.addEventListener('mousemove', function(event) {
+        if (zoomed) {
+            const rect = this.getBoundingClientRect();
+            const x = event.clientX - rect.left;
+            const y = event.clientY - rect.top;
+            const xPercent = x / rect.width;
+            const yPercent = y / rect.height;
+            this.style.transformOrigin = `${xPercent * 100}% ${yPercent * 100}%`;
+            this.style.transform = `scale(${zoomLevel})`;
+        }
+    });
+
+    image.addEventListener('click', function() {
+        zoomed = !zoomed;
+        if (zoomed) {
+            this.style.cursor = 'zoom-out';
+        } else {
+            this.style.transform = 'scale(1)';
+            this.style.cursor = 'zoom-in';
+            this.style.transformOrigin = 'center center';
+        }
+    });
+});
+});
+
+
+let currentIndex = 0;
+const cards = document.querySelectorAll('.product-card');
+
+function showCards(startIndex) {
+    const endIndex = startIndex + 20;
+    cards.forEach((card, i) => {
+        card.style.display = (i >= startIndex && i < endIndex) ? 'block' : 'none';
+    });
+}
+
+showCards(currentIndex);
+
+document.getElementById('nextBtn').addEventListener('click', () => {
+    if (currentIndex + 20 >= cards.length) return;
+    currentIndex += 20;
+    showCards(currentIndex);
+});
+
+document.getElementById('prevBtn').addEventListener('click', () => {
+    if (currentIndex === 0) return;
+    currentIndex -= 20;
+    showCards(currentIndex);
+});
+
+document.querySelectorAll(".btn").forEach(button => {
+    button.addEventListener("click", function() {
+        const isInCart = this.classList.contains("clicked");
+        if (!isInCart) {
+            addToCart(this);
+            this.textContent = "В корзине";
+            this.classList.add("clicked");
+        } else {
+            this.textContent = "В корзину";
+            this.classList.remove("clicked");
+            removeFromCart(this);
+        }
+    });
+});
+
+function changeNumber(amount, inputId) {
+    const numberInput = document.getElementById(inputId);
+    let currentValue = parseInt(numberInput.value, 10);
+    currentValue += amount;
+    if (currentValue >= 1) {
+        numberInput.value = currentValue;
+    }
+}
+
+function addToCart(button) {
+    const productTitle = button.closest('.product-card').querySelector('.product-title').textContent;
+    const productPrice = button.closest('.product-card').querySelector('.money span').textContent;
+    const productQuantity = button.closest('.product-card').querySelector('.js-number').value;
+
+    const existingItem = Array.from(document.querySelectorAll('.cart-item')).find(item => 
+        item.querySelector('p').textContent.includes(productTitle)
+    );
+
+    if (existingItem) {
+        const quantityInput = existingItem.querySelector('.js-number');
+        quantityInput.value = parseInt(quantityInput.value) + parseInt(productQuantity);
+    } else {
+        const cartItem = document.createElement('div');
+        cartItem.classList.add('cart-item');
+        cartItem.innerHTML = `
+            <input type="checkbox" class="item-checkbox"> 
+            <p class="tovar">${productTitle} - ${productPrice}</p>
+            <div class="boxadd">
+                <button class='subtract' onclick='changeCartItemNumber(-1, this)'>–</button>
+                <input type='text' class='js-number' value='${productQuantity}' readonly>
+                <button class='add' onclick='changeCartItemNumber(1, this)'>+</button>
+            </div>
+            <span class="remove-icon" onclick="removeItem(this)">🗑️</span>`;
+        document.getElementById('cart-items').appendChild(cartItem);
+    }
+}
+
+function removeItem(icon) {
+    icon.closest('.cart-item').remove();
+}
+
+function removeFromCart(button) {
+
+}
+
+function toggleCart() {
+    const cart = document.getElementById('cart');
+    cart.style.display = cart.style.display === 'none' ? 'block' : 'none';
+}
+
+function clearCart() {
+    document.getElementById('cart-items').innerHTML = '';
+}
+
+function changeCartItemNumber(step, button) {
+    const input = button.parentElement.querySelector('.js-number');
+    let value = parseInt(input.value);
+    value += step;
+    if (value < 1) {
+        value = 1;
+    }
+    input.value = value;
+}
+
+
+    function openWindow() {
+        document.getElementById('quickViewWindow').style.display = 'flex';
+    }
+
+    function closeWindow() {
+        document.getElementById('quickViewWindow').style.display = 'none';
+    }
+
+    
+
+   
+    window.onload = openWindow;
+</script>
+
+
+       
+<footer>
+    <hr>
+    <div class="containr"><div class="subscribe"></div><div class="footer_navigation">
+        <div class="footer_menu">
+    <div class="item"><div class="caption">Покупателям</div>
+    <ul class="menu_list">
+        <a href="/html/category.html">Каталог</a>
+        <a href="/about/arktika-servis/">Расрочка/Кредиты</a>
+        <a href="/about/bonus-program/">Бонусная программа</a>
+        <a href="/about/podarochnye-karty/">Подарочные карты</a>
+    </ul></div>
+    <div class="item"> 
+        <div class="caption">Информация</div>
+    <ul class="menu_list">
+        <a href="/information/oplata/">Как оплатить</a>
+        <a href="/information/feedback/">Обратная связь</a>
+        <a href="/information/jobs/">Гарантия качества </a>
+       <a href="/information/contacts/">Контакты</a>
+    
+    </ul></div>   
+
+         <div class="item"><div class="caption">Наши услуги</div>
+        <ul class="menu_list"><a href="/our-services/free-shipping/">Бесплатная доставка</a>
+        </ul>
+    </div>
+    </div>
+         <div class="contact_info"><div class="phone"><a href="tel:8 (918) 827-20-12">8 (918) 827-20-12</a> (с 09:30 до 19:00) </div>
+        <div class="address">Адрес магазина:<br>ул. Астана Кесаева, 33"а, Владикавказ <br> Респ. Северная Осетия — Алания</div> 
+        <div class="copyright">© 1996—2024, ТК «Декор центр»  </div>
+    </div></div></div>
+   
+</footer>
+</body></html>
+
+<script>
+    const catalog = document.getElementById('catalog');
+    const menuBurger = document.getElementById('menuBurger');
+    const popup = document.getElementById('popup');
+  
+    menuBurger.onclick = function(event) {
+        event.stopPropagation(); 
+        catalog.style.display = catalog.style.display === 'none' ? 'block' : 'none';
+    };
+    
+    let isPopupOpen = false;
+    document.querySelectorAll('.category-button').forEach(button => {
+        button.addEventListener('mouseenter', function(event) {
+            event.stopPropagation();
+            const categoryNum = this.getAttribute('data-category');
+            let content = '';
+    
+            switch (categoryNum) {
+                case '1':
+                content = 
+                '<a href="wallpaper1.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.1\')">Бумажные обои</button></a>' +
+                    '<a href="wallpaper2.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.2\')">Виниловые обои</button></a>' +
+                    '<a href="wallpaper3.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.3\')">Флизелиновые обои</button></a>' +
+                    '<a href="wallpaper4.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.4\')">Текстильные обои</button></a>' +
+                    '<a href="wallpaper5.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.5\')">Метализированные обои</button></a>' +
+                    '<a href="wallpaper6.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.6\')">Жидкие обои</button></a>' +
+                    '<a href="wallpaper7.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.7\')">Фотообои</button></a>';
+                break;
+            case '2':
+                content = 
+                    '<a href="wallpaper1.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.1\')">Ванны и комплектующие</button></a>' +
+                    '<a href="wallpaper2.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.2\')">Раковины</button></a>' +
+                    '<a href="wallpaper3.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.3\')">Смесители</button></a>' +
+                    '<a href="wallpaper4.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.4\')"> Душевые кабины и поддоны</button></a>' +
+                    '<a href="wallpaper5.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.5\')">Сантехника для отопления</button></a>' +
+                    '<a href="wallpaper6.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.6\')">Унитазы</button></a>' +
+                    '<a href="wallpaper7.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.7\')">Аксессуары и дополнительные элементы</button></a>';
+                    '<a href="wallpaper1.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.1\')">Ванны и комплектующие</button></a>' +
+                    '<a href="wallpaper2.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.2\')">Раковины</button></a>' +
+                    '<a href="wallpaper3.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.3\')">Смесители</button></a>' +
+                    '<a href="wallpaper4.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.4\')"> Душевые кабины и поддоны</button></a>' +
+                    '<a href="wallpaper5.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.5\')">Сантехника для отопления</button></a>' +
+                    '<a href="wallpaper6.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.6\')">Унитазы</button></a>' +
+                    '<a href="wallpaper7.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.7\')">Аксессуары и дополнительные элементы</button></a>';
+                break; 
+            case '3':
+                content = 
+              
+                    '<a href="wallpaper2.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.2\')">Деревянные покрытия</button></a>' +
+                    '<a href="wallpaper3.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.3\')">Плитка</button></a>' +
+                    '<a href="wallpaper4.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.4\')">Камень</button></a>' +
+                    '<a href="wallpaper5.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.5\')">Покрытия из ПВХ</button></a>' +
+                    '<a href="wallpaper6.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.6\')">Ковровые покрытия</button></a>';
+
+                break;
+
+                case '4':
+                content = 
+                '<a href="wallpaper1.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.1\')">Столы</button></a>' +
+                    '<a href="wallpaper2.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.2\')">Диваны</button></a>' +
+                    '<a href="wallpaper3.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.3\')">Кресла</button></a>' +
+                    '<a href="wallpaper4.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.4\')">Стулья</button></a>' +
+                    '<a href="wallpaper5.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.5\')">Шкафы</button></a>' +
+                    '<a href="wallpaper6.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.6\')">Кровати</button></a>' +
+                    '<a href="wallpaper7.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.7\')">Пуфы</button></a>' +
+                    '<a href="wallpaper7.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.7\')">Кушетки</button></a>';
+                break;
+
+                case '5':
+                content = 
+                '<a href="wallpaper1.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.1\')">Кухонная посуда</button></a>' +
+                    '<a href="wallpaper2.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.2\')">Столовая посуда</button></a>' +
+                    '<a href="wallpaper3.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.3\')">Питьевая посуда</button></a>' +
+                    '<a href="wallpaper4.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.4\')">Столовые приборы</button></a>' +
+                    '<a href="wallpaper5.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.5\')">Посуда для храниения</button></a>';
+                break;
+                case '6':
+                content = 
+                '<a href="wallpaper1.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.1\')">Шторы</button></a>' +
+                    '<a href="wallpaper2.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.2\')">Домашний текстиль</button></a>' +
+                    '<a href="wallpaper3.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.3\')">Постельное белье </button></a>' +
+                    '<a href="wallpaper4.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.4\')">Ткани</button></a>' +
+                    '<a href="wallpaper5.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.5\')">Постельные принадлежности</button></a>' ;
+                break;
+                case '7':
+                content = 
+                '<a href="wallpaper1.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.1\')">Бытовая техника для кухни</button></a>' +
+                    '<a href="wallpaper2.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.2\')">Мелкая бытовая техника для кухни</button></a>' +
+                    '<a href="wallpaper3.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.3\')">Бытовая техника для</button></a>' +
+                    '<a href="wallpaper4.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.4\')">Техника для дома</button></a>' +
+                    '<a href="wallpaper5.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.5\')">Техника для красты</button></a>' ;
+                break;
+                case '8':
+                content = 
+                '<a href="wallpaper1.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.1\')">Декро для стен </button></a>' +
+                    '<a href="wallpaper2.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.2\')">Декро для потолка и лепнина</button></a>' +
+                    '<a href="wallpaper3.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.3\')">Часы</button></a>' +
+                    '<a href="wallpaper4.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.4\')">Лампы</button></a>' +
+                    '<a href="wallpaper5.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.5\')">Люстры</button></a>' +
+                    '<a href="wallpaper6.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.6\')">Корнизы для штор</button></a>' +
+                    '<a href="wallpaper7.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.7\')">Вазы</button></a>';
+                break;
+                case '9':
+                content = 
+                '<a href="wallpaper1.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.1\')">Электроиснтрументы</button></a>' +
+                    '<a href="wallpaper2.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.2\')">Отвертки</button></a>' +
+                    '<a href="wallpaper3.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.3\')">Клей</button></a>' +
+                    '<a href="wallpaper5.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.5\')">Краски</button></a>' +
+                    '<a href="wallpaper6.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.6\')">Розетки</button></a>' +
+                    '<a href="wallpaper7.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.7\')">Гвозди,шурупы, болты ,гайки,ключи </button></a>'+
+                    '<a href="wallpaper7.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.7\')">Шпатели</button></a>'+
+                    '<a href="wallpaper7.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.7\')">Концелярские ножи</button></a>';
+                break;
+               
+            }
+            document.getElementById('popupContent').innerHTML = content;
+            showPopup(this.querySelector('span').textContent);  
+        });
+    });
+    function showPopup(title) {
+        document.getElementById('popupTitle').textContent = title;
+        popup.style.display = 'block';
+        isPopupOpen = true; 
+    }
+    
+    function closePopup() {
+        popup.style.display = 'none'; 
+        isPopupOpen = false;
+    }
+    
+    document.addEventListener('click', function() {
+        if (catalog.style.display === 'block') {
+            catalog.style.display = 'none'; 
+        }
+        if (isPopupOpen) {
+            closePopup();
+        }
+    });
+            //Регистрация
+    const socialLink = document.querySelector('.social-link');
+    const tooltip = document.getElementById('tooltip');
+    const account = document.getElementById('account');
+    const registerModal = document.getElementById('registerModal');
+    const registerForm = document.getElementById('registerForm');
+    const signInBtnLink = document.querySelector('.signInBtn-link');
+    const signUpBtnLink = document.querySelector('.signUpBtn-link');
+    const modal = document.querySelector('.modal');
+    
+    let accountVisible = false;
+    
+    socialLink.addEventListener('mouseover', () => {
+        tooltip.style.display = 'block';
+        tooltip.style.top = `${socialLink.offsetTop + socialLink.offsetHeight}px`; 
+        tooltip.style.left = `${socialLink.offsetLeft}px`;
+    });
+    
+    document.addEventListener('click', (event) => {
+        if (!socialLink.contains(event.target) && !tooltip.contains(event.target)) {
+            hideTooltip();
+        }
+    });
+    
+    function hideTooltip() {
+        tooltip.style.display = 'none';
+    }
+    
+    function toggleAccount() {
+        accountVisible = !accountVisible;
+        account.style.display = accountVisible ? 'block' : 'none';
+    }
+    
+    function hideAccount() {
+        if (accountVisible) {
+            accountVisible = false;
+            account.style.display = 'none';
+        }
+    }
+    function openRegisterModal() {
+        document.body.style.overflow = 'hidden'; 
+        registerModal.style.display = 'block';
+    }
+    
+    function closeRegisterModal() {
+        document.body.style.overflow = 'auto'; 
+        registerModal.style.display = 'none';
+    }
+    
+    registerForm.onsubmit = (event) => {
+        event.preventDefault();
+        alert('Регистрация завершена');
+        closeRegisterModal();
+    };
+    
+    function logInAccount() {
+        alert('Вход');
+    }
+    </script>
+
+<script>
+    signUpBtnLink.addEventListener('click', () => {
+        modal.classList.toggle('active');
+    });
+    
+    signInBtnLink.addEventListener('click', () => {
+        modal.classList.toggle('active');
+    });
+    
+        </script>
+        
