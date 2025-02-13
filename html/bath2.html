@@ -211,106 +211,396 @@ margin-top:15px; margin-bottom:15px;">Чугунные ванны </h6>
 <script>
 const container = document.querySelector('.container');
 const cardsData = [
-    { id: 1, image: 'https://vashavanna.ru/upload/iblock/5bf/5bfd7247181ad3210ec57fcfe3bfe068.jpg', 
-    title: 'Чугунная ванна Roca Carmen 160х80 с антискольжением', price: 1599, delprice: 3000 ,  detailsUrl: 'productcard2.html'  },
-    {
-        id: 2,
-        title: 'Чугунная ванна Roca Belice 175x85 ручки и подголовник',
-        price: 990,
-        delprice: 1500,
-        image: 'https://top-santehnika.ru/upload/medialibrary/f63/grz9j1znl32gbzn0bogwtp3bzn32hpob.jpg',
-        detailsUrl: 'productcard2.html'
-    },
-    {
+{ id: 1, image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/4.webp', title: 'Обои под покраску флизелиновые антивандальные Kreaforta Батист белые 1.06x25м 113г/м²', price: 799, delprice: 1000 , detailsUrl: 'productcard.html' , hasDiscount: true  },
+{ id: 2, image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/4.webp', title: 'Обои под покраску флизелиновые антивандальные Kreaforta Батист белые 1.06x25м 113г/м²', price: 799, delprice: 1000 , detailsUrl: 'productcard.html' , hasDiscount: false  },
+{
         id: 3,
-        title: 'Чугунная ванна Roca Haiti 170x80 с отверстиями под ручки',
-        price: 990,
-        delprice: 1400,
-        image: 'https://vashavanna.ru/upload/iblock/f67/f67e9d1350abc52b8d17e5f3aa0ef7dd.jpg',
-        detailsUrl: ''
+        title: 'Обои флизелиновые Ateliero Kora бежевые 1.06 м AT1016-02ОАВ',
+        price: 790,
+        delprice: 1000,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/3.webp',
+        detailsUrl: '',
+        hasDiscount: false
     },
     {
         id: 4,
-        title: 'Чугунная ванна Jacob Delafon SOISSONS 160x70 E2931-00',
-        price: 690,
-        delprice: 900,
-        image: 'https://kmline.ru/3635-medium_2chugunnajavannajacobdelafonsoissons160x70e293100jpg/chugunnaja-vanna-jacob-delafon-soissons-160x70-e2931-00.jpg',
-        detailsUrl: ''
+        title: 'Обои 4',
+        price: 1290,
+        delprice: 1800,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/4.webp',
+        detailsUrl: '',
+        hasDiscount: false
     },
     {
         id: 5,
-        title: 'Ванна чугунная Roca Haiti 160x80x40 см (арт. 2330G000R)',
-        price: 1200,
+        title: 'Обои 5',
+        price: 1150,
         delprice: 1600,
-        image: 'https://laksant.ru/upload/iblock/87d/87dc8ab127da6834a22f4100b15acd52.jpg',
-        detailsUrl: ''
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/5.webp',
+        detailsUrl: '',
+        hasDiscount: false
     },
     {
         id: 6,
-        title: 'Чугунная ванна Roca Newcast Grey 170x85',
-        price: 850,
-        delprice: 1100,
-        image: 'https://san-one.ru/wa-data/public/shop/products/69/35/33569/images/79660/79660.970.jpg',
-        detailsUrl: ''
+        title: 'Обои 6',
+        price: 890,
+        delprice: 1300,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/6.webp',
+        detailsUrl: '',
+        hasDiscount: true
     },
     {
         id: 7,
-        title: 'Чугунная ванна Wotte Start 1 UR 170x75 см, с ножками',
-        price: 1450,
-        delprice: 1900,
-        image: 'https://mebelny95.ru/userfiles/product_img/photos/tataev/1/fc1320b7535130051316af868d9cde9a.jpg',
-        detailsUrl: ''
+        title: 'Обои 7',
+        price: 1490,
+        delprice: 2000,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/7.webp',
+        detailsUrl: '',
+        hasDiscount: false
     },
     {
         id: 8,
-        title: 'Ванна чугунная Roca Haiti 160x80x40 см (арт. 2330G000R)',
-        price: 1200,
-        delprice: 1600,
-        image: 'https://laksant.ru/upload/iblock/87d/87dc8ab127da6834a22f4100b15acd52.jpg',
-        detailsUrl: ''
+        title: 'Обои 8',
+        price: 990,
+        delprice: 1400,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/8.webp',
+        detailsUrl: '',
+        hasDiscount: false
     },
     {
         id: 9,
-        title: 'Чугунная ванна Roca Newcast Grey 170x85',
-        price: 850,
-        delprice: 1100,
-        image: 'https://san-one.ru/wa-data/public/shop/products/69/35/33569/images/79660/79660.970.jpg',
-        detailsUrl: ''
+        title: 'Обои 9',
+        price: 690,
+        delprice: 900,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/9.webp',
+        detailsUrl: '',
+        hasDiscount: true
     },
     {
         id: 10,
-        title: 'Чугунная ванна Wotte Start 1 UR 170x75 см, с ножками',
-        price: 1450,
-        delprice: 1900,
-        image: 'https://mebelny95.ru/userfiles/product_img/photos/tataev/1/fc1320b7535130051316af868d9cde9a.jpg',
-        detailsUrl: ''
+        title: 'Обои 10',
+        price: 1090,
+        delprice: 1500,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/10.webp',
+        detailsUrl: '',
+        hasDiscount: true
     },
     {
         id: 11,
-        title: 'Ванна чугунная Roca Haiti 160x80x40 см (арт. 2330G000R)',
-        price: 1200,
-        delprice: 1600,
-        image: 'https://laksant.ru/upload/iblock/87d/87dc8ab127da6834a22f4100b15acd52.jpg',
-        detailsUrl: ''
+        title: 'Обои 11',
+        price: 1390,
+        delprice: 1900,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/11.webp',
+        detailsUrl: '',
+        hasDiscount: false
     },
     {
         id: 12,
-        title: 'Чугунная ванна Roca Newcast Grey 170x85',
-        price: 850,
+        title: 'Обои 12',
+        price: 790,
         delprice: 1100,
-        image: 'https://san-one.ru/wa-data/public/shop/products/69/35/33569/images/79660/79660.970.jpg',
-        detailsUrl: ''
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/12.webp',
+        detailsUrl: '',
+        hasDiscount: false
     },
     {
         id: 13,
-        title: 'Чугунная ванна Wotte Start 1 UR 170x75 см, с ножками',
-        price: 1450,
-        delprice: 1900,
-        image: 'https://mebelny95.ru/userfiles/product_img/photos/tataev/1/fc1320b7535130051316af868d9cde9a.jpg',
-        detailsUrl: ''
+        title: 'Обои 13',
+        price: 950,
+        delprice: 1350,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/13.webp',
+        detailsUrl: '',
+        hasDiscount: true
     },
-    
-    ];cardsData.forEach((cardData) => {
+    {
+        id: 14,
+        title: 'Обои 14',
+        price: 1190,
+        delprice: 1600,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/14.webp',
+        detailsUrl: '',
+        hasDiscount: false
+    },
+    {
+        id: 15,
+        title: 'Обои 15',
+        price: 1299,
+        delprice: 1700,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/15.webp',
+        detailsUrl: '',
+        hasDiscount: false
+    },
+     {
+        id: 16,
+        title: 'Обои 16',
+        price: 799,
+        delprice: 1100,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/16.webp',
+        detailsUrl: '',
+        hasDiscount: true
+    },
+    {
+        id: 17,
+        title: 'Обои 17',
+        price: 1090,
+        delprice: 1450,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/17.webp',
+        detailsUrl: '',
+        hasDiscount: false
+    },
+    {
+        id: 18,
+        title: 'Обои 18',
+        price: 980,
+        delprice: 1250,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/18.webp',
+        detailsUrl: '',
+        hasDiscount: false
+    },
+    {
+        id: 19,
+        title: 'Обои 19',
+        price: 1370,
+        delprice: 1800,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/19.webp',
+        detailsUrl: '',
+        hasDiscount: true
+    },
+    {
+        id: 20,
+        title: 'Обои 20',
+        price: 1150,
+        delprice: 1500,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/20.webp',
+        detailsUrl: '',
+        hasDiscount: true
+    },
+    {
+        id: 21,
+        title: 'Обои 21',
+        price: 850,
+        delprice: 1100,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/21.webp',
+        detailsUrl: '',
+        hasDiscount: false
+    },
+    {
+        id: 22,
+        title: 'Обои 22',
+        price: 1250,
+        delprice: 1600,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/22.webp',
+        detailsUrl: '',
+        hasDiscount: false
+    },
+    {
+        id: 23,
+        title: 'Обои 23',
+        price: 720,
+        delprice: 950,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/23.webp',
+        detailsUrl: '',
+        hasDiscount: false
+    },
+    {
+        id: 24,
+        title: 'Обои 24',
+        price: 1050,
+        delprice: 1350,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/24.webp',
+        detailsUrl: '',
+        hasDiscount: false
+    },
+    {
+        id: 25,
+        title: 'Обои 25',
+        price: 950,
+        delprice: 1250,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/25.webp',
+        detailsUrl: '',
+        hasDiscount: true
+    },
+    {
+        id: 26,
+        title: 'Обои 26',
+        price: 1200,
+        delprice: 1600,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/26.webp',
+        detailsUrl: '',
+        hasDiscount: false
+    },
+    {
+        id: 27,
+        title: 'Обои 27',
+        price: 930,
+        delprice: 1280,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/27.webp',
+        detailsUrl: '',
+        hasDiscount: false
+    },
+    {
+        id: 28,
+        title: 'Обои 28',
+        price: 1095,
+        delprice: 1450,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/28.webp',
+        detailsUrl: '',
+        hasDiscount: false
+    },
+    {
+        id: 29,
+        title: 'Обои 29',
+        price: 1155,
+        delprice: 1500,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/29.webp',
+        detailsUrl: '',
+        hasDiscount: false
+    },
+    {
+        id: 30,
+        title: 'Обои 30',
+        price: 790,
+        delprice: 1000,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/30.webp',
+        detailsUrl: '',
+        hasDiscount: true
+    },
+     {
+        id: 31,
+        title: 'Обои 31',
+        price: 900,
+        delprice: 1200,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/31.webp',
+        detailsUrl: '',
+        hasDiscount: true
+    },
+    {
+        id: 32,
+        title: 'Обои 32',
+        price: 1150,
+        delprice: 1550,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/32.webp',
+        detailsUrl: '',
+        hasDiscount: false
+    },
+    {
+        id: 33,
+        title: 'Обои 33',
+        price: 850,
+        delprice: 1100,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/33.webp',
+        detailsUrl: '',
+        hasDiscount: false
+    },
+    {
+        id: 34,
+        title: 'Обои 34',
+        price: 1199,
+        delprice: 1550,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/34.webp',
+        detailsUrl: '',
+        hasDiscount: false
+    },
+    {
+        id: 35,
+        title: 'Обои 35',
+        price: 1020,
+        delprice: 1350,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/35.webp',
+        detailsUrl: '',
+        hasDiscount: false
+    },
+    {
+        id: 36,
+        title: 'Обои 36',
+        price: 950,
+        delprice: 1250,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/36.webp',
+        detailsUrl: '',
+        hasDiscount: false
+    },
+    {
+        id: 37,
+        title: 'Обои 37',
+        price: 770,
+        delprice: 950,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/37.webp',
+        detailsUrl: '',
+        hasDiscount: false
+    },
+    {
+        id: 38,
+        title: 'Обои 38',
+        price: 1340,
+        delprice: 1750,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/38.webp',
+        detailsUrl: '',
+        hasDiscount: false
+    },
+    {
+        id: 39,
+        title: 'Обои 39',
+        price: 1180,
+        delprice: 1490,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/39.webp',
+        detailsUrl: '',
+        hasDiscount: true
+    },
+    {
+        id: 40,
+        title: 'Обои 40',
+        price: 890,
+        delprice: 1200,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/40.webp',
+        detailsUrl: '',
+        hasDiscount: false
+    },
+    {
+        id: 41,
+        title: 'Обои 41',
+        price: 1290,
+        delprice: 1700,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/41.webp',
+        detailsUrl: '',
+        hasDiscount: false
+    },     
+    {
+        id: 42,
+        title: 'Обои 42',
+        price: 950,
+        delprice: 1250,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/42.webp',
+        detailsUrl: '',
+        hasDiscount: false
+    },
+    {
+        id: 43,
+        title: 'Обои 43',
+        price: 1150,
+        delprice: 1450,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/43.webp',
+        detailsUrl: '',
+        hasDiscount: false
+    },
+    {
+        id: 44,
+        title: 'Обои 44',
+        price: 980,
+        delprice: 1280,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/44.webp',
+        detailsUrl: '',
+        hasDiscount: true
+    },
+    {
+        id: 45,
+        title: 'Обои 45',
+        price: 1130,
+        delprice: 1500,
+        image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/45.webp',
+        detailsUrl: '',
+        hasDiscount: false
+    }
+];cardsData.forEach((cardData) => {
 const card = document.createElement('div');
     card.classList.add('product-card');
     const titleDiv = document.createElement('div');
@@ -324,7 +614,23 @@ const card = document.createElement('div');
     const img = document.createElement('img');
     img.src = cardData.image;
     img.alt = cardData.title;
+    figure.appendChild(img); const discountLabel = document.createElement('div');
+    
+    if (cardData.hasDiscount) {
+        const discountLabel = document.createElement('div');
+        discountLabel.classList.add('discount'); 
+        discountLabel.textContent = `Скидка: 10%`; // Скидка для карточки
+        figure.appendChild(discountLabel);
+    }
+
+
+
+        figure.appendChild(discountLabel);
+
     figure.appendChild(img);
+    const discount = document.createElement('discount');
+    discount.classList.add('discount');
+
     const figcaption = document.createElement('figcaption');
     const price = document.createElement('p');
     price.classList.add('prce');
@@ -350,7 +656,7 @@ const card = document.createElement('div');
     subtractButton.onclick = () => changeNumber(-1, `number${cardData.id}`); 
     const numberInput = document.createElement('input');
     numberInput.classList.add('js-number');
-    numberInput.id = `number${cardData.id}`; 
+    numberInput.id = `number${cardData.id}`; // 
     numberInput.type = 'text';
     numberInput.value = '1';
     numberInput.readOnly = true;
@@ -371,32 +677,42 @@ const card = document.createElement('div');
     const detailsDiv = document.createElement('div');
     detailsDiv.classList.add('details-container');
     const detailsButton = document.createElement('a');
-    detailsButton.href = cardData.detailsUrl;;
+    detailsButton.href = cardData.detailsUrl;
     detailsButton.textContent = 'Подробнее';
     detailsButton.classList.add('details-button');
     detailsDiv.appendChild(detailsButton);
     card.appendChild(detailsDiv);
-    const quickViewButton = document.createElement('button');
-    quickViewButton.classList.add('quick-view-button');
-    quickViewButton.textContent = 'Быстрый просмотр';
-    figure.appendChild(quickViewButton);
-    card.addEventListener('mouseenter', () => {
-        quickViewButton.style.display = 'block';
-    }); card.addEventListener('mouseleave', () => {quickViewButton.style.display = 'none';});
-    const quickViewWindow = document.createElement('div');
-    quickViewWindow.classList.add('quick-view-window');
-    quickViewWindow.style.display = 'none';
-    const windowContent = document.createElement('div');
-    windowContent.classList.add('window-content');
-    const closeButton = document.createElement('button');
-    closeButton.classList.add('close-button');
-    closeButton.textContent = 'X';
-    closeButton.onclick = function () {
-        quickViewWindow.style.display = 'none';
-    };
-    quickViewButton.onclick = function () {
-        quickViewWindow.style.display = 'flex';
-    };
+    
+// "Быстрый просмотр"
+const quickViewButton = document.createElement('button'); 
+quickViewButton.classList.add('quick-view-button'); //класс для стилей
+quickViewButton.textContent = 'Быстрый просмотр'; // контент
+figure.appendChild(quickViewButton); 
+// Показываем кнопку при наведении курсора  на карточку товара и скрываем при уходе курсора
+card.addEventListener('mouseenter', () => { 
+    quickViewButton.style.display = 'block'; 
+});
+card.addEventListener('mouseleave', () => { 
+    quickViewButton.style.display = 'none'; 
+});
+// Создаем окно  быстрый просмотр 
+const quickViewWindow = document.createElement('div'); 
+quickViewWindow.classList.add('quick-view-window'); 
+quickViewWindow.style.display = 'none'; // Окно скрыто по умолчанию
+// Создаем контейнер для содержимого окна
+const windowContent = document.createElement('div'); 
+windowContent.classList.add('window-content'); 
+// Создаем крестик
+const closeButton = document.createElement('button'); 
+closeButton.classList.add('close-button'); 
+closeButton.textContent = 'X';
+closeButton.onclick = function() { 
+    quickViewWindow.style.display = 'none'; // Скрываем окно при нажатии на кнопку закрытия
+};
+// При нажатии на кнопку "Быстрый просмотр" показываем окно
+quickViewButton.onclick = function() { 
+    quickViewWindow.style.display = 'flex'; //Показываем окно с помощью flex 
+};
     const description = document.createElement('div');
     description.innerHTML = `
   
