@@ -2108,17 +2108,13 @@ background-color: white;
   
       .add-to-cart,
       .buy-now {
-          font-size: 18px; /* Увеличиваем размер шрифта для кнопок */
-          padding: 12px; /* Увеличиваем отступы внутри кнопок */
+          font-size: 18px; 
+          padding: 12px; 
       }
   }
   
  
     /* КОНЕЦ ОТДЕЛЬНАЯ СТРАНИЦА  ТОВАРА  */
-
-
-
-
 
 
 
@@ -2401,6 +2397,7 @@ height: 230px !important;
   margin: 20px auto; 
   padding: 20px; 
 }
+
 /*метса куда добавляются данные о пользователе */
 label {
   display: block; 
@@ -2409,6 +2406,7 @@ label {
   font-weight: bold;
   color: #333; 
 }
+
 /*кнопка сохранить данные */
 .lsaveButton {
   background-color: #28a745; 
@@ -2424,6 +2422,7 @@ padding: 20px;
 .lsaveButton:hover {
   background-color: #218838; 
 }
+
 /*хлебные крошки*/
 .breadcrumb { 
   display: flex;         
@@ -2572,9 +2571,9 @@ to {
 
 
 
-     /* Basic styling for the container */
+    
      .ldata {
-      display: none; /* Initially hide the user data section */
+      display: none; 
       margin-top: 20px;
       border: 1px solid #ccc;
       padding: 20px;
@@ -2582,7 +2581,7 @@ to {
       background-color: #f9f9f9;
   }
 
-  /* Styling for the button */
+ 
   .toggle-button {
       padding: 10px 15px;
       font-size: 16px;
@@ -2704,7 +2703,7 @@ to {
   }
 
   .details-binding {
-      display: none; /* Скрыть по умолчанию */
+      display: none;
       position: fixed;
       top: 50%;
       left: 50%;
