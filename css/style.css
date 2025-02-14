@@ -2345,14 +2345,14 @@ li img {
   text-align: center;
   margin-top: 40px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  padding:5px;
+
   border-radius: 9px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   background-color: white;
-  width: 400px ;
-  font-size: 20px;
-  line-height: 1.5;
-  height: 400px !important; 
+  width: 430px ;
+  font-size: 22.5px;
+
+  height: 430px; 
 }
 
 .imges {
@@ -2360,11 +2360,11 @@ margin-top:10px;
 border-radius: 9px;
   text-align: center;
     width: 85% !important ;
-    height:70%;
+    height:80%;
     
    flex-wrap: wrap;
    object-fit: cover;
-   margin-bottom : 25px;
+   margin-bottom : 10px;
 }
 @media (max-width: 769px)  {
 .category{
