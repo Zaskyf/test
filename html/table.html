@@ -1,0 +1,499 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Столы</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+/> <!--Ссылка на иконки в регистрации -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" ></script>
+
+</head>
+<body>
+    <header>
+            <div class="header-contaner">
+                <div class="catalog-icon" id="menuBurger">
+        <i class="fas fa-bars"></i>
+    </div>
+                <div class="search-bar">
+                    <input type="search" name="search" placeholder="Поиск товаров">
+                    <button type="submit">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                <div class="cart-icon" onclick="window.location.href='/test/html/cart.html'">
+                    <i class="fas fa-shopping-cart"></i>
+                </div>
+              <div class="header-contaner">
+            <div class="account-icon" onclick="toggleAccount()">
+                <i class="fas fa-user"></i>
+            </div>
+            </div>
+            </div>
+        </header>
+
+
+
+
+
+        <!--Каталог-->
+
+        <div class="catalog" id="catalog">
+            <h6>Каталог</h6>
+           <a href="wallpaper.html" style = " text-decoration :none;  color:black;">    <button class="category-button" data-category="1">      
+                <span>Обои</span> <i class="fas fa-chevron-right"></i>
+          </button>  </a>
+            <a href="categorysantexnica.html" style = " text-decoration :none;  color:black;"> <button class="category-button" data-category="2">
+                <span>Сантехника</span> <i class="fas fa-chevron-right"></i>
+            </button>  </a>
+            <button class="category-button" data-category="3">
+                <a href="floor.html" style = " text-decoration :none;  color:black;"> <span>Напольные покрытия</span> <i class="fas fa-chevron-right"></i>
+                </a></button>
+                    <button class="category-button" data-category="4">
+                 <a href="furniture.html" style = " text-decoration :none;  color:black;"> <span>Мебель</span> <i class="fas fa-chevron-right"></i>
+                        </a></button>
+                        <button class="category-button" data-category="5">
+                            <a href="dishes.html" style = " text-decoration :none;  color:black;"> <span>Посуда</span> <i class="fas fa-chevron-right"></i>
+                            </a></button>
+                            <button class="category-button" data-category="6">
+                                <a href="textile.html" style = " text-decoration :none;  color:black;"> <span>Текстиль</span> <i class="fas fa-chevron-right"></i>
+                                </a></button>
+                                <button class="category-button" data-category="7">
+                                    <a href="householdappliances.html" style = " text-decoration :none;  color:black;"> <span>Бытовая техника</span> <i class="fas fa-chevron-right"></i>
+                                    </a></button>
+                                        <button class="category-button" data-category="8">
+                                            <a href="decor.html" style = " text-decoration :none;  color:black;"> <span>Декор</span> <i class="fas fa-chevron-right"></i>
+                                            </a></button> 
+                                            <button class="category-button" data-category="9">
+                                                <a href="tools.html" style = " text-decoration :none;  color:black;"> <span>Инструменты</span> <i class="fas fa-chevron-right"></i>
+                                                </a></button> 
+                                              
+        </div>
+                                              
+       
+
+    <!-- Popup для подкатегорий -->
+    <div class="popup" id="popup">
+        <span class="clobutton" onclick="closePopup()">&times;</span>
+      <h2 id="popupTitle"></h2>  
+       
+
+        <ul id="popupContent"></ul>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+    <!-- НАЧАЛО РЕГИСТРАЦИИ  -->
+    <div class="account" id="account" onmouseleave="hideAccount()">
+        <h2>Аккаунт</h2>
+        <button class="sign" onclick="openRegisterModal()" style = " color: black;font-size : 18px ;">Войти или Зарегистрироваться</button>
+    </div>
+    <!-- Модальное окно для регистрации -->
+        <div id="registerModal" class="modal">
+        <span class="close" onclick="closeRegisterModal()">&times;</span> <!-- Крестик закрытия -->
+        <div class="modal-content sign-in">
+            <form action="">
+                <h2>Войти</h2>
+                <div class="input-group">
+                    <input type="text" required>
+                    <label for="">Имя</label>
+                </div>
+                <div class="input-group">
+                    <input type="password" required>
+                    <label for="">Пароль</label>
+                </div>
+                <div class="remember">
+                    <label><input type="checkbox"> Запомнить меня</label>
+                </div>
+                <button class="registr" type="submit">Войти</button>
+                <div class="signUp-link">
+                    <p style="color: black; font-size : 18px;" >У вас нет аккаунта? <a href="#" class="signUpBtn-link">Регистрация</a></p>
+                </div>
+            </form>
+        </div>
+    <div class="modal-content sign-up">
+        <form action="">
+            <h2>Регистрация</h2><br>
+            <div class="input-group">
+                <input type="text" required>
+                <label for="">Имя</label>
+            </div>
+            <div class="input-group">
+                <input type="email" required>
+                <label for="">Почта</label>
+            </div>
+            <div class="input-group">
+                <input type="password" required>
+                <label for="">Придумайте пароль</label>
+            </div>
+            <div class="remember">
+                <label style="color: black; font-size: 16px;">
+                    <input type="checkbox"> Я соглашаюсь с чем-то
+                </label>
+            </div>
+            <button class="registr" type="submit">Зарегистрироваться</button>
+
+            <div class="signUp-link">
+                <p style="color: black; margin-top: 10px; font-size: 16px;">У Вас уже есть аккаунт?
+                    <a style="color: black; margin-top: 10px; font-size: 16px;" href="#" class="signInBtn-link">Войти</a>
+                </p>
+                  <div class="gogle" type="button" onclick="socialLogin()">Войти через <span class="social-link">соцсети</span></div>
+            </div>
+            <div class="tooltip" id="tooltip" >
+      <span class="clo" onclick="hideTooltip()">&#10006;</span>
+    <ul style="text-align:left; padding:5px; margin-top:10px;">
+    <li>
+        <a href="#" style="margin-right: 3px; color: black; display: inline-block;">
+            <i class="fab fa-facebook-f"></i>
+        </a>
+    </li>
+    <li>
+        <a href="#" style="margin-right: 3px; color: black; display: inline-block;">
+            <i class="fab fa-google"></i>
+        </a>
+    </li>
+    <li>
+        <a href="#" style="margin-right: 3px; color: black; display: inline-block;">
+            <i class="fab fa-instagram"></i>
+        </a>
+    </li>
+</ul>
+    </div>
+        </form>
+    </div>
+    </div>
+<!--КОНЕЦ РЕГИСТРАЦИИ-->
+<nav class="breadcrumb">
+    <a href="index.html"  >Главная</a>  &gt; <a href= "category.html" >Каталог</a>   &gt; <a href= "table.html" >Столы</a>  
+</nav>
+<h6 style=" font-size:35px; font-weight:bold;margin-left:80px;
+margin-top:15px; margin-bottom:15px;">Столы</h6>
+<div  class ="category" id="categorycontainer"> </div>
+<div id="categorycontainer" ></div>
+
+<footer>
+    <hr>
+    <div class="containr"><div class="subscribe"></div><div class="footer_navigation">
+        <div class="footer_menu">
+    <div class="item"><div class="caption">Покупателям</div>
+    <ul class="menu_list">
+        <a href="/html/category.html">Каталог</a>
+        <a href="/about/arktika-servis/">Расрочка/Кредиты</a>
+        <a href="/about/bonus-program/">Бонусная программа</a>
+        <a href="/about/podarochnye-karty/">Подарочные карты</a>
+    </ul></div>
+    <div class="item"> 
+        <div class="caption">Информация</div>
+    <ul class="menu_list">
+        <a href="/information/oplata/">Как оплатить</a>
+        <a href="/information/feedback/">Обратная связь</a>
+        <a href="/information/jobs/">Гарантия качества </a>
+       <a href="contacts.html">Контакты</a>
+    </ul></div>   
+
+         <div class="item"><div class="caption">Наши услуги</div>
+        <ul class="menu_list"><a href="dostavkatext.html">Доставка</a>
+        </ul>
+    </div>
+    </div>
+         <div class="contact_info"><div class="phone"><a href="tel:8 (918) 827-20-12">8 (918) 827-20-12</a> (с 09:30 до 19:00) </div>
+        <div class="address">Адрес магазина:<br>ул. Астана Кесаева, 33"а, Владикавказ <br> Респ. Северная Осетия — Алания</div> 
+        <div class="copyright">© 1996—2024, ТК «Декор центр»  </div>
+    </div></div></div>
+   
+</footer>
+
+    </body>
+
+</html>
+
+        <script> 
+        
+        const categories = [
+    {
+        name: "Кухонные столы ",
+        imageSrc: "",
+        href: ".html",
+        alt: "Кухонные столы"
+    },
+    {
+        name: "Рабочие столы",
+        imageSrc: "", 
+        href: ".html",
+        alt: "Рабочие столы"
+    },
+     {
+        name: "Гостинные столы",
+        imageSrc: "",
+        href: ".html",
+        alt: "Гостинные столы"
+    },
+    {
+        name: "Специальные столы",
+        imageSrc: "", 
+        href: ".html",
+        alt: "Специальные столы "
+    },
+    {
+        name: "Развлекательные столы ",
+        imageSrc: "", 
+        href: ".html",
+        alt: "Развлекательные столы"
+    }
+];
+const categoryContainer = document.getElementById("categorycontainer");
+categories.forEach(category => {
+    const categoryDiv = document.createElement("div");
+    categoryDiv.className = "category";
+    const innerDiv = document.createElement("div");
+    innerDiv.className = "bocategory";
+    const paragraph = document.createElement("p");
+    paragraph.textContent = category.name;
+    innerDiv.appendChild(paragraph);
+    const link = document.createElement("a");
+    link.href = category.href;
+    const image = document.createElement("img");
+    image.src = category.imageSrc;
+    image.alt = category.alt;
+    image.className = "imges";
+    image.style = "align-items: center;"; 
+    link.appendChild(image);
+    innerDiv.appendChild(link);
+    categoryDiv.appendChild(innerDiv);
+    categoryContainer.appendChild(categoryDiv);
+});
+
+
+ 
+    const catalog = document.getElementById('catalog');
+    const menuBurger = document.getElementById('menuBurger');
+    const popup = document.getElementById('popup');
+    
+    menuBurger.onclick = function(event) {
+        event.stopPropagation(); 
+        catalog.style.display = catalog.style.display === 'none' ? 'block' : 'none';
+    };
+    
+    let isPopupOpen = false;
+  
+    document.querySelectorAll('.category-button').forEach(button => {
+        button.addEventListener('mouseenter', function(event) {
+            event.stopPropagation(); 
+            const categoryNum = this.getAttribute('data-category');
+            let content = '';
+    
+            switch (categoryNum) {
+                case '1':
+                content = 
+                '<a href="wallpaper1.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.1\')">Бумажные обои</button></a>' +
+                    '<a href="wallpaper2.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.2\')">Виниловые обои</button></a>' +
+                    '<a href="wallpaper3.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.3\')">Флизелиновые обои</button></a>' +
+                    '<a href="wallpaper4.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.4\')">Текстильные обои</button></a>' +
+                    '<a href="wallpaper5.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.5\')">Метализированные обои</button></a>' +
+                    '<a href="wallpaper6.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.6\')">Жидкие обои</button></a>' +
+                    '<a href="wallpaper7.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.7\')">Фотообои</button></a>';
+                break;
+            case '2':
+                content = 
+                    '<a href="wallpaper1.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.1\')">Ванны и комплектующие</button></a>' +
+                    '<a href="wallpaper2.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.2\')">Раковины</button></a>' +
+                    '<a href="wallpaper3.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.3\')">Смесители</button></a>' +
+                    '<a href="wallpaper4.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.4\')"> Душевые кабины и поддоны</button></a>' +
+                    '<a href="wallpaper5.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.5\')">Сантехника для отопления</button></a>' +
+                    '<a href="wallpaper6.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.6\')">Унитазы</button></a>' +
+                    '<a href="wallpaper7.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.7\')">Аксессуары и дополнительные элементы</button></a>';
+                    '<a href="wallpaper1.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.1\')">Ванны и комплектующие</button></a>' +
+                    '<a href="wallpaper2.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.2\')">Раковины</button></a>' +
+                    '<a href="wallpaper3.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.3\')">Смесители</button></a>' +
+                    '<a href="wallpaper4.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.4\')"> Душевые кабины и поддоны</button></a>' +
+                    '<a href="wallpaper5.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.5\')">Сантехника для отопления</button></a>' +
+                    '<a href="wallpaper6.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.6\')">Унитазы</button></a>' +
+                    '<a href="wallpaper7.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.7\')">Аксессуары и дополнительные элементы</button></a>';
+                break; 
+            case '3':
+                content = 
+              
+                    '<a href="wallpaper2.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.2\')">Деревянные покрытия</button></a>' +
+                    '<a href="wallpaper3.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.3\')">Плитка</button></a>' +
+                    '<a href="wallpaper4.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.4\')">Камень</button></a>' +
+                    '<a href="wallpaper5.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.5\')">Покрытия из ПВХ</button></a>' +
+                    '<a href="wallpaper6.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.6\')">Ковровые покрытия</button></a>';
+
+                break;
+
+                case '4':
+                content = 
+                '<a href="wallpaper1.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.1\')">Столы</button></a>' +
+                    '<a href="wallpaper2.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.2\')">Диваны</button></a>' +
+                    '<a href="wallpaper3.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.3\')">Кресла</button></a>' +
+                    '<a href="wallpaper4.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.4\')">Стулья</button></a>' +
+                    '<a href="wallpaper5.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.5\')">Шкафы</button></a>' +
+                    '<a href="wallpaper6.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.6\')">Кровати</button></a>' +
+                    '<a href="wallpaper7.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.7\')">Пуфы</button></a>' +
+                    '<a href="wallpaper7.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.7\')">Кушетки</button></a>';
+                break;
+
+                case '5':
+                content = 
+                '<a href="wallpaper1.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.1\')">Кухонная посуда</button></a>' +
+                    '<a href="wallpaper2.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.2\')">Столовая посуда</button></a>' +
+                    '<a href="wallpaper3.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.3\')">Питьевая посуда</button></a>' +
+                    '<a href="wallpaper4.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.4\')">Столовые приборы</button></a>' +
+                    '<a href="wallpaper5.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.5\')">Посуда для храниения</button></a>';
+                break;
+                case '6':
+                content = 
+                '<a href="wallpaper1.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.1\')">Шторы</button></a>' +
+                    '<a href="wallpaper2.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.2\')">Домашний текстиль</button></a>' +
+                    '<a href="wallpaper3.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.3\')">Постельное белье </button></a>' +
+                    '<a href="wallpaper4.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.4\')">Ткани</button></a>' +
+                    '<a href="wallpaper5.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.5\')">Постельные принадлежности</button></a>' ;
+                break;
+                case '7':
+                content = 
+                '<a href="wallpaper1.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.1\')">Бытовая техника для кухни</button></a>' +
+                    '<a href="wallpaper2.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.2\')">Мелкая бытовая техника для кухни</button></a>' +
+                    '<a href="wallpaper3.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.3\')">Бытовая техника для</button></a>' +
+                    '<a href="wallpaper4.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.4\')">Техника для дома</button></a>' +
+                    '<a href="wallpaper5.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.5\')">Техника для красты</button></a>' ;
+                break;
+                case '8':
+                content = 
+                '<a href="wallpaper1.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.1\')">Декро для стен </button></a>' +
+                    '<a href="wallpaper2.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.2\')">Декро для потолка и лепнина</button></a>' +
+                    '<a href="wallpaper3.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.3\')">Часы</button></a>' +
+                    '<a href="wallpaper4.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.4\')">Лампы</button></a>' +
+                    '<a href="wallpaper5.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.5\')">Люстры</button></a>' +
+                    '<a href="wallpaper6.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.6\')">Корнизы для штор</button></a>' +
+                    '<a href="wallpaper7.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.7\')">Вазы</button></a>';
+                break;
+                case '9':
+                content = 
+                '<a href="wallpaper1.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.1\')">Электроиснтрументы</button></a>' +
+                    '<a href="wallpaper2.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.2\')">Отвертки</button></a>' +
+                    '<a href="wallpaper3.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.3\')">Клей</button></a>' +
+                    '<a href="wallpaper5.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.5\')">Шкафы</button></a>' +
+                    '<a href="wallpaper6.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.6\')">Кровати</button></a>' +
+                    '<a href="wallpaper7.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.7\')">Фотообои</button></a>';
+                break;
+               
+            }
+            document.getElementById('popupContent').innerHTML = content;
+            showPopup(this.querySelector('span').textContent);  
+        });
+    });
+    
+    function showPopup(title) {
+        document.getElementById('popupTitle').textContent = title;
+        popup.style.display = 'block';
+        isPopupOpen = true; 
+    }
+    
+    function closePopup() {
+        popup.style.display = 'none'; 
+        isPopupOpen = false; 
+    }
+    
+    document.addEventListener('click', function() {
+        if (catalog.style.display === 'block') {
+            catalog.style.display = 'none'; 
+        }
+        if (isPopupOpen) {
+            closePopup();
+        }
+    });
+    
+    
+            //Регистрация
+    const socialLink = document.querySelector('.social-link');
+    const tooltip = document.getElementById('tooltip');
+    const account = document.getElementById('account');
+    const registerModal = document.getElementById('registerModal');
+    const registerForm = document.getElementById('registerForm');
+    const signInBtnLink = document.querySelector('.signInBtn-link');
+    const signUpBtnLink = document.querySelector('.signUpBtn-link');
+    const modal = document.querySelector('.modal');
+    
+    let accountVisible = false;
+    
+    socialLink.addEventListener('mouseover', () => {
+        tooltip.style.display = 'block';
+        tooltip.style.top = `${socialLink.offsetTop + socialLink.offsetHeight}px`; 
+        tooltip.style.left = `${socialLink.offsetLeft}px`;
+    });
+    
+    
+    document.addEventListener('click', (event) => {
+        if (!socialLink.contains(event.target) && !tooltip.contains(event.target)) {
+            hideTooltip();
+        }
+    });
+    
+    function hideTooltip() {
+        tooltip.style.display = 'none';
+    }
+    
+    function toggleAccount() {
+        accountVisible = !accountVisible;
+        account.style.display = accountVisible ? 'block' : 'none';
+    }
+    
+    
+    function hideAccount() {
+        if (accountVisible) {
+            accountVisible = false;
+            account.style.display = 'none';
+        }
+    }
+    
+    
+    function openRegisterModal() {
+        document.body.style.overflow = 'hidden';
+        registerModal.style.display = 'block';
+    }
+    
+    function closeRegisterModal() {
+        document.body.style.overflow = 'auto';
+        registerModal.style.display = 'none';
+    }
+    
+    
+    registerForm.onsubmit = (event) => {
+        event.preventDefault();
+        alert('Регистрация завершена');
+        closeRegisterModal();
+    };
+    
+    
+    function logInAccount() {
+        alert('Вход');
+    }
+    </script>
+    <script>
+    
+    signUpBtnLink.addEventListener('click', () => {
+        modal.classList.toggle('active');
+    });
+    
+    signInBtnLink.addEventListener('click', () => {
+        modal.classList.toggle('active');
+    });
+    
+    </script>
+    
+
+    
