@@ -1768,9 +1768,9 @@ margin: 20px auto;
 }
  
 .brown0 {
-  background-image: url('https://polvamvdom.ru/f/prods/7/b/8/69-001-00085_1.jpg'); /* путь к изображению */
-  background-size: cover; /* Заставляет изображение покрывать весь элемент */
-  background-position: center; /* Центрирует*/
+  background-image: url('https://polvamvdom.ru/f/prods/7/b/8/69-001-00085_1.jpg'); 
+  background-size: cover; 
+  background-position: center; 
   width: 100px;
   height: 100px; 
   border-radius: 9px;
@@ -1832,10 +1832,10 @@ object-fit: Scale-down;
   .sidebar button {
       background-color: #688EBD; 
       color: white; 
-      border: none; /* Без рамки */
+      border: none; 
       border-radius: 25px; 
       padding: 10px; 
-      cursor: pointer; /* Указатель при наведении на кнопку */
+      cursor: pointer; 
       font-size: 18px; 
       transition: all 0.3s ease; /* Плавные переходы для всех изменений */
       position: relative; /* Для анимации при наведении */
@@ -1843,8 +1843,8 @@ object-fit: Scale-down;
   
   /* Эффект при наведении на кнопки */
   .sidebar button:hover {
-      background-color: #2a5992; /* Светлее оттенок при наведении */
-      box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2); /* Тень при наведении */
+      background-color: #2a5992;
+      box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2); 
   }
   
   /* Анимация при нажатии на кнопку */
@@ -1901,7 +1901,7 @@ background-color: white;
   
           .add-to-cart,
           .buy-now {
-              background-color: #688ebd; /* Светло-синий */
+              background-color: #688ebd; 
               color: white;
               border: none;
               border-radius: 5px;
@@ -1918,7 +1918,7 @@ background-color: white;
   
           .add-to-cart:hover,
           .buy-now:hover {
-              background-color: #4760a2; /* Темно-синий */
+              background-color: #4760a2; 
           }
   
           .prod-rating {
@@ -1951,7 +1951,7 @@ background-color: white;
               padding: 10px;
               border-radius: 5px;
             top: 5px;
-              display: none; /* Скрыто по умолчанию */
+              display: none; 
           }
   
           .active-section {
@@ -2000,14 +2000,14 @@ background-color: white;
       }
   
       .sidebar {
-          width: 100%; /* Устанавливаем ширину сайдбара в 100% */
-          margin-left: 0; /* Убираем левый отступ */
+          width: 100%; 
+          margin-left: 0; 
       }
   
       .characteristics,
       .reviews,
       .details {
-          padding: 5px; /* Уменьшаем отступы внутри секций */
+          padding: 5px; 
       }
   }
   
