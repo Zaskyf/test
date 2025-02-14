@@ -1647,7 +1647,7 @@ margin: 20px auto;
               border-radius: 8px;
               box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             width:90%;
-        height:100%;
+        height:auto !important;
               overflow: hidden;
               transition: transform 0.3s;
           }
