@@ -825,12 +825,12 @@ margin-bottom: 5px;
 
 /*НАЧАЛО СЛАЙДЕРА  С КАРТОЧКАМИ НА ГЛАВНОЙ СТРАНИЦЕ  */
 .swiper {
-width: 90%;
+width: 98%;
 height: 615px ;
 margin-bottom: 20px; /* Отступ между слайдером и карточками */
 overflow: hidden; /* Скрывает часть карточек, выходящих за пределы контейнера */
-left: 10px; /* Отступ слева от края */
-right: 10px; /* Отступ справа от края */
+left: 20px; /* Отступ слева от края */
+
 background: #e5e5e5;
 margin-top:60px;
 position: relative;
@@ -2345,14 +2345,14 @@ li img {
   text-align: center;
   margin-top: 40px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  padding:15px;
+  padding:5px;
   border-radius: 9px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   background-color: white;
-  width: 350px ;
+  width: 400px ;
   font-size: 20px;
   line-height: 1.5;
-  min-height: 160px !important; 
+  height: 400px !important; 
 }
 
 .imges {
@@ -2426,11 +2426,12 @@ padding: 20px;
 /*хлебные крошки*/
 .breadcrumb { 
   display: flex;         
-  justify-content: space-around; 
+  margin-bottom: 10px;
   padding: 18px; 
   text-align: center; 
   background-color: #e5e5e5; 
-  width: 70%;          
+  width: 100%;    
+  font-size:19px ;      
 } 
 .breadcrumb a { 
   color: black; 
