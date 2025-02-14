@@ -2339,7 +2339,8 @@ li img {
 .category{
   display: grid;
   margin:5px;
-  grid-template-columns: repeat(5, 1fr); /* 5 колонки одинаковой ширины */
+
+  grid-template-columns: repeat(4, 1fr); /* 5 колонки одинаковой ширины */
   }
 .bocategory {
   text-align: center;
