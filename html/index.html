@@ -40,16 +40,13 @@
  </div>
         </header>
 
-  <div class="cart" id="cart"  onmouseleave="hideCart()">
+        <div class="cart" id="cart">
             <h2>Корзина</h2>
             <div id="cart-items"></div>
-            <a href="cart.html"><button class= "cartbutton">Перейти в корзину</button></a>  <!--Почему ссылка не работает -->
+            <a href="cart.html" class= "cartbu">Перейти в корзину</a>  <!--Почему ссылка не работает -->
             
-            <button class= "cartbutton" onclick="clearCart()">Очистить корзину</button>
+            <button class= "cartbu" onclick="clearCart()">Очистить корзину</button>
         </div>
-
-
-
 
         <!--Каталог-->
 
@@ -96,12 +93,10 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
     
-
-
     <!-- НАЧАЛО РЕГИСТРАЦИИ  -->
     <div class="account" id="account" onmouseleave="hideAccount()">
         <h2>Аккаунт</h2>
-        <button class="sign" onclick="openRegisterModal()" style = " color: black;font-size : 18px ;">Войти или Зарегистрироваться</button>
+        <button class="sign" onclick="openRegisterModal()" >Войти или Зарегистрироваться</button>
     </div>
     <!-- Модальное окно для регистрации -->
         <div id="registerModal" class="modal">
@@ -196,8 +191,6 @@
         </div>
     </div>
  <!-- КОНЕЦ КАРУСЕЛИ-->
-  
-
 
 
 <!--НАЧАЛО ИКНОК ССЫЛОК НА ГЛАВНОЙ СТРАНИЦЕ-->
@@ -224,74 +217,9 @@
        <div class="swiper-button-next next"></div>
         </section>
 
-
-   <button id="translateButton" onclick="translatePage()">Translate to English</button> <!-- Translation Button -->
-          <script>
-        function translatePage() {
-            // Translation mapping
-            const translations = {
-                "Магазин": "Store",
-                "Поиск товаров": "Search for products",
-                "Корзина": "Cart",
-                "Перейти в корзину": "Go to Cart",
-                "Очистить корзину": "Clear Cart",
-                "Каталог": "Catalog",
-                "Сантехника": "Plumbing",
-                "Обои": "Wallpaper",
-                "Напольные покрытия": "Flooring",
-                "Мебель": "Furniture",
-                "Посуда": "Dishes",
-                "Текстиль": "Textiles",
-                "Бытовая техника": "Household appliances",
-                "Декор": "Decor",
-                "Инструменты": "Tools",
-                "Распродажа": "Sale",
-                "Войти или Зарегистрироваться": "Log In or Register",
-                "Имя": "Name",
-                "Пароль": "Password",
-                "Запомнить меня": "Remember me",
-                "Войти": "Log In",
-                "Регистрация": "Register",
-                "У вас нет аккаунта?": "Don't have an account?",
-                "Зарегистрироваться": "Register",
-                "Я соглашаюсь с чем-то": "I agree to something",
-                "Подробнее": "More Details",
-                "Цена за штуку": "Price per item",
-                "В корзине": "In Cart",
-                "В корзину": "Add to Cart",
-                "Бесплатная доставка": "Free Shipping",
-                "Наши услуги": "Our Services",
-                "Контакты": "Contacts",
-                "Гарантия качества": "Quality Guarantee",
-                "Телефон": "Phone",
-                "Адрес магазина": "Store Address",
-                "Покупателям": "For Customers",
-                "Информация": "Information",
-                "Ассортимент": "Assortment"
-            };
-
-            // Function to replace text content
-            function replaceText(element) {
-                const childNodes = element.childNodes;
-                childNodes.forEach(node => {
-                    if (node.nodeType === Node.TEXT_NODE) {
-                        const originalText = node.textContent.trim();
-                        if (translations[originalText]) {
-                            node.textContent = translations[originalText];
-                        }
-                    } else if (node.nodeType === Node.ELEMENT_NODE) {
-                        replaceText(node); // Recursively replace text in child elements
-                    }
-                });
-            }
-
-            // Start replacing text from the body
-            replaceText(document.body);
-        }
-    </script>
+  
         <script>
 
-        
         let currentIndex = 0;
         const items = document.querySelectorAll('.itm');
         const totalItems = items.length;
@@ -340,46 +268,33 @@ const products = [
     { image: "https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/2.webp", title: "Обои 2", price: 999, oldPrice: 1900 },
     
 ];
-
-
 const swiperWrapper = document.getElementById('swiper-wrapper');
-
 function createSwiperSlide(product, index) {
     const slide = document.createElement('div');
     slide.className = 'swiper-slide';
-
     const img = document.createElement('img');
     img.src = product.image;
     img.alt = product.title;
-
     const title = document.createElement('p');
     title.className = 'product-title';
     title.textContent = product.title;
-
     const figcaption = document.createElement('figcaption');
     figcaption.className = 'box';
-
     const priceContainer = document.createElement('div');
     priceContainer.className = 'price-container';
-
     const price = document.createElement('p');
-    price.className = 'price';
+    price.className = 'prce';
     price.textContent = 'Цена за штуку';
-
     const money = document.createElement('p');
     money.className = 'money';
-
     const span = document.createElement('span');
     span.textContent = product.price + ' ₽';
-
     const del = document.createElement('del');
     del.textContent = product.oldPrice + ' ₽';
-
     money.appendChild(span);
     money.appendChild(del);
     priceContainer.appendChild(price);
     priceContainer.appendChild(money);
-
     const buttons = document.createElement('div');
     buttons.className = 'Buttons';
     buttons.innerHTML = `
@@ -387,39 +302,29 @@ function createSwiperSlide(product, index) {
         <button class='subtract' onclick='changeNumber(-1, "number${index + 1}")'>–</button>
         <input type='text' class='js-number' id='number${index + 1}' value='1' readonly>
         <button class='add' onclick='changeNumber(1, "number${index + 1}")'>+</button>
-      
+      <button class = 'details-button'>Подробнее</button>
     `;
-
-
     figcaption.appendChild(priceContainer);
     figcaption.appendChild(buttons);
     slide.appendChild(img);
     slide.appendChild(title);
     slide.appendChild(figcaption);
     swiperWrapper.appendChild(slide);
-
     return slide;
 }
-
 function changeNumber(step, inputId) {
     const input = document.getElementById(inputId);
     let currentNumber = parseInt(input.value);
     currentNumber += step;
-
     if (currentNumber < 1) {
         currentNumber = 1;
     }
     input.value = currentNumber;
 }
-
 products.forEach((product, index) => {
     createSwiperSlide(product, index);
-
-
-
     
 });
-   // <a href='productcard.html?id=${product.id}' class='more-details'>Подробнее</a>  New Button  
 const swiper = new Swiper(".swiper", {
     navigation: {
         nextEl: ".swiper-button-next",
@@ -428,7 +333,6 @@ const swiper = new Swiper(".swiper", {
     slidesPerView: 6,
     spaceBetween: 15,
 });
-
 document.querySelectorAll(".btn").forEach(button => {
     button.addEventListener("click", function () {
         const isInCart = this.classList.contains("clicked");
@@ -442,9 +346,7 @@ document.querySelectorAll(".btn").forEach(button => {
             removeFromCart(this);
         }
     });
-
-
-    
+  
 });
 
 function addToCart(button) {

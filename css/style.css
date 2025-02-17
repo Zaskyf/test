@@ -70,6 +70,9 @@ header > .header-contaner {
 }
 /* КОНЕЦ ГОЛОВЫ */
 
+
+
+
 /* НАЧАЛО ПОИСКОВОЙ СИСТЕМЫ */
 .search-bar {
   position: relative; /* Относительное позиционирование */
@@ -104,6 +107,8 @@ header > .header-contaner {
 }
 /* КОНЕЦ ПОИСКОВОЙ СИСТЕМЫ */
 
+
+
 /* НАЧАЛО КОРЗИНЫ */
 .cart {
   position: fixed; /* Фиксированное позиционирование */
@@ -112,7 +117,7 @@ header > .header-contaner {
   box-shadow: 3px 2px 5px rgba(0.2, 0.2, 0.2, 0.2); /* Тень */
   background-color: #fff; /* Цвет фона */
   padding: 10px; /* Внутренние отступы */
-  width: 450px; /* Ширина */
+  width: auto; /* Ширина */
   display: inline-flex; /* Используем inline-flex */
   border-radius: 5px; /* Закругление углов */
   border: 2px solid #688EBD; /* Граница */
@@ -126,6 +131,7 @@ header > .header-contaner {
   align-items: center; /* Выравнивание элементов по центру */
   justify-content: space-between; /* Распределение пространства между элементами */
 }
+
 .boxadd {
   display: flex; /* Используем flexbox */
   align-items: center; /* Выравнивание элементов по центру */
@@ -150,11 +156,36 @@ header > .header-contaner {
 .sub:hover, .add:hover {
   background-color: #5a7cb3; /* Цвет фона при наведении */
 }
-.remove-icon {
-  cursor: pointer; /* Курсор в виде указателя */
-  color: #ff0000; /* Цвет иконки */
+
+
+.cartbu {
+  margin-top: 10px; /* Отступ сверху */
+
+  text-decoration: none; /* Убираем подчеркивание */
+  font-size: 16px; /* Размер шрифта */
+  color: #688EBD; /* Цвет текста */
+  background-color: #f0f8ff; /* Светлый цвет фона */
+  padding: 12px 20px; /* Увеличенные отступы для кнопок */
+  border-radius: 5px; /* Закругленные углы */
+  border: none; /* Убираем рамку */
+  cursor: pointer; /* Курсор в виде руки */
+  transition: background-color 0.3s, color 0.3s; /* Плавные переходы */
 }
+
+.cartbu:hover {
+  background-color: #688EBD; /* Цвет фона при наведении */
+  color: white; /* Цвет текста при наведении */
+}
+
+/* Эффект при наведении для кнопки */
+button.cartbu:hover {
+  background-color: #688EBD; /* Цвет фона при наведении на кнопку */
+  color: white; /* Цвет текста при наведении на кнопку */
+}
+
 /* КОНЕЦ КОРЗИНЫ */
+
+
 
 /* АККАУНТ */
 .account-icon {
@@ -166,16 +197,16 @@ header > .header-contaner {
 .account {
   position: fixed; /* Фиксированное позиционирование */
   top: 60px; /* Отступ сверху */
-  right: 10px; /* Отступ справа */
-  margin-left: 30px; /* Отступ слева */
-  background-color: #98b9fa; /* Цвет фона */
-  padding: 20px; /* Внутренние отступы */
+  right: 20px; /* Отступ справа */
+  box-shadow: 3px 2px 5px rgba(0.2, 0.2, 0.2, 0.2); /* Тень */
+  background-color: #fff; /* Цвет фона */
+  padding: 10px; /* Внутренние отступы */
+  width: auto ; /* Ширина */
+  display: inline-flex; /* Используем inline-flex */
   border-radius: 5px; /* Закругление углов */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Тень */
+  border: 2px solid #688EBD; /* Граница */
   display: none; /* Скрываем по умолчанию */
-  z-index: 2001; /* Уровень слоя */
-  width: 350px; /* Ширина */
-  height: 120px; /* Высота */
+  z-index: 9000; /* Уровень слоя */
 }
 .account h2 {
   margin-top: 10px; /* Отступ сверху */
@@ -183,31 +214,25 @@ header > .header-contaner {
 
 /* Кнопка войти или зарегистрироваться */
 .sign {
-  margin-top: 5px; /* Отступ сверху */
-  background-color: #5875ad; /* Цвет фона */
-  padding: 0; /* Внутренние отступы */
-  border: none; /* Убираем границу */
-  border-radius: 5px; /* Закругление углов */
-  cursor: pointer; /* Курсор в виде указателя */
-  margin-left: 10px; /* Отступ слева */
-  width: 300px; /* Ширина */
-  height: 30px; /* Высота */
-  box-shadow: 0 0 10px #FFFFE0; /* Тень */
+  margin-top: 10px; /* Отступ сверху */
+
+  text-decoration: none; /* Убираем подчеркивание */
+  font-size: 16px; /* Размер шрифта */
+  color: #688EBD; /* Цвет текста */
+  background-color: #f0f8ff; /* Светлый цвет фона */
+  padding: 12px 20px; /* Увеличенные отступы для кнопок */
+  border-radius: 5px; /* Закругленные углы */
+  border: none; /* Убираем рамку */
+  cursor: pointer; /* Курсор в виде руки */
+  transition: background-color 0.3s, color 0.3s; /* Плавные переходы */
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
-* {
-  margin: 0; /* Убираем внешние отступы */
-  padding: 0; /* Убираем внутренние отступы */
-  box-sizing: border-box; /* Учитываем padding и border в размерах */
-  font-family: 'Poppins', sans-serif !important; /* Задаем шрифт */
-}
+
 
 /* Задняя сторона кнопки войти или зарегистрироваться */
 .sign:hover {
-  background: #cad0db; /* Цвет фона при наведении */
-  border: 2px solid #688EBD; /* Граница */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Тень */
+  background-color: #688EBD; /* Цвет фона при наведении */
+  color: white; /* Цвет текста при наведении */
 }
 
 /* Окно, которое открывается после нажатия на кнопку войти или зарегистрироваться */
@@ -229,17 +254,22 @@ header > .header-contaner {
 
 /* Регистрация */
 .registr {
-  position: relative; /* Относительное позиционирование */
-  width: 98%; /* Ширина */
-  height: 30px; /* Высота */
-  background: #aed0f5; /* Цвет фона */
-  box-shadow: 0 0 10px #FFFFE0; /* Тень */
+  margin-top: 10px; /* Отступ сверху */
+width: 350px;
+  text-decoration: none; /* Убираем подчеркивание */
   font-size: 16px; /* Размер шрифта */
-  font-weight: 500; /* Жирность шрифта */
-  cursor: pointer; /* Курсор в виде указателя */
-  border-radius: 30px; /* Закругление углов */
-  border: none; /* Убираем границу */
-  outline: none; /* Убираем обводку */
+  color: #688EBD; /* Цвет текста */
+  background-color: #f0f8ff; /* Светлый цвет фона */
+  padding: 12px 20px; /* Увеличенные отступы для кнопок */
+  border-radius: 30px; /* Закругленные углы */
+  border: none; /* Убираем рамку */
+  cursor: pointer; /* Курсор в виде руки */
+  transition: background-color 0.3s, color 0.3s; /* Плавные переходы */
+}
+
+.registr :hover{
+  background-color: #688EBD; /* Цвет фона при наведении */
+  color: white; /* Цвет текста при наведении */
 }
 .close {
   position: absolute; /* Абсолютное позиционирование */
