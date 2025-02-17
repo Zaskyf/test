@@ -36,10 +36,6 @@
             <div class="account-icon" onclick="toggleAccount()">
                 <i class="fas fa-user"></i>
             </div>
-                 <!-- Кнопка для переключения темы -->
-            <div class="theme-switcher" onclick="toggleTheme()">
-                <i class="fas fa-moon"></i> <!-- Иконка для темной темы -->
-            </div>  
  </div>
  </div>
         </header>
@@ -178,7 +174,10 @@
     </div>
 <!--КОНЕЦ РЕГИСТРАЦИИ-->
       
-    
+     <!-- Кнопка для переключения темы -->
+            <div class="theme-switcher" onclick="toggleTheme()">
+                <i class="fas fa-moon"></i> <!-- Иконка для темной темы -->
+            </div>
     <!-- НАЧАЛО КАРУСЕЛИ -->
 
     <div class="carousel">
@@ -195,36 +194,8 @@
         </div>
     </div>
  <!-- КОНЕЦ КАРУСЕЛИ-->
-
-
-<!--НАЧАЛО ИКНОК ССЫЛОК НА ГЛАВНОЙ СТРАНИЦЕ-->
-<section class="boxicon">
- <a  class="bcontainer" href="category.html" style=" text-decoration: none;" >  <img class="icones" src="https://cdn-icons-png.flaticon.com/128/602/602287.png" alt="Ассортимент"> <p>Каталог</p>  </a>
-      <a   class="bcontainer" style="text-decoration: none;" href="Dostavka.html"><img class="icones" src="https://cdn-icons-png.flaticon.com/128/602/602287.png" alt="Доставка">  <p>Доставка</p> </a> 
-      <a   class="bcontainer" style="text-decoration: none;" href=""><img class="icones" src="https://cdn-icons-png.flaticon.com/128/602/602287.png" alt="Гарантии">  <p>Гарантии</p> </a> 
-      <a   class="bcontainer" style="text-decoration: none;" href=""><img class="icones" src="https://cdn-icons-png.flaticon.com/128/602/602287.png" alt="Распродажа">  <p >Распродажа</p> </a> 
-</section>
- <!--КОНЕЦ ИКНОК ССЫЛОК НА ГЛАВНОЙ СТРАНИЦЕ-->
-
- <button class="tools-button">
-    <span class="icon">🔧</span>
-    <span class="text">Инструменты</span>
-</button>
-
-
- <!-- Слайдер с товарами-->
-     <section class="swiper">
-        <h6 style =" font-size:40px; color:black; margin-bottom: 20px;"> Распродажа</h6>
-   <div class="swiper-wrapper" id="swiper-wrapper">
-       </div>
-      <div class="swiper-button-prev prev"></div>
-       <div class="swiper-button-next next"></div>
-        </section>
-
-  
-        <script>
-
-          // Функция для переключения темы
+<script>
+// Функция для переключения темы
 function toggleTheme() {
     const body = document.body;
     const themeSwitcher = document.querySelector('.theme-switcher i');
@@ -263,7 +234,34 @@ function loadTheme() {
 
 // Загрузка темы при загрузке страницы
 window.onload = loadTheme;
-    </script>
+</script>
+
+<!--НАЧАЛО ИКНОК ССЫЛОК НА ГЛАВНОЙ СТРАНИЦЕ-->
+<section class="boxicon">
+ <a  class="bcontainer" href="category.html" style=" text-decoration: none;" >  <img class="icones" src="https://cdn-icons-png.flaticon.com/128/602/602287.png" alt="Ассортимент"> <p>Каталог</p>  </a>
+      <a   class="bcontainer" style="text-decoration: none;" href="Dostavka.html"><img class="icones" src="https://cdn-icons-png.flaticon.com/128/602/602287.png" alt="Доставка">  <p>Доставка</p> </a> 
+      <a   class="bcontainer" style="text-decoration: none;" href=""><img class="icones" src="https://cdn-icons-png.flaticon.com/128/602/602287.png" alt="Гарантии">  <p>Гарантии</p> </a> 
+      <a   class="bcontainer" style="text-decoration: none;" href=""><img class="icones" src="https://cdn-icons-png.flaticon.com/128/602/602287.png" alt="Распродажа">  <p >Распродажа</p> </a> 
+</section>
+ <!--КОНЕЦ ИКНОК ССЫЛОК НА ГЛАВНОЙ СТРАНИЦЕ-->
+
+ <button class="tools-button">
+    <span class="icon">🔧</span>
+    <span class="text">Инструменты</span>
+</button>
+
+
+ <!-- Слайдер с товарами-->
+     <section class="swiper">
+        <h6 style =" font-size:40px; color:black; margin-bottom: 20px;"> Распродажа</h6>
+   <div class="swiper-wrapper" id="swiper-wrapper">
+       </div>
+      <div class="swiper-button-prev prev"></div>
+       <div class="swiper-button-next next"></div>
+        </section>
+
+  
+        <script>
 
         let currentIndex = 0;
         const items = document.querySelectorAll('.itm');
@@ -727,5 +725,12 @@ signUpBtnLink.addEventListener('click', () => {
 signInBtnLink.addEventListener('click', () => {
     modal.classList.toggle('active');
 });
+
+
+
+
+
+
+
 
 </script>
