@@ -123,7 +123,30 @@ header > .header-contaner {
 
 
 /*НАЧАЛО КОРЗИНЫ   */
+.cartbu {
+  margin-top: 10px; /* Отступ сверху */
 
+  text-decoration: none; /* Убираем подчеркивание */
+  font-size: 16px; /* Размер шрифта */
+  color: #688EBD; /* Цвет текста */
+  background-color: #f0f8ff; /* Светлый цвет фона */
+  padding: 12px 20px; /* Увеличенные отступы для кнопок */
+  border-radius: 5px; /* Закругленные углы */
+  border: none; /* Убираем рамку */
+  cursor: pointer; /* Курсор в виде руки */
+  transition: background-color 0.3s, color 0.3s; /* Плавные переходы */
+}
+
+.cartbu:hover {
+  background-color: #688EBD; /* Цвет фона при наведении */
+  color: white; /* Цвет текста при наведении */
+}
+
+/* Эффект при наведении для кнопки */
+button.cartbu:hover {
+  background-color: #688EBD; /* Цвет фона при наведении на кнопку */
+  color: white; /* Цвет текста при наведении на кнопку */
+}
  .cart {
   position: fixed;
   top: 60px;
@@ -196,18 +219,18 @@ header > .header-contaner {
           color:black;
       }
       .account {
-  position: fixed;
-  top: 60px;
-  right: 10px;
-  margin-left: 30px;
-  background-color: #98b9fa;
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  display: none;
-  z-index: 2001;
-  width: 350px;
-  height: 120px;
+        position: fixed; /* Фиксированное позиционирование */
+        top: 60px; /* Отступ сверху */
+        right: 20px; /* Отступ справа */
+        box-shadow: 3px 2px 5px rgba(0.2, 0.2, 0.2, 0.2); /* Тень */
+        background-color: #fff; /* Цвет фона */
+        padding: 10px; /* Внутренние отступы */
+        width: auto ; /* Ширина */
+        display: inline-flex; /* Используем inline-flex */
+        border-radius: 5px; /* Закругление углов */
+        border: 2px solid #688EBD; /* Граница */
+        display: none; /* Скрываем по умолчанию */
+        z-index: 9000; /* Уровень слоя */
      }
       .account h2 {
           margin-top: 10px;
@@ -215,15 +238,17 @@ header > .header-contaner {
       
       /*Кнопка войти или зарегистриваться*/
    .sign{
-  margin-top: 5px;
-  background-color: #5875ad;
-  padding :0;
-  border: none;
-  border-radius: 5px; cursor: pointer;
-  margin-left: 10px;
-  width: 300px;
-   height: 30px;
-   box-shadow: 0 0 10px #FFFFE0;
+    margin-top: 10px; /* Отступ сверху */
+
+    text-decoration: none; /* Убираем подчеркивание */
+    font-size: 16px; /* Размер шрифта */
+    color: #688EBD; /* Цвет текста */
+    background-color: #f0f8ff; /* Светлый цвет фона */
+    padding: 12px 20px; /* Увеличенные отступы для кнопок */
+    border-radius: 5px; /* Закругленные углы */
+    border: none; /* Убираем рамку */
+    cursor: pointer; /* Курсор в виде руки */
+    transition: background-color 0.3s, color 0.3s; /* Плавные переходы */
       }
    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
   * {
@@ -234,9 +259,8 @@ header > .header-contaner {
   }
 /*задняя сторона кнопки войти или зарегистрироваться*/
   .sign:hover{
-  background: #cad0db;
-    border: 2px solid #688EBD;
-   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2) ;
+    background-color: #688EBD; /* Цвет фона при наведении */
+    color: white; /* Цвет текста при наведении */
 
   }
 

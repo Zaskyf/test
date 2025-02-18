@@ -43,7 +43,7 @@
         <div class="cart" id="cart">
             <h2>Корзина</h2>
             <div id="cart-items"></div>
-            <a href="cart.html" class= "cartbu">Перейти в корзину</a>
+            <a href="cart.html" class= "cartbu">Перейти в корзину</a>  <!--Почему ссылка не работает -->
             
             <button class= "cartbu" onclick="clearCart()">Очистить корзину</button>
         </div>
@@ -247,7 +247,6 @@ window.onload = loadTheme;
 
 
 
-
  <!-- Слайдер с товарами-->
      <section class="swiper">
         <h6 style =" font-size:40px; color:black; margin-bottom: 20px;"> Распродажа</h6>
@@ -256,279 +255,256 @@ window.onload = loadTheme;
       <div class="swiper-button-prev prev"></div>
        <div class="swiper-button-next next"></div>
         </section>
-        <footer>
-            <hr>
-            <div class="containr"><div class="subscribe"></div><div class="footer_navigation">
-                <div class="footer_menu">
-            <div class="item"><div class="caption">Покупателям</div>
-            <ul class="menu_list">
-                <a href="/html/category.html">Каталог</a>
-                <a href="/about/arktika-servis/">Расрочка/Кредиты</a>
-                <a href="/about/bonus-program/">Бонусная программа</a>
-                <a href="/about/podarochnye-karty/">Подарочные карты</a>
-            </ul></div>
-            <div class="item"> 
-                <div class="caption">Информация</div>
-            <ul class="menu_list">
-                <a href="/information/oplata/">Как оплатить</a>
-                <a href="/information/feedback/">Обратная связь</a>
-                <a href="/information/jobs/">Гарантия качества </a>
-               <a href="contacts.html">Контакты</a>
-            </ul></div>   
-    
-                 <div class="item"><div class="caption">Наши услуги</div>
-                <ul class="menu_list"><a href="dostavkatext.html">Доставка</a>
-                </ul>
-            </div>
-            </div>
-                 <div class="contact_info"><div class="phone"><a href="tel:8 (918) 827-20-12">8 (918) 827-20-12</a> (с 09:30 до 19:00) </div>
-                <div class="address">Адрес магазина:<br>ул. Астана Кесаева, 33"а, Владикавказ <br> Респ. Северная Осетия — Алания</div> 
-                <div class="copyright">© 1996—2024, ТК «Декор центр»  </div>
-            </div></div></div>
-           
-        </footer>
-    
-        </body>
-    
-    </html>
+
   
         <script>
 
-        
-            let currentIndex = 0;
-            const items = document.querySelectorAll('.itm');
-            const totalItems = items.length;
-            function showItem(index) {
-                const itemsContainer = document.querySelector('.itms');
-                itemsContainer.style.transform = `translateX(-${index * 100}%)`; 
-            }
-            function nextItem() {
-                currentIndex = (currentIndex + 1) % totalItems;
-                showItem(currentIndex);
-            }
-            function prevItem() {
-                currentIndex = (currentIndex - 1 + totalItems) % totalItems;
-                showItem(currentIndex);
-            }
-            let autoSlide = setInterval(nextItem, 3000); // every 3 seconds
-            document.querySelector('.carousel').addEventListener('mouseenter', () => {
-                clearInterval(autoSlide); // Stop 
-            });
-            document.querySelector('.carousel').addEventListener('mouseleave', () => {
-                autoSlide = setInterval(nextItem, 3000);
-            });
-            document.querySelector('.bunext').addEventListener('click', nextItem);
-            document.querySelector('.buprev').addEventListener('click', prevItem);
-    const products = [
-        { image: "https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/2.webp", title: "Обои 2", price: 999, oldPrice: 1900 },
-            { image: "https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/1.webp", title: "Обои 1", price: 1099, oldPrice: 2000 },
-        { image: "https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/2.webp", title: "Обои 2", price: 999, oldPrice: 1900 },
-            { image: "https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/1.webp", title: "Обои 1", price: 1099, oldPrice: 2000 },
-        { image: "https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/2.webp", title: "Обои 2", price: 999, oldPrice: 1900 },
-            { image: "https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/1.webp", title: "Обои 1", price: 1099, oldPrice: 2000 },
-        { image: "https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/2.webp", title: "Обои 2", price: 999, oldPrice: 1900 },
-            { image: "https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/1.webp", title: "Обои 1", price: 1099, oldPrice: 2000 },
-        { image: "https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/2.webp", title: "Обои 2", price: 999, oldPrice: 1900 },
-            { image: "https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/1.webp", title: "Обои 1", price: 1099, oldPrice: 2000 },
-        { image: "https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/2.webp", title: "Обои 2", price: 999, oldPrice: 1900 },
-            { image: "https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/1.webp", title: "Обои 1", price: 1099, oldPrice: 2000 },
-        { image: "https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/2.webp", title: "Обои 2", price: 999, oldPrice: 1900 },
-            { image: "https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/1.webp", title: "Обои 1", price: 1099, oldPrice: 2000 },
-        { image: "https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/2.webp", title: "Обои 2", price: 999, oldPrice: 1900 },
-            { image: "https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/1.webp", title: "Обои 1", price: 1099, oldPrice: 2000 },
-        { image: "https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/2.webp", title: "Обои 2", price: 999, oldPrice: 1900 },
-            { image: "https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/1.webp", title: "Обои 1", price: 1099, oldPrice: 2000 },
-        { image: "https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/2.webp", title: "Обои 2", price: 999, oldPrice: 1900 },
-            { image: "https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/1.webp", title: "Обои 1", price: 1099, oldPrice: 2000 },
-        { image: "https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/2.webp", title: "Обои 2", price: 999, oldPrice: 1900 },
-        
-    ];
-    
-    
-    const swiperWrapper = document.getElementById('swiper-wrapper');
-    
-    function createSwiperSlide(product, index) {
-        const slide = document.createElement('div');
-        slide.className = 'swiper-slide';
-    
-        const img = document.createElement('img');
-        img.src = product.image;
-        img.alt = product.title;
-    
-        const title = document.createElement('p');
-        title.className = 'product-title';
-        title.textContent = product.title;
-    
-        const figcaption = document.createElement('figcaption');
-        figcaption.className = 'box';
-    
-        const priceContainer = document.createElement('div');
-        priceContainer.className = 'price-container';
-    
-        const price = document.createElement('p');
-        price.className = 'prce';
-        price.textContent = 'Цена за штуку';
-    
-        const money = document.createElement('p');
-        money.className = 'money';
-    
-        const span = document.createElement('span');
-        span.textContent = product.price + ' ₽';
-    
-        const del = document.createElement('del');
-        del.textContent = product.oldPrice + ' ₽';
-    
-        money.appendChild(span);
-        money.appendChild(del);
-        priceContainer.appendChild(price);
-        priceContainer.appendChild(money);
-    
-        const buttons = document.createElement('div');
-        buttons.className = 'Buttons';
-        buttons.innerHTML = `
-            <button id='addToCart${index + 1}' class='btn'>В корзину</button>
-            <button class='subtract' onclick='changeNumber(-1, "number${index + 1}")'>–</button>
-            <input type='text' class='js-number' id='number${index + 1}' value='1' readonly>
-            <button class='add' onclick='changeNumber(1, "number${index + 1}")'>+</button>
-          
-        `;
-    
-    
-        figcaption.appendChild(priceContainer);
-        figcaption.appendChild(buttons);
-        slide.appendChild(img);
-        slide.appendChild(title);
-        slide.appendChild(figcaption);
-        swiperWrapper.appendChild(slide);
-    
-        return slide;
-    }
-    
-    function changeNumber(step, inputId) {
-        const input = document.getElementById(inputId);
-        let currentNumber = parseInt(input.value);
-        currentNumber += step;
-    
-        if (currentNumber < 1) {
-            currentNumber = 1;
+        let currentIndex = 0;
+        const items = document.querySelectorAll('.itm');
+        const totalItems = items.length;
+        function showItem(index) {
+            const itemsContainer = document.querySelector('.itms');
+            itemsContainer.style.transform = `translateX(-${index * 100}%)`; 
         }
-        input.value = currentNumber;
-    }
-    
-    products.forEach((product, index) => {
-        createSwiperSlide(product, index);
-    
-    
-    
-        
-    });
-       // <a href='productcard.html?id=${product.id}' class='more-details'>Подробнее</a>  New Button  
-    const swiper = new Swiper(".swiper", {
-        navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-        },
-        slidesPerView: 6,
-        spaceBetween: 15,
-    });
-    
-    document.querySelectorAll(".btn").forEach(button => {
-        button.addEventListener("click", function () {
-            const isInCart = this.classList.contains("clicked");
-            if (!isInCart) {
-                addToCart(this);
-                this.textContent = "В корзине";
-                this.classList.add("clicked");
-            } else {
-                this.textContent = "В корзину";
-                this.classList.remove("clicked");
-                removeFromCart(this);
-            }
+        function nextItem() {
+            currentIndex = (currentIndex + 1) % totalItems;
+            showItem(currentIndex);
+        }
+        function prevItem() {
+            currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+            showItem(currentIndex);
+        }
+        let autoSlide = setInterval(nextItem, 3000); // every 3 seconds
+        document.querySelector('.carousel').addEventListener('mouseenter', () => {
+            clearInterval(autoSlide); // Stop 
         });
+        document.querySelector('.carousel').addEventListener('mouseleave', () => {
+            autoSlide = setInterval(nextItem, 3000);
+        });
+        document.querySelector('.bunext').addEventListener('click', nextItem);
+        document.querySelector('.buprev').addEventListener('click', prevItem);
+const products = [
+    { image: "https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/2.webp", title: "Обои 2", price: 999, oldPrice: 1900 },
+        { image: "https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/1.webp", title: "Обои 1", price: 1099, oldPrice: 2000 },
+    { image: "https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/2.webp", title: "Обои 2", price: 999, oldPrice: 1900 },
+        { image: "https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/1.webp", title: "Обои 1", price: 1099, oldPrice: 2000 },
+    { image: "https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/2.webp", title: "Обои 2", price: 999, oldPrice: 1900 },
+        { image: "https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/1.webp", title: "Обои 1", price: 1099, oldPrice: 2000 },
+    { image: "https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/2.webp", title: "Обои 2", price: 999, oldPrice: 1900 },
+        { image: "https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/1.webp", title: "Обои 1", price: 1099, oldPrice: 2000 },
+    { image: "https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/2.webp", title: "Обои 2", price: 999, oldPrice: 1900 },
+        { image: "https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/1.webp", title: "Обои 1", price: 1099, oldPrice: 2000 },
+    { image: "https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/2.webp", title: "Обои 2", price: 999, oldPrice: 1900 },
+        { image: "https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/1.webp", title: "Обои 1", price: 1099, oldPrice: 2000 },
+    { image: "https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/2.webp", title: "Обои 2", price: 999, oldPrice: 1900 },
+        { image: "https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/1.webp", title: "Обои 1", price: 1099, oldPrice: 2000 },
+    { image: "https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/2.webp", title: "Обои 2", price: 999, oldPrice: 1900 },
+        { image: "https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/1.webp", title: "Обои 1", price: 1099, oldPrice: 2000 },
+    { image: "https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/2.webp", title: "Обои 2", price: 999, oldPrice: 1900 },
+        { image: "https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/1.webp", title: "Обои 1", price: 1099, oldPrice: 2000 },
+    { image: "https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/2.webp", title: "Обои 2", price: 999, oldPrice: 1900 },
+        { image: "https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/1.webp", title: "Обои 1", price: 1099, oldPrice: 2000 },
+    { image: "https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/2.webp", title: "Обои 2", price: 999, oldPrice: 1900 },
     
+];
+const swiperWrapper = document.getElementById('swiper-wrapper');
+function createSwiperSlide(product, index) {
+    const slide = document.createElement('div');
+    slide.className = 'swiper-slide';
+    const img = document.createElement('img');
+    img.src = product.image;
+    img.alt = product.title;
+    const title = document.createElement('p');
+    title.className = 'product-title';
+    title.textContent = product.title;
+    const figcaption = document.createElement('figcaption');
+    figcaption.className = 'box';
+    const priceContainer = document.createElement('div');
+    priceContainer.className = 'price-container';
+    const price = document.createElement('p');
+    price.className = 'prce';
+    price.textContent = 'Цена за штуку';
+    const money = document.createElement('p');
+    money.className = 'money';
+    const span = document.createElement('span');
+    span.textContent = product.price + ' ₽';
+    const del = document.createElement('del');
+    del.textContent = product.oldPrice + ' ₽';
+    money.appendChild(span);
+    money.appendChild(del);
+    priceContainer.appendChild(price);
+    priceContainer.appendChild(money);
+    const buttons = document.createElement('div');
+    buttons.className = 'Buttons';
+    buttons.innerHTML = `
+        <button id='addToCart${index + 1}' class='btn'>В корзину</button>
+        <button class='subtract' onclick='changeNumber(-1, "number${index + 1}")'>–</button>
+        <input type='text' class='js-number' id='number${index + 1}' value='1' readonly>
+        <button class='add' onclick='changeNumber(1, "number${index + 1}")'>+</button>
+   
+    `;
+    figcaption.appendChild(priceContainer);
+    figcaption.appendChild(buttons);
+    slide.appendChild(img);
+    slide.appendChild(title);
+    slide.appendChild(figcaption);
+    swiperWrapper.appendChild(slide);
+    return slide;
+}
+function changeNumber(step, inputId) {
+    const input = document.getElementById(inputId);
+    let currentNumber = parseInt(input.value);
+    currentNumber += step;
+    if (currentNumber < 1) {
+        currentNumber = 1;
+    }
+    input.value = currentNumber;
+}
+products.forEach((product, index) => {
+    createSwiperSlide(product, index);
     
-        
-    });
-    
-    function addToCart(button) {
-        const productTitle = button.closest('.swiper-slide').querySelector('.product-title').textContent;
-        const productPrice = button.closest('.swiper-slide').querySelector('.money span').textContent;
-        const productQuantity = button.closest('.swiper-slide').querySelector('.js-number').value;
-    
-        const existingItem = Array.from(document.querySelectorAll('.cart-item'))
-            .find(item => item.querySelector('p').textContent.includes(productTitle));
-    
-        if (existingItem) {
-            const quantityInput = existingItem.querySelector('.js-number');
-            quantityInput.value = parseInt(quantityInput.value) + parseInt(productQuantity);
+});
+const swiper = new Swiper(".swiper", {
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+    },
+    slidesPerView: 6,
+    spaceBetween: 15,
+});
+document.querySelectorAll(".btn").forEach(button => {
+    button.addEventListener("click", function () {
+        const isInCart = this.classList.contains("clicked");
+        if (!isInCart) {
+            addToCart(this);
+            this.textContent = "В корзине";
+            this.classList.add("clicked");
         } else {
-            const cartItem = document.createElement('div');
-            cartItem.classList.add('cart-item');
-            cartItem.innerHTML = `
-                <p>${productTitle} - ${productPrice}</p>
-                <button class='sub' style='margin-right:80px;' onclick='changeCartItemNumber(-1, this)'>–</button>
-                <input type='text' class='js-number' value='${productQuantity}' readonly>
-                <button class='ad' style='margin-right:30px;' onclick='changeCartItemNumber(1, this)'>+</button>
-            `;
-            document.getElementById('cart-items').appendChild(cartItem);
+            this.textContent = "В корзину";
+            this.classList.remove("clicked");
+            removeFromCart(this);
         }
+    });
+  
+});
+
+function addToCart(button) {
+    const productTitle = button.closest('.swiper-slide').querySelector('.product-title').textContent;
+    const productPrice = button.closest('.swiper-slide').querySelector('.money span').textContent;
+    const productQuantity = button.closest('.swiper-slide').querySelector('.js-number').value;
+
+    const existingItem = Array.from(document.querySelectorAll('.cart-item'))
+        .find(item => item.querySelector('p').textContent.includes(productTitle));
+
+    if (existingItem) {
+        const quantityInput = existingItem.querySelector('.js-number');
+        quantityInput.value = parseInt(quantityInput.value) + parseInt(productQuantity);
+    } else {
+        const cartItem = document.createElement('div');
+        cartItem.classList.add('cart-item');
+        cartItem.innerHTML = `
+            <p>${productTitle} - ${productPrice}</p>
+            <button class='sub' style='margin-right:80px;' onclick='changeCartItemNumber(-1, this)'>–</button>
+            <input type='text' class='js-number' value='${productQuantity}' readonly>
+            <button class='ad' style='margin-right:30px;' onclick='changeCartItemNumber(1, this)'>+</button>
+        `;
+        document.getElementById('cart-items').appendChild(cartItem);
     }
-    
-    function removeFromCart(button) {
-     
+}
+
+function removeFromCart(button) {
+ 
+}
+
+function toggleCart() {
+    const cart = document.getElementById('cart');
+    cart.style.display = cart.style.display === 'none' ? 'block' : 'none';
+}
+
+function deleteSelectedItems() {
+    const checkboxes = document.querySelectorAll('.item-checkbox:checked');
+    checkboxes.forEach(checkbox => {
+        checkbox.closest('.cart-item').remove();
+    });
+}
+
+function clearCart() {
+    document.getElementById('cart-items').innerHTML = '';
+}
+
+function changeCartItemNumber(step, button) {
+    const input = button.parentElement.querySelector('.js-number');
+    let value = parseInt(input.value);
+    value += step;
+
+    if (value < 1) {
+        value = 1;
     }
-    
-    function toggleCart() {
-        const cart = document.getElementById('cart');
-        cart.style.display = cart.style.display === 'none' ? 'block' : 'none';
-    }
-    
-    function deleteSelectedItems() {
-        const checkboxes = document.querySelectorAll('.item-checkbox:checked');
-        checkboxes.forEach(checkbox => {
-            checkbox.closest('.cart-item').remove();
-        });
-    }
-    
-    function clearCart() {
-        document.getElementById('cart-items').innerHTML = '';
-    }
-    
-    function changeCartItemNumber(step, button) {
-        const input = button.parentElement.querySelector('.js-number');
-        let value = parseInt(input.value);
-        value += step;
-    
-        if (value < 1) {
-            value = 1;
-        }
-        input.value = value;
-    }
-    
-    let currentIndex1 = 0;
-    const cards = document.querySelectorAll('.product-card');
-    
-    function showCards(startIndex) {
-        const endIndex = startIndex + 5;
-        cards.forEach((card, i) => {
-            card.style.display = (i >= startIndex && i < endIndex) ? 'block' : 'none';
-        });
-    }
-    
+    input.value = value;
+}
+
+let currentIndex1 = 0;
+const cards = document.querySelectorAll('.product-card');
+
+function showCards(startIndex) {
+    const endIndex = startIndex + 5;
+    cards.forEach((card, i) => {
+        card.style.display = (i >= startIndex && i < endIndex) ? 'block' : 'none';
+    });
+}
+
+showCards(currentIndex1);
+
+document.getElementById('nextBtn').addEventListener('click', () => {
+    if (currentIndex1 + 5 >= cards.length) return;
+    currentIndex1 += 5;
     showCards(currentIndex1);
-    
-    document.getElementById('nextBtn').addEventListener('click', () => {
-        if (currentIndex1 + 5 >= cards.length) return;
-        currentIndex1 += 5;
-        showCards(currentIndex1);
-    });
-    
-    document.getElementById('prevBtn').addEventListener('click', () => {
-        if (currentIndex1 === 0) return;
-        currentIndex1 -= 5;
-        showCards(currentIndex1);
-    });
-        
+});
+
+document.getElementById('prevBtn').addEventListener('click', () => {
+    if (currentIndex1 === 0) return;
+    currentIndex1 -= 5;
+    showCards(currentIndex1);
+});
+    </script>
+  
+    <footer>
+        <hr>
+        <div class="containr"><div class="subscribe"></div><div class="footer_navigation">
+            <div class="footer_menu">
+        <div class="item"><div class="caption">Покупателям</div>
+        <ul class="menu_list">
+            <a href="/html/category.html">Каталог</a>
+            <a href="/about/arktika-servis/">Расрочка/Кредиты</a>
+            <a href="/about/bonus-program/">Бонусная программа</a>
+            <a href="/about/podarochnye-karty/">Подарочные карты</a>
+        </ul></div>
+        <div class="item"> 
+            <div class="caption">Информация</div>
+        <ul class="menu_list">
+            <a href="/information/oplata/">Как оплатить</a>
+            <a href="/information/feedback/">Обратная связь</a>
+            <a href="/information/jobs/">Гарантия качества </a>
+           <a href="contacts.html">Контакты</a>
+        </ul></div>   
+
+             <div class="item"><div class="caption">Наши услуги</div>
+            <ul class="menu_list"><a href="dostavkatext.html">Доставка</a>
+            </ul>
+        </div>
+        </div>
+             <div class="contact_info"><div class="phone"><a href="tel:8 (918) 827-20-12">8 (918) 827-20-12</a> (с 09:30 до 19:00) </div>
+            <div class="address">Адрес магазина:<br>ул. Астана Кесаева, 33"а, Владикавказ <br> Респ. Северная Осетия — Алания</div> 
+            <div class="copyright">© 1996—2024, ТК «Декор центр»  </div>
+        </div></div></div>
+       
+    </footer>
+
+    </body>
+
+</html>
+<script>
+ 
 const catalog = document.getElementById('catalog');
 const menuBurger = document.getElementById('menuBurger');
 const popup = document.getElementById('popup');
