@@ -40,6 +40,17 @@ body.dark-theme {
 }
  
 
+.dark-theme .boxicon{
+  background-color: #222222;
+
+
+}
+
+
+
+.dark-theme .cart-icon{
+  color: #1362ca;
+}
 
 /* Все тело */
 body {
