@@ -46,11 +46,29 @@
  
  }
  
- 
+
  
  .dark-theme .cart-icon{
    color: #1362ca;
  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /*Все тело*/
@@ -2549,14 +2567,14 @@ padding: 20px;
 
 .primary-btn {
 margin-top:10px;
-background-color: #e5e5e5; /* Цвет для кнопки поддержки */
+background-color: #6e1212; /* Цвет для кнопки поддержки */
 
 color: black;
 }
 
 .primary-btn:hover {
 background-color: #e0e0e0; 
-transform: translateY(-2px); /* Поднимаем кнопку при наведении */
+
 }
 
 /* Анимация для страницы */
@@ -2900,6 +2918,46 @@ h2 {
     padding: 15px; 
   }
 }
+
+
+
+.contact-form {
+  background-color: #fff;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.contact-form {
+  display: none; /* Скрываем форму по умолчанию */
+}
+.contact-form.visible {
+  display: block; /* Показываем форму при добавлении класса */
+}
+.contact-form label {
+  display: block;
+  margin-bottom: 5px;
+}
+.contact-form input, .contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.contact-form button {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.contact-form button:hover {
+  background-color: #555;
+}
+
 
 
 /* КОНЕЦ  СТРАНИЦЫ ЛИЧНОЙ КАБИНЕТ  */

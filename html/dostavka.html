@@ -191,20 +191,11 @@
 
 
 
-    <div class="navbar" >
-        <ul class="nav-links" >
-          <li style=" background-color: #e5e5e5; "> <a  style=" color: black;  font-size: 12px;" href="/html/Kabinet.html">Личный кабинет </a></li>
-            <li style=" background-color: #e5e5e5; "><a style=" color: black;  font-size: 12px;" href="/html/Dostavka.html">Доставки</a></li>
-            <li  style=" background-color: #e5e5e5; "><a  style=" color: black; font-size: 12px; " href="#grades">Покупки</a></li>
-            <li style=" background-color: #e5e5e5; " ><a style=" color: black; font-size: 12px; "  href="#communication">Избранное</a></li>
-            <li style=" background-color: #e5e5e5; " ><a style=" color: black; font-size: 12px;"  href="#communication">Отзывы </a></li>
-            <li  style=" background-color: #e5e5e5; " ><a style=" color: black; font-size: 12px; "  href="#support">Поддержка</a></li>
-        </ul>
-    </div>
+   
 
     <main>
         <section id="user" class="content-section-user">
-            <h2>Пользователь</h2>
+            <h2>Доставка</h2>
             <div class="User-profil">
                 <div class="profile-icon">
                 
@@ -245,58 +236,27 @@
     </script> </div> </section>
 
 
-<style>
 
-.card-content{
-background-color: #688EBD; 
-
-}
-.navbar {
-  
-  text-decoration: none;
-  padding: 10px 0;
-border-radius: 9px;
-}
-
-
-
-.nav-links {
-  list-style: none;
-  display: flex;
-  justify-content: left;
-}
-
-.nav-links li {
-  margin: 0 15px;
-}
-
-.nav-links a {
-  text-decoration: none;
-  color: white;
-  font-weight: 500;
-  transition: color 0.3s;
-}
-
-.nav-links a:hover {
-  color: #5a7cb3; 
-}
-
-
-
-            
-</style>
-
+<main>
     <section id="support" class="content-section">
-            <div class="support-content">
-    <h6 style="font-size: 14px; color: grey;">Техническая поддержка</h6>
-                  
-                    <button class="primary-btn">Связаться с поддержкой</button>
-            </div>
-        </section>
-
-
-    </main>
-    
+        <div class="support-content">
+            <h6 style="font-size: 14px; color: grey;">Техническая поддержка</h6>
+            <button class="primary-btn" id="supportButton">Связаться с поддержкой</button>
+        </div>
+    </section>
+    <section class="contact-form" id="contactFormSection">
+        <h2>Свяжитесь с нами</h2>
+        <form id="contactForm">
+            <label for="name">Имя:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="message">Сообщение:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+            <button type="submit">Отправить</button>
+        </form>
+    </section>
+</main>
 
     
     <footer>
@@ -335,6 +295,39 @@ border-radius: 9px;
 </body>
 </html>
 <script>
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    const supportButton = document.getElementById('supportButton');
+    const contactFormSection = document.getElementById('contactFormSection');
+
+    // Открытие формы при нажатии на кнопку "Связаться с поддержкой"
+    supportButton.addEventListener('click', function () {
+        // Показываем секцию с формой
+        contactFormSection.classList.add('visible');
+        // Плавно прокручиваем страницу к форме
+        contactFormSection.scrollIntoView({ behavior: 'smooth' });
+    });
+
+    // Обработка отправки формы
+    document.getElementById('contactForm').addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const message = document.getElementById('message').value;
+
+        if (name && email && message) {
+            alert('Спасибо за ваше сообщение! Мы свяжемся с вами в ближайшее время.');
+            document.getElementById('contactForm').reset(); // Очистка формы
+
+            // Скрываем секцию с формой
+            contactFormSection.classList.remove('visible');
+        } else {
+            alert('Пожалуйста, заполните все поля формы.');
+        }
+    });
+});
  
   const catalog = document.getElementById('catalog');
   const menuBurger = document.getElementById('menuBurger');
