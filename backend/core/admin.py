@@ -53,7 +53,7 @@ class OrderAdmin(admin.ModelAdmin):
 
     @admin.display(description='Пункты заказа')
     def get_order_points(self, obj):
-        return [order_point.product.name for order_point in obj.order_points.all()]
+        return [order_point.good.name for order_point in obj.order_points.all()]
 
 
 class AboutUSAdmin(admin.ModelAdmin):

@@ -95,3 +95,45 @@ class ReviewSerializer(serializers.ModelSerializer):
     class Meta:
         model = Review
         fields = ('id', 'user', 'rating', 'good', 'text', 'created')
+        extra_kwargs = {'user': {'read_only': True}}
+
+    def validate(self, attrs):
+        rating = attrs.get('rating', 5)
+        if 0 <= rating <= 5:
+            return attrs
+        raise serializers.ValidationError("rating validate error")
+
+    def create(self, validated_data):
+        return Review.objects.create(**validated_data, user=self.context['request'].user)
+
+
+    def update(self, instance, validated_data):
+        instance.rating = validated_data.get("rating", instance.rating)
+
+
+class OrderPointSerializer(serializers.ModelSerializer):
+    class Meta:
+        model  = OrderPoint
+        fields = ('id', 'good', 'quantity', 'price')
+        extra_kwargs = {'price': {'read_only': True}}
+
+class CreateOrderSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Order
+        fields = ('id',  'price', 'status', 'created')
+        extra_kwargs = {'price': {'read_only': True},
+                        'status': {'read_only': True},
+                        }
+
+    def create(self, validated_data):
+        user = self.context['request'].user
+        user_carts =  Cart.objects.filter(user=user)
+        order = Order.objects.create(user=user)
+        for cart in user_carts:
+            order.order_points.add(OrderPoint.objects.create(good=cart.good, quantity=cart.quantity))
+            cart.delete()
+        order.save()
+        return order
+
+

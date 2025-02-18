@@ -4,7 +4,7 @@ from rest_framework.generics import ListAPIView, RetrieveAPIView, CreateAPIView,
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from .models import *
-from .permissions import CartPermission
+from .permissions import UserAdminPermission
 from .serializers import *
 
 
@@ -63,7 +63,7 @@ class CartCreateView(CreateAPIView):
 class CartRetrieveUpdateDestroyView(RetrieveUpdateDestroyAPIView):
     queryset = Cart.objects.all()
     serializer_class = UpdateDeleteCartSerializer
-    permission_classes =  (IsAuthenticated, CartPermission)
+    permission_classes =  (IsAuthenticated, UserAdminPermission)
     lookup_field = 'id'
 
 class ReviewListView(ListAPIView):
@@ -72,3 +72,21 @@ class ReviewListView(ListAPIView):
 
     def get_queryset(self):
         return self.queryset.filter(good=self.kwargs['good_id'])
+
+
+class ReviewCreateView(CreateAPIView):
+    queryset = Review.objects.all()
+    serializer_class = ReviewSerializer
+    permission_classes = (IsAuthenticated,)
+
+
+class ReviewRetrieveUpdateDestroyView(RetrieveUpdateDestroyAPIView):
+    queryset = Review.objects.all()
+    serializer_class = ReviewSerializer
+    permission_classes = (IsAuthenticated, UserAdminPermission)
+    lookup_field = 'id'
+
+
+class OrderCreateView(CreateAPIView):
+    queryset = Order.objects.all()
+    serializer_class = CreateOrderSerializer
