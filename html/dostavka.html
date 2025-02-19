@@ -207,37 +207,7 @@
             Скидка
             <p style="font-size: 17px; font-weight: bold; color: black;">До 30%</p>
         </li>
- <script>
-        // Создаем модальное окно (если его еще нет)
-        const discountInfo = document.createElement('div');
-        discountInfo.classList.add('discount-info');
-        discountInfo.innerHTML = `
-            <div class="discount-info-content">
-                <h2>Информация о скидках</h2>
-                <p>Здесь будет подробная информация о скидках, например, какие товары участвуют в акции, условия получения скидки, срок действия скидки и т.д.</p>
-                <button class="close-discount-info">Понятно</button>
-            </div>
-        `;
-        document.body.appendChild(discountInfo);
-
-        document.querySelector('.discount-item').addEventListener('click', () => {
-            discountInfo.style.display = 'flex'; 
-        });
-
-        discountInfo.querySelector('.close-discount-info').addEventListener('click', () => {
-            discountInfo.style.display = 'none';
-        });
-
-        document.addEventListener('click', (event) => {
-            if (event.target === discountInfo) {
-                discountInfo.style.display = 'none';
-            }
-        });
-    </script> </div> </section>
-
-
-
-<main>
+ <main>
     <section id="support" class="content-section">
         <div class="support-content">
             <h6 style="font-size: 14px; color: grey;">Техническая поддержка</h6>
@@ -256,9 +226,9 @@
             <button type="submit">Отправить</button>
         </form>
     </section>
-</main>
+</main></div> </section>
 
-    
+
     <footer>
         <hr>
         <div class="containr"><div class="subscribe"></div><div class="footer_navigation">
@@ -295,7 +265,32 @@
 </body>
 </html>
 <script>
+         // Создаем модальное окно (если его еще нет)
+        const discountInfo = document.createElement('div');
+        discountInfo.classList.add('discount-info');
+        discountInfo.innerHTML = `
+            <div class="discount-info-content">
+                <h2>Информация о скидках</h2>
+                <p>Здесь будет подробная информация о скидках, например, какие товары участвуют в акции, условия получения скидки, срок действия скидки и т.д.</p>
+                <button class="close-discount-info">Понятно</button>
+            </div>
+        `;
+        document.body.appendChild(discountInfo);
 
+        document.querySelector('.discount-item').addEventListener('click', () => {
+            discountInfo.style.display = 'flex'; 
+        });
+
+        discountInfo.querySelector('.close-discount-info').addEventListener('click', () => {
+            discountInfo.style.display = 'none';
+        });
+
+        document.addEventListener('click', (event) => {
+            if (event.target === discountInfo) {
+                discountInfo.style.display = 'none';
+            }
+        });
+   
 
 document.addEventListener('DOMContentLoaded', function () {
     const supportButton = document.getElementById('supportButton');
