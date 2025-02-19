@@ -4,13 +4,7 @@
  
  }
  
- /* Темная тема */
- .dark-theme body {
-  margin: 0;
-  background-color: #0e255e; 
-  color: #e0e0e0; 
-  font-family: Arial, sans-serif;
-}
+/*ТЕМКИ ТЕМНЫЕ НАЧАЛИСЬ*/  
 
 .dark-theme header {
   width: 100%;
@@ -46,12 +40,12 @@
   color: #e0e0e0;
 }
 .dark-theme .search-bar button {
-  background-color: #0e255e;
+  background-color: #7d8fbd;
   color: #e0e0e0; 
   border-radius: 0 5px 5px 0;
   padding: 8px 10px;
   cursor: pointer;
-  border: 2px solid #0e255e;
+  border: 2px solid #7d8fbd;
 }
 .dark-theme .search-bar button i {
   font-size: 10px;
@@ -297,16 +291,20 @@
 }
 
 .dark-theme .popup button {
+  background-color: #0e255e; 
+  color: #e0e0e0;
+  border: 2px solid #3158a7;
+}
+.dark-theme .popup button:hover {
   background-color: #7d8fbd; 
   color: #e0e0e0;
 }
-
 .dark-theme .clobutton {
   color: #e0e0e0; 
 }
 
 
-
+/*ТЕМКИ ТЕМНЫЕ ЗАКОНЧИЛИСЬ*/
 
 
 
