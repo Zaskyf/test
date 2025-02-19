@@ -293,11 +293,12 @@
 .dark-theme .popup button {
   background-color: #0e255e; 
   color: #e0e0e0;
-  border: 2px solid #3158a7;
+  border: 2px solid #3158a7 ;
 }
 .dark-theme .popup button:hover {
   background-color: #7d8fbd; 
   color: #e0e0e0;
+  
 }
 .dark-theme .clobutton {
   color: #e0e0e0; 
@@ -466,10 +467,6 @@ button.cartbu:hover {
             background-color: #5a7cb3;
         }
 
-        .remove-icon {
-            cursor: pointer;
-            color: #ff0000;
-        }
 
 /*КОНЕЦ  КОРЗИНЫ  */
 
@@ -2921,17 +2918,17 @@ to {
       margin: 15px;
       background-color: white;
       width: 250px;
-      height: 100px;
+      height: 130px;
   
       border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s;
+   
+      
       display: flex;
       flex-direction: column;
       justify-content: space-between;
   }
   .content-section:hover {
-      transform: scale(1.05);
+      
   }
   .content-section-oplata {
       padding: 20px;
