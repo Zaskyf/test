@@ -5,52 +5,305 @@
  }
  
  /* Темная тема */
- body.dark-theme {
-     background-color: #1a1a1a;
-     color: #ffffff;
- }
- 
- .dark-theme header,
- .dark-theme .cart,
- .dark-theme .catalog,
- .dark-theme .account,
- .dark-theme .modal-content,
- .dark-theme .popup {
-     background-color: #333333;
-     color: #ffffff;
- }
- 
- .dark-theme input,
- .dark-theme button,
- .dark-theme .category-button,
- .dark-theme .cartbutton {
-     background-color: #444444;
-     color: #ffffff;
-     border-color: #555555;
- }
- 
- .dark-theme .swiper-slide {
-     background-color: #444444;
-     color: #ffffff;
- }
- 
- .dark-theme footer {
-     background-color: #222222;
-     color: #ffffff;
- }
-  
- 
- .dark-theme .boxicon{
-   background-color: #222222;
- 
- 
- }
- 
+ .dark-theme body {
+  margin: 0;
+  background-color: #0e255e; 
+  color: #e0e0e0; 
+  font-family: Arial, sans-serif;
+}
 
- 
- .dark-theme .cart-icon{
-   color: #1362ca;
- }
+.dark-theme header {
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #0e255e;
+  padding: 20px 8px;
+  z-index: 200;
+  position: sticky;
+  top: 0; 
+}
+
+.dark-theme header > .header-contaner {
+  width: 100%;
+  height:55px;
+  display: flex; 
+  align-items: center;
+}
+
+.dark-theme .search-bar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  border: none;
+}
+.dark-theme .search-bar input[type="search"] {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #333; 
+  border-radius: 5px 0 0 5px;
+  background-color: #1e1e1e;
+  color: #e0e0e0;
+}
+.dark-theme .search-bar button {
+  background-color: #0e255e;
+  color: #e0e0e0; 
+  border-radius: 0 5px 5px 0;
+  padding: 8px 10px;
+  cursor: pointer;
+  border: 2px solid #0e255e;
+}
+.dark-theme .search-bar button i {
+  font-size: 10px;
+}
+
+.dark-theme .cart-icon, .search-bar {
+  cursor: pointer;
+  margin-left: 30px;
+  font-size: 20px;
+  color: #e0e0e0;
+}
+
+.dark-theme .cartbu {
+  margin-top: 10px;
+  text-decoration: none;
+  font-size: 16px;
+  color: #e0e0e0; 
+  background-color:#0e255e;
+  padding: 12px 20px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.dark-theme .cartbu:hover {
+  background-color: #7d8fbd;
+  color: #ffffff; 
+}
+
+.dark-theme .cart {
+  position: fixed;
+  top: 60px;
+  right: 20px;
+  box-shadow: 3px 2px 5px rgba(0.2, 0.2, 0.2, 0.2);
+  background-color: #0e255e;
+  padding: 10px;
+  width: 450px;
+  display: inline-flex;
+  border-radius: 5px;
+  border: 2px solid #0e255e;
+  display: none;
+  z-index: 9000;
+}
+
+.dark-theme .cart-item {
+  border-bottom: 1px solid #0e255e;
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.dark-theme .boxadd input {
+  width: 40px;
+  text-align: center;
+  margin: 0 10px;
+  border: 1px solid #0e255e;
+  border-radius: 4px;
+  padding: 5px;
+  background-color:#0e255e;
+  color: #e0e0e0;
+}
+
+.dark-theme .sub, .ad {
+  background-color: #0e255e;
+  color: #e0e0e0;
+  border: none;
+  border-radius: 4px;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.dark-theme .sub:hover, .add:hover {
+  background-color: #7d8fbd;
+}
+
+.dark-theme .remove-icon {
+  cursor: pointer;
+  color: #ff6666; 
+}
+
+.dark-theme .account-icon {
+  cursor: pointer;
+  margin-left: 30px;
+  font-size: 20px;
+  color: #e0e0e0; 
+}
+
+.dark-theme .account {
+  position: fixed;
+  top: 60px;
+  right: 20px;
+  box-shadow: 3px 2px 5px rgba(0.2, 0.2, 0.2, 0.2);
+  background-color: #0e255e;
+  padding: 10px;
+  width: auto;
+  display: inline-flex;
+  border-radius: 5px;
+  border: 2px solid #0e255e;
+  display: none;
+  z-index: 9000;
+}
+
+.dark-theme .sign {
+  margin-top: 10px;
+  text-decoration: none;
+  font-size: 16px;
+  color: #e0e0e0;
+  background-color: #0e255e;
+  padding: 12px 20px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.dark-theme .sign:hover {
+  background-color: #7d8fbd; 
+  color: #ffffff; 
+}
+
+.dark-theme .modal {
+  display: none;
+  position: fixed;
+  z-index: 2100;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 480px;
+  background: #0e255e;
+  box-shadow: 0 0 10px #0e255e;
+  border-radius: 20px;
+  padding: 0px;
+  overflow: hidden;
+}
+
+.dark-theme .registr {
+  position: relative;
+  width: 98%;
+  height: 30px;
+  background: #0e255e;
+  box-shadow: 0 0 10px #0e255e;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 30px;
+  border: none;
+  outline: none;
+}
+
+.dark-theme .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  z-index: 100;
+  font-size: 30px;
+  cursor: pointer;
+  color: #e0e0e0; 
+}
+
+.dark-theme .modal-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  transition: 1s ease-in-out;
+}
+
+.dark-theme .input-group label {
+  color: #e0e0e0;
+}
+
+.dark-theme .input-group input {
+  color: #e0e0e0; 
+}
+
+.dark-theme .remember label {
+  color: #e0e0e0; 
+}
+
+.dark-theme .signUp-link p {
+  color: #e0e0e0;
+}
+
+.dark-theme .signUp-link p a {
+  color: #e0e0e0; 
+}
+
+.dark-theme .gogle {
+  color: #e0e0e0; 
+}
+
+.dark-theme .tooltip {
+  background-color: #0e255e;
+  border: 1px solid #0e255e;
+}
+
+.dark-theme .tooltip .clo {
+  color: #e0e0e0; 
+}
+
+.dark-theme .social-link {
+  color: #e0e0e0; 
+}
+
+.dark-theme .icon-link {
+  color: #e0e0e0; 
+}
+
+.dark-theme .cat {
+  background-color: #0e255e;
+  color: #e0e0e0; 
+}
+
+.dark-theme .cat:hover {
+  background-color: #7d8fbd; 
+  color: #ffffff; 
+}
+
+.dark-theme .catalog h6 {
+  color: #e0e0e0; 
+  background-color: #0e255e;
+}
+
+.dark-theme .catalog {
+  background-color: #0e255e;
+}
+
+.dark-theme .catalog button {
+  background-color: #0e255e; 
+  color: #e0e0e0;
+}
+
+
+
+.dark-theme .popup {
+  background-color: #0e255e;
+  border: 2px solid #0e255e;
+}
+
+.dark-theme .popup button {
+  background-color: #7d8fbd; 
+  color: #e0e0e0;
+}
+
+.dark-theme .clobutton {
+  color: #e0e0e0; 
+}
 
 
 
@@ -475,17 +728,30 @@ button.cartbu:hover {
 
 .cat{
   margin-top: 10px; /* Отступ сверху */
-width:140px;
+width:165px;
   text-decoration: none; /* Убираем подчеркивание */
-  font-size: 16px; /* Размер шрифта */
-  color: #688EBD; /* Цвет текста */
-  background-color: #f0f8ff; /* Светлый цвет фона */
+  font-size: 20px; /* Размер шрифта */
+  color: #FFFFE0; /* Цвет текста при наведении */
+
+  background-color: #688EBD; /* Цвет фона при наведении */
   padding: 12px 20px; /* Увеличенные отступы для кнопок */
   border-radius: 5px; /* Закругленные углы */
   border: none; /* Убираем рамку */
   cursor: pointer; /* Курсор в виде руки */
   transition: background-color 0.3s, color 0.3s; /* Плавные переходы */
 
+}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+  * {
+    margin: 0  ;
+    padding: 0 ;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif !important;
+  }
+.cat:hover{
+  background-color: #FFFFE0; /* Светлый цвет фона */
+
+    color: #688EBD; /* Цвет текста */
 }
   .catalog h6 {
       color: #688EBD;
@@ -531,14 +797,14 @@ width:140px;
           
           .catalog button {
               display: block;
-              width: 300px !important;
+              width: 280px !important;
               height: auto;
               line-height: 40px;
               font-size: 20px;
               font-family: sans-serif;
               text-decoration: none;
               background-color:#7c9dde;  /* -синий */
-              border: 2px solid #333;
+              border: 2px solid   #3158a7;;
               border-radius: 8px;
               letter-spacing: 2px;
               text-align: center;
@@ -563,7 +829,8 @@ width:140px;
               width: 0;
               border-radius: 8px;
               height: 100%;
-              background:#FFFFE0 ;
+              background:#3158a7 ;
+             
               transition: all 0.30s;
 
           }.catalog button span {
