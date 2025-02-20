@@ -698,8 +698,9 @@ button.cartbu:hover {
   text-decoration: none;
   color: inherit;
       }
-      .icon-link {
-  margin-right: 2px;
+      
+  .icon-link {
+      margin-right: 2px;
       color: black;
       display: inline-block;
       width: 30px;
