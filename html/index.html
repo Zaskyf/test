@@ -421,12 +421,23 @@ function toggleCart() {
     cart.style.display = cart.style.display === 'none' ? 'block' : 'none';
 }
 
+function clearCart() {
+    const cartItems = document.getElementById('cart-items');
+    cartItems.innerHTML = '';
+}
+
 function deleteSelectedItems() {
     const checkboxes = document.querySelectorAll('.item-checkbox:checked');
     checkboxes.forEach(checkbox => {
         checkbox.closest('.cart-item').remove();
     });
 }
+
+// Закрытие корзины при уходе курсора мыши
+const cart = document.getElementById('cart');
+cart.addEventListener('mouseleave', () => {
+    cart.style.display = 'none';
+});
 
 function clearCart() {
     document.getElementById('cart-items').innerHTML = '';
@@ -657,7 +668,7 @@ const signButton = document.getElementById('signButton');
 const modal = document.querySelector('.modal');
 let accountVisible = false;
 
-// Проверка, авторизован ли пользователь 
+/*/ Проверка, авторизован ли пользователь , чтобы после перегзагрузки сесия не прерывалась 
  function checkLoginStatus() 
 {
     const isLoggedIn = localStorage.getItem('isLoggedIn');
@@ -681,7 +692,7 @@ document.addEventListener('click', (event) => {
     if (!socialLink.contains(event.target) && !tooltip.contains(event.target)) {
         hideTooltip();
     }
-});
+});/*/
 
 function hideTooltip() {
     tooltip.style.display = 'none';
