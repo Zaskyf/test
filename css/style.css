@@ -640,7 +640,7 @@ button.cartbu:hover {
   }
 
   .remember label input {
-    accent-color: #0ef;
+    accent-color: rgb(247, 253, 253);
   }
   /*конец "запомнить меня" */
 

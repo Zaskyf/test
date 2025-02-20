@@ -96,13 +96,14 @@
     <!-- НАЧАЛО РЕГИСТРАЦИИ  -->
     <div class="account" id="account" onmouseleave="hideAccount()">
         <h2>Аккаунт</h2>
-        <button class="sign" onclick="openRegisterModal()" >Войти или Зарегистрироваться</button>
+        <button class="sign" id="signButton" onclick="openRegisterModal()">Войти или Зарегистрироваться</button>
     </div>
+    
     <!-- Модальное окно для регистрации -->
-        <div id="registerModal" class="modal">
+    <div id="registerModal" class="modal">
         <span class="close" onclick="closeRegisterModal()">&times;</span> <!-- Крестик закрытия -->
         <div class="modal-content sign-in">
-            <form action="">
+            <form id="loginForm" action="">
                 <h2>Войти</h2>
                 <div class="input-group">
                     <input type="text" required>
@@ -117,61 +118,59 @@
                 </div>
                 <button class="registr" type="submit">Войти</button>
                 <div class="signUp-link">
-                    <p style="color: black; font-size : 18px;" >У вас нет аккаунта? <a href="#" class="signUpBtn-link">Регистрация</a></p>
+                    <p style="color: black; font-size : 18px;">У вас нет аккаунта? <a href="#" class="signUpBtn-link">Регистрация</a></p>
                 </div>
             </form>
         </div>
-    <div class="modal-content sign-up">
-        <form action="">
-            <h2>Регистрация</h2><br>
-            <div class="input-group">
-                <input type="text" required>
-                <label for="">Имя</label>
-            </div>
-            <div class="input-group">
-                <input type="email" required>
-                <label for="">Почта</label>
-            </div>
-            <div class="input-group">
-                <input type="password" required>
-                <label for="">Придумайте пароль</label>
-            </div> 
-            <div class="remember">
-                <label style="color: black; font-size: 16px;">
-                    <input type="checkbox"> Я соглашаюсь с чем-то
-                </label>
-            </div>
-            <button class="registr" type="submit">Зарегистрироваться</button>
-
-            <div class="signUp-link">   
-                <p style="color: black; margin-top: 10px; font-size: 16px;">У Вас уже есть аккаунт?
-                    <a style="color: black; margin-top: 10px; font-size: 16px;" href="#" class="signInBtn-link">Войти</a>
-                </p>
-                  <div class="gogle" type="button" onclick="socialLogin()">Войти через <span class="social-link">соцсети</span></div>
-            </div>
-            <div class="tooltip" id="tooltip" >
-      <span class="clo" onclick="hideTooltip()">&#10006;</span>
-    <ul style="text-align:left; padding:5px; margin-top:10px;">
-    <li>
-        <a href="#" style="margin-right: 3px; color: black; display: inline-block;">
-            <i class="fab fa-facebook-f"></i>
-        </a>
-    </li>
-    <li>
-        <a href="#" style="margin-right: 3px; color: black; display: inline-block;">
-            <i class="fab fa-google"></i>
-        </a>
-    </li>
-    <li>
-        <a href="#" style="margin-right: 3px; color: black; display: inline-block;">
-            <i class="fab fa-instagram"></i>
-        </a>
-    </li>
-</ul>
+        <div class="modal-content sign-up">
+            <form id="registerForm" action="">
+                <h2>Регистрация</h2><br>
+                <div class="input-group">
+                    <input type="text" required>
+                    <label for="">Имя</label>
+                </div>
+               
+                <div class="input-group">
+                    <input type="password" required>
+                    <label for="">Придумайте пароль</label>
+                </div> 
+                <div class="remember">
+                    <label style="color: black; font-size: 16px;">
+                        <input type="checkbox"> Я соглашаюсь с чем-то
+                    </label>
+                </div>
+                <button class="registr" type="submit">Зарегистрироваться</button>
+    
+                <div class="signUp-link">   
+                    <p style="color: black; margin-top: 10px; font-size: 16px;">У Вас уже есть аккаунт?
+                        <a style="color: black; margin-top: 10px; font-size: 16px;" href="#" class="signInBtn-link">Войти</a>
+                    </p>
+                    <div class="gogle" type="button" onclick="socialLogin()">Войти через <span class="social-link">соцсети</span></div>
+                </div>
+                <div class="tooltip" id="tooltip">
+                    <span class="clo" onclick="hideTooltip()">&#10006;</span>
+                    <ul style="text-align:left; padding:5px; margin-top:10px;">
+                        <li>
+                            <a href="#" style="margin-right: 3px; color: black; display: inline-block;">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" style="margin-right: 3px; color: black; display: inline-block;">
+                                <i class="fab fa-google"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" style="margin-right: 3px; color: black; display: inline-block;">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </form>
+        </div>
     </div>
-        </form>
-    </div>
-    </div>
+    
 <!--КОНЕЦ РЕГИСТРАЦИИ-->
       
      <!-- Кнопка для переключения темы -->
@@ -650,18 +649,32 @@ const tooltip = document.getElementById('tooltip');
 const account = document.getElementById('account');
 const registerModal = document.getElementById('registerModal');
 const registerForm = document.getElementById('registerForm');
+const loginForm = document.getElementById('loginForm');
 const signInBtnLink = document.querySelector('.signInBtn-link');
 const signUpBtnLink = document.querySelector('.signUpBtn-link');
+const signButton = document.getElementById('signButton');
 const modal = document.querySelector('.modal');
-
 let accountVisible = false;
 
-socialLink.addEventListener('mouseover', () => {
+// Проверка, авторизован ли пользователь 
+ function checkLoginStatus() 
+{
+    const isLoggedIn = localStorage.getItem('isLoggedIn');
+    if (isLoggedIn === 'true') 
+    {
+        signButton.textContent = 'Перейти в личный кабинет';
+        signButton.onclick = () => 
+        {
+            window.location.href = 'Kabinet.html'; // Перенаправление в личный кабинет
+ };}}
+
+// При загрузке страницы проверяем статус входа
+checkLoginStatus();
+socialLink.addEventListener  ('mouseover', () => 
+{
     tooltip.style.display = 'block';
     tooltip.style.top = `${socialLink.offsetTop + socialLink.offsetHeight}px`; 
-    tooltip.style.left = `${socialLink.offsetLeft}px`;
-});
-
+    tooltip.style.left = `${socialLink.offsetLeft}px`;});
 
 document.addEventListener('click', (event) => {
     if (!socialLink.contains(event.target) && !tooltip.contains(event.target)) {
@@ -675,16 +688,12 @@ function hideTooltip() {
 
 function toggleAccount() {
     accountVisible = !accountVisible;
-    account.style.display = accountVisible ? 'block' : 'none';
-}
-
+    account.style.display = accountVisible ? 'block' : 'none';}
 
 function hideAccount() {
     if (accountVisible) {
         accountVisible = false;
-        account.style.display = 'none';
-    }
-}
+        account.style.display = 'none'; } }
 
 function hideCart() {
     document.getElementById('cart').style.display = 'none';
@@ -700,13 +709,28 @@ function closeRegisterModal() {
     registerModal.style.display = 'none';
 }
 
+// Обработчик для формы входа
+loginForm.onsubmit = (event) => {
+    event.preventDefault();
+    alert('Вход выполнен успешно');
+    closeRegisterModal();
+    // Сохраняем статус входа
+    localStorage.setItem('isLoggedIn', 'true');
+    // Меняем кнопку
+    signButton.textContent = 'Перейти в личный кабинет';
+    signButton.onclick = () => {
+        window.location.href = 'Kabinet.html'; // Перенаправление в личный кабинет
+    };
+};
 
+// Обработчик для формы регистрации
 registerForm.onsubmit = (event) => {
     event.preventDefault();
     alert('Регистрация завершена');
     closeRegisterModal();
+    // Перенаправление на новую страницу после регистрации
+    window.location.href = 'Kabinet.html'; 
 };
-
 
 function logInAccount() {
     alert('Вход');
