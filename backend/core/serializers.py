@@ -25,6 +25,13 @@ class CreateUserSerializer(serializers.ModelSerializer):
         return User.objects.create_user(**validate_data, username=validate_data.get('email'))
 
 
+class UserSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = User
+        fields = ('id', 'first_name', 'last_name', 'email', )
+
+
 class NestedCategorySerializer(serializers.ModelSerializer):
     class Meta:
         model = Category
@@ -53,7 +60,7 @@ class GoodCardSerializer(serializers.ModelSerializer):
     get_first_img = ImageSerializer(read_only=True)
     class Meta:
         model = Good
-        fields = ('id', 'name','get_first_img', 'start_price', 'discount', 'price', )
+        fields = ('id', 'name','get_first_img', 'category', 'start_price', 'discount', 'price', )
 
 class GoodSerializer(serializers.ModelSerializer):
     images = ImageSerializer(many=True, read_only=True)
@@ -135,5 +142,17 @@ class CreateOrderSerializer(serializers.ModelSerializer):
             cart.delete()
         order.save()
         return order
+
+
+class OrderSerializer(serializers.ModelSerializer):
+    order_points = OrderPointSerializer(many=True, read_only=True)
+
+    class Meta:
+        model = Order
+        fields = ('id', 'price', 'order_points', 'status', 'created')
+        extra_kwargs = {'price': {'read_only': True},
+                        'status': {'read_only': True},
+                        'order_points': {'read_only': True},
+                        }
 
 

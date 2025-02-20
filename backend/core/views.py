@@ -1,3 +1,5 @@
+from django.db.models import Prefetch
+from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework.filters import SearchFilter
 from rest_framework import status
 from rest_framework.generics import ListAPIView, RetrieveAPIView, CreateAPIView, RetrieveUpdateDestroyAPIView
@@ -6,6 +8,7 @@ from rest_framework.response import Response
 from .models import *
 from .permissions import UserAdminPermission
 from .serializers import *
+from .utils import GoodFilter
 
 
 class UserCreateView(CreateAPIView):
@@ -37,6 +40,13 @@ class CategoryDetailListView(ListAPIView):
 class DiscountedGoodListView(ListAPIView):
     queryset = Good.objects.filter(discount__gt=0)
     serializer_class = GoodCardSerializer
+
+class GoodListView(ListAPIView):
+    queryset = Good.objects.all()
+    serializer_class = GoodCardSerializer
+    filter_backends = (DjangoFilterBackend,)
+    filterset_class = GoodFilter
+
 
 
 class CartListView(ListAPIView):
@@ -90,3 +100,30 @@ class ReviewRetrieveUpdateDestroyView(RetrieveUpdateDestroyAPIView):
 class OrderCreateView(CreateAPIView):
     queryset = Order.objects.all()
     serializer_class = CreateOrderSerializer
+
+class UserRetrieveUpdateDestroyView(RetrieveUpdateDestroyAPIView):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+    permission_classes = (IsAuthenticated,)
+    lookup_field = None
+
+    def get_object(self):
+
+        return self.request.user
+
+class OrderListView(ListAPIView):
+    queryset = Order.objects.all()
+    serializer_class = CreateOrderSerializer
+    permission_classes = (IsAuthenticated,)
+
+    def get_queryset(self):
+        return self.queryset.filter(user=self.request.user)
+
+
+class OrderRetrieveView(RetrieveAPIView):
+    queryset = Order.objects.all().prefetch_related(
+        Prefetch('order_points', queryset=OrderPoint.objects.all())
+    )
+    serializer_class = OrderSerializer
+    permission_classes = (IsAuthenticated, UserAdminPermission)
+    lookup_field = 'id'
