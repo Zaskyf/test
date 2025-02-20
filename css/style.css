@@ -698,7 +698,7 @@ button.cartbu:hover {
   text-decoration: none;
   color: inherit;
       }
-      
+
   .icon-link {
       margin-right: 2px;
       color: black;
@@ -2943,9 +2943,6 @@ to {
       justify-content: space-between;
   }
 
-
-
-    
      .ldata {
       display: none; 
       margin-top: 20px;
@@ -2953,9 +2950,7 @@ to {
       padding: 20px;
       border-radius: 5px;
       background-color: #f9f9f9;
-  }
-
- 
+  } 
   .toggle-button {
       padding: 10px 15px;
       font-size: 16px;
@@ -3196,9 +3191,6 @@ h2 {
     padding: 15px; 
   }
 }
-
-
-
 .contact-form {
   background-color: #fff;
   padding: 20px;
