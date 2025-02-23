@@ -41,7 +41,7 @@
         </header>
 
         <div class="cart" id="cart">
-            <h2>Корзина</h2>
+            <h2  class= "two">Корзина</h2>
             <div id="cart-items"></div>
             <a href="cart.html" class= "cartbu">Перейти в корзину</a>  <!--Почему ссылка не работает -->
             
@@ -96,7 +96,7 @@
     
     <!-- НАЧАЛО РЕГИСТРАЦИИ  -->
     <div class="account" id="account" onmouseleave="hideAccount()">
-        <h2>Аккаунт</h2>
+        <h2 class= "two">Аккаунт</h2>
         <button class="sign" id="signButton" onclick="openRegisterModal()">Войти или Зарегистрироваться</button>
     </div>
     
@@ -238,10 +238,10 @@ window.onload = loadTheme;
 
 <!--НАЧАЛО ИКНОК ССЫЛОК НА ГЛАВНОЙ СТРАНИЦЕ-->
 <section class="boxicon">
- <a  class="bcontainer" href="category.html" style=" text-decoration: none;" >  <img class="icones" src="https://cdn-icons-png.flaticon.com/128/602/602287.png" alt="Ассортимент"> <p>Каталог</p>  </a>
-      <a   class="bcontainer" style="text-decoration: none;" href="Dostavka.html"><img class="icones" src="https://cdn-icons-png.flaticon.com/128/602/602287.png" alt="Доставка">  <p>Доставка</p> </a> 
-      <a   class="bcontainer" style="text-decoration: none;" href=""><img class="icones" src="https://cdn-icons-png.flaticon.com/128/602/602287.png" alt="Гарантии">  <p>Гарантии</p> </a> 
-      <a   class="bcontainer" style="text-decoration: none;" href=""><img class="icones" src="https://cdn-icons-png.flaticon.com/128/602/602287.png" alt="Распродажа">  <p >Распродажа</p> </a> 
+ <a  class="bcontainer" href="category.html" style=" text-decoration: none;" >  <img class="icones" src="https://cdn-icons-png.flaticon.com/128/602/602287.png" alt="Ассортимент"> <p   class = "two ">Каталог</p>  </a>
+      <a   class="bcontainer" style="text-decoration: none;" href="Dostavka.html"><img class="icones" src="https://cdn-icons-png.flaticon.com/128/602/602287.png" alt="Доставка">  <p class = "two ">Доставка</p> </a> 
+      <a   class="bcontainer" style="text-decoration: none;" href=""><img class="icones" src="https://cdn-icons-png.flaticon.com/128/602/602287.png" alt="Гарантии">  <p   class = "two ">Гарантии</p> </a> 
+      <a   class="bcontainer" style="text-decoration: none;" href=""><img class="icones" src="https://cdn-icons-png.flaticon.com/128/602/602287.png" alt="Распродажа">  <p  class = "two " >Распродажа</p> </a> 
 </section>
  <!--КОНЕЦ ИКНОК ССЫЛОК НА ГЛАВНОЙ СТРАНИЦЕ-->
 
@@ -615,7 +615,7 @@ document.querySelectorAll('.category-button').forEach(button => {
                 break;
                 case '9':
                 content = 
-                '<a href="wallpaper1.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.1\')">Электроиснтрументы</button></a>' +
+                '<a   href="wallpaper1.html"><button  class="button-style" onclick="showPopup(\'Подкатегория 1.1\')">Электроиснтрументы</button></a>' +
                     '<a href="wallpaper2.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.2\')">Отвертки</button></a>' +
                     '<a href="wallpaper3.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.3\')">Клей</button></a>' +
                     '<a href="wallpaper5.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.5\')">Краски</button></a>' +
@@ -757,12 +757,4 @@ signUpBtnLink.addEventListener('click', () => {
 signInBtnLink.addEventListener('click', () => {
     modal.classList.toggle('active');
 });
-
-
-
-
-
-
-
-
 </script>
