@@ -1,11 +1,18 @@
- /* Светлая тема (по умолчанию) */
+/* Светлая тема (по умолчанию) */
  body.light-theme {
   background-color: #e5e5e5;
  
  }
  
 /*ТЕМКИ ТЕМНЫЕ НАЧАЛИСЬ*/  
+ body.dark-theme {
+ background-color:  #415382;
 
+}
+
+.dark-theme icones{
+background-color: #0e255e;
+}
 .dark-theme header {
   width: 100%;
   justify-content: space-between;
@@ -150,6 +157,11 @@
   display: none;
   z-index: 9000;
 }
+.dark-theme .two{
+
+ color: #e0e0e0; 
+
+}
 
 .dark-theme .sign {
   margin-top: 10px;
@@ -262,16 +274,19 @@
 .dark-theme .cat {
   background-color: #0e255e;
   color: #e0e0e0; 
+ 
 }
 
 .dark-theme .cat:hover {
   background-color: #7d8fbd; 
   color: #ffffff; 
+ 
 }
 
 .dark-theme .catalog h6 {
   color: #e0e0e0; 
   background-color: #0e255e;
+  
 }
 
 .dark-theme .catalog {
@@ -281,6 +296,7 @@
 .dark-theme .catalog button {
   background-color: #0e255e; 
   color: #e0e0e0;
+   border: 2px solid #3158a7 ;
 }
 
 
@@ -288,6 +304,7 @@
 .dark-theme .popup {
   background-color: #0e255e;
   border: 2px solid #0e255e;
+
 }
 
 .dark-theme .popup button {
@@ -304,21 +321,30 @@
   color: #e0e0e0; 
 }
 
+.dark-theme .boxicon {
+ 
+  background-color:#415382; 
+}
+
+.dark-theme .bcontainer {
+  background-color: #0e255e; 
+
+}
+
+.dark-theme .icones{
+filter: brightness(0) invert(0.9) sepia(1) saturate(0) hue-rotate(0deg); /* Делает иконки светло-серыми (#e0e0e0) */
+}
+
+.dark-theme  .bcontainer:hover {
+background-color: #7d8fbd;  
+}
+
+.dark-theme .swiper{
+background-color: #415382; 
+}
+
 
 /*ТЕМКИ ТЕМНЫЕ ЗАКОНЧИЛИСЬ*/
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -767,7 +793,7 @@ width:165px;
               position: relative;
               border-radius: 8px;
               width: 190px;
-
+			
               left: 5px;
               right: 10px;
               font-size:20px;
@@ -775,6 +801,7 @@ width:165px;
           .button-style:hover,
           .button-style:focus {
               background:#FFFFE0 ;
+              
           }
 
           .catalog {
@@ -800,7 +827,7 @@ width:165px;
               font-family: sans-serif;
               text-decoration: none;
               background-color:#7c9dde;  /* -синий */
-              border: 2px solid   #3158a7;;
+              border: 2px solid   #3158a7;
               border-radius: 8px;
               letter-spacing: 2px;
               text-align: center;
@@ -816,7 +843,7 @@ width:165px;
               font-size: 30px;
               color: black;
           }
-          
+         
           .catalog button:after {
               position: absolute;
               content: "";
@@ -1070,46 +1097,6 @@ width:165px;
    }
     
 /*КОНЕЦ КАРУСЕЛИ НА ГЛАВНОЙ СТРАНИЦЕ*/
-
-
-
-
-
-/*НАЧАЛО КНОПКИ ИНСТРУМЕНТЫ */
-
-.tools-button {
-  display: flex;
-  align-items: center;
-  background-color: #4676d7; /* Цвет фона кнопки */
-  color: white; /* Цвет текста */
-  border: none; /* Убираем рамку */
-  height: 40px;
-  width: 45px;
-  border-radius: 5px; /* Закругленные углы */
-  padding: 10px; /* Внутренние отступы */
-  font-size: 16px; /* Размер шрифта */
-  cursor: pointer; /* Курсор в виде руки */
-  transition: transform 0.3s ease, opacity 0.3s ease; /* Переход для анимации */
-}
-.tools-button .text {
-  opacity: 0; /* Скрываем текст изначально */
-  transition: opacity 0.2s ease; /* Плавный переход для текста */
-}
-.tools-button:hover {
-  height: 30px;
-  width: 180px;
-  transform: scale(1.2); /* Увеличение размера кнопки при наведении */
-}
-.tools-button:hover .text {
-  opacity: 1; /* Появление текста при наведении */
-}
-
-/*КОНЕЦ КНОПКИ ИНСТРУМЕНТЫ */
-
-
-
-
-
 
 
 
