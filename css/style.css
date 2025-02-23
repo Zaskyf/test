@@ -342,7 +342,16 @@ background-color: #7d8fbd;
 .dark-theme .swiper{
 background-color: #415382; 
 }
-
+.dark-theme .swiper-slide {
+background-color: #0e255e; 
+border: 1px solid #7d8fbd; 
+}
+.dark-theme .box { background-color:#0e255e; 
+  }
+.dark-theme .prce {
+color: #e0e0e0;
+  background-color: #0e255e;
+}
 
 	.dark-theme footer {
   background-color: #0e255e; /* Темный фон для футера */
