@@ -344,6 +344,95 @@ background-color: #415382;
 }
 
 
+	.dark-theme footer {
+  background-color: #0e255e; /* Темный фон для футера */
+  color: white;
+  padding: 20px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.dark-theme footer h3 {
+  margin-bottom: 10px;
+}
+
+.dark-theme footer ul {
+  list-style: none;
+  padding: 0;
+}
+
+.dark-theme footer ul li {
+  margin: 5px 0;
+}
+
+.dark-theme footer a {
+  color: #FFFFE0; /* Цвет ссылок в футере */
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.dark-theme footer a:hover {
+  color: #5a7cb3; /* Цвет ссылок при наведении */
+}
+
+.dark-theme .footer_menu {
+  display: flex;
+  width: 55%; /* Занимает 55% ширины контейнера */
+  margin-left: 20px;
+}
+
+.dark-theme .caption {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.dark-theme .item {
+  flex: 1;
+  margin-right: 20px;
+  text-align: left;
+  word-break: break-all;
+}
+
+.dark-theme .item:last-child {
+  margin-right: 0; /* Убираем отступ для последнего элемента */
+}
+
+.dark-theme .menu_list {
+  list-style-type: none; /* Убираем стандартные маркеры */
+  padding: 0;
+  font-size: 18px; 
+}
+
+.dark-theme .menu_list li {
+  margin-bottom: 0; /* Убираем отступы между элементами */
+}
+
+.dark-theme .menu_list a {
+  color: white; /* Цвет ссылок */
+  text-decoration: none; /* Убираем подчеркивание */
+  display: block; 
+}
+
+.dark-theme .menu_list a:hover {
+  color: rgb(207, 227, 245); /* Цвет ссылок при наведении */
+  text-decoration: underline; /* Подчеркивание при наведении */
+}
+
+.dark-theme .contact_info {
+  position: relative;
+  display: flex; 
+  flex-direction: column; /* Вертикальное расположение элементов */
+  align-items: flex-end; /* Выравнивание элементов вправо */
+}
+
+.dark-theme .phone, 
+.dark-theme .address, 
+.dark-theme .copyright {
+  margin-bottom: 10px; /* Отступы между элементами */
+  color: white;
+}
+
 /*ТЕМКИ ТЕМНЫЕ ЗАКОНЧИЛИСЬ*/
 
 
