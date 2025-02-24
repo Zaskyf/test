@@ -170,91 +170,63 @@
  <!-- Хлебные крошки -->
  <nav class="breadcrumb">
     
-        <a href="index.html"  >Главная</a>  &gt; <a href="Kabinet.html" >Личный кабинет</a> 
+        <a href="index.html"  >Главная</a>    &gt; <a href="Kabinet.html" >Личный кабинет</a> 
     </nav> 
-     
- 
     <main>
       
             <section id="user" class="content-section-user">
                 <h6 style="font-size: 30px; text-align:center;">Личный кабинет </h6>
-                <h2>Пользователь</h2>
-                <div class="User-profil">
-                    <div class="profile-icon">
-                        <img id="output" src="default-avatar.png" alt="Аватар" />
-                    </div>
-                    <input type="file" id="fileInput" class="full-width-button" accept="image/*" onchange="loadFile(event)" />
-                    <li class="discount-item">
-                    Информация о скидках
-                    </li>
-            
-                    <!-- Поля для ввода данных пользователя -->
-             
-
-                    <button class="toggle-button" id="toggleButton">Личные данные</button>
-
-                    <div class="ldata" id="userData">
-                        <div class="user-data">
-                            <label class="lname" for="firstName">Имя:</label>
-                            <input type="text" id="firstName" placeholder="Введите ваше имя">
-                
-                            <label class="lfname" for="lastName">Фамилия:</label>
-                            <input type="text" id="lastName" placeholder="Введите вашу фамилию">
-                
-                            <label class="laddress" for="address">Адрес:</label>
-                            <input type="text" id="address" placeholder="Введите ваш адрес">
-                
-                            <label class="lemail" for="email">Email:</label>
-                            <input type="email" id="email" placeholder="Введите ваш email">
-                        </div>
-                        <button class="lsaveButton" id="saveButton">Сохранить данные</button>
-                    </div>
-                
-                    <script>
-                        const toggleButton = document.getElementById('toggleButton');
-                        const userData = document.getElementById('userData');
-                
-                     
-                        toggleButton.addEventListener('click', () => {
-                         
-                            if (userData.style.display === 'none' || userData.style.display === '') {
-                                userData.style.display = 'block'; 
-                            } else {
-                                userData.style.display = 'none';
-                            }
-                        });
-                    </script>
+                <h2>username</h2>
+                <div class="avatar-container">
+                    <img src="путь_к_вашему_аватару.jpg" alt="Ваш аватар" class="avatar">
+                    <button class="change-avatar-button">Сменить аватар</button>
+                    <input type="file" id="avatar-input" accept="image/*" style="display:none;">
+                  </div>
+                    
                 </div>
-                <section id="support" class="content-section-oplata">
+                    <!-- Поля для ввода данных пользователя -->
+                    <section id="support" class="content-section-oplata">      
                     <div class="finans">
+                        <button class="oplata" id="toggleButton">Личные данные</button>
+                        <div class="ldata" id="userData">
+                            <div class="user-data">
+                                <label class="lname" for="firstName">Имя:</label>
+                                <input type="text" id="firstName" placeholder="Введите ваше имя">
+                                <label class="lfname" for="lastName">Фамилия:</label>
+                                <input type="text" id="lastName" placeholder="Введите вашу фамилию">
+                                <label class="laddress" for="address">Адрес:</label>
+                                <input type="text" id="address" placeholder="Введите ваш адрес">
+                                <label class="lemail" for="email">Email:</label>
+                                <input type="email" id="email" placeholder="Введите ваш email">
+                            </div>
+                            <button class="lsaveButton" id="saveButton">Сохранить данные</button>
+                        </div>
                         <h6 style="font-size: 14px; color: grey;">Финансы</h6>
                         <div class="button-oplata">
                             <button class="oplata" id="payment-methods">
                                 <img class="payment-icon" src="https://cdn.iconscout.com/icon/free/png-512/free-payment-icon-download-in-svg-png-gif-file-formats--money-finance-cash-e-commerce-pack-shopping-icons-1498077.png?f=webp&w=256" alt="Способы оплаты"> Способы оплаты
                             </button>
                         </div>
-                        <div class="button-oplata">
-                            <button class="oplata" id="account-details">
-                                <img class="payment-icon" src="https://cdn-icons-png.flaticon.com/128/2991/2991106.png" alt="Реквизиты"> Реквизиты
-                            </button>
-                        </div>
                     </div>
                     <div class="support-content">
+                        <button class="oplata">Скидки</button>
                         <h6 style="font-size: 14px; color: grey;">Управление</h6>
                         <button class="oplata" id="settings">Настройки</button>
-                       
                         <button class="oplata" id="devices">Ваши устройства</button>
+        <a  style="text-decoration: none;"  href="/html/dostavka.html">
+                        <h6 style="font-size: 20px; color: grey;"  >Доставка</h6>
+                        <button class="oplata"  >Все</button>
+        </a>  
                     </div>
-                </section>
+                </section> 
 
-                <a  style="text-decoration: none;"  href="/html/dostavka.html"><section id="support" class="content-section">
-
-                    <h6 style="font-size: 20px; color: grey;">Доставка</h6>
-                      <button  style=" height: 200px  ">Все</button>
-                 
-  
-              </section></a>
+                
         </section>
+
+
+
+
+        
     </main>
     
 
@@ -298,6 +270,46 @@
 </html>
 
 <script>
+
+
+
+const avatarInput = document.getElementById('avatar-input');
+const avatarImage = document.querySelector('.avatar');
+const changeAvatarButton = document.querySelector('.change-avatar-button');
+
+changeAvatarButton.addEventListener('click', () => {
+  avatarInput.click(); // Эмулируем клик по скрытому input
+});
+
+avatarInput.addEventListener('change', (event) => {
+  const file = event.target.files[0];
+  if (file) {
+    const reader = new FileReader();
+
+    reader.onload = (e) => {
+      avatarImage.src = e.target.result; // Обновляем аватар
+      // Здесь можно добавить код для отправки нового аватара на сервер
+    };
+
+    reader.readAsDataURL(file);
+  }
+});
+
+
+const toggleButton = document.getElementById('toggleButton');
+                        const userData = document.getElementById('userData');
+                
+                     
+                        toggleButton.addEventListener('click', () => {
+                         
+                            if (userData.style.display === 'none' || userData.style.display === '') {
+                                userData.style.display = 'block'; 
+                            } else {
+                                userData.style.display = 'none';
+                            }
+                        });
+
+
 
 
 const catalog = document.getElementById('catalog');

@@ -6,18 +6,15 @@
  
 /*ТЕМКИ ТЕМНЫЕ НАЧАЛИСЬ*/  
  body.dark-theme {
- background-color:  #415382;
+ background-color:  #2a4077;
 
 }
 
-.dark-theme icones{
-background-color: #0e255e;
-}
 .dark-theme header {
   width: 100%;
   justify-content: space-between;
   align-items: center;
-  background-color: #0e255e;
+  background-color: #091b49;
   padding: 20px 8px;
   z-index: 200;
   position: sticky;
@@ -252,7 +249,7 @@ background-color: #0e255e;
 }
 
 .dark-theme .tooltip {
-  background-color: #0e255e;
+  background-color: #050b1b;
   border: 1px solid #0e255e;
 }
 
@@ -268,17 +265,17 @@ background-color: #0e255e;
   color: #e0e0e0; 
 }
 
-.dark-theme .cat {
-  background-color: #0e255e;
-  color: #e0e0e0; 
- 
-}
 
+.dark-theme .cat{
+  background-color: #091b49 ; 
+  color: #ffffff; 
+}
 .dark-theme .cat:hover {
   background-color: #7d8fbd; 
   color: #ffffff; 
  
 }
+
 
 .dark-theme .catalog h6 {
   color: #e0e0e0; 
@@ -287,7 +284,7 @@ background-color: #0e255e;
 }
 
 .dark-theme .catalog {
-  background-color: #0e255e;
+  background-color: #091b49;
 }
 
 .dark-theme .catalog button {
@@ -296,7 +293,10 @@ background-color: #0e255e;
    border: 2px solid #3158a7 ;
 }
 
-
+.dark-theme .catalog button:after {
+  background-color: #7d8fbd ; 
+   border: #7d8fbd ;
+}
 .dark-theme .popup {
   background-color: #0e255e;
   border: 2px solid #0e255e;
@@ -317,7 +317,7 @@ background-color: #0e255e;
   color: #e0e0e0; 
 }
 .dark-theme .boxicon {
-  background-color:#415382; 
+  background-color:#2a4077; 
 }
 .dark-theme .bcontainer {
   background-color: #0e255e; 
@@ -329,7 +329,7 @@ filter: brightness(0) invert(0.9) sepia(1) saturate(0) hue-rotate(0deg); /* Де
 background-color: #7d8fbd;  
 }
 .dark-theme .swiper{
-background-color: #415382; 
+background-color: #2a4077; 
 }
 .dark-theme .swiper-slide {
 background-color: #0e255e; 
@@ -352,7 +352,7 @@ color: #e0e0e0;
 }
 
 .dark-theme footer {
-  background-color: #0e255e; 
+  background-color: #091b49; 
   color: white;
   padding: 20px;
   margin-top: 20px;
@@ -839,7 +839,20 @@ button.cartbu:hover {
 /*КОНЕЦ АККАУНТА*/
 
 
-
+/*хлебные крошки*/
+.breadcrumb { 
+  display: flex;         
+  margin-bottom: 10px;
+  padding: 18px; 
+  text-align: center; 
+  background-color: #e5e5e5; 
+  width: 100%;    
+  font-size:19px ;      
+} 
+.breadcrumb a { 
+  color: black; 
+  text-decoration: none; 
+} 
 
 
 /*НАЧАЛО КАТАЛОГА*/
@@ -948,7 +961,7 @@ width:165px;
               width: 0;
               border-radius: 8px;
               height: 100%;
-              background:#3158a7 ;
+              background:#FFFFE0 ;
              
               transition: all 0.30s;
 
@@ -2848,6 +2861,41 @@ height: 230px !important;
 
 /* НАЧАЛО СТРАНИЦЫ ЛИЧНОЙ КАБИНЕТ  */
 
+
+/*АВА*/
+.avatar-container {
+  position: relative; /* Для позиционирования кнопки */
+  width: 150px; /* Пример размера */
+  height: 150px; /* Пример размера */
+}
+
+.avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%; /* Делает аватар круглым */
+  object-fit: cover; /* Обрезает изображение, чтобы оно поместилось в контейнер */
+}
+
+.change-avatar-button {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.7); /* Полупрозрачный фон */
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 12px;
+}
+
+.change-avatar-button:hover {
+  background-color: rgba(0, 0, 0, 0.9);
+}
+/*АВА*/
+
+
+
 /*окно добавления данных об пользователе */
 .user-data {
   max-width: 300px; 
@@ -2880,51 +2928,7 @@ padding: 20px;
   background-color: #218838; 
 }
 
-/*хлебные крошки*/
-.breadcrumb { 
-  display: flex;         
-  margin-bottom: 10px;
-  padding: 18px; 
-  text-align: center; 
-  background-color: #e5e5e5; 
-  width: 100%;    
-  font-size:19px ;      
-} 
-.breadcrumb a { 
-  color: black; 
-  text-decoration: none; 
-} 
-.profile-icon {
-  position: relative;
-  width: 150px;
-  height: 150px;
-  overflow: hidden;
-  border-radius: 50%;
-  border: 2px solid #ccc;
-  background-color: #fff;
-}
-.profile-icon img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 50%;
-  cursor: pointer;
-}
-.full-width-button {
-  display: block; 
-  width: 28%;
-  padding: 5px; 
-  font-size: 16px; 
-  cursor: pointer; 
-  border: 1px solid #ccc; 
-  border-radius: 5px; 
-  background-color: #f0f0f0; 
-  outline: none;
-}
 
-.full-width-button:hover {
-  background-color: #e0e0e0;
-}
 
 .primary-btn {
 margin-top:10px;
@@ -2936,16 +2940,6 @@ color: black;
 .primary-btn:hover {
 background-color: #e0e0e0; 
 
-}
-
-/* Анимация для страницы */
-@keyframes fadeIn {
-from {
-    opacity: 0; 
-}
-to {
-    opacity: 1; 
-}
 }
 .oplata {
       background-color: #e5e5e5;
@@ -3011,9 +3005,7 @@ to {
       flex-direction: column;
       justify-content: space-between;
   }
-  .content-section:hover {
-      
-  }
+ 
   .content-section-oplata {
       padding: 20px;
       margin: 10px;
@@ -3207,7 +3199,6 @@ to {
     z-index: 1000; 
     display: none; 
 }
-
 .overlay {
     position: fixed;
     top: 0;
@@ -3218,6 +3209,9 @@ to {
     z-index: 999;
     display: none;
 }
+
+
+
 
 h2 {
     margin-top: 0;
@@ -3233,47 +3227,6 @@ h2 {
     cursor: pointer;
 }
 
-@media (max-width: 768px) {
-
-  .user-data {
-    max-width: 80%; 
-  }
-
-  .full-width-button {
-    width: 100%; 
-  }
-
-  .breadcrumb {
-    flex-direction: column; 
-  }
-
-  .profile-icon {
-    width: 120px;
-    height: 120px; 
-  }
-
-  .content-section, .content-section-user, .content-section-oplata {
-    width: auto; 
-    height: auto;
-  }
-
-  .discount-item {
-    width: 70%; 
-  }
-
-  .settings-modal, .details-binding, .payment-content {
-    width: 80%; 
-  }
-
-  .close-details, .close-discount-info {
-    width: 90%; 
-  }
-
-  .primary-btn, .lsaveButton, .toggle-button {
-    width: 100%; 
-    padding: 15px; 
-  }
-}
 .contact-form {
   background-color: #fff;
   padding: 20px;
