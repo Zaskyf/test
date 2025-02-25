@@ -199,8 +199,11 @@
             <div class="User-profil">
                 <div class="profile-icon">
                 
-                    <img id="output" src="default-avatar.png" />
-                </div>   <input type="file" id="fileInput" accept="image/*" onchange="loadFile(event)" />
+                    <div class="avatar-container">
+                        <img src="путьк_аватару.jpg" alt="Ваш аватар" class="avatar">
+                        <button class="change-avatar-button">Сменить аватар</button>
+                        <input type="file" id="avatar-input" accept="image/*" style="display:none;">
+                      </div>
            
 
                <li class="discount-item">
@@ -265,6 +268,29 @@
 </body>
 </html>
 <script>
+
+    //Аватар
+const avatarInput = document.getElementById('avatar-input');
+const avatarImage = document.querySelector('.avatar');
+const changeAvatarButton = document.querySelector('.change-avatar-button');
+
+changeAvatarButton.addEventListener('click', () => {
+  avatarInput.click(); // Эмулируем клик по скрытому input
+});
+
+avatarInput.addEventListener('change', (event) => {
+  const file = event.target.files[0];
+  if (file) {
+    const reader = new FileReader();
+
+    reader.onload = (e) => {
+      avatarImage.src = e.target.result; // Обновление аватарчика
+      //  добавить код для отправки нового аватара на сервер
+    };
+
+    reader.readAsDataURL(file);
+  }
+});
          // Создаем модальное окно (если его еще нет)
         const discountInfo = document.createElement('div');
         discountInfo.classList.add('discount-info');
