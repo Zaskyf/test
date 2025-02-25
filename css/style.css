@@ -297,6 +297,7 @@
   background-color: #7d8fbd ; 
    border: #7d8fbd ;
 }
+
 .dark-theme .popup {
   background-color: #0e255e;
   border: 2px solid #0e255e;
@@ -312,6 +313,12 @@
   background-color: #7d8fbd; 
   color: #e0e0e0;
   
+}
+
+.dark-theme .popupTitle{
+
+  color: white;
+
 }
 .dark-theme .clobutton {
   color: #e0e0e0; 
@@ -1094,11 +1101,19 @@ width:165px;
               height: 100%;
            border: 2px solid #688EBD; /* Установлена  */
               background-color:#688EBD;  /* Темно-синий */
+              
               z-index:202;
               box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
               padding: 20px;
              border-top-right-radius : 9px;
 
+          }
+
+          .popupTitle{
+
+            color:#FFFFE0;
+
+            margin-bottom: 5px;
           }
           .popup button{
 
