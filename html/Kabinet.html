@@ -178,7 +178,7 @@
                 <h6 style="font-size: 30px; text-align:center;">Личный кабинет </h6>
                 <h2>username</h2>
                 <div class="avatar-container">
-                    <img src="путь_к_вашему_аватару.jpg" alt="Ваш аватар" class="avatar">
+                    <img src="путьк_аватару.jpg" alt="Ваш аватар" class="avatar">
                     <button class="change-avatar-button">Сменить аватар</button>
                     <input type="file" id="avatar-input" accept="image/*" style="display:none;">
                   </div>
@@ -272,7 +272,7 @@
 <script>
 
 
-
+//Аватар
 const avatarInput = document.getElementById('avatar-input');
 const avatarImage = document.querySelector('.avatar');
 const changeAvatarButton = document.querySelector('.change-avatar-button');
@@ -287,8 +287,8 @@ avatarInput.addEventListener('change', (event) => {
     const reader = new FileReader();
 
     reader.onload = (e) => {
-      avatarImage.src = e.target.result; // Обновляем аватар
-      // Здесь можно добавить код для отправки нового аватара на сервер
+      avatarImage.src = e.target.result; // Обновление аватарчика
+      //  добавить код для отправки нового аватара на сервер
     };
 
     reader.readAsDataURL(file);
@@ -296,18 +296,29 @@ avatarInput.addEventListener('change', (event) => {
 });
 
 
-const toggleButton = document.getElementById('toggleButton');
-                        const userData = document.getElementById('userData');
-                
-                     
-                        toggleButton.addEventListener('click', () => {
-                         
-                            if (userData.style.display === 'none' || userData.style.display === '') {
-                                userData.style.display = 'block'; 
-                            } else {
-                                userData.style.display = 'none';
-                            }
-                        });
+
+document.addEventListener('DOMContentLoaded', (event) => {
+    const toggleButton = document.getElementById('toggleButton');
+    const userDataModal = document.getElementById('userData');
+    const closeButton = document.getElementById('closeButton');
+
+    // Открыть модальное окно
+    toggleButton.onclick = function() {
+        userDataModal.style.display = 'block';
+    }
+
+    // Закрыть модальное окно
+    closeButton.onclick = function() {
+        userDataModal.style.display = 'none';
+    }
+
+    // Закрыть модальное окно при клике вне его содержимого
+    window.onclick = function(event) {
+        if (event.target == userDataModal) {
+            userDataModal.style.display = 'none';
+        }
+    }
+});
 
 
 
@@ -543,7 +554,7 @@ document.getElementById('saveButton').addEventListener('click', function() {
     const address = document.getElementById('address').value;
     const email = document.getElementById('email').value;
 
-    // Здесь вы можете добавить логику для сохранения данных пользователя в базу данных
+    // Добавить логику для сохранения данных пользователя в базу данных!!!
     alert(`Данные сохранены:\nИмя: ${firstName}\nФамилия: ${lastName}\nАдрес: ${address}\nEmail: ${email}`);
 });
 
@@ -561,196 +572,6 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 //Окна
-const discountInfo = document.createElement('div');
-            discountInfo.classList.add('discount-info');
-            discountInfo.innerHTML = `
-                <div class="discount-info-content">
-                    <h2>Информация о скидках</h2>
-                    <p>Здесь будет подробная информация о скидках, например, какие товары участвуют в акции, условия получения скидки, срок действия скидки и т.д.</p>
-                    <button class="close-discount-info">Понятно</button>
-                </div>
-            `;
-            document.body.appendChild(discountInfo);
-            document.querySelector('.discount-item').addEventListener('click', () => {
-                discountInfo.style.display = 'flex'; 
-            });
-            discountInfo.querySelector('.close-discount-info').addEventListener('click', () => {
-                discountInfo.style.display = 'none';
-            });
-            document.addEventListener('click', (event) => {
-                if (event.target === discountInfo) {
-                    discountInfo.style.display = 'none';
-                }
-            });
-
-// Создаем элемент модального окна для способов оплаты
-const payment = document.createElement('div');
-payment.classList.add('payment');
-payment.innerHTML = `
-    <h2>Способы оплаты</h2>
-    <button class="card">Привязать карту</button>
-    <button class="close-discount-info">Понятно</button>
-`;
-document.body.appendChild(payment);
-
-// Обработчик события для кнопки "Понятно"
-payment.querySelector('.close-discount-info').addEventListener('click', () => {
-    payment.style.display = 'none'; // Закрываем модальное окно
-    document.querySelector('.overlay').style.display = 'none'; // Закрываем оверлей, если он есть
-});
-
-// Пример создания оверлея, если его еще нет
-const overlay = document.createElement('div');
-overlay.classList.add('overlay');
-overlay.style.display = 'none'; // Скрываем по умолчанию
-document.body.appendChild(overlay);
-
-// Пример обработки нажатия на кнопку, открывающую модальное окно
-document.getElementById('payment-methods').addEventListener('click', () => {
-    payment.style.display = 'block'; // Открываем модальное окно
-
-});
-
-
-const cardBinding = document.createElement('div');
-cardBinding.classList.add('card-binding');
-cardBinding.innerHTML = `
-    <h2>Привязка карты</h2>
-    <label for="card-number">Номер карты:</label>
-    <input type="text" id="card-number" placeholder="Введите номер карты">
-    <button class="submit-card">Привязать</button>
-    <button class="close-card-binding">Закрыть</button>
-`;
-document.body.appendChild(cardBinding);
-
-
-const details = document.createElement('div');
-details.classList.add('details');
-details.innerHTML = `
-    <div class="windowrekvisit">
-        <h2>Реквизиты</h2>
-        <button class="detail">Привязать реквизиты</button>
-        <button class="close-details">Понятно</button>
-    </div>
-`;
-document.body.appendChild(details);
-
-
-const detailsBinding = document.createElement('div');
-detailsBinding.classList.add('details-binding');
-detailsBinding.innerHTML = `
-    <h2>Привязка реквизитов</h2>
-    <label for="account-number">Номер реквизита:</label>
-    <input type="text" id="account-number" placeholder="Введите номер реквизита">
-    <button class="submit-details">Привязать</button>
-    <button class="close-details-binding">Закрыть</button>
-`;
-document.body.appendChild(detailsBinding);
-
-// Создаем элемент модального окна для настроек
-const settingsModal = document.createElement('div');
-settingsModal.classList.add('settings-modal');
-settingsModal.innerHTML = `
-    <h2>Настройки</h2>
-    <label for="settings-option">Выберите опцию:</label>
-    <select id="settings-option">
-        <option value="change-password">Изменить пароль</option>
-        <option value="manage-subscriptions">Управление подписками</option>
-        <option value="account-info">Информация об аккаунте</option>
-    </select>
-    <button class="save-settings">Сохранить</button>
-    <button class="close-settings">Закрыть</button>
-`;
-document.body.appendChild(settingsModal);
-
-// Обработчик событий для кнопки "Настройки"
-document.getElementById('settings').addEventListener('click', () => {
-    settingsModal.style.display = 'block';
-    document.querySelector('.overlay').style.display = 'block';
-});
-
-// Закрытие окна настроек
-settingsModal.querySelector('.close-settings').addEventListener('click', () => {
-    settingsModal.style.display = 'none';
-    document.querySelector('.overlay').style.display = 'none';
-});
-
-// Обработчик для закрытия всех модальных окон при нажатии на оверлей
-document.querySelector('.overlay').addEventListener('click', () => {
-    payment.style.display = 'none';
-    cardBinding.style.display = 'none';
-    details.style.display = 'none';
-    detailsBinding.style.display = 'none';
-    discountInfo.style.display = 'none'; // Закрываем и discountInfo
-    settingsModal.style.display = 'none'; // Закрываем и настройки
-    document.querySelector('.overlay').style.display = 'none';
-});
-document.querySelector('.discount-item').addEventListener('click', () => {
-    discountInfo.style.display = 'flex';
-    document.querySelector('.overlay').style.display = 'block';
-});
-
-
-discountInfo.querySelector('.close-discount-info').addEventListener('click', () => {
-    discountInfo.style.display = 'none';
-    document.querySelector('.overlay').style.display = 'none';
-});
-
-// Open payment methods
-document.getElementById('payment-methods').addEventListener('click', () => {
-    payment.style.display = 'block';
-    document.querySelector('.overlay').style.display = 'block';
-});
-
-// Bind card button functionality
-payment.querySelector('.card').addEventListener('click', () => {
-    payment.style.display = 'none';
-    cardBinding.style.display = 'block';
-});
-
-// Close card binding
-cardBinding.querySelector('.close-card-binding').addEventListener('click', () => {
-    cardBinding.style.display = 'none';
-    document.querySelector('.overlay').style.display = 'none';
-});
-
-// Close details window
-details.querySelector('.close-details').addEventListener('click', () => {
-    details.style.display = 'none';
-    document.querySelector('.overlay').style.display = 'none';
-});
-
-// Open account details window
-document.getElementById('account-details').addEventListener('click', () => {
-    details.style.display = 'block';
-    document.querySelector('.overlay').style.display = 'block';
-});
-
-// Bind details button functionality
-details.querySelector('.detail').addEventListener('click', () => {
-    details.style.display = 'none'; // Close the details window
-    detailsBinding.style.display = 'block'; // Open the details binding window
-    document.querySelector('.overlay').style.display = 'block'; // Show overlay
-});
-
-// Close details binding window
-detailsBinding.querySelector('.close-details-binding').addEventListener('click', () => {
-    detailsBinding.style.display = 'none';
-    document.querySelector('.overlay').style.display = 'none';
-});
-
-// Close all windows when clicking the overlay
-document.querySelector('.overlay').addEventListener('click', () => {
-    payment.style.display = 'none';
-    cardBinding.style.display = 'none';
-    details.style.display = 'none';
-    detailsBinding.style.display = 'none';
-    document.querySelector('.overlay').style.display = 'none';
-});
-function loadFile(event) {
-    const output = document.getElementById('output');
-    output.src = URL.createObjectURL(event.target.files[0]);
-}
 
   
         </script>
