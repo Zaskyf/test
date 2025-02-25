@@ -106,7 +106,7 @@
         <span class="close" onclick="closeRegisterModal()">&times;</span> <!-- Крестик закрытия -->
         <div class="modal-content sign-in">
             <form id="loginForm" action="">
-                <h2>Войти</h2>
+                <h2 style="color: white;"  class="two">Войти</h2>
                 <div class="input-group">
                     <input type="text" required>
                     <label for="">Имя</label>
@@ -120,13 +120,13 @@
                 </div>
                 <button class="registr" type="submit">Войти</button>
                 <div class="signUp-link">
-                    <p style="color: black; font-size : 18px;">У вас нет аккаунта? <a href="#" class="signUpBtn-link">Регистрация</a></p>
+                    <p  class="two">У вас нет аккаунта? <a href="#"  style="color: white;"  class="signUpBtn-link">Регистрация</a></p>
                 </div>
             </form>
         </div>
         <div class="modal-content sign-up">
             <form id="registerForm" action="">
-                <h2>Регистрация</h2><br>
+                <h2 style="color: white;"  class="two">Регистрация</h2><br>
                 <div class="input-group">
                     <input type="text" required>
                     <label for="">Имя</label>
@@ -137,17 +137,17 @@
                     <label for="">Придумайте пароль</label>
                 </div> 
                 <div class="remember">
-                    <label style="color: black; font-size: 16px;">
+                    <label style="color: white;" class="two">
                         <input type="checkbox"> Я соглашаюсь с чем-то
                     </label>
                 </div>
                 <button class="registr" type="submit">Зарегистрироваться</button>
     
                 <div class="signUp-link">   
-                    <p style="color: black; margin-top: 10px; font-size: 16px;">У Вас уже есть аккаунт?
-                        <a style="color: black; margin-top: 10px; font-size: 16px;" href="#" class="signInBtn-link">Войти</a>
+                    <p style="color: white;" class="two">У Вас уже есть аккаунт?
+                        <a style="color: white;"  href="#" class="signInBtn-link">Войти</a>
                     </p>
-                    <div class="gogle" type="button" onclick="socialLogin()">Войти через <span class="social-link">соцсети</span></div>
+                    <div class="gogle" type="button" onclick="socialLogin()" style="color: white;" >Войти через <span class="social-link">соцсети</span></div>
                 </div>
                 <div class="tooltip" id="tooltip">
                     <span class="clo" onclick="hideTooltip()">&#10006;</span>
@@ -250,7 +250,7 @@ window.onload = loadTheme;
 
  <!-- Слайдер с товарами-->
      <section class="swiper">
-        <h6 class="two"  style =" font-size:40px; color:black; margin-bottom: 20px;"> Распродажа</h6>
+        <h6 class="two"  style =" font-size:40px;  margin-bottom: 20px;"> Распродажа</h6>
    <div class="swiper-wrapper" id="swiper-wrapper">
        </div>
       <div class="swiper-button-prev prev"></div>

@@ -181,7 +181,7 @@
   z-index: 2100;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%);
+  
   width: 400px;
   height: 480px;
   background: #0e255e;
@@ -195,7 +195,7 @@
   position: relative;
   width: 98%;
   height: 30px;
-  background: #0e255e;
+  background: #7d8fbd;
   box-shadow: 0 0 10px #0e255e;
   font-size: 16px;
   font-weight: 500;
@@ -339,24 +339,37 @@ background-color: #7d8fbd;
 background-color: #2a4077; 
 }
 .dark-theme .swiper-slide {
-background-color: #0e255e; 
+background-color: #6c7ba3; 
 border: 1px solid #7d8fbd; 
 }
-.dark-theme .box { background-color:#0e255e; 
+.dark-theme .box { background-color:#6c7ba3; 
   }
 .dark-theme .prce {
-color: #e0e0e0;
-  background-color: #0e255e;
+color: white;
+font-size: 19px;
+  background-color: #6c7ba3;
 }
 .dark-theme .money{
-  background-color: #0e255e; 
+  background-color: #6c7ba3;
+   
 }
 .dark-theme .money span{
-  background-color: #0e255e; 
+  color:white;
+  background-color: #6c7ba3; 
 }
 .dark-theme .Buttons{
-  background-color: #0e255e; 
+  background-color: #6c7ba3; 
 }
+
+
+.dark-theme .btn{
+background-color :#091b49;
+
+}
+.dark-theme .btn:hover{
+  background-color :#091b49;
+  
+  }
 
 .dark-theme footer {
   background-color: #091b49; 
@@ -699,9 +712,7 @@ button.cartbu:hover {
          cursor: pointer;
          color:white;
      }
-  .modal:hover {
-    animation: animate 10s linear infinite;
-  }
+ 
   @keyframes animate {
     100% {
       filter: hue-rotate(360deg);
@@ -1315,7 +1326,6 @@ height: 615px ;
 margin-bottom: 20px; /* Отступ между слайдером и карточками */
 overflow: hidden; /* Скрывает часть карточек, выходящих за пределы контейнера */
 left: 20px; /* Отступ слева от края */
-
 background: #e5e5e5;
 margin-top:60px;
 position: relative;
