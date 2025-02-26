@@ -201,13 +201,15 @@
                             </div>
                             <button class="lsaveButton" id="saveButton">Сохранить данные</button> </div> </div>
                  
-                        <button class="oplata">Финансы</button>
-                        <button class="discount-item">
-                            Скидка
-                            <p style="font-size: 17px; font-weight: bold; color: black;">До 30%</p>
-                               </button>
+                            <button class="oplata" id="financesButton">Финансы</button>
+    
+                            <div class="panel" id="financePanel" style="display: none;">
+                                <button class="link-card">Скидка</button>
+                                <button class="link-card">Привязать карту</button>
+                            </div>
+                        
                         <button class="oplata" id="settings">Настройки</button>
-                        <button class="oplata" id="devices">Ваши устройства</button>
+                        
         <a  style="text-decoration: none;"  href="/html/dostavka.html"><button class="oplata"  >Доставка</button></a>  
                    
                 </section>
@@ -262,6 +264,17 @@
 <script>
 
 
+//Панелька "Финансы" с кнопками "Скидка" и "Способо оплаты" 
+ document.getElementById('financesButton').addEventListener('click', function() {
+    const panel = document.getElementById('financePanel');
+    // Переключаем видимость панели
+    if (panel.style.display === 'none' || panel.style.display === '') {
+        panel.style.display = 'block'; // Показываем панель
+    } else {
+        panel.style.display = 'none'; // Скрываем панель
+    }
+}); 
+
 //Аватар
 const avatarInput = document.getElementById('avatar-input');
 const avatarImage = document.querySelector('.avatar');
@@ -285,29 +298,26 @@ avatarInput.addEventListener('change', (event) => {
   }
 });
 
-
-
-document.addEventListener('DOMContentLoaded', (event) => {
-    const toggleButton = document.getElementById('toggleButton');
-    const userDataModal = document.getElementById('userData');
-    const closeButton = document.getElementById('closeButton');
-
-    // Открыть модальное окно
-    toggleButton.onclick = function() {
-        userDataModal.style.display = 'block';
+//Личные данные пользователя
+document.getElementById('toggleButton').addEventListener('click', function() {
+    const userData = document.getElementById('userData');
+    // Переключаем видимость панели с личными данными
+    if (userData.style.display === 'none' || userData.style.display === '') {
+        userData.style.display = 'block'; // Показываем панель
+    } else {
+        userData.style.display = 'none'; // Скрываем панель
     }
+});
 
-    // Закрыть модальное окно
-    closeButton.onclick = function() {
-        userDataModal.style.display = 'none';
-    }
+document.getElementById('saveButton').addEventListener('click', function() {
+    const firstName = document.getElementById('firstName').value;
+    const lastName = document.getElementById('lastName').value;
+    const address = document.getElementById('address').value;
+    const email = document.getElementById('email').value;
 
-    // Закрыть модальное окно при клике вне его содержимого
-    window.onclick = function(event) {
-        if (event.target == userDataModal) {
-            userDataModal.style.display = 'none';
-        }
-    }
+    // Здесь можно добавить код для сохранения данных, например, отправка на сервер
+    console.log('Данные сохранены:', { firstName, lastName, address, email });
+    alert('Данные успешно сохранены!');
 });
 
 
@@ -566,3 +576,30 @@ document.addEventListener('DOMContentLoaded', function() {
   
         </script>
         
+
+        <style>
+
+.panel {
+    margin-top: 10px;
+    padding: 10px;
+    width: auto;
+    height: auto;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+}
+
+.oplata {
+    background-color: #4CAF50; /* Зеленая кнопка */
+    color: white;
+}
+
+.discount {
+    background-color: #2196F3; /* Синяя кнопка */
+    color: white;
+}
+
+.link-card {
+    background-color: #FF9800; /* Оранжевая кнопка */
+    color: white;
+}
+            </style>
