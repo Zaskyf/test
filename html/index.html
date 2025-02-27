@@ -294,10 +294,8 @@ window.onload = loadTheme;
 
 </html>
 <script>
- 
 
-
- //Каталог 
+//Каталог 
 const catalog = document.getElementById('catalog');
 const menuBurger = document.getElementById('menuBurger');
 const popup = document.getElementById('popup');
@@ -312,23 +310,23 @@ menuBurger.onclick = function(event) {
 let isPopupOpen = false;
 
 // Функция для открытия подкатегорий при наведении
-document.querySelectorAll('.category-button').forEach(button => {
-    button.addEventListener('mouseenter', function(event) {
-        event.stopPropagation(); // Остановить всплытие события при наведении
-        const categoryNum = this.getAttribute('data-category');
-        let content = '';
+function handleCategoryButtonHover(event) {
+    event.stopPropagation(); // Остановить всплытие события при наведении
+    const categoryNum = this.getAttribute('data-category');
+    let content = '';
 
-        switch (categoryNum) {
-            case '1':
-                content = 
-                '<a href="wallpaper1.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.1\')">Бумажные обои</button></a>' +
-                    '<a href="wallpaper2.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.2\')">Виниловые обои</button></a>' +
-                    '<a href="wallpaper3.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.3\')">Флизелиновые обои</button></a>' +
-                    '<a href="wallpaper4.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.4\')">Текстильные обои</button></a>' +
-                    '<a href="wallpaper5.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.5\')">Метализированные обои</button></a>' +
-                    '<a href="wallpaper6.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.6\')">Жидкие обои</button></a>' +
-                    '<a href="wallpaper7.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.7\')">Фотообои</button></a>';
-                break;
+    switch (categoryNum) {
+        case '1':
+            content = 
+            '<a href="wallpaper1.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.1\')">Бумажные обои</button></a>' +
+                '<a href="wallpaper2.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.2\')">Виниловые обои</button></a>' +
+                '<a href="wallpaper3.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.3\')">Флизелиновые обои</button></a>' +
+                '<a href="wallpaper4.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.4\')">Текстильные обои</button></a>' +
+                '<a href="wallpaper5.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.5\')">Метализированные обои</button></a>' +
+                '<a href="wallpaper6.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.6\')">Жидкие обои</button></a>' +
+                '<a href="wallpaper7.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.7\')">Фотообои</button></a>';
+            break;
+            
             case '2':
                 content = 
                     '<a href="bathroom.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.1\')">Ванны и комплектующие</button></a>' +
@@ -406,11 +404,14 @@ document.querySelectorAll('.category-button').forEach(button => {
                     '<a href="wallpaper7.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.7\')">Шпатели</button></a>'+
                     '<a href="wallpaper7.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.7\')">Концелярские ножи</button></a>';
                 break;
-               
-        }
-        document.getElementById('popupContent').innerHTML = content;
-        showPopup(this.querySelector('span').textContent);  
-    });
+    }
+    document.getElementById('popupContent').innerHTML = content;
+    showPopup(this.querySelector('span').textContent);  
+}
+
+// Навешиваем обработчик на все кнопки категорий
+document.querySelectorAll('.category-button').forEach(button => {
+    button.addEventListener('mouseenter', handleCategoryButtonHover);
 });
 
 // Функция для отображения popup
@@ -436,10 +437,7 @@ document.addEventListener('click', function() {
     }
 });
 
-
-
-
-        //Регистрация
+//Регистрация
 const socialLink = document.querySelector('.social-link');
 const tooltip = document.getElementById('tooltip');
 const account = document.getElementById('account');
@@ -452,44 +450,21 @@ const signButton = document.getElementById('signButton');
 const modal = document.querySelector('.modal');
 let accountVisible = false;
 
-/*/ Проверка, авторизован ли пользователь , чтобы после перегзагрузки сесия не прерывалась 
- function checkLoginStatus() 
-{
-    const isLoggedIn = localStorage.getItem('isLoggedIn');
-    if (isLoggedIn === 'true') 
-    {
-        signButton.textContent = 'Перейти в личный кабинет';
-        signButton.onclick = () => 
-        {
-            window.location.href = 'Kabinet.html'; // Перенаправление в личный кабинет
- };}}
-
-// При загрузке страницы проверяем статус входа
-checkLoginStatus();
-socialLink.addEventListener  ('mouseover', () => 
-{
-    tooltip.style.display = 'block';
-    tooltip.style.top = `${socialLink.offsetTop + socialLink.offsetHeight}px`; 
-    tooltip.style.left = `${socialLink.offsetLeft}px`;});
-
-document.addEventListener('click', (event) => {
-    if (!socialLink.contains(event.target) && !tooltip.contains(event.target)) {
-        hideTooltip();
-    }
-});/*/
-
 function hideTooltip() {
     tooltip.style.display = 'none';
 }
 
 function toggleAccount() {
     accountVisible = !accountVisible;
-    account.style.display = accountVisible ? 'block' : 'none';}
+    account.style.display = accountVisible ? 'block' : 'none';
+}
 
 function hideAccount() {
     if (accountVisible) {
         accountVisible = false;
-        account.style.display = 'none'; } }
+        account.style.display = 'none'; 
+    }
+}
 
 function hideCart() {
     document.getElementById('cart').style.display = 'none';
@@ -532,6 +507,13 @@ function logInAccount() {
     alert('Вход');
 }
 
+// Добавляем обработчики для переключения модального окна
+signUpBtnLink.addEventListener('click', () => {
+    modal.classList.toggle('active');
+});
+signInBtnLink.addEventListener('click', () => {
+    modal.classList.toggle('active');
+});
 
 
 
@@ -756,15 +738,4 @@ document.getElementById('prevBtn').addEventListener('click', () => {
     showCards(currentIndex1);
 });
 </script>
-<script>
 
-signUpBtnLink.addEventListener('click', () => {
-    modal.classList.toggle('active');
-});
-
-signInBtnLink.addEventListener('click', () => {
-    modal.classList.toggle('active');
-});
-
-
-</script>
