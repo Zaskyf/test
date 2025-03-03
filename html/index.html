@@ -97,260 +97,103 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
     
-    <!-- НАЧАЛО РЕГИСТРАЦИИ  -->
-    <div class="account" id="account" onmouseleave="hideAccount()">
-        <h2 class= "two">Аккаунт</h2>
-        <button class="sign" id="signButton" onclick="openRegisterModal()">Войти или Зарегистрироваться</button>
-    </div>
-    
-    <!-- Модальное окно для регистрации -->
-    <div id="registerModal" class="modal">
-        <span class="close" onclick="closeRegisterModal()">&times;</span> <!-- Крестик закрытия -->
-        <div class="modal-content sign-in">
-            <form id="loginForm" action="">
-                <h2 style="color: white;"  class="two">Войти</h2>
-                <div class="input-group">
-                    <input type="text" required>
-                    <label for="">Имя</label>
-                </div>
-                <div class="input-group">
-                    <input type="password" required>
-                    <label for="">Пароль</label>
-                </div>
-                <div class="remember">
-                    <label><input type="checkbox"> Запомнить меня</label>
-                </div>
-                <button class="registr" type="submit">Войти</button>
-                <div class="signUp-link">
-                    <p  class="two">У вас нет аккаунта? <a href="#"  style="color: white;"  class="signUpBtn-link">Регистрация</a></p>
-                </div>
-            </form>
-        </div>
-        <div class="modal-content sign-up">
-            <form id="registerForm" action="">
-                <h2 style="color: white;"  class="two">Регистрация</h2><br>
-                <div class="input-group">
-                    <input type="text" required>
-                    <label for="">Имя</label>
-                </div>
-               
-                <div class="input-group">
-                    <input type="password" required>
-                    <label for="">Придумайте пароль</label>
-                </div> 
-                <div class="remember">
-                    <label style="color: white;" class="two">
-                        <input type="checkbox"> Я соглашаюсь с чем-то
-                    </label>
-                </div>
-                <button class="registr" type="submit">Зарегистрироваться</button>
-    
-                <div class="signUp-link">   
-                    <p style="color: white;" class="two">У Вас уже есть аккаунт?
-                        <a style="color: white;"  href="#" class="signInBtn-link">Войти</a>
-                    </p>
-                    <div class="gogle" type="button" onclick="socialLogin()" style="color: white;" >Войти через <span class="social-link">соцсети</span></div>
-                </div>
-                <div class="tooltip" id="tooltip">
-                    <span class="clo" onclick="hideTooltip()">&#10006;</span>
-                    <ul style="text-align:left; padding:5px; margin-top:10px;">
-                        <li>
-                            <a href="#" style="margin-right: 3px; color: black; display: inline-block;">
-                                <i class="fab fa-facebook-f"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" style="margin-right: 3px; color: black; display: inline-block;">
-                                <i class="fab fa-google"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" style="margin-right: 3px; color: black; display: inline-block;">
-                                <i class="fab fa-instagram"></i>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </form>
-        </div>
-    </div>
-    
-<!--КОНЕЦ РЕГИСТРАЦИИ-->
-      
-     <!-- Кнопка для переключения темы -->
-            <div class="theme-switcher" onclick="toggleTheme()">
-                <i class="fas fa-moon"></i> <!-- Иконка для темной темы -->
+<!-- НАЧАЛО РЕГИСТРАЦИИ  -->
+<div class="account" id="account" onmouseleave="hideAccount()">
+    <h2 class="two">Аккаунт</h2>
+    <button class="sign" id="signButton" onclick="openRegisterModal()">Войти или Зарегистрироваться</button>
+</div>
+
+<!-- Модальное окно для регистрации -->
+<div id="registerModal" class="modal">
+    <span class="close" onclick="closeRegisterModal()">&times;</span> <!-- Крестик закрытия -->
+    <div class="modal-content sign-in">
+        <form id="loginForm" action="">
+            <h2 style="color: white;" class="two">Войти</h2>
+            <div class="input-group">
+                <input type="email" id="loginEmail" required> <!-- Добавила еще поле email -->
+                <label for="loginEmail">Email</label>
             </div>
-    <!-- НАЧАЛО КАРУСЕЛИ -->
-
-    <div class="carousel">
-        <div class="itms">
-            <div class="itm active"><img src="https://www.ru-divan.ru/uploads/media/tissue/0001/91/a31f3761b7f7eb925a5cfce7e3f797dc2abbcf36.jpeg" > </div>
-            <div class="itm"><img src="https://www.solidbackgrounds.com/images/7680x4320/7680x4320-white-solid-color-background.jpg" > </div>
-            <div class="itm"><img src="https://www.ru-divan.ru/uploads/media/tissue/0001/91/a31f3761b7f7eb925a5cfce7e3f797dc2abbcf36.jpeg" > </div>
-            <div class="itm"><img src="https://www.solidbackgrounds.com/images/7680x4320/7680x4320-white-solid-color-background.jpg" > </div>
-            <div class="itm"><img src="https://www.ru-divan.ru/uploads/media/tissue/0001/91/a31f3761b7f7eb925a5cfce7e3f797dc2abbcf36.jpeg" > </div>
-        </div>
-        <div class="navig">
-            <button class="buprev">◀</button>
-            <button class="bunext">▶</button>
-        </div>
+            <div class="input-group">
+                <input type="password" id="loginPassword" required>
+                <label for="loginPassword">Пароль</label>
+            </div>
+            <div class="remember">
+                <label><input type="checkbox"> Запомнить меня</label>
+            </div>
+            <button class="registr" type="submit">Войти</button>
+            <div class="signUp-link">
+                <p class="two">У вас нет аккаунта? <a href="#" style="color: white;" class="signUpBtn-link">Регистрация</a></p>
+            </div>
+        </form>
     </div>
- <!-- КОНЕЦ КАРУСЕЛИ-->
-<script>
-// Функция для переключения темы
-function toggleTheme() {
-    const body = document.body;
-    const themeSwitcher = document.querySelector('.theme-switcher i');
-
-    if (body.classList.contains('dark-theme')) {
-        body.classList.remove('dark-theme');
-        body.classList.add('light-theme');
-        themeSwitcher.classList.remove('fa-sun');
-        themeSwitcher.classList.add('fa-moon');
-        localStorage.setItem('theme', 'light');
-    } else {
-        body.classList.remove('light-theme');
-        body.classList.add('dark-theme');
-        themeSwitcher.classList.remove('fa-moon');
-        themeSwitcher.classList.add('fa-sun');
-        localStorage.setItem('theme', 'dark');
-    }
-}
-
-// Проверка сохраненной темы при загрузке страницы
-function loadTheme() {
-    const savedTheme = localStorage.getItem('theme');
-    const body = document.body;
-    const themeSwitcher = document.querySelector('.theme-switcher i');
-
-    if (savedTheme === 'dark') {
-        body.classList.add('dark-theme');
-        themeSwitcher.classList.remove('fa-moon');
-        themeSwitcher.classList.add('fa-sun');
-    } else {
-        body.classList.add('light-theme');
-        themeSwitcher.classList.remove('fa-sun');
-        themeSwitcher.classList.add('fa-moon');
-    }
-}
-
-// Загрузка темы при загрузке страницы
-window.onload = loadTheme;
-</script>
-
-<!--НАЧАЛО ИКНОК ССЫЛОК НА ГЛАВНОЙ СТРАНИЦЕ-->
-<section class="boxicon">
- <a  class="bcontainer" href="category.html" style=" text-decoration: none;" >  <img class="icones" src="https://cdn-icons-png.flaticon.com/128/602/602287.png" alt="Ассортимент"> <p   class = "two ">Каталог</p>  </a>
-      <a   class="bcontainer" style="text-decoration: none;" href="Dostavka.html"><img class="icones" src="https://cdn-icons-png.flaticon.com/128/602/602287.png" alt="Доставка">  <p class = "two ">Доставка</p> </a> 
-      <a   class="bcontainer" style="text-decoration: none;" href=""><img class="icones" src="https://cdn-icons-png.flaticon.com/128/602/602287.png" alt="Гарантии">  <p   class = "two ">Гарантии</p> </a> 
-      <a   class="bcontainer" style="text-decoration: none;" href=""><img class="icones" src="https://cdn-icons-png.flaticon.com/128/602/602287.png" alt="Распродажа">  <p  class = "two " >Распродажа</p> </a> 
-</section>
- <!--КОНЕЦ ИКНОК ССЫЛОК НА ГЛАВНОЙ СТРАНИЦЕ-->
-
-
-
- <!-- Слайдер с товарами-->
-     <section class="swiper">
-        <h6 class="two"  style =" font-size:40px;  margin-bottom: 20px;"> Распродажа</h6>
-   <div class="swiper-wrapper" id="swiper-wrapper">
-       </div>
-      <div class="swiper-button-prev prev"></div>
-       <div class="swiper-button-next next"></div>
-        </section>
-
-    <footer>
-        <hr>
-        <div class="containr"><div class="subscribe"></div><div class="footer_navigation">
-            <div class="footer_menu">
-        <div class="item"><div class="caption">Покупателям</div>
-        <ul class="menu_list">
-            <a href="/html/category.html">Каталог</a>
-            <a href="/about/arktika-servis/">Расрочка/Кредиты</a>
-            <a href="/about/bonus-program/">Бонусная программа</a>
-            <a href="/about/podarochnye-karty/">Подарочные карты</a>
-        </ul></div>
-        <div class="item"> 
-            <div class="caption">Информация</div>
-        <ul class="menu_list">
-            <a href="/information/oplata/">Как оплатить</a>
-            <a href="/information/feedback/">Обратная связь</a>
-            <a href="/information/jobs/">Гарантия качества </a>
-           <a href="contacts.html">Контакты</a>
-        </ul></div>   
-
-             <div class="item"><div class="caption">Наши услуги</div>
-            <ul class="menu_list"><a href="dostavkatext.html">Доставка</a>
-            </ul>
-        </div>
-        </div>
-             <div class="contact_info"><div class="phone"><a href="tel:8 (918) 827-20-12">8 (918) 827-20-12</a> (с 09:30 до 19:00) </div>
-            <div class="address">Адрес магазина:<br>ул. Астана Кесаева, 33"а, Владикавказ <br> Респ. Северная Осетия — Алания</div> 
-            <div class="copyright">© 1996—2024, ТК «Декор центр»  </div>
-        </div></div></div>
-       
-    </footer>
+    <div class="modal-content sign-up">
+        <form id="registerForm" action="">
+            <h2 style="color: white;" class="two">Регистрация</h2><br>
+            <div class="input-group">
+                <input type="text" id="registerFirstName" required>
+                <label for="registerFirstName">Имя</label>
+            </div>
+            <div class="input-group">
+                <input type="text" id="registerLastName" required> <!-- Добавила еще  поле фамилии -->
+                <label for="registerLastName">Фамилия</label>
+            </div>
+            <div class="input-group">
+                <input type="email" id="registerEmail" required> <!-- Добавила еще поле email -->
+                <label for="registerEmail">Email</label>
+            </div>
+            <div class="input-group">
+                <input type="password" id="registerPassword" required>
+                <label for="registerPassword">Придумайте пароль</label>
+            </div>
+            <div class="input-group">
+                <input type="password" id="registerRepeatPassword" required> <!-- Добавила еще  поле повторения пароля -->
+                <label for="registerRepeatPassword">Повторите пароль</label>
+            </div>
+            <div class="remember">
+                <label style="color: white;" class="two">
+                    <input type="checkbox"> Я соглашаюсь с чем-то
+                </label>
+            </div>
+            <button class="registr" type="submit">Зарегистрироваться</button>
+            <div class="signUp-link">
+                <p style="color: white;" class="two">У Вас уже есть аккаунт?
+                    <a style="color: white;" href="#" class="signInBtn-link">Войти</a>
+                </p>
+                <div class="gogle" type="button" onclick="socialLogin()" style="color: white;">Войти через <span class="social-link">соцсети</span></div>
+            </div>
+            <div class="tooltip" id="tooltip">
+                <span class="clo" onclick="hideTooltip()">&#10006;</span>
+                <ul style="text-align:left; padding:5px; margin-top:10px;">
+                    <li>
+                        <a href="#" style="margin-right: 3px; color: black; display: inline-block;">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" style="margin-right: 3px; color: black; display: inline-block;">
+                            <i class="fab fa-google"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" style="margin-right: 3px; color: black; display: inline-block;">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </form>
+    </div>
+</div>
+<!--КОНЕЦ РЕГИСТРАЦИИ-->
 
     </body>
 
 </html>
-Исправить все ошибки учитывая все рекомендации предложенные выше : <script>
-    //Каталог 
-    const catalog = document.getElementById('catalog');
-    const menuBurger = document.getElementById('menuBurger');
-    const popup = document.getElementById('popup');
-    // Функция для открытия и закрытия меню
-    menuBurger.onclick = function(event) {
-        event.stopPropagation(); // Остановить всплытие события, чтобы не закрыть каталог сразу
-        catalog.style.display = catalog.style.display === 'none' ? 'block' : 'none';
-    };
-    // Переменная для отслеживания состояния popup
-    let isPopupOpen = false;
-    // Функция для открытия подкатегорий при наведении
-    function handleCategoryButtonHover(event) {
-        event.stopPropagation(); // Остановить всплытие события при наведении
-        const categoryNum = this.getAttribute('data-category');
-        let content = '';
-        switch (categoryNum) {
-            case '1':
-                content = 
-                '<a href="wallpaper1.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.1\')">Бумажные обои</button></a>' +
-                    '<a href="wallpaper2.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.2\')">Виниловые обои</button></a>' +
-                    '<a href="wallpaper3.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.3\')">Флизелиновые обои</button></a>' +
-                    '<a href="wallpaper4.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.4\')">Текстильные обои</button></a>' +
-                    '<a href="wallpaper5.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.5\')">Метализированные обои</button></a>' +
-                    '<a href="wallpaper6.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.6\')">Жидкие обои</button></a>' +
-                    '<a href="wallpaper7.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.7\')">Фотообои</button></a>';
-                break; 
-        }
-        document.getElementById('popupContent').innerHTML = content;
-        showPopup(this.querySelector('span').textContent);  
-    }
-    // Навешиваем обработчик на все кнопки категорий
-    document.querySelectorAll('.category-button').forEach(button => {
-        button.addEventListener('mouseenter', handleCategoryButtonHover);
-    });
-    // Функция для отображения popup
-    function showPopup(title) {
-        document.getElementById('popupTitle').textContent = title;
-        popup.style.display = 'block'; // Показывает popup
-        isPopupOpen = true; // Указывает что popup открыт
-    }
-    // Функция для закрытия popup
-    function closePopup() {
-        popup.style.display = 'none'; 
-        isPopupOpen = false; // Указывает что popup закрыт
-    }
-    // Закрытие каталога при клике где-либо на странице
-    document.addEventListener('click', function() {
-        if (catalog.style.display === 'block') {
-            catalog.style.display = 'none'; 
-        }
-        if (isPopupOpen) {
-            closePopup();
-        }
-    });
-    //Регистрация
+
+
+<script>
+
+    // Регистрация
     const socialLink = document.querySelector('.social-link');
     const tooltip = document.getElementById('tooltip');
     const account = document.getElementById('account');
@@ -362,198 +205,138 @@ window.onload = loadTheme;
     const signButton = document.getElementById('signButton');
     const modal = document.querySelector('.modal');
     let accountVisible = false;
+
     function hideTooltip() {
         tooltip.style.display = 'none';
     }
+
     function toggleAccount() {
         accountVisible = !accountVisible;
         account.style.display = accountVisible ? 'block' : 'none';
     }
+
     function hideAccount() {
         if (accountVisible) {
             accountVisible = false;
-            account.style.display = 'none'; 
+            account.style.display = 'none';
         }
     }
+
     function hideCart() {
         document.getElementById('cart').style.display = 'none';
     }
+
     function openRegisterModal() {
         document.body.style.overflow = 'hidden';
         registerModal.style.display = 'block';
     }
+
     function closeRegisterModal() {
         document.body.style.overflow = 'auto';
         registerModal.style.display = 'none';
     }
+
     // Обработчик для формы входа
-    loginForm.onsubmit = (event) => {
+    loginForm.onsubmit = async (event) => {
         event.preventDefault();
-        alert('Вход выполнен успешно');
-        closeRegisterModal();
-        // Сохраняем статус входа
-        localStorage.setItem('isLoggedIn', 'true');
-        // Меняем кнопку
-        signButton.textContent = 'Перейти в личный кабинет';
-        signButton.onclick = () => {
-            window.location.href = 'Kabinet.html'; // Перенаправление в личный кабинет
-        };
+
+        const email = document.getElementById('loginEmail').value;
+        const password = document.getElementById('loginPassword').value;
+
+        try {
+            const response = await fetch('api-auth/jwt/create', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ email, password }),
+            });
+
+            const data = await response.json(); 
+
+            if (response.ok) {
+                alert('Вход выполнен успешно');
+                closeRegisterModal();
+                localStorage.setItem('isLoggedIn', 'true');
+                signButton.textContent = 'Перейти в личный кабинет';
+                signButton.onclick = () => {
+                    window.open('Kabinet.html', '_blank');
+                };
+            } else {
+                // Обработка ошибок от сервера
+                if (data.detail) {
+                    alert(`Ошибка при входе: ${data.detail}`);
+                } else {
+                    alert('Ошибка при входе: Неизвестная ошибка');
+                }
+            }
+        } catch (error) {
+            console.error('Ошибка:', error);
+            alert('Ошибка при входе: Проверьте подключение к интернету');
+        }
     };
+
     // Обработчик для формы регистрации
-    registerForm.onsubmit = (event) => {
+    registerForm.onsubmit = async (event) => {
         event.preventDefault();
-        alert('Регистрация завершена');
-        closeRegisterModal();
-        // Перенаправление на новую страницу после регистрации
-        window.location.href = 'Kabinet.html'; 
+
+        const firstName = document.getElementById('registerFirstName').value;
+        const lastName = document.getElementById('registerLastName').value;
+        const email = document.getElementById('registerEmail').value;
+        const password = document.getElementById('registerPassword').value;
+        const repeatPassword = document.getElementById('registerRepeatPassword').value;
+
+        // Проверка на совпадение паролей
+        if (password !== repeatPassword) {
+            alert('Пароли не совпадают');
+            return;
+        }
+
+        try {
+            const response = await fetch('api-core/api-register', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ firstName, lastName, email, password }),
+            });
+
+            const data = await response.json(); 
+
+            if (response.ok) {
+                alert('Регистрация завершена');
+                closeRegisterModal();
+                localStorage.setItem('isLoggedIn', 'true');
+                window.open('Kabinet.html', '_blank');
+            } else {
+                // Обработка ошибок от сервера
+                if (data.detail) {
+                    alert(`Ошибка при регистрации: ${data.detail}`);
+                } else {
+                    alert('Ошибка при регистрации: Неизвестная ошибка');
+                }
+            }
+        } catch (error) {
+            console.error('Ошибка:', error);
+            alert('Ошибка при регистрации: Проверьте подключение к интернету');
+        }
     };
-    function logInAccount() {
-        alert('Вход');
-    }
+
     // Добавляем обработчики для переключения модального окна
     signUpBtnLink.addEventListener('click', () => {
-        modal.classList.toggle('active');
+        modal.classList.toggle('active'); // Переключаем активный класс
     });
+
     signInBtnLink.addEventListener('click', () => {
-        modal.classList.toggle('active');
-    });
-    //Слайдер с товарами
-    
-    let currentIndex = 0;
-            const items = document.querySelectorAll('.itm');
-            const totalItems = items.length;
-            function showItem(index) {
-                const itemsContainer = document.querySelector('.itms');
-                itemsContainer.style.transform = `translateX(-${index * 100}%)`; 
-            }
-            function nextItem() {
-                currentIndex = (currentIndex + 1) % totalItems;
-                showItem(currentIndex);
-            }
-            function prevItem() {
-                currentIndex = (currentIndex - 1 + totalItems) % totalItems;
-                showItem(currentIndex);
-            }
-            let autoSlide = setInterval(nextItem, 3000); // every 3 seconds
-            document.querySelector('.carousel').addEventListener('mouseenter', () => {
-                clearInterval(autoSlide); // Stop 
-            });
-            document.querySelector('.carousel').addEventListener('mouseleave', () => {
-                autoSlide = setInterval(nextItem, 3000);
-            });
-            document.querySelector('.bunext').addEventListener('click', nextItem);
-            document.querySelector('.buprev').addEventListener('click', prevItem);
-    const products = [
-        { image: "https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/2.webp", title: "Обои 2", price: 999, oldPrice: 1900 },
-            { image: "https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/1.webp", title: "Обои 1", price: 1099, oldPrice: 2000 },
-        { image: "https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/2.webp", title: "Обои 2", price: 999, oldPrice: 1900 },
-            { image: "https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/1.webp", title: "Обои 1", price: 1099, oldPrice: 2000 },
-        { image: "https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/2.webp", title: "Обои 2", price: 999, oldPrice: 1900 },
-            { image: "https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/1.webp", title: "Обои 1", price: 1099, oldPrice: 2000 },
-        { image: "https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/2.webp", title: "Обои 2", price: 999, oldPrice: 1900 },
-            { image: "https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/1.webp", title: "Обои 1", price: 1099, oldPrice: 2000 },
-        { image: "https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/2.webp", title: "Обои 2", price: 999, oldPrice: 1900 },
-    ];
-    const swiperWrapper = document.getElementById('swiper-wrapper');
-    function createSwiperSlide(product, index) {
-        const slide = document.createElement('div');
-        slide.className = 'swiper-slide';
-        const img = document.createElement('img');
-        img.src = product.image;
-        img.alt = product.title;
-        const title = document.createElement('p');
-        title.className = 'product-title';
-        title.textContent = product.title;
-        const figcaption = document.createElement('figcaption');
-        figcaption.className = 'box';
-        const priceContainer = document.createElement('div');
-        priceContainer.className = 'price-container';
-        const price = document.createElement('p');
-        price.className = 'prce';
-        price.textContent = 'Цена за штуку';
-        const money = document.createElement('p');
-        money.className = 'money';
-        const span = document.createElement('span');
-        span.textContent = product.price + ' ₽';
-        const del = document.createElement('del');
-        del.textContent = product.oldPrice + ' ₽';
-        money.appendChild(span);
-        money.appendChild(del);
-        priceContainer.appendChild(price);
-        priceContainer.appendChild(money);
-        const buttons = document.createElement('div');
-        buttons.className = 'Buttons';
-        buttons.innerHTML = `
-            <button id='addToCart${index + 1}' class='btn'>В корзину</button>
-            <button class='subtract' onclick='changeNumber(-1, "number${index + 1}")'>–</button>
-            <input type='text' class='js-number' id='number${index + 1}' value='1' readonly>
-            <button class='add' onclick='changeNumber(1, "number${index + 1}")'>+</button>
-        `;
-        figcaption.appendChild(priceContainer);
-        figcaption.appendChild(buttons);
-        slide.appendChild(img);
-        slide.appendChild(title);
-        slide.appendChild(figcaption);
-        swiperWrapper.appendChild(slide);
-        return slide;
-    }
-    function changeNumber(step, inputId) {
-        const input = document.getElementById(inputId);
-        let currentNumber = parseInt(input.value);
-        currentNumber += step;
-        if (currentNumber < 1) {
-            currentNumber = 1;
-        }
-        input.value = currentNumber;
-    }
-    products.forEach((product, index) => {
-        createSwiperSlide(product, index);
-    });
-    document.addEventListener('DOMContentLoaded', () => {
-    // Инициализация Swiper и других компонентов
-    const swiper = new Swiper(".swiper", {
-        navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-        },
-        slidesPerView: 6,
-        spaceBetween: 15,
+        modal.classList.toggle('active'); // Переключаем активный класс
     });
 
-    // Слайдер с товарами
-    let currentIndex1 = 0;
-    const cards = document.querySelectorAll('.product-card');
 
-    function showCards(startIndex) {
-        const endIndex = startIndex + 5;
-        cards.forEach((card, i) => {
-            card.style.display = (i >= startIndex && i < endIndex) ? 'block' : 'none';
-        });
-    }
 
-    // Показываем первые карточки при загрузке
-    showCards(currentIndex1);
 
-    // Обработчики для кнопок "Вперед" и "Назад"
-    const nextBtn = document.getElementById('nextBtn');
-    const prevBtn = document.getElementById('prevBtn');
 
-    if (nextBtn && prevBtn) {
-        nextBtn.addEventListener('click', () => {
-            if (currentIndex1 + 5 >= cards.length) return;
-            currentIndex1 += 5;
-            showCards(currentIndex1);
-        });
 
-        prevBtn.addEventListener('click', () => {
-            if (currentIndex1 === 0) return;
-            currentIndex1 -= 5;
-            showCards(currentIndex1);
-        });
-    } else {
-        console.error('Элементы nextBtn или prevBtn не найдены в DOM.');
-    }
-});
+    //корзина
     function addToCart(button) {
         const productTitle = button.closest('.swiper-slide').querySelector('.product-title').textContent;
         const productPrice = button.closest('.swiper-slide').querySelector('.money span').textContent;
