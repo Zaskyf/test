@@ -192,143 +192,152 @@
 
 
 <script>
+// Регистрация
+const socialLink = document.querySelector('.social-link');
+const tooltip = document.getElementById('tooltip');
+const account = document.getElementById('account');
+const registerModal = document.getElementById('registerModal');
+const registerForm = document.getElementById('registerForm');
+const loginForm = document.getElementById('loginForm');
+const signInBtnLink = document.querySelector('.signInBtn-link');
+const signUpBtnLink = document.querySelector('.signUpBtn-link');
+const signButton = document.getElementById('signButton');
+const modal = document.querySelector('.modal');
+let accountVisible = false;
 
-    // Регистрация
-    const socialLink = document.querySelector('.social-link');
-    const tooltip = document.getElementById('tooltip');
-    const account = document.getElementById('account');
-    const registerModal = document.getElementById('registerModal');
-    const registerForm = document.getElementById('registerForm');
-    const loginForm = document.getElementById('loginForm');
-    const signInBtnLink = document.querySelector('.signInBtn-link');
-    const signUpBtnLink = document.querySelector('.signUpBtn-link');
-    const signButton = document.getElementById('signButton');
-    const modal = document.querySelector('.modal');
-    let accountVisible = false;
+function hideTooltip() {
+    tooltip.style.display = 'none';
+}
 
-    function hideTooltip() {
-        tooltip.style.display = 'none';
+function toggleAccount() {
+    accountVisible = !accountVisible;
+    account.style.display = accountVisible ? 'block' : 'none';
+}
+
+function hideAccount() {
+    if (accountVisible) {
+        accountVisible = false;
+        account.style.display = 'none';
+    }
+}
+
+function hideCart() {
+    document.getElementById('cart').style.display = 'none';
+}
+
+function openRegisterModal() {
+    document.body.style.overflow = 'hidden';
+    registerModal.style.display = 'block';
+}
+
+function closeRegisterModal() {
+    document.body.style.overflow = 'auto';
+    registerModal.style.display = 'none';
+}
+
+// Обработчик для формы регистрации
+registerForm.onsubmit = async (event) => {
+    event.preventDefault();
+
+    const firstName = document.getElementById('registerFirstName').value;
+    const lastName = document.getElementById('registerLastName').value;
+    const email = document.getElementById('registerEmail').value;
+    const password = document.getElementById('registerPassword').value;
+    const repeatPassword = document.getElementById('registerRepeatPassword').value;
+
+    if (password !== repeatPassword) {
+        alert('Пароли не совпадают');
+        return;
     }
 
-    function toggleAccount() {
-        accountVisible = !accountVisible;
-        account.style.display = accountVisible ? 'block' : 'none';
-    }
+    try {
+        const response = await fetch('/api-core/api-register', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json',
+            },
+            body: JSON.stringify({ 
+                first_name: firstName, 
+                last_name: lastName,
+                email,
+                password 
+            }),
+        });
 
-    function hideAccount() {
-        if (accountVisible) {
-            accountVisible = false;
-            account.style.display = 'none';
-        }
-    }
-
-    function hideCart() {
-        document.getElementById('cart').style.display = 'none';
-    }
-
-    function openRegisterModal() {
-        document.body.style.overflow = 'hidden';
-        registerModal.style.display = 'block';
-    }
-
-    function closeRegisterModal() {
-        document.body.style.overflow = 'auto';
-        registerModal.style.display = 'none';
-    }
-
-    // Обработчик для формы входа
-    loginForm.onsubmit = async (event) => {
-        event.preventDefault();
-
-        const email = document.getElementById('loginEmail').value;
-        const password = document.getElementById('loginPassword').value;
-
-        try {
-            const response = await fetch('api-auth/jwt/create', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ email, password }),
-            });
-
-            const data = await response.json(); 
-
-            if (response.ok) {
-                alert('Вход выполнен успешно');
-                closeRegisterModal();
-                localStorage.setItem('isLoggedIn', 'true');
-                signButton.textContent = 'Перейти в личный кабинет';
-                signButton.onclick = () => {
-                    window.open('Kabinet.html', '_blank');
-                };
-            } else {
-                // Обработка ошибок от сервера
-                if (data.detail) {
-                    alert(`Ошибка при входе: ${data.detail}`);
-                } else {
-                    alert('Ошибка при входе: Неизвестная ошибка');
-                }
-            }
-        } catch (error) {
-            console.error('Ошибка:', error);
-            alert('Ошибка при входе: Проверьте подключение к интернету');
-        }
-    };
-
-    // Обработчик для формы регистрации
-    registerForm.onsubmit = async (event) => {
-        event.preventDefault();
-
-        const firstName = document.getElementById('registerFirstName').value;
-        const lastName = document.getElementById('registerLastName').value;
-        const email = document.getElementById('registerEmail').value;
-        const password = document.getElementById('registerPassword').value;
-        const repeatPassword = document.getElementById('registerRepeatPassword').value;
-
-        // Проверка на совпадение паролей
-        if (password !== repeatPassword) {
-            alert('Пароли не совпадают');
-            return;
+        // Проверяем, какой статус ответа
+        if (!response.ok) {
+            const text = await response.text(); // Получаем текст ответа
+            console.error('Ошибка ответа сервера:', text); // Логируем текст ответа
+            throw new Error('Ошибка сервера: ' + response.status + ' ' + response.statusText);
         }
 
-        try {
-            const response = await fetch('api-core/api-register', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ firstName, lastName, email, password }),
-            });
+        const data = await response.json();
+        alert('Регистрация завершена');
+        closeRegisterModal();
+        localStorage.setItem('isLoggedIn', 'true');
+        window.open('Kabinet.html', '_blank');
 
-            const data = await response.json(); 
-
-            if (response.ok) {
-                alert('Регистрация завершена');
-                closeRegisterModal();
-                localStorage.setItem('isLoggedIn', 'true');
-                window.open('Kabinet.html', '_blank');
-            } else {
-                // Обработка ошибок от сервера
-                if (data.detail) {
-                    alert(`Ошибка при регистрации: ${data.detail}`);
-                } else {
-                    alert('Ошибка при регистрации: Неизвестная ошибка');
-                }
-            }
-        } catch (error) {
-            console.error('Ошибка:', error);
-            alert('Ошибка при регистрации: Проверьте подключение к интернету');
+    } catch (error) {
+        console.error('Ошибка регистрации:', error);
+        if (error.name === 'TypeError' && error.message === 'Failed to fetch') {
+            alert('Ошибка подключения: Проверьте интернет-соединение');
+        } else {
+            alert(`Ошибка регистрации: ${error.message || 'Неизвестная ошибка'}`);
         }
-    };
+    }
+};
 
-    // Добавляем обработчики для переключения модального окна
+// Обработчик для формы входа
+loginForm.onsubmit = async (event) => {
+    event.preventDefault();
+
+    const email = document.getElementById('loginEmail').value;
+    const password = document.getElementById('loginPassword').value;
+
+    try {
+        const response = await fetch('/api-core/api-login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json',
+            },
+            body: JSON.stringify({ 
+                email,
+                password 
+            }),
+        });
+
+        // Проверяем, какой статус ответа
+        if (!response.ok) {
+            const text = await response.text(); // Получаем текст ответа
+            console.error('Ошибка ответа сервера:', text); // Логируем текст ответа
+            throw new Error('Ошибка сервера: ' + response.status + ' ' + response.statusText);
+        }
+
+        const data = await response.json();
+        alert('Вход выполнен успешно');
+        localStorage.setItem('isLoggedIn', 'true');
+        window.open('Kabinet.html', '_blank');
+
+    } catch (error) {
+        console.error('Ошибка входа:', error);
+        if (error.name === 'TypeError' && error.message === 'Failed to fetch') {
+            alert('Ошибка подключения: Проверьте интернет-соединение');
+        } else {
+            alert(`Ошибка входа: ${error.message || 'Неизвестная ошибка'}`);
+        }
+    }
+};
+
+
+    // Добавение  обработчика для переключения модального окна
     signUpBtnLink.addEventListener('click', () => {
-        modal.classList.toggle('active'); // Переключаем активный класс
+        modal.classList.toggle('active'); // Переключение на  активный класс
     });
 
     signInBtnLink.addEventListener('click', () => {
-        modal.classList.toggle('active'); // Переключаем активный класс
+        modal.classList.toggle('active'); // Переключение на  активный класс
     });
 
 
@@ -412,6 +421,3 @@
         showCards(currentIndex1);
     });
     </script>
-
-
-
