@@ -192,8 +192,8 @@
 
 
 <script>
-
 // Регистрация
+
 const socialLink = document.querySelector('.social-link');
 const tooltip = document.getElementById('tooltip');
 const account = document.getElementById('account');
@@ -206,15 +206,20 @@ const signButton = document.getElementById('signButton');
 const modal = document.querySelector('.modal');
 let accountVisible = false;
 
+
+//виден
 function hideTooltip() {
     tooltip.style.display = 'none';
 }
-
+//переключение видимости
 function toggleAccount() {
     accountVisible = !accountVisible;
     account.style.display = accountVisible ? 'block' : 'none';
 }
 
+
+
+//скрыть акк
 function hideAccount() {
     if (accountVisible) {
         accountVisible = false;
@@ -280,17 +285,24 @@ registerForm.onsubmit = async (event) => {
         // Проверяем, какой статус ответа
         if (!response.ok) {
             const text = await response.text(); // Получаем текст ответа
-            console.error('Ошибка ответа сервера:', text); // Логируем текст ответа
+            console.error('Ошибка ответа сервера:', text); 
             throw new Error('Ошибка сервера: ' + response.status + ' ' + response.statusText);
         }
-
+// Если ответ успешный, получаем данные из ответа
         const data = await response.json();
+ // Выводим сообщение об успешной регистрации
         alert('Регистрация завершена');
+// Закрываем модальное окно регистрации
         closeRegisterModal();
         localStorage.setItem('isLoggedIn', 'true');
+
+// Открываем страницу кабинета в новой вкладке
         window.open('Kabinet.html', '_blank');
 
-    } catch (error) {
+    } 
+    
+    //ошибки
+    catch (error) {
         console.error('Ошибка регистрации:', error);
         if (error.name === 'TypeError' && error.message === 'Failed to fetch') {
             alert('Ошибка подключения: Проверьте интернет-соединение');
@@ -352,6 +364,7 @@ loginForm.onsubmit = async (event) => {
     signInBtnLink.addEventListener('click', () => {
         modal.classList.toggle('active'); // Переключение на  активный класс
     });
+
 
 
 
