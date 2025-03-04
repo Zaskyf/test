@@ -192,6 +192,7 @@
 
 
 <script>
+
 // Регистрация
 const socialLink = document.querySelector('.social-link');
 const tooltip = document.getElementById('tooltip');
@@ -237,7 +238,13 @@ function closeRegisterModal() {
 
 // Обработчик для формы регистрации
 registerForm.onsubmit = async (event) => {
+
+//чтобы страница не перезагружалась 
     event.preventDefault();
+
+
+// Получаем значения полей формы регистрации (как в бэке + id на html)
+
 
     const firstName = document.getElementById('registerFirstName').value;
     const lastName = document.getElementById('registerLastName').value;
@@ -245,12 +252,17 @@ registerForm.onsubmit = async (event) => {
     const password = document.getElementById('registerPassword').value;
     const repeatPassword = document.getElementById('registerRepeatPassword').value;
 
+
+//проверка паролей 
     if (password !== repeatPassword) {
         alert('Пароли не совпадают');
         return;
     }
 
     try {
+
+// Отправляем POST-запрос на сервер для регистрации (может апи не то ?)
+
         const response = await fetch('/api-core/api-register', {
             method: 'POST',
             headers: {
@@ -260,8 +272,8 @@ registerForm.onsubmit = async (event) => {
             body: JSON.stringify({ 
                 first_name: firstName, 
                 last_name: lastName,
-                email,
-                password 
+                email: email,
+                password: password
             }),
         });
 
@@ -303,15 +315,16 @@ loginForm.onsubmit = async (event) => {
                 'Accept': 'application/json',
             },
             body: JSON.stringify({ 
-                email,
-                password 
+              email: email,
+              password: password
+                
             }),
         });
 
-        // Проверяем, какой статус ответа
+        // Проверка  какой статус ответа
         if (!response.ok) {
             const text = await response.text(); // Получаем текст ответа
-            console.error('Ошибка ответа сервера:', text); // Логируем текст ответа
+            console.error('Ошибка ответа сервера:', text); // ошибка текст ответа
             throw new Error('Ошибка сервера: ' + response.status + ' ' + response.statusText);
         }
 
@@ -331,7 +344,7 @@ loginForm.onsubmit = async (event) => {
 };
 
 
-    // Добавение  обработчика для переключения модального окна
+    // Добавение  обработчика для переключения модального окна (прокрутка регистрации )
     signUpBtnLink.addEventListener('click', () => {
         modal.classList.toggle('active'); // Переключение на  активный класс
     });
