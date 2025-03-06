@@ -1,7 +1,6 @@
 
 
 //Каталог
-
 document.addEventListener('DOMContentLoaded', function() {
     const catalog = document.getElementById('catalog');
     const menuBurger = document.getElementById('menuBurger');
