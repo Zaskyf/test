@@ -8,8 +8,9 @@
     <title>Материалы</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="/css/style.css">
-    
-  
+    <script src="/script.js/index.js"></script>
+    <script src="/script.js/cart.js"></script>
+    <script src="/script.js/category.js"></script>
   <title>Slider</title>
   <link
   rel="stylesheet"
@@ -235,57 +236,80 @@ margin-top:30px; margin-bottom:20px;">Каталог</h6>
 
         <script> 
         
-        // URL вашего API для получения категорий
-const apiUrl = 'посмотреть завтра ';
+    
 
-async function fetchCategories() {
-  try {
-    const response = await fetch(apiUrl);
-
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
-
-    const categories = await response.json(); // возвращает JSON
-
-    const categoryContainer = document.getElementById("categorycontainer");
-
-    categories.forEach(category => {
-      const categoryDiv = document.createElement("div");
-      categoryDiv.className = "category";
-
-      const innerDiv = document.createElement("div");
-      innerDiv.className = "bocategory";
-
-      // Создаем ссылку и добавляем в нее изображение
-      const link = document.createElement("a");
-      link.href = category.href;
-
-      const image = document.createElement("img");
-      image.src = category.imageSrc;
-      image.alt = category.alt;
-      image.className = "imges";
-      image.style = "alignItems: center;";
-
-      link.appendChild(image);
-      innerDiv.appendChild(link); // Сначала добавляем изображение
-
-      // Затем добавляем текст
-      const paragraph = document.createElement("p");
-      paragraph.textContent = category.name;
-      innerDiv.appendChild(paragraph);
-
-      categoryDiv.appendChild(innerDiv);
-      categoryContainer.appendChild(categoryDiv);
+    
+    
+            //Регистрация
+    const socialLink = document.querySelector('.social-link');
+    const tooltip = document.getElementById('tooltip');
+    const account = document.getElementById('account');
+    const registerModal = document.getElementById('registerModal');
+    const registerForm = document.getElementById('registerForm');
+    const signInBtnLink = document.querySelector('.signInBtn-link');
+    const signUpBtnLink = document.querySelector('.signUpBtn-link');
+    const modal = document.querySelector('.modal');
+    
+    let accountVisible = false;
+    
+    socialLink.addEventListener('mouseover', () => {
+        tooltip.style.display = 'block';
+        tooltip.style.top = `${socialLink.offsetTop + socialLink.offsetHeight}px`; 
+        tooltip.style.left = `${socialLink.offsetLeft}px`;
     });
-
-  } catch (error) {
-    console.error('Ошибка при получении категорий:', error);
-    // Обработка ошибок 
-  }
-}
-
-// Вызываем функцию для получения категорий при загрузке страницы
-fetchCategories();
-
+    
+    
+    document.addEventListener('click', (event) => {
+        if (!socialLink.contains(event.target) && !tooltip.contains(event.target)) {
+            hideTooltip();
+        }
+    });
+    
+    function hideTooltip() {
+        tooltip.style.display = 'none';
+    }
+    function toggleAccount() {
+        accountVisible = !accountVisible;
+        account.style.display = accountVisible ? 'block' : 'none';
+    }
+    function hideAccount() {
+        if (accountVisible) {
+            accountVisible = false;
+            account.style.display = 'none';
+        }
+    }
+    
+    
+    function openRegisterModal() {
+        document.body.style.overflow = 'hidden';
+        registerModal.style.display = 'block';
+    }
+    
+    function closeRegisterModal() {
+        document.body.style.overflow = 'auto';
+        registerModal.style.display = 'none';
+    }
+    
+    
+    registerForm.onsubmit = (event) => {
+        event.preventDefault();
+        alert('Регистрация завершена');
+        closeRegisterModal();
+    };
+    
+    
+    function logInAccount() {
+        alert('Вход');
+    }
+    </script>
+    <script>
+    
+    signUpBtnLink.addEventListener('click', () => {
+        modal.classList.toggle('active');
+    });
+    
+    signInBtnLink.addEventListener('click', () => {
+        modal.classList.toggle('active');
+    });
+    
     </script>
