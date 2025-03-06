@@ -1,3 +1,7 @@
+
+
+//Каталог
+
 document.addEventListener('DOMContentLoaded', function() {
     const catalog = document.getElementById('catalog');
     const menuBurger = document.getElementById('menuBurger');
@@ -167,18 +171,14 @@ document.addEventListener('DOMContentLoaded', function() {
     window.closePopup = closePopup;
 });
 
+// Конец Каталога
 
 
 
 
 
+//Темная тема
 
-
-
-
-
-
-// Функция для переключения темы
 function toggleTheme() {
     const body = document.body;
     const themeSwitcher = document.querySelector('.theme-switcher i');
@@ -218,6 +218,7 @@ function toggleTheme() {
     // Загрузка темы при загрузке страницы
     window.onload = loadTheme;
 
+   //Конец темной темы 
 
 
 
@@ -297,3 +298,5 @@ function toggleTheme() {
         currentIndex1 -= 5;
         showCards(currentIndex1);
     });
+
+ //Конец корзины
