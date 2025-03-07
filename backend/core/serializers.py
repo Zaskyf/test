@@ -19,7 +19,7 @@ class CreateUserSerializer(serializers.ModelSerializer):
         if password != repeat_password:
             raise serializers.ValidationError("Пароль не совпадает")
 
-        return attrs
+        return User.objects.create(**validate_data)
 
     def create(self, validate_data):
         return User.objects.create_user(**validate_data, username=validate_data.get('email'))
