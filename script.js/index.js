@@ -221,3 +221,63 @@ function toggleTheme() {
 
 
 
+   function addToCart(button) {
+    const productTitle = button.closest('.product-card').querySelector('.product-title').textContent;
+    const productPrice = button.closest('.product-card').querySelector('.money span').textContent;
+    const productQuantity = button.closest('.product-card').querySelector('.js-number').value;
+
+    const existingItem = Array.from(document.querySelectorAll('.cart-item')).find(item => 
+        item.querySelector('p').textContent.includes(productTitle)
+    );
+
+    if (existingItem) {
+        const quantityInput = existingItem.querySelector('.js-number');
+        quantityInput.value = parseInt(quantityInput.value) + parseInt(productQuantity);
+    } else {
+        const cartItem = document.createElement('div');
+        cartItem.classList.add('cart-item');
+        cartItem.innerHTML = `
+            <input type="checkbox" class="item-checkbox"> 
+            <p class="tovar">${productTitle} - ${productPrice}</p>
+            <div class="boxadd">
+                <button class='subtract' onclick='changeCartItemNumber(-1, this)'>–</button>
+                <input type='text' class='js-number' value='${productQuantity}' readonly>
+                <button class='add' onclick='changeCartItemNumber(1, this)'>+</button>
+            </div>
+            <span class="remove-icon" onclick="removeItem(this)">🗑️</span>`;
+        document.getElementById('cart-items').appendChild(cartItem);
+    }
+}
+
+function removeItem(icon) {
+    icon.closest('.cart-item').remove();
+}
+
+function removeFromCart(button) {
+
+}
+
+function toggleCart() {
+    const cart = document.getElementById('cart');
+    cart.style.display = cart.style.display === 'none' ? 'block' : 'none';
+}
+
+function clearCart() {
+    document.getElementById('cart-items').innerHTML = '';
+}
+function changeCartItemNumber(step, button) {
+    const input = button.parentElement.querySelector('.js-number');
+    let value = parseInt(input.value);
+    value += step;
+    if (value < 1) {
+        value = 1;
+    }
+    input.value = value;
+}
+    function openWindow() {
+        document.getElementById('quickViewWindow').style.display = 'flex';
+    }
+
+    function closeWindow() {
+        document.getElementById('quickViewWindow').style.display = 'none';
+    }
