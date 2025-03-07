@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -18,7 +17,8 @@
 
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
         <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" ></script>
-      
+      <script src="/script.js/index.js"></script>
+
 </head>
 <body>
     <header>
@@ -42,7 +42,6 @@
 
 
     <!--Каталог-->
-
     <div class="catalog" id="catalog">
         <h6>Каталог</h6>
        <a href="wallpaper.html" style = " text-decoration :none;  color:black;">    <button class="category-button" data-category="1">      
@@ -78,94 +77,16 @@
 <div class="popup" id="popup">
     <span class="clobutton" onclick="closePopup()">&times;</span>
   <h2 id="popupTitle"></h2>  
-   
-
     <ul id="popupContent"></ul>
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
 
-
 <!-- НАЧАЛО РЕГИСТРАЦИИ  -->
-<div class="account" id="account" onmouseleave="hideAccount()">
-    <h2>Аккаунт</h2>
-    <button class="sign" onclick="openRegisterModal()" style = " color: black;font-size : 18px ;">Войти или Зарегистрироваться</button>
-</div>
-<!-- Модальное окно для регистрации -->
-    <div id="registerModal" class="modal">
-    <span class="close" onclick="closeRegisterModal()">&times;</span> <!-- Крестик закрытия -->
-    <div class="modal-content sign-in">
-        <form action="">
-            <h2>Войти</h2>
-            <div class="input-group">
-                <input type="text" required>
-                <label for="">Имя</label>
-            </div>
-            <div class="input-group">
-                <input type="password" required>
-                <label for="">Пароль</label>
-            </div>
-            <div class="remember">
-                <label><input type="checkbox"> Запомнить меня</label>
-            </div>
-            <button class="registr" type="submit">Войти</button>
-            <div class="signUp-link">
-                <p style="color: black; font-size : 18px;" >У вас нет аккаунта? <a href="#" class="signUpBtn-link">Регистрация</a></p>
-            </div>
-        </form>
-    </div>
-<div class="modal-content sign-up">
-    <form action="">
-        <h2>Регистрация</h2><br>
-        <div class="input-group">
-            <input type="text" required>
-            <label for="">Имя</label>
-        </div>
-        <div class="input-group">
-            <input type="email" required>
-            <label for="">Почта</label>
-        </div>
-        <div class="input-group">
-            <input type="password" required>
-            <label for="">Придумайте пароль</label>
-        </div>
-        <div class="remember">
-            <label style="color: black; font-size: 16px;">
-                <input type="checkbox"> Я соглашаюсь с чем-то
-            </label>
-        </div>
-        <button class="registr" type="submit">Зарегистрироваться</button>
 
-        <div class="signUp-link">
-            <p style="color: black; margin-top: 10px; font-size: 16px;">У Вас уже есть аккаунт?
-                <a style="color: black; margin-top: 10px; font-size: 16px;" href="#" class="signInBtn-link">Войти</a>
-            </p>
-              <div class="gogle" type="button" onclick="socialLogin()">Войти через <span class="social-link">соцсети</span></div>
-        </div>
-        <div class="tooltip" id="tooltip" >
-  <span class="clo" onclick="hideTooltip()">&#10006;</span>
-<ul style="text-align:left; padding:5px; margin-top:10px;">
-<li>
-    <a href="#" style="margin-right: 3px; color: black; display: inline-block;">
-        <i class="fab fa-facebook-f"></i>
-    </a>
-</li>
-<li>
-    <a href="#" style="margin-right: 3px; color: black; display: inline-block;">
-        <i class="fab fa-google"></i>
-    </a>
-</li>
-<li>
-    <a href="#" style="margin-right: 3px; color: black; display: inline-block;">
-        <i class="fab fa-instagram"></i>
-    </a>
-</li>
-</ul>
-</div>
-    </form>
-</div>
-</div>
 <!--КОНЕЦ РЕГИСТРАЦИИ-->
+
+
 
  <!-- Хлебные крошки -->
  <nav class="breadcrumb">
@@ -215,14 +136,8 @@
                 </section>
         </section>
 
-
-
-
-        
     </main>
-    
-
-
+  
 
     <footer>
         <hr>
@@ -323,231 +238,6 @@ document.getElementById('saveButton').addEventListener('click', function() {
 
 
 
-const catalog = document.getElementById('catalog');
-const menuBurger = document.getElementById('menuBurger');
-const popup = document.getElementById('popup');
-
-// Функция для открытия и закрытия меню
-menuBurger.onclick = function(event) {
-    event.stopPropagation(); // Остановить всплытие события, чтобы не закрыть каталог сразу
-    catalog.style.display = catalog.style.display === 'none' ? 'block' : 'none';
-};
-
-// Переменная для отслеживания состояния popup
-let isPopupOpen = false;
-
-// Функция для открытия подкатегорий при наведении
-document.querySelectorAll('.category-button').forEach(button => {
-    button.addEventListener('mouseenter', function(event) {
-        event.stopPropagation(); // Остановить всплытие события при наведении
-        const categoryNum = this.getAttribute('data-category');
-        let content = '';
-
-        switch (categoryNum) {
-            case '1':
-                content = 
-                '<a href="wallpaper1.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.1\')">Бумажные обои</button></a>' +
-                    '<a href="wallpaper2.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.2\')">Виниловые обои</button></a>' +
-                    '<a href="wallpaper3.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.3\')">Флизелиновые обои</button></a>' +
-                    '<a href="wallpaper4.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.4\')">Текстильные обои</button></a>' +
-                    '<a href="wallpaper5.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.5\')">Метализированные обои</button></a>' +
-                    '<a href="wallpaper6.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.6\')">Жидкие обои</button></a>' +
-                    '<a href="wallpaper7.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.7\')">Фотообои</button></a>';
-                break;
-            case '2':
-                content = 
-                    '<a href="wallpaper1.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.1\')">Ванны и комплектующие</button></a>' +
-                    '<a href="wallpaper2.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.2\')">Раковины</button></a>' +
-                    '<a href="wallpaper3.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.3\')">Смесители</button></a>' +
-                    '<a href="wallpaper4.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.4\')"> Душевые кабины и поддоны</button></a>' +
-                    '<a href="wallpaper5.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.5\')">Сантехника для отопления</button></a>' +
-                    '<a href="wallpaper6.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.6\')">Унитазы</button></a>' +
-                    '<a href="wallpaper7.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.7\')">Аксессуары и дополнительные элементы</button></a>';
-                    '<a href="wallpaper1.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.1\')">Ванны и комплектующие</button></a>' +
-                    '<a href="wallpaper2.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.2\')">Раковины</button></a>' +
-                    '<a href="wallpaper3.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.3\')">Смесители</button></a>' +
-                    '<a href="wallpaper4.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.4\')"> Душевые кабины и поддоны</button></a>' +
-                    '<a href="wallpaper5.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.5\')">Сантехника для отопления</button></a>' +
-                    '<a href="wallpaper6.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.6\')">Унитазы</button></a>' +
-                    '<a href="wallpaper7.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.7\')">Аксессуары и дополнительные элементы</button></a>';
-                break; 
-            case '3':
-                content = 
-              
-                    '<a href="wallpaper2.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.2\')">Деревянные покрытия</button></a>' +
-                    '<a href="wallpaper3.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.3\')">Плитка</button></a>' +
-                    '<a href="wallpaper4.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.4\')">Камень</button></a>' +
-                    '<a href="wallpaper5.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.5\')">Покрытия из ПВХ</button></a>' +
-                    '<a href="wallpaper6.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.6\')">Ковровые покрытия</button></a>';
-
-                break;
-
-                case '4':
-                content = 
-                '<a href="wallpaper1.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.1\')">Столы</button></a>' +
-                    '<a href="wallpaper2.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.2\')">Диваны</button></a>' +
-                    '<a href="wallpaper3.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.3\')">Кресла</button></a>' +
-                    '<a href="wallpaper4.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.4\')">Стулья</button></a>' +
-                    '<a href="wallpaper5.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.5\')">Шкафы</button></a>' +
-                    '<a href="wallpaper6.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.6\')">Кровати</button></a>' +
-                    '<a href="wallpaper7.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.7\')">Пуфы</button></a>' +
-                    '<a href="wallpaper7.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.7\')">Кушетки</button></a>';
-                break;
-
-                case '5':
-                content = 
-                '<a href="wallpaper1.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.1\')">Кухонная посуда</button></a>' +
-                    '<a href="wallpaper2.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.2\')">Столовая посуда</button></a>' +
-                    '<a href="wallpaper3.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.3\')">Питьевая посуда</button></a>' +
-                    '<a href="wallpaper4.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.4\')">Столовые приборы</button></a>' +
-                    '<a href="wallpaper5.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.5\')">Посуда для храниения</button></a>';
-                break;
-                case '6':
-                content = 
-                '<a href="wallpaper1.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.1\')">Шторы</button></a>' +
-                    '<a href="wallpaper2.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.2\')">Домашний текстиль</button></a>' +
-                    '<a href="wallpaper3.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.3\')">Постельное белье </button></a>' +
-                    '<a href="wallpaper4.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.4\')">Ткани</button></a>' +
-                    '<a href="wallpaper5.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.5\')">Постельные принадлежности</button></a>' ;
-                break;
-                case '7':
-                content = 
-                '<a href="wallpaper1.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.1\')">Бытовая техника для кухни</button></a>' +
-                    '<a href="wallpaper2.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.2\')">Мелкая бытовая техника для кухни</button></a>' +
-                    '<a href="wallpaper3.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.3\')">Бытовая техника для</button></a>' +
-                    '<a href="wallpaper4.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.4\')">Техника для дома</button></a>' +
-                    '<a href="wallpaper5.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.5\')">Техника для красты</button></a>' ;
-                break;
-                case '8':
-                content = 
-                '<a href="wallpaper1.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.1\')">Декро для стен </button></a>' +
-                    '<a href="wallpaper2.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.2\')">Декро для потолка и лепнина</button></a>' +
-                    '<a href="wallpaper3.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.3\')">Часы</button></a>' +
-                    '<a href="wallpaper4.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.4\')">Лампы</button></a>' +
-                    '<a href="wallpaper5.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.5\')">Люстры</button></a>' +
-                    '<a href="wallpaper6.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.6\')">Корнизы для штор</button></a>' +
-                    '<a href="wallpaper7.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.7\')">Вазы</button></a>';
-                break;
-                case '9':
-                content = 
-                '<a href="wallpaper1.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.1\')">Электроиснтрументы</button></a>' +
-                    '<a href="wallpaper2.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.2\')">Отвертки</button></a>' +
-                    '<a href="wallpaper3.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.3\')">Клей</button></a>' +
-                    '<a href="wallpaper5.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.5\')">Краски</button></a>' +
-                    '<a href="wallpaper6.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.6\')">Розетки</button></a>' +
-                    '<a href="wallpaper7.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.7\')">Гвозди,шурупы, болты ,гайки,ключи </button></a>'+
-                    '<a href="wallpaper7.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.7\')">Шпатели</button></a>'+
-                    '<a href="wallpaper7.html"><button class="button-style" onclick="showPopup(\'Подкатегория 1.7\')">Концелярские ножи</button></a>';
-                break;
-               
-        }
-        document.getElementById('popupContent').innerHTML = content;
-        showPopup(this.querySelector('span').textContent);  
-    });
-});
-
-// Функция для отображения popup
-function showPopup(title) {
-    document.getElementById('popupTitle').textContent = title;
-    popup.style.display = 'block'; // Показывает popup
-    isPopupOpen = true; // Указывает что popup открыт
-}
-
-// Функция для закрытия popup
-function closePopup() {
-    popup.style.display = 'none'; 
-    isPopupOpen = false; // Указывает что popup закрыт
-}
-
-// Закрытие каталога при клике где-либо на странице
-document.addEventListener('click', function() {
-    if (catalog.style.display === 'block') {
-        catalog.style.display = 'none'; 
-    }
-    if (isPopupOpen) {
-        closePopup();
-    }
-});
-
-
-        //Регистрация
-const socialLink = document.querySelector('.social-link');
-const tooltip = document.getElementById('tooltip');
-const account = document.getElementById('account');
-const registerModal = document.getElementById('registerModal');
-const registerForm = document.getElementById('registerForm');
-const signInBtnLink = document.querySelector('.signInBtn-link');
-const signUpBtnLink = document.querySelector('.signUpBtn-link');
-const modal = document.querySelector('.modal');
-
-let accountVisible = false;
-
-socialLink.addEventListener('mouseover', () => {
-    tooltip.style.display = 'block';
-    tooltip.style.top = `${socialLink.offsetTop + socialLink.offsetHeight}px`; 
-    tooltip.style.left = `${socialLink.offsetLeft}px`;
-});
-
-
-document.addEventListener('click', (event) => {
-    if (!socialLink.contains(event.target) && !tooltip.contains(event.target)) {
-        hideTooltip();
-    }
-});
-
-function hideTooltip() {
-    tooltip.style.display = 'none';
-}
-
-function toggleAccount() {
-    accountVisible = !accountVisible;
-    account.style.display = accountVisible ? 'block' : 'none';
-}
-
-
-function hideAccount() {
-    if (accountVisible) {
-        accountVisible = false;
-        account.style.display = 'none';
-    }
-}
-
-function hideCart() {
-    document.getElementById('cart').style.display = 'none';
-}
-
-function openRegisterModal() {
-    document.body.style.overflow = 'hidden';
-    registerModal.style.display = 'block';
-}
-
-function closeRegisterModal() {
-    document.body.style.overflow = 'auto';
-    registerModal.style.display = 'none';
-}
-
-
-registerForm.onsubmit = (event) => {
-    event.preventDefault();
-    alert('Регистрация завершена');
-    closeRegisterModal();
-};
-
-
-function logInAccount() {
-    alert('Вход');
-}
-</script>
-<script>
-
-signUpBtnLink.addEventListener('click', () => {
-    modal.classList.toggle('active');
-});
-
-signInBtnLink.addEventListener('click', () => {
-    modal.classList.toggle('active');
-});
-
 document.getElementById('saveButton').addEventListener('click', function() {
     const firstName = document.getElementById('firstName').value;
     const lastName = document.getElementById('lastName').value;
@@ -575,9 +265,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
   
         </script>
-        
 
-        <style>
+
+
+ <style>
 
 .panel {
     margin-top: 10px;
@@ -603,3 +294,4 @@ document.addEventListener('DOMContentLoaded', function() {
     color: white;
 }
             </style>
+    
