@@ -201,11 +201,6 @@
 
 
 
-
-
-
-   
-
     <main>
         <section id="user" class="content-section-user">
             <h2>Доставка</h2>
@@ -277,60 +272,5 @@
 
 </body>
 </html>
-<script>
 
-
-document.addEventListener('DOMContentLoaded', function() {
-    // Модальное окно для скидок
-    const discountInfo = document.createElement('div');
-    discountInfo.classList.add('discount-info');
-    discountInfo.innerHTML = `
-        <div class="discount-info-content">
-            <h2>Информация о скидках</h2>
-            <p>Здесь будет подробная информация...</p>
-            <button class="close-discount-info">Понятно</button>
-        </div>
-    `;
-    document.body.appendChild(discountInfo);
-
-    // Открытие модального окна
-    const discountItem = document.querySelector('.discount-item');
-    if (discountItem) {
-        discountItem.addEventListener('click', () => {
-            discountInfo.style.display = 'flex';
-        });
-    }
-
-    // Закрытие модального окна
-    const closeButton = discountInfo.querySelector('.close-discount-info');
-    if (closeButton) {
-        closeButton.addEventListener('click', () => {
-            discountInfo.style.display = 'none';
-        });
-    }
-
-    // Закрытие при клике вне окна
-    document.addEventListener('click', (event) => {
-        if (event.target === discountInfo) {
-            discountInfo.style.display = 'none';
-        }
-    });
-
-    // Код формы обратной связи
-    const supportButton = document.getElementById('supportButton');
-    const contactFormSection = document.getElementById('contactFormSection');
-
-    if (supportButton && contactFormSection) {
-        supportButton.addEventListener('click', function() {
-            contactFormSection.classList.add('visible');
-            contactFormSection.scrollIntoView({ behavior: 'smooth' });
-        });
-
-        document.getElementById('contactForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            // код обработки формы
-        });
-    }
-});
-  </script>
   
