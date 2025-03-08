@@ -97,89 +97,94 @@
       <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
       
   
-  
-     <!-- НАЧАЛО РЕГИСТРАЦИИ  -->
-    <div class="account" id="account" onmouseleave="hideAccount()">
-        <h2>Аккаунт</h2>
-        <button class="sign" onclick="openRegisterModal()" style = " color: black;font-size : 18px ;">Войти или Зарегистрироваться</button>
-    </div>
-    <!-- Модальное окно для регистрации -->
-        <div id="registerModal" class="modal">
-        <span class="close" onclick="closeRegisterModal()">&times;</span> <!-- Крестик закрытия -->
-        <div class="modal-content sign-in">
-            <form action="">
-                <h2>Войти</h2>
-                <div class="input-group">
-                    <input type="text" required>
-                    <label for="">Имя</label>
-                </div>
-                <div class="input-group">
-                    <input type="password" required>
-                    <label for="">Пароль</label>
-                </div>
-                <div class="remember">
-                    <label><input type="checkbox"> Запомнить меня</label>
-                </div>
-                <button class="registr" type="submit">Войти</button>
-                <div class="signUp-link">
-                    <p style="color: black; font-size : 18px;" >У вас нет аккаунта? <a href="#" class="signUpBtn-link">Регистрация</a></p>
-                </div>
-            </form>
-        </div>
-    <div class="modal-content sign-up">
-        <form action="">
-            <h2>Регистрация</h2><br>
+  <!-- НАЧАЛО РЕГИСТРАЦИИ  -->
+<div class="account" id="account" onmouseleave="hideAccount()">
+    <h2 class="two">Аккаунт</h2>
+    <button class="sign" id="signButton" onclick="openRegisterModal()">Войти или Зарегистрироваться</button>
+</div>
+
+<!-- Модальное окно для регистрации -->
+<div id="registerModal" class="modal">
+    <span class="close" onclick="closeRegisterModal()">&times;</span> <!-- Крестик закрытия -->
+    <div class="modal-content sign-in">
+        <form id="loginForm" action="">
+            <h2 style="color: white;" class="two">Войти</h2>
             <div class="input-group">
-                <input type="text" required>
-                <label for="">Имя</label>
+                <input type="email" id="loginEmail" required> <!-- Добавила еще поле email -->
+                <label for="loginEmail">Email</label>
             </div>
             <div class="input-group">
-                <input type="email" required>
-                <label for="">Почта</label>
-            </div>
-            <div class="input-group">
-                <input type="password" required>
-                <label for="">Придумайте пароль</label>
+                <input type="password" id="loginPassword" required>
+                <label for="loginPassword">Пароль</label>
             </div>
             <div class="remember">
-                <label style="color: black; font-size: 16px;">
+                <label><input type="checkbox"> Запомнить меня</label>
+            </div>
+            <button class="registr" type="submit">Войти</button>
+            <div class="signUp-link">
+                <p class="two">У вас нет аккаунта? <a href="#" style="color: white;" class="signUpBtn-link">Регистрация</a></p>
+            </div>
+        </form>
+    </div>
+    <div class="modal-content sign-up">
+        <form id="registerForm" action="">
+            <h2 style="color: white;" class="two">Регистрация</h2><br>
+            <div class="input-group">
+                <input type="text" id="registerFirstName" required>
+                <label for="registerFirstName">Имя</label>
+            </div>
+            <div class="input-group">
+                <input type="text" id="registerLastName" required> <!-- Добавила еще  поле фамилии -->
+                <label for="registerLastName">Фамилия</label>
+            </div>
+            <div class="input-group">
+                <input type="email" id="registerEmail" required> <!-- Добавила еще поле email -->
+                <label for="registerEmail">Email</label>
+            </div>
+            <div class="input-group">
+                <input type="password" id="registerPassword" required>
+                <label for="registerPassword">Придумайте пароль</label>
+            </div>
+            <div class="input-group">
+                <input type="password" id="registerRepeatPassword" required> <!-- Добавила еще  поле повторения пароля -->
+                <label for="registerRepeatPassword">Повторите пароль</label>
+            </div>
+            <div class="remember">
+                <label style="color: white;" class="two">
                     <input type="checkbox"> Я соглашаюсь с чем-то
                 </label>
             </div>
             <button class="registr" type="submit">Зарегистрироваться</button>
-
             <div class="signUp-link">
-                <p style="color: black; margin-top: 10px; font-size: 16px;">У Вас уже есть аккаунт?
-                    <a style="color: black; margin-top: 10px; font-size: 16px;" href="#" class="signInBtn-link">Войти</a>
+                <p style="color: white;" class="two">У Вас уже есть аккаунт?
+                    <a style="color: white;" href="#" class="signInBtn-link">Войти</a>
                 </p>
-                  <div class="gogle" type="button" onclick="socialLogin()">Войти через <span class="social-link">соцсети</span></div>
+                <div class="gogle" type="button" onclick="socialLogin()" style="color: white;">Войти через <span class="social-link">соцсети</span></div>
             </div>
-            <div class="tooltip" id="tooltip" >
-      <span class="clo" onclick="hideTooltip()">&#10006;</span>
-    <ul style="text-align:left; padding:5px; margin-top:10px;">
-    <li>
-        <a href="#" style="margin-right: 3px; color: black; display: inline-block;">
-            <i class="fab fa-facebook-f"></i>
-        </a>
-    </li>
-    <li>
-        <a href="#" style="margin-right: 3px; color: black; display: inline-block;">
-            <i class="fab fa-google"></i>
-        </a>
-    </li>
-    <li>
-        <a href="#" style="margin-right: 3px; color: black; display: inline-block;">
-            <i class="fab fa-instagram"></i>
-        </a>
-    </li>
-</ul>
-    </div>
+            <div class="tooltip" id="tooltip">
+                <span class="clo" onclick="hideTooltip()">&#10006;</span>
+                <ul style="text-align:left; padding:5px; margin-top:10px;">
+                    <li>
+                        <a href="#" style="margin-right: 3px; color: black; display: inline-block;">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" style="margin-right: 3px; color: black; display: inline-block;">
+                            <i class="fab fa-google"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" style="margin-right: 3px; color: black; display: inline-block;">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </form>
     </div>
-    </div>
+</div>
 <!--КОНЕЦ РЕГИСТРАЦИИ-->
-
-
 
 
     <title>Контактная информация</title>
