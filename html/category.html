@@ -28,6 +28,8 @@
         <script src="/script.js/index.js"></script>
 <script src="/script.js/regist.js" defer> </script>
         <script src="/script.js/category.js" defer></script>
+
+        
 </head>
 <body>
 
@@ -248,82 +250,4 @@ margin-top:30px; margin-bottom:20px;">Каталог</h6>
 
 </html>
 
-        <script> 
-        
-    
-
-    
-    
-            //Регистрация
-    const socialLink = document.querySelector('.social-link');
-    const tooltip = document.getElementById('tooltip');
-    const account = document.getElementById('account');
-    const registerModal = document.getElementById('registerModal');
-    const registerForm = document.getElementById('registerForm');
-    const signInBtnLink = document.querySelector('.signInBtn-link');
-    const signUpBtnLink = document.querySelector('.signUpBtn-link');
-    const modal = document.querySelector('.modal');
-    
-    let accountVisible = false;
-    
-    socialLink.addEventListener('mouseover', () => {
-        tooltip.style.display = 'block';
-        tooltip.style.top = `${socialLink.offsetTop + socialLink.offsetHeight}px`; 
-        tooltip.style.left = `${socialLink.offsetLeft}px`;
-    });
-    
-    
-    document.addEventListener('click', (event) => {
-        if (!socialLink.contains(event.target) && !tooltip.contains(event.target)) {
-            hideTooltip();
-        }
-    });
-    
-    function hideTooltip() {
-        tooltip.style.display = 'none';
-    }
-    function toggleAccount() {
-        accountVisible = !accountVisible;
-        account.style.display = accountVisible ? 'block' : 'none';
-    }
-    function hideAccount() {
-        if (accountVisible) {
-            accountVisible = false;
-            account.style.display = 'none';
-        }
-    }
-    
-    
-    function openRegisterModal() {
-        document.body.style.overflow = 'hidden';
-        registerModal.style.display = 'block';
-    }
-    
-    function closeRegisterModal() {
-        document.body.style.overflow = 'auto';
-        registerModal.style.display = 'none';
-    }
-    
-    
-    registerForm.onsubmit = (event) => {
-        event.preventDefault();
-        alert('Регистрация завершена');
-        closeRegisterModal();
-    };
-    
-    
-    function logInAccount() {
-        alert('Вход');
-    }
-    </script>
-    <script>
-    
-    signUpBtnLink.addEventListener('click', () => {
-        modal.classList.toggle('active');
-    });
-    
-    signInBtnLink.addEventListener('click', () => {
-        modal.classList.toggle('active');
-    });
-    
-    </script>
+      
