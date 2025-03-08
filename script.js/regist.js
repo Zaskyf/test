@@ -55,8 +55,6 @@ registerForm.onsubmit = async (event) => {
 
 
 // Получаем значения полей формы регистрации (как в бэке + id на html)
-
-
     const firstName = document.getElementById('registerFirstName').value;
     const lastName = document.getElementById('registerLastName').value;
     const email = document.getElementById('registerEmail').value;

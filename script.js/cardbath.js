@@ -7,7 +7,7 @@ const container = document.querySelector('.container');
             title: 'Обои флизелиновые Ateliero Kora бежевые 1.06 м AT1016-02ОАВ',
             price: 790,
             delprice: 1000,
-            image: 'https://basket-06.wbbasket.ru/vol1058/part105844/105844363/images/big/3.webp',
+            image: 'id ',
             detailsUrl: '',
             hasDiscount: false
         },
