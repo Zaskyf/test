@@ -19,7 +19,7 @@ class User(AbstractUser):
 
 
     def save(self, *args, **kwargs):
-        if email:
+        if self.email:
             self.username = self.email
         if self.password and not self.password.startswith(('pbkdf2_sha256$', 'bcrypt$', 'argon2')):
             self.password = make_password(self.password)

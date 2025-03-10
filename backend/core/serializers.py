@@ -19,10 +19,16 @@ class CreateUserSerializer(serializers.ModelSerializer):
         if password != repeat_password:
             raise serializers.ValidationError("Пароль не совпадает")
 
-        return User.objects.create(**validate_data)
+        if User.objects.filter(email=attrs.get('email')):
+            raise serializers.ValidationError("Почта занята")
+
+
+        return attrs
+
+
 
     def create(self, validate_data):
-        return User.objects.create_user(**validate_data, username=validate_data.get('email'))
+        return User.objects.create(**validate_data)
 
 
 class UserSerializer(serializers.ModelSerializer):
